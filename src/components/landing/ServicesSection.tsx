@@ -40,13 +40,13 @@ const ServicesSection = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mb-20 md:mb-28"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-6">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-6">
             What we do
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
             Three things.
             <br />
-            <span className="text-muted-foreground">Done right.</span>
+            <span className="text-primary">Done right.</span>
           </h2>
         </motion.div>
 
