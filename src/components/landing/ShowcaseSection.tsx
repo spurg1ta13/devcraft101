@@ -1,5 +1,4 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
 const projects = [
@@ -29,51 +28,10 @@ const projects = [
   },
 ];
 
-const Counter = ({ value, suffix }: { value: number; suffix: string }) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!inView) return;
-    let current = 0;
-    const step = value / 30;
-    const id = setInterval(() => {
-      current += step;
-      if (current >= value) { setCount(value); clearInterval(id); }
-      else setCount(Math.floor(current));
-    }, 40);
-    return () => clearInterval(id);
-  }, [inView, value]);
-
-  return <span ref={ref} className="tabular-nums">{count}{suffix}</span>;
-};
-
 const ShowcaseSection = () => {
   return (
     <section id="work" className="relative py-32 md:py-44">
       <div className="container">
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 mb-28 md:mb-36"
-        >
-          {[
-            { value: 150, suffix: "+", label: "Projects" },
-            { value: 99, suffix: "%", label: "Retention" },
-            { value: 12, suffix: "+", label: "Years" },
-            { value: 50, suffix: "+", label: "Clients" },
-          ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-gradient mb-1">
-                <Counter value={stat.value} suffix={stat.suffix} />
-              </div>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">{stat.label}</span>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Showcase heading */}
         <motion.div
