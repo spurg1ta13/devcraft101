@@ -12,20 +12,8 @@ export default {
         "2xl": "1400px",
       },
     },
-    fontFamily: {
-      display: ['Syne', 'sans-serif'],
-      body: ['DM Sans', 'sans-serif'],
-      mono: ['JetBrains Mono', 'monospace'],
-    },
     extend: {
       colors: {
-        gold: {
-          DEFAULT: "hsl(45 100% 58%)",
-          dark: "hsl(28 90% 50%)",
-          light: "hsl(45 100% 72%)",
-        },
-        ember: "hsl(18 90% 55%)",
-        cyan: "hsl(185 80% 55%)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
