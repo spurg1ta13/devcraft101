@@ -85,8 +85,8 @@ const ServicesSection = () => {
                 <ArrowUpRight className="service-arrow h-5 w-5 text-muted-foreground/30 transition-all duration-500 shrink-0" />
 
                 {/* Floating image on hover */}
-                <div className="service-image absolute right-20 top-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-3xl overflow-hidden opacity-0 scale-90 transition-all duration-700 pointer-events-none hidden lg:block z-20">
-                  <img src={service.image} alt="" className="w-full h-full object-cover" />
+                <div className="service-image absolute right-20 top-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-3xl overflow-hidden opacity-0 scale-90 transition-all duration-700 pointer-events-none hidden lg:block z-0">
+                  <img src={service.image} alt="" className="w-full h-full object-cover opacity-30" style={{ mixBlendMode: "screen" }} />
                 </div>
               </div>
             </motion.div>
