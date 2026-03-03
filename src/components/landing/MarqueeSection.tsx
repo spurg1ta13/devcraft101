@@ -1,58 +1,20 @@
-import { motion } from "framer-motion";
-
 const words = [
-  "Web Development",
-  "●",
-  "UI/UX Design",
-  "●", 
-  "ISTQB Testing",
-  "●",
-  "React & Next.js",
-  "●",
-  "API Architecture",
-  "●",
-  "Performance Audits",
-  "●",
-  "Design Systems",
-  "●",
-  "Quality Assurance",
-  "●",
+  "Web Development", "UI/UX Design", "ISTQB Testing", "React", 
+  "TypeScript", "Performance", "Design Systems", "Quality Assurance",
+  "API Architecture", "Cloud Deploy", "Accessibility", "Security Audits"
 ];
 
 const MarqueeSection = () => {
-  const doubled = [...words, ...words];
+  const track = [...words, ...words, ...words];
 
   return (
-    <section className="relative py-8 overflow-hidden border-y border-border/50">
-      <div className="flex whitespace-nowrap">
-        <div className="animate-marquee flex items-center">
-          {doubled.map((word, i) => (
-            <span
-              key={i}
-              className={`mx-4 md:mx-6 font-display text-lg md:text-2xl font-bold tracking-tight ${
-                word === "●"
-                  ? "text-primary text-xs"
-                  : "text-muted-foreground/40 hover:text-foreground transition-colors duration-500"
-              }`}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
-        <div className="animate-marquee flex items-center" aria-hidden>
-          {doubled.map((word, i) => (
-            <span
-              key={`dup-${i}`}
-              className={`mx-4 md:mx-6 font-display text-lg md:text-2xl font-bold tracking-tight ${
-                word === "●"
-                  ? "text-primary text-xs"
-                  : "text-muted-foreground/40"
-              }`}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
+    <section className="py-6 border-y border-border/20 overflow-hidden">
+      <div className="flex whitespace-nowrap animate-marquee">
+        {track.map((word, i) => (
+          <span key={i} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground/25 hover:text-muted-foreground/60 transition-colors duration-700 cursor-default select-none">
+            {word}
+          </span>
+        ))}
       </div>
     </section>
   );

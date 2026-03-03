@@ -2,7 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import ServicesSection from "@/components/landing/ServicesSection";
-import StatsSection from "@/components/landing/StatsSection";
+import ShowcaseSection from "@/components/landing/ShowcaseSection";
 import ProcessSection from "@/components/landing/ProcessSection";
 import CTASection from "@/components/landing/CTASection";
 import Footer from "@/components/landing/Footer";
@@ -14,7 +14,8 @@ const Index = () => {
       <HeroSection />
       <MarqueeSection />
       <ServicesSection />
-      <StatsSection />
+      <div className="glow-line w-full" />
+      <ShowcaseSection />
       <div className="glow-line w-full" />
       <ProcessSection />
       <div className="glow-line w-full" />

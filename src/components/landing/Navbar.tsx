@@ -1,96 +1,82 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Code2, Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const h = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", h);
+    return () => window.removeEventListener("scroll", h);
   }, []);
 
   return (
-    <motion.nav
+    <motion.header
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
+      transition={{ duration: 1, delay: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        scrolled ? "bg-glass-strong border-b border-glass" : ""
+        scrolled ? "glass border-b border-border/30" : ""
       }`}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex items-center gap-3 group">
-          <div className="relative">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
-              <span className="font-display font-extrabold text-primary-foreground text-sm">DC</span>
-            </div>
-          </div>
-          <span className="font-display font-bold text-base tracking-tight hidden sm:block">
-            DevCraft<span className="text-primary">.</span>
+      <div className="container flex items-center justify-between h-20">
+        <a href="#" className="relative z-10">
+          <span className="text-xl font-bold tracking-[-0.04em]">
+            dev<span className="text-primary">craft</span>
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
-          {["Work", "Services", "Process", "Contact"].map((item, i) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-all duration-300 font-medium group"
-            >
-              <span className="relative z-10">{item}</span>
-              <div className="absolute inset-0 rounded-lg bg-secondary/0 group-hover:bg-secondary/80 transition-all duration-300" />
-            </a>
-          ))}
-        </div>
-
-        <div className="flex items-center gap-3">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-12">
+          <nav className="flex items-center gap-8">
+            {["Services", "Work", "Process", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
           <a
             href="#contact"
-            className="hidden md:flex items-center gap-1.5 text-sm font-display font-semibold bg-primary text-primary-foreground px-5 py-2.5 rounded-xl hover:brightness-110 transition-all duration-300"
+            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
           >
-            Start a Project
-            <ArrowUpRight className="h-3.5 w-3.5" />
+            Let's talk
           </a>
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-secondary/50 text-foreground"
-          >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
         </div>
+
+        {/* Mobile */}
+        <button onClick={() => setOpen(!open)} className="md:hidden relative z-10 text-foreground">
+          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile fullscreen menu */}
       <motion.div
         initial={false}
-        animate={{ height: mobileOpen ? "auto" : 0, opacity: mobileOpen ? 1 : 0 }}
-        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        className="md:hidden overflow-hidden bg-glass-strong"
+        animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
+        transition={{ duration: 0.4 }}
+        className="fixed inset-0 bg-background/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
       >
-        <div className="container py-6 flex flex-col gap-1">
-          {["Work", "Services", "Process", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              onClick={() => setMobileOpen(false)}
-              className="px-4 py-3.5 text-base text-muted-foreground hover:text-foreground font-medium rounded-xl hover:bg-secondary/50 transition-all"
-            >
-              {item}
-            </a>
-          ))}
-          <a
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 text-center text-sm font-display font-semibold text-primary-foreground bg-primary px-5 py-3.5 rounded-xl"
+        {["Services", "Work", "Process", "Contact"].map((item, i) => (
+          <motion.a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            onClick={() => setOpen(false)}
+            initial={{ opacity: 0, y: 20 }}
+            animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ delay: i * 0.1 }}
+            className="text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
           >
-            Start a Project →
-          </a>
-        </div>
+            {item}
+          </motion.a>
+        ))}
       </motion.div>
-    </motion.nav>
+    </motion.header>
   );
 };
 
