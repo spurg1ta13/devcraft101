@@ -46,7 +46,7 @@ const ProcessSection = () => {
               <div className="relative z-10">
                 <span className="font-mono text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">{step.num}</span>
                 <h3 className="text-2xl md:text-3xl font-bold tracking-[-0.03em] mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">{step.desc}</p>
+                <p className="text-muted-foreground text-base leading-relaxed max-w-sm">{step.desc}</p>
               </div>
             </motion.div>
           ))}
