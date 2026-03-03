@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { Search, PenTool, Code2, Rocket } from "lucide-react";
 
 const steps = [
-  { num: "01", title: "Discover", desc: "Goals, users, constraints. We go deep before we go wide." },
-  { num: "02", title: "Design", desc: "Wireframes → prototypes → pixel-perfect UI. You approve every step." },
-  { num: "03", title: "Build", desc: "Agile sprints, clean code, weekly demos. Full transparency." },
-  { num: "04", title: "Ship", desc: "ISTQB-certified QA, performance tuning, and a flawless launch." },
+  { num: "01", title: "Discover", desc: "Goals, users, constraints. We go deep before we go wide.", icon: Search },
+  { num: "02", title: "Design", desc: "Wireframes → prototypes → pixel-perfect UI. You approve every step.", icon: PenTool },
+  { num: "03", title: "Build", desc: "Agile sprints, clean code, weekly demos. Full transparency.", icon: Code2 },
+  { num: "04", title: "Ship", desc: "ISTQB-certified QA, performance tuning, and a flawless launch.", icon: Rocket },
 ];
 
 const ProcessSection = () => {
@@ -28,28 +29,45 @@ const ProcessSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-5">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.num}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative bg-card/60 glass border border-border/30 rounded-3xl p-8 md:p-10 hover:border-primary/15 transition-all duration-700"
-            >
-              {/* Number bg */}
-              <span className="absolute top-6 right-8 text-[80px] md:text-[100px] font-black text-foreground/[0.02] leading-none select-none pointer-events-none">
-                {step.num}
-              </span>
+        <div className="grid md:grid-cols-2 gap-6">
+          {steps.map((step, i) => {
+            const Icon = step.icon;
+            return (
+              <motion.div
+                key={step.num}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.7, ease: "easeOut" }}
+                whileHover={{ y: -8, transition: { duration: 0.4 } }}
+                className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-10 md:p-12 hover:border-primary/30 transition-all duration-700 min-h-[280px]"
+              >
+                {/* Background number */}
+                <span className="absolute bottom-4 right-6 text-[120px] md:text-[160px] font-black text-foreground/[0.03] leading-none select-none pointer-events-none group-hover:text-primary/[0.06] transition-colors duration-700">
+                  {step.num}
+                </span>
 
-              <div className="relative z-10">
-                <span className="font-mono text-[10px] text-primary tracking-[0.2em] uppercase block mb-4">{step.num}</span>
-                <h3 className="text-2xl md:text-3xl font-bold tracking-[-0.03em] mb-3">{step.title}</h3>
-                <p className="text-muted-foreground text-base leading-relaxed max-w-sm">{step.desc}</p>
-              </div>
-            </motion.div>
-          ))}
+                {/* Hover glow */}
+                <div className="absolute top-0 left-0 w-[300px] h-[300px] bg-primary/[0.04] rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-x-1/3 -translate-y-1/3" />
+
+                <div className="relative z-10">
+                  {/* Icon + number row */}
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="w-12 h-12 rounded-2xl bg-card border border-border/50 flex items-center justify-center group-hover:border-primary/30 group-hover:shadow-glow transition-all duration-500">
+                      <Icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase font-bold">{step.num}</span>
+                  </div>
+
+                  <h3 className="text-3xl md:text-4xl font-black tracking-[-0.03em] mb-4 text-foreground">{step.title}</h3>
+                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-md">{step.desc}</p>
+                </div>
+
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
