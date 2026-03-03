@@ -79,7 +79,7 @@ const HeroSection = () => {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 pt-8 border-t border-border/30"
         >
           <p className="text-muted-foreground text-sm md:text-base max-w-sm leading-relaxed">
-            Web development, bespoke interfaces, and ISTQB-certified quality
+            AI-driven web development, bespoke interfaces, and ISTQB-certified quality
             assurance — crafted for brands that refuse to blend in.
           </p>
 
