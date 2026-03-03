@@ -31,20 +31,8 @@ const HeroSection = () => {
       {/* Main content */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="container relative z-10 flex-1 flex flex-col justify-end pb-16 md:pb-24"
+        className="container relative z-10 flex-1 flex flex-col justify-center"
       >
-        {/* Status */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="flex items-center gap-3 mb-10"
-        >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            Open for Q2 2026
-          </span>
-        </motion.div>
 
         {/* Title - oversized, cinematic */}
         <div className="overflow-hidden mb-4">
@@ -83,23 +71,14 @@ const HeroSection = () => {
             assurance — crafted for brands that refuse to blend in.
           </p>
 
-          <div className="flex items-center gap-3">
-            <motion.a
-              href="#contact"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow tracking-[-0.01em]"
-            >
-              Start a project →
-            </motion.a>
-            <motion.a
-              href="#work"
-              whileHover={{ scale: 1.05 }}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-4 font-mono text-[11px] uppercase tracking-[0.1em]"
-            >
-              Explore ↓
-            </motion.a>
-          </div>
+          <motion.a
+            href="#work"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow tracking-[-0.01em] font-mono uppercase tracking-[0.1em]"
+          >
+            Explore ↓
+          </motion.a>
         </motion.div>
       </motion.div>
     </section>
