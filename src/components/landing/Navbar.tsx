@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Code2, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Code2, Menu, X, ArrowUpRight } from "lucide-react";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,61 +12,51 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Services", "Process", "About", "Contact"];
-
   return (
     <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-border/50 bg-background/90 backdrop-blur-xl"
-          : "bg-transparent"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        scrolled ? "bg-glass-strong border-b border-glass" : ""
       }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <motion.div
-          className="flex items-center gap-2.5"
-          whileHover={{ scale: 1.02 }}
-        >
-          <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center">
-            <Code2 className="h-4 w-4 text-primary" />
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="relative">
+            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+              <span className="font-display font-extrabold text-primary-foreground text-sm">DC</span>
+            </div>
           </div>
-          <span className="font-display font-bold text-lg">DevCraft</span>
-        </motion.div>
+          <span className="font-display font-bold text-base tracking-tight hidden sm:block">
+            DevCraft<span className="text-primary">.</span>
+          </span>
+        </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item, i) => (
-            <motion.a
+          {["Work", "Services", "Process", "Contact"].map((item, i) => (
+            <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.05 }}
-              className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors font-medium rounded-lg hover:bg-secondary/50 group"
+              className="relative px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-all duration-300 font-medium group"
             >
-              {item}
-              <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-px bg-primary group-hover:w-4 transition-all duration-300" />
-            </motion.a>
+              <span className="relative z-10">{item}</span>
+              <div className="absolute inset-0 rounded-lg bg-secondary/0 group-hover:bg-secondary/80 transition-all duration-300" />
+            </a>
           ))}
         </div>
 
         <div className="flex items-center gap-3">
-          <motion.a
+          <a
             href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden md:flex items-center gap-2 text-sm font-display font-semibold text-primary-foreground bg-primary hover:bg-primary/90 px-5 py-2 rounded-lg transition-colors"
+            className="hidden md:flex items-center gap-1.5 text-sm font-display font-semibold bg-primary text-primary-foreground px-5 py-2.5 rounded-xl hover:brightness-110 transition-all duration-300"
           >
-            Let's Talk
-          </motion.a>
-          
-          {/* Mobile menu button */}
+            Start a Project
+            <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg hover:bg-secondary/50 transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center rounded-xl bg-secondary/50 text-foreground"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -77,25 +67,26 @@ const Navbar = () => {
       <motion.div
         initial={false}
         animate={{ height: mobileOpen ? "auto" : 0, opacity: mobileOpen ? 1 : 0 }}
-        transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-b border-border"
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className="md:hidden overflow-hidden bg-glass-strong"
       >
-        <div className="container py-4 flex flex-col gap-2">
-          {navItems.map((item) => (
+        <div className="container py-6 flex flex-col gap-1">
+          {["Work", "Services", "Process", "Contact"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
               onClick={() => setMobileOpen(false)}
-              className="px-4 py-3 text-sm text-muted-foreground hover:text-foreground font-medium rounded-lg hover:bg-secondary/50 transition-colors"
+              className="px-4 py-3.5 text-base text-muted-foreground hover:text-foreground font-medium rounded-xl hover:bg-secondary/50 transition-all"
             >
               {item}
             </a>
           ))}
           <a
             href="#contact"
-            className="mt-2 text-center text-sm font-display font-semibold text-primary-foreground bg-primary hover:bg-primary/90 px-5 py-3 rounded-lg transition-colors"
+            onClick={() => setMobileOpen(false)}
+            className="mt-4 text-center text-sm font-display font-semibold text-primary-foreground bg-primary px-5 py-3.5 rounded-xl"
           >
-            Let's Talk
+            Start a Project →
           </a>
         </div>
       </motion.div>

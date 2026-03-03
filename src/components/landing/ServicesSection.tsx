@@ -1,128 +1,152 @@
 import { motion } from "framer-motion";
-import { Code2, Palette, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Code2, Palette, ShieldCheck, Layers, Zap, Globe } from "lucide-react";
 import { useState } from "react";
 
 const services = [
   {
     icon: Code2,
     title: "Web Development",
-    description:
-      "Full-stack web applications built with modern frameworks. Scalable architecture, clean code, and blazing-fast performance that grows with your business.",
-    features: ["React & Next.js", "API Development", "Database Design", "Cloud Deployment"],
-    gradient: "from-primary/20 to-primary/5",
+    subtitle: "Full-Stack Applications",
+    description: "Scalable apps with React, Node.js, and cloud-native architecture. We write code that lasts.",
+    tags: ["React", "TypeScript", "APIs", "Cloud"],
+    span: "md:col-span-2 md:row-span-2",
+    featured: true,
   },
   {
     icon: Palette,
-    title: "Custom UI/UX Design",
-    description:
-      "Interfaces that users love. We blend aesthetics with usability to create designs that convert visitors into loyal customers.",
-    features: ["User Research", "Wireframing", "Visual Design", "Design Systems"],
-    gradient: "from-primary/15 to-primary/5",
+    title: "UI/UX Design",
+    subtitle: "Pixel-Perfect Interfaces",
+    description: "User-centered design that converts. Research-driven decisions, not guesswork.",
+    tags: ["Figma", "Prototyping", "Systems"],
+    span: "md:col-span-1 md:row-span-1",
+    featured: false,
   },
   {
     icon: ShieldCheck,
-    title: "Quality Assurance",
-    description:
-      "ISTQB-certified engineers rigorously test every feature before release. We catch bugs so your users never have to.",
-    features: ["Functional Testing", "Performance Testing", "Security Audits", "Automation"],
-    gradient: "from-primary/10 to-primary/5",
+    title: "QA Testing",
+    subtitle: "ISTQB Certified",
+    description: "Rigorous testing by certified engineers. We catch bugs before your users do.",
+    tags: ["Manual", "Automation", "Security"],
+    span: "md:col-span-1 md:row-span-1",
+    featured: false,
+  },
+  {
+    icon: Zap,
+    title: "Performance",
+    subtitle: "Optimization & Speed",
+    description: "Sub-second load times, perfect Lighthouse scores. We make things fly.",
+    tags: ["Core Vitals", "Audits"],
+    span: "md:col-span-1 md:row-span-1",
+    featured: false,
+  },
+  {
+    icon: Globe,
+    title: "Deployment",
+    subtitle: "Launch & Scale",
+    description: "CI/CD pipelines, cloud infrastructure, and monitoring from day one.",
+    tags: ["AWS", "Docker", "CI/CD"],
+    span: "md:col-span-1 md:row-span-1",
+    featured: false,
   },
 ];
 
 const ServicesSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
-      {/* Subtle background texture */}
-      <div className="absolute inset-0 bg-gradient-mesh opacity-50" />
-      
-      <div className="container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mb-20"
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: 48 }}
+    <section id="services" className="relative py-24 md:py-36">
+      <div className="container">
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16 md:mb-20">
+          <div>
+            <motion.span
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="h-px bg-primary"
-            />
-            <span className="text-primary font-display text-sm font-medium tracking-widest uppercase">
-              Services
-            </span>
+              className="font-mono text-xs text-primary tracking-wider uppercase block mb-4"
+            >
+              [01] — Services
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              className="font-display text-4xl md:text-6xl font-extrabold tracking-[-0.02em] leading-[1]"
+            >
+              What we
+              <br />
+              <span className="text-gradient-cool">do best</span>
+            </motion.h2>
           </div>
-          <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">
-            Everything You Need
-          </h2>
-          <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-muted-foreground mt-1">
-            Under One Roof.
-          </h2>
-        </motion.div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-muted-foreground text-sm md:text-base max-w-sm leading-relaxed"
+          >
+            End-to-end development services with obsessive attention to quality at every stage.
+          </motion.p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
           {services.map((service, i) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
-              onMouseEnter={() => setHoveredIndex(i)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative rounded-2xl overflow-hidden hover-lift"
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered(null)}
+              className={`group relative rounded-2xl md:rounded-3xl overflow-hidden cursor-default ${service.span} ${
+                service.featured ? "min-h-[360px] md:min-h-[440px]" : "min-h-[200px] md:min-h-[220px]"
+              }`}
             >
-              {/* Card background with border glow */}
-              <div className="absolute inset-0 bg-gradient-card transition-all duration-500 group-hover:bg-gradient-card-hover" />
-              <div className="absolute inset-0 rounded-2xl border border-border group-hover:border-primary/20 transition-colors duration-500" />
+              {/* Background */}
+              <div className="absolute inset-0 bg-card border border-border/50 rounded-2xl md:rounded-3xl group-hover:border-primary/15 transition-all duration-700" />
               
-              {/* Hover glow effect */}
+              {/* Corner glow on hover */}
               <motion.div
-                className={`absolute -top-24 -right-24 w-48 h-48 rounded-full bg-gradient-to-br ${service.gradient} blur-3xl`}
-                animate={{
-                  opacity: hoveredIndex === i ? 0.8 : 0,
-                  scale: hoveredIndex === i ? 1 : 0.5,
-                }}
-                transition={{ duration: 0.5 }}
+                className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-primary/[0.06] blur-3xl"
+                animate={{ opacity: hovered === i ? 1 : 0, scale: hovered === i ? 1.5 : 1 }}
+                transition={{ duration: 0.6 }}
               />
 
-              <div className="relative p-8 lg:p-10">
-                <div className="flex items-center justify-between mb-8">
-                  <motion.div
-                    className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/10"
-                    whileHover={{ rotate: 5, scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <service.icon className="h-7 w-7 text-primary" />
-                  </motion.div>
-                  <motion.div
-                    animate={{ rotate: hoveredIndex === i ? 45 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
-                  </motion.div>
+              <div className={`relative h-full flex flex-col justify-between ${service.featured ? "p-8 md:p-10" : "p-6 md:p-8"}`}>
+                <div>
+                  <div className="flex items-start justify-between mb-6">
+                    <motion.div
+                      className={`${service.featured ? "w-14 h-14" : "w-11 h-11"} rounded-2xl bg-secondary flex items-center justify-center border border-border/50`}
+                      whileHover={{ rotate: -8 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      <service.icon className={`${service.featured ? "h-6 w-6" : "h-5 w-5"} text-primary`} />
+                    </motion.div>
+                    <span className="font-mono text-[10px] text-muted-foreground tracking-wider">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h3 className={`font-display font-bold tracking-tight mb-1 ${service.featured ? "text-2xl md:text-3xl" : "text-lg"}`}>
+                    {service.title}
+                  </h3>
+                  <p className="font-mono text-[11px] text-primary/80 tracking-wide mb-4">{service.subtitle}</p>
+                  <p className={`text-muted-foreground leading-relaxed ${service.featured ? "text-sm md:text-base max-w-sm" : "text-xs"}`}>
+                    {service.description}
+                  </p>
                 </div>
 
-                <h3 className="font-display text-2xl font-bold mb-4 group-hover:text-gradient-gold transition-all duration-300">{service.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-8">{service.description}</p>
-
-                <div className="flex flex-wrap gap-2">
-                  {service.features.map((f, fi) => (
-                    <motion.span
-                      key={f}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + fi * 0.05 }}
-                      className="text-xs font-medium px-3 py-1.5 rounded-full bg-secondary/80 text-secondary-foreground border border-border/50 group-hover:border-primary/10 transition-colors duration-300"
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-[10px] font-mono tracking-wider text-muted-foreground/70 px-2.5 py-1 rounded-lg bg-secondary/60 border border-border/30 group-hover:border-primary/10 transition-colors duration-500"
                     >
-                      {f}
-                    </motion.span>
+                      {tag}
+                    </span>
                   ))}
                 </div>
               </div>
