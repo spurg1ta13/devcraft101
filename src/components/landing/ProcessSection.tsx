@@ -18,7 +18,7 @@ const ProcessSection = () => {
           viewport={{ once: true }}
           className="mb-20 md:mb-28"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-6">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-6">
             How it works
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">

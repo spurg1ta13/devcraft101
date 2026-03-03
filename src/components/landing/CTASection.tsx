@@ -16,7 +16,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-8">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-8">
               Next step
             </span>
             <h2 className="text-5xl md:text-8xl font-black tracking-[-0.05em] leading-[0.85] mb-10">

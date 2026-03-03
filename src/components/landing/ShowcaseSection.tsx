@@ -34,13 +34,13 @@ const ShowcaseSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-6">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-6">
             Selected work
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
             Built to
             <br />
-            <span className="text-muted-foreground">stand out.</span>
+            <span className="text-primary">stand out.</span>
           </h2>
         </motion.div>
 
