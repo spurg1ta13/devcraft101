@@ -21,7 +21,7 @@ const ProcessSection = () => {
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground block mb-6">
             How it works
           </span>
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-[-0.05em] leading-[0.85]">
+          <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
             Four steps.
             <br />
             <span className="text-gradient">Zero surprises.</span>
