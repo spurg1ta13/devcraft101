@@ -40,7 +40,7 @@ const ProcessSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.12, duration: 0.7, ease: "easeOut" }}
                 whileHover={{ y: -8, transition: { duration: 0.4 } }}
-                className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-10 md:p-12 hover:border-primary/30 transition-all duration-700 min-h-[280px]"
+                className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-10 md:p-12 hover:border-primary/30 hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] transition-all duration-700 min-h-[280px]"
               >
                 {/* Background number */}
                 <span className="absolute bottom-4 right-6 text-[120px] md:text-[160px] font-black text-foreground/[0.03] leading-none select-none pointer-events-none group-hover:text-primary/[0.06] transition-colors duration-700">
@@ -54,7 +54,7 @@ const ProcessSection = () => {
                   {/* Icon + number row */}
                   <div className="flex items-center gap-4 mb-8">
                     <div className="w-12 h-12 rounded-2xl bg-card border border-border/50 flex items-center justify-center group-hover:border-primary/30 group-hover:shadow-glow transition-all duration-500">
-                      <Icon className="h-5 w-5 text-primary" />
+                      <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <span className="font-mono text-xs text-primary tracking-[0.2em] uppercase font-bold">{step.num}</span>
                   </div>
