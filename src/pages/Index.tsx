@@ -7,6 +7,7 @@ import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/StructuredData";
 
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
+const PortfolioSection = lazy(() => import("@/components/landing/PortfolioSection"));
 const ProcessSection = lazy(() => import("@/components/landing/ProcessSection"));
 const FAQSection = lazy(() => import("@/components/landing/FAQSection"));
 const CTASection = lazy(() => import("@/components/landing/CTASection"));
@@ -26,6 +27,7 @@ const Index = () => {
         <ServicesSection />
         <Suspense fallback={null}>
           <ShowcaseSection />
+          <PortfolioSection />
           <ProcessSection />
           <FAQSection />
           <CTASection />

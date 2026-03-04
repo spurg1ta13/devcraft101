@@ -340,6 +340,51 @@ export const translations = {
     accept: { en: "Got it", el: "Αποδοχή" },
   },
 
+  // Portfolio
+  portfolio: {
+    label: { en: "Our projects", el: "Τα έργα μας" },
+    heading1: { en: "Live", el: "Ζωντανά" },
+    heading2: { en: "projects.", el: "έργα." },
+    subtitle: {
+      en: "A selection of websites we've built for our clients. Real projects, real results.",
+      el: "Μια επιλογή ιστοσελίδων που δημιουργήσαμε για τους πελάτες μας. Πραγματικά έργα, πραγματικά αποτελέσματα.",
+    },
+    projects: [
+      {
+        title: { en: "Cleanup SKG", el: "Cleanup SKG" },
+        category: { en: "Cleaning Services", el: "Υπηρεσίες Καθαρισμού" },
+        description: {
+          en: "Professional cleaning services website with booking system and service showcase.",
+          el: "Ιστοσελίδα επαγγελματικών υπηρεσιών καθαρισμού με σύστημα κρατήσεων και παρουσίαση υπηρεσιών.",
+        },
+      },
+      {
+        title: { en: "Luxe Ellada", el: "Luxe Ellada" },
+        category: { en: "Luxury Lifestyle", el: "Πολυτελής Τρόπος Ζωής" },
+        description: {
+          en: "Premium lifestyle platform showcasing luxury experiences across Greece.",
+          el: "Premium πλατφόρμα lifestyle που παρουσιάζει πολυτελείς εμπειρίες σε όλη την Ελλάδα.",
+        },
+      },
+      {
+        title: { en: "Dental Care", el: "Dental Care" },
+        category: { en: "Healthcare", el: "Υγεία" },
+        description: {
+          en: "Modern dental clinic website with gallery and appointment management.",
+          el: "Σύγχρονη ιστοσελίδα οδοντιατρικής κλινικής με γκαλερί και διαχείριση ραντεβού.",
+        },
+      },
+      {
+        title: { en: "Premium Real Estate", el: "Premium Real Estate" },
+        category: { en: "Real Estate", el: "Ακίνητα" },
+        description: {
+          en: "High-end real estate platform with property listings and virtual tours.",
+          el: "Πλατφόρμα ακινήτων υψηλών προδιαγραφών με καταχωρήσεις και εικονικές περιηγήσεις.",
+        },
+      },
+    ],
+  },
+
   // Language selector
   langSelector: {
     en: "EN",
