@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Facebook, Instagram } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLang } from "@/i18n/LanguageContext";
@@ -193,14 +193,6 @@ const Navbar = () => {
             </span>
             <span className="font-bold">+30 697 477 6057</span>
           </a>
-          <div className="flex items-center gap-4 mt-2">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 transition-all" aria-label="Facebook">
-              <Facebook className="h-5 w-5 text-primary" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 transition-all" aria-label="Instagram">
-              <Instagram className="h-5 w-5 text-primary" />
-            </a>
-          </div>
         </motion.div>
       </motion.div>
 

@@ -1,4 +1,4 @@
-import { Phone, ArrowUpRight, Facebook, Instagram } from "lucide-react";
+import { Phone, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -67,14 +67,6 @@ const Footer = () => {
               >
                 {t(nav.letsTalk, lang)}
               </a>
-              <div className="flex items-center gap-3 mt-2">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Facebook">
-                  <Facebook className="h-4 w-4 text-primary" />
-                </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Instagram">
-                  <Instagram className="h-4 w-4 text-primary" />
-                </a>
-              </div>
             </div>
           </div>
         </div>
