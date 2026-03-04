@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -13,8 +13,13 @@ const CTASection = () => {
     const errs: Record<string, string> = {};
     if (!form.name.trim()) errs.name = "Name is required";
     else if (form.name.trim().length > 100) errs.name = "Max 100 characters";
-    if (!form.email.trim()) errs.email = "Email is required";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = "Invalid email";
+    const hasEmail = form.email.trim().length > 0;
+    const hasPhone = form.phone.trim().length > 0;
+    if (!hasEmail && !hasPhone) {
+      errs.contact = "Please provide either an email or phone number";
+    }
+    if (hasEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = "Invalid email";
+    if (hasPhone && !/^\+?\d{7,15}$/.test(form.phone.trim())) errs.phone = "Invalid phone number";
     if (!form.message.trim()) errs.message = "Message is required";
     else if (form.message.trim().length > 1000) errs.message = "Max 1000 characters";
     if (!agreed) errs.privacy = "You must agree to the Privacy Policy";
@@ -81,7 +86,7 @@ const CTASection = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="space-y-5"
           >
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-3 gap-5">
               <div>
                 <input
                   type="text"
@@ -97,12 +102,27 @@ const CTASection = () => {
                   type="email"
                   placeholder="Email"
                   value={form.email}
-                  onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors({ ...errors, email: "" }); }}
-                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 ${errors.email ? "border-destructive" : "border-border"}`}
+                  onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors({ ...errors, email: "", contact: "" }); }}
+                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 ${errors.email || errors.contact ? "border-destructive" : "border-border"}`}
                 />
                 {errors.email && <p className="text-destructive text-xs mt-2 ml-2">{errors.email}</p>}
               </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone number"
+                  value={form.phone}
+                  onChange={(e) => {
+                    const val = e.target.value.replace(/[^\d+]/g, "");
+                    setForm({ ...form, phone: val });
+                    setErrors({ ...errors, phone: "", contact: "" });
+                  }}
+                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 ${errors.phone || errors.contact ? "border-destructive" : "border-border"}`}
+                />
+                {errors.phone && <p className="text-destructive text-xs mt-2 ml-2">{errors.phone}</p>}
+              </div>
             </div>
+            {errors.contact && <p className="text-destructive text-xs ml-2">{errors.contact}</p>}
             <div>
               <textarea
                 placeholder="Tell us about your project..."
