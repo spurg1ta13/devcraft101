@@ -48,46 +48,34 @@ const tokenColors: Record<string, string> = {
 
 const CodeRain = () => {
   const doubled = useMemo(() => [...codeLines, ...codeLines], []);
+  // Create multiple columns for full-width coverage
+  const tripled = useMemo(() => [...doubled, ...doubled, ...doubled], [doubled]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden rounded-2xl border border-border/30 bg-card/80 backdrop-blur-sm">
-      {/* Window chrome */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-border/20">
-        <div className="w-3 h-3 rounded-full bg-red-500/60" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
-        <div className="w-3 h-3 rounded-full bg-green-500/60" />
-        <span className="ml-3 font-mono text-[10px] text-muted-foreground/40">app.tsx</span>
-      </div>
+    <div className="relative w-full h-full overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
 
-      {/* Scrolling code */}
-      <div className="relative h-[calc(100%-40px)] overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-card/80 to-transparent z-10" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/80 to-transparent z-10" />
-
-        <motion.div
-          className="px-5 py-4"
-          animate={{ y: [0, -(codeLines.length * 24)] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        >
-          {doubled.map((line, i) => (
-            <div key={i} className="h-6 flex items-center gap-0 font-mono text-[12px] md:text-[13px] leading-6">
-              <span className="w-8 shrink-0 text-right mr-4 text-muted-foreground/20 select-none text-[11px]">
-                {(i % codeLines.length) + 1}
-              </span>
-              <span style={{ paddingLeft: `${line.indent * 20}px` }}>
-                {line.tokens.map((token, j) => (
-                  <span key={j} className={tokenColors[token.c] || "text-foreground/60"}>
-                    {token.t}
-                  </span>
-                ))}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-
-      {/* Subtle glow overlay */}
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/[0.03] rounded-full blur-[60px] pointer-events-none" />
+      <motion.div
+        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16"
+        animate={{ y: [0, -(codeLines.length * 24)] }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      >
+        {tripled.map((line, i) => (
+          <div key={i} className="h-6 flex items-center gap-0 font-mono text-[11px] md:text-[12px] leading-6 whitespace-nowrap">
+            <span className="w-7 shrink-0 text-right mr-3 text-muted-foreground/15 select-none text-[10px]">
+              {(i % codeLines.length) + 1}
+            </span>
+            <span style={{ paddingLeft: `${line.indent * 18}px` }}>
+              {line.tokens.map((token, j) => (
+                <span key={j} className={tokenColors[token.c] || "text-foreground/60"}>
+                  {token.t}
+                </span>
+              ))}
+            </span>
+          </div>
+        ))}
+      </motion.div>
     </div>
   );
 };
@@ -124,24 +112,16 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      {/* 3D Code Rain with mouse parallax */}
-      <motion.div
-        className="absolute top-1/2 right-[3%] -translate-y-1/2 w-[340px] h-[380px] md:w-[440px] md:h-[480px] lg:w-[520px] lg:h-[540px] hidden md:block"
-        style={{
-          x: springX,
-          y: springY,
-          perspective: "1000px",
-        }}
-      >
+      {/* Full-width background code rain - faded */}
+      <div className="absolute inset-0 opacity-[0.12] pointer-events-none">
         <motion.div
-          className="w-full h-full"
-          style={{ rotateY: -8, rotateX: 4 }}
-          animate={{ rotateY: [-8, -5, -8], rotateX: [4, 2, 4] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+          style={{ x: springX, y: springY }}
         >
-          <CodeRain />
+          <div className="w-full h-[100dvh] overflow-hidden">
+            <CodeRain />
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Main content */}
       <motion.div
@@ -180,7 +160,7 @@ const HeroSection = () => {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 pt-8 border-t border-border/30"
         >
-          <p className="text-foreground/70 text-sm md:text-base max-w-sm leading-relaxed">
+          <p className="text-foreground text-base md:text-lg max-w-md leading-relaxed font-medium">
             AI-driven web development, bespoke interfaces, and ISTQB-certified quality
             assurance — crafted for brands that refuse to blend in.
           </p>
