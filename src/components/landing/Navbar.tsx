@@ -63,12 +63,21 @@ const Navbar = () => {
               )
             ))}
           </nav>
-          <a
-            href="#contact"
-            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
-          >
-            Let's talk
-          </a>
+          {isHome ? (
+            <a
+              href="#contact"
+              className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
+            >
+              Let's talk
+            </a>
+          ) : (
+            <Link
+              to="/#contact"
+              className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
+            >
+              Let's talk
+            </Link>
+          )}
         </div>
 
         {/* Mobile */}
