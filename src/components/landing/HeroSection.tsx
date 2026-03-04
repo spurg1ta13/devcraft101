@@ -1,7 +1,96 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useMemo } from "react";
 import heroBanner from "@/assets/hero-banner.jpg";
-import showcase3 from "@/assets/showcase-3.jpg";
+
+const codeLines = [
+  { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
+  { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "motion", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'framer-motion'", c: "string" }] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [{ t: "const", c: "keyword" }, { t: " App ", c: "var" }, { t: "= ", c: "punct" }, { t: "() ", c: "punct" }, { t: "=> ", c: "keyword" }, { t: "{", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "const", c: "keyword" }, { t: " [state, setState] ", c: "var" }, { t: "= ", c: "punct" }, { t: "useState", c: "func" }, { t: "(", c: "punct" }, { t: "null", c: "keyword" }, { t: ")", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "const", c: "keyword" }, { t: " config ", c: "var" }, { t: "= ", c: "punct" }, { t: "useConfig", c: "func" }, { t: "()", c: "punct" }] },
+  { indent: 0, tokens: [] },
+  { indent: 1, tokens: [{ t: "// Initialize cloud services", c: "comment" }] },
+  { indent: 1, tokens: [{ t: "useEffect", c: "func" }, { t: "(() => {", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "const", c: "keyword" }, { t: " client ", c: "var" }, { t: "= ", c: "punct" }, { t: "createClient", c: "func" }, { t: "(config)", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "client", c: "var" }, { t: ".", c: "punct" }, { t: "connect", c: "func" }, { t: "()", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "return", c: "keyword" }, { t: " () => ", c: "punct" }, { t: "client", c: "var" }, { t: ".", c: "punct" }, { t: "disconnect", c: "func" }, { t: "()", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "}, [config])", c: "punct" }] },
+  { indent: 0, tokens: [] },
+  { indent: 1, tokens: [{ t: "return", c: "keyword" }, { t: " (", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "<", c: "punct" }, { t: "motion.div", c: "tag" }, { t: " className=", c: "punct" }, { t: '"app-container"', c: "string" }, { t: ">", c: "punct" }] },
+  { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Header", c: "tag" }, { t: " />", c: "punct" }] },
+  { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Dashboard", c: "tag" }, { t: " data=", c: "punct" }, { t: "{state}", c: "var" }, { t: " />", c: "punct" }] },
+  { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Analytics", c: "tag" }, { t: " />", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "</", c: "punct" }, { t: "motion.div", c: "tag" }, { t: ">", c: "punct" }] },
+  { indent: 1, tokens: [{ t: ")", c: "punct" }] },
+  { indent: 0, tokens: [{ t: "}", c: "punct" }] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [{ t: "export", c: "keyword" }, { t: " default ", c: "punct" }, { t: "App", c: "func" }] },
+  { indent: 0, tokens: [] },
+  { indent: 0, tokens: [{ t: "// API service layer", c: "comment" }] },
+  { indent: 0, tokens: [{ t: "async", c: "keyword" }, { t: " function ", c: "punct" }, { t: "fetchData", c: "func" }, { t: "(endpoint) {", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "const", c: "keyword" }, { t: " res ", c: "var" }, { t: "= ", c: "punct" }, { t: "await", c: "keyword" }, { t: " fetch", c: "func" }, { t: "(endpoint)", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "if", c: "keyword" }, { t: " (!res.ok) ", c: "punct" }, { t: "throw", c: "keyword" }, { t: " new ", c: "punct" }, { t: "Error", c: "func" }, { t: "(res.statusText)", c: "punct" }] },
+  { indent: 1, tokens: [{ t: "return", c: "keyword" }, { t: " res.", c: "punct" }, { t: "json", c: "func" }, { t: "()", c: "punct" }] },
+  { indent: 0, tokens: [{ t: "}", c: "punct" }] },
+];
+
+const tokenColors: Record<string, string> = {
+  keyword: "text-primary",
+  func: "text-blue-400",
+  string: "text-emerald-400",
+  comment: "text-muted-foreground/50 italic",
+  var: "text-foreground/80",
+  punct: "text-muted-foreground/60",
+  tag: "text-red-400",
+};
+
+const CodeRain = () => {
+  const doubled = useMemo(() => [...codeLines, ...codeLines], []);
+
+  return (
+    <div className="relative w-full h-full overflow-hidden rounded-2xl border border-border/30 bg-card/80 backdrop-blur-sm">
+      {/* Window chrome */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-border/20">
+        <div className="w-3 h-3 rounded-full bg-red-500/60" />
+        <div className="w-3 h-3 rounded-full bg-yellow-500/60" />
+        <div className="w-3 h-3 rounded-full bg-green-500/60" />
+        <span className="ml-3 font-mono text-[10px] text-muted-foreground/40">app.tsx</span>
+      </div>
+
+      {/* Scrolling code */}
+      <div className="relative h-[calc(100%-40px)] overflow-hidden">
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-card/80 to-transparent z-10" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card/80 to-transparent z-10" />
+
+        <motion.div
+          className="px-5 py-4"
+          animate={{ y: [0, -(codeLines.length * 24)] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        >
+          {doubled.map((line, i) => (
+            <div key={i} className="h-6 flex items-center gap-0 font-mono text-[12px] md:text-[13px] leading-6">
+              <span className="w-8 shrink-0 text-right mr-4 text-muted-foreground/20 select-none text-[11px]">
+                {(i % codeLines.length) + 1}
+              </span>
+              <span style={{ paddingLeft: `${line.indent * 20}px` }}>
+                {line.tokens.map((token, j) => (
+                  <span key={j} className={tokenColors[token.c] || "text-foreground/60"}>
+                    {token.t}
+                  </span>
+                ))}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Subtle glow overlay */}
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-primary/[0.03] rounded-full blur-[60px] pointer-events-none" />
+    </div>
+  );
+};
 
 const HeroSection = () => {
   const ref = useRef(null);
@@ -10,7 +99,6 @@ const HeroSection = () => {
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  // Mouse-follow parallax for 3D element
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
@@ -18,8 +106,8 @@ const HeroSection = () => {
 
   useEffect(() => {
     const handleMouse = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 40;
-      const y = (e.clientY / window.innerHeight - 0.5) * 40;
+      const x = (e.clientX / window.innerWidth - 0.5) * 30;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
       mouseX.set(x);
       mouseY.set(y);
     };
@@ -36,25 +124,22 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      {/* Floating 3D object with mouse parallax */}
+      {/* 3D Code Rain with mouse parallax */}
       <motion.div
-        className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[320px] h-[320px] md:w-[520px] md:h-[520px] lg:w-[600px] lg:h-[600px] hidden md:block"
-        style={{ x: springX, y: springY }}
-        animate={{ rotate: [0, 3, -2, 0] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-1/2 right-[3%] -translate-y-1/2 w-[340px] h-[380px] md:w-[440px] md:h-[480px] lg:w-[520px] lg:h-[540px] hidden md:block"
+        style={{
+          x: springX,
+          y: springY,
+          perspective: "1000px",
+        }}
       >
         <motion.div
-          className="w-full h-full relative"
-          animate={{ y: [0, -20, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="w-full h-full"
+          style={{ rotateY: -8, rotateX: 4 }}
+          animate={{ rotateY: [-8, -5, -8], rotateX: [4, 2, 4] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         >
-          <img
-            src={showcase3}
-            alt=""
-            className="w-full h-full object-cover rounded-[40%] opacity-70"
-            style={{ mixBlendMode: "screen" }}
-          />
-          <div className="absolute inset-0 rounded-[40%] bg-gradient-to-br from-primary/10 to-transparent" />
+          <CodeRain />
         </motion.div>
       </motion.div>
 
@@ -63,8 +148,7 @@ const HeroSection = () => {
         style={{ y: textY, opacity }}
         className="container relative z-10 flex-1 flex flex-col justify-center"
       >
-
-        {/* Title - oversized, cinematic */}
+        {/* Title */}
         <div className="overflow-hidden mb-4">
           <motion.div
             initial={{ y: "100%" }}
@@ -105,7 +189,7 @@ const HeroSection = () => {
             href="#work"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow tracking-[-0.01em] font-mono uppercase tracking-[0.1em]"
+            className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow font-mono uppercase tracking-[0.1em]"
           >
             Explore ↓
           </motion.a>
