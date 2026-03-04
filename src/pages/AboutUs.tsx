@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const team = [
   {
@@ -80,8 +81,13 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="About Us | DevCraft — Our Team & Expertise"
+        description="Meet the DevCraft team — 10+ years of experience in web development, UI/UX design, and ISTQB-certified quality assurance."
+        canonical="/about"
+      />
       <Navbar />
-
+      <main>
       {/* Hero */}
       <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px] amber-drift" />
@@ -210,6 +216,7 @@ const AboutUs = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );
