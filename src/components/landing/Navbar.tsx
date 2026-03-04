@@ -35,19 +35,20 @@ const Navbar = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className={`fixed left-0 right-0 z-50 transition-all duration-500 md:top-0 ${
-          scrolled && !open ? "glass border-b border-border/30 top-0 md:top-0 -translate-y-full md:translate-y-0" : scrolled ? "glass border-b border-border/30 top-0 md:top-0" : "top-10 md:top-0"
+        className={`fixed left-0 right-0 z-[55] transition-all duration-500 ${
+          scrolled ? "glass border-b border-border/30 top-0" : "top-10 md:top-0"
         }`}
       >
-      <div className="container flex items-center justify-between h-20">
+      <div className="container flex items-center justify-between h-16 md:h-20">
         <Link
           to="/"
           onClick={() => {
+            if (open) setOpen(false);
             if (isHome) {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="relative z-10 flex items-center gap-2 group/logo"
+          className="relative z-[60] flex items-center gap-2 group/logo"
         >
           <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center group-hover/logo:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.5)] transition-shadow duration-300">
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
