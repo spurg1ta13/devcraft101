@@ -89,8 +89,8 @@ const PortfolioSection = () => {
             <div
               className={`relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-background transition-all duration-500 ${
                 viewMode === "mobile"
-                  ? "w-[320px] sm:w-[375px] h-[560px] sm:h-[667px]"
-                  : "w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px]"
+                  ? "w-[280px] sm:w-[375px] h-[500px] sm:h-[667px]"
+                  : "w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[700px]"
               }`}
             >
               <iframe
@@ -98,7 +98,7 @@ const PortfolioSection = () => {
                 title={t(s.projects[activeProject].title, lang)}
                 className="w-full h-full border-0"
                 loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
+                sandbox="allow-scripts allow-same-origin allow-popups"
               />
             </div>
           </div>
