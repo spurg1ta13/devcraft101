@@ -53,9 +53,10 @@ const CounterStat = ({ value, label, delay }: { value: string; label: string; de
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.6 }}
-      className="text-center"
+      whileHover={{ scale: 1.12, transition: { type: "spring", stiffness: 300, damping: 15 } }}
+      className="text-center cursor-default group"
     >
-      <span ref={ref} className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-primary">
+      <span ref={ref} className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-primary group-hover:drop-shadow-[0_0_20px_hsl(38_100%_55%/0.5)] transition-all duration-500">
         {isNumber ? (
           <>
             <motion.span>{rounded}</motion.span>
@@ -65,7 +66,7 @@ const CounterStat = ({ value, label, delay }: { value: string; label: string; de
           value
         )}
       </span>
-      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-3">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 group-hover:text-foreground/90 mt-3 transition-colors duration-500">
         {label}
       </p>
     </motion.div>
@@ -117,7 +118,7 @@ const AboutUs = () => {
       </section>
 
       {/* Stats */}
-      <section className="section-rhythm border-t border-border/30">
+      <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
           <div className="grid grid-cols-3 gap-8 md:gap-12">
             {[
@@ -132,7 +133,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team */}
-      <section className="section-rhythm border-t border-border/30">
+      <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -187,7 +188,7 @@ const AboutUs = () => {
       </section>
 
       {/* Values */}
-      <section className="section-rhythm border-t border-border/30">
+      <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
