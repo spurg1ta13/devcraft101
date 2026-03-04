@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Monitor, Smartphone, ExternalLink } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
@@ -14,6 +15,7 @@ const projectUrls = [
 const PortfolioSection = () => {
   const { lang } = useLang();
   const s = translations.portfolio;
+  const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
 
@@ -98,7 +100,7 @@ const PortfolioSection = () => {
                 title={t(s.projects[activeProject].title, lang)}
                 className="w-full h-full border-0"
                 loading="lazy"
-                sandbox="allow-scripts allow-same-origin allow-popups"
+                sandbox={isMobile ? "allow-scripts allow-same-origin" : "allow-scripts allow-same-origin allow-popups"}
               />
             </div>
           </div>
