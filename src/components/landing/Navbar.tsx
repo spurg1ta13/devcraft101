@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail, Facebook, Instagram } from "lucide-react";
+import { Menu, X, Phone, Facebook, Instagram } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLang } from "@/i18n/LanguageContext";
@@ -36,10 +36,15 @@ const Navbar = () => {
             <Phone className="h-4 w-4" />
             <span className="text-xs">+30 697 477 6057</span>
           </a>
-          <a href="mailto:contact@devcraft.gr" className="flex items-center gap-2 min-h-[44px]" aria-label="Email us">
-            <Mail className="h-4 w-4" />
-            <span className="text-xs">contact@devcraft.gr</span>
-          </a>
+          {isHome ? (
+            <a href="#contact" onClick={() => setOpen(false)} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+              {t(nav.letsTalk, lang)}
+            </a>
+          ) : (
+            <Link to="/#contact" className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+              {t(nav.letsTalk, lang)}
+            </Link>
+          )}
         </div>
       </div>
 
@@ -99,16 +104,12 @@ const Navbar = () => {
               ))}
             </div>
             <div className="flex items-center gap-4 border-l border-border/30 pl-6">
-              <a href="tel:+306974776057" className="flex items-center gap-2 font-mono text-xs text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 477 6057">
-                <span className="relative flex h-4 w-4 items-center justify-center">
+              <a href="tel:+306974776057" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 477 6057">
+                <span className="relative flex h-5 w-5 items-center justify-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
-                  <Phone className="relative h-3.5 w-3.5 text-primary" />
+                  <Phone className="relative h-4 w-4 text-primary" />
                 </span>
-                <span className="font-bold">+30 697 477 6057</span>
-              </a>
-              <a href="mailto:contact@devcraft.gr" className="flex items-center gap-2 font-mono text-xs text-foreground hover:text-primary transition-colors duration-300 min-h-[44px]" aria-label="Email contact@devcraft.gr">
-                <Mail className="h-4 w-4 text-primary" />
-                <span className="font-bold">contact@devcraft.gr</span>
+                <span className="font-bold text-sm">+30 697 477 6057</span>
               </a>
             </div>
             <LanguageSelector />
@@ -191,10 +192,6 @@ const Navbar = () => {
               <Phone className="relative h-4 w-4 text-primary" />
             </span>
             <span className="font-bold">+30 697 477 6057</span>
-          </a>
-          <a href="mailto:contact@devcraft.gr" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Email us">
-            <Mail className="h-4 w-4 text-primary" />
-            <span className="font-bold">contact@devcraft.gr</span>
           </a>
           <div className="flex items-center gap-4 mt-2">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-xl bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 transition-all" aria-label="Facebook">
