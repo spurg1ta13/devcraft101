@@ -25,7 +25,15 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-20">
-        <Link to="/" className="relative z-10 flex items-center gap-2">
+        <Link
+          to="/"
+          onClick={() => {
+            if (isHome) {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+          className="relative z-10 flex items-center gap-2"
+        >
           <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
           </div>
