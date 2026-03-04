@@ -71,10 +71,12 @@ const ShowcaseSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.7, ease: "easeOut" }}
                 whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.4 } }}
-                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[420px] hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)]`}
+                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[420px] hover:shadow-glow`}
               >
                 {/* Background gradient glow */}
-                <div className={`absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-radial ${project.accent} rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3`} />
+                <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.08] rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3" />
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" />
 
                 <div className="relative z-10">
                   {/* Top row: icon + tag + arrow */}
