@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 80);
@@ -22,26 +25,42 @@ const Navbar = () => {
       }`}
     >
       <div className="container flex items-center justify-between h-20">
-        <a href="#" className="relative z-10 flex items-center gap-2">
+        <Link to="/" className="relative z-10 flex items-center gap-2">
           <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
           </div>
           <span className="text-xl font-bold tracking-[-0.04em]">
             dev<span className="text-primary">craft</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-12">
           <nav className="flex items-center gap-8">
+            <Link
+              to="/about"
+              className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+            >
+              About Us
+            </Link>
             {["Services", "Work", "Process", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
-              >
-                {item}
-              </a>
+              isHome ? (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item}
+                </a>
+              ) : (
+                <Link
+                  key={item}
+                  to={`/#${item.toLowerCase()}`}
+                  className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
+                  {item}
+                </Link>
+              )
             ))}
           </nav>
           <a
@@ -65,14 +84,25 @@ const Navbar = () => {
         transition={{ duration: 0.4 }}
         className="fixed inset-0 bg-background/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
       >
+        <motion.a
+          key="about"
+          href="/about"
+          onClick={() => setOpen(false)}
+          initial={{ opacity: 0, y: 20 }}
+          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0 }}
+          className="text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
+        >
+          About Us
+        </motion.a>
         {["Services", "Work", "Process", "Contact"].map((item, i) => (
           <motion.a
             key={item}
-            href={`#${item.toLowerCase()}`}
+            href={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
             onClick={() => setOpen(false)}
             initial={{ opacity: 0, y: 20 }}
             animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: i * 0.1 }}
+            transition={{ delay: (i + 1) * 0.1 }}
             className="text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
           >
             {item}
