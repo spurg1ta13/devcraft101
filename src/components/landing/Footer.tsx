@@ -60,12 +60,13 @@ const Footer = () => {
                 </div>
                 +30 697 477 6057
               </a>
-              <Link
-                to="/#contact"
-                className="inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold mt-1"
+              <a
+                href="#contact"
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                className="inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold mt-1 cursor-pointer"
               >
                 {t(nav.letsTalk, lang)}
-              </Link>
+              </a>
               <div className="flex items-center gap-3 mt-2">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Facebook">
                   <Facebook className="h-4 w-4 text-primary" />
@@ -91,12 +92,13 @@ const Footer = () => {
               {t(f.privacyPolicy, lang)}
             </Link>
           </div>
-          <Link
-            to="/#contact"
-            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold flex items-center"
+          <a
+            href="#contact"
+            onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold flex items-center cursor-pointer"
           >
             {t(nav.letsTalk, lang)}
-          </Link>
+          </a>
         </div>
       </div>
     </footer>
