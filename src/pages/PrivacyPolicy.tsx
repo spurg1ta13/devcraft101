@@ -20,8 +20,8 @@ const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={lang === "el" ? "Πολιτική Απορρήτου | DevCraft" : "Privacy Policy | DevCraft"}
-        description={lang === "el" ? "Πολιτική Απορρήτου DevCraft — πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τα προσωπικά σας δεδομένα. Συμμόρφωση με GDPR." : "DevCraft Privacy Policy — how we collect, use, and protect your personal information. GDPR compliant."}
+        title={{ en: "Privacy Policy | DevCraft", el: "Πολιτική Απορρήτου | DevCraft" }}
+        description={{ en: "DevCraft Privacy Policy — how we collect, use, and protect your personal information. GDPR compliant.", el: "Πολιτική Απορρήτου DevCraft — πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τα προσωπικά σας δεδομένα. Συμμόρφωση με GDPR." }}
         canonical="/privacy-policy"
       />
       <Navbar />
