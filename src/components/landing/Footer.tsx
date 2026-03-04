@@ -1,4 +1,4 @@
-import { Phone, Mail, ArrowUpRight, Facebook, Instagram } from "lucide-react";
+import { Phone, ArrowUpRight, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -59,12 +59,6 @@ const Footer = () => {
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 +30 697 477 6057
-              </a>
-              <a href="mailto:contact@devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Email contact@devcraft.gr">
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
-                  <Mail className="h-4 w-4 text-primary" />
-                </div>
-                contact@devcraft.gr
               </a>
               <div className="flex items-center gap-3 mt-2">
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Facebook">
