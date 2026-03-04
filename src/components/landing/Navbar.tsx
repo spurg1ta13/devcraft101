@@ -131,7 +131,6 @@ const Navbar = () => {
 
           {/* Mobile */}
           <div className="lg:hidden flex items-center gap-3 relative z-[60]">
-            <LanguageSelector />
             <button
               onClick={() => setOpen(!open)}
               className="text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
@@ -149,17 +148,27 @@ const Navbar = () => {
         initial={false}
         animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-8 px-6"
+        className="fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-6 px-6"
         role="dialog"
         aria-label="Mobile navigation menu"
       >
+        {/* Language selector inside menu */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0 }}
+          className="mb-2"
+        >
+          <LanguageSelector />
+        </motion.div>
+
         <motion.a
           key="about"
           href="/about"
           onClick={() => setOpen(false)}
           initial={{ opacity: 0, y: 20 }}
           animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0 }}
+          transition={{ delay: 0.05 }}
           className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
         >
           {t(nav.aboutUs, lang)}
@@ -171,7 +180,7 @@ const Navbar = () => {
             onClick={() => setOpen(false)}
             initial={{ opacity: 0, y: 20 }}
             animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: (i + 1) * 0.1 }}
+            transition={{ delay: (i + 1) * 0.1 + 0.05 }}
             className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
           >
             {item.label}
@@ -182,7 +191,7 @@ const Navbar = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.55 }}
           className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30 w-full max-w-xs"
         >
           <a href="tel:+306974776057" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Call us">
