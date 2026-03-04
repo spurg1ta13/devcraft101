@@ -94,12 +94,12 @@ const Footer = () => {
         <div className="glow-line w-full mb-6" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4">
-            <span className="font-mono text-[10px] text-muted-foreground/40 tracking-[0.1em] uppercase">
+            <span className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase">
               © {new Date().getFullYear()} devcraft. All rights reserved.
             </span>
             <Link
               to="/privacy-policy"
-              className="font-mono text-[10px] text-muted-foreground/40 tracking-[0.1em] uppercase hover:text-primary transition-colors"
+              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors"
             >
               Privacy Policy
             </Link>

@@ -89,7 +89,7 @@ const ShowcaseSection = () => {
                         {project.tag}
                       </span>
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/30 group-hover:text-foreground group-hover:rotate-[-10deg] transition-all duration-500" />
+                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/50 group-hover:text-foreground group-hover:rotate-[-10deg] transition-all duration-500" />
                   </div>
 
                   {/* Stat */}

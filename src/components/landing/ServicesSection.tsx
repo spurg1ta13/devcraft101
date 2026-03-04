@@ -62,7 +62,7 @@ const ServicesSection = () => {
             >
               <div className="service-row relative border-b border-border/30 py-8 md:py-10 flex items-center gap-6 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl">
                 {/* Number */}
-                <span className="service-number font-mono text-xs text-muted-foreground/40 transition-colors duration-500 w-8 shrink-0">
+                <span className="service-number font-mono text-xs text-muted-foreground/60 transition-colors duration-500 w-8 shrink-0">
                   {service.number}
                 </span>
 
@@ -82,7 +82,7 @@ const ServicesSection = () => {
                 </p>
 
                 {/* Arrow */}
-                <ArrowUpRight className="service-arrow h-5 w-5 text-muted-foreground/30 transition-all duration-500 shrink-0" />
+                <ArrowUpRight className="service-arrow h-5 w-5 text-muted-foreground/50 transition-all duration-500 shrink-0" />
 
                 {/* Floating image on hover */}
                 <div className="service-image absolute right-20 top-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-3xl overflow-hidden opacity-0 scale-90 transition-all duration-700 pointer-events-none hidden lg:block z-0">
