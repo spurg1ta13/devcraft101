@@ -65,6 +65,9 @@ const CTASection = () => {
               <br />
               <span className="text-gradient">Let's talk.</span>
             </h2>
+            <p className="text-muted-foreground text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+              Scalable solutions for any need: from minimalist landing pages to bespoke enterprise platforms. Reach out with your idea, and watch us bring it to life!
+            </p>
           </motion.div>
 
           <motion.form
