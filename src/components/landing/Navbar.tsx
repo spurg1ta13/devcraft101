@@ -130,6 +130,26 @@ const Navbar = () => {
             {item}
           </motion.a>
         ))}
+
+        {/* Contact info */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30"
+        >
+          <a href="tel:+306974776057" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors">
+            <span className="relative flex h-5 w-5 items-center justify-center">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
+              <Phone className="relative h-4 w-4 text-primary" />
+            </span>
+            <span className="font-bold">+30 697 477 6057</span>
+          </a>
+          <a href="mailto:contact@devcraft.gr" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors">
+            <Mail className="h-4 w-4 text-primary" />
+            <span className="font-bold">contact@devcraft.gr</span>
+          </a>
+        </motion.div>
       </motion.div>
     </motion.header>
   );
