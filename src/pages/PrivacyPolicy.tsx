@@ -40,7 +40,8 @@ const sections = [
   },
   {
     title: "9. Contact Us",
-    content: `If you have questions about this Privacy Policy, please contact us:\n\n• **Email**: contact@devcraft.gr\n• **Phone**: +30 697 477 6057`,
+    content: `If you have questions about this Privacy Policy, please contact us:`,
+    contactInfo: true,
   },
 ];
 
@@ -104,6 +105,12 @@ const PrivacyPolicy = () => {
                   )
                 )}
               </div>
+              {section.contactInfo && (
+                <div className="mt-4 flex flex-col gap-2 text-sm md:text-base text-muted-foreground">
+                  <p>• <strong className="text-foreground/80 font-semibold">Email</strong>: <a href="mailto:contact@devcraft.gr" className="text-primary hover:underline transition-colors">contact@devcraft.gr</a></p>
+                  <p>• <strong className="text-foreground/80 font-semibold">Phone</strong>: <a href="tel:+306974776057" className="text-primary hover:underline transition-colors">+30 697 477 6057</a></p>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
