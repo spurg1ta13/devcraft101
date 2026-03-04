@@ -29,7 +29,7 @@ const ProcessSection = () => {
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-6">
           {steps.map((step, i) => {
             const Icon = step.icon;
             return (

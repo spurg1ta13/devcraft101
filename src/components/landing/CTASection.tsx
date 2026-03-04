@@ -86,7 +86,7 @@ const CTASection = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="space-y-5"
           >
-            <div className="grid md:grid-cols-3 gap-5">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
               <div>
                 <input
                   type="text"

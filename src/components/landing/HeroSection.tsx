@@ -159,7 +159,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-8 pt-8 border-t border-border/30"
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-8 border-t border-border/30"
         >
           <p className="text-foreground text-base md:text-lg max-w-md leading-relaxed font-medium">
             AI-driven web development, bespoke interfaces, and ISTQB-certified quality
