@@ -47,9 +47,9 @@ const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }
           }}
-          className="relative z-10 flex items-center gap-2"
+          className="relative z-10 flex items-center gap-2 group/logo"
         >
-          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center">
+          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center group-hover/logo:shadow-glow transition-shadow duration-300">
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
           </div>
           <span className="text-xl font-bold tracking-[-0.04em]">
