@@ -65,10 +65,9 @@ const AboutUs = () => {
       {/* Stats */}
       <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-3 gap-8 md:gap-12">
             {[
               { value: "10+", label: "Years Experience" },
-              { value: "50+", label: "Projects Delivered" },
               { value: "100%", label: "Client Satisfaction" },
               { value: "Zero", label: "Defect Policy" },
             ].map((stat, i) => (
