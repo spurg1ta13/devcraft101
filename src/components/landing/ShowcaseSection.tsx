@@ -60,7 +60,7 @@ const ShowcaseSection = () => {
         </motion.div>
 
         {/* Case study cards */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, i) => {
             const Icon = project.icon;
             return (
@@ -71,7 +71,7 @@ const ShowcaseSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.7, ease: "easeOut" }}
                 whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.4 } }}
-                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[420px] hover:shadow-glow`}
+                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-6 sm:p-8 lg:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[380px] sm:min-h-[420px] hover:shadow-glow`}
               >
                 {/* Background gradient glow */}
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.08] rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3" />
@@ -94,7 +94,7 @@ const ShowcaseSection = () => {
 
                   {/* Stat */}
                   <div className="mb-6">
-                    <span className="text-5xl md:text-6xl font-black tracking-[-0.04em] text-gradient leading-none">
+                    <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-[-0.04em] text-gradient leading-none">
                       {project.stat}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground ml-3">
