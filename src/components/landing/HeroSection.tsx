@@ -1,6 +1,8 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
 import { useRef, useEffect, useMemo } from "react";
 import heroBanner from "@/assets/hero-banner.jpg";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const codeLines = [
   { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
@@ -48,14 +50,12 @@ const tokenColors: Record<string, string> = {
 
 const CodeRain = () => {
   const doubled = useMemo(() => [...codeLines, ...codeLines], []);
-  // Create multiple columns for full-width coverage
   const tripled = useMemo(() => [...doubled, ...doubled, ...doubled], [doubled]);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
-
       <motion.div
         className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16 will-change-transform"
         animate={{ y: [0, -(codeLines.length * 24)] }}
@@ -87,6 +87,8 @@ const HeroSection = () => {
   const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
   const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const { lang } = useLang();
+  const hero = translations.hero;
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -106,30 +108,24 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise">
-      {/* Background image */}
       <motion.div className="absolute inset-0 will-change-transform" style={{ scale: imgScale }}>
         <img src={heroBanner} alt="" loading="eager" decoding="async" fetchPriority="high" className="w-full h-full object-cover opacity-20" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      {/* Full-width background code rain - faded */}
       <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
-        <motion.div
-          style={{ x: springX, y: springY }}
-        >
+        <motion.div style={{ x: springX, y: springY }}>
           <div className="w-full h-[100dvh] overflow-hidden">
             <CodeRain />
           </div>
         </motion.div>
       </div>
 
-      {/* Main content */}
       <motion.div
         style={{ y: textY, opacity }}
         className="container relative z-10 flex-1 flex flex-col justify-center"
       >
-        {/* Title */}
         <div className="overflow-hidden mb-4">
           <motion.div
             initial={{ y: "100%" }}
@@ -137,7 +133,7 @@ const HeroSection = () => {
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-              We don't do
+              {t(hero.line1, lang)}
             </h1>
           </motion.div>
         </div>
@@ -148,13 +144,12 @@ const HeroSection = () => {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-              <span className="text-gradient italic">ordinary</span>
+              <span className="text-gradient italic">{t(hero.line2, lang)}</span>
               <span className="text-gradient">.</span>
             </h1>
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -162,17 +157,15 @@ const HeroSection = () => {
           className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-8 border-t border-border/30"
         >
           <p className="text-foreground text-base md:text-lg max-w-md leading-relaxed font-medium">
-            AI-driven web development, bespoke interfaces, and ISTQB-certified quality
-            assurance — crafted for brands that refuse to blend in.
+            {t(hero.description, lang)}
           </p>
-
           <motion.a
             href="#work"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow font-mono uppercase tracking-[0.1em]"
           >
-            Explore ↓
+            {t(hero.explore, lang)}
           </motion.a>
         </motion.div>
       </motion.div>

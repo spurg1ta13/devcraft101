@@ -5,24 +5,10 @@ import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
-const team = [
-  {
-    role: "Web Developer",
-    icon: Code2,
-    description: "Result-oriented full-stack developer with deep expertise in modern frameworks and cloud-native architecture.",
-  },
-  {
-    role: "UI/UX Designer",
-    icon: Palette,
-    description: "Certified designer crafting intuitive interfaces that turn complex workflows into seamless user experiences.",
-  },
-  {
-    role: "QA Engineer",
-    icon: ShieldCheck,
-    description: "ISTQB-accredited tester ensuring every product meets the highest standards of stability and security.",
-  },
-];
+const teamIcons = [Code2, Palette, ShieldCheck];
 
 const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
   const isNumber = /^\d+/.test(value);
@@ -75,95 +61,82 @@ const CounterStat = ({ value, label, delay }: { value: string; label: string; de
 };
 
 const AboutUs = () => {
+  const { lang } = useLang();
+  const a = translations.about;
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const teamData = [
+    { roleKey: "webDev" as const, descKey: "webDevDesc" as const },
+    { roleKey: "designer" as const, descKey: "designerDesc" as const },
+    { roleKey: "qa" as const, descKey: "qaDesc" as const },
+  ];
+
+  const stats = [
+    { value: "10+", label: t(a.stats.years, lang) },
+    { value: "100%", label: t(a.stats.satisfaction, lang) },
+    { value: lang === "el" ? "Μηδέν" : "Zero", label: t(a.stats.defect, lang) },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title="About Us | DevCraft — Our Team & Expertise"
-        description="Meet the DevCraft team — 10+ years of experience in web development, UI/UX design, and ISTQB-certified quality assurance."
+        title={lang === "el" ? "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας" : "About Us | DevCraft — Our Team & Expertise"}
+        description={lang === "el" ? "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, σχεδιασμό UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB." : "Meet the DevCraft team — 10+ years of experience in web development, UI/UX design, and ISTQB-certified quality assurance."}
         canonical="/about"
       />
       <Navbar />
       <main>
-      {/* Hero */}
       <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px] amber-drift" />
         <div className="container relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Link
-              to="/"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-10 hover:opacity-80 transition-opacity"
-            >
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <Link to="/" className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-10 hover:opacity-80 transition-opacity">
               <ArrowLeft className="h-4 w-4" />
-              Back to home
+              {t(a.backToHome, lang)}
             </Link>
-
             <h1 className="text-5xl md:text-8xl font-black tracking-[-0.05em] leading-[0.85] mb-8">
-              About
+              {t(a.heading1, lang)}
               <br />
-              <span className="text-gradient">us.</span>
+              <span className="text-gradient">{t(a.heading2, lang)}</span>
             </h1>
-
             <div className="max-w-3xl">
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-6">
-                We are an enthusiastic team of professionals with 10 years of successful experience in the IT industry. A decade of working on international projects allows us to guarantee the highest quality of service.
-              </p>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
-                Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer and an ISTQB-accredited tester. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.
-              </p>
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-6">{t(a.intro1, lang)}</p>
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">{t(a.intro2, lang)}</p>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats */}
       <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
           <div className="grid grid-cols-3 gap-8 md:gap-12">
-            {[
-              { value: "10+", label: "Years Experience" },
-              { value: "100%", label: "Client Satisfaction" },
-              { value: "Zero", label: "Defect Policy" },
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <CounterStat key={stat.label} value={stat.value} label={stat.label} delay={i * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
       <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6">
-              The team
-            </span>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="mb-16">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6">{t(a.teamLabel, lang)}</span>
             <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
-              Core
+              {t(a.teamHeading1, lang)}
               <br />
-              <span className="text-gradient">expertise.</span>
+              <span className="text-gradient">{t(a.teamHeading2, lang)}</span>
             </h2>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {team.map((member, i) => {
-              const Icon = member.icon;
+            {teamData.map((member, i) => {
+              const Icon = teamIcons[i];
               return (
                 <motion.div
-                  key={member.role}
+                  key={i}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -172,18 +145,15 @@ const AboutUs = () => {
                   className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 hover:border-primary/40 hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] transition-all duration-700"
                 >
                   <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-gradient-radial from-primary/15 to-transparent rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3" />
-
                   <div className="relative z-10">
                     <div className="w-14 h-14 rounded-2xl bg-card border border-border/50 flex items-center justify-center mb-8 group-hover:border-primary/40 transition-all duration-500">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
-
                     <h3 className="text-2xl md:text-3xl font-bold tracking-[-0.03em] mb-4 text-foreground">
-                      {member.role}
+                      {t(a.roles[member.roleKey], lang)}
                     </h3>
-
                     <p className="text-muted-foreground text-base leading-relaxed">
-                      {member.description}
+                      {t(a.roles[member.descKey], lang)}
                     </p>
                   </div>
                 </motion.div>
@@ -193,25 +163,16 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Values */}
       <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-3xl mx-auto text-center"
-          >
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }} className="max-w-3xl mx-auto text-center">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-8">
               <Users className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-[-0.04em] mb-6">
-              We believe the final result is our best <span className="text-gradient">calling card.</span>
+              {t(a.valuesHeading1, lang)} <span className="text-gradient">{t(a.valuesHeading2, lang)}</span>
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              Every project we take on is a commitment to excellence. We combine technical expertise with creative vision to deliver solutions that exceed expectations.
-            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed">{t(a.valuesDesc, lang)}</p>
           </motion.div>
         </div>
       </section>

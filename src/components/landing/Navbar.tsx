@@ -2,18 +2,30 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import LanguageSelector from "@/components/LanguageSelector";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { lang } = useLang();
+  const nav = translations.nav;
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", h);
     return () => window.removeEventListener("scroll", h);
   }, []);
+
+  const menuItems = [
+    { label: t(nav.services, lang), href: "services" },
+    { label: t(nav.work, lang), href: "work" },
+    { label: t(nav.process, lang), href: "process" },
+    { label: t(nav.contact, lang), href: "contact" },
+  ];
 
   return (
     <>
@@ -44,9 +56,7 @@ const Navbar = () => {
           to="/"
           onClick={() => {
             if (open) setOpen(false);
-            if (isHome) {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
+            if (isHome) window.scrollTo({ top: 0, behavior: "smooth" });
           }}
           className="relative z-[60] flex items-center gap-2 group/logo"
         >
@@ -65,24 +75,24 @@ const Navbar = () => {
               to="/about"
               className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
             >
-              About Us
+              {t(nav.aboutUs, lang)}
             </Link>
-            {["Services", "Work", "Process", "Contact"].map((item) => (
+            {menuItems.map((item) => (
               isHome ? (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={item.href}
+                  href={`#${item.href}`}
                   className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                 </a>
               ) : (
                 <Link
-                  key={item}
-                  to={`/#${item.toLowerCase()}`}
+                  key={item.href}
+                  to={`/#${item.href}`}
                   className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
                 >
-                  {item}
+                  {item.label}
                 </Link>
               )
             ))}
@@ -100,31 +110,35 @@ const Navbar = () => {
               <span className="font-bold">contact@devcraft.gr</span>
             </a>
           </div>
+          <LanguageSelector />
           {isHome ? (
             <a
               href="#contact"
               className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
             >
-              Let's talk
+              {t(nav.letsTalk, lang)}
             </a>
           ) : (
             <Link
               to="/#contact"
               className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 transition-all font-bold"
             >
-              Let's talk
+              {t(nav.letsTalk, lang)}
             </Link>
           )}
         </div>
 
         {/* Mobile */}
-        <button onClick={() => setOpen(!open)} className="lg:hidden relative z-[60] text-foreground">
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="lg:hidden flex items-center gap-3 relative z-[60]">
+          <LanguageSelector />
+          <button onClick={() => setOpen(!open)} className="text-foreground">
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
     </motion.header>
 
-      {/* Mobile fullscreen menu - outside header so it's not affected by translate */}
+      {/* Mobile fullscreen menu */}
       <motion.div
         initial={false}
         animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
@@ -140,19 +154,19 @@ const Navbar = () => {
           transition={{ delay: 0 }}
           className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
         >
-          About Us
+          {t(nav.aboutUs, lang)}
         </motion.a>
-        {["Services", "Work", "Process", "Contact"].map((item, i) => (
+        {menuItems.map((item, i) => (
           <motion.a
-            key={item}
-            href={isHome ? `#${item.toLowerCase()}` : `/#${item.toLowerCase()}`}
+            key={item.href}
+            href={isHome ? `#${item.href}` : `/#${item.href}`}
             onClick={() => setOpen(false)}
             initial={{ opacity: 0, y: 20 }}
             animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: (i + 1) * 0.1 }}
             className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
           >
-            {item}
+            {item.label}
           </motion.a>
         ))}
 
