@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Facebook, Instagram } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -172,6 +172,14 @@ const Navbar = () => {
             <Mail className="h-4 w-4 text-primary" />
             <span className="font-bold">contact@devcraft.gr</span>
           </a>
+          <div className="flex items-center gap-4 mt-2">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 transition-all">
+              <Facebook className="h-5 w-5 text-primary" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 transition-all">
+              <Instagram className="h-5 w-5 text-primary" />
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </motion.header>

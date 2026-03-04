@@ -1,4 +1,4 @@
-import { Phone, Mail, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, ArrowUpRight, Facebook, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -66,6 +66,26 @@ const Footer = () => {
                 </div>
                 contact@devcraft.gr
               </a>
+
+              {/* Socials */}
+              <div className="flex items-center gap-3 mt-4">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300"
+                >
+                  <Facebook className="h-3.5 w-3.5 text-primary" />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300"
+                >
+                  <Instagram className="h-3.5 w-3.5 text-primary" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
