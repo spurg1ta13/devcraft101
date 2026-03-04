@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile top contact bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 md:hidden bg-primary text-primary-foreground">
+      <div className={`fixed top-0 left-0 right-0 z-50 md:hidden bg-primary text-primary-foreground transition-transform duration-500 ${scrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container flex items-center justify-between h-10 text-xs font-mono font-bold">
           <a href="tel:+306974776057" className="flex items-center gap-2">
             <Phone className="h-3.5 w-3.5" />
@@ -35,8 +35,8 @@ const Navbar = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className={`fixed top-10 md:top-0 left-0 right-0 z-50 transition-all duration-700 ${
-          scrolled ? "glass border-b border-border/30" : ""
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 md:top-0 ${
+          scrolled ? "glass border-b border-border/30 top-0 md:top-0 -translate-y-full md:translate-y-0" : "top-10 md:top-0"
         }`}
       >
       <div className="container flex items-center justify-between h-20">
