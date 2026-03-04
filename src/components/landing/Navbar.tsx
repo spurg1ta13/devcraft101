@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       {/* Mobile top contact bar */}
-      <div className={`fixed top-0 left-0 right-0 z-50 md:hidden bg-primary text-primary-foreground transition-transform duration-500 ${scrolled ? "-translate-y-full" : "translate-y-0"}`}>
+      <div className={`fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground transition-transform duration-500 ${scrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container flex items-center justify-between h-10 text-xs font-mono font-bold">
           <a href="tel:+306974776057" className="flex items-center gap-2">
             <Phone className="h-3.5 w-3.5" />
@@ -36,10 +36,10 @@ const Navbar = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className={`fixed left-0 right-0 z-[55] transition-all duration-500 ${
-          scrolled ? "glass border-b border-border/30 top-0" : "top-10 md:top-0"
+          scrolled ? "glass border-b border-border/30 top-0" : "top-10 lg:top-0"
         }`}
       >
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container flex items-center justify-between h-16 lg:h-20">
         <Link
           to="/"
           onClick={() => {
@@ -59,7 +59,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <nav className="flex items-center gap-6">
             <Link
               to="/about"
@@ -118,7 +118,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile */}
-        <button onClick={() => setOpen(!open)} className="md:hidden relative z-[60] text-foreground">
+        <button onClick={() => setOpen(!open)} className="lg:hidden relative z-[60] text-foreground">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -129,7 +129,7 @@ const Navbar = () => {
         initial={false}
         animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-[52] bg-background md:hidden flex flex-col items-center justify-center gap-6 px-6"
+        className="fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-6 px-6"
       >
         <motion.a
           key="about"
@@ -191,7 +191,7 @@ const Navbar = () => {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8, pointerEvents: "none" as const }}
         transition={{ duration: 0.3 }}
-        className="fixed bottom-6 right-6 z-50 md:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-transform"
+        className="fixed bottom-6 right-6 z-50 lg:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-transform"
       >
         <Phone className="h-6 w-6" />
       </motion.a>
