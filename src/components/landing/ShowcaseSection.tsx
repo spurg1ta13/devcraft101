@@ -70,8 +70,8 @@ const ShowcaseSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.7, ease: "easeOut" }}
-                whileHover={{ y: -10, transition: { duration: 0.4 } }}
-                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[420px]`}
+                whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.4 } }}
+                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 ${project.borderAccent} transition-all duration-700 flex flex-col justify-between min-h-[420px] hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)]`}
               >
                 {/* Background gradient glow */}
                 <div className={`absolute top-0 right-0 w-[300px] h-[300px] bg-gradient-radial ${project.accent} rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3`} />
@@ -80,8 +80,8 @@ const ShowcaseSection = () => {
                   {/* Top row: icon + tag + arrow */}
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-card border border-border/50 flex items-center justify-center">
-                        <Icon className="h-5 w-5 text-primary" />
+                      <div className="w-12 h-12 rounded-xl bg-card border border-border/50 flex items-center justify-center">
+                        <Icon className="h-6 w-6 text-primary" />
                       </div>
                       <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
                         {project.tag}
