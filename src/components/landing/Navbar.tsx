@@ -36,7 +36,7 @@ const Navbar = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
         className={`fixed left-0 right-0 z-50 transition-all duration-500 md:top-0 ${
-          scrolled ? "glass border-b border-border/30 top-0 md:top-0 -translate-y-full md:translate-y-0" : "top-10 md:top-0"
+          scrolled && !open ? "glass border-b border-border/30 top-0 md:top-0 -translate-y-full md:translate-y-0" : scrolled ? "glass border-b border-border/30 top-0 md:top-0" : "top-10 md:top-0"
         }`}
       >
       <div className="container flex items-center justify-between h-20">
@@ -121,13 +121,14 @@ const Navbar = () => {
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
+    </motion.header>
 
-      {/* Mobile fullscreen menu */}
+      {/* Mobile fullscreen menu - outside header so it's not affected by translate */}
       <motion.div
         initial={false}
         animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-[55] bg-background backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+        className="fixed inset-0 z-[52] bg-background md:hidden flex flex-col items-center justify-center gap-6 px-6"
       >
         <motion.a
           key="about"
@@ -136,7 +137,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0 }}
-          className="text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
+          className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
         >
           About Us
         </motion.a>
@@ -148,7 +149,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: (i + 1) * 0.1 }}
-            className="text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
+            className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors"
           >
             {item}
           </motion.a>
@@ -159,7 +160,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30"
+          className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30 w-full max-w-xs"
         >
           <a href="tel:+306974776057" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors">
             <span className="relative flex h-5 w-5 items-center justify-center">
@@ -182,7 +183,6 @@ const Navbar = () => {
           </div>
         </motion.div>
       </motion.div>
-    </motion.header>
 
       {/* Mobile floating Call Us button */}
       <motion.a
