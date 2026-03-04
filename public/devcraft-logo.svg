@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 48" width="280" height="48">
+  <defs>
+    <linearGradient id="amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4940C"/>
+      <stop offset="100%" style="stop-color:#E0622D"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon background -->
+  <rect x="0" y="4" width="40" height="40" rx="10" fill="#D4940C"/>
+  <!-- Code brackets -->
+  <text x="20" y="32" text-anchor="middle" font-family="'Space Mono', monospace" font-size="16" font-weight="700" fill="#050505">&lt;/&gt;</text>
+  <!-- "dev" text -->
+  <text x="52" y="34" font-family="'Outfit', sans-serif" font-size="28" font-weight="700" letter-spacing="-1" fill="#F5F5F5">dev</text>
+  <!-- "craft" text with gradient -->
+  <text x="102" y="34" font-family="'Outfit', sans-serif" font-size="28" font-weight="700" letter-spacing="-1" fill="url(#amber)">craft</text>
+</svg>
