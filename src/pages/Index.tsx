@@ -20,7 +20,7 @@ const Index = () => {
       <WebSiteSchema />
       <LocalBusinessSchema />
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <MarqueeSection />
         <ServicesSection />

@@ -4,7 +4,7 @@ const OrganizationSchema = () => {
     "@type": "Organization",
     name: "DevCraft",
     url: "https://devcraft101.lovable.app",
-    logo: "https://devcraft101.lovable.app/favicon.ico",
+    logo: "https://devcraft101.lovable.app/devcraft-logo.svg",
     description:
       "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance.",
     email: "contact@devcraft.gr",
