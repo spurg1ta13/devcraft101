@@ -113,7 +113,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
       {/* Full-width background code rain - faded */}
-      <div className="absolute inset-0 opacity-[0.12] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
         <motion.div
           style={{ x: springX, y: springY }}
         >
