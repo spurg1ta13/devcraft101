@@ -49,7 +49,7 @@ const Navbar = () => {
           }}
           className="relative z-10 flex items-center gap-2 group/logo"
         >
-          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center group-hover/logo:shadow-glow transition-shadow duration-300">
+          <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center group-hover/logo:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.5)] transition-shadow duration-300">
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
           </div>
           <span className="text-xl font-bold tracking-[-0.04em]">
