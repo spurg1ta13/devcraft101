@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -35,8 +35,8 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-12">
-          <nav className="flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex items-center gap-6">
             <Link
               to="/about"
               className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300"
@@ -63,6 +63,16 @@ const Navbar = () => {
               )
             ))}
           </nav>
+          <div className="flex items-center gap-4 border-l border-border/30 pl-6">
+            <a href="tel:+306974776057" className="flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors duration-300">
+              <Phone className="h-3.5 w-3.5 text-primary" />
+              +30 697 477 6057
+            </a>
+            <a href="mailto:contact@devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors duration-300">
+              <Mail className="h-3.5 w-3.5 text-primary" />
+              contact@devcraft.gr
+            </a>
+          </div>
           {isHome ? (
             <a
               href="#contact"
