@@ -2,12 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Cookie } from "lucide-react";
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
+  const { lang } = useLang();
+  const c = translations.cookie;
 
   useEffect(() => {
-    // Show every session — only suppress within this tab session
     const dismissed = sessionStorage.getItem("cookie-consent");
     if (!dismissed) setVisible(true);
   }, []);
@@ -37,11 +40,13 @@ const CookieConsent = () => {
               <Cookie className="h-4 w-4 text-primary" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground mb-1">We use cookies</h4>
+              <h4 className="text-sm font-semibold text-foreground mb-1">
+                {lang === "el" ? "Χρησιμοποιούμε cookies" : "We use cookies"}
+              </h4>
               <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                We use cookies to enhance your experience. By continuing, you agree to our{" "}
+                {t(c.message, lang)}{" "}
                 <Link to="/privacy-policy" className="text-primary hover:underline">
-                  Privacy Policy
+                  {t(c.privacyPolicy, lang)}
                 </Link>
                 .
               </p>
@@ -50,13 +55,13 @@ const CookieConsent = () => {
                   onClick={accept}
                   className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold bg-primary text-primary-foreground px-4 py-2 rounded-full hover:brightness-110 hover:shadow-[0_0_16px_hsl(38_100%_55%/0.3)] transition-all"
                 >
-                  Accept
+                  {lang === "el" ? "Αποδοχή" : "Accept"}
                 </button>
                 <button
                   onClick={decline}
                   className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold bg-secondary text-secondary-foreground px-4 py-2 rounded-full hover:bg-secondary/80 transition-all border border-border/50"
                 >
-                  Decline
+                  {lang === "el" ? "Απόρριψη" : "Decline"}
                 </button>
               </div>
             </div>

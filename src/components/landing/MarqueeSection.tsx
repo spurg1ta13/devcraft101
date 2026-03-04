@@ -1,10 +1,9 @@
-const words = [
-  "Web Development", "UI/UX Design", "ISTQB Testing", "React", 
-  "TypeScript", "Performance", "Design Systems", "Quality Assurance",
-  "API Architecture", "Cloud Deploy", "Accessibility", "Security Audits"
-];
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
 
 const MarqueeSection = () => {
+  const { lang } = useLang();
+  const words = translations.marquee.words[lang];
   const track = [...words, ...words, ...words];
 
   return (
