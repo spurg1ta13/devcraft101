@@ -49,13 +49,13 @@ const ShowcaseSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-6">
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6">
             Selected work
           </span>
           <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
             Built to
             <br />
-            <span className="text-primary">stand out.</span>
+            <span className="text-gradient">stand out.</span>
           </h2>
         </motion.div>
 
@@ -94,7 +94,7 @@ const ShowcaseSection = () => {
 
                   {/* Stat */}
                   <div className="mb-6">
-                    <span className="text-5xl md:text-6xl font-black tracking-[-0.04em] text-primary leading-none">
+                    <span className="text-5xl md:text-6xl font-black tracking-[-0.04em] text-gradient leading-none">
                       {project.stat}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-muted-foreground ml-3">
