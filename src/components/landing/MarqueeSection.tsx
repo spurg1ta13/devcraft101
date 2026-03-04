@@ -11,7 +11,7 @@ const MarqueeSection = () => {
     <section className="py-6 border-y border-border/20 overflow-hidden">
       <div className="flex whitespace-nowrap animate-marquee">
         {track.map((word, i) => (
-          <span key={i} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground/25 hover:text-muted-foreground/60 transition-colors duration-700 cursor-default select-none">
+          <span key={i} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors duration-700 cursor-default select-none">
             {word}
           </span>
         ))}
