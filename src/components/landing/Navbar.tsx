@@ -153,16 +153,6 @@ const Navbar = () => {
         role="dialog"
         aria-label="Mobile navigation menu"
       >
-        {/* Language selector inside menu */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0 }}
-          className="mb-2"
-        >
-          <LanguageSelector />
-        </motion.div>
-
         <motion.a
           key="about"
           href="/about"
