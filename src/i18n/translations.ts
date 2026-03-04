@@ -342,9 +342,8 @@ export const translations = {
 
   // Portfolio
   portfolio: {
-    label: { en: "Our projects", el: "Τα έργα μας" },
-    heading1: { en: "Live", el: "Ζωντανά" },
-    heading2: { en: "projects.", el: "έργα." },
+    label: { en: "Our", el: "Τα Έργα" },
+    label2: { en: "Projects", el: "μας" },
     subtitle: {
       en: "A selection of websites we've built for our clients. Real projects, real results.",
       el: "Μια επιλογή ιστοσελίδων που δημιουργήσαμε για τους πελάτες μας. Πραγματικά έργα, πραγματικά αποτελέσματα.",
