@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
 
@@ -15,6 +17,7 @@ const CTASection = () => {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) errs.email = "Invalid email";
     if (!form.message.trim()) errs.message = "Message is required";
     else if (form.message.trim().length > 1000) errs.message = "Max 1000 characters";
+    if (!agreed) errs.privacy = "You must agree to the Privacy Policy";
     return errs;
   };
 
@@ -111,9 +114,26 @@ const CTASection = () => {
               {errors.message && <p className="text-destructive text-xs mt-2 ml-2">{errors.message}</p>}
             </div>
 
+            <div className="flex items-start gap-3 mt-2">
+              <input
+                type="checkbox"
+                checked={agreed}
+                onChange={(e) => { setAgreed(e.target.checked); setErrors({ ...errors, privacy: "" }); }}
+                className="mt-1 h-4 w-4 rounded border-border accent-primary cursor-pointer"
+                id="privacy-agree"
+              />
+              <label htmlFor="privacy-agree" className="text-sm text-muted-foreground cursor-pointer select-none">
+                I agree to the{" "}
+                <Link to="/privacy-policy" className="text-primary hover:underline transition-colors" target="_blank">
+                  Privacy Policy
+                </Link>
+              </label>
+            </div>
+            {errors.privacy && <p className="text-destructive text-xs mt-1 ml-7">{errors.privacy}</p>}
+
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <p className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
-                We respond within 24 hours
+                We respond within 48 hours
               </p>
               <motion.button
                 type="submit"
