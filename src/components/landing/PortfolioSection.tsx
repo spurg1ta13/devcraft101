@@ -28,12 +28,9 @@ const PortfolioSection = () => {
           transition={{ duration: 0.8 }}
           className="mb-12 md:mb-16"
         >
-          <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
-            {t(s.label, lang)}
-          </span>
           <h2 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
-            {t(s.heading1, lang)}{" "}
-            <span className="text-gradient">{t(s.heading2, lang)}</span>
+            {t(s.label, lang)}{" "}
+            <span className="text-gradient">{t(s.label2, lang)}</span>
           </h2>
         </motion.div>
 
