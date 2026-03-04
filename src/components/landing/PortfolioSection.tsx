@@ -101,7 +101,7 @@ const PortfolioSection = () => {
                 title={t(s.projects[activeProject].title, lang)}
                 className="w-full h-full border-0"
                 loading="lazy"
-                sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                sandbox="allow-scripts allow-same-origin"
               />
             </div>
           </div>
