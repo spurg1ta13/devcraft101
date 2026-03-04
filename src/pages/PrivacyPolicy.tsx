@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
+import SEOHead from "@/components/SEOHead";
 
 const sections = [
   {
@@ -52,7 +53,13 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SEOHead
+        title="Privacy Policy | DevCraft"
+        description="DevCraft Privacy Policy — how we collect, use, and protect your personal information. GDPR compliant."
+        canonical="/privacy-policy"
+      />
       <Navbar />
+      <main>
 
       <section className="relative pt-40 pb-16 md:pt-52 md:pb-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px] amber-drift" />
@@ -116,6 +123,7 @@ const PrivacyPolicy = () => {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

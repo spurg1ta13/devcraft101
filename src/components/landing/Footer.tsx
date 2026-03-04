@@ -24,7 +24,7 @@ const Footer = () => {
           {/* Navigation */}
           <div>
             <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h4>
-            <nav className="flex flex-col gap-3">
+            <nav aria-label="Footer navigation" className="flex flex-col gap-3">
               {[
                 { label: "About Us", href: "/about", isRoute: true },
                 { label: "Services", href: "/#services" },
