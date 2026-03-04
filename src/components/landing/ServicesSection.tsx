@@ -71,13 +71,13 @@ const ServicesSection = () => {
                   <h3 className="text-2xl md:text-5xl font-black tracking-[-0.04em] group-hover:text-gradient transition-all duration-500">
                     {service.title}
                   </h3>
-                  <p className="font-mono text-[10px] md:text-xs text-muted-foreground/60 mt-1 uppercase tracking-[0.1em]">
+                  <p className="font-mono text-[10px] md:text-xs text-muted-foreground mt-1 uppercase tracking-[0.1em]">
                     {service.scope}
                   </p>
                 </div>
 
                 {/* Description - visible on md+ */}
-                <p className="hidden lg:block text-sm text-muted-foreground max-w-xs leading-relaxed">
+                <p className="hidden lg:block text-sm text-foreground/70 max-w-xs leading-relaxed">
                   {service.description}
                 </p>
 
