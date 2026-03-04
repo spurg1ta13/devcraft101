@@ -39,7 +39,7 @@ const projects = [
 
 const ShowcaseSection = () => {
   return (
-    <section id="work" className="relative py-32 md:py-44">
+    <section id="work" className="relative section-rhythm">
       <div className="container">
         {/* Showcase heading */}
         <motion.div

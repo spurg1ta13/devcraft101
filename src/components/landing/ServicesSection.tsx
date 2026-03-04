@@ -30,7 +30,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="relative py-32 md:py-44">
+    <section id="services" className="relative section-rhythm">
       <div className="container">
         {/* Header */}
         <motion.div

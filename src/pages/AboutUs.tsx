@@ -83,7 +83,7 @@ const AboutUs = () => {
 
       {/* Hero */}
       <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/[0.04] rounded-full blur-[120px] amber-drift" />
         <div className="container relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -117,7 +117,7 @@ const AboutUs = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-20 md:py-28 border-t border-border/30">
+      <section className="section-rhythm border-t border-border/30">
         <div className="container">
           <div className="grid grid-cols-3 gap-8 md:gap-12">
             {[
@@ -132,7 +132,7 @@ const AboutUs = () => {
       </section>
 
       {/* Team */}
-      <section className="py-20 md:py-28 border-t border-border/30">
+      <section className="section-rhythm border-t border-border/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -187,7 +187,7 @@ const AboutUs = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 md:py-28 border-t border-border/30">
+      <section className="section-rhythm border-t border-border/30">
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
