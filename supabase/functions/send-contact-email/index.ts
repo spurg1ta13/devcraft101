@@ -70,7 +70,7 @@ serve(async (req) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "DevCraft <noreply@devcraft.gr>",
+        from: "DevCraft <onboarding@resend.dev>",
         to: [TO_EMAIL],
         reply_to: hasEmail ? email.trim() : undefined,
         subject: `[DevCraft] New inquiry from ${name.trim()}`,
