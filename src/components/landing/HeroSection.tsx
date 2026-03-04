@@ -20,7 +20,7 @@ const codeLines = [
   { indent: 1, tokens: [{ t: "}, [config])", c: "punct" }] },
   { indent: 0, tokens: [] },
   { indent: 1, tokens: [{ t: "return", c: "keyword" }, { t: " (", c: "punct" }] },
-  { indent: 2, tokens: [{ t: "<", c: "punct" }, { t: "motion.div", c: "tag" }, { t: " className=", c: "punct" }, { t: '"app-container"', c: "string" }, { t: ">", c: "punct" }] },
+  { indent: 2, tokens: [{ t: "<", c: "punct" }, { t: "motion.div", c: "tag" }, { t: " className=", c: "punct" }, { t: "'app-container'", c: "string" }, { t: ">", c: "punct" }] },
   { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Header", c: "tag" }, { t: " />", c: "punct" }] },
   { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Dashboard", c: "tag" }, { t: " data=", c: "punct" }, { t: "{state}", c: "var" }, { t: " />", c: "punct" }] },
   { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Analytics", c: "tag" }, { t: " />", c: "punct" }] },
@@ -52,15 +52,15 @@ const CodeRain = () => {
   const doubled = useMemo(() => [...codeLines, ...codeLines], []);
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden hidden md:block" aria-hidden="true">
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
       <div
-        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16 animate-code-rain"
+        className="px-6 py-4 columns-2 lg:columns-3 gap-16 animate-code-rain"
         style={{ willChange: 'transform' }}
       >
         {doubled.map((line, i) => (
-          <div key={i} className="h-6 flex items-center gap-0 font-mono text-[11px] md:text-[12px] leading-6 whitespace-nowrap">
+          <div key={i} className="h-6 flex items-center gap-0 font-mono text-[12px] leading-6 whitespace-nowrap">
             <span className="w-7 shrink-0 text-right mr-3 text-muted-foreground/15 select-none text-[10px]">
               {(i % codeLines.length) + 1}
             </span>
@@ -88,9 +88,18 @@ const HeroSection = () => {
   const hero = translations.hero;
 
   return (
-    <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise">
+    <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
       <motion.div className="absolute inset-0 will-change-transform" style={{ scale: imgScale }}>
-        <img src={heroBanner} alt="" loading="eager" decoding="async" fetchPriority="high" className="w-full h-full object-cover opacity-20" />
+        <img
+          src={heroBanner}
+          alt="DevCraft web development hero background"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
+          className="w-full h-full object-cover opacity-20"
+          width={1920}
+          height={1080}
+        />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
@@ -103,26 +112,26 @@ const HeroSection = () => {
 
       <motion.div
         style={{ y: textY, opacity }}
-        className="container relative z-10 flex-1 flex flex-col justify-center"
+        className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6"
       >
-        <div className="overflow-hidden mb-4">
+        <div className="overflow-hidden mb-3 md:mb-4">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
+            <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
               {t(hero.line1, lang)}
             </h1>
           </motion.div>
         </div>
-        <div className="overflow-hidden mb-8">
+        <div className="overflow-hidden mb-6 md:mb-8">
           <motion.div
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
+            <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
               <span className="text-gradient italic">{t(hero.line2, lang)}</span>
               <span className="text-gradient">.</span>
             </h1>
@@ -133,16 +142,16 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-8 border-t border-border/30"
+          className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-6 md:pt-8 border-t border-border/30"
         >
-          <p className="text-foreground text-base md:text-lg max-w-md leading-relaxed font-medium">
+          <p className="text-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-medium">
             {t(hero.description, lang)}
           </p>
           <motion.a
             href="#work"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 rounded-full shadow-glow font-mono uppercase tracking-[0.1em]"
+            className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center flex items-center justify-center"
           >
             {t(hero.explore, lang)}
           </motion.a>

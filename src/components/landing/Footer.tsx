@@ -9,12 +9,12 @@ const Footer = () => {
   const nav = translations.nav;
 
   return (
-    <footer className="border-t border-border/20 py-16 md:py-20">
-      <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-8 mb-16">
+    <footer className="border-t border-border/20 py-12 md:py-20" role="contentinfo">
+      <div className="container px-4 sm:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8 mb-12 md:mb-16">
           {/* Brand */}
           <div>
-            <Link to="/" className="flex items-center gap-2 mb-4 group/logo">
+            <Link to="/" className="flex items-center gap-2 mb-4 group/logo min-h-[44px]" aria-label="DevCraft home">
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center group-hover/logo:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.5)] transition-shadow duration-300">
                 <span className="text-primary-foreground font-mono text-xs font-bold">&lt;/&gt;</span>
               </div>
@@ -29,8 +29,8 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-6">{t(f.navigation, lang)}</h4>
-            <nav aria-label="Footer navigation" className="flex flex-col gap-3">
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h4>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
                 { label: t(nav.services, lang), href: "/#services" },
@@ -41,7 +41,7 @@ const Footer = () => {
                 <Link
                   key={item.label}
                   to={item.href}
-                  className="group/link flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+                  className="group/link flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]"
                 >
                   {item.label}
                   <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 text-primary" />
@@ -52,26 +52,26 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-6">{t(f.getInTouch, lang)}</h4>
-            <div className="flex flex-col gap-4">
-              <a href="tel:+306974776057" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-                <div className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300">
-                  <Phone className="h-3.5 w-3.5 text-primary" />
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h4>
+            <div className="flex flex-col gap-3">
+              <a href="tel:+306974776057" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Call +30 697 477 6057">
+                <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
+                  <Phone className="h-4 w-4 text-primary" />
                 </div>
                 +30 697 477 6057
               </a>
-              <a href="mailto:contact@devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300">
-                <div className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300">
-                  <Mail className="h-3.5 w-3.5 text-primary" />
+              <a href="mailto:contact@devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Email contact@devcraft.gr">
+                <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
+                  <Mail className="h-4 w-4 text-primary" />
                 </div>
                 contact@devcraft.gr
               </a>
-              <div className="flex items-center gap-3 mt-4">
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300">
-                  <Facebook className="h-3.5 w-3.5 text-primary" />
+              <div className="flex items-center gap-3 mt-2">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Facebook">
+                  <Facebook className="h-4 w-4 text-primary" />
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300">
-                  <Instagram className="h-3.5 w-3.5 text-primary" />
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center hover:border-primary/40 hover:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.3)] transition-all duration-300" aria-label="Instagram">
+                  <Instagram className="h-4 w-4 text-primary" />
                 </a>
               </div>
             </div>
@@ -79,21 +79,21 @@ const Footer = () => {
         </div>
 
         <div className="glow-line w-full mb-6" />
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2">
             <span className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase">
               © {new Date().getFullYear()} devcraft. {t(f.rights, lang)}
             </span>
             <Link
               to="/privacy-policy"
-              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors"
+              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
             >
               {t(f.privacyPolicy, lang)}
             </Link>
           </div>
           <Link
             to="/#contact"
-            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold"
+            className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold flex items-center"
           >
             {t(nav.letsTalk, lang)}
           </Link>
