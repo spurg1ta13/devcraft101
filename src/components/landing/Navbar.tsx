@@ -64,13 +64,16 @@ const Navbar = () => {
             ))}
           </nav>
           <div className="flex items-center gap-4 border-l border-border/30 pl-6">
-            <a href="tel:+306974776057" className="flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-              <Phone className="h-3.5 w-3.5 text-primary" />
-              +30 697 477 6057
+            <a href="tel:+306974776057" className="flex items-center gap-2 font-mono text-xs text-foreground hover:text-primary transition-colors duration-300 group/phone">
+              <span className="relative flex h-4 w-4 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
+                <Phone className="relative h-3.5 w-3.5 text-primary" />
+              </span>
+              <span className="font-bold">+30 697 477 6057</span>
             </a>
-            <a href="mailto:contact@devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] text-muted-foreground hover:text-foreground transition-colors duration-300">
-              <Mail className="h-3.5 w-3.5 text-primary" />
-              contact@devcraft.gr
+            <a href="mailto:contact@devcraft.gr" className="flex items-center gap-2 font-mono text-xs text-foreground hover:text-primary transition-colors duration-300">
+              <Mail className="h-4 w-4 text-primary" />
+              <span className="font-bold">contact@devcraft.gr</span>
             </a>
           </div>
           {isHome ? (
