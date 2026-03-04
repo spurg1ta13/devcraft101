@@ -53,7 +53,7 @@ const Navbar = () => {
             <span className="text-primary-foreground font-mono text-sm font-bold">&lt;/&gt;</span>
           </div>
           <span className="text-xl font-bold tracking-[-0.04em]">
-            dev<span className="text-primary">craft</span>
+            dev<span className="text-gradient">craft</span>
           </span>
         </Link>
 

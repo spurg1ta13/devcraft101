@@ -56,7 +56,7 @@ const CounterStat = ({ value, label, delay }: { value: string; label: string; de
       whileHover={{ scale: 1.12, transition: { type: "spring", stiffness: 300, damping: 15 } }}
       className="text-center cursor-default group"
     >
-      <span ref={ref} className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-primary group-hover:drop-shadow-[0_0_20px_hsl(38_100%_55%/0.5)] transition-all duration-500">
+      <span ref={ref} className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-gradient group-hover:drop-shadow-[0_0_20px_hsl(38_100%_55%/0.5)] transition-all duration-500">
         {isNumber ? (
           <>
             <motion.span>{rounded}</motion.span>
@@ -93,7 +93,7 @@ const AboutUs = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-primary mb-10 hover:text-primary/80 transition-colors"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-10 hover:opacity-80 transition-opacity"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
@@ -102,7 +102,7 @@ const AboutUs = () => {
             <h1 className="text-5xl md:text-8xl font-black tracking-[-0.05em] leading-[0.85] mb-8">
               About
               <br />
-              <span className="text-primary">us.</span>
+              <span className="text-gradient">us.</span>
             </h1>
 
             <div className="max-w-3xl">
@@ -142,13 +142,13 @@ const AboutUs = () => {
             transition={{ duration: 0.8 }}
             className="mb-16"
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-6">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6">
               The team
             </span>
             <h2 className="text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
               Core
               <br />
-              <span className="text-primary">expertise.</span>
+              <span className="text-gradient">expertise.</span>
             </h2>
           </motion.div>
 
@@ -201,7 +201,7 @@ const AboutUs = () => {
               <Users className="h-8 w-8 text-primary" />
             </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-[-0.04em] mb-6">
-              We believe the final result is our best <span className="text-primary">calling card.</span>
+              We believe the final result is our best <span className="text-gradient">calling card.</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               Every project we take on is a commitment to excellence. We combine technical expertise with creative vision to deliver solutions that exceed expectations.

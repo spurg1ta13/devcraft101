@@ -148,7 +148,7 @@ const HeroSection = () => {
           >
             <h1 className="text-[clamp(3rem,10vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
               <span className="text-gradient italic">ordinary</span>
-              <span className="text-primary">.</span>
+              <span className="text-gradient">.</span>
             </h1>
           </motion.div>
         </div>

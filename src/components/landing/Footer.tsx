@@ -13,7 +13,7 @@ const Footer = () => {
                 <span className="text-primary-foreground font-mono text-xs font-bold">&lt;/&gt;</span>
               </div>
               <span className="text-lg font-bold tracking-[-0.03em]">
-                dev<span className="text-primary">craft</span>
+                dev<span className="text-gradient">craft</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
@@ -23,7 +23,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-6">Navigation</h4>
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-6">Navigation</h4>
             <nav className="flex flex-col gap-3">
               {[
                 { label: "About Us", href: "/about", isRoute: true },
@@ -46,7 +46,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-6">Get in touch</h4>
+            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-6">Get in touch</h4>
             <div className="flex flex-col gap-4">
               <a
                 href="tel:+306974776057"

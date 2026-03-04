@@ -43,7 +43,7 @@ const CTASection = () => {
           <div className="max-w-4xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
               <h2 className="text-4xl md:text-6xl font-black tracking-[-0.04em] mb-4">
-                Message <span className="text-primary">sent!</span>
+                Message <span className="text-gradient">sent!</span>
               </h2>
               <p className="text-muted-foreground text-lg">We'll get back to you within 24 hours.</p>
             </motion.div>
@@ -65,7 +65,7 @@ const CTASection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary block mb-8">
+            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-8">
               Next step
             </span>
             <h2 className="text-5xl md:text-8xl font-black tracking-[-0.05em] leading-[0.85] mb-10">

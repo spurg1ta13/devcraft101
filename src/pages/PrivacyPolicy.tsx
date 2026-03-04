@@ -64,7 +64,7 @@ const PrivacyPolicy = () => {
           >
             <Link
               to="/"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-primary mb-10 hover:text-primary/80 transition-colors"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-10 hover:opacity-80 transition-opacity"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to home
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
             <h1 className="text-5xl md:text-8xl font-black tracking-[-0.05em] leading-[0.85] mb-6">
               Privacy
               <br />
-              <span className="text-primary">Policy.</span>
+              <span className="text-gradient">Policy.</span>
             </h1>
             <p className="text-muted-foreground text-sm font-mono">
               Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
