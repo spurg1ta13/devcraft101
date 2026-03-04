@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const CTASection = () => {
@@ -35,23 +35,17 @@ const CTASection = () => {
     }
   };
 
-  if (submitted) {
-    return (
-      <section id="contact" className="relative section-rhythm overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph amber-drift blur-[100px]" />
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
-              <h2 className="text-4xl md:text-6xl font-black tracking-[-0.04em] mb-4">
-                Message <span className="text-gradient">sent!</span>
-              </h2>
-              <p className="text-muted-foreground text-lg">We'll get back to you within 24 hours.</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    );
-  }
+  // Auto-close success message after 3s
+  useEffect(() => {
+    if (submitted) {
+      const timer = setTimeout(() => {
+        setSubmitted(false);
+        setForm({ name: "", email: "", phone: "", message: "" });
+        setAgreed(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitted]);
 
   return (
     <section id="contact" className="relative section-rhythm overflow-hidden">
@@ -172,6 +166,52 @@ const CTASection = () => {
               </motion.button>
             </div>
           </motion.form>
+
+          {/* Success overlay */}
+          <AnimatePresence>
+            {submitted && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-xl"
+              >
+                <div className="text-center px-6">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.15, type: "spring", stiffness: 200, damping: 12 }}
+                    className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-8"
+                  >
+                    <CheckCircle2 className="h-10 w-10 text-primary" />
+                  </motion.div>
+                  <motion.h2
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.25, duration: 0.5 }}
+                    className="text-4xl md:text-6xl font-black tracking-[-0.04em] mb-4"
+                  >
+                    Message <span className="text-gradient">sent!</span>
+                  </motion.h2>
+                  <motion.p
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.5 }}
+                    className="text-muted-foreground text-lg mb-6"
+                  >
+                    We'll get back to you within 48 hours.
+                  </motion.p>
+                  <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 0.1, duration: 2.9, ease: "linear" }}
+                    className="h-1 w-48 mx-auto rounded-full bg-gradient-to-r from-primary to-orange-500 origin-left"
+                  />
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </section>
