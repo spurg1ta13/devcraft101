@@ -1,0 +1,100 @@
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers":
+    "authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version",
+};
+
+const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const TO_EMAIL = "contact@devcraft.gr";
+
+serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: corsHeaders });
+  }
+
+  try {
+    if (!RESEND_API_KEY) {
+      throw new Error("RESEND_API_KEY is not configured");
+    }
+
+    const { name, email, phone, message } = await req.json();
+
+    // Validate inputs
+    if (!name || typeof name !== "string" || name.trim().length === 0 || name.trim().length > 100) {
+      throw new Error("Invalid name");
+    }
+    if (!message || typeof message !== "string" || message.trim().length === 0 || message.trim().length > 1000) {
+      throw new Error("Invalid message");
+    }
+    const hasEmail = email && typeof email === "string" && email.trim().length > 0;
+    const hasPhone = phone && typeof phone === "string" && phone.trim().length > 0;
+    if (!hasEmail && !hasPhone) {
+      throw new Error("Email or phone required");
+    }
+    if (hasEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
+      throw new Error("Invalid email format");
+    }
+    if (hasPhone && !/^\+?\d{7,15}$/.test(phone.trim())) {
+      throw new Error("Invalid phone format");
+    }
+
+    const contactInfo = [
+      hasEmail ? `Email: ${email.trim()}` : "",
+      hasPhone ? `Phone: ${phone.trim()}` : "",
+    ]
+      .filter(Boolean)
+      .join(" | ");
+
+    const htmlBody = `
+      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">
+        <h2 style="color: #D4940C; margin-bottom: 24px;">New Contact Form Submission</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Name</td><td style="padding: 8px 0;">${name.trim()}</td></tr>
+          ${hasEmail ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email.trim()}">${email.trim()}</a></td></tr>` : ""}
+          ${hasPhone ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${phone.trim()}">${phone.trim()}</a></td></tr>` : ""}
+        </table>
+        <div style="margin-top: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
+          <p style="font-weight: bold; color: #666; margin: 0 0 8px;">Message</p>
+          <p style="margin: 0; white-space: pre-wrap;">${message.trim()}</p>
+        </div>
+        <p style="margin-top: 24px; font-size: 12px; color: #999;">Sent from DevCraft website contact form</p>
+      </div>
+    `;
+
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "DevCraft <noreply@devcraft.gr>",
+        to: [TO_EMAIL],
+        reply_to: hasEmail ? email.trim() : undefined,
+        subject: `[DevCraft] New inquiry from ${name.trim()}`,
+        html: htmlBody,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      console.error("Resend API error:", JSON.stringify(data));
+      throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
+    }
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  } catch (error: unknown) {
+    console.error("Error sending email:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
+      status: 500,
+      headers: { ...corsHeaders, "Content-Type": "application/json" },
+    });
+  }
+});
