@@ -34,7 +34,7 @@ const Navbar = () => {
       <motion.header
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
         className={`fixed left-0 right-0 z-[55] transition-all duration-500 ${
           scrolled ? "glass border-b border-border/30 top-0" : "top-10 md:top-0"
         }`}
