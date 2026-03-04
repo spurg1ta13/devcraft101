@@ -131,6 +131,7 @@ const Navbar = () => {
 
           {/* Mobile */}
           <div className="lg:hidden flex items-center gap-3 relative z-[60]">
+            <LanguageSelector />
             <button
               onClick={() => setOpen(!open)}
               className="text-foreground min-h-[44px] min-w-[44px] flex items-center justify-center"
