@@ -57,9 +57,10 @@ const CodeRain = () => {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
 
       <motion.div
-        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16"
+        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16 will-change-transform"
         animate={{ y: [0, -(codeLines.length * 24)] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        style={{ transform: 'translateZ(0)' }}
       >
         {tripled.map((line, i) => (
           <div key={i} className="h-6 flex items-center gap-0 font-mono text-[11px] md:text-[12px] leading-6 whitespace-nowrap">
@@ -104,10 +105,10 @@ const HeroSection = () => {
   }, [mouseX, mouseY]);
 
   return (
-    <section ref={ref} className="relative h-[100dvh] flex flex-col overflow-hidden noise">
+    <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise">
       {/* Background image */}
-      <motion.div className="absolute inset-0" style={{ scale: imgScale }}>
-        <img src={heroBanner} alt="" className="w-full h-full object-cover opacity-20" />
+      <motion.div className="absolute inset-0 will-change-transform" style={{ scale: imgScale }}>
+        <img src={heroBanner} alt="" loading="eager" decoding="async" fetchPriority="high" className="w-full h-full object-cover opacity-20" />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
