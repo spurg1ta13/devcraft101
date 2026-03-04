@@ -85,7 +85,7 @@ const CTASection = () => {
                   placeholder="Your name"
                   value={form.name}
                   onChange={(e) => { setForm({ ...form, name: e.target.value }); setErrors({ ...errors, name: "" }); }}
-                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 transition-colors ${errors.name ? "border-destructive" : "border-border/50"}`}
+                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 ${errors.name ? "border-destructive" : "border-border"}`}
                 />
                 {errors.name && <p className="text-destructive text-xs mt-2 ml-2">{errors.name}</p>}
               </div>
@@ -95,7 +95,7 @@ const CTASection = () => {
                   placeholder="Email"
                   value={form.email}
                   onChange={(e) => { setForm({ ...form, email: e.target.value }); setErrors({ ...errors, email: "" }); }}
-                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 transition-colors ${errors.email ? "border-destructive" : "border-border/50"}`}
+                  className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 ${errors.email ? "border-destructive" : "border-border"}`}
                 />
                 {errors.email && <p className="text-destructive text-xs mt-2 ml-2">{errors.email}</p>}
               </div>
@@ -106,7 +106,7 @@ const CTASection = () => {
                 rows={4}
                 value={form.message}
                 onChange={(e) => { setForm({ ...form, message: e.target.value }); setErrors({ ...errors, message: "" }); }}
-                className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/40 transition-colors resize-none ${errors.message ? "border-destructive" : "border-border/50"}`}
+                className={`w-full bg-secondary border rounded-2xl px-6 py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 resize-none ${errors.message ? "border-destructive" : "border-border"}`}
               />
               {errors.message && <p className="text-destructive text-xs mt-2 ml-2">{errors.message}</p>}
             </div>
@@ -117,12 +117,18 @@ const CTASection = () => {
               </p>
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-primary text-primary-foreground font-bold text-sm px-10 py-4 rounded-full shadow-glow flex items-center gap-3 hover:brightness-110 transition-all"
+                className="group/btn bg-primary text-primary-foreground font-bold text-sm px-10 py-4 rounded-full shadow-glow flex items-center gap-3 hover:brightness-110 transition-all"
               >
                 Send message
-                <ArrowRight className="h-4 w-4" />
+                <motion.span
+                  className="inline-block"
+                  initial={{ x: 0 }}
+                  whileHover={{ x: 0 }}
+                >
+                  <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1.5 group-hover/btn:scale-110 transition-transform duration-300" />
+                </motion.span>
               </motion.button>
             </div>
           </motion.form>
