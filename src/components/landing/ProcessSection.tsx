@@ -10,7 +10,7 @@ const steps = [
 
 const ProcessSection = () => {
   return (
-    <section id="process" className="relative py-32 md:py-44 bg-dot-grid">
+    <section id="process" className="relative section-rhythm bg-dot-grid">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       <div className="container relative z-10">
         <motion.div

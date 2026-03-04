@@ -89,11 +89,19 @@
     background-size: 24px 24px;
   }
 
+  .section-rhythm {
+    @apply py-32 md:py-44;
+  }
+
   .glow-line {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(38 100% 55% / 0.3), transparent);
     background-size: 200% 100%;
-    animation: glow-drift 6s ease-in-out infinite alternate;
+    animation: glow-drift 8s ease-in-out infinite alternate;
+  }
+
+  .amber-drift {
+    animation: amber-drift 14s ease-in-out infinite alternate;
   }
 
   .glass {
@@ -122,8 +130,13 @@
 
 /* Glow drift */
 @keyframes glow-drift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  0% { background-position: 20% 50%; }
+  100% { background-position: 80% 50%; }
+}
+
+@keyframes amber-drift {
+  0% { translate: -6px -4px; }
+  100% { translate: 6px 4px; }
 }
 
 /* Marquee */

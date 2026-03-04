@@ -29,8 +29,8 @@ const CTASection = () => {
 
   if (submitted) {
     return (
-      <section id="contact" className="relative py-32 md:py-44 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph blur-[100px]" />
+      <section id="contact" className="relative section-rhythm overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph amber-drift blur-[100px]" />
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
@@ -46,8 +46,8 @@ const CTASection = () => {
   }
 
   return (
-    <section id="contact" className="relative py-32 md:py-44 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph blur-[100px]" />
+    <section id="contact" className="relative section-rhythm overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph amber-drift blur-[100px]" />
 
       <div className="container relative z-10">
         <div className="max-w-4xl mx-auto">
