@@ -9,7 +9,7 @@
   <rect width="48" height="48" rx="12" y="4" fill="url(#g)"/>
   <text x="24" y="36" text-anchor="middle" font-family="monospace" font-size="18" font-weight="700" fill="#050505">&lt;/&gt;</text>
   <!-- dev -->
-  <text x="60" y="40" font-family="sans-serif" font-size="32" font-weight="700" fill="#F5F5F5" letter-spacing="-1">dev</text>
+  <text x="60" y="40" font-family="sans-serif" font-size="32" font-weight="700" fill="#1A1A1A" letter-spacing="-1">dev</text>
   <!-- craft -->
   <text x="130" y="40" font-family="sans-serif" font-size="32" font-weight="700" fill="url(#g)" letter-spacing="-1">craft</text>
 </svg>
