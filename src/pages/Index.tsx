@@ -14,11 +14,8 @@ const Index = () => {
       <HeroSection />
       <MarqueeSection />
       <ServicesSection />
-      <div className="glow-line w-full" />
       <ShowcaseSection />
-      <div className="glow-line w-full" />
       <ProcessSection />
-      <div className="glow-line w-full" />
       <CTASection />
       <Footer />
     </div>
