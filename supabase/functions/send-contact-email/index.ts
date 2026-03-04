@@ -7,7 +7,7 @@ const corsHeaders = {
 };
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-const TO_EMAIL = "contact@devcraft.gr";
+const TO_EMAIL = "grespurga@gmail.com";
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
