@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
-import { useRef, useEffect, useMemo } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useMemo } from "react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -50,19 +50,16 @@ const tokenColors: Record<string, string> = {
 
 const CodeRain = () => {
   const doubled = useMemo(() => [...codeLines, ...codeLines], []);
-  const tripled = useMemo(() => [...doubled, ...doubled, ...doubled], [doubled]);
 
   return (
     <div className="relative w-full h-full overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
-      <motion.div
-        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16 will-change-transform"
-        animate={{ y: [0, -(codeLines.length * 24)] }}
-        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        style={{ transform: 'translateZ(0)' }}
+      <div
+        className="px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-16 animate-code-rain"
+        style={{ willChange: 'transform' }}
       >
-        {tripled.map((line, i) => (
+        {doubled.map((line, i) => (
           <div key={i} className="h-6 flex items-center gap-0 font-mono text-[11px] md:text-[12px] leading-6 whitespace-nowrap">
             <span className="w-7 shrink-0 text-right mr-3 text-muted-foreground/15 select-none text-[10px]">
               {(i % codeLines.length) + 1}
@@ -76,7 +73,7 @@ const CodeRain = () => {
             </span>
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -90,22 +87,6 @@ const HeroSection = () => {
   const { lang } = useLang();
   const hero = translations.hero;
 
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
-  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
-
-  useEffect(() => {
-    const handleMouse = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 30;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-      mouseX.set(x);
-      mouseY.set(y);
-    };
-    window.addEventListener("mousemove", handleMouse);
-    return () => window.removeEventListener("mousemove", handleMouse);
-  }, [mouseX, mouseY]);
-
   return (
     <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise">
       <motion.div className="absolute inset-0 will-change-transform" style={{ scale: imgScale }}>
@@ -115,11 +96,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
       <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
-        <motion.div style={{ x: springX, y: springY }}>
-          <div className="w-full h-[100dvh] overflow-hidden">
-            <CodeRain />
-          </div>
-        </motion.div>
+        <div className="w-full h-[100dvh] overflow-hidden">
+          <CodeRain />
+        </div>
       </div>
 
       <motion.div
