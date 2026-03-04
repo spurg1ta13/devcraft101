@@ -1,15 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { supabase } from "@/integrations/supabase/client";
 
 const CTASection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const { lang } = useLang();
   const c = translations.cta;
 
@@ -28,11 +30,33 @@ const CTASection = () => {
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     setErrors(errs);
-    if (Object.keys(errs).length === 0) setSubmitted(true);
+    if (Object.keys(errs).length > 0) return;
+
+    setSending(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: {
+          name: form.name.trim(),
+          email: form.email.trim() || undefined,
+          phone: form.phone.trim() || undefined,
+          message: form.message.trim(),
+        },
+      });
+
+      if (error) throw error;
+      if (data && !data.success) throw new Error(data.error || "Failed to send");
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Contact form error:", err);
+      setErrors({ submit: lang === "el" ? "Κάτι πήγε στραβά. Δοκιμάστε ξανά." : "Something went wrong. Please try again." });
+    } finally {
+      setSending(false);
+    }
   };
 
   useEffect(() => {
@@ -151,18 +175,29 @@ const CTASection = () => {
             </div>
             {errors.privacy && <p className="text-destructive text-xs mt-1 ml-8" role="alert">{errors.privacy}</p>}
 
+            {errors.submit && <p className="text-destructive text-sm font-medium" role="alert">{errors.submit}</p>}
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
               <p className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
                 {t(c.respond, lang)}
               </p>
               <motion.button
                 type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="group/btn bg-primary text-primary-foreground font-bold text-sm px-8 sm:px-10 py-4 min-h-[48px] rounded-full shadow-glow flex items-center justify-center gap-3 hover:brightness-110 transition-all w-full sm:w-auto"
+                disabled={sending}
+                whileHover={sending ? {} : { scale: 1.05 }}
+                whileTap={sending ? {} : { scale: 0.98 }}
+                className="group/btn bg-primary text-primary-foreground font-bold text-sm px-8 sm:px-10 py-4 min-h-[48px] rounded-full shadow-glow flex items-center justify-center gap-3 hover:brightness-110 transition-all w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                {t(c.send, lang)}
-                <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1.5 group-hover/btn:scale-110 transition-transform duration-300" />
+                {sending ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    {lang === "el" ? "Αποστολή..." : "Sending..."}
+                  </>
+                ) : (
+                  <>
+                    {t(c.send, lang)}
+                    <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1.5 group-hover/btn:scale-110 transition-transform duration-300" />
+                  </>
+                )}
               </motion.button>
             </div>
           </motion.form>
