@@ -102,7 +102,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile */}
-        <button onClick={() => setOpen(!open)} className="md:hidden relative z-10 text-foreground">
+        <button onClick={() => setOpen(!open)} className="md:hidden relative z-[60] text-foreground">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
@@ -112,7 +112,7 @@ const Navbar = () => {
         initial={false}
         animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
         transition={{ duration: 0.4 }}
-        className="fixed inset-0 bg-background/98 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+        className="fixed inset-0 z-[55] bg-background backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
       >
         <motion.a
           key="about"
