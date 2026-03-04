@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Users, Code2, Palette, ShieldCheck, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 
@@ -22,7 +23,60 @@ const team = [
   },
 ];
 
+const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
+  const isNumber = /^\d+/.test(value);
+  const numericPart = parseInt(value) || 0;
+  const suffix = value.replace(/^\d+/, "");
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (v) => Math.round(v));
+  const ref = useRef<HTMLSpanElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    if (!isNumber) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          animate(count, numericPart, { duration: 1.5, delay, ease: "easeOut" });
+        }
+      },
+      { threshold: 0.5 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [count, numericPart, delay, isNumber]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.6 }}
+      className="text-center"
+    >
+      <span ref={ref} className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-primary">
+        {isNumber ? (
+          <>
+            <motion.span>{rounded}</motion.span>
+            {suffix}
+          </>
+        ) : (
+          value
+        )}
+      </span>
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-3">
+        {label}
+      </p>
+    </motion.div>
+  );
+};
+
 const AboutUs = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
@@ -71,21 +125,7 @@ const AboutUs = () => {
               { value: "100%", label: "Client Satisfaction" },
               { value: "Zero", label: "Defect Policy" },
             ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.6 }}
-                className="text-center"
-              >
-                <span className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-primary">
-                  {stat.value}
-                </span>
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mt-3">
-                  {stat.label}
-                </p>
-              </motion.div>
+              <CounterStat key={stat.label} value={stat.value} label={stat.label} delay={i * 0.1} />
             ))}
           </div>
         </div>
@@ -121,13 +161,13 @@ const AboutUs = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.15, duration: 0.7 }}
-                  whileHover={{ y: -8, transition: { duration: 0.4 } }}
-                  className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 hover:border-primary/30 transition-all duration-700"
+                  whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.4 } }}
+                  className="group relative overflow-hidden bg-secondary border border-border/50 rounded-3xl p-8 md:p-10 hover:border-primary/40 hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] transition-all duration-700"
                 >
                   <div className="absolute top-0 right-0 w-[250px] h-[250px] bg-gradient-radial from-primary/15 to-transparent rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3" />
 
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-2xl bg-card border border-border/50 flex items-center justify-center mb-8">
+                    <div className="w-14 h-14 rounded-2xl bg-card border border-border/50 flex items-center justify-center mb-8 group-hover:border-primary/40 transition-all duration-500">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
 
