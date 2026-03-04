@@ -2,8 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { useLang } from "@/i18n/LanguageContext";
 
 interface SEOHeadProps {
-  title?: string;
-  description?: string;
+  title?: { en: string; el: string } | string;
+  description?: { en: string; el: string } | string;
   canonical?: string;
   type?: string;
   noindex?: boolean;
@@ -11,8 +11,19 @@ interface SEOHeadProps {
 
 const SITE_NAME = "DevCraft";
 const BASE_URL = "https://devcraft101.lovable.app";
-const DEFAULT_TITLE = "DevCraft | Custom Web Development & QA Services";
-const DEFAULT_DESC = "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.";
+const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
+
+const DEFAULT_TITLE = {
+  en: "DevCraft | Custom Web Development & QA Services",
+  el: "DevCraft | Προσαρμοσμένη Ανάπτυξη Ιστοσελίδων & Υπηρεσίες QA",
+};
+const DEFAULT_DESC = {
+  en: "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.",
+  el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένος σχεδιασμός UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
+};
+
+const resolve = (val: { en: string; el: string } | string, lang: string): string =>
+  typeof val === "string" ? val : (val as Record<string, string>)[lang] || (val as Record<string, string>).en;
 
 const SEOHead = ({
   title = DEFAULT_TITLE,
@@ -23,13 +34,17 @@ const SEOHead = ({
 }: SEOHeadProps) => {
   const fullUrl = `${BASE_URL}${canonical}`;
   const { lang } = useLang();
+  const resolvedTitle = resolve(title, lang);
+  const resolvedDesc = resolve(description, lang);
 
   return (
     <Helmet>
       <html lang={lang} />
-      <title>{title}</title>
-      <meta name="description" content={description} />
+      <title>{resolvedTitle}</title>
+      <meta name="description" content={resolvedDesc} />
       <link rel="canonical" href={fullUrl} />
+      <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+      <link rel="apple-touch-icon" href="/favicon.png" />
       {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
       {noindex && <meta name="robots" content="noindex, nofollow" />}
       <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -41,13 +56,21 @@ const SEOHead = ({
       <meta name="format-detection" content="telephone=no" />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={resolvedTitle} />
+      <meta property="og:description" content={resolvedDesc} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content={lang === "el" ? "el_GR" : "en_US"} />
+      <meta property="og:locale:alternate" content={lang === "el" ? "en_US" : "el_GR"} />
+      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image:width" content="1920" />
+      <meta property="og:image:height" content="1080" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={resolvedTitle} />
+      <meta name="twitter:description" content={resolvedDesc} />
+      <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
     </Helmet>
   );
 };

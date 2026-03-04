@@ -15,11 +15,7 @@ const Footer = lazy(() => import("@/components/landing/Footer"));
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title="DevCraft | Custom Web Development & QA Services"
-        description="AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in."
-        canonical="/"
-      />
+      <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
       <LocalBusinessSchema />
