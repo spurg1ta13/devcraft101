@@ -73,9 +73,17 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="glow-line w-full mb-6" />
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-mono text-[10px] text-muted-foreground/40 tracking-[0.1em] uppercase">
-            © {new Date().getFullYear()} devcraft. All rights reserved.
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-[10px] text-muted-foreground/40 tracking-[0.1em] uppercase">
+              © {new Date().getFullYear()} devcraft. All rights reserved.
+            </span>
+            <Link
+              to="/privacy-policy"
+              className="font-mono text-[10px] text-muted-foreground/40 tracking-[0.1em] uppercase hover:text-primary transition-colors"
+            >
+              Privacy Policy
+            </Link>
+          </div>
           <Link
             to="/#contact"
             className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-2.5 rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold"
