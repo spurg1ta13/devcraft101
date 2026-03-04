@@ -183,6 +183,17 @@ const Navbar = () => {
         </motion.div>
       </motion.div>
     </motion.header>
+
+      {/* Mobile floating Call Us button */}
+      <motion.a
+        href="tel:+306974776057"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8, pointerEvents: "none" as const }}
+        transition={{ duration: 0.3 }}
+        className="fixed bottom-6 right-6 z-50 md:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-transform"
+      >
+        <Phone className="h-6 w-6" />
+      </motion.a>
     </>
   );
 };
