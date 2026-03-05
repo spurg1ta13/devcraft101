@@ -48,10 +48,10 @@ const ServicesSection = () => {
                 </span>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-xl sm:text-2xl md:text-5xl font-black tracking-[-0.04em] group-hover:text-gradient transition-all duration-500">
-                    {t(service.title, lang)}
+                    {t(service.title, "en")}
                   </h3>
                   <p className="font-mono text-[10px] md:text-xs text-muted-foreground mt-1 uppercase tracking-[0.1em]">
-                    {t(service.scope, lang)}
+                    {t(service.scope, "en")}
                   </p>
                 </div>
                 <p className="hidden lg:block text-sm text-foreground/70 max-w-xs leading-relaxed">
