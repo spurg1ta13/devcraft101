@@ -102,6 +102,12 @@ const PortfolioSection = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin"
               />
+              {/* Block chat widgets (bottom-right corner) */}
+              <div className="absolute bottom-0 right-0 w-24 h-24 z-10" style={{ pointerEvents: 'auto' }} />
+              {/* Block social icons (left side) */}
+              <div className="absolute top-1/4 left-0 w-16 h-1/2 z-10" style={{ pointerEvents: 'auto' }} />
+              {/* Block social icons (right side, if not bottom-right) */}
+              <div className="absolute top-1/4 right-0 w-16 h-[30%] z-10" style={{ pointerEvents: 'auto' }} />
             </div>
           </div>
         </motion.div>
