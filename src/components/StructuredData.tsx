@@ -8,7 +8,7 @@ const OrganizationSchema = () => {
     description:
       "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance.",
     email: "contact@devcraft.gr",
-    telephone: "+306974776057",
+    telephone: "+306974159157",
     address: {
       "@type": "PostalAddress",
       addressCountry: "GR",
@@ -16,7 +16,7 @@ const OrganizationSchema = () => {
     sameAs: ["https://facebook.com", "https://instagram.com"],
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+306974776057",
+      telephone: "+306974159157",
       contactType: "customer service",
       email: "contact@devcraft.gr",
       availableLanguage: ["English", "Greek"],
@@ -55,7 +55,7 @@ const LocalBusinessSchema = () => {
     "@type": "ProfessionalService",
     name: "DevCraft",
     url: "https://devcraft101.lovable.app",
-    telephone: "+306974776057",
+    telephone: "+306974159157",
     email: "contact@devcraft.gr",
     description:
       "Custom web development, UI/UX design, and ISTQB-certified quality assurance services for brands that refuse to blend in.",

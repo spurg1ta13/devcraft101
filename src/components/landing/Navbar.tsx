@@ -32,9 +32,9 @@ const Navbar = () => {
       {/* Mobile top contact bar */}
       <div className={`fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground transition-transform duration-500 ${scrolled ? "-translate-y-full" : "translate-y-0"}`}>
         <div className="container flex items-center justify-between h-11 text-xs font-mono font-bold px-4">
-          <a href="tel:+306974776057" className="flex items-center gap-2 min-h-[44px]" aria-label="Call us">
+          <a href="tel:+306974159157" className="flex items-center gap-2 min-h-[44px]" aria-label="Call us">
             <Phone className="h-4 w-4" />
-            <span className="text-xs">+30 697 477 6057</span>
+            <span className="text-xs">+30 697 415 9157</span>
           </a>
           {isHome ? (
             <a href="#contact" onClick={() => setOpen(false)} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
@@ -104,12 +104,12 @@ const Navbar = () => {
               ))}
             </div>
             <div className="flex items-center gap-4 border-l border-border/30 pl-6">
-              <a href="tel:+306974776057" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 477 6057">
+              <a href="tel:+306974159157" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 415 9157">
                 <span className="relative flex h-5 w-5 items-center justify-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
                   <Phone className="relative h-4 w-4 text-primary" />
                 </span>
-                <span className="font-bold text-sm">+30 697 477 6057</span>
+                <span className="font-bold text-sm">+30 697 415 9157</span>
               </a>
             </div>
             <LanguageSelector />
@@ -186,19 +186,19 @@ const Navbar = () => {
           transition={{ delay: 0.55 }}
           className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30 w-full max-w-xs"
         >
-          <a href="tel:+306974776057" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Call us">
+          <a href="tel:+306974159157" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Call us">
             <span className="relative flex h-5 w-5 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
               <Phone className="relative h-4 w-4 text-primary" />
             </span>
-            <span className="font-bold">+30 697 477 6057</span>
+            <span className="font-bold">+30 697 415 9157</span>
           </a>
         </motion.div>
       </motion.div>
 
       {/* Mobile floating Call Us button */}
       <motion.a
-        href="tel:+306974776057"
+        href="tel:+306974159157"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8, pointerEvents: "none" as const }}
         transition={{ duration: 0.3 }}
