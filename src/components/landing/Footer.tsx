@@ -83,6 +83,12 @@ const Footer = () => {
             >
               {t(f.privacyPolicy, lang)}
             </Link>
+            <Link
+              to="/terms-of-service"
+              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
+            >
+              {t(f.termsOfService, lang)}
+            </Link>
           </div>
         </div>
       </div>

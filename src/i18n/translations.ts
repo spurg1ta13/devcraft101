@@ -209,6 +209,7 @@ export const translations = {
     getInTouch: { en: "Get in touch", el: "Επικοινωνία" },
     rights: { en: "All rights reserved.", el: "Με επιφύλαξη παντός δικαιώματος." },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου" },
+    termsOfService: { en: "Terms of Service", el: "Όροι Χρήσης" },
   },
 
   // About page
@@ -354,6 +355,85 @@ export const translations = {
           el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου ή επιθυμείτε να ασκήσετε τα δικαιώματα προστασίας δεδομένων σας, επικοινωνήστε μαζί μας:`,
         },
         contactInfo: true,
+      },
+    ],
+  },
+
+  // Terms of Service
+  terms: {
+    heading1: { en: "Terms of", el: "Όροι" },
+    heading2: { en: "Service", el: "Χρήσης" },
+    lastUpdated: { en: "Last updated:", el: "Τελευταία ενημέρωση:" },
+    sections: [
+      {
+        title: { en: "1. Acceptance of Terms", el: "1. Αποδοχή Όρων" },
+        content: {
+          en: `By accessing and using the DevCraft website (devcraft101.lovable.app) and our services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our website or services.`,
+          el: `Με την πρόσβαση και χρήση του ιστότοπου DevCraft (devcraft101.lovable.app) και των υπηρεσιών μας, συμφωνείτε ότι δεσμεύεστε από αυτούς τους Όρους Χρήσης. Εάν δεν συμφωνείτε με οποιοδήποτε μέρος αυτών των όρων, δεν πρέπει να χρησιμοποιείτε τον ιστότοπο ή τις υπηρεσίες μας.`,
+        },
+      },
+      {
+        title: { en: "2. Services Description", el: "2. Περιγραφή Υπηρεσιών" },
+        content: {
+          en: `DevCraft provides web development, UI/UX design, and quality assurance services. The specific scope, deliverables, timelines, and fees for each project are defined in individual project agreements between DevCraft and the client.`,
+          el: `Η DevCraft παρέχει υπηρεσίες ανάπτυξης ιστοσελίδων, σχεδιασμού UI/UX και διασφάλισης ποιότητας. Το συγκεκριμένο πεδίο εφαρμογής, τα παραδοτέα, τα χρονοδιαγράμματα και οι αμοιβές για κάθε έργο καθορίζονται σε ξεχωριστές συμφωνίες έργου μεταξύ της DevCraft και του πελάτη.`,
+        },
+      },
+      {
+        title: { en: "3. Intellectual Property", el: "3. Πνευματική Ιδιοκτησία" },
+        content: {
+          en: `All content on this website — including text, graphics, logos, icons, images, and software — is the property of DevCraft or its content suppliers and is protected by international copyright laws.\n\nFor client projects, intellectual property rights transfer is governed by individual project agreements. Unless otherwise agreed in writing, upon full payment, clients receive ownership of the custom code and designs created specifically for their project.`,
+          el: `Όλο το περιεχόμενο αυτού του ιστότοπου — συμπεριλαμβανομένων κειμένων, γραφικών, λογοτύπων, εικονιδίων, εικόνων και λογισμικού — αποτελεί ιδιοκτησία της DevCraft ή των παρόχων περιεχομένου της και προστατεύεται από τους διεθνείς νόμους πνευματικών δικαιωμάτων.\n\nΓια τα έργα πελατών, η μεταβίβαση δικαιωμάτων πνευματικής ιδιοκτησίας διέπεται από ξεχωριστές συμφωνίες έργου. Εκτός αν συμφωνηθεί διαφορετικά εγγράφως, μετά την πλήρη πληρωμή, οι πελάτες λαμβάνουν κυριότητα του προσαρμοσμένου κώδικα και των σχεδίων που δημιουργήθηκαν ειδικά για το έργο τους.`,
+        },
+      },
+      {
+        title: { en: "4. User Conduct", el: "4. Συμπεριφορά Χρήστη" },
+        content: {
+          en: `When using our website, you agree not to:\n\n• Use the website for any unlawful purpose or in violation of any applicable laws\n• Attempt to gain unauthorized access to any part of the website or its systems\n• Interfere with or disrupt the website's functionality or servers\n• Copy, reproduce, or distribute any content without prior written consent\n• Transmit any viruses, malware, or other harmful code\n• Use automated tools to scrape, crawl, or extract data from the website`,
+          el: `Κατά τη χρήση του ιστότοπού μας, συμφωνείτε να μην:\n\n• Χρησιμοποιείτε τον ιστότοπο για οποιονδήποτε παράνομο σκοπό ή κατά παράβαση οποιουδήποτε ισχύοντος νόμου\n• Επιχειρείτε μη εξουσιοδοτημένη πρόσβαση σε οποιοδήποτε μέρος του ιστότοπου ή των συστημάτων του\n• Παρεμβαίνετε ή διαταράσσετε τη λειτουργικότητα του ιστότοπου ή των διακομιστών\n• Αντιγράφετε, αναπαράγετε ή διανέμετε οποιοδήποτε περιεχόμενο χωρίς προηγούμενη γραπτή συγκατάθεση\n• Μεταδίδετε ιούς, κακόβουλο λογισμικό ή άλλον επιβλαβή κώδικα\n• Χρησιμοποιείτε αυτοματοποιημένα εργαλεία για εξαγωγή δεδομένων από τον ιστότοπο`,
+        },
+      },
+      {
+        title: { en: "5. Project Agreements", el: "5. Συμφωνίες Έργου" },
+        content: {
+          en: `Individual project engagements are governed by separate agreements that outline:\n\n• **Scope of work** and deliverables\n• **Timeline** and milestones\n• **Payment terms** and schedule\n• **Revision policy** and change requests\n• **Intellectual property** transfer terms\n\nThese project-specific agreements supplement these general Terms of Service. In case of conflict, the project agreement prevails.`,
+          el: `Οι μεμονωμένες αναθέσεις έργων διέπονται από ξεχωριστές συμφωνίες που περιγράφουν:\n\n• **Πεδίο εφαρμογής** και παραδοτέα\n• **Χρονοδιάγραμμα** και ορόσημα\n• **Όρους πληρωμής** και πρόγραμμα\n• **Πολιτική αναθεωρήσεων** και αιτήματα αλλαγών\n• **Όρους μεταβίβασης** πνευματικής ιδιοκτησίας\n\nΑυτές οι ειδικές συμφωνίες έργου συμπληρώνουν αυτούς τους γενικούς Όρους Χρήσης. Σε περίπτωση σύγκρουσης, υπερισχύει η συμφωνία έργου.`,
+        },
+      },
+      {
+        title: { en: "6. Limitation of Liability", el: "6. Περιορισμός Ευθύνης" },
+        content: {
+          en: `To the maximum extent permitted by applicable law, DevCraft shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.\n\nOur total liability for any claim arising from our services shall not exceed the amount paid by you for the specific service giving rise to the claim. This limitation applies regardless of the legal theory on which the claim is based.`,
+          el: `Στο μέγιστο βαθμό που επιτρέπεται από την ισχύουσα νομοθεσία, η DevCraft δεν ευθύνεται για τυχόν έμμεσες, τυχαίες, ειδικές, επακόλουθες ή τιμωρητικές ζημίες που προκύπτουν από τη χρήση του ιστότοπου ή των υπηρεσιών μας.\n\nΗ συνολική μας ευθύνη για οποιαδήποτε αξίωση που προκύπτει από τις υπηρεσίες μας δεν υπερβαίνει το ποσό που καταβλήθηκε από εσάς για τη συγκεκριμένη υπηρεσία. Αυτός ο περιορισμός ισχύει ανεξάρτητα από τη νομική θεωρία στην οποία βασίζεται η αξίωση.`,
+        },
+      },
+      {
+        title: { en: "7. Warranties and Disclaimers", el: "7. Εγγυήσεις και Αποποιήσεις" },
+        content: {
+          en: `Our website is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.\n\nFor contracted services, specific warranties and guarantees are outlined in individual project agreements.`,
+          el: `Ο ιστότοπός μας παρέχεται "ως έχει" και "ως διαθέσιμος" χωρίς εγγυήσεις οποιουδήποτε είδους, ρητές ή σιωπηρές. Δεν εγγυόμαστε ότι ο ιστότοπος θα λειτουργεί αδιάλειπτα, χωρίς σφάλματα ή ελεύθερος από ιούς ή άλλα επιβλαβή στοιχεία.\n\nΓια τις συμβατικές υπηρεσίες, οι ειδικές εγγυήσεις περιγράφονται στις ξεχωριστές συμφωνίες έργου.`,
+        },
+      },
+      {
+        title: { en: "8. Governing Law", el: "8. Εφαρμοστέο Δίκαιο" },
+        content: {
+          en: `These Terms of Service are governed by and construed in accordance with the laws of the Hellenic Republic (Greece). Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Thessaloniki, Greece.\n\nFor EU consumers, this does not affect your rights under mandatory consumer protection laws of your country of residence.`,
+          el: `Αυτοί οι Όροι Χρήσης διέπονται και ερμηνεύονται σύμφωνα με τους νόμους της Ελληνικής Δημοκρατίας. Οποιαδήποτε διαφορά που προκύπτει από αυτούς τους όρους υπάγεται στην αποκλειστική δικαιοδοσία των δικαστηρίων της Θεσσαλονίκης, Ελλάδα.\n\nΓια καταναλωτές της ΕΕ, αυτό δεν επηρεάζει τα δικαιώματά σας βάσει υποχρεωτικών νόμων προστασίας καταναλωτών της χώρας διαμονής σας.`,
+        },
+      },
+      {
+        title: { en: "9. Changes to Terms", el: "9. Αλλαγές στους Όρους" },
+        content: {
+          en: `We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on this page with an updated date. Your continued use of the website after changes constitutes acceptance of the modified terms.\n\nWe encourage you to review this page periodically for updates.`,
+          el: `Διατηρούμε το δικαίωμα να τροποποιήσουμε αυτούς τους Όρους Χρήσης ανά πάσα στιγμή. Οι αλλαγές θα ισχύουν αμέσως μετά τη δημοσίευσή τους σε αυτή τη σελίδα με ενημερωμένη ημερομηνία. Η συνέχιση χρήσης του ιστότοπου μετά τις αλλαγές αποτελεί αποδοχή των τροποποιημένων όρων.\n\nΣας ενθαρρύνουμε να ελέγχετε αυτή τη σελίδα περιοδικά για ενημερώσεις.`,
+        },
+      },
+      {
+        title: { en: "10. Contact", el: "10. Επικοινωνία" },
+        content: {
+          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 415 9157\n• **Website**: devcraft101.lovable.app`,
+          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 415 9157\n• **Ιστοσελίδα**: devcraft101.lovable.app`,
+        },
       },
     ],
   },
