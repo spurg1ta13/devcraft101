@@ -11,17 +11,17 @@ const CookieConsent = () => {
   const c = translations.cookie;
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem("cookie-consent");
-    if (!dismissed) setVisible(true);
+    const consent = localStorage.getItem("cookie-consent");
+    if (!consent) setVisible(true);
   }, []);
 
   const accept = () => {
-    sessionStorage.setItem("cookie-consent", "accepted");
+    localStorage.setItem("cookie-consent", "accepted");
     setVisible(false);
   };
 
   const decline = () => {
-    sessionStorage.setItem("cookie-consent", "declined");
+    localStorage.setItem("cookie-consent", "declined");
     setVisible(false);
   };
 
@@ -55,13 +55,13 @@ const CookieConsent = () => {
                   onClick={accept}
                   className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold bg-primary text-primary-foreground px-4 py-2 rounded-full hover:brightness-110 hover:shadow-[0_0_16px_hsl(38_100%_55%/0.3)] transition-all"
                 >
-                  {lang === "el" ? "Αποδοχή" : "Accept"}
+                  {t(c.accept, lang)}
                 </button>
                 <button
                   onClick={decline}
                   className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold bg-secondary text-secondary-foreground px-4 py-2 rounded-full hover:bg-secondary/80 transition-all border border-border/50"
                 >
-                  {lang === "el" ? "Απόρριψη" : "Decline"}
+                  {t(c.decline, lang)}
                 </button>
               </div>
             </div>
