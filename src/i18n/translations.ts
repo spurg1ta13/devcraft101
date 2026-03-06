@@ -264,66 +264,94 @@ export const translations = {
     lastUpdated: { en: "Last updated:", el: "Τελευταία ενημέρωση:" },
     sections: [
       {
-        title: { en: "1. Information We Collect", el: "1. Πληροφορίες που Συλλέγουμε" },
+        title: { en: "1. Data Controller", el: "1. Υπεύθυνος Επεξεργασίας Δεδομένων" },
         content: {
-          en: `We may collect the following types of information when you visit our website or use our services:\n\n• **Personal Information**: Name, email address, phone number, and other contact details you voluntarily provide through forms or email.\n• **Usage Data**: Browser type, IP address, pages visited, time spent on the site, and referring URLs.\n• **Cookies & Tracking**: Small data files stored on your device to improve functionality and analyze traffic patterns.`,
-          el: `Ενδέχεται να συλλέξουμε τους ακόλουθους τύπους πληροφοριών όταν επισκέπτεστε τον ιστότοπό μας ή χρησιμοποιείτε τις υπηρεσίες μας:\n\n• **Προσωπικές Πληροφορίες**: Όνομα, διεύθυνση email, αριθμός τηλεφώνου και άλλα στοιχεία επικοινωνίας που παρέχετε εθελοντικά μέσω φορμών ή email.\n• **Δεδομένα Χρήσης**: Τύπος προγράμματος περιήγησης, διεύθυνση IP, σελίδες που επισκεφτήκατε, χρόνος παραμονής στον ιστότοπο και URLs παραπομπής.\n• **Cookies & Παρακολούθηση**: Μικρά αρχεία δεδομένων που αποθηκεύονται στη συσκευή σας για τη βελτίωση της λειτουργικότητας και την ανάλυση προτύπων κίνησης.`,
+          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nThessaloniki, Greece\nPhone: +30 697 415 9157\n\nFor any data protection inquiries, you may contact us using the details above.`,
+          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΘεσσαλονίκη, Ελλάδα\nΤηλέφωνο: +30 697 415 9157\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
         },
       },
       {
-        title: { en: "2. How We Use Your Information", el: "2. Πώς Χρησιμοποιούμε τις Πληροφορίες σας" },
+        title: { en: "2. Information We Collect", el: "2. Πληροφορίες που Συλλέγουμε" },
         content: {
-          en: `We use the collected information for the following purposes:\n\n• To provide, maintain, and improve our services\n• To respond to inquiries and communicate with you\n• To analyze website usage and optimize user experience\n• To comply with legal obligations\n• To send occasional updates about our services (with your consent)`,
-          el: `Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους ακόλουθους σκοπούς:\n\n• Για την παροχή, τη συντήρηση και τη βελτίωση των υπηρεσιών μας\n• Για την απάντηση σε ερωτήματα και την επικοινωνία μαζί σας\n• Για την ανάλυση της χρήσης του ιστότοπου και τη βελτιστοποίηση της εμπειρίας χρήστη\n• Για τη συμμόρφωση με νομικές υποχρεώσεις\n• Για την αποστολή περιστασιακών ενημερώσεων σχετικά με τις υπηρεσίες μας (με τη συγκατάθεσή σας)`,
+          en: `We may collect the following types of information when you visit our website or use our services:\n\n• **Personal Information**: Name, email address, phone number, and other contact details you voluntarily provide through our contact form.\n• **Usage Data**: Browser type, IP address, pages visited, time spent on the site, and referring URLs.\n• **Cookies & Tracking**: Small data files stored on your device to improve functionality and analyze traffic patterns.`,
+          el: `Ενδέχεται να συλλέξουμε τους ακόλουθους τύπους πληροφοριών όταν επισκέπτεστε τον ιστότοπό μας ή χρησιμοποιείτε τις υπηρεσίες μας:\n\n• **Προσωπικές Πληροφορίες**: Όνομα, διεύθυνση email, αριθμός τηλεφώνου και άλλα στοιχεία επικοινωνίας που παρέχετε εθελοντικά μέσω της φόρμας επικοινωνίας μας.\n• **Δεδομένα Χρήσης**: Τύπος προγράμματος περιήγησης, διεύθυνση IP, σελίδες που επισκεφτήκατε, χρόνος παραμονής στον ιστότοπο και URLs παραπομπής.\n• **Cookies & Παρακολούθηση**: Μικρά αρχεία δεδομένων που αποθηκεύονται στη συσκευή σας για τη βελτίωση της λειτουργικότητας και την ανάλυση προτύπων κίνησης.`,
         },
       },
       {
-        title: { en: "3. Cookies", el: "3. Cookies" },
+        title: { en: "3. Legal Basis for Processing", el: "3. Νομική Βάση Επεξεργασίας" },
         content: {
-          en: `Our website uses cookies to:\n\n• Remember your preferences and settings\n• Understand how you interact with our site\n• Improve website performance and functionality\n\nYou can control cookie settings through your browser. Disabling cookies may affect some website features.`,
-          el: `Ο ιστότοπός μας χρησιμοποιεί cookies για:\n\n• Να θυμάται τις προτιμήσεις και τις ρυθμίσεις σας\n• Να κατανοεί πώς αλληλεπιδράτε με τον ιστότοπό μας\n• Να βελτιώνει την απόδοση και τη λειτουργικότητα του ιστότοπου\n\nΜπορείτε να ελέγξετε τις ρυθμίσεις cookies μέσω του προγράμματος περιήγησής σας. Η απενεργοποίηση των cookies μπορεί να επηρεάσει ορισμένες λειτουργίες του ιστότοπου.`,
+          en: `We process your personal data based on the following legal grounds under GDPR (Article 6):\n\n• **Consent (Art. 6(1)(a))**: When you submit a contact form or accept non-essential cookies, you provide explicit consent.\n• **Legitimate Interest (Art. 6(1)(f))**: We may process usage data to improve our website and services, provided this does not override your fundamental rights.\n• **Legal Obligation (Art. 6(1)(c))**: We may process data when required by applicable law.`,
+          el: `Επεξεργαζόμαστε τα προσωπικά σας δεδομένα με βάση τις ακόλουθες νομικές βάσεις σύμφωνα με τον GDPR (Άρθρο 6):\n\n• **Συγκατάθεση (Άρθ. 6(1)(α))**: Όταν υποβάλλετε φόρμα επικοινωνίας ή αποδέχεστε μη απαραίτητα cookies, παρέχετε ρητή συγκατάθεση.\n• **Έννομο Συμφέρον (Άρθ. 6(1)(στ))**: Ενδέχεται να επεξεργαστούμε δεδομένα χρήσης για τη βελτίωση του ιστότοπου και των υπηρεσιών μας, υπό την προϋπόθεση ότι αυτό δεν υπερισχύει των θεμελιωδών σας δικαιωμάτων.\n• **Νομική Υποχρέωση (Άρθ. 6(1)(γ))**: Ενδέχεται να επεξεργαστούμε δεδομένα όταν απαιτείται από την ισχύουσα νομοθεσία.`,
         },
       },
       {
-        title: { en: "4. Data Sharing", el: "4. Κοινοποίηση Δεδομένων" },
+        title: { en: "4. How We Use Your Information", el: "4. Πώς Χρησιμοποιούμε τις Πληροφορίες σας" },
         content: {
-          en: `We do not sell, trade, or rent your personal information to third parties. We may share data with:\n\n• **Service providers** who assist in operating our website and services\n• **Legal authorities** when required by law or to protect our rights\n• **Analytics partners** (e.g., Google Analytics) in anonymized form`,
-          el: `Δεν πουλάμε, ανταλλάσσουμε ή ενοικιάζουμε τις προσωπικές σας πληροφορίες σε τρίτους. Ενδέχεται να μοιραστούμε δεδομένα με:\n\n• **Παρόχους υπηρεσιών** που βοηθούν στη λειτουργία του ιστότοπου και των υπηρεσιών μας\n• **Νομικές αρχές** όταν απαιτείται από τον νόμο ή για την προστασία των δικαιωμάτων μας\n• **Συνεργάτες ανάλυσης** (π.χ. Google Analytics) σε ανωνυμοποιημένη μορφή`,
+          en: `We use the collected information for the following purposes:\n\n• To provide, maintain, and improve our services\n• To respond to inquiries and communicate with you\n• To analyze website usage and optimize user experience\n• To comply with legal obligations\n• To send occasional updates about our services (only with your explicit consent)`,
+          el: `Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους ακόλουθους σκοπούς:\n\n• Για την παροχή, τη συντήρηση και τη βελτίωση των υπηρεσιών μας\n• Για την απάντηση σε ερωτήματα και την επικοινωνία μαζί σας\n• Για την ανάλυση της χρήσης του ιστότοπου και τη βελτιστοποίηση της εμπειρίας χρήστη\n• Για τη συμμόρφωση με νομικές υποχρεώσεις\n• Για την αποστολή περιστασιακών ενημερώσεων σχετικά με τις υπηρεσίες μας (μόνο με τη ρητή συγκατάθεσή σας)`,
         },
       },
       {
-        title: { en: "5. Data Security", el: "5. Ασφάλεια Δεδομένων" },
+        title: { en: "5. Data Retention", el: "5. Διατήρηση Δεδομένων" },
         content: {
-          en: `We implement industry-standard security measures to protect your personal information. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.`,
-          el: `Εφαρμόζουμε μέτρα ασφαλείας βιομηχανικού επιπέδου για την προστασία των προσωπικών σας πληροφοριών. Ωστόσο, καμία μέθοδος ηλεκτρονικής μετάδοσης ή αποθήκευσης δεν είναι 100% ασφαλής και δεν μπορούμε να εγγυηθούμε απόλυτη ασφάλεια.`,
+          en: `We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy:\n\n• **Contact form submissions**: Up to 12 months after your last interaction, unless an ongoing business relationship requires longer retention.\n• **Usage/analytics data**: Up to 26 months (anonymized where possible).\n• **Cookie consent preferences**: Stored locally on your device until you clear your browser data.\n\nAfter the retention period, your data is securely deleted or anonymized.`,
+          el: `Διατηρούμε τα προσωπικά σας δεδομένα μόνο για όσο χρόνο είναι απαραίτητο για την εκπλήρωση των σκοπών που περιγράφονται σε αυτήν την πολιτική:\n\n• **Υποβολές φόρμας επικοινωνίας**: Έως 12 μήνες μετά την τελευταία σας αλληλεπίδραση, εκτός εάν μια συνεχής επιχειρηματική σχέση απαιτεί μεγαλύτερη διατήρηση.\n• **Δεδομένα χρήσης/ανάλυσης**: Έως 26 μήνες (ανωνυμοποιημένα όπου είναι δυνατόν).\n• **Προτιμήσεις συγκατάθεσης cookies**: Αποθηκεύονται τοπικά στη συσκευή σας μέχρι να διαγράψετε τα δεδομένα του προγράμματος περιήγησής σας.\n\nΜετά την περίοδο διατήρησης, τα δεδομένα σας διαγράφονται με ασφάλεια ή ανωνυμοποιούνται.`,
         },
       },
       {
-        title: { en: "6. Your Rights", el: "6. Τα Δικαιώματά σας" },
+        title: { en: "6. Cookies", el: "6. Cookies" },
         content: {
-          en: `Under applicable data protection laws (including GDPR), you have the right to:\n\n• Access, correct, or delete your personal data\n• Withdraw consent at any time\n• Object to or restrict data processing\n• Request data portability\n\nTo exercise these rights, contact us at contact@devcraft.gr.`,
-          el: `Σύμφωνα με τους ισχύοντες νόμους προστασίας δεδομένων (συμπεριλαμβανομένου του GDPR), έχετε το δικαίωμα να:\n\n• Αποκτήσετε πρόσβαση, να διορθώσετε ή να διαγράψετε τα προσωπικά σας δεδομένα\n• Αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή\n• Αντιταχθείτε ή να περιορίσετε την επεξεργασία δεδομένων\n• Ζητήσετε τη φορητότητα των δεδομένων\n\nΓια να ασκήσετε αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο contact@devcraft.gr.`,
+          en: `Our website uses cookies to:\n\n• **Strictly necessary cookies**: Required for the website to function (e.g., cookie consent preference). These cannot be disabled.\n• **Analytics cookies**: Help us understand how visitors interact with our site (only with your consent).\n\nYou can manage your cookie preferences through the cookie banner or your browser settings. You may withdraw consent at any time by clearing your browser cookies.`,
+          el: `Ο ιστότοπός μας χρησιμοποιεί cookies για:\n\n• **Αυστηρά απαραίτητα cookies**: Απαιτούνται για τη λειτουργία του ιστότοπου (π.χ. προτίμηση συγκατάθεσης cookies). Δεν μπορούν να απενεργοποιηθούν.\n• **Cookies ανάλυσης**: Μας βοηθούν να κατανοήσουμε πώς οι επισκέπτες αλληλεπιδρούν με τον ιστότοπό μας (μόνο με τη συγκατάθεσή σας).\n\nΜπορείτε να διαχειριστείτε τις προτιμήσεις σας για cookies μέσω του banner cookies ή των ρυθμίσεων του προγράμματος περιήγησής σας. Μπορείτε να αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή καθαρίζοντας τα cookies του προγράμματος περιήγησής σας.`,
         },
       },
       {
-        title: { en: "7. Third-Party Links", el: "7. Σύνδεσμοι Τρίτων" },
+        title: { en: "7. Data Sharing", el: "7. Κοινοποίηση Δεδομένων" },
         content: {
-          en: `Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external websites.`,
-          el: `Ο ιστότοπός μας ενδέχεται να περιέχει συνδέσμους προς ιστότοπους τρίτων. Δεν φέρουμε ευθύνη για τις πρακτικές απορρήτου ή το περιεχόμενο αυτών των εξωτερικών ιστότοπων.`,
+          en: `We do not sell, trade, or rent your personal information to third parties. We may share data with:\n\n• **Service providers** who assist in operating our website and services (under data processing agreements)\n• **Legal authorities** when required by law or to protect our rights\n• **Analytics partners** in anonymized form\n\nAll third-party processors are required to comply with GDPR and protect your data.`,
+          el: `Δεν πουλάμε, ανταλλάσσουμε ή ενοικιάζουμε τις προσωπικές σας πληροφορίες σε τρίτους. Ενδέχεται να μοιραστούμε δεδομένα με:\n\n• **Παρόχους υπηρεσιών** που βοηθούν στη λειτουργία του ιστότοπου και των υπηρεσιών μας (βάσει συμφωνιών επεξεργασίας δεδομένων)\n• **Νομικές αρχές** όταν απαιτείται από τον νόμο ή για την προστασία των δικαιωμάτων μας\n• **Συνεργάτες ανάλυσης** σε ανωνυμοποιημένη μορφή\n\nΌλοι οι τρίτοι επεξεργαστές υποχρεούνται να συμμορφώνονται με τον GDPR και να προστατεύουν τα δεδομένα σας.`,
         },
       },
       {
-        title: { en: "8. Changes to This Policy", el: "8. Αλλαγές σε αυτήν την Πολιτική" },
+        title: { en: "8. Data Security", el: "8. Ασφάλεια Δεδομένων" },
         content: {
-          en: `We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date.`,
-          el: `Διατηρούμε το δικαίωμα να ενημερώσουμε αυτήν την Πολιτική Απορρήτου ανά πάσα στιγμή. Οι αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία ισχύος.`,
+          en: `We implement industry-standard security measures to protect your personal information, including encrypted data transmission (HTTPS/TLS) and secure hosting infrastructure. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.`,
+          el: `Εφαρμόζουμε μέτρα ασφαλείας βιομηχανικού επιπέδου για την προστασία των προσωπικών σας πληροφοριών, συμπεριλαμβανομένης κρυπτογραφημένης μετάδοσης δεδομένων (HTTPS/TLS) και ασφαλούς υποδομής φιλοξενίας. Ωστόσο, καμία μέθοδος ηλεκτρονικής μετάδοσης ή αποθήκευσης δεν είναι 100% ασφαλής και δεν μπορούμε να εγγυηθούμε απόλυτη ασφάλεια.`,
         },
       },
       {
-        title: { en: "9. Contact Us", el: "9. Επικοινωνήστε μαζί μας" },
+        title: { en: "9. Your Rights Under GDPR", el: "9. Τα Δικαιώματά σας βάσει GDPR" },
         content: {
-          en: `If you have questions about this Privacy Policy, please contact us:`,
-          el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου, επικοινωνήστε μαζί μας:`,
+          en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 415 9157. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
+          el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 415 9157. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
+        },
+      },
+      {
+        title: { en: "10. International Data Transfers", el: "10. Διεθνείς Μεταφορές Δεδομένων" },
+        content: {
+          en: `Your data is primarily processed within the European Economic Area (EEA). If any data is transferred outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission.`,
+          el: `Τα δεδομένα σας επεξεργάζονται κυρίως εντός του Ευρωπαϊκού Οικονομικού Χώρου (ΕΟΧ). Εάν μεταφερθούν δεδομένα εκτός ΕΟΧ, διασφαλίζουμε ότι υπάρχουν κατάλληλες εγγυήσεις, όπως Τυπικές Συμβατικές Ρήτρες (SCCs) εγκεκριμένες από την Ευρωπαϊκή Επιτροπή.`,
+        },
+      },
+      {
+        title: { en: "11. Third-Party Links", el: "11. Σύνδεσμοι Τρίτων" },
+        content: {
+          en: `Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external websites. We encourage you to read their privacy policies.`,
+          el: `Ο ιστότοπός μας ενδέχεται να περιέχει συνδέσμους προς ιστότοπους τρίτων. Δεν φέρουμε ευθύνη για τις πρακτικές απορρήτου ή το περιεχόμενο αυτών των εξωτερικών ιστότοπων. Σας ενθαρρύνουμε να διαβάσετε τις πολιτικές απορρήτου τους.`,
+        },
+      },
+      {
+        title: { en: "12. Changes to This Policy", el: "12. Αλλαγές σε αυτήν την Πολιτική" },
+        content: {
+          en: `We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date. For significant changes, we will make reasonable efforts to notify you.`,
+          el: `Διατηρούμε το δικαίωμα να ενημερώσουμε αυτήν την Πολιτική Απορρήτου ανά πάσα στιγμή. Οι αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία ισχύος. Για σημαντικές αλλαγές, θα καταβάλλουμε εύλογες προσπάθειες να σας ειδοποιήσουμε.`,
+        },
+      },
+      {
+        title: { en: "13. Contact Us", el: "13. Επικοινωνήστε μαζί μας" },
+        content: {
+          en: `If you have questions about this Privacy Policy or wish to exercise your data protection rights, please contact us:`,
+          el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου ή επιθυμείτε να ασκήσετε τα δικαιώματα προστασίας δεδομένων σας, επικοινωνήστε μαζί μας:`,
         },
         contactInfo: true,
       },
@@ -333,11 +361,12 @@ export const translations = {
   // Cookie consent
   cookie: {
     message: {
-      en: "We use cookies to improve your experience. By continuing, you agree to our",
-      el: "Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας. Συνεχίζοντας, συμφωνείτε με την",
+      en: "We use cookies to enhance your browsing experience and analyze site traffic. You can accept or decline non-essential cookies. Learn more in our",
+      el: "Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας περιήγησής σας και την ανάλυση της επισκεψιμότητας. Μπορείτε να αποδεχτείτε ή να απορρίψετε τα μη απαραίτητα cookies. Μάθετε περισσότερα στην",
     },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου" },
-    accept: { en: "Got it", el: "Αποδοχή" },
+    accept: { en: "Accept", el: "Αποδοχή" },
+    decline: { en: "Decline", el: "Απόρριψη" },
   },
 
   // Portfolio
