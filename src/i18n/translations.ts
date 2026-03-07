@@ -431,8 +431,8 @@ export const translations = {
       {
         title: { en: "10. Contact", el: "10. Επικοινωνία" },
         content: {
-          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 415 9157\n• **Website**: devcraft101.lovable.app`,
-          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 415 9157\n• **Ιστοσελίδα**: devcraft101.lovable.app`,
+          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 415 9157`,
+          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 415 9157`,
         },
       },
     ],
