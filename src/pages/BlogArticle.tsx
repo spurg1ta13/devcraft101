@@ -53,6 +53,8 @@ const BlogArticle = () => {
   const b = blogTranslations;
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
+
+  const article = blogArticles.find((a) => a.slug === slug);
   if (!article) return <Navigate to="/blog" replace />;
 
   const renderContent = (paragraphs: string[]) =>
