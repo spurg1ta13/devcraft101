@@ -85,6 +85,12 @@ const Navbar = () => {
               >
                 {t(nav.aboutUs, lang)}
               </Link>
+              <Link
+                to="/blog"
+                className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+              >
+                {blogLabel}
+              </Link>
               {menuItems.map((item) => (
                 isHome ? (
                   <a
