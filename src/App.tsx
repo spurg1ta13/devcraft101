@@ -8,6 +8,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
+import Blog from "./pages/Blog";
+import BlogArticle from "./pages/BlogArticle";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
