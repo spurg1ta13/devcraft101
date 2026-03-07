@@ -11,7 +11,37 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://devcraft101.lovable.app/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://devcraft101.lovable.app/blog/custom-web-development-vs-templates-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devcraft101.lovable.app/blog/istqb-quality-assurance-why-it-matters</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devcraft101.lovable.app/blog/ui-ux-design-trends-that-convert-visitors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://devcraft101.lovable.app/blog/ai-transforming-modern-web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://devcraft101.lovable.app/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://devcraft101.lovable.app/terms-of-service</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
