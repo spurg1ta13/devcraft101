@@ -21,19 +21,19 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     author: {
       "@type": "Organization",
       name: "DevCraft",
-      url: "https://devcraft101.lovable.app",
+      url: "https://devcraft.gr",
     },
     publisher: {
       "@type": "Organization",
       name: "DevCraft",
       logo: {
         "@type": "ImageObject",
-        url: "https://devcraft101.lovable.app/devcraft-logo.svg",
+        url: "https://devcraft.gr/devcraft-logo.svg",
       },
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://devcraft101.lovable.app/blog/${article.slug}`,
+      "@id": `https://devcraft.gr/blog/${article.slug}`,
     },
     keywords: article.keywords.join(", "),
     inLanguage: lang === "el" ? "el-GR" : "en-US",

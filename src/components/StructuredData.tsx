@@ -3,8 +3,8 @@ const OrganizationSchema = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "DevCraft",
-    url: "https://devcraft101.lovable.app",
-    logo: "https://devcraft101.lovable.app/devcraft-logo.svg",
+    url: "https://devcraft.gr",
+    logo: "https://devcraft.gr/devcraft-logo.svg",
     description:
       "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance.",
     email: "contact@devcraft.gr",
@@ -36,7 +36,7 @@ const WebSiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "DevCraft",
-    url: "https://devcraft101.lovable.app",
+    url: "https://devcraft.gr",
     description:
       "Custom web development, UI/UX design, and ISTQB-certified QA services.",
   };
@@ -54,7 +54,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "DevCraft",
-    url: "https://devcraft101.lovable.app",
+    url: "https://devcraft.gr",
     telephone: "+306974159157",
     email: "contact@devcraft.gr",
     description:

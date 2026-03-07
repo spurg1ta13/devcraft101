@@ -10,7 +10,7 @@ interface SEOHeadProps {
 }
 
 const SITE_NAME = "DevCraft";
-const BASE_URL = "https://devcraft101.lovable.app";
+const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {

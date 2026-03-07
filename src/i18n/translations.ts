@@ -368,8 +368,8 @@ export const translations = {
       {
         title: { en: "1. Acceptance of Terms", el: "1. Αποδοχή Όρων" },
         content: {
-          en: `By accessing and using the DevCraft website (devcraft101.lovable.app) and our services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our website or services.`,
-          el: `Με την πρόσβαση και χρήση του ιστότοπου DevCraft (devcraft101.lovable.app) και των υπηρεσιών μας, συμφωνείτε ότι δεσμεύεστε από αυτούς τους Όρους Χρήσης. Εάν δεν συμφωνείτε με οποιοδήποτε μέρος αυτών των όρων, δεν πρέπει να χρησιμοποιείτε τον ιστότοπο ή τις υπηρεσίες μας.`,
+          en: `By accessing and using the DevCraft website (devcraft.gr) and our services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our website or services.`,
+          el: `Με την πρόσβαση και χρήση του ιστότοπου DevCraft (devcraft.gr) και των υπηρεσιών μας, συμφωνείτε ότι δεσμεύεστε από αυτούς τους Όρους Χρήσης. Εάν δεν συμφωνείτε με οποιοδήποτε μέρος αυτών των όρων, δεν πρέπει να χρησιμοποιείτε τον ιστότοπο ή τις υπηρεσίες μας.`,
         },
       },
       {
