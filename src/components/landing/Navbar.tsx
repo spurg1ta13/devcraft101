@@ -123,12 +123,12 @@ const Navbar = () => {
                 {t(nav.letsTalk, lang)}
               </a>
             ) : (
-              <Link
-                to="/#contact"
+              <a
+                href="/#contact"
                 className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center"
               >
                 {t(nav.letsTalk, lang)}
-              </Link>
+              </a>
             )}
           </div>
 

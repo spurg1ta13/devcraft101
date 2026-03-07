@@ -61,18 +61,12 @@ const Footer = () => {
                 </div>
                 +30 697 415 9157
               </a>
-              <Link
-                to="/#contact"
-                onClick={() => {
-                  const el = document.getElementById("contact");
-                  if (el) {
-                    el.scrollIntoView({ behavior: "smooth" });
-                  }
-                }}
+              <a
+                href="/#contact"
                 className="inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold mt-1 cursor-pointer"
               >
                 {t(nav.letsTalk, lang)}
-              </Link>
+              </a>
             </div>
           </div>
         </div>
