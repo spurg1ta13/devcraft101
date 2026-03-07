@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
+import { useEffect } from "react";
+import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
