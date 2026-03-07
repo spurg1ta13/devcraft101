@@ -54,7 +54,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "DevCraft",
-    url: "https://devcraft101.lovable.app",
+    url: "https://devcraft.gr",
     telephone: "+306974159157",
     email: "contact@devcraft.gr",
     description:

@@ -33,7 +33,7 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://devcraft101.lovable.app/blog/${article.slug}`,
+      "@id": `https://devcraft.gr/blog/${article.slug}`,
     },
     keywords: article.keywords.join(", "),
     inLanguage: lang === "el" ? "el-GR" : "en-US",
