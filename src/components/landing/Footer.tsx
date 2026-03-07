@@ -1,4 +1,4 @@
-import { Phone, ArrowUpRight } from "lucide-react";
+import { Phone, ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
