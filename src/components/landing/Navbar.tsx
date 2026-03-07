@@ -27,6 +27,8 @@ const Navbar = () => {
     { label: t(nav.contact, lang), href: "contact" },
   ];
 
+  const blogLabel = lang === "el" ? "Ιστολόγιο" : "Blog";
+
   return (
     <>
       {/* Mobile top contact bar */}
