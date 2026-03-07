@@ -27,6 +27,8 @@ const Navbar = () => {
     { label: t(nav.contact, lang), href: "contact" },
   ];
 
+  const blogLabel = lang === "el" ? "Ιστολόγιο" : "Blog";
+
   return (
     <>
       {/* Mobile top contact bar */}
@@ -82,6 +84,12 @@ const Navbar = () => {
                 className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
               >
                 {t(nav.aboutUs, lang)}
+              </Link>
+              <Link
+                to="/blog"
+                className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+              >
+                {blogLabel}
               </Link>
               {menuItems.map((item) => (
                 isHome ? (
@@ -164,6 +172,17 @@ const Navbar = () => {
           className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
         >
           {t(nav.aboutUs, lang)}
+        </motion.a>
+        <motion.a
+          key="blog"
+          href="/blog"
+          onClick={() => setOpen(false)}
+          initial={{ opacity: 0, y: 20 }}
+          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.08 }}
+          className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
+        >
+          {blogLabel}
         </motion.a>
         {menuItems.map((item, i) => (
           <motion.a
