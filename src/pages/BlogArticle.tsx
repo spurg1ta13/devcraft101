@@ -21,7 +21,7 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     author: {
       "@type": "Organization",
       name: "DevCraft",
-      url: "https://devcraft101.lovable.app",
+      url: "https://devcraft.gr",
     },
     publisher: {
       "@type": "Organization",
