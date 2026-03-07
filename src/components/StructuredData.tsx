@@ -36,7 +36,7 @@ const WebSiteSchema = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "DevCraft",
-    url: "https://devcraft101.lovable.app",
+    url: "https://devcraft.gr",
     description:
       "Custom web development, UI/UX design, and ISTQB-certified QA services.",
   };
