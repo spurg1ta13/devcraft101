@@ -28,7 +28,7 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
       name: "DevCraft",
       logo: {
         "@type": "ImageObject",
-        url: "https://devcraft101.lovable.app/devcraft-logo.svg",
+        url: "https://devcraft.gr/devcraft-logo.svg",
       },
     },
     mainEntityOfPage: {
