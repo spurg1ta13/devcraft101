@@ -6,7 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
@@ -51,6 +51,8 @@ const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang } = useLang();
   const b = blogTranslations;
+
+  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
 
   const article = blogArticles.find((a) => a.slug === slug);
   if (!article) return <Navigate to="/blog" replace />;

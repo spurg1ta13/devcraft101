@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
@@ -13,6 +14,8 @@ const Footer = lazy(() => import("@/components/landing/Footer"));
 const Blog = () => {
   const { lang } = useLang();
   const b = blogTranslations;
+
+  useEffect(() => { window.scrollTo(0, 0); }, []);
 
   return (
     <div className="min-h-screen bg-background">
