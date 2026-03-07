@@ -43,9 +43,9 @@ const Navbar = () => {
               {t(nav.letsTalk, lang)}
             </a>
           ) : (
-            <Link to="/#contact" className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+            <a href="/#contact" className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
-            </Link>
+            </a>
           )}
         </div>
       </div>
