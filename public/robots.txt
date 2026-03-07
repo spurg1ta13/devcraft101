@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow:
 
-Sitemap: https://devcraft101.lovable.app/sitemap.xml
+Sitemap: https://devcraft.gr/sitemap.xml
