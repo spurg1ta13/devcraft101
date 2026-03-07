@@ -39,9 +39,6 @@ const Blog = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-primary mb-4 block">
-              {t(b.heading, lang)}
-            </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-[-0.03em] mb-4">
               {t(b.heading, lang)}
             </h1>
