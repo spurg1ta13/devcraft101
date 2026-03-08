@@ -81,9 +81,10 @@ const CodeRain = () => {
 
 const HeroSection = () => {
   const ref = useRef(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 1 : 1.3]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : -80]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const { lang } = useLang();
   const hero = translations.hero;
