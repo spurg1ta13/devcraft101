@@ -37,6 +37,10 @@ const SEOHead = ({
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
 
+  // Block indexing on any non-production domain (e.g. lovable.app)
+  const isStaging = typeof window !== "undefined" && !window.location.hostname.endsWith("devcraft.gr");
+  const shouldNoindex = noindex || isStaging;
+
   return (
     <Helmet>
       <html lang={lang} />
@@ -45,9 +49,9 @@ const SEOHead = ({
       <link rel="canonical" href={fullUrl} />
       <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
       <link rel="apple-touch-icon" href="/favicon.png" />
-      {!noindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
-      <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      {!shouldNoindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
+      {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
+      <meta name="googlebot" content={shouldNoindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />
       <meta name="google" content="notranslate" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
