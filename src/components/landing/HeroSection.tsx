@@ -1,6 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo, useState, useEffect } from "react";
-import heroBanner from "@/assets/hero-banner.jpg";
+import { useRef, useMemo } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useIsMobile } from "@/hooks/use-mobile";
