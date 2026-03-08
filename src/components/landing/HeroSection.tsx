@@ -105,11 +105,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      <div className="absolute inset-0 opacity-[0.12] md:opacity-[0.18] pointer-events-none">
-        <div className="w-full h-[100dvh] overflow-hidden">
-          <CodeRain />
+      {!isMobile && (
+        <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
+          <div className="w-full h-[100dvh] overflow-hidden">
+            <CodeRain />
+          </div>
         </div>
-      </div>
+      )}
 
       <motion.div
         style={{ y: textY, opacity }}
