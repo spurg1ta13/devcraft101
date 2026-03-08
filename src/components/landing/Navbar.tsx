@@ -156,17 +156,20 @@ const Navbar = () => {
         role="dialog"
         aria-label="Mobile navigation menu"
       >
-        <motion.a
+        <motion.div
           key="about"
-          href="/about"
-          onClick={() => setOpen(false)}
           initial={{ opacity: 0, y: 20 }}
           animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.05 }}
-          className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
         >
-          {t(nav.aboutUs, lang)}
-        </motion.a>
+          <Link
+            to="/about"
+            onClick={() => setOpen(false)}
+            className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
+          >
+            {t(nav.aboutUs, lang)}
+          </Link>
+        </motion.div>
         {menuItems.map((item, i) => (
           <motion.a
             key={item.href}
