@@ -1,6 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo, useState, useEffect } from "react";
-import heroBanner from "@/assets/hero-banner.jpg";
+import { useRef, useMemo } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -82,27 +80,17 @@ const CodeRain = () => {
 const HeroSection = () => {
   const ref = useRef(null);
   const isMobile = useIsMobile();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 1 : 1.3]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : -80]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const { lang } = useLang();
   const hero = translations.hero;
 
   return (
     <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
-      <motion.div className="absolute inset-0 will-change-transform" style={{ scale: imgScale }}>
-        <img
-          src={heroBanner}
-          alt="DevCraft web development hero background"
-          loading="eager"
-          decoding="async"
-          fetchPriority="high"
-          className="w-full h-full object-cover opacity-20"
-          width={1920}
-          height={1080}
+      <div className="absolute inset-0">
+        <div
+          className="w-full h-full bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url(/hero-banner.jpg)` }}
         />
-      </motion.div>
+      </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
@@ -114,8 +102,7 @@ const HeroSection = () => {
         </div>
       )}
 
-      <motion.div
-        style={{ y: textY, opacity }}
+      <div
         className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6"
       >
         <div className="overflow-hidden mb-3 md:mb-4">
@@ -147,7 +134,7 @@ const HeroSection = () => {
             </a>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };
