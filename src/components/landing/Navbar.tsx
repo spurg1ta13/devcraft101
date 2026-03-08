@@ -50,10 +50,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <motion.header
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+      <header
         className={`fixed left-0 right-0 z-[55] transition-all duration-500 ${
           scrolled ? "glass border-b border-border/30 top-0" : "top-11 lg:top-0"
         }`}
@@ -145,7 +142,7 @@ const Navbar = () => {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile fullscreen menu */}
       <motion.div

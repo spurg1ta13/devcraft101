@@ -1,8 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const codeLines = [
   { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
@@ -80,9 +81,10 @@ const CodeRain = () => {
 
 const HeroSection = () => {
   const ref = useRef(null);
+  const isMobile = useIsMobile();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const imgScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
-  const textY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const imgScale = useTransform(scrollYProgress, [0, 1], [1, isMobile ? 1 : 1.3]);
+  const textY = useTransform(scrollYProgress, [0, 1], [0, isMobile ? 0 : -80]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const { lang } = useLang();
   const hero = translations.hero;
@@ -104,11 +106,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      <div className="absolute inset-0 opacity-[0.12] md:opacity-[0.18] pointer-events-none">
-        <div className="w-full h-[100dvh] overflow-hidden">
-          <CodeRain />
+      {!isMobile && (
+        <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
+          <div className="w-full h-[100dvh] overflow-hidden">
+            <CodeRain />
+          </div>
         </div>
-      </div>
+      )}
 
       <motion.div
         style={{ y: textY, opacity }}
