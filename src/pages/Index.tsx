@@ -2,10 +2,10 @@ import { lazy, Suspense } from "react";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
-import ServicesSection from "@/components/landing/ServicesSection";
 import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/StructuredData";
 
+const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
 const PortfolioSection = lazy(() => import("@/components/landing/PortfolioSection"));
 const ProcessSection = lazy(() => import("@/components/landing/ProcessSection"));
