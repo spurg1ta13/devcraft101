@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
@@ -26,8 +25,6 @@ const Navbar = () => {
     { label: t(nav.process, lang), href: "process" },
     { label: t(nav.contact, lang), href: "contact" },
   ];
-
-  const blogLabel = lang === "el" ? "Ιστολόγιο" : "Blog";
 
   return (
     <>
@@ -144,49 +141,44 @@ const Navbar = () => {
         </nav>
       </header>
 
-      {/* Mobile fullscreen menu */}
-      <motion.div
-        initial={false}
-        animate={open ? { opacity: 1, pointerEvents: "auto" as const } : { opacity: 0, pointerEvents: "none" as const }}
-        transition={{ duration: 0.4 }}
-        className="fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-6 px-6"
+      {/* Mobile fullscreen menu — CSS transitions only */}
+      <div
+        className={`fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-6 px-6 transition-opacity duration-400 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
         role="dialog"
         aria-label="Mobile navigation menu"
       >
-        <motion.div
-          key="about"
-          initial={{ opacity: 0, y: 20 }}
-          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.05 }}
+        <Link
+          to="/about"
+          onClick={() => setOpen(false)}
+          className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+            open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: open ? "50ms" : "0ms" }}
         >
-          <Link
-            to="/about"
-            onClick={() => setOpen(false)}
-            className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
-          >
-            {t(nav.aboutUs, lang)}
-          </Link>
-        </motion.div>
+          {t(nav.aboutUs, lang)}
+        </Link>
         {menuItems.map((item, i) => (
-          <motion.a
+          <a
             key={item.href}
             href={isHome ? `#${item.href}` : `/#${item.href}`}
             onClick={() => setOpen(false)}
-            initial={{ opacity: 0, y: 20 }}
-            animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ delay: (i + 1) * 0.1 + 0.05 }}
-            className="text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-colors min-h-[48px] flex items-center"
+            className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
           >
             {item.label}
-          </motion.a>
+          </a>
         ))}
 
         {/* Contact info */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={open ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: 0.55 }}
-          className="flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30 w-full max-w-xs"
+        <div
+          className={`flex flex-col items-center gap-4 mt-4 pt-8 border-t border-border/30 w-full max-w-xs transition-all duration-300 ${
+            open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: open ? "550ms" : "0ms" }}
         >
           <a href="tel:+306974159157" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Call us">
             <span className="relative flex h-5 w-5 items-center justify-center">
@@ -195,20 +187,19 @@ const Navbar = () => {
             </span>
             <span className="font-bold">+30 697 415 9157</span>
           </a>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
-      {/* Mobile floating Call Us button */}
-      <motion.a
+      {/* Mobile floating Call Us button — CSS only */}
+      <a
         href="tel:+306974159157"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={scrolled ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8, pointerEvents: "none" as const }}
-        transition={{ duration: 0.3 }}
-        className="fixed bottom-6 right-6 z-50 lg:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-transform"
+        className={`fixed bottom-6 right-6 z-50 lg:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-all duration-300 ${
+          scrolled ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-80 pointer-events-none"
+        }`}
         aria-label="Call us"
       >
         <Phone className="h-6 w-6" />
-      </motion.a>
+      </a>
     </>
   );
 };
