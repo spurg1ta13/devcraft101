@@ -6,14 +6,16 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
+import { lazy, Suspense } from "react";
 import Index from "./pages/Index";
-import AboutUs from "./pages/AboutUs";
-import Blog from "./pages/Blog";
-import BlogArticle from "./pages/BlogArticle";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfService from "./pages/TermsOfService";
-import NotFound from "./pages/NotFound";
-import CookieConsent from "./components/CookieConsent";
+
+const AboutUs = lazy(() => import("./pages/AboutUs"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const CookieConsent = lazy(() => import("./components/CookieConsent"));
 
 const queryClient = new QueryClient();
 
