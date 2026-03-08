@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { Monitor, Smartphone, ExternalLink } from "lucide-react";
+import { Monitor, Smartphone } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { useInView } from "@/hooks/useInView";
 
 const projectUrls = [
   "https://www.cleanupskg.gr",
@@ -18,23 +18,22 @@ const PortfolioSection = () => {
   const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
+  const { ref, inView } = useInView();
 
   return (
     <section id="portfolio" className="relative section-rhythm" aria-label="Portfolio">
-      <div className="container px-4 sm:px-6">
+      <div className="container px-4 sm:px-6" ref={ref}>
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 md:mb-16"
+        <div
+          className={`mb-12 md:mb-16 transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           <h2 className="text-3xl sm:text-4xl md:text-7xl font-black tracking-[-0.04em] leading-[0.9]">
             {t(s.label, lang)}{" "}
             <span className="text-gradient">{t(s.label2, lang)}</span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* Project tabs */}
         <div className="flex flex-wrap gap-2 md:gap-3 mb-6 md:mb-8">
@@ -80,13 +79,7 @@ const PortfolioSection = () => {
         </div>
 
         {/* Preview area */}
-        <motion.div
-          key={`${activeProject}-${viewMode}`}
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="relative"
-        >
+        <div className="relative">
           <div className="flex justify-center">
             <div
               className={`relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-background transition-all duration-500 ${
@@ -102,15 +95,12 @@ const PortfolioSection = () => {
                 loading="lazy"
                 sandbox="allow-scripts allow-same-origin"
               />
-              {/* Block chat widgets (bottom-right corner) */}
               <div className="absolute bottom-0 right-0 w-24 h-24 z-10" style={{ pointerEvents: 'auto' }} />
-              {/* Block social icons (left side) */}
               <div className="absolute top-1/4 left-0 w-16 h-1/2 z-10" style={{ pointerEvents: 'auto' }} />
-              {/* Block social icons (right side, if not bottom-right) */}
               <div className="absolute top-1/4 right-0 w-16 h-[30%] z-10" style={{ pointerEvents: 'auto' }} />
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

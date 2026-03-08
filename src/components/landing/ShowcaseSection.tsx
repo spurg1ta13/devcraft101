@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight, Code2, Palette, ShieldCheck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { useInView } from "@/hooks/useInView";
 
 const icons = [Code2, ShieldCheck, Palette];
 const techsList = [
@@ -13,16 +13,15 @@ const techsList = [
 const ShowcaseSection = () => {
   const { lang } = useLang();
   const s = translations.showcase;
+  const { ref, inView } = useInView();
 
   return (
     <section id="work" className="relative section-rhythm" aria-label="Our work">
-      <div className="container px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 md:mb-20"
+      <div className="container px-4 sm:px-6" ref={ref}>
+        <div
+          className={`mb-12 md:mb-20 transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
             {t(s.label, lang)}
@@ -32,20 +31,18 @@ const ShowcaseSection = () => {
             <br />
             <span className="text-gradient">{t(s.heading2, lang)}</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {s.projects.map((project, i) => {
             const Icon = icons[i];
             return (
-              <motion.article
+              <article
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.7, ease: "easeOut" }}
-                whileHover={{ y: -10, scale: 1.03, transition: { duration: 0.4 } }}
-                className="group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-2xl md:rounded-3xl p-5 sm:p-6 lg:p-10 group-hover:border-primary/40 transition-all duration-700 flex flex-col justify-between min-h-[320px] sm:min-h-[380px] lg:min-h-[420px] hover:shadow-glow"
+                className={`group cursor-pointer relative overflow-hidden bg-secondary border border-border/50 rounded-2xl md:rounded-3xl p-5 sm:p-6 lg:p-10 transition-all duration-700 flex flex-col justify-between min-h-[320px] sm:min-h-[380px] lg:min-h-[420px] hover:shadow-glow hover:-translate-y-2 hover:scale-[1.02] hover:border-primary/40 ${
+                  inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                }`}
+                style={{ transitionDelay: inView ? `${i * 150}ms` : "0ms" }}
               >
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/[0.08] rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/3" aria-hidden="true" />
                 <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-center" aria-hidden="true" />
@@ -90,7 +87,7 @@ const ShowcaseSection = () => {
                     </span>
                   ))}
                 </div>
-              </motion.article>
+              </article>
             );
           })}
         </div>

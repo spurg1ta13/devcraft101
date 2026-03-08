@@ -173,7 +173,7 @@
   animation: hero-fade-up 0.8s ease-out forwards;
 }
 
-/* Morph blob */
+/* Morph blob — use will-change for composited animation */
 @keyframes morph {
   0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
   25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
@@ -182,20 +182,21 @@
 }
 .animate-morph {
   animation: morph 15s ease-in-out infinite;
+  will-change: border-radius;
 }
 
-/* Expand line */
+/* Expand line for success overlay */
 @keyframes expand-line {
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
 
-/* Service row hover */
+/* Service row hover — use transform instead of padding to avoid reflow */
 .service-row {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .service-row:hover {
-  padding-left: 2rem;
+  transform: translateX(2rem);
   background: hsl(0 0% 5%);
 }
 .service-row:hover .service-number {
@@ -204,8 +205,4 @@
 .service-row:hover .service-arrow {
   transform: rotate(-45deg);
   color: hsl(38 100% 55%);
-}
-.service-row:hover .service-image {
-  opacity: 1;
-  transform: scale(1) rotate(-2deg);
 }

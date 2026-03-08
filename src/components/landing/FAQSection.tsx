@@ -1,14 +1,15 @@
-import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { useInView } from "@/hooks/useInView";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { lang } = useLang();
   const f = translations.faq;
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
+  const { ref, inView } = useInView();
 
   return (
     <>
@@ -31,14 +32,12 @@ const FAQSection = () => {
       />
 
       <section className="relative section-rhythm overflow-hidden" aria-label="Frequently asked questions">
-        <div className="container relative z-10 px-4 sm:px-6">
+        <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
           <div className="max-w-3xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="mb-10 md:mb-12"
+            <div
+              className={`mb-10 md:mb-12 transition-all duration-700 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
             >
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
                 {t(f.label, lang)}
@@ -46,17 +45,16 @@ const FAQSection = () => {
               <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[0.9]">
                 {t(f.heading1, lang)} <span className="text-gradient">{t(f.heading2, lang)}</span>
               </h2>
-            </motion.div>
+            </div>
 
             <div className="space-y-0">
               {f.items.map((faq, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="border-b border-border/30"
+                  className={`border-b border-border/30 transition-all duration-500 ${
+                    inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+                  }`}
+                  style={{ transitionDelay: inView ? `${i * 80}ms` : "0ms" }}
                 >
                   <button
                     onClick={() => toggle(i)}
@@ -84,7 +82,7 @@ const FAQSection = () => {
                       {t(faq.answer, lang)}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
