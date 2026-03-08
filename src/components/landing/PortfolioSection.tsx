@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Monitor, Smartphone } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -15,10 +14,10 @@ const projectUrls = [
 const PortfolioSection = () => {
   const { lang } = useLang();
   const s = translations.portfolio;
-  const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
-  const { ref, inView } = useInView();
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.05 });
 
   return (
     <section id="portfolio" className="relative section-rhythm" aria-label="Portfolio">
@@ -40,7 +39,7 @@ const PortfolioSection = () => {
           {s.projects.map((project, i) => (
             <button
               key={i}
-              onClick={() => setActiveProject(i)}
+              onClick={() => { setActiveProject(i); setIframeLoaded(true); }}
               className={`font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] px-4 sm:px-5 py-2.5 rounded-full border transition-all duration-500 ${
                 activeProject === i
                   ? "bg-primary text-primary-foreground border-primary shadow-glow"
@@ -88,13 +87,19 @@ const PortfolioSection = () => {
                   : "w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[700px]"
               }`}
             >
-              <iframe
-                src={projectUrls[activeProject]}
-                title={t(s.projects[activeProject].title, lang)}
-                className="w-full h-full border-0"
-                loading="lazy"
-                sandbox="allow-scripts allow-same-origin"
-              />
+              {(inView || iframeLoaded) ? (
+                <iframe
+                  src={projectUrls[activeProject]}
+                  title={t(s.projects[activeProject].title, lang)}
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
+                  Loading preview…
+                </div>
+              )}
               <div className="absolute bottom-0 right-0 w-24 h-24 z-10" style={{ pointerEvents: 'auto' }} />
               <div className="absolute top-1/4 left-0 w-16 h-1/2 z-10" style={{ pointerEvents: 'auto' }} />
               <div className="absolute top-1/4 right-0 w-16 h-[30%] z-10" style={{ pointerEvents: 'auto' }} />

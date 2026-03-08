@@ -1,7 +1,6 @@
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useEffect, useState } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 const codeLines = [
   { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
@@ -79,9 +78,18 @@ const CodeRain = () => {
 
 const HeroSection = () => {
   const ref = useRef(null);
-  const isMobile = useIsMobile();
   const { lang } = useLang();
   const hero = translations.hero;
+  // Use CSS media query to avoid forced reflow from JS width checks
+  const [showCodeRain, setShowCodeRain] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(min-width: 768px)");
+    setShowCodeRain(mql.matches);
+    const onChange = () => setShowCodeRain(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <section ref={ref} className="relative h-[100dvh] min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
@@ -94,7 +102,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      {!isMobile && (
+      {showCodeRain && (
         <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
           <div className="w-full h-[100dvh] overflow-hidden">
             <CodeRain />
