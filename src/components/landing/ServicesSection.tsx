@@ -1,26 +1,20 @@
-import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-import showcase1 from "@/assets/showcase-1.jpg";
-import showcase2 from "@/assets/showcase-2.jpg";
-import showcase3 from "@/assets/showcase-3.jpg";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-
-const images = [showcase1, showcase2, showcase3];
+import { useInView } from "@/hooks/useInView";
 
 const ServicesSection = () => {
   const { lang } = useLang();
   const s = translations.services;
+  const { ref, inView } = useInView();
 
   return (
     <section id="services" className="relative section-rhythm" aria-label="Services">
-      <div className="container px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12 md:mb-28"
+      <div className="container px-4 sm:px-6" ref={ref}>
+        <div
+          className={`mb-12 md:mb-28 transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
         >
           <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
             {t(s.label, lang)}
@@ -30,16 +24,16 @@ const ServicesSection = () => {
             <br />
             <span className="text-gradient">{t(s.heading2, lang)}</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="border-t border-border/30" role="list">
           {s.items.map((service, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
+              className={`transition-all duration-700 ${
+                inView ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
               role="listitem"
             >
               <div className="service-row relative border-b border-border/30 py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
@@ -58,11 +52,8 @@ const ServicesSection = () => {
                   {t(service.description, lang)}
                 </p>
                 <ArrowUpRight className="service-arrow h-5 w-5 text-muted-foreground/50 transition-all duration-500 shrink-0" />
-                <div className="service-image absolute right-20 top-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-3xl overflow-hidden opacity-0 scale-90 transition-all duration-700 pointer-events-none hidden lg:block z-0" aria-hidden="true">
-                  <img src={images[i]} alt="" className="w-full h-full object-cover opacity-30" style={{ mixBlendMode: "screen" }} loading="lazy" />
-                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

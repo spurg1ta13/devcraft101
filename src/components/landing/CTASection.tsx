@@ -1,10 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { supabase } from "@/integrations/supabase/client";
+import { useInView } from "@/hooks/useInView";
 
 const CTASection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -14,6 +14,7 @@ const CTASection = () => {
   const [sending, setSending] = useState(false);
   const { lang } = useLang();
   const c = translations.cta;
+  const { ref, inView } = useInView();
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -73,13 +74,12 @@ const CTASection = () => {
   return (
     <section id="contact" className="relative section-rhythm overflow-hidden" aria-label="Contact form">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph amber-drift blur-[100px]" />
-      <div className="container relative z-10 px-4 sm:px-6">
+      <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
+            className={`transition-all duration-700 ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
           >
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6 md:mb-8">
               {t(c.label, lang)}
@@ -92,15 +92,13 @@ const CTASection = () => {
             <p className="text-muted-foreground text-base md:text-xl leading-relaxed max-w-2xl mb-8 md:mb-10">
               {t(c.description, lang)}
             </p>
-          </motion.div>
+          </div>
 
-          <motion.form
+          <form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.7 }}
-            className="space-y-4 md:space-y-5"
+            className={`space-y-4 md:space-y-5 transition-all duration-700 delay-200 ${
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
           >
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
               <div>
@@ -180,12 +178,10 @@ const CTASection = () => {
               <p className="font-mono text-xs text-muted-foreground tracking-wider uppercase">
                 {t(c.respond, lang)}
               </p>
-              <motion.button
+              <button
                 type="submit"
                 disabled={sending}
-                whileHover={sending ? {} : { scale: 1.05 }}
-                whileTap={sending ? {} : { scale: 0.98 }}
-                className="group/btn bg-primary text-primary-foreground font-bold text-sm px-8 sm:px-10 py-4 min-h-[48px] rounded-full shadow-glow flex items-center justify-center gap-3 hover:brightness-110 transition-all w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
+                className="group/btn bg-primary text-primary-foreground font-bold text-sm px-8 sm:px-10 py-4 min-h-[48px] rounded-full shadow-glow flex items-center justify-center gap-3 hover:brightness-110 hover:scale-105 active:scale-[0.98] transition-all w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {sending ? (
                   <>
@@ -198,56 +194,33 @@ const CTASection = () => {
                     <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1.5 group-hover/btn:scale-110 transition-transform duration-300" />
                   </>
                 )}
-              </motion.button>
+              </button>
             </div>
-          </motion.form>
+          </form>
 
-          <AnimatePresence>
-            {submitted && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-xl"
-                role="alert"
-                aria-live="polite"
-              >
-                <div className="text-center px-6">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.15, type: "spring", stiffness: 200, damping: 12 }}
-                    className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-8"
-                  >
-                    <CheckCircle2 className="h-10 w-10 text-primary" />
-                  </motion.div>
-                  <motion.h2
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.25, duration: 0.5 }}
-                    className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.04em] mb-4"
-                  >
-                    {t(c.successTitle1, lang)} <span className="text-gradient">{t(c.successTitle2, lang)}</span>
-                  </motion.h2>
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4, duration: 0.5 }}
-                    className="text-muted-foreground text-base md:text-lg mb-6"
-                  >
-                    {t(c.successDesc, lang)}
-                  </motion.p>
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    animate={{ scaleX: 1 }}
-                    transition={{ delay: 0.1, duration: 2.9, ease: "linear" }}
-                    className="h-1 w-48 mx-auto rounded-full bg-gradient-to-r from-primary to-orange-500 origin-left"
-                  />
+          {submitted && (
+            <div
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 backdrop-blur-xl animate-hero-fade-up"
+              role="alert"
+              aria-live="polite"
+            >
+              <div className="text-center px-6">
+                <div className="w-20 h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-8">
+                  <CheckCircle2 className="h-10 w-10 text-primary" />
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.04em] mb-4">
+                  {t(c.successTitle1, lang)} <span className="text-gradient">{t(c.successTitle2, lang)}</span>
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg mb-6">
+                  {t(c.successDesc, lang)}
+                </p>
+                <div
+                  className="h-1 w-48 mx-auto rounded-full bg-gradient-to-r from-primary to-orange-500 origin-left"
+                  style={{ animation: "expand-line 2.9s linear forwards" }}
+                />
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
