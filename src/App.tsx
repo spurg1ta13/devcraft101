@@ -44,16 +44,18 @@ const App = () => (
               Skip to main content
             </a>
             <ScrollToHash />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<AboutUs />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogArticle />} />
-              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route path="/terms-of-service" element={<TermsOfService />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-            <CookieConsent />
+            <Suspense fallback={null}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<AboutUs />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogArticle />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-of-service" element={<TermsOfService />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+              <CookieConsent />
+            </Suspense>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>

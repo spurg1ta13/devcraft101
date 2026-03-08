@@ -24,8 +24,8 @@ const Index = () => {
       <main id="main-content">
         <HeroSection />
         <MarqueeSection />
-        <ServicesSection />
         <Suspense fallback={null}>
+          <ServicesSection />
           <ShowcaseSection />
           <PortfolioSection />
           <ProcessSection />
