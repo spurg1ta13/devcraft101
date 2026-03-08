@@ -142,7 +142,7 @@ const Navbar = () => {
             </button>
           </div>
         </nav>
-      </motion.header>
+      </header>
 
       {/* Mobile fullscreen menu */}
       <motion.div
