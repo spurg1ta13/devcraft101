@@ -23,6 +23,7 @@ const PrivacyPolicy = () => {
         title={{ en: "Privacy Policy | DevCraft", el: "Πολιτική Απορρήτου | DevCraft" }}
         description={{ en: "DevCraft Privacy Policy — how we collect, use, and protect your personal information. GDPR compliant.", el: "Πολιτική Απορρήτου DevCraft — πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τα προσωπικά σας δεδομένα. Συμμόρφωση με GDPR." }}
         canonical="/privacy-policy"
+        noindex
       />
       <Navbar />
       <main>
