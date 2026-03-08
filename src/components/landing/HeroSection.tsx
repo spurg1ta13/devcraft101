@@ -1,8 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useMemo } from "react";
+import { useRef, useMemo, useState, useEffect } from "react";
 import heroBanner from "@/assets/hero-banner.jpg";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const codeLines = [
   { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
