@@ -139,10 +139,9 @@ const CTASection = () => {
                   }}
                   className={`w-full bg-secondary border rounded-2xl px-5 py-4 md:px-6 md:py-5 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary focus:shadow-[0_0_12px_-4px_hsl(38_100%_55%/0.4)] transition-all duration-300 min-h-[48px] ${errors.phone || errors.contact ? "border-destructive" : "border-border"}`}
                 />
-                {errors.phone && <p className="text-destructive text-xs mt-2 ml-2" role="alert">{errors.phone}</p>}
+                {(errors.phone || errors.contact) && <p className="text-destructive text-xs mt-2 ml-2" role="alert">{errors.phone || errors.contact}</p>}
               </div>
             </div>
-            {errors.contact && <p className="text-destructive text-xs ml-2" role="alert">{errors.contact}</p>}
             <div>
               <label htmlFor="contact-message" className="sr-only">{t(c.message, lang)}</label>
               <textarea
