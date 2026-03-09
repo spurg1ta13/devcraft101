@@ -51,8 +51,8 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* View mode toggle */}
-        <div className="flex items-center gap-2 mb-6">
+        {/* View mode toggle — hidden on mobile */}
+        <div className="hidden md:flex items-center gap-2 mb-6">
           <button
             onClick={() => setViewMode("desktop")}
             className={`p-2 rounded-lg border transition-all duration-300 ${
