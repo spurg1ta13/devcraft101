@@ -15,10 +15,12 @@ const projectUrls = [
 const PortfolioSection = () => {
   const { lang } = useLang();
   const s = translations.portfolio;
+  const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.05 });
+  const effectiveViewMode = isMobile ? "mobile" : viewMode;
 
   return (
     <section id="portfolio" className="relative section-rhythm" aria-label="Portfolio">
