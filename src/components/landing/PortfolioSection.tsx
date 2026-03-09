@@ -3,6 +3,7 @@ import { Monitor, Smartphone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectUrls = [
   "https://www.cleanupskg.gr",
@@ -14,10 +15,12 @@ const projectUrls = [
 const PortfolioSection = () => {
   const { lang } = useLang();
   const s = translations.portfolio;
+  const isMobile = useIsMobile();
   const [activeProject, setActiveProject] = useState(0);
   const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.05 });
+  const effectiveViewMode = isMobile ? "mobile" : viewMode;
 
   return (
     <section id="portfolio" className="relative section-rhythm" aria-label="Portfolio">
@@ -51,8 +54,8 @@ const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* View mode toggle */}
-        <div className="flex items-center gap-2 mb-6">
+        {/* View mode toggle — hidden on mobile */}
+        <div className="hidden md:flex items-center gap-2 mb-6">
           <button
             onClick={() => setViewMode("desktop")}
             className={`p-2 rounded-lg border transition-all duration-300 ${
@@ -82,7 +85,7 @@ const PortfolioSection = () => {
           <div className="flex justify-center">
             <div
               className={`relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-background transition-all duration-500 ${
-                viewMode === "mobile"
+                effectiveViewMode === "mobile"
                   ? "w-[280px] sm:w-[375px] h-[500px] sm:h-[667px]"
                   : "w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[700px]"
               }`}
