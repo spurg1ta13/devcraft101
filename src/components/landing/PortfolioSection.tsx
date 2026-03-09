@@ -3,6 +3,7 @@ import { Monitor, Smartphone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectUrls = [
   "https://www.cleanupskg.gr",
