@@ -85,7 +85,7 @@ const PortfolioSection = () => {
           <div className="flex justify-center">
             <div
               className={`relative overflow-hidden rounded-2xl md:rounded-3xl border border-border/50 bg-background transition-all duration-500 ${
-                viewMode === "mobile"
+                effectiveViewMode === "mobile"
                   ? "w-[280px] sm:w-[375px] h-[500px] sm:h-[667px]"
                   : "w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[700px]"
               }`}
