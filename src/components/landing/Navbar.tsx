@@ -6,6 +6,26 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 
+const scrollToHash = (hash: string) => {
+  const el = document.getElementById(hash);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+  // Element may be lazy-loaded — retry after a short delay
+  const observer = new MutationObserver(() => {
+    const target = document.getElementById(hash);
+    if (target) {
+      observer.disconnect();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+  // Force scroll down to trigger lazy load
+  window.scrollBy({ top: 300, behavior: "smooth" });
+  setTimeout(() => observer.disconnect(), 3000);
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -94,6 +114,7 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={`#${item.href}`}
+                    onClick={(e) => { e.preventDefault(); scrollToHash(item.href); }}
                     className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
@@ -123,6 +144,7 @@ const Navbar = () => {
             {isHome ? (
               <a
                 href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollToHash("contact"); }}
                 className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
@@ -187,7 +209,10 @@ const Navbar = () => {
             <a
               key={item.href}
               href={isHome ? `#${item.href}` : `/#${item.href}`}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                if (isHome) { e.preventDefault(); scrollToHash(item.href); }
+                setOpen(false);
+              }}
               className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
                 open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
