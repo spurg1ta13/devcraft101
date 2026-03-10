@@ -109,6 +109,7 @@ const Navbar = () => {
                 <span className="font-bold text-sm">+30 697 415 9157</span>
               </a>
             </div>
+            <SocialLinks iconSize={16} />
             <LanguageSelector />
             {isHome ? (
               <a
