@@ -13,7 +13,7 @@ const OrganizationSchema = () => {
       "@type": "PostalAddress",
       addressCountry: "GR",
     },
-    sameAs: ["https://facebook.com", "https://instagram.com"],
+    sameAs: ["https://www.facebook.com/devcraftgr", "https://www.instagram.com/devcraft.gr"],
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+306974159157",

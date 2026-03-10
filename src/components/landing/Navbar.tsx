@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import SocialLinks from "@/components/SocialLinks";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -108,6 +109,7 @@ const Navbar = () => {
                 <span className="font-bold text-sm">+30 697 415 9157</span>
               </a>
             </div>
+            <SocialLinks iconSize={16} />
             <LanguageSelector />
             {isHome ? (
               <a
@@ -187,6 +189,7 @@ const Navbar = () => {
             </span>
             <span className="font-bold">+30 697 415 9157</span>
           </a>
+          <SocialLinks className="mt-2" />
         </div>
       </div>
 
