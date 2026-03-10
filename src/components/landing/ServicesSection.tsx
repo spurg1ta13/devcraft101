@@ -9,7 +9,7 @@ const ServicesSection = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section id="services" className="relative section-rhythm" aria-label="Services">
+    <section id="services" className="relative section-rhythm scroll-mt-16 md:scroll-mt-0" aria-label="Services">
       <div className="container px-4 sm:px-6" ref={ref}>
         <div
           className={`mb-12 md:mb-28 transition-all duration-700 ${
