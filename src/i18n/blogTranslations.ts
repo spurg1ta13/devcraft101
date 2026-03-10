@@ -233,4 +233,107 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
   },
+  {
+    slug: "why-your-website-is-not-generating-leads",
+    title: {
+      en: "Why Your Website Isn't Generating Leads (And How to Fix It)",
+      el: "Γιατί η Ιστοσελίδα σας δεν Φέρνει Πελάτες (Και Πώς να το Διορθώσετε)",
+    },
+    excerpt: {
+      en: "Your website looks great but doesn't bring customers? Discover the 7 most common reasons businesses lose leads online — and proven fixes that work.",
+      el: "Η ιστοσελίδα σας φαίνεται όμορφη αλλά δεν φέρνει πελάτες; Ανακαλύψτε τους 7 πιο συχνούς λόγους που οι επιχειρήσεις χάνουν leads online — και δοκιμασμένες λύσεις.",
+    },
+    metaDescription: {
+      en: "Is your website not generating leads? Learn the 7 most common website problems that cost businesses customers — and actionable fixes to start converting visitors today.",
+      el: "Η ιστοσελίδα σας δεν φέρνει πελάτες; Μάθετε τα 7 πιο συχνά προβλήματα που κοστίζουν πελάτες στις επιχειρήσεις — και πρακτικές λύσεις για να ξεκινήσετε να μετατρέπετε επισκέπτες σήμερα.",
+    },
+    date: "2026-03-10",
+    readTime: { en: "10", el: "10" },
+    category: { en: "Business Growth", el: "Ανάπτυξη Επιχειρήσεων" },
+    keywords: [
+      "website not generating leads",
+      "website doesn't bring customers",
+      "how to get more leads from website",
+      "improve website conversion rate",
+      "website redesign for business",
+      "slow website losing customers",
+      "small business website mistakes",
+      "SEO for small business",
+      "web development Greece",
+      "κατασκευή ιστοσελίδων",
+      "ιστοσελίδα δεν φέρνει πελάτες",
+    ],
+    content: {
+      en: [
+        "You invested in a website. It looks professional. But weeks pass, and the phone doesn't ring. The contact form stays empty. You're invisible on Google. Sound familiar? You're not alone — most small and medium businesses face this exact problem. The good news: every issue has a fix. Here are the 7 most common reasons your website isn't generating leads, and exactly what to do about each one.",
+
+        "## 1. Your Website Is Too Slow",
+        "Google's own data shows that 53% of mobile visitors leave a page that takes longer than 3 seconds to load. If your website is built on bloated templates, unoptimized images, or cheap shared hosting, you're losing over half your visitors before they even see your content. Speed isn't a nice-to-have — it's the foundation of every successful website.",
+        "The fix: Optimize images to modern formats (WebP/AVIF), eliminate unused CSS and JavaScript, use lazy loading, and invest in quality hosting. A custom-built website with clean code consistently outperforms template-based sites on Core Web Vitals — the speed metrics Google uses to rank your site.",
+
+        "## 2. You're Invisible on Google (Poor SEO)",
+        "Having a website without SEO is like opening a shop in the middle of the desert. If potential customers can't find you when they search for your services, your website is just an expensive digital business card. 75% of users never scroll past the first page of Google results.",
+        "The fix: Start with keyword research — what are your customers actually typing into Google? Build your pages around those terms. Ensure every page has a unique title tag, meta description, proper heading hierarchy (H1, H2, H3), and schema markup. Create content that answers the questions your ideal customers are asking. Local SEO is especially critical for businesses serving a specific area: claim your Google Business Profile, get consistent NAP (Name, Address, Phone) citations, and earn genuine reviews.",
+
+        "## 3. No Clear Call-to-Action (CTA)",
+        "Visitors land on your site, read a bit… and then leave. Why? Because you never told them what to do next. Every page needs a clear, compelling call-to-action: \"Get a Free Quote\", \"Book a Consultation\", \"Call Us Now\". Without a visible CTA, visitors have no reason to convert — and they won't.",
+        "The fix: Place a primary CTA above the fold on every key page. Use contrasting colors so it stands out. Make the action obvious and low-friction: a short contact form beats a 15-field questionnaire every time. Add secondary CTAs throughout the page for visitors who need more convincing. And always include a phone number — many customers prefer calling.",
+
+        "## 4. Your Website Isn't Mobile-Friendly",
+        "Over 60% of web traffic now comes from mobile devices. If your website is hard to navigate on a phone — tiny text, horizontal scrolling, buttons too small to tap — you're alienating the majority of your audience. Google also uses mobile-first indexing, meaning your mobile experience directly affects your search rankings.",
+        "The fix: Build with a mobile-first approach, not mobile-as-afterthought. Test on real devices, not just browser resizers. Ensure touch targets are at least 44×44 pixels. Use responsive typography that scales smoothly. Simplify navigation for thumb-friendly interaction. A responsive website isn't optional in 2026 — it's survival.",
+
+        "## 5. Outdated Design Destroys Trust",
+        "Visitors form an opinion about your website in 0.05 seconds. An outdated design with stock photos from 2015, Comic Sans fonts, and cluttered layouts screams \"this business doesn't care about quality.\" Studies show that 75% of consumers judge a company's credibility based on their website design alone.",
+        "The fix: Invest in a modern, professional design that reflects your brand values. Use authentic imagery, consistent typography, and generous whitespace. Dark, premium aesthetics with purposeful animations create trust and memorability. Your website should look like it was built this year — because in the digital world, appearance equals credibility.",
+
+        "## 6. No Content That Proves Your Expertise",
+        "If your website only has a homepage, an about page, and a contact form — search engines have almost nothing to index, and visitors have no reason to trust you. Content is what attracts organic traffic, demonstrates expertise, and moves prospects through the buying journey.",
+        "The fix: Create a blog or resources section that addresses your customers' real questions and pain points. Write case studies showing concrete results. Add testimonials with specific details (not generic \"great service\" quotes). Share your process so customers understand what working with you looks like. Every piece of content is a new entry point from Google — and a new reason for visitors to choose you.",
+
+        "## 7. You Built It and Forgot It",
+        "A website isn't a one-time project — it's a living asset that needs regular attention. Broken links, outdated information, expired SSL certificates, and old blog posts all signal to both Google and visitors that your business isn't active. Search engines reward fresh, maintained content.",
+        "The fix: Schedule monthly website health checks. Update content regularly. Monitor your analytics to understand what's working. Fix broken links. Keep your software and security patches current. Treat your website like your best salesperson — because it is. It works 24/7, 365 days a year, but only if you keep it sharp.",
+
+        "## The Bottom Line",
+        "Your website is your most powerful marketing tool — but only if it's built and maintained correctly. The businesses that invest in fast, SEO-optimized, mobile-first, conversion-focused websites don't just have a better online presence — they have a predictable lead generation machine.",
+        "If any of these problems sound familiar, it's not too late to fix them. A strategic website redesign or optimization can transform your online presence from a digital brochure into your best-performing sales channel.",
+      ],
+      el: [
+        "Επενδύσατε σε μια ιστοσελίδα. Δείχνει επαγγελματική. Αλλά περνούν εβδομάδες και το τηλέφωνο δεν χτυπάει. Η φόρμα επικοινωνίας μένει άδεια. Είστε αόρατοι στο Google. Σας ακούγεται γνωστό; Δεν είστε μόνοι — οι περισσότερες μικρομεσαίες επιχειρήσεις αντιμετωπίζουν αυτό ακριβώς το πρόβλημα. Τα καλά νέα: κάθε πρόβλημα έχει λύση. Ακολουθούν οι 7 πιο συχνοί λόγοι που η ιστοσελίδα σας δεν φέρνει πελάτες — και τι ακριβώς πρέπει να κάνετε για τον καθένα.",
+
+        "## 1. Η Ιστοσελίδα σας Είναι Πολύ Αργή",
+        "Τα δεδομένα της Google δείχνουν ότι το 53% των κινητών επισκεπτών εγκαταλείπουν μια σελίδα που χρειάζεται πάνω από 3 δευτερόλεπτα για να φορτώσει. Αν η ιστοσελίδα σας είναι χτισμένη σε φουσκωμένα templates, με μη βελτιστοποιημένες εικόνες ή φθηνό shared hosting, χάνετε πάνω από τους μισούς επισκέπτες σας πριν καν δουν το περιεχόμενό σας. Η ταχύτητα δεν είναι πολυτέλεια — είναι το θεμέλιο κάθε επιτυχημένης ιστοσελίδας.",
+        "Η λύση: Βελτιστοποιήστε εικόνες σε σύγχρονες μορφές (WebP/AVIF), αφαιρέστε αχρησιμοποίητο CSS και JavaScript, χρησιμοποιήστε lazy loading και επενδύστε σε ποιοτικό hosting. Μια ιστοσελίδα κατά παραγγελία με καθαρό κώδικα υπερτερεί σταθερά σε Core Web Vitals — τις μετρικές ταχύτητας που χρησιμοποιεί η Google για να κατατάξει τον ιστότοπό σας.",
+
+        "## 2. Είστε Αόρατοι στο Google (Κακό SEO)",
+        "Να έχεις ιστοσελίδα χωρίς SEO είναι σαν να ανοίγεις μαγαζί στη μέση της ερήμου. Αν οι πιθανοί πελάτες δεν σας βρίσκουν όταν ψάχνουν τις υπηρεσίες σας, η ιστοσελίδα σας είναι απλώς μια ακριβή ψηφιακή κάρτα. Το 75% των χρηστών δεν προχωράει ποτέ μετά την πρώτη σελίδα αποτελεσμάτων της Google.",
+        "Η λύση: Ξεκινήστε με έρευνα keywords — τι πληκτρολογούν πραγματικά οι πελάτες σας στο Google; Χτίστε τις σελίδες σας γύρω από αυτούς τους όρους. Βεβαιωθείτε ότι κάθε σελίδα έχει μοναδικό title tag, meta description, σωστή ιεραρχία επικεφαλίδων (H1, H2, H3) και schema markup. Δημιουργήστε περιεχόμενο που απαντάει στις ερωτήσεις που κάνουν οι ιδανικοί πελάτες σας. Το τοπικό SEO είναι ιδιαίτερα κρίσιμο: δημιουργήστε το Google Business Profile σας, αποκτήστε συνεπείς αναφορές NAP (Όνομα, Διεύθυνση, Τηλέφωνο) και κερδίστε γνήσιες κριτικές.",
+
+        "## 3. Δεν Υπάρχει Σαφής Πρόσκληση σε Δράση (CTA)",
+        "Οι επισκέπτες φτάνουν στον ιστότοπό σας, διαβάζουν λίγο… και μετά φεύγουν. Γιατί; Επειδή δεν τους είπατε ποτέ τι να κάνουν μετά. Κάθε σελίδα χρειάζεται μια σαφή, πειστική πρόσκληση σε δράση: «Πάρτε Δωρεάν Προσφορά», «Κλείστε Ραντεβού», «Καλέστε μας Τώρα». Χωρίς ορατό CTA, οι επισκέπτες δεν έχουν λόγο να μετατραπούν σε πελάτες.",
+        "Η λύση: Τοποθετήστε ένα κύριο CTA πάνω από το fold σε κάθε βασική σελίδα. Χρησιμοποιήστε χρώματα που ξεχωρίζουν. Κάντε τη δράση προφανή και χωρίς τριβές: μια σύντομη φόρμα επικοινωνίας νικάει ένα ερωτηματολόγιο 15 πεδίων κάθε φορά. Προσθέστε δευτερεύοντα CTAs σε όλη τη σελίδα. Και πάντα να υπάρχει αριθμός τηλεφώνου — πολλοί πελάτες προτιμούν να τηλεφωνούν.",
+
+        "## 4. Η Ιστοσελίδα σας δεν Είναι Φιλική για Κινητά",
+        "Πάνω από το 60% της κίνησης στο web προέρχεται πλέον από κινητές συσκευές. Αν η ιστοσελίδα σας είναι δύσκολη στην πλοήγηση σε τηλέφωνο — μικροσκοπικό κείμενο, οριζόντιο scrolling, κουμπιά πολύ μικρά για να πατηθούν — αποξενώνετε την πλειοψηφία του κοινού σας. Η Google χρησιμοποιεί επίσης mobile-first indexing, που σημαίνει ότι η κινητή εμπειρία σας επηρεάζει άμεσα τις κατατάξεις αναζήτησης.",
+        "Η λύση: Χτίστε με προσέγγιση mobile-first, όχι mobile-ως-μεταγενέστερη-σκέψη. Δοκιμάστε σε πραγματικές συσκευές. Βεβαιωθείτε ότι τα touch targets είναι τουλάχιστον 44×44 pixels. Χρησιμοποιήστε responsive τυπογραφία. Απλοποιήστε την πλοήγηση για χρήση με τον αντίχειρα. Μια responsive ιστοσελίδα δεν είναι προαιρετική το 2026 — είναι επιβίωση.",
+
+        "## 5. Ο Ξεπερασμένος Σχεδιασμός Καταστρέφει την Εμπιστοσύνη",
+        "Οι επισκέπτες σχηματίζουν γνώμη για την ιστοσελίδα σας σε 0,05 δευτερόλεπτα. Ένας ξεπερασμένος σχεδιασμός με stock φωτογραφίες του 2015, γραμματοσειρές Comic Sans και ακατάστατα layouts φωνάζει «αυτή η επιχείρηση δεν νοιάζεται για την ποιότητα». Μελέτες δείχνουν ότι το 75% των καταναλωτών κρίνει την αξιοπιστία μιας εταιρείας βάσει μόνο του σχεδιασμού της ιστοσελίδας.",
+        "Η λύση: Επενδύστε σε σύγχρονο, επαγγελματικό σχεδιασμό που αντανακλά τις αξίες του brand σας. Χρησιμοποιήστε αυθεντικές εικόνες, συνεπή τυπογραφία και γενναιόδωρο whitespace. Σκοτεινή, premium αισθητική με σκόπιμες κινήσεις δημιουργεί εμπιστοσύνη και αναγνωρισιμότητα. Η ιστοσελίδα σας πρέπει να φαίνεται σαν να χτίστηκε φέτος — γιατί στον ψηφιακό κόσμο, η εμφάνιση ισοδυναμεί με αξιοπιστία.",
+
+        "## 6. Δεν Υπάρχει Περιεχόμενο που Αποδεικνύει την Εξειδίκευσή σας",
+        "Αν η ιστοσελίδα σας έχει μόνο αρχική σελίδα, σελίδα σχετικά με εμάς και φόρμα επικοινωνίας — οι μηχανές αναζήτησης δεν έχουν σχεδόν τίποτα να κατατάξουν, και οι επισκέπτες δεν έχουν λόγο να σας εμπιστευτούν. Το περιεχόμενο είναι αυτό που προσελκύει οργανική κίνηση, αποδεικνύει εξειδίκευση και μετακινεί τους υποψήφιους πελάτες στη διαδικασία αγοράς.",
+        "Η λύση: Δημιουργήστε blog ή ενότητα πόρων που απαντάει στις πραγματικές ερωτήσεις και τα προβλήματα των πελατών σας. Γράψτε case studies που δείχνουν συγκεκριμένα αποτελέσματα. Προσθέστε μαρτυρίες με συγκεκριμένες λεπτομέρειες. Μοιραστείτε τη διαδικασία σας ώστε οι πελάτες να καταλάβουν πώς είναι να συνεργάζονται μαζί σας. Κάθε κομμάτι περιεχομένου είναι ένα νέο σημείο εισόδου από το Google — και ένας νέος λόγος για τους επισκέπτες να σας επιλέξουν.",
+
+        "## 7. Τη Χτίσατε και την Ξεχάσατε",
+        "Μια ιστοσελίδα δεν είναι ένα εφάπαξ έργο — είναι ένα ζωντανό asset που χρειάζεται τακτική προσοχή. Σπασμένοι σύνδεσμοι, ξεπερασμένες πληροφορίες, ληγμένα πιστοποιητικά SSL και παλιά blog posts σημαίνουν τόσο για το Google όσο και για τους επισκέπτες ότι η επιχείρησή σας δεν είναι ενεργή. Οι μηχανές αναζήτησης ανταμείβουν φρέσκο, συντηρημένο περιεχόμενο.",
+        "Η λύση: Προγραμματίστε μηνιαίους ελέγχους υγείας ιστοσελίδας. Ενημερώνετε το περιεχόμενο τακτικά. Παρακολουθήστε τα analytics σας για να καταλάβετε τι λειτουργεί. Διορθώστε σπασμένους συνδέσμους. Κρατήστε τις ενημερώσεις ασφαλείας τρέχουσες. Αντιμετωπίστε την ιστοσελίδα σας σαν τον καλύτερο πωλητή σας — γιατί αυτό ακριβώς είναι. Δουλεύει 24/7, 365 μέρες τον χρόνο, αλλά μόνο αν τη φροντίζετε.",
+
+        "## Το Συμπέρασμα",
+        "Η ιστοσελίδα σας είναι το ισχυρότερο εργαλείο marketing σας — αλλά μόνο αν είναι σωστά χτισμένη και συντηρημένη. Οι επιχειρήσεις που επενδύουν σε γρήγορες, SEO-βελτιστοποιημένες, mobile-first, εστιασμένες στη μετατροπή ιστοσελίδες δεν έχουν απλώς καλύτερη online παρουσία — έχουν μια προβλέψιμη μηχανή παραγωγής leads.",
+        "Αν κάποιο από αυτά τα προβλήματα σας ακούγεται γνωστό, δεν είναι αργά να τα διορθώσετε. Ένας στρατηγικός επανασχεδιασμός ή βελτιστοποίηση μπορεί να μεταμορφώσει την online παρουσία σας από ψηφιακό φυλλάδιο στο πιο αποδοτικό κανάλι πωλήσεών σας.",
+      ],
+    },
+  },
 ];
