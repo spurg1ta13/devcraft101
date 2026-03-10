@@ -114,6 +114,7 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={`#${item.href}`}
+                    onClick={(e) => { e.preventDefault(); scrollToHash(item.href); }}
                     className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
