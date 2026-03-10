@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import SocialLinks from "@/components/SocialLinks";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
