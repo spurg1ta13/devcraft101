@@ -48,7 +48,7 @@ const Blog = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {blogArticles.map((article, i) => (
+            {[...blogArticles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((article, i) => (
               <motion.article
                 key={article.slug}
                 initial={{ opacity: 0, y: 30 }}
