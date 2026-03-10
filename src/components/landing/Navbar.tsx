@@ -6,6 +6,26 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 
+const scrollToHash = (hash: string) => {
+  const el = document.getElementById(hash);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+    return;
+  }
+  // Element may be lazy-loaded — retry after a short delay
+  const observer = new MutationObserver(() => {
+    const target = document.getElementById(hash);
+    if (target) {
+      observer.disconnect();
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+  observer.observe(document.body, { childList: true, subtree: true });
+  // Force scroll down to trigger lazy load
+  window.scrollBy({ top: 300, behavior: "smooth" });
+  setTimeout(() => observer.disconnect(), 3000);
+};
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
