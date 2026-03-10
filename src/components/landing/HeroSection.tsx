@@ -135,7 +135,7 @@ const HeroSection = () => {
               {t(hero.description, lang)}
             </p>
             <a
-              href="#projects"
+              href="#services"
               className="bg-primary text-primary-foreground font-bold text-sm px-8 py-4 min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all"
             >
               {t(hero.explore, lang)}
