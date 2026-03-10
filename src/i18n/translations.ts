@@ -5,7 +5,8 @@ export const translations = {
   nav: {
     aboutUs: { en: "About Us", el: "Σχετικά" },
     services: { en: "Services", el: "Υπηρεσίες" },
-    work: { en: "Work", el: "Έργα" },
+    work: { en: "Our Projects", el: "Τα Έργα μας" },
+    blog: { en: "Blog", el: "Ιστολόγιο" },
     process: { en: "Process", el: "Διαδικασία" },
     contact: { en: "Contact", el: "Επικοινωνία" },
     letsTalk: { en: "Let's talk", el: "Επικοινωνήστε" },
