@@ -73,11 +73,11 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden lg:flex items-center gap-8">
-            <div className="flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
+            <div className="flex items-center gap-3 xl:gap-5 2xl:gap-6">
               <Link
                 to="/about"
-                className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
               >
                 {t(nav.aboutUs, lang)}
               </Link>
@@ -86,7 +86,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
                   <a
                     key={item.href}
                     href={`#${item.href}`}
-                    className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </a>
@@ -102,35 +102,35 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={`/#${item.href}`}
-                    className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </Link>
                 )
               )}
             </div>
-            <div className="flex items-center gap-4 border-l border-border/30 pl-6">
-              <a href="tel:+306974159157" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 415 9157">
-                <span className="relative flex h-5 w-5 items-center justify-center">
+            <div className="flex items-center gap-3 border-l border-border/30 pl-4 xl:pl-6">
+              <a href="tel:+306974159157" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label="Call +30 697 415 9157">
+                <span className="relative flex h-5 w-5 items-center justify-center shrink-0">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
-                  <Phone className="relative h-4 w-4 text-primary" />
+                  <Phone className="relative h-3.5 w-3.5 xl:h-4 xl:w-4 text-primary" />
                 </span>
-                <span className="font-bold text-sm">+30 697 415 9157</span>
+                <span className="font-bold hidden xl:inline">+30 697 415 9157</span>
               </a>
             </div>
-            <SocialLinks iconSize={16} />
+            <SocialLinks iconSize={16} className="hidden xl:flex" />
             <LanguageSelector />
             {isHome ? (
               <a
                 href="#contact"
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center"
+                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
               </a>
             ) : (
               <a
                 href="/#contact"
-                className="font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-5 py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center"
+                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
               </a>
