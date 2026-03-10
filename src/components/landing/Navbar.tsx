@@ -81,8 +81,16 @@ const Navbar = () => {
               >
                 {t(nav.aboutUs, lang)}
               </Link>
-              {menuItems.map((item) => (
-                isHome ? (
+              {menuItems.map((item) =>
+                item.type === "page" ? (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                  >
+                    {item.label}
+                  </Link>
+                ) : isHome ? (
                   <a
                     key={item.href}
                     href={`#${item.href}`}
@@ -99,7 +107,7 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 )
-              ))}
+              )}
             </div>
             <div className="flex items-center gap-4 border-l border-border/30 pl-6">
               <a href="tel:+306974159157" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 415 9157">
