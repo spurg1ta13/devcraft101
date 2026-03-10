@@ -2,6 +2,7 @@ import { Phone, ArrowUpRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
+import SocialLinks from "@/components/SocialLinks";
 
 const Footer = () => {
   const { lang } = useLang();
