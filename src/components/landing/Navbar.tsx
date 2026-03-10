@@ -21,10 +21,11 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { label: t(nav.services, lang), href: "services" },
-    { label: t(nav.work, lang), href: "work" },
-    { label: t(nav.process, lang), href: "process" },
-    { label: t(nav.contact, lang), href: "contact" },
+    { label: t(nav.services, lang), href: "services", type: "section" as const },
+    { label: t(nav.work, lang), href: "projects", type: "section" as const },
+    { label: t(nav.process, lang), href: "process", type: "section" as const },
+    { label: t(nav.blog, lang), href: "/blog", type: "page" as const },
+    { label: t(nav.contact, lang), href: "contact", type: "section" as const },
   ];
 
   return (

@@ -206,7 +206,7 @@ export const translations = {
       el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB.",
     },
     navigation: { en: "Navigation", el: "Πλοήγηση" },
-    ourWork: { en: "Our Work", el: "Τα Έργα μας" },
+    ourWork: { en: "Our Projects", el: "Τα Έργα μας" },
     getInTouch: { en: "Get in touch", el: "Επικοινωνία" },
     rights: { en: "All rights reserved.", el: "Με επιφύλαξη παντός δικαιώματος." },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου" },
