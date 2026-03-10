@@ -144,6 +144,7 @@ const Navbar = () => {
             {isHome ? (
               <a
                 href="#contact"
+                onClick={(e) => { e.preventDefault(); scrollToHash("contact"); }}
                 className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
