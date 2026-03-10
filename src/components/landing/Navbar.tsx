@@ -170,19 +170,33 @@ const Navbar = () => {
         >
           {t(nav.aboutUs, lang)}
         </Link>
-        {menuItems.map((item, i) => (
-          <a
-            key={item.href}
-            href={isHome ? `#${item.href}` : `/#${item.href}`}
-            onClick={() => setOpen(false)}
-            className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
-              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
-          >
-            {item.label}
-          </a>
-        ))}
+        {menuItems.map((item, i) =>
+          item.type === "page" ? (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={() => setOpen(false)}
+              className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <a
+              key={item.href}
+              href={isHome ? `#${item.href}` : `/#${item.href}`}
+              onClick={() => setOpen(false)}
+              className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </a>
+          )
+        )}
 
         {/* Contact info */}
         <div
