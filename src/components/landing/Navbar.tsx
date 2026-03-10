@@ -189,6 +189,7 @@ const Navbar = () => {
             </span>
             <span className="font-bold">+30 697 415 9157</span>
           </a>
+          <SocialLinks className="mt-2" />
         </div>
       </div>
 

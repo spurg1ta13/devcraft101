@@ -74,6 +74,7 @@ const Footer = () => {
               >
                 {t(nav.letsTalk, lang)}
               </a>
+              <SocialLinks className="mt-3" />
             </div>
           </div>
         </div>
