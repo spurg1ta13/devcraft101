@@ -209,7 +209,10 @@ const Navbar = () => {
             <a
               key={item.href}
               href={isHome ? `#${item.href}` : `/#${item.href}`}
-              onClick={() => setOpen(false)}
+              onClick={(e) => {
+                if (isHome) { e.preventDefault(); scrollToHash(item.href); }
+                setOpen(false);
+              }}
               className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
                 open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
