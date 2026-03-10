@@ -34,10 +34,10 @@ const Footer = () => {
             <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
-                { label: lang === "el" ? "Ιστολόγιο" : "Blog", href: "/blog" },
                 { label: t(nav.services, lang), href: "/#services" },
-                { label: t(f.ourWork, lang), href: "/#work" },
+                { label: t(f.ourWork, lang), href: "/#projects" },
                 { label: t(nav.process, lang), href: "/#process" },
+                { label: t(nav.blog, lang), href: "/blog" },
                 { label: t(nav.contact, lang), href: "/#contact" },
               ].map((item) => (
                 <Link

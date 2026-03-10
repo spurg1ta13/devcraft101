@@ -5,7 +5,8 @@ export const translations = {
   nav: {
     aboutUs: { en: "About Us", el: "Σχετικά" },
     services: { en: "Services", el: "Υπηρεσίες" },
-    work: { en: "Work", el: "Έργα" },
+    work: { en: "Our Projects", el: "Τα Έργα μας" },
+    blog: { en: "Blog", el: "Ιστολόγιο" },
     process: { en: "Process", el: "Διαδικασία" },
     contact: { en: "Contact", el: "Επικοινωνία" },
     letsTalk: { en: "Let's talk", el: "Επικοινωνήστε" },
@@ -205,7 +206,7 @@ export const translations = {
       el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB.",
     },
     navigation: { en: "Navigation", el: "Πλοήγηση" },
-    ourWork: { en: "Our Work", el: "Τα Έργα μας" },
+    ourWork: { en: "Our Projects", el: "Τα Έργα μας" },
     getInTouch: { en: "Get in touch", el: "Επικοινωνία" },
     rights: { en: "All rights reserved.", el: "Με επιφύλαξη παντός δικαιώματος." },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου" },

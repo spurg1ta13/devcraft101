@@ -16,7 +16,7 @@ const ShowcaseSection = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section id="work" className="relative section-rhythm" aria-label="Our work">
+    <section id="projects" className="relative section-rhythm" aria-label="Our Projects">
       <div className="container px-4 sm:px-6" ref={ref}>
         <div
           className={`mb-12 md:mb-20 transition-all duration-700 ${

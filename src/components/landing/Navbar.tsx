@@ -21,10 +21,11 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { label: t(nav.services, lang), href: "services" },
-    { label: t(nav.work, lang), href: "work" },
-    { label: t(nav.process, lang), href: "process" },
-    { label: t(nav.contact, lang), href: "contact" },
+    { label: t(nav.services, lang), href: "services", type: "section" as const },
+    { label: t(nav.work, lang), href: "projects", type: "section" as const },
+    { label: t(nav.process, lang), href: "process", type: "section" as const },
+    { label: t(nav.blog, lang), href: "/blog", type: "page" as const },
+    { label: t(nav.contact, lang), href: "contact", type: "section" as const },
   ];
 
   return (
@@ -80,8 +81,16 @@ const Navbar = () => {
               >
                 {t(nav.aboutUs, lang)}
               </Link>
-              {menuItems.map((item) => (
-                isHome ? (
+              {menuItems.map((item) =>
+                item.type === "page" ? (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    className="font-mono text-sm uppercase tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center"
+                  >
+                    {item.label}
+                  </Link>
+                ) : isHome ? (
                   <a
                     key={item.href}
                     href={`#${item.href}`}
@@ -98,7 +107,7 @@ const Navbar = () => {
                     {item.label}
                   </Link>
                 )
-              ))}
+              )}
             </div>
             <div className="flex items-center gap-4 border-l border-border/30 pl-6">
               <a href="tel:+306974159157" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px]" aria-label="Call +30 697 415 9157">
@@ -161,19 +170,33 @@ const Navbar = () => {
         >
           {t(nav.aboutUs, lang)}
         </Link>
-        {menuItems.map((item, i) => (
-          <a
-            key={item.href}
-            href={isHome ? `#${item.href}` : `/#${item.href}`}
-            onClick={() => setOpen(false)}
-            className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
-              open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
-          >
-            {item.label}
-          </a>
-        ))}
+        {menuItems.map((item, i) =>
+          item.type === "page" ? (
+            <Link
+              key={item.href}
+              to={item.href}
+              onClick={() => setOpen(false)}
+              className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </Link>
+          ) : (
+            <a
+              key={item.href}
+              href={isHome ? `#${item.href}` : `/#${item.href}`}
+              onClick={() => setOpen(false)}
+              className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </a>
+          )
+        )}
 
         {/* Contact info */}
         <div
