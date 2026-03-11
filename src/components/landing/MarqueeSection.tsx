@@ -10,7 +10,7 @@ const MarqueeSection = () => {
       <div className="flex whitespace-nowrap animate-marquee">
         {/* First copy — visible to search engines */}
         {words.map((word, i) => (
-          <span key={`a-${i}`} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors duration-700 cursor-default select-none">
+          <span key={`a-${i}`} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground hover:text-foreground/70 transition-colors duration-700 cursor-default select-none">
             {word}
           </span>
         ))}
