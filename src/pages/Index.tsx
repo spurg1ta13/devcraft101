@@ -1,11 +1,12 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema } from "@/components/StructuredData";
 import { useLang } from "@/i18n/LanguageContext";
-import { translations, t } from "@/i18n/translations";
+import { translations, t, type Lang } from "@/i18n/translations";
 
 const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
