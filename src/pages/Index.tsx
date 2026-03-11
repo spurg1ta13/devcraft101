@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
-import { OrganizationSchema, WebSiteSchema, LocalBusinessSchema } from "@/components/StructuredData";
+import { OrganizationSchema, WebSiteSchema } from "@/components/StructuredData";
 
 const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
@@ -19,7 +19,7 @@ const Index = () => {
       <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
-      <LocalBusinessSchema />
+      <WebSiteSchema />
       <Navbar />
       <main id="main-content">
         <HeroSection />
