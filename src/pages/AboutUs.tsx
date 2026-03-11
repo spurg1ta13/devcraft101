@@ -87,6 +87,19 @@ const AboutUs = () => {
         description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, UI/UX design, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, σχεδιασμό UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB." }}
         canonical="/about"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://devcraft.gr/" },
+              { "@type": "ListItem", position: 2, name: lang === "el" ? "Σχετικά με εμάς" : "About Us", item: "https://devcraft.gr/about" },
+            ],
+          }),
+        }}
+      />
       <Navbar />
       <main>
       <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden">
