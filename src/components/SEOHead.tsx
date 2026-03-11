@@ -18,7 +18,7 @@ const DEFAULT_TITLE = {
   el: "DevCraft | Προσαρμοσμένη Ανάπτυξη Ιστοσελίδων & Υπηρεσίες QA",
 };
 const DEFAULT_DESC = {
-  en: "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.",
+  en: "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
   el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένος σχεδιασμός UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
 };
 
@@ -75,6 +75,9 @@ const SEOHead = ({
       <meta name="twitter:description" content={resolvedDesc} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
+      <link rel="alternate" hrefLang="en" href={fullUrl} />
+      <link rel="alternate" hrefLang="el" href={fullUrl} />
+      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
   );
 };

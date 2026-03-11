@@ -6,7 +6,7 @@ const OrganizationSchema = () => {
     url: "https://devcraft.gr",
     logo: "https://devcraft.gr/devcraft-logo.svg",
     description:
-      "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance.",
+      "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     email: "contact@devcraft.gr",
     telephone: "+306974159157",
     address: {
@@ -38,7 +38,7 @@ const WebSiteSchema = () => {
     name: "DevCraft",
     url: "https://devcraft.gr",
     description:
-      "Custom web development, UI/UX design, and ISTQB-certified QA services.",
+      "AI-driven web development, bespoke interfaces, and quality assurance services.",
   };
 
   return (
@@ -58,7 +58,7 @@ const LocalBusinessSchema = () => {
     telephone: "+306974159157",
     email: "contact@devcraft.gr",
     description:
-      "Custom web development, UI/UX design, and ISTQB-certified quality assurance services for brands that refuse to blend in.",
+      "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
