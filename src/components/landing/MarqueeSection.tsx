@@ -17,7 +17,7 @@ const MarqueeSection = () => {
         {/* Duplicate copies for seamless loop — hidden from crawlers */}
         <span aria-hidden="true" className="contents">
           {[...words, ...words].map((word, i) => (
-            <span key={`b-${i}`} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground/40 hover:text-muted-foreground/70 transition-colors duration-700 cursor-default select-none">
+            <span key={`b-${i}`} className="mx-6 md:mx-10 text-sm md:text-base font-medium tracking-[-0.01em] text-muted-foreground hover:text-foreground/70 transition-colors duration-700 cursor-default select-none">
               {word}
             </span>
           ))}
