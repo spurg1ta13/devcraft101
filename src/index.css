@@ -102,6 +102,7 @@
 
   .amber-drift {
     animation: amber-drift 14s ease-in-out infinite alternate;
+    will-change: transform;
   }
 
   .glass {
@@ -135,8 +136,8 @@
 }
 
 @keyframes amber-drift {
-  0% { translate: -6px -4px; }
-  100% { translate: 6px 4px; }
+  0% { transform: translate(-6px, -4px); }
+  100% { transform: translate(6px, 4px); }
 }
 
 /* Marquee */
