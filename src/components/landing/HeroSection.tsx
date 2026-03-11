@@ -94,17 +94,18 @@ const HeroSection = () => {
   return (
     <section ref={ref} className="relative min-h-[450px] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
       <div className="absolute inset-0">
-        <img
-          src="/hero-banner-mobile.jpg"
-          srcSet="/hero-banner-mobile.jpg 800w, /hero-banner.jpg 1920w"
-          sizes="100vw"
-          alt=""
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-          decoding="sync"
-          className="w-full h-full object-cover opacity-20"
-        />
+        <picture>
+          <source srcSet="/hero-banner-mobile.webp" media="(max-width: 768px)" type="image/webp" />
+          <img
+            src="/hero-banner.jpg"
+            alt=""
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            decoding="sync"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </picture>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
