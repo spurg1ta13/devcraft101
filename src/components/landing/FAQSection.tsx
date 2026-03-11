@@ -13,25 +13,6 @@ const FAQSection = () => {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: f.items.map((faq) => ({
-              "@type": "Question",
-              name: t(faq.question, lang),
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: t(faq.answer, lang),
-              },
-            })),
-          }),
-        }}
-      />
-
-      <section className="relative section-rhythm overflow-hidden" aria-label="Frequently asked questions">
         <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
           <div className="max-w-3xl mx-auto">
             <div
