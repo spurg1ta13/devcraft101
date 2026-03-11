@@ -247,15 +247,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile floating Call Us button — CSS only */}
+      {/* Mobile floating WhatsApp button — CSS only */}
       <a
-        href="tel:+306974159157"
-        className={`fixed bottom-6 right-6 z-50 lg:hidden bg-primary text-primary-foreground w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_hsl(38_100%_55%/0.4)] active:scale-95 transition-all duration-300 ${
+        href="https://wa.me/306974159157"
+        className={`fixed bottom-6 right-6 z-50 lg:hidden bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_rgba(37,211,102,0.4)] active:scale-95 transition-all duration-300 ${
           scrolled ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-80 pointer-events-none"
         }`}
-        aria-label="Call us"
+        aria-label="WhatsApp call"
       >
-        <Phone className="h-6 w-6" />
+        <WhatsAppIcon className="h-7 w-7" />
       </a>
     </>
   );
