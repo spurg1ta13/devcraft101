@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h4>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h2>
             <div className="flex flex-col gap-3">
               <a href="tel:+306974159157" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Call +30 697 415 9157">
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
