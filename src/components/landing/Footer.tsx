@@ -30,7 +30,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h4>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h2>
             <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
@@ -54,7 +54,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h4>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h2>
             <div className="flex flex-col gap-3">
               <a href="tel:+306974159157" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Call +30 697 415 9157">
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
@@ -66,7 +66,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center shrink-0">
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <span>Thessaloniki, Greece<br /><span className="text-muted-foreground/60 text-xs">(& whole wide world)</span></span>
+                <span>Thessaloniki, Greece<br /><span className="text-muted-foreground text-xs">(& whole wide world)</span></span>
               </div>
               <a
                 href="/#contact"
@@ -82,18 +82,18 @@ const Footer = () => {
         <div className="glow-line w-full mb-6" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-2">
-            <span className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase">
+            <span className="font-mono text-[10px] text-muted-foreground tracking-[0.1em] uppercase">
               © {new Date().getFullYear()} devcraft. {t(f.rights, lang)}
             </span>
             <Link
               to="/privacy-policy"
-              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
+              className="font-mono text-[10px] text-muted-foreground tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
             >
               {t(f.privacyPolicy, lang)}
             </Link>
             <Link
               to="/terms-of-service"
-              className="font-mono text-[10px] text-muted-foreground/60 tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
+              className="font-mono text-[10px] text-muted-foreground tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
             >
               {t(f.termsOfService, lang)}
             </Link>
