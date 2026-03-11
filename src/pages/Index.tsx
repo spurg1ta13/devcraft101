@@ -19,7 +19,7 @@ const Index = () => {
       <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
-      <LocalBusinessSchema />
+      <WebSiteSchema />
       <Navbar />
       <main id="main-content">
         <HeroSection />
