@@ -30,7 +30,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h4>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h2>
             <nav aria-label="Footer navigation" className="flex flex-col gap-2">
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
