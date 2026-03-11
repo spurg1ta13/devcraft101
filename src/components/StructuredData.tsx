@@ -38,7 +38,7 @@ const WebSiteSchema = () => {
     name: "DevCraft",
     url: "https://devcraft.gr",
     description:
-      "Custom web development, UI/UX design, and ISTQB-certified QA services.",
+      "AI-driven web development, bespoke interfaces, and quality assurance services.",
   };
 
   return (
