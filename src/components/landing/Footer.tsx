@@ -66,7 +66,7 @@ const Footer = () => {
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center shrink-0">
                   <MapPin className="h-4 w-4 text-primary" />
                 </div>
-                <span>Thessaloniki, Greece<br /><span className="text-muted-foreground/60 text-xs">(& whole wide world)</span></span>
+                <span>Thessaloniki, Greece<br /><span className="text-muted-foreground text-xs">(& whole wide world)</span></span>
               </div>
               <a
                 href="/#contact"
