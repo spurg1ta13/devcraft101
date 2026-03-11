@@ -16,37 +16,39 @@ const FAQSection = lazy(() => import("@/components/landing/FAQSection"));
 const CTASection = lazy(() => import("@/components/landing/CTASection"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
-const FAQPageSchema = () => {
-  const { lang } = useLang();
+const FAQPageSchema = ({ lang }: { lang: Lang }) => {
   const f = translations.faq;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: f.items.map((faq) => ({
+      "@type": "Question",
+      name: t(faq.question, lang),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t(faq.answer, lang),
+      },
+    })),
+  };
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: f.items.map((faq) => ({
-            "@type": "Question",
-            name: t(faq.question, lang),
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: t(faq.answer, lang),
-            },
-          })),
-        }),
-      }}
-    />
+    <Helmet>
+      <script id="faq-schema" type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Helmet>
   );
 };
 
 const Index = () => {
+  const { lang } = useLang();
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
-      <FAQPageSchema />
+      <FAQPageSchema lang={lang} />
       <Navbar />
       <main id="main-content">
         <HeroSection />
