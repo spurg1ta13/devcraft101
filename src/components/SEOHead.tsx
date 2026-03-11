@@ -75,9 +75,9 @@ const SEOHead = ({
       <meta name="twitter:description" content={resolvedDesc} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
-      <link rel="alternate" hreflang="en" href={fullUrl} />
-      <link rel="alternate" hreflang="el" href={fullUrl} />
-      <link rel="alternate" hreflang="x-default" href={fullUrl} />
+      <link rel="alternate" hrefLang="en" href={fullUrl} />
+      <link rel="alternate" hrefLang="el" href={fullUrl} />
+      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
   );
 };
