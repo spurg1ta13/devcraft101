@@ -93,11 +93,11 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8">
-            <div className="flex items-center gap-3 xl:gap-5 2xl:gap-6">
+          <div className="hidden lg:flex items-center gap-3 xl:gap-5 2xl:gap-8">
+            <div className="flex items-center gap-2 xl:gap-4 2xl:gap-6">
               <Link
                 to="/about"
-                className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
               >
                 {t(nav.aboutUs, lang)}
               </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </Link>
@@ -115,7 +115,7 @@ const Navbar = () => {
                     key={item.href}
                     href={`#${item.href}`}
                     onClick={(e) => { e.preventDefault(); scrollToHash(item.href); }}
-                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </a>
@@ -123,7 +123,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={`/#${item.href}`}
-                    className="font-mono text-[11px] xl:text-xs 2xl:text-sm uppercase tracking-[0.08em] xl:tracking-[0.12em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
                   >
                     {item.label}
                   </Link>
