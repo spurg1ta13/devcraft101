@@ -38,8 +38,7 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-v2.png" />
     <link rel="apple-touch-icon" href="/favicon-v2.png" />
 
-    <!-- Preload hero image for faster LCP (responsive) -->
-    <link rel="preload" as="image" href="/hero-banner-mobile.webp" fetchpriority="high" media="(max-width: 768px)" type="image/webp" />
+    <!-- Preload hero image only on desktop (mobile uses CSS gradient) -->
     <link rel="preload" as="image" href="/hero-banner.jpg" fetchpriority="high" media="(min-width: 769px)" />
 
     <!-- Fonts: async load with font-display:optional to avoid both CLS and render-blocking -->
