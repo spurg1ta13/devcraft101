@@ -96,6 +96,8 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src="/hero-banner.jpg"
+          srcSet="/hero-banner-mobile.jpg 800w, /hero-banner.jpg 1920w"
+          sizes="100vw"
           alt=""
           width={1920}
           height={1080}
