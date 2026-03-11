@@ -69,6 +69,7 @@ const FAQSection = () => {
         </div>
       </div>
     </section>
+  );
 };
 
 export default FAQSection;
