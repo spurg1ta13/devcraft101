@@ -94,9 +94,14 @@ const HeroSection = () => {
   return (
     <section ref={ref} className="relative min-h-[450px] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
       <div className="absolute inset-0">
-        <div
-          className="w-full h-full bg-cover bg-center opacity-20"
-          style={{ backgroundImage: `url(/hero-banner.jpg)` }}
+        <img
+          src="/hero-banner.jpg"
+          alt=""
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
+          className="w-full h-full object-cover opacity-20"
         />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
