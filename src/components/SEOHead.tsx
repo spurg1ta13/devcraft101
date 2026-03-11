@@ -18,7 +18,7 @@ const DEFAULT_TITLE = {
   el: "DevCraft | Προσαρμοσμένη Ανάπτυξη Ιστοσελίδων & Υπηρεσίες QA",
 };
 const DEFAULT_DESC = {
-  en: "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.",
+  en: "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
   el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένος σχεδιασμός UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
 };
 
