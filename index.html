@@ -42,10 +42,12 @@
     <link rel="preload" as="image" href="/hero-banner-mobile.jpg" fetchpriority="high" media="(max-width: 768px)" />
     <link rel="preload" as="image" href="/hero-banner.jpg" fetchpriority="high" media="(min-width: 769px)" />
 
-    <!-- Fonts: blocking load to prevent CLS from font swap -->
+    <!-- Fonts: async load with font-display:optional to avoid both CLS and render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=optional" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=optional" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=optional" /></noscript>
   </head>
 
   <body>
