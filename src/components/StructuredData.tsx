@@ -58,7 +58,7 @@ const LocalBusinessSchema = () => {
     telephone: "+306974159157",
     email: "contact@devcraft.gr",
     description:
-      "Custom web development, UI/UX design, and ISTQB-certified quality assurance services for brands that refuse to blend in.",
+      "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
