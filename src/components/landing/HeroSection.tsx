@@ -95,14 +95,14 @@ const HeroSection = () => {
     <section ref={ref} className="relative min-h-[450px] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
       <div className="absolute inset-0">
         <img
-          src="/hero-banner.jpg"
+          src="/hero-banner-mobile.jpg"
           srcSet="/hero-banner-mobile.jpg 800w, /hero-banner.jpg 1920w"
           sizes="100vw"
           alt=""
           width={1920}
           height={1080}
           fetchPriority="high"
-          decoding="async"
+          decoding="sync"
           className="w-full h-full object-cover opacity-20"
         />
       </div>
