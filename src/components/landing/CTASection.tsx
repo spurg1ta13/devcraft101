@@ -38,6 +38,7 @@ const CTASection = () => {
 
     setSending(true);
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           name: form.name.trim(),
