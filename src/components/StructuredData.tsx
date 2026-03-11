@@ -1,26 +1,24 @@
 const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "ProfessionalService",
     name: "DevCraft",
     url: "https://devcraft.gr",
-    logo: "https://devcraft.gr/devcraft-logo.svg",
+    logo: "https://devcraft.gr/favicon.ico",
+    image: "https://devcraft.gr/og-image.jpg",
     description:
-      "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
-    email: "contact@devcraft.gr",
-    telephone: "+306974159157",
+      "Bespoke digital products: Custom Software Development, UI/UX Design, and ISTQB certified Quality Assurance.",
     address: {
       "@type": "PostalAddress",
       addressCountry: "GR",
     },
-    sameAs: ["https://www.facebook.com/devcraftgr", "https://www.instagram.com/devcraft.gr"],
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+306974159157",
-      contactType: "customer service",
-      email: "contact@devcraft.gr",
-      availableLanguage: ["English", "Greek"],
-    },
+    serviceType: [
+      "Custom Software Development",
+      "UI/UX Design",
+      "Quality Assurance",
+      "Web Development",
+    ],
+    sameAs: ["https://www.linkedin.com/company/devcraft-gr"],
   };
 
   return (
