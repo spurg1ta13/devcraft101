@@ -42,4 +42,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  </url>
+  <url>
+    <loc>https://devcraft.gr/blog/why-your-website-is-not-generating-leads</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
