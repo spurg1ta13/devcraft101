@@ -6,7 +6,7 @@ const OrganizationSchema = () => {
     url: "https://devcraft.gr",
     logo: "https://devcraft.gr/devcraft-logo.svg",
     description:
-      "AI-driven web development, bespoke UI/UX design, and ISTQB-certified quality assurance.",
+      "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     email: "contact@devcraft.gr",
     telephone: "+306974159157",
     address: {
