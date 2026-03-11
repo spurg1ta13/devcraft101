@@ -5,11 +5,11 @@ export const translations = {
   nav: {
     aboutUs: { en: "About Us", el: "Σχετικά" },
     services: { en: "Services", el: "Υπηρεσίες" },
-    work: { en: "Our Projects", el: "Τα Έργα μας" },
-    blog: { en: "Blog", el: "Ιστολόγιο" },
+    work: { en: "Our Projects", el: "Έργα" },
+    blog: { en: "Blog", el: "Blog" },
     process: { en: "Process", el: "Διαδικασία" },
     contact: { en: "Contact", el: "Επικοινωνία" },
-    letsTalk: { en: "Let's talk", el: "Επικοινωνήστε" },
+    letsTalk: { en: "Let's talk", el: "Ας μιλήσουμε" },
   },
 
   // Hero
