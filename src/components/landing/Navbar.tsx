@@ -50,8 +50,8 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Mobile top contact bar */}
-      <div className={`fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground transition-transform duration-500 ${scrolled ? "-translate-y-full" : "translate-y-0"}`}>
+      {/* Mobile top contact bar — fixed height to prevent CLS */}
+      <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground h-11">
         <div className="container flex items-center justify-between h-11 text-xs font-mono font-bold px-4">
           <a href="tel:+306974159157" className="flex items-center gap-2 min-h-[44px]" aria-label="Call us">
             <Phone className="h-4 w-4" />
