@@ -92,7 +92,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative h-[70dvh] md:h-[100dvh] min-h-[450px] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
+    <section ref={ref} className="relative min-h-[450px] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
       <div className="absolute inset-0">
         <div
           className="w-full h-full bg-cover bg-center opacity-20"
