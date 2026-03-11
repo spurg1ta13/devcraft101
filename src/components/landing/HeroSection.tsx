@@ -111,7 +111,7 @@ const HeroSection = () => {
       )}
 
       <div
-        className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6 pt-28 md:pt-0"
+        className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6"
       >
         <div className="overflow-hidden mb-3 md:mb-4">
           <div className="animate-hero-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>

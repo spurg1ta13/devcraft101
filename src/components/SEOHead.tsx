@@ -47,8 +47,8 @@ const SEOHead = ({
       <title>{resolvedTitle}</title>
       <meta name="description" content={resolvedDesc} />
       <link rel="canonical" href={fullUrl} />
-      <link rel="icon" type="image/png" sizes="512x512" href="/favicon-v2.png" />
-      <link rel="apple-touch-icon" href="/favicon-v2.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png" />
+      <link rel="apple-touch-icon" href="/favicon.png" />
       {!shouldNoindex && <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />}
       {shouldNoindex && <meta name="robots" content="noindex, nofollow" />}
       <meta name="googlebot" content={shouldNoindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"} />

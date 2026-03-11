@@ -5,11 +5,11 @@ export const translations = {
   nav: {
     aboutUs: { en: "About Us", el: "Σχετικά" },
     services: { en: "Services", el: "Υπηρεσίες" },
-    work: { en: "Our Projects", el: "Έργα" },
-    blog: { en: "Blog", el: "Blog" },
+    work: { en: "Our Projects", el: "Τα Έργα μας" },
+    blog: { en: "Blog", el: "Ιστολόγιο" },
     process: { en: "Process", el: "Διαδικασία" },
     contact: { en: "Contact", el: "Επικοινωνία" },
-    letsTalk: { en: "Let's talk", el: "Ας μιλήσουμε" },
+    letsTalk: { en: "Let's talk", el: "Επικοινωνήστε" },
   },
 
   // Hero
@@ -223,8 +223,8 @@ export const translations = {
       el: "Είμαστε μια ενθουσιώδης ομάδα επαγγελματιών με 10 χρόνια επιτυχημένης εμπειρίας στον κλάδο της πληροφορικής. Μια δεκαετία εργασίας σε διεθνή έργα μας επιτρέπει να εγγυηθούμε την υψηλότερη ποιότητα υπηρεσιών.",
     },
     intro2: {
-      en: "Our core team consists of field experts: a result-oriented Web developer and a certified UI/UX designer. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
-      el: "Η βασική μας ομάδα αποτελείται από ειδικούς: έναν προσανατολισμένο σε αποτελέσματα Web developer και έναν πιστοποιημένο σχεδιαστή UI/UX. Προσπαθούμε να παραδώσουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
+      en: "Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer and an ISTQB-accredited tester. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
+      el: "Η βασική μας ομάδα αποτελείται από ειδικούς: έναν προσανατολισμένο σε αποτελέσματα Web developer, έναν πιστοποιημένο σχεδιαστή UI/UX και έναν διαπιστευμένο ελεγκτή ISTQB. Προσπαθούμε να παραδώσουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
     },
     stats: {
       years: { en: "Years Experience", el: "Χρόνια Εμπειρίας" },
