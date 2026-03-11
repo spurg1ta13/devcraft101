@@ -135,8 +135,8 @@
 }
 
 @keyframes amber-drift {
-  0% { translate: -6px -4px; }
-  100% { translate: 6px 4px; }
+  0% { transform: translate(-6px, -4px); }
+  100% { transform: translate(6px, 4px); }
 }
 
 /* Marquee */
