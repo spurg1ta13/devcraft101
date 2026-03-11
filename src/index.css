@@ -169,9 +169,11 @@
 }
 .animate-hero-slide-up {
   animation: hero-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  contain: layout style;
 }
 .animate-hero-fade-up {
   animation: hero-fade-up 0.8s ease-out forwards;
+  contain: layout style;
 }
 
 /* Morph blob — use will-change for composited animation */
