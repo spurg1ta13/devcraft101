@@ -21,26 +21,35 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     setLangState(newLang);
   };
 
-  // Auto-detect Greek visitors by IP on first visit
+  // Auto-detect Greek visitors by IP on first visit (deferred to avoid critical path)
   useEffect(() => {
     const manuallySet = localStorage.getItem("lang-manual");
     const alreadySaved = localStorage.getItem("lang");
     if (manuallySet || alreadySaved) return;
 
-    fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(3000) })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.country_code === "GR") {
-          setLangState("el");
-          localStorage.setItem("lang", "el");
-        } else {
+    const detect = () => {
+      fetch("https://ipapi.co/country_code/", { signal: AbortSignal.timeout(3000) })
+        .then((res) => res.text())
+        .then((code) => {
+          const country = code.trim();
+          if (country === "GR") {
+            setLangState("el");
+            localStorage.setItem("lang", "el");
+          } else {
+            localStorage.setItem("lang", "en");
+          }
+        })
+        .catch(() => {
           localStorage.setItem("lang", "en");
-        }
-      })
-      .catch(() => {
-        // Silently fall back to English
-        localStorage.setItem("lang", "en");
-      });
+        });
+    };
+
+    // Defer geo-detection until after main rendering
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(detect, { timeout: 3000 });
+    } else {
+      setTimeout(detect, 1500);
+    }
   }, []);
 
   useEffect(() => {
