@@ -17,7 +17,7 @@ export const translations = {
     line1: { en: "We don't do", el: "Δεν κάνουμε" },
     line2: { en: "ordinary", el: "το συνηθισμένο" },
     description: {
-      en: "AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.",
+      en: "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
       el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
     },
     explore: { en: "Explore ↓", el: "Εξερεύνηση ↓" },
