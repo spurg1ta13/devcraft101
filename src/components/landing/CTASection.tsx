@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import { supabase } from "@/integrations/supabase/client";
 import { useInView } from "@/hooks/useInView";
 
 const CTASection = () => {
@@ -39,6 +38,7 @@ const CTASection = () => {
 
     setSending(true);
     try {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: {
           name: form.name.trim(),
