@@ -92,7 +92,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="relative min-h-[450px] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise" aria-label="Hero">
+    <section ref={ref} className="relative min-h-[85dvh] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise pt-28 md:pt-0" aria-label="Hero">
       {/* Mobile: CSS gradient only (image barely visible at 20% opacity, not worth the download) */}
       <div className="absolute inset-0 md:hidden bg-gradient-to-br from-[hsl(38,100%,15%,0.15)] via-background to-background" />
       {/* Desktop: actual image */}
