@@ -19,7 +19,7 @@ export const blogTranslations = {
     el: "Πληροφορίες για ανάπτυξη ιστοσελίδων, σχεδιασμό και διασφάλιση ποιότητας",
   },
   readMore: { en: "Read article", el: "Διαβάστε το άρθρο" },
-  backToBlog: { en: "← Back to Blog", el: "← Πίσω στο Ιστολόγιο" },
+  backToBlog: { en: "Back to Blog", el: "Πίσω στο Ιστολόγιο" },
   publishedOn: { en: "Published on", el: "Δημοσιεύτηκε στις" },
   minRead: { en: "min read", el: "λεπτά ανάγνωσης" },
 };
