@@ -7,6 +7,13 @@ interface SEOHeadProps {
   canonical?: string;
   type?: string;
   noindex?: boolean;
+  articleMeta?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+    tags?: string[];
+  };
 }
 
 const SITE_NAME = "DevCraft";
