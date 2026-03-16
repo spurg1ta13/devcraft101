@@ -1,205 +1,258 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useLang } from "@/i18n/LanguageContext";
+
+const labels = {
+  bad: { en: "Without a Professional Landing Page", el: "Χωρίς Επαγγελματική Landing Page" },
+  good: { en: "With a Professional Landing Page", el: "Με Επαγγελματική Landing Page" },
+  bounce: { en: "Bounce Rate", el: "Ποσοστό Αποχώρησης" },
+  conversion: { en: "Conversions", el: "Μετατροπές" },
+  visitors: { en: "visitors leave", el: "επισκέπτες φεύγουν" },
+  visitorsStay: { en: "visitors convert", el: "επισκέπτες μετατρέπονται" },
+  slow: { en: "7.2s load", el: "7.2δ φόρτωση" },
+  fast: { en: "0.8s load", el: "0.8δ φόρτωση" },
+  noSeo: { en: "Invisible on Google", el: "Αόρατη στο Google" },
+  seo: { en: "Page 1 on Google", el: "Σελίδα 1 στο Google" },
+  noCta: { en: "No clear action", el: "Καμία σαφής ενέργεια" },
+  cta: { en: "Clear call-to-action", el: "Σαφής πρόσκληση δράσης" },
+  noTrust: { en: "Looks outdated", el: "Φαίνεται ξεπερασμένη" },
+  trust: { en: "Builds instant trust", el: "Χτίζει άμεση εμπιστοσύνη" },
+};
+
+const t = (obj: { en: string; el: string }, lang: string) =>
+  (obj as Record<string, string>)[lang] || obj.en;
 
 const LandingPageAnimation = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const { lang } = useLang();
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+  const [phase, setPhase] = useState<"bad" | "good">("bad");
 
   useEffect(() => {
-    const el = containerRef.current;
+    const el = ref.current;
     if (!el) return;
-    // Restart animations when scrolled into view
     const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) el.classList.add("lp-anim-active");
-      },
-      { threshold: 0.3 }
+      ([e]) => { if (e.isIntersecting) setActive(true); },
+      { threshold: 0.25 }
     );
     obs.observe(el);
     return () => obs.disconnect();
   }, []);
 
-  return (
-    <div className="my-14 flex justify-center" aria-hidden="true">
-      <style>{`
-        .lp-anim-active .lp-float-1 { animation: lpFloat 6s ease-in-out infinite; }
-        .lp-anim-active .lp-float-2 { animation: lpFloat 5s ease-in-out 0.5s infinite; }
-        .lp-anim-active .lp-float-3 { animation: lpFloat 7s ease-in-out 1s infinite; }
-        .lp-anim-active .lp-pulse { animation: lpPulse 2s ease-in-out infinite; }
-        .lp-anim-active .lp-shimmer { animation: lpShimmer 3s linear infinite; }
-        .lp-anim-active .lp-wave { animation: lpWave 8s linear infinite; }
-        .lp-anim-active .lp-slide-up { animation: lpSlideUp 0.8s ease-out both; }
-        .lp-anim-active .lp-slide-up-2 { animation: lpSlideUp 0.8s 0.2s ease-out both; }
-        .lp-anim-active .lp-slide-up-3 { animation: lpSlideUp 0.8s 0.4s ease-out both; }
-        .lp-anim-active .lp-slide-up-4 { animation: lpSlideUp 0.8s 0.6s ease-out both; }
-        .lp-anim-active .lp-slide-up-5 { animation: lpSlideUp 0.8s 0.8s ease-out both; }
-        .lp-anim-active .lp-cursor { animation: lpCursor 4s ease-in-out infinite; }
-        .lp-anim-active .lp-click { animation: lpClick 4s ease-in-out infinite; }
-        .lp-anim-active .lp-bar-fill { animation: lpBarFill 2s 1.2s ease-out both; }
-        .lp-anim-active .lp-counter { animation: lpCounter 2s 1.4s ease-out both; }
-        .lp-anim-active .lp-glow { animation: lpGlow 3s ease-in-out infinite; }
+  // Auto-toggle between bad and good every 4s
+  useEffect(() => {
+    if (!active) return;
+    const interval = setInterval(() => {
+      setPhase((p) => (p === "bad" ? "good" : "bad"));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [active]);
 
+  const isBad = phase === "bad";
+
+  return (
+    <div ref={ref} className="my-14 select-none" aria-hidden="true">
+      {/* Toggle label */}
+      <div className="flex items-center justify-center gap-3 mb-5">
+        <button
+          onClick={() => setPhase("bad")}
+          className={`text-xs font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all duration-500 ${
+            isBad
+              ? "border-destructive/50 text-destructive bg-destructive/10"
+              : "border-border/30 text-muted-foreground/40"
+          }`}
+        >
+          ✗ {t(labels.bad, lang)}
+        </button>
+        <button
+          onClick={() => setPhase("good")}
+          className={`text-xs font-mono uppercase tracking-wider px-3 py-1.5 rounded-full border transition-all duration-500 ${
+            !isBad
+              ? "border-primary/50 text-primary bg-primary/10"
+              : "border-border/30 text-muted-foreground/40"
+          }`}
+        >
+          ✓ {t(labels.good, lang)}
+        </button>
+      </div>
+
+      <div className="relative w-full max-w-lg mx-auto">
+        {/* Browser frame */}
+        <div
+          className="rounded-2xl border overflow-hidden transition-all duration-1000"
+          style={{
+            borderColor: isBad ? "hsl(var(--destructive) / 0.3)" : "hsl(var(--primary) / 0.3)",
+            boxShadow: isBad
+              ? "0 0 30px -8px hsl(var(--destructive) / 0.15)"
+              : "0 0 30px -8px hsl(var(--primary) / 0.25)",
+          }}
+        >
+          {/* Chrome bar */}
+          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-border/30 bg-muted/30">
+            <div className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
+            <div className="w-2.5 h-2.5 rounded-full bg-accent/60" />
+            <div className="w-2.5 h-2.5 rounded-full bg-primary/40" />
+            <div className="flex-1 mx-2 h-5 rounded-md bg-muted/50 flex items-center px-2">
+              <span className="text-[9px] font-mono text-muted-foreground/50">yourbrand.com</span>
+            </div>
+          </div>
+
+          <div className="relative min-h-[300px] sm:min-h-[340px] bg-card overflow-hidden">
+            {/* ===== BAD VERSION ===== */}
+            <div
+              className="absolute inset-0 p-5 transition-all duration-700 flex flex-col"
+              style={{
+                opacity: isBad ? 1 : 0,
+                transform: isBad ? "translateX(0)" : "translateX(-100%)",
+              }}
+            >
+              {/* Ugly navbar */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-24 h-4 rounded-sm bg-muted-foreground/15 skew-x-3" />
+                <div className="flex gap-1">
+                  <div className="w-8 h-2.5 rounded-sm bg-muted-foreground/10" />
+                  <div className="w-8 h-2.5 rounded-sm bg-muted-foreground/10" />
+                </div>
+              </div>
+              {/* Messy hero - misaligned, ugly */}
+              <div className="mb-3">
+                <div className="w-full h-4 rounded-sm bg-muted-foreground/12 mb-1" />
+                <div className="w-[95%] h-4 rounded-sm bg-muted-foreground/10 mb-1" />
+                <div className="w-[80%] h-4 rounded-sm bg-muted-foreground/8" />
+              </div>
+              <div className="w-full h-3 rounded-sm bg-muted-foreground/6 mb-1" />
+              <div className="w-3/4 h-3 rounded-sm bg-muted-foreground/5 mb-4" />
+              {/* No real CTA */}
+              <div className="w-16 h-5 rounded-sm bg-muted-foreground/10 mb-4 border border-muted-foreground/10" />
+              {/* Broken image placeholder */}
+              <div className="flex-1 rounded border border-dashed border-destructive/20 bg-destructive/5 flex items-center justify-center min-h-[60px]">
+                <span className="text-destructive/30 text-lg">✕</span>
+              </div>
+              {/* Speed indicator */}
+              <div className="mt-3 flex items-center gap-2">
+                <div className="w-full h-1.5 rounded-full bg-muted/40 overflow-hidden">
+                  <div className="h-full rounded-full bg-destructive/50 transition-all duration-1000" style={{ width: isBad ? "90%" : "0%" }} />
+                </div>
+                <span className="text-[8px] font-mono text-destructive/60 whitespace-nowrap">{t(labels.slow, lang)}</span>
+              </div>
+            </div>
+
+            {/* ===== GOOD VERSION ===== */}
+            <div
+              className="absolute inset-0 p-5 transition-all duration-700 flex flex-col"
+              style={{
+                opacity: isBad ? 0 : 1,
+                transform: isBad ? "translateX(100%)" : "translateX(0)",
+              }}
+            >
+              {/* Clean navbar */}
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-20 h-3.5 rounded bg-primary/70" />
+                <div className="flex gap-3">
+                  <div className="w-10 h-2 rounded bg-muted-foreground/20" />
+                  <div className="w-10 h-2 rounded bg-muted-foreground/20" />
+                  <div className="w-10 h-2 rounded bg-muted-foreground/20" />
+                </div>
+              </div>
+              {/* Clean hero */}
+              <div className="mb-3">
+                <div className="w-4/5 h-5 rounded bg-foreground/80 mb-2" />
+                <div className="w-3/5 h-5 rounded bg-foreground/50 mb-3" />
+              </div>
+              <div className="w-full h-2 rounded bg-muted-foreground/12 mb-1.5" />
+              <div className="w-5/6 h-2 rounded bg-muted-foreground/10 mb-4" />
+              {/* Beautiful CTA */}
+              <div className="w-28 h-8 rounded-lg bg-primary flex items-center justify-center mb-4 relative overflow-hidden">
+                <span className="text-[8px] font-bold text-primary-foreground tracking-widest uppercase">Get Started</span>
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: "linear-gradient(90deg, transparent 20%, hsl(var(--primary-foreground) / 0.1) 50%, transparent 80%)",
+                    backgroundSize: "200% 100%",
+                    animation: !isBad ? "lpShimmer 2.5s linear infinite" : "none",
+                  }}
+                />
+              </div>
+              {/* Feature cards */}
+              <div className="flex gap-2 mb-3">
+                {["⚡", "🎨", "📱"].map((icon, i) => (
+                  <div
+                    key={i}
+                    className="flex-1 rounded-xl border border-border/30 p-2 bg-muted/10"
+                    style={{
+                      animation: !isBad ? `lpFloat ${5 + i}s ease-in-out ${i * 0.3}s infinite` : "none",
+                    }}
+                  >
+                    <div className="text-xs mb-1">{icon}</div>
+                    <div className="w-full h-1.5 rounded bg-muted-foreground/12 mb-0.5" />
+                    <div className="w-3/4 h-1.5 rounded bg-muted-foreground/8" />
+                  </div>
+                ))}
+              </div>
+              {/* Speed indicator */}
+              <div className="mt-auto flex items-center gap-2">
+                <div className="w-full h-1.5 rounded-full bg-muted/40 overflow-hidden">
+                  <div className="h-full rounded-full bg-primary/70 transition-all duration-1000" style={{ width: isBad ? "0%" : "15%" }} />
+                </div>
+                <span className="text-[8px] font-mono text-primary/70 whitespace-nowrap">{t(labels.fast, lang)}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Impact metrics below */}
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            { bad: labels.noSeo, good: labels.seo, icon: "🔍" },
+            { bad: labels.noCta, good: labels.cta, icon: "🎯" },
+            { bad: labels.noTrust, good: labels.trust, icon: "🛡️" },
+            { bad: labels.bounce, good: labels.conversion, icon: "📈" },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="rounded-xl border p-2.5 text-center transition-all duration-700"
+              style={{
+                borderColor: isBad ? "hsl(var(--destructive) / 0.2)" : "hsl(var(--primary) / 0.2)",
+                backgroundColor: isBad ? "hsl(var(--destructive) / 0.03)" : "hsl(var(--primary) / 0.03)",
+              }}
+            >
+              <div className="text-base mb-1">{item.icon}</div>
+              <div
+                className="text-[9px] sm:text-[10px] font-mono leading-tight transition-colors duration-500"
+                style={{ color: isBad ? "hsl(var(--destructive) / 0.7)" : "hsl(var(--primary) / 0.9)" }}
+              >
+                {isBad ? t(item.bad, lang) : t(item.good, lang)}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Visitor flow indicator */}
+        <div className="mt-4 flex items-center justify-center gap-2">
+          <div
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-mono transition-all duration-700"
+            style={{
+              backgroundColor: isBad ? "hsl(var(--destructive) / 0.1)" : "hsl(var(--primary) / 0.1)",
+              color: isBad ? "hsl(var(--destructive) / 0.8)" : "hsl(var(--primary))",
+            }}
+          >
+            <span className="text-sm">{isBad ? "👋" : "🤝"}</span>
+            <span>
+              87% {isBad ? t(labels.visitors, lang) : t(labels.visitorsStay, lang)}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
         @keyframes lpFloat {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-        @keyframes lpPulse {
-          0%, 100% { transform: scale(1); opacity: 1; }
-          50% { transform: scale(1.05); opacity: 0.9; }
+          50% { transform: translateY(-6px); }
         }
         @keyframes lpShimmer {
           0% { background-position: -200% center; }
           100% { background-position: 200% center; }
         }
-        @keyframes lpWave {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        @keyframes lpSlideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes lpCursor {
-          0%, 20% { transform: translate(0, 0); }
-          40%, 50% { transform: translate(60px, 80px); }
-          55% { transform: translate(60px, 78px); }
-          60%, 80% { transform: translate(60px, 80px); }
-          100% { transform: translate(0, 0); }
-        }
-        @keyframes lpClick {
-          0%, 49% { transform: scale(0); opacity: 0; }
-          52% { transform: scale(1.5); opacity: 0.6; }
-          60% { transform: scale(2.5); opacity: 0; }
-          100% { transform: scale(0); opacity: 0; }
-        }
-        @keyframes lpBarFill {
-          from { width: 12%; }
-          to { width: 87%; }
-        }
-        @keyframes lpCounter {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes lpGlow {
-          0%, 100% { box-shadow: 0 0 15px 2px hsl(var(--primary) / 0.15); }
-          50% { box-shadow: 0 0 30px 6px hsl(var(--primary) / 0.3); }
-        }
       `}</style>
-
-      <div
-        ref={containerRef}
-        className="w-full max-w-lg rounded-2xl border border-border/40 bg-card overflow-hidden lp-glow"
-      >
-        {/* Browser chrome */}
-        <div className="flex items-center gap-1.5 px-3 py-2.5 border-b border-border/30 bg-muted/30">
-          <div className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
-          <div className="w-2.5 h-2.5 rounded-full bg-accent/60" />
-          <div className="w-2.5 h-2.5 rounded-full bg-primary/40" />
-          <div className="flex-1 mx-3 h-5 rounded-md bg-muted/50 flex items-center px-2.5 overflow-hidden relative">
-            <span className="text-[9px] font-mono text-muted-foreground/50">yourbrand.com</span>
-            {/* Shimmer across URL bar */}
-            <div
-              className="lp-shimmer absolute inset-0 opacity-30"
-              style={{
-                background: "linear-gradient(90deg, transparent 30%, hsl(var(--primary) / 0.15) 50%, transparent 70%)",
-                backgroundSize: "200% 100%",
-              }}
-            />
-          </div>
-        </div>
-
-        <div className="relative p-5 space-y-3.5 min-h-[320px] overflow-hidden">
-          {/* Moving wave background */}
-          <div className="absolute inset-0 opacity-[0.04] overflow-hidden pointer-events-none">
-            <div className="lp-wave flex whitespace-nowrap" style={{ width: "200%" }}>
-              {Array.from({ length: 20 }).map((_, i) => (
-                <span key={i} className="text-primary text-6xl font-bold mx-4 select-none">
-                  {"</>"}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Navbar */}
-          <div className="lp-slide-up flex items-center justify-between opacity-0 relative z-10">
-            <div className="w-20 h-3.5 rounded bg-primary/70 lp-shimmer"
-              style={{
-                background: "linear-gradient(90deg, hsl(var(--primary) / 0.7) 30%, hsl(var(--primary)) 50%, hsl(var(--primary) / 0.7) 70%)",
-                backgroundSize: "200% 100%",
-              }}
-            />
-            <div className="flex gap-3">
-              <div className="w-10 h-2 rounded bg-muted-foreground/20" />
-              <div className="w-10 h-2 rounded bg-muted-foreground/20" />
-              <div className="w-10 h-2 rounded bg-muted-foreground/20" />
-            </div>
-          </div>
-
-          {/* Hero section */}
-          <div className="lp-slide-up-2 pt-3 pb-1 opacity-0 relative z-10">
-            <div className="lp-float-1 w-4/5 h-5 rounded bg-foreground/80 mb-2.5" />
-            <div className="lp-float-2 w-3/5 h-5 rounded bg-foreground/50 mb-4" />
-            <div className="w-full h-2 rounded bg-muted-foreground/12 mb-1.5" />
-            <div className="w-11/12 h-2 rounded bg-muted-foreground/12 mb-1.5" />
-            <div className="w-4/5 h-2 rounded bg-muted-foreground/10" />
-          </div>
-
-          {/* CTA Button - pulsing */}
-          <div className="lp-slide-up-3 opacity-0 relative z-10">
-            <div className="lp-pulse w-28 h-8 rounded-lg bg-primary flex items-center justify-center cursor-pointer relative overflow-hidden">
-              <span className="text-[8px] font-bold text-primary-foreground tracking-widest uppercase">Get Started</span>
-              <div
-                className="lp-shimmer absolute inset-0"
-                style={{
-                  background: "linear-gradient(90deg, transparent 20%, hsl(var(--primary-foreground) / 0.12) 50%, transparent 80%)",
-                  backgroundSize: "200% 100%",
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Feature cards - floating */}
-          <div className="lp-slide-up-4 flex gap-2.5 pt-1 opacity-0 relative z-10">
-            {[
-              { delay: "lp-float-1", icon: "⚡" },
-              { delay: "lp-float-2", icon: "🎨" },
-              { delay: "lp-float-3", icon: "📱" },
-            ].map((card, n) => (
-              <div
-                key={n}
-                className={`${card.delay} flex-1 rounded-xl border border-border/30 p-2.5 bg-muted/15 hover:bg-muted/30 transition-colors`}
-              >
-                <div className="text-sm mb-1.5">{card.icon}</div>
-                <div className="w-full h-1.5 rounded bg-muted-foreground/15 mb-1" />
-                <div className="w-3/4 h-1.5 rounded bg-muted-foreground/10" />
-              </div>
-            ))}
-          </div>
-
-          {/* Stats bar */}
-          <div className="lp-slide-up-5 opacity-0 relative z-10">
-            <div className="flex items-center justify-between mb-1.5">
-              <span className="text-[8px] font-mono text-muted-foreground/50 uppercase tracking-wider">Conversion Rate</span>
-              <span className="lp-counter text-[9px] font-mono font-bold text-primary opacity-0">+340%</span>
-            </div>
-            <div className="w-full h-2 rounded-full bg-muted/40 overflow-hidden">
-              <div
-                className="lp-bar-fill h-full rounded-full"
-                style={{
-                  width: "12%",
-                  background: "linear-gradient(90deg, hsl(var(--primary) / 0.7), hsl(var(--primary)))",
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Animated cursor */}
-          <div className="lp-cursor absolute top-8 left-12 z-20 pointer-events-none">
-            <svg width="16" height="20" viewBox="0 0 16 20" fill="none" className="drop-shadow-md">
-              <path d="M1 1L1 15L5 11L9 19L12 17.5L8 10L13 9L1 1Z" fill="hsl(var(--foreground))" stroke="hsl(var(--background))" strokeWidth="1" />
-            </svg>
-            <div className="lp-click absolute top-0 left-0 w-3 h-3 rounded-full border-2 border-primary/60 -translate-x-1 -translate-y-1" />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
