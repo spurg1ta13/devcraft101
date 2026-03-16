@@ -81,6 +81,13 @@ const BlogArticle = () => {
         description={article.metaDescription}
         canonical={`/blog/${article.slug}`}
         type="article"
+        articleMeta={{
+          publishedTime: article.date,
+          modifiedTime: article.date,
+          author: "DevCraft",
+          section: t(article.category, lang),
+          tags: article.keywords,
+        }}
       />
       <BlogArticleSchema article={article} lang={lang} />
       <script
