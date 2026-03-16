@@ -12,6 +12,12 @@ import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
+  // Estimate word count from content
+  const wordCount = article.content[lang as "en" | "el"]
+    ?.join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length || 0;
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -19,6 +25,13 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     description: t(article.metaDescription, lang as "en" | "el"),
     datePublished: article.date,
     dateModified: article.date,
+    wordCount,
+    image: {
+      "@type": "ImageObject",
+      url: "https://devcraft.gr/og-image.jpg",
+      width: 1920,
+      height: 1080,
+    },
     author: {
       "@type": "Organization",
       name: "DevCraft",
@@ -38,6 +51,7 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     },
     keywords: article.keywords.join(", "),
     inLanguage: lang === "el" ? "el-GR" : "en-US",
+    articleSection: t(article.category, lang as "en" | "el"),
   };
 
   return (
@@ -81,6 +95,13 @@ const BlogArticle = () => {
         description={article.metaDescription}
         canonical={`/blog/${article.slug}`}
         type="article"
+        articleMeta={{
+          publishedTime: article.date,
+          modifiedTime: article.date,
+          author: "DevCraft",
+          section: t(article.category, lang),
+          tags: article.keywords,
+        }}
       />
       <BlogArticleSchema article={article} lang={lang} />
       <script

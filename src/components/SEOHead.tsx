@@ -7,6 +7,13 @@ interface SEOHeadProps {
   canonical?: string;
   type?: string;
   noindex?: boolean;
+  articleMeta?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+    section?: string;
+    tags?: string[];
+  };
 }
 
 const SITE_NAME = "DevCraft";
@@ -31,6 +38,7 @@ const SEOHead = ({
   canonical = "/",
   type = "website",
   noindex = false,
+  articleMeta,
 }: SEOHeadProps) => {
   const fullUrl = `${BASE_URL}${canonical}`;
   const { lang } = useLang();
@@ -75,6 +83,13 @@ const SEOHead = ({
       <meta name="twitter:description" content={resolvedDesc} />
       <meta name="twitter:image" content={OG_IMAGE} />
       <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
+      {articleMeta?.publishedTime && <meta property="article:published_time" content={articleMeta.publishedTime} />}
+      {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
+      {articleMeta?.author && <meta property="article:author" content={articleMeta.author} />}
+      {articleMeta?.section && <meta property="article:section" content={articleMeta.section} />}
+      {articleMeta?.tags?.map((tag, i) => (
+        <meta key={i} property="article:tag" content={tag} />
+      ))}
       <link rel="alternate" hrefLang="en" href={fullUrl} />
       <link rel="alternate" hrefLang="el" href={fullUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
