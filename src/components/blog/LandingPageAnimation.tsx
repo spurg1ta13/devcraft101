@@ -11,7 +11,7 @@ const labels = {
   slow: { en: "7.2s load", el: "7.2δ φόρτωση" },
   fast: { en: "0.8s load", el: "0.8δ φόρτωση" },
   noSeo: { en: "Invisible on Google", el: "Αόρατη στο Google" },
-  seo: { en: "Page 1 on Google", el: "Σελίδα 1 στο Google" },
+  seo: { en: "Found on Google", el: "Εμφανίζεται στο Google" },
   noCta: { en: "No clear action", el: "Καμία σαφής ενέργεια" },
   cta: { en: "Clear call-to-action", el: "Σαφής πρόσκληση δράσης" },
   noTrust: { en: "Looks outdated", el: "Φαίνεται ξεπερασμένη" },
