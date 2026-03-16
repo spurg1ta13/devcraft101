@@ -7,6 +7,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect } from "react";
+import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
 
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
@@ -128,6 +129,9 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
+              {article.slug === "why-attractive-landing-page-is-important" && (
+                <LandingPageAnimation />
+              )}
               {renderContent(article.content[lang])}
             </article>
 
