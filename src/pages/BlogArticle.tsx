@@ -129,6 +129,9 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
+              {article.slug === "why-attractive-landing-page-is-important" && (
+                <LandingPageAnimation />
+              )}
               {renderContent(article.content[lang])}
             </article>
 
