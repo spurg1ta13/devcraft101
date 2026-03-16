@@ -38,6 +38,7 @@ const SEOHead = ({
   canonical = "/",
   type = "website",
   noindex = false,
+  articleMeta,
 }: SEOHeadProps) => {
   const fullUrl = `${BASE_URL}${canonical}`;
   const { lang } = useLang();
