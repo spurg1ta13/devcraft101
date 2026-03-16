@@ -461,34 +461,34 @@ export const translations = {
     projects: [
       {
         title: { en: "Cleanup SKG", el: "Cleanup SKG" },
-        category: { en: "Cleaning Services", el: "Υπηρεσίες Καθαρισμού" },
+        category: { en: "Business Website", el: "Επιχειρηματική Ιστοσελίδα" },
         description: {
-          en: "Professional cleaning services website with booking system and service showcase.",
-          el: "Ιστοσελίδα επαγγελματικών υπηρεσιών καθαρισμού με σύστημα κρατήσεων και παρουσίαση υπηρεσιών.",
+          en: "Custom-built business website with online booking integration and responsive service showcase.",
+          el: "Ιστοσελίδα κατά παραγγελία με ενσωμάτωση online κρατήσεων και responsive παρουσίαση υπηρεσιών.",
         },
       },
       {
         title: { en: "Luxe Ellada", el: "Luxe Ellada" },
-        category: { en: "Luxury Lifestyle", el: "Πολυτελής Τρόπος Ζωής" },
+        category: { en: "Premium Web Platform", el: "Premium Πλατφόρμα" },
         description: {
-          en: "Premium lifestyle platform showcasing luxury experiences across Greece.",
-          el: "Premium πλατφόρμα lifestyle που παρουσιάζει πολυτελείς εμπειρίες σε όλη την Ελλάδα.",
+          en: "High-end web platform with immersive visuals, smooth animations, and editorial content layout.",
+          el: "Πλατφόρμα υψηλής αισθητικής με immersive visuals, ομαλά animations και editorial διάταξη περιεχομένου.",
         },
       },
       {
         title: { en: "Dental Care", el: "Dental Care" },
-        category: { en: "Healthcare", el: "Υγεία" },
+        category: { en: "Professional Website", el: "Επαγγελματική Ιστοσελίδα" },
         description: {
-          en: "Modern dental clinic website with gallery and appointment management.",
-          el: "Σύγχρονη ιστοσελίδα οδοντιατρικής κλινικής με γκαλερί και διαχείριση ραντεβού.",
+          en: "Modern professional website featuring interactive gallery and streamlined appointment system.",
+          el: "Σύγχρονη επαγγελματική ιστοσελίδα με διαδραστική γκαλερί και βελτιστοποιημένο σύστημα ραντεβού.",
         },
       },
       {
         title: { en: "Premium Real Estate", el: "Premium Real Estate" },
-        category: { en: "Real Estate", el: "Ακίνητα" },
+        category: { en: "Web Application", el: "Web Εφαρμογή" },
         description: {
-          en: "High-end real estate platform with property listings and virtual tours.",
-          el: "Πλατφόρμα ακινήτων υψηλών προδιαγραφών με καταχωρήσεις και εικονικές περιηγήσεις.",
+          en: "Feature-rich web application with advanced filtering, property listings, and virtual tour integration.",
+          el: "Web εφαρμογή με προηγμένο φιλτράρισμα, καταχωρήσεις ακινήτων και ενσωμάτωση εικονικών περιηγήσεων.",
         },
       },
     ],
