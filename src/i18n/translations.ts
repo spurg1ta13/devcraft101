@@ -460,14 +460,6 @@ export const translations = {
     },
     projects: [
       {
-        title: { en: "Cleanup SKG", el: "Cleanup SKG" },
-        category: { en: "Business Website", el: "Επιχειρηματική Ιστοσελίδα" },
-        description: {
-          en: "Custom-built business website with online booking integration and responsive service showcase.",
-          el: "Ιστοσελίδα κατά παραγγελία με ενσωμάτωση online κρατήσεων και responsive παρουσίαση υπηρεσιών.",
-        },
-      },
-      {
         title: { en: "Luxe Ellada", el: "Luxe Ellada" },
         category: { en: "Premium Web Platform", el: "Premium Πλατφόρμα" },
         description: {

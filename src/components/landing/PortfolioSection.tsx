@@ -6,7 +6,6 @@ import { useInView } from "@/hooks/useInView";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectUrls = [
-  "https://www.cleanupskg.gr",
   "https://luxe-ellada-page.lovable.app/",
   "https://dental-care-greek.lovable.app/gallery",
   "https://premium-realestate-suite.lovable.app/",
