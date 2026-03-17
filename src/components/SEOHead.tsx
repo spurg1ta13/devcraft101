@@ -21,12 +21,12 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "DevCraft | Custom Web Development & QA Services",
-  el: "DevCraft | Προσαρμοσμένη Ανάπτυξη Ιστοσελίδων & Υπηρεσίες QA",
+  en: "DevCraft | Custom Web Development & ISTQB Quality Assurance Worldwide",
+  el: "DevCraft | Κατασκευή Ιστοσελίδων & Διασφάλιση Ποιότητας (QA)",
 };
 const DEFAULT_DESC = {
-  en: "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
-  el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένος σχεδιασμός UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
+  en: "Bespoke AI-driven web development, UI/UX design, and ISTQB-certified testing services. We build scalable, high-performance digital solutions for brands globally.",
+  el: "Εξειδικευμένη κατασκευή ιστοσελίδων με τεχνητή νοημοσύνη, σχεδιασμός UI/UX και πιστοποιημένος έλεγχος ISTQB. Δημιουργούμε ψηφιακές λύσεις για πελάτες παγκοσμίως.",
 };
 
 const resolve = (val: { en: string; el: string } | string, lang: string): string =>
