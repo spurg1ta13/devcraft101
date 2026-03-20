@@ -76,8 +76,8 @@ const Navbar = () => {
       </div>
 
       <header
-        className={`fixed left-0 right-0 z-[55] transition-all duration-500 ${
-          scrolled ? "glass border-b border-border/30 top-0 lg:top-0" : "top-11 lg:top-0"
+        className={`fixed left-0 right-0 z-[55] transition-all duration-500 top-11 lg:top-0 ${
+          scrolled ? "glass border-b border-border/30" : ""
         }`}
       >
         <nav className="container flex items-center justify-between h-16 lg:h-20 px-4 sm:px-6" aria-label="Main navigation">
