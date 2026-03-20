@@ -158,12 +158,19 @@ const AIChatWidget = () => {
             <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
               <MessageCircle className="h-4 w-4 text-primary" />
             </div>
-            <div>
+            <div className="flex-1 min-w-0">
               <p className="font-bold text-sm text-foreground">DevCraft AI</p>
               <p className="text-[11px] text-muted-foreground font-mono tracking-wide">
                 {w.subtitle}
               </p>
             </div>
+            <button
+              onClick={() => setOpen(false)}
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-background/50 active:scale-95 transition-all"
+              aria-label="Close chat"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
         </div>
 
