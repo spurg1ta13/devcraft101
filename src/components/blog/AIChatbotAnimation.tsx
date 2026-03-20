@@ -56,6 +56,62 @@ const AnimCounter = ({ target, duration = 2000 }: { target: number; duration?: n
 
 const AIChatbotAnimation = () => {
   const { lang } = useLang();
+  const [activated, setActivated] = useState(false);
+
+  if (!activated) {
+    return (
+      <div className="my-12 select-none" aria-hidden="true">
+        <p className="text-center font-mono text-xs uppercase tracking-[0.15em] text-primary mb-6">
+          {t(labels.title, lang)}
+        </p>
+        <div className="mx-auto max-w-[320px]">
+          <div className="rounded-[24px] border border-border/40 bg-card overflow-hidden shadow-[0_8px_40px_-12px_hsl(var(--primary)/0.12)]">
+            {/* Static chat header */}
+            <div className="bg-secondary/80 px-4 py-3 flex items-center gap-3 border-b border-border/20">
+              <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
+                  <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
+                  <path d="M10 21v1a2 2 0 0 0 4 0v-1" />
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-foreground leading-tight">DevCraft AI</p>
+                <p className="text-[10px] text-primary font-mono">{t(labels.online, lang)}</p>
+              </div>
+              <div className="w-2 h-2 rounded-full bg-emerald-500" />
+            </div>
+            {/* Static preview messages */}
+            <div className="p-4 space-y-3 h-[200px] flex flex-col justify-end">
+              <div className="flex justify-end">
+                <div className="max-w-[80%] px-3.5 py-2.5 text-sm leading-relaxed bg-primary text-primary-foreground rounded-2xl rounded-br-md">
+                  {(chatFlow[lang as "en" | "el"] || chatFlow.en)[0].text}
+                </div>
+              </div>
+              <div className="flex justify-start">
+                <div className="max-w-[80%] px-3.5 py-2.5 text-sm leading-relaxed bg-muted/50 text-foreground rounded-2xl rounded-bl-md border border-border/20 line-clamp-2">
+                  {(chatFlow[lang as "en" | "el"] || chatFlow.en)[1].text}
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Play button */}
+          <button
+            onClick={() => setActivated(true)}
+            className="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-primary/10 border border-primary/20 text-primary font-mono text-xs uppercase tracking-wider hover:bg-primary/20 active:scale-[0.98] transition-all"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21" /></svg>
+            {lang === "el" ? "Δείτε το demo" : "Play demo"}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return <AIChatbotAnimationLive lang={lang} />;
+};
+
+/* Full interactive animation — only loaded after user taps "Play demo" */
+const AIChatbotAnimationLive = ({ lang }: { lang: string }) => {
   const [visibleMessages, setVisibleMessages] = useState(0);
   const [showTyping, setShowTyping] = useState(false);
   const [activeTab, setActiveTab] = useState<"mobile" | "desktop">("mobile");
@@ -69,7 +125,6 @@ const AIChatbotAnimation = () => {
 
     const showNext = (index: number) => {
       if (index >= flow.length) {
-        // Reset after a pause
         timerRef.current = setTimeout(() => {
           setVisibleMessages(0);
           setShowTyping(false);
@@ -78,7 +133,6 @@ const AIChatbotAnimation = () => {
         return;
       }
 
-      // Show typing indicator for AI messages
       if (flow[index].from === "ai") {
         setShowTyping(true);
         timerRef.current = setTimeout(() => {
@@ -96,7 +150,6 @@ const AIChatbotAnimation = () => {
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [lang, activeTab]);
 
-  // Auto-scroll chat to bottom when new messages appear
   useEffect(() => {
     if (chatScrollRef.current) {
       chatScrollRef.current.scrollTo({ top: chatScrollRef.current.scrollHeight, behavior: "smooth" });
@@ -105,12 +158,10 @@ const AIChatbotAnimation = () => {
 
   return (
     <div className="my-12 select-none" aria-hidden="true">
-      {/* Title */}
       <p className="text-center font-mono text-xs uppercase tracking-[0.15em] text-primary mb-6">
         {t(labels.title, lang)}
       </p>
 
-      {/* Tab switcher */}
       <div className="flex justify-center gap-2 mb-6">
         {(["mobile", "desktop"] as const).map((tab) => (
           <button
@@ -127,15 +178,12 @@ const AIChatbotAnimation = () => {
         ))}
       </div>
 
-      {/* Animation container */}
       <div className={`mx-auto transition-all duration-500 ${activeTab === "mobile" ? "max-w-[320px]" : "max-w-[600px]"}`}>
-        {/* Device frame */}
         <div
           className={`rounded-2xl border border-border/40 bg-card overflow-hidden shadow-[0_8px_40px_-12px_hsl(var(--primary)/0.12)] transition-all duration-500 ${
             activeTab === "mobile" ? "rounded-[24px]" : "rounded-xl"
           }`}
         >
-          {/* Chat header */}
           <div className="bg-secondary/80 px-4 py-3 flex items-center gap-3 border-b border-border/20">
             <div className="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
@@ -150,15 +198,12 @@ const AIChatbotAnimation = () => {
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           </div>
 
-          {/* Chat messages */}
           <div ref={chatScrollRef} className={`p-4 space-y-3 overflow-y-auto ${activeTab === "mobile" ? "h-[320px]" : "h-[280px]"}`}>
             {flow.slice(0, visibleMessages).map((msg, i) => (
               <div
                 key={`${lang}-${activeTab}-${i}`}
                 className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}
-                style={{
-                  animation: "aiChatMsgIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards",
-                }}
+                style={{ animation: "aiChatMsgIn 0.4s cubic-bezier(0.16,1,0.3,1) forwards" }}
               >
                 <div
                   className={`max-w-[80%] px-3.5 py-2.5 text-sm leading-relaxed ${
@@ -172,7 +217,6 @@ const AIChatbotAnimation = () => {
               </div>
             ))}
 
-            {/* Typing indicator */}
             {showTyping && (
               <div className="flex justify-start" style={{ animation: "aiChatMsgIn 0.3s cubic-bezier(0.16,1,0.3,1) forwards" }}>
                 <div className="bg-muted/50 rounded-2xl rounded-bl-md px-4 py-3 border border-border/20 flex items-center gap-1.5">
@@ -180,9 +224,7 @@ const AIChatbotAnimation = () => {
                     <div
                       key={d}
                       className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50"
-                      style={{
-                        animation: `aiTypingDot 1.4s ease-in-out ${d * 0.2}s infinite`,
-                      }}
+                      style={{ animation: `aiTypingDot 1.4s ease-in-out ${d * 0.2}s infinite` }}
                     />
                   ))}
                   <span className="text-[10px] text-muted-foreground/60 ml-2 font-mono">
@@ -194,33 +236,23 @@ const AIChatbotAnimation = () => {
           </div>
         </div>
 
-        {/* Stats row */}
         <div className="mt-5 grid grid-cols-2 gap-3">
           {[
-            { label: t(labels.responseTime, lang), value: "1.2s", isText: true },
-            { label: t(labels.satisfaction, lang), value: 97, suffix: "%", isText: false },
+            { label: t(labels.responseTime, lang), value: "1.2s" },
+            { label: t(labels.satisfaction, lang), value: "97%" },
           ].map((stat, i) => (
-            <div
-              key={i}
-              className="rounded-xl bg-card border border-border/20 px-3 py-3 text-center"
-              style={{
-                animation: `aiChatMsgIn 0.5s cubic-bezier(0.16,1,0.3,1) ${0.2 + i * 0.1}s both`,
-              }}
-            >
-              <p className="text-lg font-bold text-foreground tabular-nums">
-                {stat.isText ? stat.value : <><AnimCounter target={stat.value as number} />{stat.suffix || ""}</>}
-              </p>
+            <div key={i} className="rounded-xl bg-card border border-border/20 px-3 py-3 text-center">
+              <p className="text-lg font-bold text-foreground tabular-nums">{stat.value}</p>
               <p className="text-[10px] text-muted-foreground font-mono mt-0.5 leading-tight">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Keyframe styles */}
       <style>{`
         @keyframes aiChatMsgIn {
-          from { opacity: 0; transform: translateY(12px) scale(0.97); filter: blur(4px); }
-          to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+          from { opacity: 0; transform: translateY(12px) scale(0.97); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes aiTypingDot {
           0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
