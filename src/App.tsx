@@ -43,11 +43,15 @@ const DeferredLoad = ({ children }: { children: React.ReactNode }) => {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // On mobile, delay even longer to avoid main-thread contention during LCP
+    const isMobile = window.innerWidth < 768;
+    const timeout = isMobile ? 4000 : 2000;
+
     if ("requestIdleCallback" in window) {
-      const id = requestIdleCallback(() => setReady(true), { timeout: 2000 });
+      const id = requestIdleCallback(() => setReady(true), { timeout });
       return () => cancelIdleCallback(id);
     } else {
-      const t = setTimeout(() => setReady(true), 1500);
+      const t = setTimeout(() => setReady(true), isMobile ? 3000 : 1500);
       return () => clearTimeout(t);
     }
   }, []);
