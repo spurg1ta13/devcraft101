@@ -1,5 +1,4 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import SEOHead from "@/components/SEOHead";
@@ -7,9 +6,9 @@ import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect } from "react";
-import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
-import AIChatbotAnimation from "@/components/blog/AIChatbotAnimation";
 
+const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
+const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
