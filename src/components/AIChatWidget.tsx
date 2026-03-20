@@ -132,10 +132,10 @@ const AIChatWidget = () => {
 
   return (
     <>
-      {/* Floating button */}
+      {/* Floating button — hidden on mobile where WhatsApp button lives */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 active:scale-95 ${
+        className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg hidden lg:flex items-center justify-center transition-all duration-300 active:scale-95 ${
           open
             ? "bg-secondary text-foreground border border-border/50 rotate-0"
             : "bg-primary text-primary-foreground shadow-glow hover:scale-105"
@@ -145,12 +145,25 @@ const AIChatWidget = () => {
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
       </button>
 
+      {/* Mobile: compact AI bar at top, below the contact bar */}
+      <div className={`fixed top-11 left-0 right-0 z-[49] lg:hidden transition-all duration-300 ${
+        open ? "opacity-0 pointer-events-none" : "opacity-100"
+      }`}>
+        <button
+          onClick={() => setOpen(true)}
+          className="w-full bg-secondary/90 backdrop-blur-sm border-b border-border/30 flex items-center justify-center gap-2 py-2 text-xs font-mono text-muted-foreground hover:text-foreground transition-colors active:scale-[0.98]"
+          aria-label="Open AI assistant"
+        >
+          <MessageCircle className="h-3.5 w-3.5 text-primary" />
+          <span className="tracking-wide uppercase">{w.subtitle}</span>
+        </button>
+      </div>
+
       {/* Chat panel */}
       <div
-        className={`fixed bottom-24 right-6 z-50 w-[360px] max-w-[calc(100vw-2rem)] bg-background border border-border/60 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 origin-bottom-right ${
+        className={`fixed z-50 bg-background border border-border/60 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
           open ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"
-        }`}
-        style={{ maxHeight: "min(520px, calc(100vh - 140px))" }}
+        } lg:bottom-24 lg:right-6 lg:w-[360px] lg:max-w-[calc(100vw-2rem)] lg:origin-bottom-right lg:max-h-[min(520px,calc(100vh-140px))] max-lg:inset-x-3 max-lg:bottom-3 max-lg:top-14 max-lg:origin-top-center`}
       >
         {/* Header */}
         <div className="bg-secondary px-5 py-4 border-b border-border/30">
