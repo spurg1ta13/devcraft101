@@ -313,12 +313,12 @@ const Navbar = () => {
           }`}
           style={{ transitionDelay: open ? "550ms" : "0ms" }}
         >
-          <a href="https://wa.me/306974159157" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="WhatsApp call">
+          <button onClick={(e) => { openContactChoice(e); setOpen(false); }} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Contact us">
             <span className="relative flex h-5 w-5 items-center justify-center">
               <WhatsAppIcon className="relative h-4 w-4 text-primary" />
             </span>
             <span className="font-bold">+30 697 415 9157</span>
-          </a>
+          </button>
           <SocialLinks className="mt-2" />
         </div>
       </div>
