@@ -124,6 +124,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       body.style.left = "";
       body.style.right = "";
       body.style.width = "";
+      delete body.dataset.chatOpen;
       window.scrollTo(0, scrollY);
     };
   }, [isMobile, open]);
