@@ -91,6 +91,7 @@ const AIChatWidget = () => {
 
   useEffect(() => { scrollToBottom(); }, [messages, scrollToBottom]);
   useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 100); }, [open]);
+  useEffect(() => { if (open && !loading) inputRef.current?.focus(); }, [loading, open]);
 
   const send = async () => {
     const text = input.trim();
