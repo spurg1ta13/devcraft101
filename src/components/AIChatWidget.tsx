@@ -152,9 +152,9 @@ const AIChatWidget = () => {
         } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
-        style={{ maxHeight: undefined }}
+        style={{ height: "100dvh" }}
       >
-        <div className="flex flex-col h-full sm:h-auto" style={{ height: "100%", maxHeight: undefined }}>
+        <div className="flex flex-col sm:h-auto" style={{ height: "100dvh" }}>
           {/* Header */}
           <div className="bg-secondary px-5 py-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
