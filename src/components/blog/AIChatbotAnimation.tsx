@@ -96,6 +96,13 @@ const AIChatbotAnimation = () => {
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [lang, activeTab]);
 
+  // Auto-scroll chat to bottom when new messages appear
+  useEffect(() => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTo({ top: chatScrollRef.current.scrollHeight, behavior: "smooth" });
+    }
+  }, [visibleMessages, showTyping]);
+
   return (
     <div className="my-12 select-none" aria-hidden="true">
       {/* Title */}
