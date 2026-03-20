@@ -147,7 +147,7 @@ const AIChatWidget = () => {
 
       {/* Chat panel — fullscreen on mobile, floating on desktop */}
       <div
-        className={`fixed z-50 bg-background overflow-hidden transition-all duration-300 ${
+        className={`fixed z-[100] bg-background overflow-hidden transition-all duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
@@ -156,7 +156,7 @@ const AIChatWidget = () => {
       >
         <div className="flex flex-col sm:h-auto" style={{ height: "100dvh" }}>
           {/* Header */}
-          <div className="bg-secondary px-5 py-4 border-b border-border/30 shrink-0">
+          <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                 <MessageCircle className="h-4 w-4 text-primary" />
