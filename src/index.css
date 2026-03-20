@@ -197,13 +197,16 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-hero-slide-up {
-  animation: hero-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  contain: layout style;
-}
-.animate-hero-fade-up {
-  animation: hero-fade-up 0.8s ease-out forwards;
-  contain: layout style;
+/* Desktop-only hero animations — mobile renders instantly for LCP */
+@media (min-width: 768px) {
+  .md\:animate-hero-slide-up {
+    animation: hero-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    contain: layout style;
+  }
+  .md\:animate-hero-fade-up {
+    animation: hero-fade-up 0.8s ease-out forwards;
+    contain: layout style;
+  }
 }
 
 /* Morph blob — use will-change for composited animation */
@@ -224,20 +227,22 @@
   to { transform: scaleX(1); }
 }
 
-/* Service row hover — use transform instead of padding to avoid reflow */
-.service-row {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.service-row:hover {
-  transform: translateX(2rem);
-  background: hsl(0 0% 5%);
-}
-.service-row:hover .service-number {
-  color: hsl(38 100% 55%);
-}
-.service-row:hover .service-arrow {
-  transform: rotate(-45deg);
-  color: hsl(38 100% 55%);
+/* Service row hover — desktop only to reduce mobile CSS work */
+@media (min-width: 768px) {
+  .service-row {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-row:hover {
+    transform: translateX(2rem);
+    background: hsl(0 0% 5%);
+  }
+  .service-row:hover .service-number {
+    color: hsl(38 100% 55%);
+  }
+  .service-row:hover .service-arrow {
+    transform: rotate(-45deg);
+    color: hsl(38 100% 55%);
+  }
 }
 
 @keyframes fadeInUp {
