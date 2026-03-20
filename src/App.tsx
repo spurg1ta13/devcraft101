@@ -88,7 +88,6 @@ const App = () => (
             </DeferredLoad>
           </BrowserRouter>
         </TooltipProvider>
-      </QueryClientProvider>
     </LanguageProvider>
   </HelmetProvider>
 );
