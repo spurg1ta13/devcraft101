@@ -153,6 +153,9 @@ const BlogArticle = () => {
               {article.slug === "why-attractive-landing-page-is-important" && (
                 <LandingPageAnimation />
               )}
+              {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                <AIChatbotAnimation />
+              )}
               {renderContent(article.content[lang])}
             </article>
 
