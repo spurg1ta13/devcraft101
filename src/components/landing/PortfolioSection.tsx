@@ -90,7 +90,7 @@ const PortfolioSection = () => {
                   : "w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[700px]"
               }`}
             >
-              {(inView || iframeLoaded) ? (
+              {iframeLoaded ? (
                 <iframe
                   src={projectUrls[activeProject]}
                   title={t(s.projects[activeProject].title, lang)}
@@ -99,9 +99,13 @@ const PortfolioSection = () => {
                   sandbox="allow-scripts allow-same-origin"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                  Loading preview…
-                </div>
+                <button
+                  onClick={() => setIframeLoaded(true)}
+                  className="w-full h-full flex flex-col items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                >
+                  <Monitor className="h-8 w-8" />
+                  <span className="text-sm font-mono uppercase tracking-wider">{lang === "el" ? "Πατήστε για προεπισκόπηση" : "Tap to preview"}</span>
+                </button>
               )}
               <div className="absolute bottom-0 right-0 w-24 h-24 z-10" style={{ pointerEvents: 'auto' }} />
               <div className="absolute top-1/4 left-0 w-16 h-1/2 z-10" style={{ pointerEvents: 'auto' }} />
