@@ -107,11 +107,11 @@ const AIChatbotAnimation = () => {
     );
   }
 
-  return <AIChatbotAnimationLive lang={lang} />;
+  return <AIChatbotAnimationLive lang={lang} onComplete={() => setActivated(false)} />;
 };
 
 /* Full interactive animation — only loaded after user taps "Play demo" */
-const AIChatbotAnimationLive = ({ lang }: { lang: string }) => {
+const AIChatbotAnimationLive = ({ lang, onComplete }: { lang: string; onComplete: () => void }) => {
   const [visibleMessages, setVisibleMessages] = useState(0);
   const [showTyping, setShowTyping] = useState(false);
   const [activeTab, setActiveTab] = useState<"mobile" | "desktop">("mobile");
@@ -125,11 +125,8 @@ const AIChatbotAnimationLive = ({ lang }: { lang: string }) => {
 
     const showNext = (index: number) => {
       if (index >= flow.length) {
-        timerRef.current = setTimeout(() => {
-          setVisibleMessages(0);
-          setShowTyping(false);
-          timerRef.current = setTimeout(() => showNext(0), 800);
-        }, 4000);
+        // Demo finished — wait a moment then return to static preview
+        timerRef.current = setTimeout(() => onComplete(), 3000);
         return;
       }
 
