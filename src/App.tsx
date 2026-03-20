@@ -1,7 +1,7 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { lazy, Suspense } from "react";
@@ -34,13 +34,33 @@ const ScrollToHash = () => {
   return null;
 };
 
+/**
+ * Deferred wrapper — loads children after the browser is idle (or after 2s fallback).
+ * Keeps Toaster, Sonner, BackToTop, CookieConsent, and AIChatLauncher
+ * out of the critical rendering path entirely.
+ */
+const DeferredLoad = ({ children }: { children: React.ReactNode }) => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(() => setReady(true), { timeout: 2000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const t = setTimeout(() => setReady(true), 1500);
+      return () => clearTimeout(t);
+    }
+  }, []);
+
+  if (!ready) return null;
+  return <>{children}</>;
+};
+
 const App = () => (
   <HelmetProvider>
     <LanguageProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          <Toaster />
-          <Sonner />
           <BrowserRouter>
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
               Skip to main content
@@ -56,10 +76,17 @@ const App = () => (
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
-              <CookieConsent />
-              <BackToTop />
-              <AIChatLauncher />
             </Suspense>
+            {/* Non-critical UI deferred until browser is idle */}
+            <DeferredLoad>
+              <Suspense fallback={null}>
+                <Toaster />
+                <Sonner />
+                <CookieConsent />
+                <BackToTop />
+                <AIChatLauncher />
+              </Suspense>
+            </DeferredLoad>
           </BrowserRouter>
         </TooltipProvider>
       </QueryClientProvider>
