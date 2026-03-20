@@ -61,6 +61,7 @@ const AIChatbotAnimation = () => {
   const [activeTab, setActiveTab] = useState<"mobile" | "desktop">("mobile");
   const flow = chatFlow[lang as "en" | "el"] || chatFlow.en;
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setVisibleMessages(0);
@@ -94,6 +95,13 @@ const AIChatbotAnimation = () => {
     timerRef.current = setTimeout(() => showNext(0), 600);
     return () => { if (timerRef.current) clearTimeout(timerRef.current); };
   }, [lang, activeTab]);
+
+  // Auto-scroll chat to bottom when new messages appear
+  useEffect(() => {
+    if (chatScrollRef.current) {
+      chatScrollRef.current.scrollTo({ top: chatScrollRef.current.scrollHeight, behavior: "smooth" });
+    }
+  }, [visibleMessages, showTyping]);
 
   return (
     <div className="my-12 select-none" aria-hidden="true">
@@ -143,7 +151,7 @@ const AIChatbotAnimation = () => {
           </div>
 
           {/* Chat messages */}
-          <div className={`p-4 space-y-3 overflow-y-auto ${activeTab === "mobile" ? "h-[320px]" : "h-[280px]"}`}>
+          <div ref={chatScrollRef} className={`p-4 space-y-3 overflow-y-auto ${activeTab === "mobile" ? "h-[320px]" : "h-[280px]"}`}>
             {flow.slice(0, visibleMessages).map((msg, i) => (
               <div
                 key={`${lang}-${activeTab}-${i}`}
