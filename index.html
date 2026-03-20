@@ -41,6 +41,10 @@
     <!-- Preload hero image only on desktop (mobile uses CSS gradient) -->
     <link rel="preload" as="image" href="/hero-banner.jpg" fetchpriority="high" media="(min-width: 769px)" />
 
+    <!-- Resource hints for AI chat backend (loaded on interaction, connection warmed early) -->
+    <link rel="dns-prefetch" href="https://rgacmyobploucwvwytpl.supabase.co" />
+    <link rel="preconnect" href="https://rgacmyobploucwvwytpl.supabase.co" crossorigin />
+
     <!-- Fonts: async load with font-display:optional to avoid both CLS and render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
