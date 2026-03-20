@@ -63,10 +63,26 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
   );
 };
 
+/* Lightweight static placeholder for mobile — no JS animation loaded */
+const MobileDemoPlaceholder = ({ type }: { type: "landing" | "chatbot" }) => (
+  <div className="relative w-full rounded-xl overflow-hidden bg-card border border-border/30 mb-6" style={{ height: type === "chatbot" ? 320 : 280 }}>
+    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
+      <svg className="h-10 w-10 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+      </svg>
+      <span className="text-xs font-mono opacity-60">
+        {type === "chatbot" ? "AI Demo — view on desktop" : "Interactive demo — view on desktop"}
+      </span>
+    </div>
+  </div>
+);
+
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang } = useLang();
   const b = blogTranslations;
+  const isMobile = useIsMobile();
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
 
