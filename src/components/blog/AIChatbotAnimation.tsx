@@ -187,10 +187,9 @@ const AIChatbotAnimation = () => {
         </div>
 
         {/* Stats row */}
-        <div className="mt-5 grid grid-cols-3 gap-3">
+        <div className="mt-5 grid grid-cols-2 gap-3">
           {[
             { label: t(labels.responseTime, lang), value: "1.2s", isText: true },
-            { label: t(labels.leadsCapture, lang), value: 14, isText: false },
             { label: t(labels.satisfaction, lang), value: 97, suffix: "%", isText: false },
           ].map((stat, i) => (
             <div
