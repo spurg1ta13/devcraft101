@@ -197,13 +197,16 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.animate-hero-slide-up {
-  animation: hero-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  contain: layout style;
-}
-.animate-hero-fade-up {
-  animation: hero-fade-up 0.8s ease-out forwards;
-  contain: layout style;
+/* Desktop-only hero animations — mobile renders instantly for LCP */
+@media (min-width: 768px) {
+  .md\:animate-hero-slide-up {
+    animation: hero-slide-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    contain: layout style;
+  }
+  .md\:animate-hero-fade-up {
+    animation: hero-fade-up 0.8s ease-out forwards;
+    contain: layout style;
+  }
 }
 
 /* Morph blob — use will-change for composited animation */
