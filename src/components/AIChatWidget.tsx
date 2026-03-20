@@ -114,6 +114,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     body.style.left = "0";
     body.style.right = "0";
     body.style.width = "100%";
+    body.dataset.chatOpen = "true";
 
     return () => {
       html.style.overflow = "";
