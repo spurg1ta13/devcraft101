@@ -5,7 +5,8 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
-import { lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Blog animations are ONLY loaded via explicit user interaction (Play button inside component)
 // They are lazy-loaded so framer-motion/heavy JS never enters the main bundle
