@@ -80,53 +80,21 @@ const AIChatWidget = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [viewportH, setViewportH] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const innerRef = useRef<HTMLDivElement>(null);
   const { lang } = useLang();
   const w = WELCOME[lang] || WELCOME.en;
 
-  // Lock body scroll when chat is open on mobile
+  // Track visualViewport height for iOS keyboard handling
   useEffect(() => {
     if (!open) return;
-    const scrollY = window.scrollY;
-    document.documentElement.style.overflow = "hidden";
-    document.body.style.overflow = "hidden";
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.left = "0";
-    document.body.style.right = "0";
 
-    return () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.top = "";
-      document.body.style.left = "";
-      document.body.style.right = "";
-      window.scrollTo(0, scrollY);
-    };
-  }, [open]);
-
-  // iOS keyboard: use visualViewport for direct DOM sizing (no React re-render lag)
-  useEffect(() => {
-    if (!open) return;
     const vv = window.visualViewport;
     if (!vv) return;
 
     const update = () => {
-      const panel = panelRef.current;
-      const inner = innerRef.current;
-      if (!panel || !inner) return;
-
-      // On iOS, when keyboard opens, visualViewport shrinks and offsets
-      const h = vv.height;
-      const top = vv.offsetTop;
-
-      panel.style.height = `${h}px`;
-      panel.style.top = `${top}px`;
-      inner.style.height = `${h}px`;
+      setViewportH(vv.height);
     };
 
     update();
@@ -135,20 +103,46 @@ const AIChatWidget = () => {
     return () => {
       vv.removeEventListener("resize", update);
       vv.removeEventListener("scroll", update);
-      // Reset
-      const panel = panelRef.current;
-      const inner = innerRef.current;
-      if (panel) { panel.style.height = ""; panel.style.top = ""; }
-      if (inner) { inner.style.height = ""; }
+      setViewportH(null);
+    };
+  }, [open]);
+
+  // Prevent background scroll on mobile when chat is open
+  useEffect(() => {
+    if (!open) return;
+
+    const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const body = document.body;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
+    return () => {
+      html.style.overflow = "";
+      body.style.overflow = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
   const scrollToBottom = useCallback(() => {
-    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    requestAnimationFrame(() => {
+      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+    });
   }, []);
 
   useEffect(() => { scrollToBottom(); }, [messages, scrollToBottom]);
-  useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 100); }, [open]);
+  useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 200); }, [open]);
   useEffect(() => { if (open && !loading) inputRef.current?.focus(); }, [loading, open]);
 
   const send = async () => {
@@ -188,6 +182,12 @@ const AIChatWidget = () => {
     );
   };
 
+  // On mobile (no sm: breakpoint), use visualViewport height to avoid keyboard overlap
+  // On desktop, use fixed dimensions via CSS
+  const mobileStyle: React.CSSProperties = viewportH != null
+    ? { height: `${viewportH}px`, top: `${window.visualViewport?.offsetTop ?? 0}px` }
+    : {};
+
   return (
     <>
       {/* Floating button */}
@@ -205,17 +205,14 @@ const AIChatWidget = () => {
 
       {/* Chat panel */}
       <div
-        ref={panelRef}
-        className={`fixed z-[100] bg-background overflow-hidden transition-all duration-300 ${
+        style={mobileStyle}
+        className={`fixed z-[100] bg-background transition-all duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
+        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
-        <div
-          ref={innerRef}
-          className="flex flex-col h-full sm:h-auto"
-        >
+        <div className="flex flex-col h-full sm:h-auto">
           {/* Header */}
           <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
@@ -238,10 +235,10 @@ const AIChatWidget = () => {
             </div>
           </div>
 
-          {/* Messages */}
+          {/* Messages — flex-1 fills remaining space between header and input */}
           <div
             ref={scrollRef}
-            className="flex-1 overflow-y-auto px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
+            className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
           >
             {messages.length === 0 && (
               <div className="text-center py-8">
@@ -315,8 +312,8 @@ const AIChatWidget = () => {
             )}
           </div>
 
-          {/* Input */}
-          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0">
+          {/* Input — always pinned to bottom */}
+          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-background">
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
               className="flex gap-2"
@@ -329,8 +326,10 @@ const AIChatWidget = () => {
                 placeholder={w.placeholder}
                 disabled={loading}
                 enterKeyHint="send"
+                autoComplete="off"
+                autoCorrect="off"
                 className="flex-1 bg-secondary border border-border/50 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50 min-h-[44px]"
-                style={{ fontSize: "16px" }} // Prevents iOS auto-zoom on focus
+                style={{ fontSize: "16px" }}
               />
               <button
                 type="submit"
