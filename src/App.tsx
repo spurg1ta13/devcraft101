@@ -1,7 +1,7 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { lazy, Suspense } from "react";
@@ -19,8 +19,6 @@ const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
-
-
 const ScrollToHash = () => {
   const { hash } = useLocation();
   useEffect(() => {
@@ -35,25 +33,31 @@ const ScrollToHash = () => {
 };
 
 /**
- * Deferred wrapper — loads children after the browser is idle (or after 2s fallback).
- * Keeps Toaster, Sonner, BackToTop, CookieConsent, and AIChatLauncher
- * out of the critical rendering path entirely.
+ * InteractionGate — renders children only after user interacts with the page
+ * OR after a generous timeout. This keeps ALL non-critical JS off the main
+ * thread during the critical first 2 seconds.
  */
-const DeferredLoad = ({ children }: { children: React.ReactNode }) => {
+const InteractionGate = ({ children }: { children: React.ReactNode }) => {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    // On mobile, delay even longer to avoid main-thread contention during LCP
-    const isMobile = window.innerWidth < 768;
-    const timeout = isMobile ? 4000 : 2000;
+    const events = ["click", "scroll", "touchstart", "keydown"] as const;
+    const fallback = setTimeout(() => activate(), 5000);
 
-    if ("requestIdleCallback" in window) {
-      const id = requestIdleCallback(() => setReady(true), { timeout });
-      return () => cancelIdleCallback(id);
-    } else {
-      const t = setTimeout(() => setReady(true), isMobile ? 3000 : 1500);
-      return () => clearTimeout(t);
+    function activate() {
+      clearTimeout(fallback);
+      events.forEach(e => document.removeEventListener(e, activate));
+      setReady(true);
     }
+
+    events.forEach(e =>
+      document.addEventListener(e, activate, { once: true, passive: true })
+    );
+
+    return () => {
+      clearTimeout(fallback);
+      events.forEach(e => document.removeEventListener(e, activate));
+    };
   }, []);
 
   if (!ready) return null;
@@ -80,8 +84,8 @@ const App = () => (
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
-            {/* Non-critical UI deferred until browser is idle */}
-            <DeferredLoad>
+            {/* Non-critical UI: only loads after first user interaction or 5s */}
+            <InteractionGate>
               <Suspense fallback={null}>
                 <Toaster />
                 <Sonner />
@@ -89,7 +93,7 @@ const App = () => (
                 <BackToTop />
                 <AIChatLauncher />
               </Suspense>
-            </DeferredLoad>
+            </InteractionGate>
           </BrowserRouter>
         </TooltipProvider>
     </LanguageProvider>

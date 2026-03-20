@@ -1,136 +1,45 @@
-import { useRef, useMemo, useEffect, useState } from "react";
+import { useRef } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-
-const codeLines = [
-  { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "createApp", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'react'", c: "string" }] },
-  { indent: 0, tokens: [{ t: "import", c: "keyword" }, { t: " { ", c: "punct" }, { t: "motion", c: "func" }, { t: " } ", c: "punct" }, { t: "from", c: "keyword" }, { t: " 'framer-motion'", c: "string" }] },
-  { indent: 0, tokens: [] },
-  { indent: 0, tokens: [{ t: "const", c: "keyword" }, { t: " App ", c: "var" }, { t: "= ", c: "punct" }, { t: "() ", c: "punct" }, { t: "=> ", c: "keyword" }, { t: "{", c: "punct" }] },
-  { indent: 1, tokens: [{ t: "const", c: "keyword" }, { t: " [state, setState] ", c: "var" }, { t: "= ", c: "punct" }, { t: "useState", c: "func" }, { t: "(", c: "punct" }, { t: "null", c: "keyword" }, { t: ")", c: "punct" }] },
-  { indent: 0, tokens: [] },
-  { indent: 1, tokens: [{ t: "useEffect", c: "func" }, { t: "(() => {", c: "punct" }] },
-  { indent: 2, tokens: [{ t: "const", c: "keyword" }, { t: " client ", c: "var" }, { t: "= ", c: "punct" }, { t: "createClient", c: "func" }, { t: "(config)", c: "punct" }] },
-  { indent: 2, tokens: [{ t: "client", c: "var" }, { t: ".", c: "punct" }, { t: "connect", c: "func" }, { t: "()", c: "punct" }] },
-  { indent: 1, tokens: [{ t: "}, [config])", c: "punct" }] },
-  { indent: 0, tokens: [] },
-  { indent: 1, tokens: [{ t: "return", c: "keyword" }, { t: " (", c: "punct" }] },
-  { indent: 2, tokens: [{ t: "<", c: "punct" }, { t: "motion.div", c: "tag" }, { t: " className=", c: "punct" }, { t: "'app-container'", c: "string" }, { t: ">", c: "punct" }] },
-  { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Header", c: "tag" }, { t: " />", c: "punct" }] },
-  { indent: 3, tokens: [{ t: "<", c: "punct" }, { t: "Dashboard", c: "tag" }, { t: " data=", c: "punct" }, { t: "{state}", c: "var" }, { t: " />", c: "punct" }] },
-  { indent: 2, tokens: [{ t: "</", c: "punct" }, { t: "motion.div", c: "tag" }, { t: ">", c: "punct" }] },
-  { indent: 1, tokens: [{ t: ")", c: "punct" }] },
-  { indent: 0, tokens: [{ t: "}", c: "punct" }] },
-  { indent: 0, tokens: [] },
-  { indent: 0, tokens: [{ t: "export", c: "keyword" }, { t: " default ", c: "punct" }, { t: "App", c: "func" }] },
-];
-
-const tokenColors: Record<string, string> = {
-  keyword: "text-primary",
-  func: "text-blue-400",
-  string: "text-emerald-400",
-  comment: "text-muted-foreground/50 italic",
-  var: "text-foreground/80",
-  punct: "text-muted-foreground/60",
-  tag: "text-red-400",
-};
-
-const CodeRain = () => {
-  const doubled = useMemo(() => [...codeLines, ...codeLines], []);
-
-  return (
-    <div className="relative w-full h-full overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
-      <div
-        className="px-4 md:px-6 py-4 columns-1 md:columns-2 lg:columns-3 gap-8 md:gap-16 animate-code-rain"
-        style={{ willChange: 'transform' }}
-      >
-        {doubled.map((line, i) => (
-          <div key={i} className="h-6 flex items-center gap-0 font-mono text-[10px] md:text-[12px] leading-6 whitespace-nowrap">
-            <span className="w-6 md:w-7 shrink-0 text-right mr-2 md:mr-3 text-muted-foreground/15 select-none text-[9px] md:text-[10px]">
-              {(i % codeLines.length) + 1}
-            </span>
-            <span style={{ paddingLeft: `${line.indent * 14}px` }}>
-              {line.tokens.map((token, j) => (
-                <span key={j} className={tokenColors[token.c] || "text-foreground/60"}>
-                  {token.t}
-                </span>
-              ))}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const HeroSection = () => {
   const ref = useRef(null);
   const { lang } = useLang();
   const hero = translations.hero;
-  // Use CSS media query to avoid forced reflow from JS width checks
-  const [showCodeRain, setShowCodeRain] = useState(false);
-
-  useEffect(() => {
-    const mql = window.matchMedia("(min-width: 768px)");
-    setShowCodeRain(mql.matches);
-    const onChange = () => setShowCodeRain(mql.matches);
-    mql.addEventListener("change", onChange);
-    return () => mql.removeEventListener("change", onChange);
-  }, []);
 
   return (
     <section ref={ref} className="relative min-h-[85dvh] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise pt-28 md:pt-0" aria-label="Hero">
-      {/* Mobile: CSS gradient only — no image download */}
-      <div className="absolute inset-0 md:hidden bg-gradient-to-br from-[hsl(38,100%,15%,0.15)] via-background to-background" />
-      {/* Desktop: actual image */}
-      <div className="absolute inset-0 hidden md:block">
-        <picture>
-          <source srcSet="/hero-banner.webp" type="image/webp" />
-          <img
-            src="/hero-banner.jpg"
-            alt=""
-            width={1920}
-            height={1080}
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </picture>
+      {/* LCP image — standard <img>, eager, high priority, no animation */}
+      <div className="absolute inset-0">
+        <img
+          src="/hero-banner.webp"
+          alt=""
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+          className="w-full h-full object-cover opacity-20"
+        />
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
-      {showCodeRain && (
-        <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
-          <div className="w-full h-[100dvh] overflow-hidden">
-            <CodeRain />
-          </div>
+      <div className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6">
+        {/* Static text — zero animations on initial load */}
+        <div className="mb-3 md:mb-4">
+          <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
+            {t(hero.line1, lang)}
+          </h1>
         </div>
-      )}
-
-      <div
-        className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6"
-      >
-        {/* Mobile: no animation delays, instant render for LCP */}
-        <div className="overflow-hidden mb-3 md:mb-4">
-          <div className="md:animate-hero-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
-            <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-              {t(hero.line1, lang)}
-            </h1>
-          </div>
-        </div>
-        <div className="overflow-hidden mb-6 md:mb-8">
-          <div className="md:animate-hero-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-            <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-              <span className="text-gradient italic">{t(hero.line2, lang)}</span>
-              <span className="text-gradient">.</span>
-            </h1>
-          </div>
+        <div className="mb-6 md:mb-8">
+          <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
+            <span className="text-gradient italic">{t(hero.line2, lang)}</span>
+            <span className="text-gradient">.</span>
+          </h1>
         </div>
 
-        <div className="md:animate-hero-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+        <div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-6 md:pt-8 border-t border-border/30">
             <p className="text-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-medium">
               {t(hero.description, lang)}

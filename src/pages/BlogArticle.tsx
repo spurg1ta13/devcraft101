@@ -6,14 +6,14 @@ import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect, useState } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
 
+// Blog animations are ONLY loaded via explicit user interaction (Play button inside component)
+// They are lazy-loaded so framer-motion/heavy JS never enters the main bundle
 const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
 const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
-  // Estimate word count from content
   const wordCount = article.content[lang as "en" | "el"]
     ?.join(" ")
     .split(/\s+/)
@@ -27,62 +27,59 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
     datePublished: article.date,
     dateModified: article.date,
     wordCount,
-    image: {
-      "@type": "ImageObject",
-      url: "https://devcraft.gr/og-image.jpg",
-      width: 1920,
-      height: 1080,
-    },
-    author: {
-      "@type": "Organization",
-      name: "DevCraft",
-      url: "https://devcraft.gr",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "DevCraft",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://devcraft.gr/devcraft-logo.svg",
-      },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://devcraft.gr/blog/${article.slug}`,
-    },
+    image: { "@type": "ImageObject", url: "https://devcraft.gr/og-image.jpg", width: 1920, height: 1080 },
+    author: { "@type": "Organization", name: "DevCraft", url: "https://devcraft.gr" },
+    publisher: { "@type": "Organization", name: "DevCraft", logo: { "@type": "ImageObject", url: "https://devcraft.gr/devcraft-logo.svg" } },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://devcraft.gr/blog/${article.slug}` },
     keywords: article.keywords.join(", "),
     inLanguage: lang === "el" ? "el-GR" : "en-US",
     articleSection: t(article.category, lang as "en" | "el"),
   };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
   );
 };
 
-/* Lightweight static placeholder for mobile — no JS animation loaded */
-const MobileDemoPlaceholder = ({ type }: { type: "landing" | "chatbot" }) => (
-  <div className="relative w-full rounded-xl overflow-hidden bg-card border border-border/30 mb-6" style={{ height: type === "chatbot" ? 320 : 280 }}>
-    <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-      <svg className="h-10 w-10 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-      </svg>
-      <span className="text-xs font-mono opacity-60">
-        {type === "chatbot" ? "AI Demo — view on desktop" : "Interactive demo — view on desktop"}
-      </span>
-    </div>
-  </div>
-);
+/** Interactive demo — only loads the heavy animation component after user clicks */
+const DemoLoader = ({ type }: { type: "landing" | "chatbot" }) => {
+  const [activated, setActivated] = useState(false);
+  const { lang } = useLang();
+
+  if (!activated) {
+    return (
+      <div className="relative w-full rounded-xl overflow-hidden bg-card border border-border/30 mb-6 cursor-pointer group" 
+           style={{ height: type === "chatbot" ? 320 : 280 }}
+           onClick={() => setActivated(true)}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground group-hover:text-primary transition-colors">
+          <svg className="h-10 w-10 opacity-60 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
+          </svg>
+          <span className="text-xs font-mono opacity-60 group-hover:opacity-100 transition-opacity">
+            {lang === "el" ? "Πατήστε για demo" : "Tap to play demo"}
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Suspense fallback={
+      <div className="w-full rounded-xl bg-card border border-border/30 mb-6 flex items-center justify-center" 
+           style={{ height: type === "chatbot" ? 320 : 280 }}>
+        <span className="text-xs text-muted-foreground font-mono">Loading...</span>
+      </div>
+    }>
+      {type === "landing" ? <LandingPageAnimation /> : <AIChatbotAnimation />}
+    </Suspense>
+  );
+};
 
 const BlogArticle = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang } = useLang();
   const b = blogTranslations;
-  const isMobile = useIsMobile();
 
   useEffect(() => { window.scrollTo(0, 0); }, [slug]);
 
@@ -99,9 +96,7 @@ const BlogArticle = () => {
         );
       }
       return (
-        <p key={i} className="text-muted-foreground leading-relaxed mb-4">
-          {p}
-        </p>
+        <p key={i} className="text-muted-foreground leading-relaxed mb-4">{p}</p>
       );
     });
 
@@ -113,11 +108,8 @@ const BlogArticle = () => {
         canonical={`/blog/${article.slug}`}
         type="article"
         articleMeta={{
-          publishedTime: article.date,
-          modifiedTime: article.date,
-          author: "DevCraft",
-          section: t(article.category, lang),
-          tags: article.keywords,
+          publishedTime: article.date, modifiedTime: article.date,
+          author: "DevCraft", section: t(article.category, lang), tags: article.keywords,
         }}
       />
       <BlogArticleSchema article={article} lang={lang} />
@@ -125,8 +117,7 @@ const BlogArticle = () => {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
+            "@context": "https://schema.org", "@type": "BreadcrumbList",
             itemListElement: [
               { "@type": "ListItem", position: 1, name: "Home", item: "https://devcraft.gr/" },
               { "@type": "ListItem", position: 2, name: "Blog", item: "https://devcraft.gr/blog" },
@@ -138,7 +129,7 @@ const BlogArticle = () => {
       <Navbar />
       <main id="main-content" className="pt-32 lg:pt-28 pb-20">
         <div className="container px-4 sm:px-6 max-w-3xl mx-auto">
-          <div className="animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_both]">
+          <div>
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-sm mb-8 min-h-[44px]"
@@ -167,24 +158,11 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
-              {isMobile ? (
-                <>
-                  {article.slug === "why-attractive-landing-page-is-important" && (
-                    <MobileDemoPlaceholder type="landing" />
-                  )}
-                  {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                    <MobileDemoPlaceholder type="chatbot" />
-                  )}
-                </>
-              ) : (
-                <Suspense fallback={null}>
-                  {article.slug === "why-attractive-landing-page-is-important" && (
-                    <LandingPageAnimation />
-                  )}
-                  {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                    <AIChatbotAnimation />
-                  )}
-                </Suspense>
+              {article.slug === "why-attractive-landing-page-is-important" && (
+                <DemoLoader type="landing" />
+              )}
+              {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                <DemoLoader type="chatbot" />
               )}
               {renderContent(article.content[lang])}
             </article>
