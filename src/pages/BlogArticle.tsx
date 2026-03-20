@@ -1,5 +1,4 @@
 import { useParams, Link, Navigate } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import SEOHead from "@/components/SEOHead";
@@ -7,9 +6,9 @@ import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect } from "react";
-import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
-import AIChatbotAnimation from "@/components/blog/AIChatbotAnimation";
 
+const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
+const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
@@ -122,7 +121,7 @@ const BlogArticle = () => {
       <Navbar />
       <main id="main-content" className="pt-32 lg:pt-28 pb-20">
         <div className="container px-4 sm:px-6 max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <div className="animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_both]">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-sm mb-8 min-h-[44px]"
@@ -151,12 +150,14 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
-              {article.slug === "why-attractive-landing-page-is-important" && (
-                <LandingPageAnimation />
-              )}
-              {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                <AIChatbotAnimation />
-              )}
+              <Suspense fallback={null}>
+                {article.slug === "why-attractive-landing-page-is-important" && (
+                  <LandingPageAnimation />
+                )}
+                {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                  <AIChatbotAnimation />
+                )}
+              </Suspense>
               {renderContent(article.content[lang])}
             </article>
 
@@ -169,7 +170,7 @@ const BlogArticle = () => {
                 {t(b.backToBlog, lang)}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </main>
       <Suspense fallback={null}>
