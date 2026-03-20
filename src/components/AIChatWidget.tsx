@@ -74,31 +74,6 @@ async function streamChat(
   }
 }
 
-/** Hook that tracks the visual viewport height on iOS to handle keyboard */
-function useVisualViewportHeight() {
-  const [height, setHeight] = useState<string>("100dvh");
-
-  useEffect(() => {
-    const vv = window.visualViewport;
-    if (!vv) return;
-
-    const update = () => {
-      // Use visualViewport height which shrinks when keyboard is open
-      setHeight(`${vv.height}px`);
-    };
-
-    update();
-    vv.addEventListener("resize", update);
-    vv.addEventListener("scroll", update);
-    return () => {
-      vv.removeEventListener("resize", update);
-      vv.removeEventListener("scroll", update);
-    };
-  }, []);
-
-  return height;
-}
-
 const AIChatWidget = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -107,9 +82,66 @@ const AIChatWidget = () => {
   const [error, setError] = useState("");
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
   const { lang } = useLang();
   const w = WELCOME[lang] || WELCOME.en;
-  const viewportHeight = useVisualViewportHeight();
+
+  // Lock body scroll when chat is open on mobile
+  useEffect(() => {
+    if (!open) return;
+    const scrollY = window.scrollY;
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      window.scrollTo(0, scrollY);
+    };
+  }, [open]);
+
+  // iOS keyboard: use visualViewport for direct DOM sizing (no React re-render lag)
+  useEffect(() => {
+    if (!open) return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const update = () => {
+      const panel = panelRef.current;
+      const inner = innerRef.current;
+      if (!panel || !inner) return;
+
+      // On iOS, when keyboard opens, visualViewport shrinks and offsets
+      const h = vv.height;
+      const top = vv.offsetTop;
+
+      panel.style.height = `${h}px`;
+      panel.style.top = `${top}px`;
+      inner.style.height = `${h}px`;
+    };
+
+    update();
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+      // Reset
+      const panel = panelRef.current;
+      const inner = innerRef.current;
+      if (panel) { panel.style.height = ""; panel.style.top = ""; }
+      if (inner) { inner.style.height = ""; }
+    };
+  }, [open]);
 
   const scrollToBottom = useCallback(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -149,7 +181,6 @@ const AIChatWidget = () => {
     );
   };
 
-  // Inject clickable contact link into assistant messages
   const processContent = (content: string) => {
     return content.replace(
       /\[contact\s*(?:us\s*)?(?:form)?\]/gi,
@@ -159,7 +190,7 @@ const AIChatWidget = () => {
 
   return (
     <>
-      {/* Floating button — hidden when chat is open on mobile */}
+      {/* Floating button */}
       <button
         onClick={() => setOpen(!open)}
         className={`fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 active:scale-95 ${
@@ -172,23 +203,18 @@ const AIChatWidget = () => {
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
       </button>
 
-      {/* Chat panel — fullscreen on mobile, floating on desktop */}
+      {/* Chat panel */}
       <div
+        ref={panelRef}
         className={`fixed z-[100] bg-background overflow-hidden transition-all duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
-        style={{
-          height: viewportHeight,
-          top: 0,
-          left: 0,
-          right: 0,
-        }}
       >
         <div
-          className="flex flex-col sm:h-auto"
-          style={{ height: viewportHeight }}
+          ref={innerRef}
+          className="flex flex-col h-full sm:h-auto"
         >
           {/* Header */}
           <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
@@ -212,7 +238,7 @@ const AIChatWidget = () => {
             </div>
           </div>
 
-          {/* Messages — flex-1 fills available space on mobile */}
+          {/* Messages */}
           <div
             ref={scrollRef}
             className="flex-1 overflow-y-auto px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
@@ -289,7 +315,7 @@ const AIChatWidget = () => {
             )}
           </div>
 
-          {/* Input — stays at bottom, safe-area aware */}
+          {/* Input */}
           <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0">
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
@@ -302,7 +328,9 @@ const AIChatWidget = () => {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={w.placeholder}
                 disabled={loading}
+                enterKeyHint="send"
                 className="flex-1 bg-secondary border border-border/50 rounded-xl px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors disabled:opacity-50 min-h-[44px]"
+                style={{ fontSize: "16px" }} // Prevents iOS auto-zoom on focus
               />
               <button
                 type="submit"
