@@ -42,21 +42,29 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
   );
 };
 
-/** Static placeholder for mobile — desktop uses the component's built-in Play gate */
+/** Static image for mobile — desktop uses the component's built-in Play gate */
 const MobileDemoPlaceholder = ({ type }: { type: "landing" | "chatbot" }) => {
   const { lang } = useLang();
+  const imgSrc = type === "chatbot"
+    ? "/images/blog-ai-chatbot-demo.webp"
+    : "/images/blog-landing-page-demo.webp";
+  const altText = type === "chatbot"
+    ? (lang === "el" ? "AI chatbot βοηθός σε ιστοσελίδα" : "AI chatbot assistant on a website")
+    : (lang === "el" ? "Σύγχρονη landing page σχεδίαση" : "Modern landing page design");
+
   return (
-    <div className="relative w-full rounded-xl overflow-hidden bg-card border border-border/30 mb-6" style={{ height: type === "chatbot" ? 320 : 280 }}>
-      <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-        <svg className="h-10 w-10 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z" />
-        </svg>
-        <span className="text-xs font-mono opacity-60">
-          {lang === "el" ? "Demo — δείτε σε desktop" : "Demo — view on desktop"}
-        </span>
-      </div>
-    </div>
+    <figure className="w-full rounded-xl overflow-hidden border border-border/30 mb-6">
+      <img
+        src={imgSrc}
+        alt={altText}
+        loading="lazy"
+        decoding="async"
+        width={640}
+        height={512}
+        className="w-full h-auto object-cover"
+      />
+      <figcaption className="sr-only">{altText}</figcaption>
+    </figure>
   );
 };
 
