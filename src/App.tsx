@@ -58,7 +58,7 @@ const App = () => (
               </Routes>
               <CookieConsent />
               <BackToTop />
-              <AIChatWidget />
+              <AIChatLauncher />
             </Suspense>
           </BrowserRouter>
         </TooltipProvider>

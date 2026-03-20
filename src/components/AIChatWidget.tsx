@@ -83,6 +83,11 @@ interface AIChatWidgetProps {
 
 const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) => {
   const [open, setOpenState] = useState(defaultOpen);
+  const setOpen = (v: boolean | ((prev: boolean) => boolean)) => {
+    const next = typeof v === "function" ? v(open) : v;
+    setOpenState(next);
+    onOpenChange?.(next);
+  };
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
