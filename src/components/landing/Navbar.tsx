@@ -107,10 +107,16 @@ const scrollToHash = (hash: string) => {
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [contactDialog, setContactDialog] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { lang } = useLang();
   const nav = translations.nav;
+
+  const openContactChoice = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setContactDialog(true);
+  }, []);
 
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 80);
