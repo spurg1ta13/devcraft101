@@ -5,7 +5,8 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
 const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
