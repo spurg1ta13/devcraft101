@@ -163,8 +163,7 @@ const AIChatWidget = () => {
       <div
         className={`fixed z-50 bg-background border border-border/60 rounded-2xl shadow-2xl overflow-hidden transition-all duration-300 ${
           open ? "scale-100 opacity-100 pointer-events-auto" : "scale-90 opacity-0 pointer-events-none"
-        } bottom-24 right-6 w-[360px] max-w-[calc(100vw-2rem)] lg:origin-bottom-right max-lg:inset-x-3 max-lg:bottom-3 max-lg:top-14 max-lg:w-auto max-lg:origin-top-center`}
-        style={{ maxHeight: window.innerWidth >= 1024 ? "min(520px, calc(100vh - 140px))" : undefined }}
+        } lg:bottom-24 lg:right-6 lg:w-[360px] lg:max-w-[calc(100vw-2rem)] lg:origin-bottom-right lg:max-h-[min(520px,calc(100vh-140px))] max-lg:inset-x-3 max-lg:bottom-3 max-lg:top-14 max-lg:origin-top-center`}
       >
         {/* Header */}
         <div className="bg-secondary px-5 py-4 border-b border-border/30">
