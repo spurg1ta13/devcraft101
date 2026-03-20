@@ -19,7 +19,7 @@ const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
-const queryClient = new QueryClient();
+
 
 const ScrollToHash = () => {
   const { hash } = useLocation();
