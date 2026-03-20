@@ -237,7 +237,6 @@ const Navbar = () => {
         >
           <a href="https://wa.me/306974159157" onClick={() => setOpen(false)} className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="WhatsApp call">
             <span className="relative flex h-5 w-5 items-center justify-center">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40" />
               <WhatsAppIcon className="relative h-4 w-4 text-primary" />
             </span>
             <span className="font-bold">+30 697 415 9157</span>
