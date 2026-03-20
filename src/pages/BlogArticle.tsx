@@ -65,7 +65,7 @@ const BlogArticle = () => {
   const { lang } = useLang();
   const b = blogTranslations;
 
-  useEffect(() => { window.scrollTo(0, 0); }, [slug]);
+  const isMobile = useIsMobile();
 
   const article = blogArticles.find((a) => a.slug === slug);
   if (!article) return <Navigate to="/blog" replace />;
