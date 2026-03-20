@@ -143,10 +143,14 @@ const BlogArticle = () => {
 
             <article className="prose-custom">
               {article.slug === "why-attractive-landing-page-is-important" && (
-                <DemoLoader type="landing" />
+                isMobile ? <MobileDemoPlaceholder type="landing" /> : (
+                  <Suspense fallback={null}><LandingPageAnimation /></Suspense>
+                )
               )}
               {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                <DemoLoader type="chatbot" />
+                isMobile ? <MobileDemoPlaceholder type="chatbot" /> : (
+                  <Suspense fallback={null}><AIChatbotAnimation /></Suspense>
+                )
               )}
               {renderContent(article.content[lang])}
             </article>
