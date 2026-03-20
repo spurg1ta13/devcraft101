@@ -164,6 +164,11 @@
   100% { background-position: 80% 50%; }
 }
 
+@keyframes amber-drift {
+  0% { transform: translate(-6px, -4px); }
+  100% { transform: translate(6px, 4px); }
+}
+
 /* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
