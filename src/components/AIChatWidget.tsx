@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { MessageCircle, X, Send, Loader2, ArrowDown } from "lucide-react";
+import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useLang } from "@/i18n/LanguageContext";
 
@@ -74,6 +74,31 @@ async function streamChat(
   }
 }
 
+/** Hook that tracks the visual viewport height on iOS to handle keyboard */
+function useVisualViewportHeight() {
+  const [height, setHeight] = useState<string>("100dvh");
+
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const update = () => {
+      // Use visualViewport height which shrinks when keyboard is open
+      setHeight(`${vv.height}px`);
+    };
+
+    update();
+    vv.addEventListener("resize", update);
+    vv.addEventListener("scroll", update);
+    return () => {
+      vv.removeEventListener("resize", update);
+      vv.removeEventListener("scroll", update);
+    };
+  }, []);
+
+  return height;
+}
+
 const AIChatWidget = () => {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Msg[]>([]);
@@ -84,6 +109,7 @@ const AIChatWidget = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const { lang } = useLang();
   const w = WELCOME[lang] || WELCOME.en;
+  const viewportHeight = useVisualViewportHeight();
 
   const scrollToBottom = useCallback(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -153,9 +179,17 @@ const AIChatWidget = () => {
         } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
-        style={{ height: "100dvh" }}
+        style={{
+          height: viewportHeight,
+          top: 0,
+          left: 0,
+          right: 0,
+        }}
       >
-        <div className="flex flex-col sm:h-auto" style={{ height: "100dvh" }}>
+        <div
+          className="flex flex-col sm:h-auto"
+          style={{ height: viewportHeight }}
+        >
           {/* Header */}
           <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
