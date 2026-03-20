@@ -42,28 +42,68 @@ const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0];
   );
 };
 
-/** Static image for mobile — desktop uses the component's built-in Play gate */
-const MobileDemoPlaceholder = ({ type }: { type: "landing" | "chatbot" }) => {
+/** Lightweight static chat preview for mobile — matches AIChatbotAnimation style, language-aware */
+const MobileChatPreview = () => {
   const { lang } = useLang();
-  const imgSrc = type === "chatbot"
-    ? "/images/blog-ai-chatbot-demo.webp"
-    : "/images/blog-landing-page-demo.webp";
-  const altText = type === "chatbot"
-    ? (lang === "el" ? "AI chatbot βοηθός σε ιστοσελίδα" : "AI chatbot assistant on a website")
-    : (lang === "el" ? "Σύγχρονη landing page σχεδίαση" : "Modern landing page design");
+  const isEl = lang === "el";
+  const messages = [
+    { from: "user", text: isEl ? "Γεια! Τι υπηρεσίες προσφέρετε;" : "Hi! What services do you offer?" },
+    { from: "ai", text: isEl ? "Εξειδικευόμαστε σε ανάπτυξη ιστοσελίδων, σχεδιασμό UI/UX και πιστοποιημένο QA testing. Πώς μπορώ να βοηθήσω;" : "We specialize in custom web development, UI/UX design, and ISTQB-certified QA testing. How can I help you today?" },
+    { from: "user", text: isEl ? "Πόσο γρήγορα μπορείτε να φτιάξετε landing page;" : "How fast can you build a landing page?" },
+    { from: "ai", text: isEl ? "Συνήθως 1–2 εβδομάδες. Θέλετε link δωρεάν συμβουλευτικής;" : "Typically 1–2 weeks. Want me to send you a free consultation link?" },
+  ];
 
   return (
+    <figure className="my-8 select-none" role="img" aria-label={isEl ? "AI chatbot βοηθός — προεπισκόπηση" : "AI chatbot assistant — preview"}>
+      <div className="mx-auto max-w-[320px]">
+        <div className="rounded-[20px] border border-border/40 bg-card overflow-hidden shadow-[0_4px_24px_-8px_hsl(var(--primary)/0.10)]">
+          <div className="bg-secondary/80 px-4 py-2.5 flex items-center gap-3 border-b border-border/20">
+            <div className="w-7 h-7 rounded-full bg-primary/20 flex items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary">
+                <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
+                <path d="M10 21v1a2 2 0 0 0 4 0v-1" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-semibold text-foreground leading-tight">DevCraft AI</p>
+              <p className="text-[10px] text-primary font-mono">Online 24/7</p>
+            </div>
+            <div className="w-2 h-2 rounded-full bg-emerald-500" />
+          </div>
+          <div className="p-3 space-y-2.5">
+            {messages.map((msg, i) => (
+              <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "justify-start"}`}>
+                <div className={`max-w-[82%] px-3 py-2 text-[13px] leading-relaxed ${msg.from === "user" ? "bg-primary text-primary-foreground rounded-2xl rounded-br-md" : "bg-muted/50 text-foreground rounded-2xl rounded-bl-md border border-border/20"}`}>
+                  {msg.text}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          <div className="rounded-lg bg-card border border-border/20 px-2.5 py-2 text-center">
+            <p className="text-base font-bold text-foreground tabular-nums">1.2s</p>
+            <p className="text-[10px] text-muted-foreground font-mono mt-0.5">{isEl ? "Μέσος χρόνος" : "Avg. response"}</p>
+          </div>
+          <div className="rounded-lg bg-card border border-border/20 px-2.5 py-2 text-center">
+            <p className="text-base font-bold text-foreground tabular-nums">97%</p>
+            <p className="text-[10px] text-muted-foreground font-mono mt-0.5">{isEl ? "Ικανοποίηση" : "Satisfaction"}</p>
+          </div>
+        </div>
+      </div>
+      <figcaption className="sr-only">{isEl ? "AI chatbot βοηθός σε ιστοσελίδα" : "AI chatbot assistant on a website"}</figcaption>
+    </figure>
+  );
+};
+
+/** Image placeholder for landing page article on mobile */
+const MobileLandingPlaceholder = () => {
+  const { lang } = useLang();
+  const alt = lang === "el" ? "Σύγχρονη landing page σχεδίαση" : "Modern landing page design";
+  return (
     <figure className="w-full rounded-xl overflow-hidden border border-border/30 mb-6">
-      <img
-        src={imgSrc}
-        alt={altText}
-        loading="lazy"
-        decoding="async"
-        width={640}
-        height={512}
-        className="w-full h-auto object-cover"
-      />
-      <figcaption className="sr-only">{altText}</figcaption>
+      <img src="/images/blog-landing-page-demo.webp" alt={alt} loading="lazy" decoding="async" width={640} height={512} className="w-full h-auto object-cover" />
+      <figcaption className="sr-only">{alt}</figcaption>
     </figure>
   );
 };
@@ -153,12 +193,12 @@ const BlogArticle = () => {
 
             <article className="prose-custom">
               {article.slug === "why-attractive-landing-page-is-important" && (
-                isMobile ? <MobileDemoPlaceholder type="landing" /> : (
+                isMobile ? <MobileLandingPlaceholder /> : (
                   <Suspense fallback={null}><LandingPageAnimation /></Suspense>
                 )
               )}
               {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                isMobile ? <MobileDemoPlaceholder type="chatbot" /> : (
+                isMobile ? <MobileChatPreview /> : (
                   <Suspense fallback={null}><AIChatbotAnimation /></Suspense>
                 )
               )}
