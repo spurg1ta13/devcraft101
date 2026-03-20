@@ -68,11 +68,24 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
   }
 
   ::selection {
     background: hsl(38 100% 55% / 0.2);
     color: hsl(0 0% 100%);
+  }
+}
+
+@supports (height: 100dvh) {
+  .h-dvh-stable {
+    height: 100dvh;
   }
 }
 
