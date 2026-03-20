@@ -425,7 +425,6 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
   },
-  },
   {
     slug: "why-ai-chatbot-assistant-boosts-your-website",
     title: {
