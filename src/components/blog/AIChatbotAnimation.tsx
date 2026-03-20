@@ -107,7 +107,7 @@ const AIChatbotAnimation = () => {
     );
   }
 
-  return <AIChatbotAnimationLive lang={lang} />;
+  return <AIChatbotAnimationLive lang={lang} onComplete={() => setActivated(false)} />;
 };
 
 /* Full interactive animation — only loaded after user taps "Play demo" */
