@@ -42,7 +42,7 @@ const PortfolioSection = () => {
           {s.projects.map((project, i) => (
             <button
               key={i}
-              onClick={() => { setActiveProject(i); setIframeLoaded(true); }}
+              onClick={() => { setActiveProject(i); setIframeLoaded(false); }}
               className={`font-mono text-[10px] sm:text-xs uppercase tracking-[0.1em] px-4 sm:px-5 py-2.5 rounded-full border transition-all duration-500 ${
                 activeProject === i
                   ? "bg-primary text-primary-foreground border-primary shadow-glow"

@@ -86,15 +86,18 @@ const HeroSection = () => {
       <div className="absolute inset-0 md:hidden bg-gradient-to-br from-[hsl(38,100%,15%,0.15)] via-background to-background" />
       {/* Desktop: actual image */}
       <div className="absolute inset-0 hidden md:block">
-        <img
-          src="/hero-banner.jpg"
-          alt=""
-          width={1920}
-          height={1080}
-          fetchPriority="high"
-          decoding="async"
-          className="w-full h-full object-cover opacity-20"
-        />
+        <picture>
+          <source srcSet="/hero-banner.webp" type="image/webp" />
+          <img
+            src="/hero-banner.jpg"
+            alt=""
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </picture>
       </div>
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
