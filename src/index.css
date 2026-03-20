@@ -227,20 +227,22 @@
   to { transform: scaleX(1); }
 }
 
-/* Service row hover — use transform instead of padding to avoid reflow */
-.service-row {
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.service-row:hover {
-  transform: translateX(2rem);
-  background: hsl(0 0% 5%);
-}
-.service-row:hover .service-number {
-  color: hsl(38 100% 55%);
-}
-.service-row:hover .service-arrow {
-  transform: rotate(-45deg);
-  color: hsl(38 100% 55%);
+/* Service row hover — desktop only to reduce mobile CSS work */
+@media (min-width: 768px) {
+  .service-row {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-row:hover {
+    transform: translateX(2rem);
+    background: hsl(0 0% 5%);
+  }
+  .service-row:hover .service-number {
+    color: hsl(38 100% 55%);
+  }
+  .service-row:hover .service-arrow {
+    transform: rotate(-45deg);
+    color: hsl(38 100% 55%);
+  }
 }
 
 @keyframes fadeInUp {

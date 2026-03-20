@@ -167,14 +167,25 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
-              <Suspense fallback={null}>
-                {article.slug === "why-attractive-landing-page-is-important" && (
-                  <LandingPageAnimation />
-                )}
-                {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                  <AIChatbotAnimation />
-                )}
-              </Suspense>
+              {isMobile ? (
+                <>
+                  {article.slug === "why-attractive-landing-page-is-important" && (
+                    <MobileDemoPlaceholder type="landing" />
+                  )}
+                  {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                    <MobileDemoPlaceholder type="chatbot" />
+                  )}
+                </>
+              ) : (
+                <Suspense fallback={null}>
+                  {article.slug === "why-attractive-landing-page-is-important" && (
+                    <LandingPageAnimation />
+                  )}
+                  {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                    <AIChatbotAnimation />
+                  )}
+                </Suspense>
+              )}
               {renderContent(article.content[lang])}
             </article>
 

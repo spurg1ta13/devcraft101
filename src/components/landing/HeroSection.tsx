@@ -82,7 +82,7 @@ const HeroSection = () => {
 
   return (
     <section ref={ref} className="relative min-h-[85dvh] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise pt-28 md:pt-0" aria-label="Hero">
-      {/* Mobile: CSS gradient only (image barely visible at 20% opacity, not worth the download) */}
+      {/* Mobile: CSS gradient only — no image download */}
       <div className="absolute inset-0 md:hidden bg-gradient-to-br from-[hsl(38,100%,15%,0.15)] via-background to-background" />
       {/* Desktop: actual image */}
       <div className="absolute inset-0 hidden md:block">
@@ -113,15 +113,16 @@ const HeroSection = () => {
       <div
         className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6"
       >
+        {/* Mobile: no animation delays, instant render for LCP */}
         <div className="overflow-hidden mb-3 md:mb-4">
-          <div className="animate-hero-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
+          <div className="md:animate-hero-slide-up" style={{ animationDelay: '0.1s', animationFillMode: 'both' }}>
             <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
               {t(hero.line1, lang)}
             </h1>
           </div>
         </div>
         <div className="overflow-hidden mb-6 md:mb-8">
-          <div className="animate-hero-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
+          <div className="md:animate-hero-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
             <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
               <span className="text-gradient italic">{t(hero.line2, lang)}</span>
               <span className="text-gradient">.</span>
@@ -129,7 +130,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="animate-hero-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+        <div className="md:animate-hero-fade-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-6 md:pt-8 border-t border-border/30">
             <p className="text-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-medium">
               {t(hero.description, lang)}
