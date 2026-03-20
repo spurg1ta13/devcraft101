@@ -11,7 +11,7 @@ const ProcessSection = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section id="process" className="relative section-rhythm bg-dot-grid" aria-label="Our process">
+    <section id="process" className="relative section-rhythm bg-dot-grid scroll-mt-28 lg:scroll-mt-20" aria-label="Our process">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
         <div

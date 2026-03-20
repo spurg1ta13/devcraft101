@@ -142,7 +142,7 @@ const Navbar = () => {
             <span className="text-xs">+30 697 415 9157</span>
           </button>
           {isHome ? (
-            <a href="#contact" onClick={() => setOpen(false)} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); setOpen(false); scrollToHash("contact"); }} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
             </a>
           ) : (
@@ -259,7 +259,7 @@ const Navbar = () => {
 
       {/* Mobile fullscreen menu — CSS transitions only */}
       <div
-        className={`fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-3 px-6 transition-opacity duration-400 ${
+        className={`fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center gap-3 px-6 pt-32 pb-8 overflow-y-auto transition-opacity duration-400 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         role="dialog"

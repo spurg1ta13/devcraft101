@@ -72,7 +72,7 @@ const CTASection = () => {
   }, [submitted]);
 
   return (
-    <section id="contact" className="relative section-rhythm overflow-hidden" aria-label="Contact form">
+    <section id="contact" className="relative section-rhythm overflow-hidden scroll-mt-28 lg:scroll-mt-20" aria-label="Contact form">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] animate-morph amber-drift blur-[100px]" />
       <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
         <div className="max-w-4xl mx-auto">
