@@ -259,7 +259,7 @@ const Navbar = () => {
 
       {/* Mobile fullscreen menu — CSS transitions only */}
       <div
-        className={`fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center justify-center gap-3 px-6 transition-opacity duration-400 ${
+        className={`fixed inset-0 z-[52] bg-background lg:hidden flex flex-col items-center gap-3 px-6 pt-32 pb-8 overflow-y-auto transition-opacity duration-400 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         role="dialog"
