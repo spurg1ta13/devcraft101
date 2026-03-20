@@ -150,12 +150,14 @@ const BlogArticle = () => {
             </div>
 
             <article className="prose-custom">
-              {article.slug === "why-attractive-landing-page-is-important" && (
-                <LandingPageAnimation />
-              )}
-              {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                <AIChatbotAnimation />
-              )}
+              <Suspense fallback={null}>
+                {article.slug === "why-attractive-landing-page-is-important" && (
+                  <LandingPageAnimation />
+                )}
+                {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                  <AIChatbotAnimation />
+                )}
+              </Suspense>
               {renderContent(article.content[lang])}
             </article>
 
