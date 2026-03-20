@@ -61,6 +61,7 @@ const AIChatbotAnimation = () => {
   const [activeTab, setActiveTab] = useState<"mobile" | "desktop">("mobile");
   const flow = chatFlow[lang as "en" | "el"] || chatFlow.en;
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
+  const chatScrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setVisibleMessages(0);
