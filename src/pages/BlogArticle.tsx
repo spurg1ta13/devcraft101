@@ -193,12 +193,12 @@ const BlogArticle = () => {
 
             <article className="prose-custom">
               {article.slug === "why-attractive-landing-page-is-important" && (
-                isMobile ? <MobileDemoPlaceholder type="landing" /> : (
+                isMobile ? <MobileLandingPlaceholder /> : (
                   <Suspense fallback={null}><LandingPageAnimation /></Suspense>
                 )
               )}
               {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
-                isMobile ? <MobileDemoPlaceholder type="chatbot" /> : (
+                isMobile ? <MobileChatPreview /> : (
                   <Suspense fallback={null}><AIChatbotAnimation /></Suspense>
                 )
               )}
