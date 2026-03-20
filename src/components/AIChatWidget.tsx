@@ -76,8 +76,13 @@ async function streamChat(
   }
 }
 
-const AIChatWidget = () => {
-  const [open, setOpen] = useState(false);
+interface AIChatWidgetProps {
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
+}
+
+const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) => {
+  const [open, setOpenState] = useState(defaultOpen);
   const [messages, setMessages] = useState<Msg[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
