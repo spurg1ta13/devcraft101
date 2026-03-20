@@ -8,6 +8,7 @@ import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect } from "react";
 import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
+import AIChatbotAnimation from "@/components/blog/AIChatbotAnimation";
 
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
@@ -152,6 +153,9 @@ const BlogArticle = () => {
             <article className="prose-custom">
               {article.slug === "why-attractive-landing-page-is-important" && (
                 <LandingPageAnimation />
+              )}
+              {article.slug === "why-ai-chatbot-assistant-boosts-your-website" && (
+                <AIChatbotAnimation />
               )}
               {renderContent(article.content[lang])}
             </article>
