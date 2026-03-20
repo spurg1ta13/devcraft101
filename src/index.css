@@ -77,6 +77,12 @@
     min-height: 100%;
   }
 
+
+  /* Hide WhatsApp float when AI chat is open */
+  body[data-chat-open="true"] .whatsapp-float {
+    display: none !important;
+  }
+
   ::selection {
     background: hsl(38 100% 55% / 0.2);
     color: hsl(0 0% 100%);
