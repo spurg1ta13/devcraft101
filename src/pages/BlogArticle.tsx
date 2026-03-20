@@ -170,7 +170,7 @@ const BlogArticle = () => {
                 {t(b.backToBlog, lang)}
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </main>
       <Suspense fallback={null}>
