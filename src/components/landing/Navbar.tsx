@@ -137,13 +137,13 @@ const Navbar = () => {
       {/* Mobile top contact bar — fixed height to prevent CLS */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground h-11">
         <div className="container flex items-center justify-between h-11 text-xs font-mono font-bold px-4">
-          <a href="tel:+306974159157" className="flex items-center gap-2.5 min-h-[44px]" aria-label="Call +30 697 415 9157">
+          <button onClick={openContactChoice} className="flex items-center gap-2.5 min-h-[44px]" aria-label="Call +30 697 415 9157">
             <span className="flex items-center gap-1.5">
               <Phone className="h-4 w-4" />
               <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
             </span>
             <span className="text-xs">+30 697 415 9157</span>
-          </a>
+          </button>
           {isHome ? (
             <a href="#contact" onClick={(e) => { e.preventDefault(); setOpen(false); scrollToHash("contact"); }} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
