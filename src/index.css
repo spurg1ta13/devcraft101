@@ -1,5 +1,16 @@
 /* Fonts loaded via index.html <link> for non-blocking rendering */
 
+/* Hide scrollbars on mobile/touch devices */
+@media (max-width: 768px), (pointer: coarse) {
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
