@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           "vendor-react": ["react", "react-dom"],
           "vendor-router": ["react-router-dom"],
-          "vendor-query": ["@tanstack/react-query"],
+          
           "vendor-markdown": ["react-markdown"],
           "vendor-motion": ["framer-motion"],
         },

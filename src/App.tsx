@@ -1,5 +1,5 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { HelmetProvider } from "react-helmet-async";
@@ -19,7 +19,7 @@ const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
-const queryClient = new QueryClient();
+
 
 const ScrollToHash = () => {
   const { hash } = useLocation();
@@ -59,7 +59,6 @@ const DeferredLoad = ({ children }: { children: React.ReactNode }) => {
 const App = () => (
   <HelmetProvider>
     <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <BrowserRouter>
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
@@ -89,7 +88,6 @@ const App = () => (
             </DeferredLoad>
           </BrowserRouter>
         </TooltipProvider>
-      </QueryClientProvider>
     </LanguageProvider>
   </HelmetProvider>
 );
