@@ -142,7 +142,7 @@ const Navbar = () => {
             <span className="text-xs">+30 697 415 9157</span>
           </button>
           {isHome ? (
-            <a href="#contact" onClick={() => setOpen(false)} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+            <a href="#contact" onClick={(e) => { e.preventDefault(); setOpen(false); scrollToHash("contact"); }} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
             </a>
           ) : (

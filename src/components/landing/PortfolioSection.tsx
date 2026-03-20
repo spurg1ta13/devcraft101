@@ -23,7 +23,7 @@ const PortfolioSection = () => {
   const effectiveViewMode = isMobile ? "mobile" : viewMode;
 
   return (
-    <section id="projects" className="relative section-rhythm" aria-label="Portfolio">
+    <section id="projects" className="relative section-rhythm scroll-mt-28 lg:scroll-mt-20" aria-label="Portfolio">
       <div className="container px-4 sm:px-6" ref={ref}>
         {/* Header */}
         <div
