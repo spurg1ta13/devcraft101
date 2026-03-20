@@ -17,7 +17,7 @@ const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
-const AIChatWidget = lazy(() => import("./components/AIChatWidget"));
+const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
 const queryClient = new QueryClient();
 
