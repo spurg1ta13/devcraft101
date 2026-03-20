@@ -8,6 +8,7 @@ import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense, useEffect } from "react";
 import LandingPageAnimation from "@/components/blog/LandingPageAnimation";
+import AIChatbotAnimation from "@/components/blog/AIChatbotAnimation";
 
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
