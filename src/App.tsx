@@ -59,7 +59,6 @@ const DeferredLoad = ({ children }: { children: React.ReactNode }) => {
 const App = () => (
   <HelmetProvider>
     <LanguageProvider>
-      <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <BrowserRouter>
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
