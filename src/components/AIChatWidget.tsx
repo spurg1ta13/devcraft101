@@ -2,6 +2,8 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { MessageCircle, X, Send, Loader2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { useLang } from "@/i18n/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { useVisualViewport } from "@/hooks/useVisualViewport";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -80,36 +82,16 @@ const AIChatWidget = () => {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [viewportH, setViewportH] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { lang } = useLang();
+  const isMobile = useIsMobile();
+  const viewport = useVisualViewport(open && isMobile);
   const w = WELCOME[lang] || WELCOME.en;
-
-  // Track visualViewport height for iOS keyboard handling
-  useEffect(() => {
-    if (!open) return;
-
-    const vv = window.visualViewport;
-    if (!vv) return;
-
-    const update = () => {
-      setViewportH(vv.height);
-    };
-
-    update();
-    vv.addEventListener("resize", update);
-    vv.addEventListener("scroll", update);
-    return () => {
-      vv.removeEventListener("resize", update);
-      vv.removeEventListener("scroll", update);
-      setViewportH(null);
-    };
-  }, [open]);
 
   // Prevent background scroll on mobile when chat is open
   useEffect(() => {
-    if (!open) return;
+    if (!open || !isMobile) return;
 
     const scrollY = window.scrollY;
     const html = document.documentElement;
@@ -133,17 +115,32 @@ const AIChatWidget = () => {
       body.style.width = "";
       window.scrollTo(0, scrollY);
     };
-  }, [open]);
+  }, [isMobile, open]);
 
   const scrollToBottom = useCallback(() => {
     requestAnimationFrame(() => {
-      scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+      const container = scrollRef.current;
+      if (!container) return;
+      container.scrollTop = container.scrollHeight;
     });
   }, []);
 
   useEffect(() => { scrollToBottom(); }, [messages, scrollToBottom]);
-  useEffect(() => { if (open) setTimeout(() => inputRef.current?.focus(), 200); }, [open]);
-  useEffect(() => { if (open && !loading) inputRef.current?.focus(); }, [loading, open]);
+  useEffect(() => {
+    if (!open) return;
+
+    const timer = window.setTimeout(() => {
+      inputRef.current?.focus({ preventScroll: true });
+    }, 150);
+
+    return () => window.clearTimeout(timer);
+  }, [open]);
+
+  useEffect(() => {
+    if (open && !loading) {
+      inputRef.current?.focus({ preventScroll: true });
+    }
+  }, [loading, open]);
 
   const send = async () => {
     const text = input.trim();
@@ -184,8 +181,15 @@ const AIChatWidget = () => {
 
   // On mobile (no sm: breakpoint), use visualViewport height to avoid keyboard overlap
   // On desktop, use fixed dimensions via CSS
-  const mobileStyle: React.CSSProperties = viewportH != null
-    ? { height: `${viewportH}px`, top: `${window.visualViewport?.offsetTop ?? 0}px` }
+  const mobileStyle: React.CSSProperties = isMobile && viewport.height != null
+    ? {
+        height: `${viewport.height}px`,
+        minHeight: `${viewport.height}px`,
+        maxHeight: `${viewport.height}px`,
+        top: `${viewport.offsetTop}px`,
+        left: `${viewport.offsetLeft}px`,
+        width: viewport.width != null ? `${viewport.width}px` : undefined,
+      }
     : {};
 
   return (
@@ -206,13 +210,13 @@ const AIChatWidget = () => {
       {/* Chat panel */}
       <div
         style={mobileStyle}
-        className={`fixed z-[100] bg-background transition-all duration-300 ${
+        className={`fixed z-[100] overflow-hidden bg-background transition-opacity duration-300 sm:transition-[opacity,transform] ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
-        <div className="flex flex-col h-full sm:h-auto">
+        <div className="flex h-full min-h-0 flex-col sm:h-auto">
           {/* Header */}
           <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
@@ -238,7 +242,7 @@ const AIChatWidget = () => {
           {/* Messages — flex-1 fills remaining space between header and input */}
           <div
             ref={scrollRef}
-            className="flex-1 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
+            className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
           >
             {messages.length === 0 && (
               <div className="text-center py-8">
