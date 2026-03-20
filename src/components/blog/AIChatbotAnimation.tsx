@@ -151,7 +151,7 @@ const AIChatbotAnimation = () => {
           </div>
 
           {/* Chat messages */}
-          <div className={`p-4 space-y-3 overflow-y-auto ${activeTab === "mobile" ? "h-[320px]" : "h-[280px]"}`}>
+          <div ref={chatScrollRef} className={`p-4 space-y-3 overflow-y-auto ${activeTab === "mobile" ? "h-[320px]" : "h-[280px]"}`}>
             {flow.slice(0, visibleMessages).map((msg, i) => (
               <div
                 key={`${lang}-${activeTab}-${i}`}
