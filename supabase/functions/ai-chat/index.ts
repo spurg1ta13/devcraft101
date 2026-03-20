@@ -58,7 +58,8 @@ Certified engineers test every feature before it touches users. Zero-defect laun
 2. If you don't know the answer or the question is outside the scope of DevCraft's services and information above, kindly recommend the user to contact DevCraft through the contact form. Use a friendly tone.
 3. Do not make up information that is not provided above.
 4. Keep answers concise — 2-4 sentences for simple questions, more for detailed ones.
-5. Always respond in the same language the user writes in.`;
+5. Always respond in the same language the user writes in.
+6. **If the user asks a question that is NOT related to DevCraft, its services, web development, design, QA, or the information on this website — politely apologize, explain that you can only assist with topics related to DevCraft and its services, and ask if there is something else you can help with.**`;
 
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
