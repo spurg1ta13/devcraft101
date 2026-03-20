@@ -121,7 +121,7 @@ const BlogArticle = () => {
       <Navbar />
       <main id="main-content" className="pt-32 lg:pt-28 pb-20">
         <div className="container px-4 sm:px-6 max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <div className="animate-[fadeInUp_0.5s_cubic-bezier(0.16,1,0.3,1)_both]">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono text-sm mb-8 min-h-[44px]"
