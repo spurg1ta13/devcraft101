@@ -1,3 +1,6 @@
+import { useLang } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
+
 const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
@@ -26,7 +29,17 @@ const OrganizationSchema = () => {
       addressRegion: "Central Macedonia",
       addressCountry: "GR",
     },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 40.6401,
+      longitude: 22.9444,
+    },
     areaServed: [
+      {
+        "@type": "City",
+        name: "Thessaloniki",
+        containedInPlace: { "@type": "Country", name: "Greece" },
+      },
       { "@type": "Country", name: "Greece" },
       { "@type": "Place", name: "Worldwide" },
     ],
@@ -52,6 +65,7 @@ const OrganizationSchema = () => {
       "Structured Data & Schema Markup",
       "Multilingual SEO",
     ],
+    knowsLanguage: ["en", "el"],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Web Development Service Plans",
@@ -215,4 +229,29 @@ const WebSiteSchema = () => {
   );
 };
 
-export { OrganizationSchema, WebSiteSchema };
+const FAQPageSchema = () => {
+  const { lang } = useLang();
+  const faqItems = translations.faq.items;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: t(item.question, lang),
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t(item.answer, lang),
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+export { OrganizationSchema, WebSiteSchema, FAQPageSchema };
