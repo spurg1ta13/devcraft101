@@ -76,7 +76,6 @@ const AboutUs = () => {
 
   const stats = [
     { value: "10+", label: t(a.stats.years, lang) },
-    { value: "100%", label: t(a.stats.satisfaction, lang) },
     { value: lang === "el" ? "Μηδέν" : "Zero", label: t(a.stats.defect, lang) },
   ];
 
@@ -125,7 +124,7 @@ const AboutUs = () => {
 
       <section className="py-20 md:py-28 border-t border-border/30">
         <div className="container">
-          <div className="grid grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 gap-8 md:gap-12">
             {stats.map((stat, i) => (
               <CounterStat key={stat.label} value={stat.value} label={stat.label} delay={i * 0.1} />
             ))}
