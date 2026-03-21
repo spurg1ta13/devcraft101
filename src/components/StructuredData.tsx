@@ -4,7 +4,7 @@ import { translations, t } from "@/i18n/translations";
 const OrganizationSchema = () => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": ["ProfessionalService", "SoftwareApplication"],
+    "@type": "ProfessionalService",
     "@id": "https://devcraft.gr/#organization",
     name: "DevCraft",
     url: "https://devcraft.gr",
