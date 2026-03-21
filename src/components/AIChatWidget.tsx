@@ -228,7 +228,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
-        <div className="flex h-full min-h-0 flex-col sm:h-auto">
+        <div className="flex h-full min-h-0 flex-col sm:h-[500px]">
           {/* Header */}
           <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
             <div className="flex items-center gap-3">
