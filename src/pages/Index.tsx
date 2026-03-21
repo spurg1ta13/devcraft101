@@ -26,6 +26,7 @@ const Index = () => {
         <MarqueeSection />
         <Suspense fallback={null}>
           <ServicesSection />
+          <PricingSection />
           <ShowcaseSection />
         </Suspense>
         <Suspense fallback={null}>
