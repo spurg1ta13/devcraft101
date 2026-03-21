@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema } from "@/components/StructuredData";
 
 const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
+const PricingSection = lazy(() => import("@/components/landing/PricingSection"));
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
 const PortfolioSection = lazy(() => import("@/components/landing/PortfolioSection"));
 const ProcessSection = lazy(() => import("@/components/landing/ProcessSection"));
