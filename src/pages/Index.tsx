@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
-import { OrganizationSchema, WebSiteSchema } from "@/components/StructuredData";
+import { OrganizationSchema, WebSiteSchema, FAQPageSchema } from "@/components/StructuredData";
 
 const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
 const PricingSection = lazy(() => import("@/components/landing/PricingSection"));
