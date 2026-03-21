@@ -12,7 +12,20 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    {
+      name: "generate-sitemap",
+      buildStart() {
+        try {
+          execSync("npx tsx scripts/generate-sitemap.ts", { stdio: "inherit" });
+        } catch (e) {
+          console.warn("⚠️ Sitemap generation failed:", e);
+        }
+      },
+    },
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
