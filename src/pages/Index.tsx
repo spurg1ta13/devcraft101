@@ -20,6 +20,7 @@ const Index = () => {
       <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
+      <FAQPageSchema />
       <Navbar />
       <main id="main-content">
         <HeroSection />
