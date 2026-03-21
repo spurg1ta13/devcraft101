@@ -9,9 +9,9 @@ const ServicesSection = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section id="services" className="relative section-rhythm scroll-mt-28 lg:scroll-mt-20" aria-label="Services">
+    <section id="services" className="relative section-rhythm scroll-mt-28 lg:scroll-mt-20" aria-label={t(s.label, lang)}>
       <div className="container px-4 sm:px-6" ref={ref}>
-        <div
+        <header
           className={`mb-12 md:mb-28 transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
@@ -24,7 +24,7 @@ const ServicesSection = () => {
             <br />
             <span className="text-gradient">{t(s.heading2, lang)}</span>
           </h2>
-        </div>
+        </header>
 
         <div className="border-t border-border/30" role="list">
           {s.items.map((service, i) => (
