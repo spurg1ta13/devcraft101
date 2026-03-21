@@ -494,6 +494,75 @@ export const translations = {
     ],
   },
 
+  // Pricing / Plans
+  pricing: {
+    label: { en: "Service Plans", el: "Πακέτα Υπηρεσιών" },
+    heading1: { en: "ISTQB Certified Web Development", el: "Πιστοποιημένη Ανάπτυξη Ιστοσελίδων ISTQB" },
+    heading2: { en: "in Thessaloniki", el: "στη Θεσσαλονίκη" },
+    subtitle: {
+      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO. ELITE plans come with a 90+ Google PageSpeed guarantee and ISTQB-certified QA.",
+      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO. Τα πακέτα ELITE συνοδεύονται από εγγύηση 90+ Google PageSpeed και πιστοποιημένο QA ISTQB.",
+    },
+    plans: [
+      {
+        name: { en: "MINI", el: "MINI" },
+        tagline: { en: "The Clean Start", el: "Καθαρή Αρχή" },
+        price: { en: "€500 – €600", el: "€500 – €600" },
+        delivery: { en: "2 working days", el: "2 εργάσιμες ημέρες" },
+        description: {
+          en: "Single responsive landing page with social redirects, semantic HTML, alt-text, and CTA integration. Perfect for businesses launching their first online presence.",
+          el: "Μονοσέλιδο responsive landing page με social redirects, σημασιολογική HTML, alt-text και ενσωμάτωση CTA. Ιδανικό για επιχειρήσεις που ξεκινούν την online παρουσία τους.",
+        },
+        features: {
+          en: ["1 Landing Page", "1 Language (Greek)", "Mobile + Desktop Responsive", "Semantic HTML & Alt-text", "CTA (Email + Phone)"],
+          el: ["1 Landing Page", "1 Γλώσσα (Ελληνικά)", "Mobile + Desktop Responsive", "Σημασιολογική HTML & Alt-text", "CTA (Email + Τηλέφωνο)"],
+        },
+      },
+      {
+        name: { en: "MIDI", el: "MIDI" },
+        tagline: { en: "The Corporate Standard", el: "Εταιρικό Στάνταρ" },
+        price: { en: "€750 – €900", el: "€750 – €900" },
+        delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
+        description: {
+          en: "Multi-page website with lead form, portfolio, sitemap, GDPR compliance, and Google Maps. Built for established businesses that need a professional online hub.",
+          el: "Πολυσέλιδη ιστοσελίδα με φόρμα leads, portfolio, sitemap, συμμόρφωση GDPR και Google Maps. Σχεδιασμένο για καθιερωμένες επιχειρήσεις που χρειάζονται επαγγελματική online παρουσία.",
+        },
+        features: {
+          en: ["Up to 5 Pages", "1 Language", "Lead Form & Portfolio", "Sitemap & Robots.txt", "GDPR / Cookie Compliance", "Google Maps Integration"],
+          el: ["Έως 5 Σελίδες", "1 Γλώσσα", "Φόρμα Leads & Portfolio", "Sitemap & Robots.txt", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
+        },
+      },
+      {
+        name: { en: "MAXI", el: "MAXI" },
+        tagline: { en: "The International Presence", el: "Διεθνής Παρουσία" },
+        price: { en: "€1,300 – €1,500", el: "€1.300 – €1.500" },
+        delivery: { en: "6–8 working days", el: "6–8 εργάσιμες ημέρες" },
+        description: {
+          en: "Multilingual website with language switcher, localized meta tags, URL optimization, and custom 404 pages. Ideal for companies expanding into international markets.",
+          el: "Πολύγλωσση ιστοσελίδα με εναλλαγή γλωσσών, τοπικά meta tags, βελτιστοποίηση URL και custom σελίδες 404. Ιδανικό για εταιρείες που επεκτείνονται σε διεθνείς αγορές.",
+        },
+        features: {
+          en: ["Up to 5 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States"],
+          el: ["Έως 5 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States"],
+        },
+      },
+      {
+        name: { en: "ELITE", el: "ELITE" },
+        tagline: { en: "The Elite Performance", el: "Ελίτ Απόδοση" },
+        price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
+        delivery: { en: "10–11 working days", el: "10–11 εργάσιμες ημέρες" },
+        description: {
+          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee. The ultimate package for performance-driven brands.",
+          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed. Το απόλυτο πακέτο για brands που θέλουν κορυφαία απόδοση.",
+        },
+        features: {
+          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
+          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
+        },
+      },
+    ],
+  },
+
   // Language selector
   langSelector: {
     en: "EN",
