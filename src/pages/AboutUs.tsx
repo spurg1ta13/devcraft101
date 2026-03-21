@@ -76,7 +76,6 @@ const AboutUs = () => {
 
   const stats = [
     { value: "10+", label: t(a.stats.years, lang) },
-    { value: "100%", label: t(a.stats.satisfaction, lang) },
     { value: lang === "el" ? "Μηδέν" : "Zero", label: t(a.stats.defect, lang) },
   ];
 
