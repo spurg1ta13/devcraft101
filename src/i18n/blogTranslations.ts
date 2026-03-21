@@ -529,4 +529,115 @@ export const blogArticles: BlogArticle[] = [
       ],
     },
   },
+  {
+    slug: "website-tips-tricks-generate-more-leads",
+    title: {
+      en: "10 Website Tips & Tricks to Generate More Leads in 2026",
+      el: "10 Συμβουλές & Κόλπα για να Φέρει η Ιστοσελίδα σας Περισσότερους Πελάτες το 2026",
+    },
+    excerpt: {
+      en: "Actionable tips on how a well-designed, fast, and strategically built website turns visitors into paying customers — proven tactics you can apply today.",
+      el: "Πρακτικές συμβουλές για το πώς μια καλοσχεδιασμένη, γρήγορη και στρατηγικά χτισμένη ιστοσελίδα μετατρέπει επισκέπτες σε πελάτες — δοκιμασμένες τακτικές που μπορείτε να εφαρμόσετε σήμερα.",
+    },
+    metaDescription: {
+      en: "10 proven website tips and tricks to generate more leads: speed optimization, CTA placement, trust signals, mobile UX, and conversion-focused design strategies.",
+      el: "10 δοκιμασμένες συμβουλές ιστοσελίδας για περισσότερα leads: βελτιστοποίηση ταχύτητας, τοποθέτηση CTA, σήματα εμπιστοσύνης, mobile UX και στρατηγικές σχεδιασμού μετατροπών.",
+    },
+    date: "2026-03-21",
+    readTime: { en: "8", el: "8" },
+    category: { en: "Lead Generation", el: "Δημιουργία Leads" },
+    keywords: [
+      "website lead generation tips",
+      "how to get leads from website",
+      "website conversion tips",
+      "web design tricks",
+      "improve website leads",
+      "CTA best practices",
+      "website speed optimization",
+      "trust signals website",
+      "lead generation 2026",
+      "website design for business",
+      "πώς να φέρω πελάτες από ιστοσελίδα",
+    ],
+    content: {
+      en: [
+        "Your website isn't just a digital brochure — it's your most powerful salesperson. But only if it's built to sell. The difference between a website that collects dust and one that generates a steady stream of leads comes down to specific, proven design and development decisions. Here are 10 actionable tips and tricks that high-converting websites use to turn visitors into customers.",
+
+        "## 1. Make Your Page Load in Under 2 Seconds",
+        "Speed is the silent conversion killer. For every extra second your page takes to load, you lose approximately 7% of conversions. Strip out bloated plugins, compress images to WebP format, implement lazy loading for below-the-fold content, and use clean, hand-written code instead of template bloat. A fast website doesn't just feel professional — it directly puts more money in your pocket. Google also rewards fast sites with better search rankings, creating a compound effect: more traffic AND better conversion from that traffic.",
+
+        "## 2. Place Your Call-to-Action Above the Fold",
+        "If visitors have to scroll to find out what you want them to do, most of them won't bother. Your primary CTA — whether it's \"Get a Free Quote\", \"Book a Call\", or \"Start Your Project\" — should be visible within the first viewport on both desktop and mobile. Use a contrasting color that pops against your background, make the button large enough to tap easily on mobile (minimum 44×44 pixels), and use action-oriented language that tells visitors exactly what happens when they click.",
+
+        "## 3. Use Social Proof Strategically",
+        "People trust other people more than they trust businesses. Place testimonials, client logos, case study numbers, and review ratings where they matter most — near your CTAs and pricing sections. But don't just dump generic quotes. Use specific, results-driven testimonials: \"DevCraft increased our lead conversion by 340% in 3 months\" beats \"Great service, highly recommend\" every time. Numbers, names, and specifics build real credibility.",
+
+        "## 4. Design for the Thumb, Not the Mouse",
+        "Over 65% of your visitors are on mobile. Design every interaction for one-handed use: large tap targets, bottom-placed navigation elements, swipeable galleries, and forms that use the right keyboard type for each field (email keyboard for email, numeric for phone). A mobile experience that feels native — not like a shrunk desktop site — keeps visitors engaged long enough to convert.",
+
+        "## 5. Reduce Form Fields to the Absolute Minimum",
+        "Every additional form field reduces conversions by approximately 11%. If you're asking for name, email, phone, company, position, budget, timeline, and a detailed message — you're scaring people away. Start with the bare minimum: name and email, or even just email. You can always gather more information after the initial contact. The goal of the form isn't to qualify leads — it's to start a conversation.",
+
+        "## 6. Create Visual Hierarchy That Guides the Eye",
+        "Great websites don't let visitors wander aimlessly. They create a deliberate visual path: a bold headline captures attention, a supporting subheadline provides context, benefit-focused content builds desire, and a prominent CTA converts interest into action. Use size, color, contrast, and spacing to create clear hierarchy. The visitor's eye should flow naturally from problem to solution to action without conscious effort.",
+
+        "## 7. Add Live Chat or an AI Assistant",
+        "Websites with chat functionality convert 3-5x better than those with only static forms. Why? Because visitors have questions right now, and if they can't get answers immediately, they leave and go to your competitor. An AI-powered assistant works 24/7, responds in seconds, handles multiple languages, and captures lead information through natural conversation — far more effective than a cold form submission.",
+
+        "## 8. Use Micro-Animations to Signal Interactivity",
+        "Subtle animations aren't just decorative — they're functional. A button that subtly changes on hover tells the user it's clickable. A form field that gently highlights on focus reduces input errors. A loading indicator that shows progress prevents frustration. These micro-interactions create a polished, responsive feel that signals quality and professionalism. Visitors who perceive quality in your website assume quality in your services.",
+
+        "## 9. Build Trust Before Asking for Anything",
+        "The biggest mistake businesses make: asking for contact information before providing any value. Your website should demonstrate expertise first — through helpful content, clear process explanations, visible credentials, and portfolio examples — before presenting a contact form. Follow the \"give before you ask\" principle: answer a visitor's key questions, show proof of results, then make the ask. This sequence consistently outperforms lead-capture-first approaches.",
+
+        "## 10. Optimize Your Thank-You Page",
+        "Most businesses treat the thank-you page as an afterthought — a generic \"We'll be in touch\" message. This is a massive missed opportunity. After someone submits a form, they're at peak engagement. Use the thank-you page to set expectations (\"We'll call within 2 hours\"), offer additional value (a downloadable guide or case study), encourage social sharing, or present a secondary CTA. A well-crafted thank-you page can generate 20-30% more engagement from leads you've already captured.",
+
+        "## Bonus: Test, Measure, Iterate",
+        "The best-converting websites aren't built once and forgotten — they're continuously refined based on data. Use analytics to track which pages visitors leave from, which CTAs get clicked, and where drop-offs occur. Run A/B tests on headlines, button colors, and form layouts. Small, data-driven improvements compound over time into dramatic conversion rate increases. A 1% improvement per month means your website converts 12% better by year-end.",
+
+        "## The Bottom Line",
+        "A beautiful website that doesn't generate leads is just expensive art. A fast, strategically designed, conversion-optimized website is a growth engine. These 10 tips aren't theoretical — they're the exact practices that separate high-performing business websites from digital dead weight. Implement even three or four of them, and you'll see measurable improvements in your lead generation within weeks.",
+      ],
+      el: [
+        "Η ιστοσελίδα σας δεν είναι απλώς ένα ψηφιακό φυλλάδιο — είναι ο πιο ισχυρός πωλητής σας. Αλλά μόνο αν είναι χτισμένη για να πουλάει. Η διαφορά μεταξύ μιας ιστοσελίδας που μαζεύει σκόνη και μιας που δημιουργεί σταθερή ροή leads βρίσκεται σε συγκεκριμένες, δοκιμασμένες αποφάσεις σχεδιασμού και ανάπτυξης. Ακολουθούν 10 πρακτικές συμβουλές και κόλπα που χρησιμοποιούν οι ιστοσελίδες υψηλής μετατροπής για να μετατρέπουν επισκέπτες σε πελάτες.",
+
+        "## 1. Κάντε τη Σελίδα σας να Φορτώνει σε Λιγότερο από 2 Δευτερόλεπτα",
+        "Η ταχύτητα είναι ο σιωπηλός δολοφόνος μετατροπών. Για κάθε επιπλέον δευτερόλεπτο φόρτωσης, χάνετε περίπου 7% των μετατροπών. Αφαιρέστε φουσκωμένα plugins, συμπιέστε εικόνες σε WebP, εφαρμόστε lazy loading για περιεχόμενο κάτω από το fold, και χρησιμοποιήστε καθαρό, γραμμένο στο χέρι κώδικα αντί για φόρτωμα templates. Μια γρήγορη ιστοσελίδα δεν φαίνεται απλώς επαγγελματική — βάζει άμεσα περισσότερα χρήματα στην τσέπη σας. Η Google ανταμείβει επίσης τις γρήγορες ιστοσελίδες με καλύτερες κατατάξεις, δημιουργώντας σύνθετο αποτέλεσμα: περισσότερη κίνηση ΚΑΙ καλύτερη μετατροπή.",
+
+        "## 2. Τοποθετήστε το Call-to-Action Πάνω από το Fold",
+        "Αν οι επισκέπτες πρέπει να κάνουν scroll για να βρουν τι θέλετε να κάνουν, οι περισσότεροι δεν θα μπουν στον κόπο. Το κύριο CTA σας — είτε είναι «Πάρτε Δωρεάν Προσφορά», «Κλείστε Ραντεβού» ή «Ξεκινήστε το Έργο σας» — πρέπει να είναι ορατό στο πρώτο viewport τόσο σε desktop όσο και σε κινητό. Χρησιμοποιήστε αντιθετικό χρώμα που ξεχωρίζει, κάντε το κουμπί αρκετά μεγάλο για εύκολο πάτημα στο κινητό (ελάχιστο 44×44 pixels), και χρησιμοποιήστε γλώσσα δράσης που λέει ακριβώς τι θα συμβεί στο κλικ.",
+
+        "## 3. Χρησιμοποιήστε Κοινωνική Απόδειξη Στρατηγικά",
+        "Οι άνθρωποι εμπιστεύονται άλλους ανθρώπους περισσότερο από τις επιχειρήσεις. Τοποθετήστε μαρτυρίες, λογότυπα πελατών, αριθμούς case studies και αξιολογήσεις εκεί που μετράει — κοντά στα CTAs και στα τμήματα τιμολόγησης. Χρησιμοποιήστε συγκεκριμένες μαρτυρίες με αποτελέσματα: «Η DevCraft αύξησε τη μετατροπή leads μας κατά 340% σε 3 μήνες» νικάει το «Εξαιρετική υπηρεσία, τους συνιστώ ανεπιφύλακτα» κάθε φορά. Αριθμοί, ονόματα και λεπτομέρειες χτίζουν πραγματική αξιοπιστία.",
+
+        "## 4. Σχεδιάστε για τον Αντίχειρα, Όχι το Ποντίκι",
+        "Πάνω από 65% των επισκεπτών σας βρίσκονται σε κινητό. Σχεδιάστε κάθε αλληλεπίδραση για χρήση με ένα χέρι: μεγάλα tap targets, πλοήγηση στο κάτω μέρος, swipeable galleries, και φόρμες με τον σωστό τύπο πληκτρολογίου για κάθε πεδίο (πληκτρολόγιο email για email, αριθμητικό για τηλέφωνο). Μια mobile εμπειρία που μοιάζει native — όχι σαν συρρικνωμένη desktop σελίδα — κρατά τους επισκέπτες αρκετά ώστε να μετατραπούν.",
+
+        "## 5. Μειώστε τα Πεδία Φόρμας στο Απόλυτο Ελάχιστο",
+        "Κάθε επιπλέον πεδίο φόρμας μειώνει τις μετατροπές κατά περίπου 11%. Αν ζητάτε όνομα, email, τηλέφωνο, εταιρεία, θέση, budget, χρονοδιάγραμμα και αναλυτικό μήνυμα — τρομάζετε τον κόσμο. Ξεκινήστε με το ελάχιστο: όνομα και email, ή ακόμα και μόνο email. Μπορείτε πάντα να συλλέξετε περισσότερες πληροφορίες μετά την αρχική επαφή. Ο στόχος της φόρμας δεν είναι να αξιολογήσει leads — είναι να ξεκινήσει μια συνομιλία.",
+
+        "## 6. Δημιουργήστε Οπτική Ιεραρχία που Καθοδηγεί το Βλέμμα",
+        "Οι σπουδαίες ιστοσελίδες δεν αφήνουν τους επισκέπτες να περιπλανιούνται χωρίς σκοπό. Δημιουργούν ένα σκόπιμο οπτικό μονοπάτι: ένας τολμηρός τίτλος τραβάει την προσοχή, ένας υποστηρικτικός υπότιτλος δίνει πλαίσιο, περιεχόμενο εστιασμένο στα οφέλη χτίζει επιθυμία, και ένα εμφανές CTA μετατρέπει το ενδιαφέρον σε δράση. Χρησιμοποιήστε μέγεθος, χρώμα, αντίθεση και αποστάσεις για ξεκάθαρη ιεραρχία.",
+
+        "## 7. Προσθέστε Live Chat ή AI Βοηθό",
+        "Ιστοσελίδες με λειτουργία chat μετατρέπουν 3-5 φορές καλύτερα από αυτές με μόνο στατικές φόρμες. Γιατί; Επειδή οι επισκέπτες έχουν ερωτήσεις τώρα, και αν δεν πάρουν απαντήσεις αμέσως, φεύγουν στον ανταγωνιστή σας. Ένας AI βοηθός δουλεύει 24/7, απαντά σε δευτερόλεπτα, χειρίζεται πολλές γλώσσες και συλλαμβάνει πληροφορίες lead μέσω φυσικής συνομιλίας — πολύ πιο αποτελεσματικός από μια ψυχρή υποβολή φόρμας.",
+
+        "## 8. Χρησιμοποιήστε Micro-Animations για να Σηματοδοτήσετε Διαδραστικότητα",
+        "Οι λεπτές κινήσεις δεν είναι απλώς διακοσμητικές — είναι λειτουργικές. Ένα κουμπί που αλλάζει ελαφρά στο hover λέει στον χρήστη ότι είναι πατήσιμο. Ένα πεδίο φόρμας που φωτίζεται απαλά στο focus μειώνει τα λάθη εισαγωγής. Ένας δείκτης φόρτωσης που δείχνει πρόοδο αποτρέπει την απογοήτευση. Αυτές οι μικρο-αλληλεπιδράσεις δημιουργούν μια γυαλισμένη αίσθηση που σηματοδοτεί ποιότητα. Επισκέπτες που αντιλαμβάνονται ποιότητα στην ιστοσελίδα σας υποθέτουν ποιότητα στις υπηρεσίες σας.",
+
+        "## 9. Χτίστε Εμπιστοσύνη Πριν Ζητήσετε Οτιδήποτε",
+        "Το μεγαλύτερο λάθος που κάνουν οι επιχειρήσεις: ζητούν στοιχεία επικοινωνίας πριν προσφέρουν οποιαδήποτε αξία. Η ιστοσελίδα σας πρέπει πρώτα να αποδείξει εξειδίκευση — μέσω χρήσιμου περιεχομένου, σαφών επεξηγήσεων διαδικασίας, ορατών πιστοποιήσεων και παραδειγμάτων portfolio — πριν παρουσιάσει φόρμα επικοινωνίας. Ακολουθήστε την αρχή «δώσε πριν ζητήσεις»: απαντήστε τις βασικές ερωτήσεις του επισκέπτη, δείξτε αποδείξεις αποτελεσμάτων, μετά κάντε το αίτημα.",
+
+        "## 10. Βελτιστοποιήστε τη Σελίδα Ευχαριστίας",
+        "Οι περισσότερες επιχειρήσεις αντιμετωπίζουν τη σελίδα ευχαριστίας ως δευτερεύουσα — ένα γενικό μήνυμα «Θα επικοινωνήσουμε». Αυτό είναι τεράστια χαμένη ευκαιρία. Μετά την υποβολή φόρμας, ο χρήστης βρίσκεται στο αποκορύφωμα της δέσμευσης. Χρησιμοποιήστε τη σελίδα ευχαριστίας για να ορίσετε προσδοκίες («Θα σας καλέσουμε εντός 2 ωρών»), προσφέρετε επιπλέον αξία (ένα downloadable guide ή case study), ενθαρρύνετε κοινοποίηση στα social media, ή παρουσιάστε ένα δευτερεύον CTA.",
+
+        "## Bonus: Δοκιμάστε, Μετρήστε, Επαναλάβετε",
+        "Οι ιστοσελίδες με τις καλύτερες μετατροπές δεν χτίζονται μία φορά και ξεχνιούνται — βελτιώνονται συνεχώς βάσει δεδομένων. Χρησιμοποιήστε analytics για να παρακολουθείτε από ποιες σελίδες φεύγουν οι επισκέπτες, ποια CTAs πατιούνται και πού γίνονται τα drop-offs. Κάντε A/B tests σε τίτλους, χρώματα κουμπιών και layouts φορμών. Μικρές, βασισμένες σε δεδομένα βελτιώσεις συσσωρεύονται με τον χρόνο σε δραματικές αυξήσεις ποσοστού μετατροπής.",
+
+        "## Το Συμπέρασμα",
+        "Μια όμορφη ιστοσελίδα που δεν δημιουργεί leads είναι απλώς ακριβή τέχνη. Μια γρήγορη, στρατηγικά σχεδιασμένη, βελτιστοποιημένη για μετατροπή ιστοσελίδα είναι μηχανή ανάπτυξης. Αυτές οι 10 συμβουλές δεν είναι θεωρητικές — είναι οι ακριβείς πρακτικές που διαχωρίζουν τις ιστοσελίδες υψηλής απόδοσης από το ψηφιακό βάρος. Εφαρμόστε ακόμα τρεις ή τέσσερις από αυτές, και θα δείτε μετρήσιμες βελτιώσεις στη δημιουργία leads σας μέσα σε εβδομάδες.",
+      ],
+    },
+  },
 ];
