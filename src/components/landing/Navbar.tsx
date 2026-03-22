@@ -224,6 +224,12 @@ const Navbar = () => {
                 </span>
                 <span className="font-bold hidden xl:inline">+30 697 415 9157</span>
               </a>
+              <a href="mailto:contact@devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 min-h-[44px] whitespace-nowrap" aria-label="Email contact@devcraft.gr">
+                <span className="relative flex h-5 w-5 items-center justify-center shrink-0">
+                  <Mail className="relative h-3.5 w-3.5 xl:h-4 xl:w-4 text-primary" />
+                </span>
+                <span className="font-bold hidden xl:inline">contact@devcraft.gr</span>
+              </a>
             </div>
             <SocialLinks iconSize={16} className="hidden xl:flex" />
             <LanguageSelector />
