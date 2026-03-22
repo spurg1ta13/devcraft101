@@ -16,6 +16,9 @@ const CTASection = lazy(() => import("@/components/landing/CTASection"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const Index = () => {
+  const [searchParams] = useSearchParams();
+  const showPricing = searchParams.get("pricing") === "show";
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead canonical="/" />
