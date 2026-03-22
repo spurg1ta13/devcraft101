@@ -10,6 +10,41 @@ import { translations, t } from "@/i18n/translations";
 
 const planIcons = [Zap, Shield, Globe, Sparkles];
 
+const OfferCatalogSchema = () => {
+  const plans = translations.pricing.plans;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    name: "DevCraft Web Development Service Plans",
+    description: "ISTQB-certified web development plans from €600 to €2,500. Responsive design, SEO, multilingual support.",
+    url: "https://devcraft.gr/prices",
+    provider: { "@id": "https://devcraft.gr/#organization" },
+    numberOfItems: plans.length,
+    itemListElement: plans.map((plan, i) => ({
+      "@type": "Offer",
+      name: `${t(plan.name, "en")}: ${t(plan.tagline, "en")}`,
+      description: t(plan.description, "en"),
+      price: t(plan.price, "en"),
+      priceCurrency: "EUR",
+      url: "https://devcraft.gr/prices",
+      availability: "https://schema.org/InStock",
+      itemOffered: {
+        "@type": "Service",
+        name: t(plan.name, "en"),
+        description: t(plan.description, "en"),
+        provider: { "@id": "https://devcraft.gr/#organization" },
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
 const Prices = () => {
   const { lang } = useLang();
   const p = translations.pricing;
@@ -28,6 +63,7 @@ const Prices = () => {
         description={{ en: "DevCraft web development pricing: MINI, MIDI, MAXI & ELITE plans from €600. ISTQB-certified QA, responsive design, multilingual support.", el: "Τιμοκατάλογος DevCraft: πακέτα MINI, MIDI, MAXI & ELITE από €600. Πιστοποιημένο QA ISTQB, responsive design, πολύγλωσση υποστήριξη." }}
         canonical="/prices"
       />
+      <OfferCatalogSchema />
       <Navbar />
       <main>
         <section className="relative pt-40 pb-16 md:pt-52 md:pb-20">
