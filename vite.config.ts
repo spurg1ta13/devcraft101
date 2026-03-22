@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-import { execSync } from "child_process";
+import { execFileSync } from "child_process";
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -17,7 +17,9 @@ export default defineConfig(({ mode }) => ({
       name: "generate-sitemap",
       buildStart() {
         try {
-          execSync("npx tsx scripts/generate-sitemap.ts", { stdio: "inherit" });
+          execFileSync(process.execPath, [path.resolve(__dirname, "scripts/generate-sitemap.mjs")], {
+            stdio: "inherit",
+          });
         } catch (e) {
           console.warn("⚠️ Sitemap generation failed:", e);
         }
