@@ -93,7 +93,7 @@ const Prices = () => {
             </motion.div>
 
             {/* Plans grid */}
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-start mt-12 md:mt-20" role="list">
+            <div className="grid gap-0 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-start mt-12 md:mt-20 divide-y sm:divide-y-0 divide-border/20" role="list">
               {p.plans.map((plan, i) => {
                 const Icon = planIcons[i];
                 const tier = tierStyles[i];
