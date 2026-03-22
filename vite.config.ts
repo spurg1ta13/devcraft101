@@ -17,7 +17,9 @@ export default defineConfig(({ mode }) => ({
       name: "generate-sitemap",
       buildStart() {
         try {
-          execSync("npx tsx scripts/generate-sitemap.ts", { stdio: "inherit" });
+          execFileSync(process.execPath, [path.resolve(__dirname, "scripts/generate-sitemap.mjs")], {
+            stdio: "inherit",
+          });
         } catch (e) {
           console.warn("⚠️ Sitemap generation failed:", e);
         }
