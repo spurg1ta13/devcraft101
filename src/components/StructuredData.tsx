@@ -16,7 +16,7 @@ const OrganizationSchema = () => {
     },
     image: "https://devcraft.gr/og-image.jpg",
     description:
-      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance, 90+ Google PageSpeed guarantee, and multilingual SEO. Plans from €500 to €2,500.",
+      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance and multilingual SEO. Plans from €600 to €2,500.",
     slogan:
       "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     foundingLocation: {
@@ -80,16 +80,16 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MINI: The Clean Start",
                 description:
-                  "Single landing page with mobile & desktop responsive design, social redirects, semantic HTML, alt-text for all images, and CTA integration. 1 language (Greek). Delivered in 2 working days.",
+                  "Single landing page with mobile & desktop responsive design, social redirects, semantic HTML, alt-text for all images, and CTA integration. 1 language (Greek). Delivered in 2–3 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
-              price: "500",
+              price: "600",
               priceSpecification: {
                 "@type": "PriceSpecification",
                 priceCurrency: "EUR",
-                minPrice: "500",
-                maxPrice: "600",
+                minPrice: "600",
+                maxPrice: "700",
                 unitText: "project",
               },
             },
@@ -109,12 +109,12 @@ const OrganizationSchema = () => {
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
-              price: "750",
+              price: "900",
               priceSpecification: {
                 "@type": "PriceSpecification",
                 priceCurrency: "EUR",
-                minPrice: "750",
-                maxPrice: "900",
+                minPrice: "900",
+                maxPrice: "1000",
                 unitText: "project",
               },
             },
@@ -130,7 +130,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MAXI: The International Presence",
                 description:
-                  "Multilingual website (2–3 languages) with up to 5 pages, language switcher, localized meta tags, URL structure optimization, custom 404 & loading states, GDPR compliance, lead form, and Google Maps. Delivered in 6–8 working days.",
+                  "Multilingual website (2–3 languages) with up to 5 pages, language switcher, localized meta tags, URL structure optimization, custom 404 & loading states, GDPR compliance, lead form, and Google Maps. Delivered in 7–10 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -155,7 +155,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "ELITE: The Elite Performance",
                 description:
-                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing with 90+ Google PageSpeed guarantee. Delivered in 10–11 working days.",
+                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing. Delivered in 10–12 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -183,13 +183,6 @@ const OrganizationSchema = () => {
       },
     },
     additionalProperty: [
-      {
-        "@type": "PropertyValue",
-        name: "Google PageSpeed Guarantee",
-        value: "90+ Score",
-        description:
-          "Active optimization to maintain a 90+ Google PageSpeed Score across all ELITE plan websites.",
-      },
       {
         "@type": "PropertyValue",
         name: "Quality Assurance Standard",

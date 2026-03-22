@@ -4,7 +4,7 @@
 
 ## About
 
-DevCraft is a web development agency based in Thessaloniki, Greece. We specialize in custom web development using React, TypeScript, and Tailwind CSS. Our team includes ISTQB-certified QA engineers who guarantee bug-free launches and 90+ Google PageSpeed scores.
+DevCraft is a web development agency based in Thessaloniki, Greece. We specialize in custom web development using React, TypeScript, and Tailwind CSS. Our team includes ISTQB-certified QA engineers who guarantee bug-free launches.
 
 We serve clients in Greece and worldwide, with full bilingual support (English & Greek).
 
@@ -22,7 +22,7 @@ Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cook
 Multilingual website (2–3 languages) with language switcher, localized meta tags, URL optimization, custom 404 pages, GDPR compliance, and Google Maps. Delivered in 7–10 working days.
 
 ### ELITE: The Elite Performance (€1,950–€2,500)
-Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, SEO-friendly URLs, and ISTQB-certified QA with 90+ PageSpeed guarantee. Delivered in 10–12 working days.
+Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, SEO-friendly URLs, and ISTQB-certified QA. Delivered in 10–12 working days.
 
 Custom Annual Maintenance & Quality Assurance plans are available upon request.
 Additional functionalities and custom add-ons can be tailored to your specific needs.
@@ -32,7 +32,6 @@ Full pricing details: https://devcraft.gr/prices
 ## Quality Guarantee
 
 - ISTQB-certified QA engineers test every feature before launch
-- 90+ Google PageSpeed Score guarantee on ELITE plans
 - Zero-defect launch policy
 - Testing across desktop and mobile on Windows, macOS, iOS, and Android
 

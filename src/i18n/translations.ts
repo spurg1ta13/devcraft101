@@ -500,8 +500,8 @@ export const translations = {
     heading1: { en: "ISTQB Certified Web Development", el: "Πιστοποιημένη Ανάπτυξη Ιστοσελίδων ISTQB" },
     heading2: { en: "in Thessaloniki", el: "στη Θεσσαλονίκη" },
     subtitle: {
-      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO. ELITE plans come with a 90+ Google PageSpeed guarantee and ISTQB-certified QA.",
-      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO. Τα πακέτα ELITE συνοδεύονται από εγγύηση 90+ Google PageSpeed και πιστοποιημένο QA ISTQB.",
+      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO. ELITE plans come with ISTQB-certified QA.",
+      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO. Τα πακέτα ELITE συνοδεύονται από πιστοποιημένο QA ISTQB.",
     },
     plans: [
       {
@@ -552,12 +552,12 @@ export const translations = {
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
         delivery: { en: "10–12 working days", el: "10–12 εργάσιμες ημέρες" },
         description: {
-          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee.",
-          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed.",
+          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA.",
+          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB.",
         },
         features: {
-          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
-          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
+          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "ISTQB-Certified QA Testing"],
+          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Πιστοποιημένο QA ISTQB"],
         },
       },
     ],
