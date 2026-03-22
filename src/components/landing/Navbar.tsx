@@ -328,6 +328,12 @@ const Navbar = () => {
             </span>
             <span className="font-bold">+30 697 415 9157</span>
           </button>
+          <a href="mailto:contact@devcraft.gr" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" aria-label="Email contact@devcraft.gr">
+            <span className="relative flex h-5 w-5 items-center justify-center">
+              <Mail className="relative h-4 w-4 text-primary" />
+            </span>
+            <span className="font-bold">contact@devcraft.gr</span>
+          </a>
           <SocialLinks className="mt-2" />
         </div>
       </div>
