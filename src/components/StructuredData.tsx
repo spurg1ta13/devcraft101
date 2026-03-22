@@ -16,7 +16,7 @@ const OrganizationSchema = () => {
     },
     image: "https://devcraft.gr/og-image.jpg",
     description:
-      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance, 90+ Google PageSpeed guarantee, and multilingual SEO. Plans from €500 to €2,500.",
+      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance and multilingual SEO. Plans from €500 to €2,500.",
     slogan:
       "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     foundingLocation: {
