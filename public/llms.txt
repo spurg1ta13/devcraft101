@@ -19,7 +19,7 @@ Single responsive landing page. Includes semantic HTML, alt-text, social redirec
 Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cookie compliance, and Google Maps. 1 language. Delivered in 4–5 working days.
 
 ### MAXI: The International Presence (€1,300–€1,500) ⭐ Most Popular
-Multilingual website (2–3 languages) with language switcher, localized meta tags, URL optimization, custom 404 pages, GDPR compliance, and Google Maps. Delivered in 7–10 working days.
+Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL optimization, custom 404 pages, GDPR compliance, and Google Maps. Delivered in 7–10 working days.
 
 ### ELITE: The Elite Performance (€1,950–€2,500)
 Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, SEO-friendly URLs, and ISTQB-certified QA. Delivered in 10–12 working days.

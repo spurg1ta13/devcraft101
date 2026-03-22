@@ -542,8 +542,8 @@ export const translations = {
           el: "Πολύγλωσση ιστοσελίδα με εναλλαγή γλωσσών, τοπικά meta tags, βελτιστοποίηση URL και custom σελίδες 404. Ιδανικό για εταιρείες που επεκτείνονται σε διεθνείς αγορές.",
         },
         features: {
-          en: ["Up to 5 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States", "GDPR / Cookie Compliance", "Google Maps Integration"],
-          el: ["Έως 5 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
+          en: ["Up to 7 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States", "GDPR / Cookie Compliance", "Google Maps Integration"],
+          el: ["Έως 7 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
         },
       },
       {
