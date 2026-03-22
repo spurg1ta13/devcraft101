@@ -16,7 +16,7 @@ const OrganizationSchema = () => {
     },
     image: "https://devcraft.gr/og-image.jpg",
     description:
-      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance and multilingual SEO. Plans from €500 to €2,500.",
+      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance, 90+ Google PageSpeed guarantee, and multilingual SEO. Plans from €500 to €2,500.",
     slogan:
       "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
     foundingLocation: {
@@ -155,7 +155,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "ELITE: The Elite Performance",
                 description:
-                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing. Delivered in 10–11 working days.",
+                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing with 90+ Google PageSpeed guarantee. Delivered in 10–11 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -185,10 +185,10 @@ const OrganizationSchema = () => {
     additionalProperty: [
       {
         "@type": "PropertyValue",
-        name: "ISTQB Certified QA",
-        value: "Certified Testing",
+        name: "Google PageSpeed Guarantee",
+        value: "90+ Score",
         description:
-          "ISTQB-certified QA engineers test every feature before launch across all ELITE plan websites.",
+          "Active optimization to maintain a 90+ Google PageSpeed Score across all ELITE plan websites.",
       },
       {
         "@type": "PropertyValue",
