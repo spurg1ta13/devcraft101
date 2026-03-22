@@ -155,10 +155,16 @@ const Prices = () => {
                       <span className="text-2xl md:text-3xl font-black tracking-tight text-foreground" itemProp="price">
                         {t(plan.price, lang)}
                       </span>
+                      <p className="text-[10px] font-mono text-muted-foreground/60 mt-1">
+                        {t(p.vatNote, lang)}
+                      </p>
                       <meta itemProp="priceCurrency" content="EUR" />
                       <p className="text-[11px] font-mono text-muted-foreground mt-1.5">
                         {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
                         {t(plan.delivery, lang)}
+                      </p>
+                      <p className="text-[10px] font-mono text-muted-foreground/60 mt-0.5">
+                        {t(p.deliveryNote, lang)}
                       </p>
                     </div>
 
