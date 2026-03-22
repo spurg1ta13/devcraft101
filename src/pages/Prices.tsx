@@ -113,10 +113,11 @@ const Prices = () => {
             </motion.div>
 
             {/* Plans grid */}
-            <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12 md:mt-20" role="list">
+            <div className="grid gap-8 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12 md:mt-20" role="list">
               {p.plans.map((plan, i) => {
                 const Icon = planIcons[i];
-                const isPopular = i === mostPopularIndex;
+                const tier = tierStyles[i];
+                const isPopular = tier.label === "popular";
 
                 return (
                   <motion.article
@@ -127,52 +128,62 @@ const Prices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
+                    className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${tier.border} ${
                       isPopular
-                        ? "border-primary/40 bg-primary/[0.03] shadow-[0_0_40px_-12px_hsl(var(--primary)/0.2)]"
-                        : "border-border/30 bg-card/50 hover:border-border/60"
+                        ? "border-primary/40 bg-primary/[0.04] shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] scale-[1.02] lg:scale-105"
+                        : "border-border/30 bg-card/60 hover:border-border/60 hover:bg-card/80"
                     }`}
                   >
                     {isPopular && (
-                      <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-0.5 text-[10px] font-mono uppercase tracking-widest text-primary-foreground flex items-center gap-1">
-                        <Star className="h-3 w-3" />
+                      <div className="absolute -top-3.5 left-6 rounded-full bg-primary px-4 py-1 text-[10px] font-mono uppercase tracking-widest text-primary-foreground flex items-center gap-1.5 shadow-[0_0_20px_4px_hsl(var(--primary)/0.3)]">
+                        <Star className="h-3 w-3 fill-current" />
                         {lang === "el" ? "Δημοφιλέστερο" : "Most Popular"}
                       </div>
                     )}
 
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isPopular ? "bg-primary/20 text-primary" : "bg-secondary text-foreground/70"}`}>
-                        <Icon className="h-5 w-5" />
+                    {/* Tier number label */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className="flex items-center gap-3">
+                        <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${tier.iconBg}`}>
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h2 className="text-xl md:text-2xl font-black tracking-tight" itemProp="name">
+                            {t(plan.name, lang)}
+                          </h2>
+                          <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.15em]">
+                            {t(plan.tagline, lang)}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h2 className="text-lg md:text-xl font-black tracking-tight" itemProp="name">
-                          {t(plan.name, lang)}
-                        </h2>
-                        <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">
-                          {t(plan.tagline, lang)}
-                        </p>
-                      </div>
+                      <span className="font-mono text-[10px] text-muted-foreground/40 uppercase tracking-wider">
+                        0{i + 1}
+                      </span>
                     </div>
 
-                    <p className="text-sm text-foreground/70 leading-relaxed mb-5" itemProp="description">
+                    <p className="text-sm text-foreground/60 leading-relaxed mb-6" itemProp="description">
                       {t(plan.description, lang)}
                     </p>
 
-                    <div className="mb-5">
+                    {/* Price block with subtle background */}
+                    <div className="mb-6 rounded-xl bg-secondary/50 p-4 border border-border/20">
                       <span className="text-2xl md:text-3xl font-black tracking-tight text-foreground" itemProp="price">
                         {t(plan.price, lang)}
                       </span>
                       <meta itemProp="priceCurrency" content="EUR" />
-                      <p className="text-[11px] font-mono text-muted-foreground mt-1">
+                      <p className="text-[11px] font-mono text-muted-foreground mt-1.5">
                         {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
                         {t(plan.delivery, lang)}
                       </p>
                     </div>
 
-                    <ul className="space-y-2" aria-label={`${t(plan.name, lang)} features`}>
+                    {/* Divider */}
+                    <div className="h-px bg-border/30 mb-5" />
+
+                    <ul className="space-y-2.5" aria-label={`${t(plan.name, lang)} features`}>
                       {plan.features[lang].map((feature, fi) => (
-                        <li key={fi} className="flex items-start gap-2 text-sm text-foreground/80">
-                          <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isPopular ? "text-primary" : "text-muted-foreground/60"}`} />
+                        <li key={fi} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                          <Check className={`h-4 w-4 mt-0.5 shrink-0 ${tier.check}`} />
                           <span>{feature}</span>
                         </li>
                       ))}
