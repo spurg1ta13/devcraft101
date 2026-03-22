@@ -1,3 +1,21 @@
+/**
+ * DNS RECORDS FOR devcraft.gr (add at domain registrar - Papaki)
+ * ──────────────────────────────────────────────────────────────
+ * 1. SPF — TXT record on devcraft.gr:
+ *    v=spf1 include:amazonses.com ~all
+ *
+ * 2. DKIM — 3 CNAME records (provided by Resend after domain verification):
+ *    resend._domainkey.devcraft.gr → [value from Resend dashboard]
+ *    s1._domainkey.devcraft.gr     → [value from Resend dashboard]
+ *    s2._domainkey.devcraft.gr     → [value from Resend dashboard]
+ *
+ * 3. DMARC — TXT record on _dmarc.devcraft.gr:
+ *    v=DMARC1; p=none; rua=mailto:contact@devcraft.gr
+ *
+ * After verifying domain in Resend, update "from" below:
+ *    from: "DevCraft <info@devcraft.gr>"
+ * ──────────────────────────────────────────────────────────────
+ */
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const corsHeaders = {
