@@ -97,7 +97,7 @@ const Prices = () => {
               {p.plans.map((plan, i) => {
                 const Icon = planIcons[i];
                 const tier = tierStyles[i];
-                const isPopular = tier.label === "popular";
+                const isPopular = !!(tier as any).popular;
 
                 return (
                   <motion.article
@@ -108,10 +108,10 @@ const Prices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${tier.border} ${
+                    className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
                       isPopular
-                        ? "border-primary/40 bg-primary/[0.04] shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] scale-[1.02] lg:scale-105"
-                        : "border-border/30 bg-card/60 hover:border-border/60 hover:bg-card/80"
+                        ? `${tier.intensity} shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] scale-[1.02] lg:scale-105`
+                        : `${tier.intensity} hover:border-border/60 hover:bg-card/80`
                     }`}
                   >
                     {isPopular && (
