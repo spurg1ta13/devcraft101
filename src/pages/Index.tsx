@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
@@ -15,6 +16,9 @@ const CTASection = lazy(() => import("@/components/landing/CTASection"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const Index = () => {
+  const [searchParams] = useSearchParams();
+  const showPricing = searchParams.get("pricing") === "show";
+
   return (
     <div className="min-h-screen bg-background">
       <SEOHead canonical="/" />
@@ -27,7 +31,7 @@ const Index = () => {
         <MarqueeSection />
         <Suspense fallback={null}>
           <ServicesSection />
-          <PricingSection />
+          {showPricing && <PricingSection />}
           <ShowcaseSection />
         </Suspense>
         <Suspense fallback={null}>
