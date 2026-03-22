@@ -1,0 +1,14 @@
+{
+  "name": "DevCraft",
+  "short_name": "DevCraft",
+  "icons": [
+    {
+      "src": "/favicon-v2.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#050505",
+  "background_color": "#050505",
+  "display": "standalone"
+}
