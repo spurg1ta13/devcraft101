@@ -56,6 +56,9 @@ DevCraft offers four service plans:
 - ISTQB-Certified QA Testing
 - Delivery: 10–12 working days
 
+*Prices do not include VAT.
+*Delivery starts after all content is received from the client.
+
 Custom Annual Maintenance & Quality Assurance plans are available upon request.
 Additional functionalities and custom add-ons can be tailored to specific needs.
 

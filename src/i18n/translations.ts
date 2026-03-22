@@ -561,6 +561,8 @@ export const translations = {
         },
       },
     ],
+    vatNote: { en: "*Prices do not include VAT", el: "*Οι τιμές δεν περιλαμβάνουν ΦΠΑ" },
+    deliveryNote: { en: "*Delivery starts after all content is received", el: "*Η παράδοση ξεκινά μετά τη λήψη όλου του περιεχομένου" },
   },
 
   // Language selector
