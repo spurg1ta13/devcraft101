@@ -4,7 +4,7 @@
 
 ## About
 
-DevCraft is a web development agency based in Thessaloniki, Greece. We specialize in custom web development using React, TypeScript, and Tailwind CSS. Our team includes ISTQB-certified QA engineers who guarantee bug-free launches and 90+ Google PageSpeed scores.
+DevCraft is a web development agency based in Thessaloniki, Greece. We specialize in custom web development using React, TypeScript, and Tailwind CSS. Our team includes ISTQB-certified QA engineers who guarantee bug-free launches.
 
 We serve clients in Greece and worldwide, with full bilingual support (English & Greek).
 
