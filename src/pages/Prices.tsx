@@ -10,6 +10,34 @@ import { translations, t } from "@/i18n/translations";
 
 const planIcons = [Zap, Shield, Globe, Sparkles];
 
+/* Each tier gets a distinct left-border accent color */
+const tierStyles = [
+  {
+    border: "border-l-4 border-l-[hsl(200,60%,50%)]",
+    iconBg: "bg-[hsl(200,60%,50%)]/15 text-[hsl(200,60%,50%)]",
+    check: "text-[hsl(200,60%,50%)]",
+    label: null,
+  },
+  {
+    border: "border-l-4 border-l-[hsl(260,50%,60%)]",
+    iconBg: "bg-[hsl(260,50%,60%)]/15 text-[hsl(260,50%,60%)]",
+    check: "text-[hsl(260,50%,60%)]",
+    label: null,
+  },
+  {
+    border: "border-l-4 border-l-primary",
+    iconBg: "bg-primary/20 text-primary",
+    check: "text-primary",
+    label: "popular",
+  },
+  {
+    border: "border-l-4 border-l-[hsl(0,0%,70%)]",
+    iconBg: "bg-[hsl(0,0%,70%)]/15 text-[hsl(0,0%,70%)]",
+    check: "text-[hsl(0,0%,70%)]",
+    label: null,
+  },
+];
+
 const OfferCatalogSchema = () => {
   const plans = translations.pricing.plans;
   const schema = {
