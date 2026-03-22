@@ -185,10 +185,10 @@ const OrganizationSchema = () => {
     additionalProperty: [
       {
         "@type": "PropertyValue",
-        name: "Google PageSpeed Guarantee",
-        value: "90+ Score",
+        name: "ISTQB Certified QA",
+        value: "Certified Testing",
         description:
-          "Active optimization to maintain a 90+ Google PageSpeed Score across all ELITE plan websites.",
+          "ISTQB-certified QA engineers test every feature before launch across all ELITE plan websites.",
       },
       {
         "@type": "PropertyValue",

@@ -552,12 +552,12 @@ export const translations = {
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
         delivery: { en: "10–11 working days", el: "10–11 εργάσιμες ημέρες" },
         description: {
-          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee. The ultimate package for performance-driven brands.",
-          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed. Το απόλυτο πακέτο για brands που θέλουν κορυφαία απόδοση.",
+          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, and ISTQB-certified QA. The ultimate package for performance-driven brands.",
+          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, και πιστοποιημένο QA ISTQB. Το απόλυτο πακέτο για brands που θέλουν κορυφαία απόδοση.",
         },
         features: {
-          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
-          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
+          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "ISTQB-Certified QA Testing"],
+          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Πιστοποιημένο QA ISTQB"],
         },
       },
     ],

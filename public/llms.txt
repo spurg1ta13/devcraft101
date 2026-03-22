@@ -40,7 +40,7 @@ Up to 10 pages with unlimited languages, AI assistant integration, custom animat
 - MINI: €90–€120/year — Hosting, SSL, quarterly form validation, minor content updates
 - MIDI: €200–€300/year — Priority support, GDPR monitoring, yearly QA testing
 - MAXI: €400–€550/year — Multi-language QA, monthly performance audits, expanded updates
-- ELITE: €900–€1,200+/year — Performance guarantee (90+ PageSpeed), monthly QA reports, 3x/year full manual testing
+- ELITE: €900–€1,200+/year — Monthly QA reports, 3x/year full manual testing, priority support
 
 ## Quality Guarantee
 
