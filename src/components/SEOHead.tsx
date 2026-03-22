@@ -26,7 +26,7 @@ const DEFAULT_TITLE = {
 };
 const DEFAULT_DESC = {
   en: "Bespoke AI-driven web development, UI/UX design, and ISTQB-certified testing services. We build scalable, high-performance digital solutions for brands globally.",
-  el: "Εξειδικευμένη κατασκευή ιστοσελίδων με τεχνητή νοημοσύνη, σχεδιασμός UI/UX και πιστοποιημένος έλεγχος ISTQB. Δημιουργούμε ψηφιακές λύσεις για πελάτες παγκοσμίως.",
+  el: "DevCraft: Επαγγελματική κατασκευή ιστοσελίδων στη Θεσσαλονίκη και πιστοποιημένος έλεγχος λογισμικού ISTQB. Δημιουργούμε custom λύσεις που φέρνουν αποτελέσματα.",
 };
 
 const resolve = (val: { en: string; el: string } | string, lang: string): string =>
