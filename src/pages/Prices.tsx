@@ -63,6 +63,7 @@ const Prices = () => {
         description={{ en: "DevCraft web development pricing: MINI, MIDI, MAXI & ELITE plans from €600. ISTQB-certified QA, responsive design, multilingual support.", el: "Τιμοκατάλογος DevCraft: πακέτα MINI, MIDI, MAXI & ELITE από €600. Πιστοποιημένο QA ISTQB, responsive design, πολύγλωσση υποστήριξη." }}
         canonical="/prices"
       />
+      <OfferCatalogSchema />
       <Navbar />
       <main>
         <section className="relative pt-40 pb-16 md:pt-52 md:pb-20">
