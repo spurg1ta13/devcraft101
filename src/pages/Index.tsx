@@ -31,7 +31,7 @@ const Index = () => {
         <MarqueeSection />
         <Suspense fallback={null}>
           <ServicesSection />
-          <PricingSection />
+          {showPricing && <PricingSection />}
           <ShowcaseSection />
         </Suspense>
         <Suspense fallback={null}>
