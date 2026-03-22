@@ -507,21 +507,21 @@ export const translations = {
       {
         name: { en: "MINI", el: "MINI" },
         tagline: { en: "The Clean Start", el: "Καθαρή Αρχή" },
-        price: { en: "€500 – €600", el: "€500 – €600" },
-        delivery: { en: "2 working days", el: "2 εργάσιμες ημέρες" },
+        price: { en: "€600 – €700", el: "€600 – €700" },
+        delivery: { en: "2–3 working days", el: "2–3 εργάσιμες ημέρες" },
         description: {
           en: "Single responsive landing page with social redirects, semantic HTML, alt-text, and CTA integration. Perfect for businesses launching their first online presence.",
           el: "Μονοσέλιδο responsive landing page με social redirects, σημασιολογική HTML, alt-text και ενσωμάτωση CTA. Ιδανικό για επιχειρήσεις που ξεκινούν την online παρουσία τους.",
         },
         features: {
-          en: ["1 Landing Page", "1 Language (Greek)", "Mobile + Desktop Responsive", "Semantic HTML & Alt-text", "CTA (Email + Phone)"],
-          el: ["1 Landing Page", "1 Γλώσσα (Ελληνικά)", "Mobile + Desktop Responsive", "Σημασιολογική HTML & Alt-text", "CTA (Email + Τηλέφωνο)"],
+          en: ["1 Landing Page", "1 Language (Greek)", "Mobile + Desktop Responsive", "Semantic HTML & Alt-text", "Social Redirects", "CTA (Email + Phone)"],
+          el: ["1 Landing Page", "1 Γλώσσα (Ελληνικά)", "Mobile + Desktop Responsive", "Σημασιολογική HTML & Alt-text", "Social Redirects", "CTA (Email + Τηλέφωνο)"],
         },
       },
       {
         name: { en: "MIDI", el: "MIDI" },
         tagline: { en: "The Corporate Standard", el: "Εταιρικό Στάνταρ" },
-        price: { en: "€750 – €900", el: "€750 – €900" },
+        price: { en: "€900 – €1,000", el: "€900 – €1.000" },
         delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
         description: {
           en: "Multi-page website with lead form, portfolio, sitemap, GDPR compliance, and Google Maps. Built for established businesses that need a professional online hub.",
@@ -536,28 +536,28 @@ export const translations = {
         name: { en: "MAXI", el: "MAXI" },
         tagline: { en: "The International Presence", el: "Διεθνής Παρουσία" },
         price: { en: "€1,300 – €1,500", el: "€1.300 – €1.500" },
-        delivery: { en: "6–8 working days", el: "6–8 εργάσιμες ημέρες" },
+        delivery: { en: "7–10 working days", el: "7–10 εργάσιμες ημέρες" },
         description: {
           en: "Multilingual website with language switcher, localized meta tags, URL optimization, and custom 404 pages. Ideal for companies expanding into international markets.",
           el: "Πολύγλωσση ιστοσελίδα με εναλλαγή γλωσσών, τοπικά meta tags, βελτιστοποίηση URL και custom σελίδες 404. Ιδανικό για εταιρείες που επεκτείνονται σε διεθνείς αγορές.",
         },
         features: {
-          en: ["Up to 5 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States"],
-          el: ["Έως 5 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States"],
+          en: ["Up to 5 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States", "GDPR / Cookie Compliance", "Google Maps Integration"],
+          el: ["Έως 5 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
         },
       },
       {
         name: { en: "ELITE", el: "ELITE" },
         tagline: { en: "The Elite Performance", el: "Ελίτ Απόδοση" },
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
-        delivery: { en: "10–11 working days", el: "10–11 εργάσιμες ημέρες" },
+        delivery: { en: "10–12 working days", el: "10–12 εργάσιμες ημέρες" },
         description: {
-          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee. The ultimate package for performance-driven brands.",
-          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed. Το απόλυτο πακέτο για brands που θέλουν κορυφαία απόδοση.",
+          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee.",
+          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed.",
         },
         features: {
-          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
-          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
+          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
+          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
         },
       },
     ],

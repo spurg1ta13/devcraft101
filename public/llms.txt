@@ -8,39 +8,26 @@ DevCraft is a web development agency based in Thessaloniki, Greece. We specializ
 
 We serve clients in Greece and worldwide, with full bilingual support (English & Greek).
 
-## Services
+## Pricing & Service Plans
 
-We offer four service plans:
+We offer four service plans. The MAXI plan is our most popular choice:
 
-### MINI: The Clean Start (€500–€600)
-Single responsive landing page. Includes semantic HTML, alt-text, social redirects, and CTA integration. 1 language. Delivered in 2 working days.
+### MINI: The Clean Start (€600–€700)
+Single responsive landing page. Includes semantic HTML, alt-text, social redirects, and CTA integration. 1 language (Greek). Delivered in 2–3 working days.
 
-### MIDI: The Corporate Standard (€750–€900)
+### MIDI: The Corporate Standard (€900–€1,000)
 Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cookie compliance, and Google Maps. 1 language. Delivered in 4–5 working days.
 
-### MAXI: The International Presence (€1,300–€1,500)
-Multilingual website (2–3 languages) with language switcher, localized meta tags, URL optimization, custom 404 pages, and all MIDI features. Delivered in 6–8 working days.
+### MAXI: The International Presence (€1,300–€1,500) ⭐ Most Popular
+Multilingual website (2–3 languages) with language switcher, localized meta tags, URL optimization, custom 404 pages, GDPR compliance, and Google Maps. Delivered in 7–10 working days.
 
 ### ELITE: The Elite Performance (€1,950–€2,500)
-Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA with 90+ PageSpeed guarantee. Delivered in 10–11 working days.
+Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, SEO-friendly URLs, and ISTQB-certified QA with 90+ PageSpeed guarantee. Delivered in 10–12 working days.
 
-## Add-On Services
+Custom Annual Maintenance & Quality Assurance plans are available upon request.
+Additional functionalities and custom add-ons can be tailored to your specific needs.
 
-- Custom Landing Page Design (UI/UX): €800–€1,500
-- Professional Logo & Favicon: €250–€600
-- Multilingual Support (Additional Language): €300–€600
-- Contact Form with Validation & Anti-Spam: €100–€250
-- GDPR Compliance & Cookie Consent: €250
-- AI Assistant Implementation: €400–€600
-- Speed & Core Web Vitals Optimization: €200–€400
-- Booking / Appointment Calendar: €200–€500
-
-## Annual Maintenance Plans
-
-- MINI: €90–€120/year — Hosting, SSL, quarterly form validation, minor content updates
-- MIDI: €200–€300/year — Priority support, GDPR monitoring, yearly QA testing
-- MAXI: €400–€550/year — Multi-language QA, monthly performance audits, expanded updates
-- ELITE: €900–€1,200+/year — Performance guarantee (90+ PageSpeed), monthly QA reports, 3x/year full manual testing
+Full pricing details: https://devcraft.gr/prices
 
 ## Quality Guarantee
 
