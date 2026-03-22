@@ -28,17 +28,35 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Pages */}
           <div>
-            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h2>
-            <nav aria-label="Footer navigation" className="flex flex-col gap-2">
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{lang === "el" ? "Σελίδες" : "Pages"}</h2>
+            <nav aria-label="Footer page links" className="flex flex-col gap-2">
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
+                { label: lang === "el" ? "Τιμές" : "Prices", href: "/prices" },
+                { label: t(nav.blog, lang), href: "/blog" },
+              ].map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="group/link flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]"
+                >
+                  {item.label}
+                  <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 text-primary" />
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Sections */}
+          <div>
+            <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.navigation, lang)}</h2>
+            <nav aria-label="Footer section links" className="flex flex-col gap-2">
+              {[
                 { label: t(nav.services, lang), href: "/#services" },
                 { label: t(f.ourWork, lang), href: "/#projects" },
                 { label: t(nav.process, lang), href: "/#process" },
-                { label: lang === "el" ? "Τιμές" : "Prices", href: "/prices" },
-                { label: t(nav.blog, lang), href: "/blog" },
                 { label: t(nav.contact, lang), href: "/#contact" },
               ].map((item) => (
                 <Link
