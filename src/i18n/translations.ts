@@ -552,12 +552,12 @@ export const translations = {
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
         delivery: { en: "10–12 working days", el: "10–12 εργάσιμες ημέρες" },
         description: {
-          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA with a 90+ Google PageSpeed guarantee.",
-          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB με εγγύηση 90+ Google PageSpeed.",
+          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA.",
+          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB.",
         },
         features: {
-          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "90+ PageSpeed Guarantee", "ISTQB-Certified QA Testing"],
-          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Εγγύηση 90+ PageSpeed", "Πιστοποιημένο QA ISTQB"],
+          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "ISTQB-Certified QA Testing"],
+          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Πιστοποιημένο QA ISTQB"],
         },
       },
     ],

@@ -185,13 +185,6 @@ const OrganizationSchema = () => {
     additionalProperty: [
       {
         "@type": "PropertyValue",
-        name: "Google PageSpeed Guarantee",
-        value: "90+ Score",
-        description:
-          "Active optimization to maintain a 90+ Google PageSpeed Score across all ELITE plan websites.",
-      },
-      {
-        "@type": "PropertyValue",
         name: "Quality Assurance Standard",
         value: "ISTQB Certified",
         description:

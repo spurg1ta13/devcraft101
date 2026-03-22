@@ -52,7 +52,7 @@ DevCraft offers four service plans:
 - Up to 10 Pages + Calculator
 - Unlimited Languages, AI Assistant Integration
 - Custom Animations, Form-to-Email, Image Optimization
-- SEO-friendly URLs, 90+ PageSpeed Guarantee
+- SEO-friendly URLs
 - ISTQB-Certified QA Testing
 - Delivery: 10–12 working days
 
