@@ -128,7 +128,7 @@ const Prices = () => {
                           <Icon className="h-5 w-5" />
                         </div>
                         <div>
-                          <h2 className="text-xl md:text-2xl font-black tracking-tight" itemProp="name">
+                          <h2 className="text-2xl md:text-3xl font-black tracking-[-0.03em] text-gradient" itemProp="name">
                             {t(plan.name, lang)}
                           </h2>
                           <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.15em]">
