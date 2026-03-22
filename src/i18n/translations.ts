@@ -500,8 +500,8 @@ export const translations = {
     heading1: { en: "ISTQB Certified Web Development", el: "Πιστοποιημένη Ανάπτυξη Ιστοσελίδων ISTQB" },
     heading2: { en: "in Thessaloniki", el: "στη Θεσσαλονίκη" },
     subtitle: {
-      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO. ELITE plans come with ISTQB-certified QA.",
-      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO. Τα πακέτα ELITE συνοδεύονται από πιστοποιημένο QA ISTQB.",
+      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO.",
+      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO.",
     },
     plans: [
       {
