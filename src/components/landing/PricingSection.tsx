@@ -38,7 +38,7 @@ const PricingSection = () => {
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4" role="list">
           {p.plans.map((plan, i) => {
             const Icon = planIcons[i];
-            const isElite = i === 3;
+            const isElite = i === 2; // MAXI is most popular
 
             return (
               <article
