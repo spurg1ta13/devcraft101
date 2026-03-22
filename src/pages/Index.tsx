@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
