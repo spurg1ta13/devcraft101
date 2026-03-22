@@ -93,7 +93,7 @@ const Prices = () => {
             </motion.div>
 
             {/* Plans grid */}
-            <div className="grid gap-8 md:gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12 md:mt-20" role="list">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:items-start mt-12 md:mt-20" role="list">
               {p.plans.map((plan, i) => {
                 const Icon = planIcons[i];
                 const tier = tierStyles[i];
@@ -108,20 +108,20 @@ const Prices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
+                    className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
                       isPopular
-                        ? `${tier.intensity} shadow-[0_0_50px_-12px_hsl(var(--primary)/0.25)] scale-[1.02] lg:scale-105`
+                        ? `${tier.intensity} shadow-[0_0_60px_-10px_hsl(var(--primary)/0.3)] lg:-mt-4 lg:mb-4 ring-1 ring-primary/30`
                         : `${tier.intensity} hover:border-border/60 hover:bg-card/80`
                     }`}
                   >
                     {isPopular && (
-                      <div className="absolute -top-3.5 left-6 rounded-full bg-primary px-4 py-1 text-[10px] font-mono uppercase tracking-widest text-primary-foreground flex items-center gap-1.5 shadow-[0_0_20px_4px_hsl(var(--primary)/0.3)]">
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 rounded-full bg-primary px-4 py-1 text-[10px] font-mono uppercase tracking-widest text-primary-foreground flex items-center gap-1.5 shadow-[0_0_20px_4px_hsl(var(--primary)/0.3)] whitespace-nowrap">
                         <Star className="h-3 w-3 fill-current" />
                         {lang === "el" ? "Δημοφιλέστερο" : "Most Popular"}
                       </div>
                     )}
 
-                    {/* Tier number label */}
+                    {/* Header */}
                     <div className="flex items-center justify-between mb-5">
                       <div className="flex items-center gap-3">
                         <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${tier.iconBg}`}>
@@ -141,12 +141,17 @@ const Prices = () => {
                       </span>
                     </div>
 
-                    <p className="text-sm text-foreground/60 leading-relaxed mb-6" itemProp="description">
+                    {/* Description — fixed height on lg so prices align */}
+                    <p className="text-sm text-foreground/60 leading-relaxed mb-6 lg:min-h-[5.5rem]" itemProp="description">
                       {t(plan.description, lang)}
                     </p>
 
-                    {/* Price block with subtle background */}
-                    <div className="mb-6 rounded-xl bg-secondary/50 p-4 border border-border/20">
+                    {/* Price block */}
+                    <div className={`mb-6 rounded-xl p-4 border ${
+                      isPopular
+                        ? "bg-primary/[0.08] border-primary/30"
+                        : "bg-secondary/50 border-border/20"
+                    }`}>
                       <span className="text-2xl md:text-3xl font-black tracking-tight text-foreground" itemProp="price">
                         {t(plan.price, lang)}
                       </span>
@@ -158,9 +163,10 @@ const Prices = () => {
                     </div>
 
                     {/* Divider */}
-                    <div className="h-px bg-border/30 mb-5" />
+                    <div className={`h-px mb-5 ${isPopular ? "bg-primary/20" : "bg-border/30"}`} />
 
-                    <ul className="space-y-2.5" aria-label={`${t(plan.name, lang)} features`}>
+                    {/* Features */}
+                    <ul className="space-y-2.5 flex-1" aria-label={`${t(plan.name, lang)} features`}>
                       {plan.features[lang].map((feature, fi) => (
                         <li key={fi} className="flex items-start gap-2.5 text-sm text-foreground/80">
                           <Check className={`h-4 w-4 mt-0.5 shrink-0 ${tier.check}`} />
