@@ -45,7 +45,7 @@ Up to 10 pages with unlimited languages, AI assistant integration, custom animat
 ## Quality Guarantee
 
 - ISTQB-certified QA engineers test every feature before launch
-- 90+ Google PageSpeed Score guarantee on ELITE plans
+- Zero-defect launch policy
 - Zero-defect launch policy
 - Testing across desktop and mobile on Windows, macOS, iOS, and Android
 
