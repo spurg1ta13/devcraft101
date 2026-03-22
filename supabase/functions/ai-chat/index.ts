@@ -43,7 +43,7 @@ DevCraft offers four service plans:
 - Delivery: 4–5 working days
 
 ### MAXI: The International Presence — €1,300–€1,500 ⭐ Most Popular
-- Up to 5 Pages, 2–3 Languages
+- Up to 7 Pages, 2–3 Languages
 - Language Switcher, Localized Meta Tags
 - URL optimization, Custom 404, GDPR/Cookies, Google Maps
 - Delivery: 7–10 working days

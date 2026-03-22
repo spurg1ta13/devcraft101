@@ -130,7 +130,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MAXI: The International Presence",
                 description:
-                  "Multilingual website (2–3 languages) with up to 5 pages, language switcher, localized meta tags, URL structure optimization, custom 404 & loading states, GDPR compliance, lead form, and Google Maps. Delivered in 7–10 working days.",
+                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL structure optimization, custom 404 & loading states, GDPR compliance, lead form, and Google Maps. Delivered in 7–10 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
