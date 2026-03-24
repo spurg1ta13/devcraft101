@@ -1,0 +1,2 @@
+CREATE POLICY "Authenticated users can select" ON public.contact_messages FOR SELECT TO authenticated USING (true);
+CREATE POLICY "Authenticated users can delete" ON public.contact_messages FOR DELETE TO authenticated USING (true);
