@@ -137,6 +137,9 @@ const AdminDashboard = () => {
           </Card>
         </div>
 
+        {/* Analytics */}
+        <AnalyticsCards />
+
         {/* Table */}
         <Card className="border-border/50">
           <CardContent className="p-0">
