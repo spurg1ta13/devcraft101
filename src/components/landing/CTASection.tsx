@@ -205,6 +205,12 @@ const CTASection = () => {
                 )}
               </button>
             </div>
+            <p className="text-[11px] text-muted-foreground/50 text-center sm:text-right mt-2">
+              Protected by reCAPTCHA –{" "}
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground transition-colors underline">Privacy</a>
+              {" & "}
+              <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground transition-colors underline">Terms</a>
+            </p>
           </form>
 
           {submitted && (
