@@ -33,11 +33,6 @@ export function useScrollSpy() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 }
