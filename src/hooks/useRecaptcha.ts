@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { supabase } from "@/integrations/supabase/client";
 
 declare global {
   interface Window {
@@ -10,14 +9,14 @@ declare global {
   }
 }
 
-let recaptchaSiteKey: string | null = null;
+const RECAPTCHA_SITE_KEY = "6LcDHpYsAAAAADcQGSRHw2ZuRd-hzK7ghSUElUBc";
 let scriptLoaded = false;
 
-function loadRecaptchaScript(siteKey: string): Promise<void> {
+function loadRecaptchaScript(): Promise<void> {
   if (scriptLoaded) return Promise.resolve();
   return new Promise((resolve, reject) => {
     const script = document.createElement("script");
-    script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
     script.async = true;
     script.onload = () => {
       scriptLoaded = true;
@@ -34,28 +33,19 @@ export function useRecaptcha() {
 
   useEffect(() => {
     let cancelled = false;
-    (async () => {
-      try {
-        if (!recaptchaSiteKey) {
-          const { data, error: fetchError } = await supabase.functions.invoke("get-recaptcha-config");
-          if (fetchError) throw fetchError;
-          recaptchaSiteKey = data.siteKey;
-        }
-        if (!recaptchaSiteKey) throw new Error("No site key");
-        await loadRecaptchaScript(recaptchaSiteKey);
-        if (!cancelled) setReady(true);
-      } catch (err) {
+    loadRecaptchaScript()
+      .then(() => { if (!cancelled) setReady(true); })
+      .catch((err) => {
         console.error("reCAPTCHA init error:", err);
         if (!cancelled) setError("reCAPTCHA failed to load");
-      }
-    })();
+      });
     return () => { cancelled = true; };
   }, []);
 
   const getToken = useCallback(async (action: string = "contact_form"): Promise<string | null> => {
-    if (!recaptchaSiteKey || !ready) return null;
+    if (!ready) return null;
     try {
-      return await window.grecaptcha.execute(recaptchaSiteKey, { action });
+      return await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action });
     } catch {
       return null;
     }
