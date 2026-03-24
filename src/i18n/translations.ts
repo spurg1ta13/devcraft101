@@ -287,70 +287,77 @@ export const translations = {
         },
       },
       {
-        title: { en: "4. How We Use Your Information", el: "4. Πώς Χρησιμοποιούμε τις Πληροφορίες σας" },
+        title: { en: "4. AI Assistant & Interaction Data", el: "4. AI Βοηθός & Δεδομένα Αλληλεπίδρασης" },
+        content: {
+          en: `If you interact with our AI-powered assistant, we may collect and process the information you provide during the chat to deliver accurate responses.\n\n**Data Minimization**: We encourage users not to share sensitive personal information (e.g., passwords, health data, or financial details) within the chat.\n\n**Purpose**: Chat logs are used solely to improve the quality of the AI responses and to assist with your inquiries in real-time.\n\n**Service Providers**: We use industry-leading AI models (such as OpenAI or Anthropic). Your data is processed securely and is not used by these providers to train their global models unless explicitly stated otherwise.\n\n**Retention**: Chat history is stored for a maximum of 6 months for quality assurance purposes, after which it is automatically deleted or anonymized.`,
+          el: `Εάν αλληλεπιδράσετε με τον AI βοηθό μας, ενδέχεται να συλλέξουμε και να επεξεργαστούμε τις πληροφορίες που παρέχετε κατά τη διάρκεια της συνομιλίας για να παρέχουμε ακριβείς απαντήσεις.\n\n**Ελαχιστοποίηση Δεδομένων**: Ενθαρρύνουμε τους χρήστες να μην μοιράζονται ευαίσθητες προσωπικές πληροφορίες (π.χ. κωδικούς πρόσβασης, δεδομένα υγείας ή οικονομικά στοιχεία) μέσα στη συνομιλία.\n\n**Σκοπός**: Τα αρχεία καταγραφής συνομιλίας χρησιμοποιούνται αποκλειστικά για τη βελτίωση της ποιότητας των απαντήσεων του AI και για να σας βοηθήσουν με τα ερωτήματά σας σε πραγματικό χρόνο.\n\n**Πάροχοι Υπηρεσιών**: Χρησιμοποιούμε κορυφαία μοντέλα AI (όπως OpenAI ή Anthropic). Τα δεδομένα σας επεξεργάζονται με ασφάλεια και δεν χρησιμοποιούνται από αυτούς τους παρόχους για την εκπαίδευση των παγκόσμιων μοντέλων τους, εκτός εάν δηλωθεί ρητά διαφορετικά.\n\n**Διατήρηση**: Το ιστορικό συνομιλίας αποθηκεύεται για μέγιστο 6 μήνες για σκοπούς διασφάλισης ποιότητας, μετά από τους οποίους διαγράφεται αυτόματα ή ανωνυμοποιείται.`,
+        },
+      },
+      {
+        title: { en: "5. How We Use Your Information", el: "5. Πώς Χρησιμοποιούμε τις Πληροφορίες σας" },
         content: {
           en: `We use the collected information for the following purposes:\n\n• To provide, maintain, and improve our services\n• To respond to inquiries and communicate with you\n• To analyze website usage and optimize user experience\n• To comply with legal obligations\n• To send occasional updates about our services (only with your explicit consent)`,
           el: `Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους ακόλουθους σκοπούς:\n\n• Για την παροχή, τη συντήρηση και τη βελτίωση των υπηρεσιών μας\n• Για την απάντηση σε ερωτήματα και την επικοινωνία μαζί σας\n• Για την ανάλυση της χρήσης του ιστότοπου και τη βελτιστοποίηση της εμπειρίας χρήστη\n• Για τη συμμόρφωση με νομικές υποχρεώσεις\n• Για την αποστολή περιστασιακών ενημερώσεων σχετικά με τις υπηρεσίες μας (μόνο με τη ρητή συγκατάθεσή σας)`,
         },
       },
       {
-        title: { en: "5. Data Retention", el: "5. Διατήρηση Δεδομένων" },
+        title: { en: "6. Data Retention", el: "6. Διατήρηση Δεδομένων" },
         content: {
           en: `We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy:\n\n• **Contact form submissions**: Up to 12 months after your last interaction, unless an ongoing business relationship requires longer retention.\n• **Usage/analytics data**: Up to 26 months (anonymized where possible).\n• **Cookie consent preferences**: Stored locally on your device until you clear your browser data.\n\nAfter the retention period, your data is securely deleted or anonymized.`,
           el: `Διατηρούμε τα προσωπικά σας δεδομένα μόνο για όσο χρόνο είναι απαραίτητο για την εκπλήρωση των σκοπών που περιγράφονται σε αυτήν την πολιτική:\n\n• **Υποβολές φόρμας επικοινωνίας**: Έως 12 μήνες μετά την τελευταία σας αλληλεπίδραση, εκτός εάν μια συνεχής επιχειρηματική σχέση απαιτεί μεγαλύτερη διατήρηση.\n• **Δεδομένα χρήσης/ανάλυσης**: Έως 26 μήνες (ανωνυμοποιημένα όπου είναι δυνατόν).\n• **Προτιμήσεις συγκατάθεσης cookies**: Αποθηκεύονται τοπικά στη συσκευή σας μέχρι να διαγράψετε τα δεδομένα του προγράμματος περιήγησής σας.\n\nΜετά την περίοδο διατήρησης, τα δεδομένα σας διαγράφονται με ασφάλεια ή ανωνυμοποιούνται.`,
         },
       },
       {
-        title: { en: "6. Cookies", el: "6. Cookies" },
+        title: { en: "7. Cookies", el: "7. Cookies" },
         content: {
           en: `Our website uses cookies to:\n\n• **Strictly necessary cookies**: Required for the website to function (e.g., cookie consent preference). These cannot be disabled.\n• **Analytics cookies**: Help us understand how visitors interact with our site (only with your consent).\n\nYou can manage your cookie preferences through the cookie banner or your browser settings. You may withdraw consent at any time by clearing your browser cookies.`,
           el: `Ο ιστότοπός μας χρησιμοποιεί cookies για:\n\n• **Αυστηρά απαραίτητα cookies**: Απαιτούνται για τη λειτουργία του ιστότοπου (π.χ. προτίμηση συγκατάθεσης cookies). Δεν μπορούν να απενεργοποιηθούν.\n• **Cookies ανάλυσης**: Μας βοηθούν να κατανοήσουμε πώς οι επισκέπτες αλληλεπιδρούν με τον ιστότοπό μας (μόνο με τη συγκατάθεσή σας).\n\nΜπορείτε να διαχειριστείτε τις προτιμήσεις σας για cookies μέσω του banner cookies ή των ρυθμίσεων του προγράμματος περιήγησής σας. Μπορείτε να αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή καθαρίζοντας τα cookies του προγράμματος περιήγησής σας.`,
         },
       },
       {
-        title: { en: "7. Data Sharing", el: "7. Κοινοποίηση Δεδομένων" },
+        title: { en: "8. Data Sharing", el: "8. Κοινοποίηση Δεδομένων" },
         content: {
           en: `We do not sell, trade, or rent your personal information to third parties. We may share data with:\n\n• **Service providers** who assist in operating our website and services (under data processing agreements)\n• **Legal authorities** when required by law or to protect our rights\n• **Analytics partners** in anonymized form\n\nAll third-party processors are required to comply with GDPR and protect your data.`,
           el: `Δεν πουλάμε, ανταλλάσσουμε ή ενοικιάζουμε τις προσωπικές σας πληροφορίες σε τρίτους. Ενδέχεται να μοιραστούμε δεδομένα με:\n\n• **Παρόχους υπηρεσιών** που βοηθούν στη λειτουργία του ιστότοπου και των υπηρεσιών μας (βάσει συμφωνιών επεξεργασίας δεδομένων)\n• **Νομικές αρχές** όταν απαιτείται από τον νόμο ή για την προστασία των δικαιωμάτων μας\n• **Συνεργάτες ανάλυσης** σε ανωνυμοποιημένη μορφή\n\nΌλοι οι τρίτοι επεξεργαστές υποχρεούνται να συμμορφώνονται με τον GDPR και να προστατεύουν τα δεδομένα σας.`,
         },
       },
       {
-        title: { en: "8. Data Security", el: "8. Ασφάλεια Δεδομένων" },
+        title: { en: "9. Data Security", el: "9. Ασφάλεια Δεδομένων" },
         content: {
           en: `We implement industry-standard security measures to protect your personal information, including encrypted data transmission (HTTPS/TLS) and secure hosting infrastructure. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.`,
           el: `Εφαρμόζουμε μέτρα ασφαλείας βιομηχανικού επιπέδου για την προστασία των προσωπικών σας πληροφοριών, συμπεριλαμβανομένης κρυπτογραφημένης μετάδοσης δεδομένων (HTTPS/TLS) και ασφαλούς υποδομής φιλοξενίας. Ωστόσο, καμία μέθοδος ηλεκτρονικής μετάδοσης ή αποθήκευσης δεν είναι 100% ασφαλής και δεν μπορούμε να εγγυηθούμε απόλυτη ασφάλεια.`,
         },
       },
       {
-        title: { en: "9. Your Rights Under GDPR", el: "9. Τα Δικαιώματά σας βάσει GDPR" },
+        title: { en: "10. Your Rights Under GDPR", el: "10. Τα Δικαιώματά σας βάσει GDPR" },
         content: {
           en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 415 9157. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
           el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 415 9157. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
         },
       },
       {
-        title: { en: "10. International Data Transfers", el: "10. Διεθνείς Μεταφορές Δεδομένων" },
+        title: { en: "11. International Data Transfers", el: "11. Διεθνείς Μεταφορές Δεδομένων" },
         content: {
           en: `Your data is primarily processed within the European Economic Area (EEA). If any data is transferred outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission.`,
           el: `Τα δεδομένα σας επεξεργάζονται κυρίως εντός του Ευρωπαϊκού Οικονομικού Χώρου (ΕΟΧ). Εάν μεταφερθούν δεδομένα εκτός ΕΟΧ, διασφαλίζουμε ότι υπάρχουν κατάλληλες εγγυήσεις, όπως Τυπικές Συμβατικές Ρήτρες (SCCs) εγκεκριμένες από την Ευρωπαϊκή Επιτροπή.`,
         },
       },
       {
-        title: { en: "11. Third-Party Links", el: "11. Σύνδεσμοι Τρίτων" },
+        title: { en: "12. Third-Party Links", el: "12. Σύνδεσμοι Τρίτων" },
         content: {
           en: `Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external websites. We encourage you to read their privacy policies.`,
           el: `Ο ιστότοπός μας ενδέχεται να περιέχει συνδέσμους προς ιστότοπους τρίτων. Δεν φέρουμε ευθύνη για τις πρακτικές απορρήτου ή το περιεχόμενο αυτών των εξωτερικών ιστότοπων. Σας ενθαρρύνουμε να διαβάσετε τις πολιτικές απορρήτου τους.`,
         },
       },
       {
-        title: { en: "12. Changes to This Policy", el: "12. Αλλαγές σε αυτήν την Πολιτική" },
+        title: { en: "13. Changes to This Policy", el: "13. Αλλαγές σε αυτήν την Πολιτική" },
         content: {
           en: `We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date. For significant changes, we will make reasonable efforts to notify you.`,
           el: `Διατηρούμε το δικαίωμα να ενημερώσουμε αυτήν την Πολιτική Απορρήτου ανά πάσα στιγμή. Οι αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία ισχύος. Για σημαντικές αλλαγές, θα καταβάλλουμε εύλογες προσπάθειες να σας ειδοποιήσουμε.`,
         },
       },
       {
-        title: { en: "13. Contact Us", el: "13. Επικοινωνήστε μαζί μας" },
+        title: { en: "14. Contact Us", el: "14. Επικοινωνήστε μαζί μας" },
         content: {
           en: `If you have questions about this Privacy Policy or wish to exercise your data protection rights, please contact us:`,
           el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου ή επιθυμείτε να ασκήσετε τα δικαιώματα προστασίας δεδομένων σας, επικοινωνήστε μαζί μας:`,
