@@ -5,6 +5,7 @@ import { useEffect, useState, useCallback } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { lazy, Suspense } from "react";
+import { usePageTracking } from "@/hooks/usePageTracking";
 import Index from "./pages/Index";
 
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
@@ -21,6 +22,11 @@ const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
+
+const PageTracker = () => {
+  usePageTracking();
+  return null;
+};
 
 const ScrollToHash = () => {
   const { hash } = useLocation();
@@ -75,6 +81,7 @@ const App = () => (
             <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
               Skip to main content
             </a>
+            <PageTracker />
             <ScrollToHash />
             <Suspense fallback={null}>
               <Routes>
