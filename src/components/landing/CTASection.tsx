@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const CTASection = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
@@ -14,6 +15,7 @@ const CTASection = () => {
   const { lang } = useLang();
   const c = translations.cta;
   const { ref, inView } = useInView();
+  const { getToken } = useRecaptcha();
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -38,6 +40,13 @@ const CTASection = () => {
 
     setSending(true);
     try {
+      const recaptchaToken = await getToken("contact_form");
+      if (!recaptchaToken) {
+        setErrors({ submit: lang === "el" ? "Αποτυχία επαλήθευσης. Δοκιμάστε ξανά." : "Verification failed. Please try again." });
+        setSending(false);
+        return;
+      }
+
       const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: {
@@ -45,6 +54,7 @@ const CTASection = () => {
           email: form.email.trim() || undefined,
           phone: form.phone.trim() || undefined,
           message: form.message.trim(),
+          recaptchaToken,
         },
       });
 

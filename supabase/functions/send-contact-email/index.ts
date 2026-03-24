@@ -25,7 +25,22 @@ const corsHeaders = {
 };
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+const RECAPTCHA_SECRET_KEY = Deno.env.get("RECAPTCHA_SECRET_KEY");
 const TO_EMAIL = "grespurga@gmail.com";
+
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number }> {
+  if (!RECAPTCHA_SECRET_KEY) {
+    throw new Error("RECAPTCHA_SECRET_KEY is not configured");
+  }
+
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `secret=${RECAPTCHA_SECRET_KEY}&response=${token}`,
+  });
+
+  return await res.json();
+}
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
@@ -37,7 +52,17 @@ serve(async (req) => {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
-    const { name, email, phone, message } = await req.json();
+    const { name, email, phone, message, recaptchaToken } = await req.json();
+
+    // Verify reCAPTCHA v3
+    if (!recaptchaToken) {
+      throw new Error("reCAPTCHA verification required");
+    }
+    const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+    if (!recaptchaResult.success || (recaptchaResult.score !== undefined && recaptchaResult.score < 0.5)) {
+      console.error("reCAPTCHA failed:", JSON.stringify(recaptchaResult));
+      throw new Error("reCAPTCHA verification failed");
+    }
 
     // Validate inputs
     if (!name || typeof name !== "string" || name.trim().length === 0 || name.trim().length > 100) {
