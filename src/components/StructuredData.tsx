@@ -191,6 +191,15 @@ const OrganizationSchema = () => {
           "All projects undergo ISTQB-certified quality assurance testing on desktop and mobile across multiple OS and browsers.",
       },
     ],
+    email: "contact@devcraft.gr",
+    telephone: "+306974159157",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+306974159157",
+      email: "contact@devcraft.gr",
+      contactType: "customer service",
+      availableLanguage: ["English", "Greek"],
+    },
     sameAs: ["https://www.linkedin.com/company/devcraft-gr"],
   };
 
