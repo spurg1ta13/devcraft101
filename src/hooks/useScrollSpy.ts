@@ -6,29 +6,32 @@ export function useScrollSpy() {
   const activeRef = useRef("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the most visible section
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const handleScroll = () => {
+      const scrollY = window.scrollY + 120;
+      let current = "";
 
-        if (visible.length > 0) {
-          const id = visible[0].target.id;
-          if (id && id !== activeRef.current) {
-            activeRef.current = id;
-            window.history.replaceState(null, "", `/#${id}`);
-          }
-        } else {
-          // Check if we're at the top (no section visible = hero)
-          if (window.scrollY < 300 && activeRef.current !== "") {
-            activeRef.current = "";
-            window.history.replaceState(null, "", "/");
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const bottom = top + el.offsetHeight;
+          if (scrollY >= top && scrollY < bottom) {
+            current = id;
           }
         }
-      },
-      { threshold: [0.2, 0.5], rootMargin: "-80px 0px -40% 0px" }
-    );
+      }
+
+      if (current && current !== activeRef.current) {
+        activeRef.current = current;
+        window.history.replaceState(null, "", `/#${current}`);
+      } else if (!current && window.scrollY < 300 && activeRef.current !== "") {
+        activeRef.current = "";
+        window.history.replaceState(null, "", "/");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     SECTION_IDS.forEach((id) => {
       const el = document.getElementById(id);
