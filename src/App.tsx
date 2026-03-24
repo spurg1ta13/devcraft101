@@ -24,7 +24,6 @@ const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
 const PageTracker = () => {
-  const { usePageTracking } = require("@/hooks/usePageTracking");
   usePageTracking();
   return null;
 };
