@@ -50,6 +50,12 @@ Serving clients worldwide
 ## Contact
 
 Website: https://devcraft.gr
+Services: https://devcraft.gr/#services
+Showcase: https://devcraft.gr/#showcase
+Portfolio: https://devcraft.gr/#projects
+Process: https://devcraft.gr/#process
+FAQ: https://devcraft.gr/#faq
+Contact: https://devcraft.gr/#contact
 LinkedIn: https://www.linkedin.com/company/devcraft-gr
 
 ## Blog
