@@ -134,6 +134,21 @@ serve(async (req) => {
       throw new Error(`Resend API error [${res.status}]: ${JSON.stringify(data)}`);
     }
 
+    // Save to database
+    try {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+      const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+      const supabase = createClient(supabaseUrl, supabaseKey);
+      await supabase.from("contact_messages").insert({
+        name: name.trim(),
+        email: hasEmail ? email.trim() : null,
+        phone: hasPhone ? phone.trim() : null,
+        message: message.trim(),
+      });
+    } catch (dbErr) {
+      console.error("DB insert error (non-blocking):", dbErr);
+    }
+
     return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
