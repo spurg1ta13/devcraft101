@@ -22,6 +22,12 @@ const CookieConsent = lazy(() => import("./components/CookieConsent"));
 const BackToTop = lazy(() => import("./components/BackToTop"));
 const AIChatLauncher = lazy(() => import("./components/AIChatLauncher"));
 
+const PageTracker = () => {
+  const { usePageTracking } = require("@/hooks/usePageTracking");
+  usePageTracking();
+  return null;
+};
+
 const ScrollToHash = () => {
   const { hash } = useLocation();
   useEffect(() => {

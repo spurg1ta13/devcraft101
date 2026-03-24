@@ -12,6 +12,7 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { LogOut, Trash2, Mail, Phone, RefreshCw, Inbox } from "lucide-react";
+import { AnalyticsCards } from "@/components/admin/AnalyticsCards";
 
 type ContactMessage = {
   id: string;
