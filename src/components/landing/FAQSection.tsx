@@ -12,7 +12,7 @@ const FAQSection = () => {
   const { ref, inView } = useInView();
 
   return (
-    <section className="relative section-rhythm overflow-hidden" aria-label="Frequently asked questions">
+    <section id="faq" className="relative section-rhythm overflow-hidden scroll-mt-28 lg:scroll-mt-20" aria-label="Frequently asked questions">
       <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
         <div className="max-w-3xl mx-auto">
           <div

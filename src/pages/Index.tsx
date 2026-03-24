@@ -19,6 +19,7 @@ const Footer = lazy(() => import("@/components/landing/Footer"));
 const Index = () => {
   const [searchParams] = useSearchParams();
   const showPricing = searchParams.get("pricing") === "show";
+  useScrollSpy();
 
   return (
     <div className="min-h-screen bg-background">
