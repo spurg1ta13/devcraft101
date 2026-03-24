@@ -40,6 +40,13 @@ const CTASection = () => {
 
     setSending(true);
     try {
+      const recaptchaToken = await getToken("contact_form");
+      if (!recaptchaToken) {
+        setErrors({ submit: lang === "el" ? "Αποτυχία επαλήθευσης. Δοκιμάστε ξανά." : "Verification failed. Please try again." });
+        setSending(false);
+        return;
+      }
+
       const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.functions.invoke("send-contact-email", {
         body: {
@@ -47,6 +54,7 @@ const CTASection = () => {
           email: form.email.trim() || undefined,
           phone: form.phone.trim() || undefined,
           message: form.message.trim(),
+          recaptchaToken,
         },
       });
 
