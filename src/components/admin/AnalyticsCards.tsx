@@ -8,6 +8,7 @@ type PageStat = { page_path: string; count: number };
 export const AnalyticsCards = () => {
   const [totalViews, setTotalViews] = useState(0);
   const [todayViews, setTodayViews] = useState(0);
+  const [uniqueVisitors, setUniqueVisitors] = useState(0);
   const [topPages, setTopPages] = useState<PageStat[]>([]);
   const [loading, setLoading] = useState(true);
 
