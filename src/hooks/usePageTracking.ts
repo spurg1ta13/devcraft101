@@ -25,10 +25,10 @@ export function usePageTracking() {
       // Try to get country from a free geo API
       let country: string | null = null;
       try {
-        const res = await fetch("https://freeipapi.com/api/json", { signal: AbortSignal.timeout(3000) });
+        const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(3000) });
         if (res.ok) {
           const geo = await res.json();
-          country = geo.countryCode || null;
+          country = geo.country_code || null;
         }
       } catch {
         // Silently fail — country will be null
