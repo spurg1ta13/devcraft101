@@ -83,6 +83,16 @@ export const AnalyticsCards = () => {
             <p className="text-3xl font-bold text-foreground">{todayViews}</p>
           </CardContent>
         </Card>
+        <Card className="border-border/50">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
+              <Users className="w-4 h-4" /> Unique Visitors
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-3xl font-bold text-foreground">{uniqueVisitors}</p>
+          </CardContent>
+        </Card>
       </div>
 
       {topPages.length > 0 && (
