@@ -11,33 +11,35 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import type { DateRange } from "./DateRangePicker";
 
 type DayStat = { date: string; views: number; visitors: number };
 
-export const ViewsChart = () => {
+interface Props {
+  range: DateRange;
+}
+
+export const ViewsChart = ({ range }: Props) => {
   const [data, setData] = useState<DayStat[]>([]);
 
   useEffect(() => {
-    fetchLast7Days();
-  }, []);
+    fetchData();
+  }, [range]);
 
-  const fetchLast7Days = async () => {
-    const sevenDaysAgo = new Date();
-    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
-    sevenDaysAgo.setHours(0, 0, 0, 0);
-
+  const fetchData = async () => {
     const { data: views } = await supabase
       .from("page_views")
       .select("created_at, visitor_id")
-      .gte("created_at", sevenDaysAgo.toISOString());
+      .gte("created_at", range.from.toISOString())
+      .lte("created_at", range.to.toISOString());
 
-    // Build a map for each of the last 7 days
+    // Build day map for the full range
     const dayMap: Record<string, { views: number; visitors: Set<string> }> = {};
-    for (let i = 0; i < 7; i++) {
-      const d = new Date();
-      d.setDate(d.getDate() - (6 - i));
-      const key = d.toISOString().split("T")[0];
+    const current = new Date(range.from);
+    while (current <= range.to) {
+      const key = current.toISOString().split("T")[0];
       dayMap[key] = { views: 0, visitors: new Set() };
+      current.setDate(current.getDate() + 1);
     }
 
     views?.forEach((v) => {
@@ -48,8 +50,14 @@ export const ViewsChart = () => {
       }
     });
 
+    const days = Object.keys(dayMap).length;
+    const fmt: Intl.DateTimeFormatOptions =
+      days <= 14
+        ? { weekday: "short", month: "short", day: "numeric" }
+        : { month: "short", day: "numeric" };
+
     const result: DayStat[] = Object.entries(dayMap).map(([date, val]) => ({
-      date: new Date(date).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }),
+      date: new Date(date).toLocaleDateString("en-US", fmt),
       views: val.views,
       visitors: val.visitors.size,
     }));
@@ -63,7 +71,7 @@ export const ViewsChart = () => {
     <Card className="border-border/50">
       <CardHeader className="pb-2">
         <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
-          <BarChart3 className="w-4 h-4" /> Last 7 Days
+          <BarChart3 className="w-4 h-4" /> Views Over Time
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -85,6 +93,7 @@ export const ViewsChart = () => {
               tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
               axisLine={{ stroke: "hsl(var(--border))" }}
               tickLine={false}
+              interval={data.length > 14 ? Math.floor(data.length / 7) : 0}
             />
             <YAxis
               tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
