@@ -21,18 +21,30 @@ export function usePageTracking() {
       return id;
     };
 
-    const track = () => {
-      supabase
+    const track = async () => {
+      // Try to get country from a free geo API
+      let country: string | null = null;
+      try {
+        const res = await fetch("https://ip-api.io/json", { signal: AbortSignal.timeout(3000) });
+        if (res.ok) {
+          const geo = await res.json();
+          country = geo.country_code || null;
+        }
+      } catch {
+        // Silently fail — country will be null
+      }
+
+      const { error } = await supabase
         .from("page_views")
         .insert({
           page_path: pagePath,
           referrer: document.referrer || null,
           user_agent: navigator.userAgent || null,
           visitor_id: getVisitorId(),
-        })
-        .then(({ error }) => {
-          if (error) console.error("Page view tracking error:", error);
-        });
+          country,
+        } as any);
+
+      if (error) console.error("Page view tracking error:", error);
     };
 
     // Defer tracking out of the critical path

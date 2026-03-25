@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, TrendingUp, FileText, Users, Monitor, Smartphone, Tablet, Globe } from "lucide-react";
+import { Eye, TrendingUp, FileText, Users, Monitor, Globe, MapPin } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { DateRangePicker, type DateRange } from "./DateRangePicker";
 
@@ -28,6 +28,34 @@ const parseSource = (referrer: string | null): string => {
   }
 };
 
+// Convert ISO country code to flag emoji
+const countryFlag = (code: string): string => {
+  if (!code || code.length !== 2) return "🌐";
+  const offset = 0x1f1e6;
+  return String.fromCodePoint(
+    code.charCodeAt(0) - 65 + offset,
+    code.charCodeAt(1) - 65 + offset
+  );
+};
+
+const COUNTRY_NAMES: Record<string, string> = {
+  US: "United States", GB: "United Kingdom", GR: "Greece", DE: "Germany",
+  FR: "France", ES: "Spain", IT: "Italy", NL: "Netherlands", BE: "Belgium",
+  PT: "Portugal", AT: "Austria", CH: "Switzerland", SE: "Sweden", NO: "Norway",
+  DK: "Denmark", FI: "Finland", PL: "Poland", CZ: "Czech Republic",
+  RO: "Romania", BG: "Bulgaria", HR: "Croatia", HU: "Hungary", IE: "Ireland",
+  CA: "Canada", AU: "Australia", NZ: "New Zealand", JP: "Japan", KR: "South Korea",
+  CN: "China", IN: "India", BR: "Brazil", MX: "Mexico", AR: "Argentina",
+  CL: "Chile", CO: "Colombia", ZA: "South Africa", NG: "Nigeria", EG: "Egypt",
+  TR: "Turkey", RU: "Russia", UA: "Ukraine", IL: "Israel", AE: "UAE",
+  SA: "Saudi Arabia", SG: "Singapore", MY: "Malaysia", TH: "Thailand",
+  PH: "Philippines", ID: "Indonesia", VN: "Vietnam", TW: "Taiwan",
+  CY: "Cyprus", LT: "Lithuania", LV: "Latvia", EE: "Estonia", SK: "Slovakia",
+  SI: "Slovenia", LU: "Luxembourg", MT: "Malta",
+};
+
+const countryName = (code: string): string => COUNTRY_NAMES[code] || code;
+
 const StatBar = ({ items, total }: { items: NamedStat[]; total: number }) => (
   <div className="space-y-2">
     {items.map((item) => {
@@ -39,6 +67,31 @@ const StatBar = ({ items, total }: { items: NamedStat[]; total: number }) => (
             <span className="font-medium text-foreground text-xs">{item.count} ({pct}%)</span>
           </div>
           <Progress value={pct} className="h-1.5" />
+        </div>
+      );
+    })}
+  </div>
+);
+
+type CountryStat = { code: string; visitors: number };
+
+const CountryBar = ({ items, maxVisitors }: { items: CountryStat[]; maxVisitors: number }) => (
+  <div className="space-y-1.5">
+    <div className="flex items-center justify-between text-xs text-muted-foreground font-medium px-1 mb-2">
+      <span>Country</span>
+      <span>Visitors</span>
+    </div>
+    {items.map((item) => {
+      const pct = maxVisitors > 0 ? (item.visitors / maxVisitors) * 100 : 0;
+      return (
+        <div key={item.code} className="relative flex items-center gap-3 rounded-md px-3 py-2">
+          <div
+            className="absolute inset-0 rounded-md bg-primary/15"
+            style={{ width: `${pct}%` }}
+          />
+          <span className="relative text-base leading-none">{countryFlag(item.code)}</span>
+          <span className="relative text-sm text-foreground/90 flex-1">{countryName(item.code)}</span>
+          <span className="relative text-sm font-semibold text-foreground">{item.visitors}</span>
         </div>
       );
     })}
@@ -62,6 +115,7 @@ export const AnalyticsCards = () => {
   const [topPages, setTopPages] = useState<PageStat[]>([]);
   const [devices, setDevices] = useState<NamedStat[]>([]);
   const [sources, setSources] = useState<NamedStat[]>([]);
+  const [countries, setCountries] = useState<CountryStat[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchAnalytics = useCallback(async (r: DateRange) => {
@@ -85,7 +139,7 @@ export const AnalyticsCards = () => {
 
     const { data: allViews } = await supabase
       .from("page_views")
-      .select("page_path, visitor_id, user_agent, referrer, created_at")
+      .select("page_path, visitor_id, user_agent, referrer, created_at, country" as any)
       .gte("created_at", fromISO)
       .lte("created_at", toISO);
 
@@ -93,14 +147,19 @@ export const AnalyticsCards = () => {
     const visitorSet = new Set<string>();
     const deviceCounts: Record<string, number> = {};
     const sourceCounts: Record<string, number> = {};
+    const countryVisitors: Record<string, Set<string>> = {};
 
-    allViews?.forEach((v) => {
+    (allViews as any[])?.forEach((v) => {
       pageCounts[v.page_path] = (pageCounts[v.page_path] || 0) + 1;
       if (v.visitor_id) visitorSet.add(v.visitor_id);
       const device = parseDevice(v.user_agent);
       deviceCounts[device] = (deviceCounts[device] || 0) + 1;
       const source = parseSource(v.referrer);
       sourceCounts[source] = (sourceCounts[source] || 0) + 1;
+
+      const cc = v.country || "Unknown";
+      if (!countryVisitors[cc]) countryVisitors[cc] = new Set();
+      if (v.visitor_id) countryVisitors[cc].add(v.visitor_id);
     });
 
     const toSorted = (obj: Record<string, number>) =>
@@ -108,12 +167,17 @@ export const AnalyticsCards = () => {
         .map(([name, count]) => ({ name, count }))
         .sort((a, b) => b.count - a.count);
 
+    const countrySorted = Object.entries(countryVisitors)
+      .map(([code, set]) => ({ code, visitors: set.size }))
+      .sort((a, b) => b.visitors - a.visitors);
+
     setTotalViews(total || 0);
     setTodayViews(today || 0);
     setUniqueVisitors(visitorSet.size);
     setTopPages(toSorted(pageCounts).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
     setDevices(toSorted(deviceCounts));
     setSources(toSorted(sourceCounts).slice(0, 6));
+    setCountries(countrySorted);
     setLoading(false);
   }, []);
 
@@ -165,8 +229,6 @@ export const AnalyticsCards = () => {
             </Card>
           </div>
 
-          
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="border-border/50">
               <CardHeader className="pb-2">
@@ -189,6 +251,19 @@ export const AnalyticsCards = () => {
               </CardContent>
             </Card>
           </div>
+
+          {countries.length > 0 && (
+            <Card className="border-border/50">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
+                  <MapPin className="w-4 h-4" /> Visitors by Country
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CountryBar items={countries} maxVisitors={countries[0]?.visitors || 1} />
+              </CardContent>
+            </Card>
+          )}
 
           {topPages.length > 0 && (
             <Card className="border-border/50">
