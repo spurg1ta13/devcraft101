@@ -43,6 +43,7 @@ export type Database = {
       }
       page_views: {
         Row: {
+          country: string | null
           created_at: string
           id: string
           page_path: string
@@ -51,6 +52,7 @@ export type Database = {
           visitor_id: string | null
         }
         Insert: {
+          country?: string | null
           created_at?: string
           id?: string
           page_path: string
@@ -59,6 +61,7 @@ export type Database = {
           visitor_id?: string | null
         }
         Update: {
+          country?: string | null
           created_at?: string
           id?: string
           page_path?: string
