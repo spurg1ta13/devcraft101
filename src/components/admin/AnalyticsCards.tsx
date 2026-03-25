@@ -52,6 +52,7 @@ export const AnalyticsCards = () => {
 
     setTotalViews(total || 0);
     setTodayViews(today || 0);
+    setUniqueVisitors(visitorSet.size);
     setTopPages(sorted);
     setLoading(false);
   };
