@@ -8,6 +8,16 @@ export function usePageTracking() {
   useEffect(() => {
     const pagePath = location.pathname + location.hash;
 
+    const getVisitorId = () => {
+      const key = "dv_visitor_id";
+      let id = localStorage.getItem(key);
+      if (!id) {
+        id = crypto.randomUUID();
+        localStorage.setItem(key, id);
+      }
+      return id;
+    };
+
     const track = () => {
       supabase
         .from("page_views")
@@ -15,6 +25,7 @@ export function usePageTracking() {
           page_path: pagePath,
           referrer: document.referrer || null,
           user_agent: navigator.userAgent || null,
+          visitor_id: getVisitorId(),
         })
         .then(({ error }) => {
           if (error) console.error("Page view tracking error:", error);
