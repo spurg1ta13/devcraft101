@@ -1,15 +1,64 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, TrendingUp, FileText, Users } from "lucide-react";
+import { Eye, TrendingUp, FileText, Users, Monitor, Smartphone, Tablet, Globe, Link } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
 
 type PageStat = { page_path: string; count: number };
+type NamedStat = { name: string; count: number };
+
+const parseDevice = (ua: string | null): string => {
+  if (!ua) return "Unknown";
+  const lower = ua.toLowerCase();
+  if (/tablet|ipad/.test(lower)) return "Tablet";
+  if (/mobile|android|iphone|ipod/.test(lower)) return "Mobile";
+  return "Desktop";
+};
+
+const parseSource = (referrer: string | null): string => {
+  if (!referrer) return "Direct";
+  try {
+    const host = new URL(referrer).hostname.replace("www.", "");
+    if (/google\.|bing\.|yahoo\.|duckduckgo\.|baidu\./.test(host)) return "Search";
+    if (/facebook\.|instagram\.|twitter\.|x\.com|linkedin\.|tiktok\.|youtube\./.test(host)) return "Social";
+    return host;
+  } catch {
+    return "Other";
+  }
+};
+
+const DeviceIcon = ({ name }: { name: string }) => {
+  if (name === "Mobile") return <Smartphone className="w-3.5 h-3.5" />;
+  if (name === "Tablet") return <Tablet className="w-3.5 h-3.5" />;
+  return <Monitor className="w-3.5 h-3.5" />;
+};
+
+const StatBar = ({ items, total }: { items: NamedStat[]; total: number }) => (
+  <div className="space-y-2">
+    {items.map((item) => {
+      const pct = total > 0 ? Math.round((item.count / total) * 100) : 0;
+      return (
+        <div key={item.name} className="space-y-1">
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-foreground/80 flex items-center gap-1.5">
+              {item.name}
+            </span>
+            <span className="font-medium text-foreground text-xs">{item.count} ({pct}%)</span>
+          </div>
+          <Progress value={pct} className="h-1.5" />
+        </div>
+      );
+    })}
+  </div>
+);
 
 export const AnalyticsCards = () => {
   const [totalViews, setTotalViews] = useState(0);
   const [todayViews, setTodayViews] = useState(0);
   const [uniqueVisitors, setUniqueVisitors] = useState(0);
   const [topPages, setTopPages] = useState<PageStat[]>([]);
+  const [devices, setDevices] = useState<NamedStat[]>([]);
+  const [sources, setSources] = useState<NamedStat[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,12 +68,10 @@ export const AnalyticsCards = () => {
   const fetchAnalytics = async () => {
     setLoading(true);
 
-    // Total views
     const { count: total } = await supabase
       .from("page_views")
       .select("*", { count: "exact", head: true });
 
-    // Today's views
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
     const { count: today } = await supabase
@@ -32,32 +79,43 @@ export const AnalyticsCards = () => {
       .select("*", { count: "exact", head: true })
       .gte("created_at", todayStart.toISOString());
 
-    // All views for top pages + unique count
     const { data: allViews } = await supabase
       .from("page_views")
-      .select("page_path, visitor_id");
+      .select("page_path, visitor_id, user_agent, referrer");
 
     const pageCounts: Record<string, number> = {};
     const visitorSet = new Set<string>();
+    const deviceCounts: Record<string, number> = {};
+    const sourceCounts: Record<string, number> = {};
+
     allViews?.forEach((v) => {
-      const p = v.page_path;
-      pageCounts[p] = (pageCounts[p] || 0) + 1;
+      pageCounts[v.page_path] = (pageCounts[v.page_path] || 0) + 1;
       if (v.visitor_id) visitorSet.add(v.visitor_id);
+
+      const device = parseDevice(v.user_agent);
+      deviceCounts[device] = (deviceCounts[device] || 0) + 1;
+
+      const source = parseSource(v.referrer);
+      sourceCounts[source] = (sourceCounts[source] || 0) + 1;
     });
 
-    const sorted = Object.entries(pageCounts)
-      .map(([page_path, count]) => ({ page_path, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 5);
+    const toSorted = (obj: Record<string, number>) =>
+      Object.entries(obj)
+        .map(([name, count]) => ({ name, count }))
+        .sort((a, b) => b.count - a.count);
 
     setTotalViews(total || 0);
     setTodayViews(today || 0);
     setUniqueVisitors(visitorSet.size);
-    setTopPages(sorted);
+    setTopPages(toSorted(pageCounts).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
+    setDevices(toSorted(deviceCounts));
+    setSources(toSorted(sourceCounts).slice(0, 6));
     setLoading(false);
   };
 
   if (loading) return null;
+
+  const viewTotal = devices.reduce((s, d) => s + d.count, 0);
 
   return (
     <div className="space-y-4">
@@ -91,6 +149,32 @@ export const AnalyticsCards = () => {
           </CardHeader>
           <CardContent>
             <p className="text-3xl font-bold text-foreground">{uniqueVisitors}</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Devices */}
+        <Card className="border-border/50">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
+              <Monitor className="w-4 h-4" /> Devices
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <StatBar items={devices} total={viewTotal} />
+          </CardContent>
+        </Card>
+
+        {/* Traffic Sources */}
+        <Card className="border-border/50">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
+              <Globe className="w-4 h-4" /> Traffic Sources
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <StatBar items={sources} total={viewTotal} />
           </CardContent>
         </Card>
       </div>
