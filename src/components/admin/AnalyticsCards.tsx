@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, TrendingUp, FileText, Users, Monitor, Smartphone, Tablet, Globe, Link } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
+import { ViewsChart } from "./ViewsChart";
 
 type PageStat = { page_path: string; count: number };
 type NamedStat = { name: string; count: number };
