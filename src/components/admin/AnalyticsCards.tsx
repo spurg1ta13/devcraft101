@@ -154,6 +154,8 @@ export const AnalyticsCards = () => {
         </Card>
       </div>
 
+      <ViewsChart />
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Devices */}
         <Card className="border-border/50">
