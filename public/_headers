@@ -3,3 +3,32 @@
   X-Content-Type-Options: nosniff
   Cache-Control: public, max-age=0, must-revalidate, no-transform
 
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/hero-banner.webp
+  Cache-Control: public, max-age=2592000
+
+/hero-banner-mobile.webp
+  Cache-Control: public, max-age=2592000
+
+/hero-banner.jpg
+  Cache-Control: public, max-age=2592000
+
+/devcraft-logo.svg
+  Cache-Control: public, max-age=2592000
+
+/devcraft-logo-icon.svg
+  Cache-Control: public, max-age=2592000
+
+/devcraft-logo-light.svg
+  Cache-Control: public, max-age=2592000
+
+/favicon-v2.png
+  Cache-Control: public, max-age=2592000
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
