@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Eye, TrendingUp, FileText } from "lucide-react";
+import { Eye, TrendingUp, FileText, Users } from "lucide-react";
 
 type PageStat = { page_path: string; count: number };
 
