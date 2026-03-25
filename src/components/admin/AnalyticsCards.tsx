@@ -32,15 +32,17 @@ export const AnalyticsCards = () => {
       .select("*", { count: "exact", head: true })
       .gte("created_at", todayStart.toISOString());
 
-    // Top pages — fetch all page_path values and aggregate client-side
+    // All views for top pages + unique count
     const { data: allViews } = await supabase
       .from("page_views")
-      .select("page_path");
+      .select("page_path, visitor_id");
 
     const pageCounts: Record<string, number> = {};
+    const visitorSet = new Set<string>();
     allViews?.forEach((v) => {
       const p = v.page_path;
       pageCounts[p] = (pageCounts[p] || 0) + 1;
+      if (v.visitor_id) visitorSet.add(v.visitor_id);
     });
 
     const sorted = Object.entries(pageCounts)
