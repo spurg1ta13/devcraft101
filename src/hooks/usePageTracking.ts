@@ -8,15 +8,24 @@ export function usePageTracking() {
   useEffect(() => {
     const pagePath = location.pathname + location.hash;
 
-    supabase
-      .from("page_views")
-      .insert({
-        page_path: pagePath,
-        referrer: document.referrer || null,
-        user_agent: navigator.userAgent || null,
-      })
-      .then(({ error }) => {
-        if (error) console.error("Page view tracking error:", error);
-      });
+    const track = () => {
+      supabase
+        .from("page_views")
+        .insert({
+          page_path: pagePath,
+          referrer: document.referrer || null,
+          user_agent: navigator.userAgent || null,
+        })
+        .then(({ error }) => {
+          if (error) console.error("Page view tracking error:", error);
+        });
+    };
+
+    // Defer tracking out of the critical path
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(track, { timeout: 5000 });
+    } else {
+      setTimeout(track, 2000);
+    }
   }, [location.pathname, location.hash]);
 }
