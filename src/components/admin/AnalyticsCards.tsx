@@ -165,7 +165,7 @@ export const AnalyticsCards = () => {
             </Card>
           </div>
 
-          <ViewsChart range={range} />
+          
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="border-border/50">
