@@ -3,7 +3,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, TrendingUp, FileText, Users, Monitor, Smartphone, Tablet, Globe } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
-import { ViewsChart } from "./ViewsChart";
 import { DateRangePicker, type DateRange } from "./DateRangePicker";
 
 type PageStat = { page_path: string; count: number };
@@ -166,7 +165,7 @@ export const AnalyticsCards = () => {
             </Card>
           </div>
 
-          <ViewsChart range={range} />
+          
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <Card className="border-border/50">
