@@ -62,7 +62,7 @@ export const AnalyticsCards = () => {
   return (
     <div className="space-y-4">
       <h2 className="text-lg font-semibold text-foreground">Page Views</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Card className="border-border/50">
           <CardHeader className="pb-2">
             <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
