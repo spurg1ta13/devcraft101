@@ -119,7 +119,6 @@
 
   .amber-drift {
     animation: amber-drift 14s ease-in-out infinite alternate;
-    will-change: transform;
   }
 
   .bg-dot-grid {
