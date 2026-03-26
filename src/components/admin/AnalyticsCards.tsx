@@ -173,9 +173,9 @@ export const AnalyticsCards = () => {
       if (vid) countryVisitors[cc].add(vid);
     });
 
-    const toSorted = (obj: Record<string, number>) =>
+    const setToSorted = (obj: Record<string, Set<string>>) =>
       Object.entries(obj)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, set]) => ({ name, count: set.size }))
         .sort((a, b) => b.count - a.count);
 
     const countrySorted = Object.entries(countryVisitors)
@@ -183,11 +183,11 @@ export const AnalyticsCards = () => {
       .sort((a, b) => b.visitors - a.visitors);
 
     setTotalViews(total || 0);
-    setTodayViews(today || 0);
+    setTodayViews(todayUniqueSet.size);
     setUniqueVisitors(visitorSet.size);
-    setTopPages(toSorted(pageCounts).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
-    setDevices(toSorted(deviceCounts));
-    setSources(toSorted(sourceCounts).slice(0, 6));
+    setTopPages(setToSorted(pageVisitors).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
+    setDevices(setToSorted(deviceVisitors));
+    setSources(setToSorted(sourceVisitors).slice(0, 6));
     setCountries(countrySorted);
     setLoading(false);
   }, []);
