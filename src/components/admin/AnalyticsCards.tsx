@@ -130,12 +130,15 @@ export const AnalyticsCards = () => {
       .gte("created_at", fromISO)
       .lte("created_at", toISO);
 
+    // Today unique visitors
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
-    const { count: today } = await supabase
+    const { data: todayViews } = await supabase
       .from("page_views")
-      .select("*", { count: "exact", head: true })
+      .select("visitor_id" as any)
       .gte("created_at", todayStart.toISOString());
+    const todayUniqueSet = new Set<string>();
+    (todayViews as any[])?.forEach((v) => { if (v.visitor_id) todayUniqueSet.add(v.visitor_id); });
 
     const { data: allViews } = await supabase
       .from("page_views")
@@ -143,28 +146,36 @@ export const AnalyticsCards = () => {
       .gte("created_at", fromISO)
       .lte("created_at", toISO);
 
-    const pageCounts: Record<string, number> = {};
     const visitorSet = new Set<string>();
-    const deviceCounts: Record<string, number> = {};
-    const sourceCounts: Record<string, number> = {};
+    // Track unique visitors per dimension
+    const pageVisitors: Record<string, Set<string>> = {};
+    const deviceVisitors: Record<string, Set<string>> = {};
+    const sourceVisitors: Record<string, Set<string>> = {};
     const countryVisitors: Record<string, Set<string>> = {};
 
     (allViews as any[])?.forEach((v) => {
-      pageCounts[v.page_path] = (pageCounts[v.page_path] || 0) + 1;
-      if (v.visitor_id) visitorSet.add(v.visitor_id);
+      const vid = v.visitor_id;
+      if (vid) visitorSet.add(vid);
+
+      if (!pageVisitors[v.page_path]) pageVisitors[v.page_path] = new Set();
+      if (vid) pageVisitors[v.page_path].add(vid);
+
       const device = parseDevice(v.user_agent);
-      deviceCounts[device] = (deviceCounts[device] || 0) + 1;
+      if (!deviceVisitors[device]) deviceVisitors[device] = new Set();
+      if (vid) deviceVisitors[device].add(vid);
+
       const source = parseSource(v.referrer);
-      sourceCounts[source] = (sourceCounts[source] || 0) + 1;
+      if (!sourceVisitors[source]) sourceVisitors[source] = new Set();
+      if (vid) sourceVisitors[source].add(vid);
 
       const cc = v.country || "Unknown";
       if (!countryVisitors[cc]) countryVisitors[cc] = new Set();
-      if (v.visitor_id) countryVisitors[cc].add(v.visitor_id);
+      if (vid) countryVisitors[cc].add(vid);
     });
 
-    const toSorted = (obj: Record<string, number>) =>
+    const setToSorted = (obj: Record<string, Set<string>>) =>
       Object.entries(obj)
-        .map(([name, count]) => ({ name, count }))
+        .map(([name, set]) => ({ name, count: set.size }))
         .sort((a, b) => b.count - a.count);
 
     const countrySorted = Object.entries(countryVisitors)
@@ -172,11 +183,11 @@ export const AnalyticsCards = () => {
       .sort((a, b) => b.visitors - a.visitors);
 
     setTotalViews(total || 0);
-    setTodayViews(today || 0);
+    setTodayViews(todayUniqueSet.size);
     setUniqueVisitors(visitorSet.size);
-    setTopPages(toSorted(pageCounts).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
-    setDevices(toSorted(deviceCounts));
-    setSources(toSorted(sourceCounts).slice(0, 6));
+    setTopPages(setToSorted(pageVisitors).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
+    setDevices(setToSorted(deviceVisitors));
+    setSources(setToSorted(sourceVisitors).slice(0, 6));
     setCountries(countrySorted);
     setLoading(false);
   }, []);
