@@ -8,6 +8,7 @@ export function usePageTracking() {
   useEffect(() => {
     // Skip tracking for admin pages
     if (location.pathname.startsWith("/admin")) return;
+    if (location.pathname === "/admin/login") return;
 
     const pagePath = location.pathname + location.hash;
 
