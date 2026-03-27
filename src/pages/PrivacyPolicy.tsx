@@ -6,6 +6,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
+import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { translations, t } from "@/i18n/translations";
 
 const PrivacyPolicy = () => {
