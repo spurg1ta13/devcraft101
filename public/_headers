@@ -6,29 +6,38 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/hero-banner.webp
-  Cache-Control: public, max-age=2592000
-
-/hero-banner-mobile.webp
-  Cache-Control: public, max-age=2592000
-
-/hero-banner.jpg
-  Cache-Control: public, max-age=2592000
-
-/devcraft-logo.svg
-  Cache-Control: public, max-age=2592000
-
-/devcraft-logo-icon.svg
-  Cache-Control: public, max-age=2592000
-
-/devcraft-logo-light.svg
-  Cache-Control: public, max-age=2592000
-
-/favicon-v2.png
-  Cache-Control: public, max-age=2592000
-
 /*.js
   Cache-Control: public, max-age=31536000, immutable
 
 /*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=2592000
+
+/*.jpeg
+  Cache-Control: public, max-age=2592000
+
+/*.png
+  Cache-Control: public, max-age=2592000
+
+/*.webp
+  Cache-Control: public, max-age=2592000
+
+/*.svg
+  Cache-Control: public, max-age=2592000
+
+/*.ico
+  Cache-Control: public, max-age=2592000
+
+/*.gif
+  Cache-Control: public, max-age=2592000
+
+/*.avif
+  Cache-Control: public, max-age=2592000
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff
   Cache-Control: public, max-age=31536000, immutable
