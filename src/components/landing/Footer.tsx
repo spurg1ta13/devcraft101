@@ -81,12 +81,16 @@ const Footer = () => {
                 </div>
                 +30 697 415 9157
               </a>
-              <a href="mailto:contact@devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label="Email contact@devcraft.gr">
-                <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
-                  <Mail className="h-4 w-4 text-primary" />
-                </div>
-                contact@devcraft.gr
-              </a>
+              <ObfuscatedEmail user="contact" domain="devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" ariaLabel="Email {email}">
+                {(email) => (
+                  <>
+                    <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
+                      <Mail className="h-4 w-4 text-primary" />
+                    </div>
+                    {email}
+                  </>
+                )}
+              </ObfuscatedEmail>
               <div className="flex items-center gap-3 text-sm text-muted-foreground">
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center shrink-0">
                   <MapPin className="h-4 w-4 text-primary" />
