@@ -326,6 +326,15 @@ export const AnalyticsCards = () => {
           )}
         </>
       )}
+
+      <TodayDetailModal
+        open={todayModalOpen}
+        onOpenChange={setTodayModalOpen}
+        totalToday={todayViews}
+        devices={todayDevices}
+        sources={todaySources}
+        countries={todayCountries}
+      />
     </div>
   );
 };
