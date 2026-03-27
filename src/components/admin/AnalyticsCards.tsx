@@ -118,6 +118,10 @@ export const AnalyticsCards = () => {
   const [sources, setSources] = useState<NamedStat[]>([]);
   const [countries, setCountries] = useState<CountryStat[]>([]);
   const [loading, setLoading] = useState(true);
+  const [todayModalOpen, setTodayModalOpen] = useState(false);
+  const [todayDevices, setTodayDevices] = useState<NamedStat[]>([]);
+  const [todaySources, setTodaySources] = useState<NamedStat[]>([]);
+  const [todayCountries, setTodayCountries] = useState<CountryStat[]>([]);
 
   const fetchAnalytics = useCallback(async (r: DateRange) => {
     setLoading(true);
