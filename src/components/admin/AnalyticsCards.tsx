@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, TrendingUp, FileText, Users, Monitor, Globe, MapPin } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 import { DateRangePicker, type DateRange } from "./DateRangePicker";
+import { TodayDetailModal } from "./TodayDetailModal";
 
 type PageStat = { page_path: string; count: number };
 type NamedStat = { name: string; count: number };
@@ -117,6 +118,10 @@ export const AnalyticsCards = () => {
   const [sources, setSources] = useState<NamedStat[]>([]);
   const [countries, setCountries] = useState<CountryStat[]>([]);
   const [loading, setLoading] = useState(true);
+  const [todayModalOpen, setTodayModalOpen] = useState(false);
+  const [todayDevices, setTodayDevices] = useState<NamedStat[]>([]);
+  const [todaySources, setTodaySources] = useState<NamedStat[]>([]);
+  const [todayCountries, setTodayCountries] = useState<CountryStat[]>([]);
 
   const fetchAnalytics = useCallback(async (r: DateRange) => {
     setLoading(true);
@@ -133,12 +138,30 @@ export const AnalyticsCards = () => {
     // Today unique visitors
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
-    const { data: todayViews } = await supabase
+    const { data: todayData } = await supabase
       .from("page_views")
-      .select("visitor_id" as any)
+      .select("visitor_id, user_agent, referrer, country" as any)
       .gte("created_at", todayStart.toISOString());
     const todayUniqueSet = new Set<string>();
-    (todayViews as any[])?.forEach((v) => { if (v.visitor_id) todayUniqueSet.add(v.visitor_id); });
+    const todayDeviceMap: Record<string, Set<string>> = {};
+    const todaySourceMap: Record<string, Set<string>> = {};
+    const todayCountryMap: Record<string, Set<string>> = {};
+    (todayData as any[])?.forEach((v) => {
+      const vid = v.visitor_id;
+      if (vid) todayUniqueSet.add(vid);
+
+      const device = parseDevice(v.user_agent);
+      if (!todayDeviceMap[device]) todayDeviceMap[device] = new Set();
+      if (vid) todayDeviceMap[device].add(vid);
+
+      const source = parseSource(v.referrer);
+      if (!todaySourceMap[source]) todaySourceMap[source] = new Set();
+      if (vid) todaySourceMap[source].add(vid);
+
+      const cc = v.country || "Unknown";
+      if (!todayCountryMap[cc]) todayCountryMap[cc] = new Set();
+      if (vid) todayCountryMap[cc].add(vid);
+    });
 
     const { data: allViews } = await supabase
       .from("page_views")
@@ -184,6 +207,13 @@ export const AnalyticsCards = () => {
 
     setTotalViews(total || 0);
     setTodayViews(todayUniqueSet.size);
+    setTodayDevices(setToSorted(todayDeviceMap));
+    setTodaySources(setToSorted(todaySourceMap).slice(0, 6));
+    setTodayCountries(
+      Object.entries(todayCountryMap)
+        .map(([code, set]) => ({ code, visitors: set.size }))
+        .sort((a, b) => b.visitors - a.visitors)
+    );
     setUniqueVisitors(visitorSet.size);
     setTopPages(setToSorted(pageVisitors).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
     setDevices(setToSorted(deviceVisitors));
@@ -218,7 +248,7 @@ export const AnalyticsCards = () => {
                 <p className="text-3xl font-bold text-foreground">{totalViews}</p>
               </CardContent>
             </Card>
-            <Card className="border-border/50">
+            <Card className="border-border/50 cursor-pointer hover:border-primary/50 transition-colors" onClick={() => setTodayModalOpen(true)}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
                   <TrendingUp className="w-4 h-4" /> Today
@@ -226,6 +256,7 @@ export const AnalyticsCards = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-foreground">{todayViews}</p>
+                <p className="text-xs text-muted-foreground mt-1">Click for details</p>
               </CardContent>
             </Card>
             <Card className="border-border/50">
@@ -295,6 +326,15 @@ export const AnalyticsCards = () => {
           )}
         </>
       )}
+
+      <TodayDetailModal
+        open={todayModalOpen}
+        onOpenChange={setTodayModalOpen}
+        totalToday={todayViews}
+        devices={todayDevices}
+        sources={todaySources}
+        countries={todayCountries}
+      />
     </div>
   );
 };
