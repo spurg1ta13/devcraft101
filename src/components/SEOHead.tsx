@@ -21,7 +21,7 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "DevCraft | Custom Web Development & ISTQB Quality Assurance Worldwide",
+  en: "DevCraft | AI-Powered Web Development",
   el: "DevCraft | Κατασκευή Ιστοσελίδων & Διασφάλιση Ποιότητας (QA)",
 };
 const DEFAULT_DESC = {
