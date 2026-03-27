@@ -248,7 +248,7 @@ export const AnalyticsCards = () => {
                 <p className="text-3xl font-bold text-foreground">{totalViews}</p>
               </CardContent>
             </Card>
-            <Card className="border-border/50">
+            <Card className="border-border/50 cursor-pointer hover:border-primary/50 transition-colors" onClick={() => setTodayModalOpen(true)}>
               <CardHeader className="pb-2">
                 <CardTitle className="text-sm text-muted-foreground font-medium flex items-center gap-1.5">
                   <TrendingUp className="w-4 h-4" /> Today
@@ -256,6 +256,7 @@ export const AnalyticsCards = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-3xl font-bold text-foreground">{todayViews}</p>
+                <p className="text-xs text-muted-foreground mt-1">Click for details</p>
               </CardContent>
             </Card>
             <Card className="border-border/50">
