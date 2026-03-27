@@ -207,6 +207,13 @@ export const AnalyticsCards = () => {
 
     setTotalViews(total || 0);
     setTodayViews(todayUniqueSet.size);
+    setTodayDevices(setToSorted(todayDeviceMap));
+    setTodaySources(setToSorted(todaySourceMap).slice(0, 6));
+    setTodayCountries(
+      Object.entries(todayCountryMap)
+        .map(([code, set]) => ({ code, visitors: set.size }))
+        .sort((a, b) => b.visitors - a.visitors)
+    );
     setUniqueVisitors(visitorSet.size);
     setTopPages(setToSorted(pageVisitors).slice(0, 5).map(s => ({ page_path: s.name, count: s.count })));
     setDevices(setToSorted(deviceVisitors));
