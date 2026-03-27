@@ -24,7 +24,6 @@
     .glow-2{bottom:-100px;left:-50px;background:#d97706}
   </style>
   <script>
-    // SPA redirect for client-side routing (runs after 3s if user doesn't click CTA)
     var path=window.location.pathname+window.location.search+window.location.hash;
     setTimeout(function(){window.location.replace('/?redirect='+encodeURIComponent(path))},3000);
   </script>
