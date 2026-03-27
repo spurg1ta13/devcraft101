@@ -138,12 +138,30 @@ export const AnalyticsCards = () => {
     // Today unique visitors
     const todayStart = new Date();
     todayStart.setHours(0, 0, 0, 0);
-    const { data: todayViews } = await supabase
+    const { data: todayData } = await supabase
       .from("page_views")
-      .select("visitor_id" as any)
+      .select("visitor_id, user_agent, referrer, country" as any)
       .gte("created_at", todayStart.toISOString());
     const todayUniqueSet = new Set<string>();
-    (todayViews as any[])?.forEach((v) => { if (v.visitor_id) todayUniqueSet.add(v.visitor_id); });
+    const todayDeviceMap: Record<string, Set<string>> = {};
+    const todaySourceMap: Record<string, Set<string>> = {};
+    const todayCountryMap: Record<string, Set<string>> = {};
+    (todayData as any[])?.forEach((v) => {
+      const vid = v.visitor_id;
+      if (vid) todayUniqueSet.add(vid);
+
+      const device = parseDevice(v.user_agent);
+      if (!todayDeviceMap[device]) todayDeviceMap[device] = new Set();
+      if (vid) todayDeviceMap[device].add(vid);
+
+      const source = parseSource(v.referrer);
+      if (!todaySourceMap[source]) todaySourceMap[source] = new Set();
+      if (vid) todaySourceMap[source].add(vid);
+
+      const cc = v.country || "Unknown";
+      if (!todayCountryMap[cc]) todayCountryMap[cc] = new Set();
+      if (vid) todayCountryMap[cc].add(vid);
+    });
 
     const { data: allViews } = await supabase
       .from("page_views")
