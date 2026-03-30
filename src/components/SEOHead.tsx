@@ -97,6 +97,7 @@ const SEOHead = ({
       <link rel="alternate" hrefLang="el" href={fullUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
+    </>
   );
 };
 
