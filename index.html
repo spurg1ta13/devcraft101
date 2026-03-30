@@ -64,11 +64,20 @@
   <body>
     <div id="root">
       <!-- Static shell for instant FCP — replaced by React on mount -->
-      <div style="min-height:100vh;background:#050505;color:#f5f5f5;font-family:Outfit,sans-serif;display:flex;flex-direction:column">
+      <div style="min-height:100vh;background:#050505;color:#f5f5f5;font-family:Outfit,sans-serif;display:flex;flex-direction:column;position:relative;overflow:hidden">
+        <!-- Static hero background — matches HeroSection so LCP image is in DOM immediately -->
+        <div style="position:absolute;inset:0">
+          <picture>
+            <source media="(max-width: 768px)" srcset="/hero-banner-mobile.webp" type="image/webp" />
+            <img src="/hero-banner.webp" alt="" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="sync" style="width:100%;height:100%;object-fit:cover;opacity:0.2" />
+          </picture>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,#050505,rgba(5,5,5,0.6),transparent)"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(5,5,5,0.8),transparent)"></div>
         <nav style="position:fixed;top:0;left:0;right:0;z-index:50;padding:1rem 1.5rem;background:rgba(5,5,5,0.8);backdrop-filter:blur(12px)">
           <img src="/devcraft-logo.svg" alt="DevCraft" width="120" height="32" style="height:2rem;width:auto" />
         </nav>
-        <div style="flex:1;display:flex;align-items:center;padding:7rem 1.5rem 2rem">
+        <div style="position:relative;z-index:10;flex:1;display:flex;align-items:center;padding:7rem 1.5rem 2rem">
           <div>
             <div style="font-size:clamp(2.25rem,8vw,9rem);font-weight:900;line-height:0.85;letter-spacing:-0.05em">WE BUILD</div>
             <div style="font-size:clamp(2.25rem,8vw,9rem);font-weight:900;line-height:0.85;letter-spacing:-0.05em;font-style:italic;background:linear-gradient(135deg,hsl(38,100%,55%),hsl(45,100%,60%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">DIGITAL.</div>
