@@ -1,3 +1,4 @@
+import { useLocation } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
@@ -256,4 +257,59 @@ const FAQPageSchema = () => {
   );
 };
 
-export { OrganizationSchema, WebSiteSchema, FAQPageSchema };
+const BREADCRUMB_NAMES: Record<string, { en: string; el: string }> = {
+  "/": { en: "Home", el: "Αρχική" },
+  "/about": { en: "About Us", el: "Σχετικά" },
+  "/prices": { en: "Prices", el: "Τιμές" },
+  "/blog": { en: "Blog", el: "Blog" },
+  "/privacy-policy": { en: "Privacy Policy", el: "Πολιτική Απορρήτου" },
+  "/terms-of-service": { en: "Terms of Service", el: "Όροι Χρήσης" },
+};
+
+const BreadcrumbSchema = () => {
+  const { lang } = useLang();
+  const { pathname } = useLocation();
+
+  const BASE = "https://devcraft.gr";
+  const items: { name: string; url: string }[] = [
+    { name: BREADCRUMB_NAMES["/"][lang], url: BASE + "/" },
+  ];
+
+  if (pathname !== "/") {
+    // Handle blog articles: /blog/some-slug
+    const isBlogArticle = pathname.startsWith("/blog/") && pathname !== "/blog";
+    if (isBlogArticle) {
+      items.push({ name: BREADCRUMB_NAMES["/blog"][lang], url: BASE + "/blog" });
+      const slug = pathname.split("/").pop() || "";
+      const prettyName = slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+      items.push({ name: prettyName, url: BASE + pathname });
+    } else {
+      const label = BREADCRUMB_NAMES[pathname];
+      if (label) {
+        items.push({ name: label[lang], url: BASE + pathname });
+      }
+    }
+  }
+
+  if (items.length < 2) return null;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+export { OrganizationSchema, WebSiteSchema, FAQPageSchema, BreadcrumbSchema };

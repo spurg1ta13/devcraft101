@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLang } from "@/i18n/LanguageContext";
+import { BreadcrumbSchema } from "@/components/StructuredData";
 
 interface SEOHeadProps {
   title?: { en: string; el: string } | string;
@@ -50,6 +51,8 @@ const SEOHead = ({
   const shouldNoindex = noindex || isStaging;
 
   return (
+    <>
+    <BreadcrumbSchema />
     <Helmet>
       <html lang={lang} />
       <title>{resolvedTitle}</title>
@@ -94,6 +97,7 @@ const SEOHead = ({
       <link rel="alternate" hrefLang="el" href={fullUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
+    </>
   );
 };
 
