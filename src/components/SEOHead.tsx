@@ -51,6 +51,8 @@ const SEOHead = ({
   const shouldNoindex = noindex || isStaging;
 
   return (
+    <>
+    <BreadcrumbSchema />
     <Helmet>
       <html lang={lang} />
       <title>{resolvedTitle}</title>
