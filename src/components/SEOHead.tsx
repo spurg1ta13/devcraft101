@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLang } from "@/i18n/LanguageContext";
+import { BreadcrumbSchema } from "@/components/StructuredData";
 
 interface SEOHeadProps {
   title?: { en: string; el: string } | string;
