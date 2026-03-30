@@ -1,3 +1,6 @@
+/*
+  Cache-Control: public, max-age=86400
+
 /sitemap.xml
   Content-Type: text/xml; charset=UTF-8
   X-Content-Type-Options: nosniff
