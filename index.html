@@ -19,18 +19,29 @@
     <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" />
     <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" />
 
-    <!-- Fonts: swap for fast text rendering -->
+    <!-- Fonts: loaded via JS after interaction to avoid render-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" /></noscript>
 
     <!-- Analytics deferred 3s after first interaction or 5s absolute -->
     <script>
+      // Load Google Fonts asynchronously via JS (avoids render-blocking)
+      function loadFonts() {
+        if (window.__fontsLoaded) return;
+        window.__fontsLoaded = true;
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap';
+        document.head.appendChild(l);
+      }
+      // Load fonts early — on requestIdleCallback or 200ms fallback
+      if ('requestIdleCallback' in window) { requestIdleCallback(loadFonts); }
+      else { setTimeout(loadFonts, 200); }
+
       function loadAnalytics() {
         if (window.__analyticsLoaded) return;
         window.__analyticsLoaded = true;
-        // Google Analytics
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         window.gtag = gtag;
@@ -42,14 +53,12 @@
           gtag('js', new Date());
           gtag('config', 'G-P5ZGGYZVV5');
         };
-        // Contentsquare
         setTimeout(function() {
           var c = document.createElement('script');
           c.src = 'https://t.contentsquare.net/uxa/48d94652d2367.js';
           document.head.appendChild(c);
         }, 2000);
       }
-      // Load analytics on first user interaction OR after 5s
       var events = ['click','scroll','touchstart','keydown'];
       var interactionTimer = setTimeout(loadAnalytics, 5000);
       function onInteraction() {
