@@ -99,7 +99,7 @@ Blog: https://devcraft.gr/blog
 
 ## Ιστολόγιο
 
-Δημοσιεύουμε άρθρα σχετικά με web development, ενσωμάτωση AI, σχεδιασμό UI/UX και δημιουργία leads:
+Δημοσιεύουμε άρθρα σχετικά με web development, ενσωμάτωση AI, σχεδιασμό UI/UX, ασφάλεια και δημιουργία leads:
 - https://devcraft.gr/blog/custom-web-development-vs-templates-2026
 - https://devcraft.gr/blog/istqb-quality-assurance-why-it-matters
 - https://devcraft.gr/blog/ui-ux-design-trends-that-convert-visitors
@@ -108,3 +108,7 @@ Blog: https://devcraft.gr/blog
 - https://devcraft.gr/blog/why-attractive-landing-page-is-important
 - https://devcraft.gr/blog/why-ai-chatbot-assistant-boosts-your-website
 - https://devcraft.gr/blog/website-tips-tricks-generate-more-leads
+- https://devcraft.gr/blog/how-to-choose-web-development-agency-greece
+- https://devcraft.gr/blog/website-security-best-practices-small-business
+- https://devcraft.gr/blog/complete-guide-website-maintenance-support
+- https://devcraft.gr/blog/why-website-speed-matters-seo-conversions
