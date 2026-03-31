@@ -17,9 +17,10 @@ const OrganizationSchema = () => {
     },
     image: "https://devcraft.gr/og-image.jpg",
     description:
-      "AI-driven web development agency in Thessaloniki, Greece. We deliver bespoke websites with ISTQB-certified Quality Assurance and multilingual SEO. Plans from €600 to €2,500.",
+      "AI-driven web development agency in Thessaloniki, Greece. Custom website development (κατασκευή ιστοσελίδων Θεσσαλονίκη), bespoke UI/UX design, and ISTQB-certified Quality Assurance. Plans from €600 to €2,500.",
     slogan:
       "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
+    alternateName: ["DevCraft Greece", "DevCraft Thessaloniki", "DevCraft Θεσσαλονίκη"],
     foundingLocation: {
       "@type": "Place",
       name: "Thessaloniki, Greece",
@@ -46,14 +47,21 @@ const OrganizationSchema = () => {
     ],
     serviceType: [
       "Custom Web Development",
+      "Κατασκευή Ιστοσελίδων",
       "Landing Page Design",
+      "Δημιουργία Ιστοσελίδων",
       "UI/UX Design",
+      "Σχεδιασμός UI/UX",
       "ISTQB Certified Quality Assurance",
       "Technical SEO",
       "Multilingual Website Development",
       "AI Chatbot Integration",
       "GDPR Compliance",
       "Core Web Vitals Optimization",
+      "E-shop Development",
+      "Κατασκευή E-shop",
+      "Website Maintenance",
+      "Συντήρηση Ιστοσελίδων",
     ],
     knowsAbout: [
       "React",
@@ -65,6 +73,8 @@ const OrganizationSchema = () => {
       "AI Assistant Integration",
       "Structured Data & Schema Markup",
       "Multilingual SEO",
+      "Κατασκευή Ιστοσελίδων Θεσσαλονίκη",
+      "Web Development Greece",
     ],
     knowsLanguage: ["en", "el"],
     hasOfferCatalog: {
