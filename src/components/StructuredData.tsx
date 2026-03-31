@@ -58,8 +58,6 @@ const OrganizationSchema = () => {
       "AI Chatbot Integration",
       "GDPR Compliance",
       "Core Web Vitals Optimization",
-      "E-shop Development",
-      "Κατασκευή E-shop",
       "Website Maintenance",
       "Συντήρηση Ιστοσελίδων",
     ],

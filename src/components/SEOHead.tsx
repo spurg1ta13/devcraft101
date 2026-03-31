@@ -31,7 +31,7 @@ const DEFAULT_DESC = {
 };
 const DEFAULT_KEYWORDS = {
   en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
-  el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα, κατασκευή eshop θεσσαλονίκη",
+  el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα",
 };
 
 const resolve = (val: { en: string; el: string } | string, lang: string): string =>
