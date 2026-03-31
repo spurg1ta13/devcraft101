@@ -2,13 +2,17 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
+const BOT_PATTERN = /bot|crawl|spider|slurp|bingpreview|mediapartners|google|facebookexternalhit|semrush|ahrefs|mj12bot|dotbot|petalbot|yandex|baidu|duckduckbot|ia_archiver|archive\.org|headlesschrome|puppeteer|playwright|lighthouse|pagespeed/i;
+
 export function usePageTracking() {
   const location = useLocation();
 
   useEffect(() => {
     // Skip tracking for admin pages
     if (location.pathname.startsWith("/admin")) return;
-    if (location.pathname === "/admin/login") return;
+
+    // Skip tracking for known bots/crawlers
+    if (BOT_PATTERN.test(navigator.userAgent)) return;
 
     const pagePath = location.pathname + location.hash;
 
