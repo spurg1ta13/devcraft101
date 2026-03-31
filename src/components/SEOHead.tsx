@@ -27,7 +27,7 @@ const DEFAULT_TITLE = {
 };
 const DEFAULT_DESC = {
   en: "Award-quality web design & development agency in Thessaloniki, Greece. Every project includes ISTQB-certified testing, bespoke UI/UX design, and AI-driven development. Plans from €600.",
-  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Κάθε project περιλαμβάνει ISTQB testing, σχεδιασμός UI/UX design και πιστοποιημένη διασφάλιση ποιότητας. Πακέτα από €600.",
+  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Κάθε project περιλαμβάνει ISTQB testing, σχεδιασμό UI/UX design και πιστοποιημένη διασφάλιση ποιότητας. Πακέτα από €600.",
 };
 const DEFAULT_KEYWORDS = {
   en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
