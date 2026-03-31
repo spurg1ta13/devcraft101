@@ -37,4 +37,10 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
+User-agent: YouBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 Sitemap: https://devcraft.gr/sitemap.xml
