@@ -22,12 +22,16 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "DevCraft | AI-Powered Web Development",
-  el: "DevCraft | Κατασκευή Ιστοσελίδων & Διασφάλιση Ποιότητας (QA)",
+  en: "DevCraft | AI-Powered Web Development Agency in Greece",
+  el: "DevCraft | Κατασκευή Ιστοσελίδων Θεσσαλονίκη — Web Development & QA",
 };
 const DEFAULT_DESC = {
-  en: "Bespoke AI-driven web development, UI/UX design, and ISTQB-certified testing services. We build scalable, high-performance digital solutions for brands globally.",
-  el: "DevCraft: Επαγγελματική κατασκευή ιστοσελίδων στη Θεσσαλονίκη και πιστοποιημένος έλεγχος λογισμικού ISTQB. Δημιουργούμε custom λύσεις που φέρνουν αποτελέσματα.",
+  en: "Custom web development agency in Thessaloniki, Greece. AI-driven websites, bespoke UI/UX design, and ISTQB-certified QA testing. Plans from €600. React, TypeScript, Tailwind CSS.",
+  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Επαγγελματική δημιουργία ιστοσελίδων, σχεδιασμός UI/UX και πιστοποιημένος έλεγχος ποιότητας ISTQB. Πακέτα από €600.",
+};
+const DEFAULT_KEYWORDS = {
+  en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
+  el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα, κατασκευή eshop θεσσαλονίκη",
 };
 
 const resolve = (val: { en: string; el: string } | string, lang: string): string =>
