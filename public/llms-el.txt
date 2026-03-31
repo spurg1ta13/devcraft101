@@ -1,0 +1,110 @@
+# DevCraft — Εταιρεία Ανάπτυξης Ιστοσελίδων με Τεχνητή Νοημοσύνη
+
+> Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.
+
+## Σχετικά με εμάς
+
+Η DevCraft είναι μια εταιρεία ανάπτυξης ιστοσελίδων με έδρα τη Θεσσαλονίκη, Ελλάδα. Εξειδικευόμαστε στην custom ανάπτυξη ιστοσελίδων χρησιμοποιώντας React, TypeScript και Tailwind CSS. Η ομάδα μας περιλαμβάνει πιστοποιημένους μηχανικούς QA (ISTQB) που εγγυώνται launches χωρίς σφάλματα.
+
+Εξυπηρετούμε πελάτες στην Ελλάδα και παγκοσμίως, με πλήρη δίγλωσση υποστήριξη (Αγγλικά & Ελληνικά).
+
+## Η Ομάδα μας
+
+- Full-Stack Web Developer με προσανατολισμό στο αποτέλεσμα (React, TypeScript, Node.js, cloud-native αρχιτεκτονική)
+- Πιστοποιημένος UI/UX Designer που δημιουργεί διαισθητικές διεπαφές
+- ISTQB-πιστοποιημένος QA Engineer που διασφαλίζει τα υψηλότερα πρότυπα σταθερότητας και ασφάλειας
+
+## Υπηρεσίες (3 βασικές υπηρεσίες)
+
+### 1. Ανάπτυξη Ιστοσελίδων (Full-Stack Εφαρμογές)
+React, TypeScript, Node.js, cloud-native αρχιτεκτονική. Κώδικας που κλιμακώνεται μαζί με τη φιλοδοξία σας. Κατασκευάζουμε τα πάντα, από μινιμαλιστικές landing pages μέχρι εξατομικευμένες εταιρικές πλατφόρμες.
+
+### 2. Σχεδιασμός UI/UX (Εξατομικευμένες Διεπαφές)
+Σχεδιασμός βασισμένος σε έρευνα που μετατρέπει. Όχι templates — εξατομικευμένες ψηφιακές εμπειρίες. Προχωράμε πέρα από τα templates και χτίζουμε tailor-made design systems.
+
+### 3. Διασφάλιση Ποιότητας (Πιστοποιημένες Δοκιμές ISTQB)
+Πιστοποιημένοι μηχανικοί ελέγχουν κάθε λειτουργία πριν φτάσει στους χρήστες. Zero-defect launches. Αυστηρές διαδικασίες δοκιμών εγγυώνται προϊόντα χωρίς σφάλματα με μέγιστη σταθερότητα και ασφάλεια.
+
+## Τιμοκατάλογος & Πακέτα Υπηρεσιών
+
+Προσφέρουμε τέσσερα πακέτα υπηρεσιών. Το MAXI είναι η πιο δημοφιλής μας επιλογή:
+
+### MINI: Το Καθαρό Ξεκίνημα (€600–€700)
+- 1 Landing Page, 1 Γλώσσα (Ελληνικά)
+- Responsive σε κινητά & desktop, Social redirects
+- Semantic HTML, Alt-text, CTA (email + τηλέφωνο)
+- Παράδοση: 2–3 εργάσιμες ημέρες
+
+### MIDI: Το Εταιρικό Πρότυπο (€900–€1.000)
+- Έως 5 Σελίδες, 1 Γλώσσα
+- Φόρμα Lead, Portfolio/Gallery
+- Sitemap & Robots.txt, GDPR/Cookies, Google Maps
+- Παράδοση: 4–5 εργάσιμες ημέρες
+
+### MAXI: Η Διεθνής Παρουσία (€1.300–€1.500) ⭐ Πιο Δημοφιλές
+- Έως 7 Σελίδες, 2–3 Γλώσσες
+- Εναλλαγή Γλώσσας, Localized Meta Tags
+- Βελτιστοποίηση URL, Custom 404, GDPR/Cookies, Google Maps
+- Παράδοση: 7–10 εργάσιμες ημέρες
+
+### ELITE: Η Elite Απόδοση (€1.950–€2.500)
+- Έως 10 Σελίδες + Calculator
+- Απεριόριστες Γλώσσες, Ενσωμάτωση AI Assistant
+- Custom Animations, Form-to-Email, Βελτιστοποίηση Εικόνων
+- SEO-friendly URLs
+- Πιστοποιημένες Δοκιμές QA (ISTQB)
+- Παράδοση: 10–12 εργάσιμες ημέρες
+
+*Οι τιμές δεν περιλαμβάνουν ΦΠΑ.
+*Η παράδοση ξεκινά μετά τη λήψη όλου του περιεχομένου από τον πελάτη.
+
+Διατίθενται ετήσια πακέτα Συντήρησης & Διασφάλισης Ποιότητας κατόπιν αιτήματος.
+Πρόσθετες λειτουργίες και custom add-ons προσαρμόζονται στις συγκεκριμένες ανάγκες σας.
+
+Πλήρεις λεπτομέρειες τιμών: https://devcraft.gr/prices
+
+## Εγγύηση Ποιότητας
+
+- Πιστοποιημένοι ISTQB μηχανικοί QA ελέγχουν κάθε λειτουργία πριν το launch
+- Πολιτική zero-defect
+- Δοκιμές σε desktop και κινητά σε Windows, macOS, iOS και Android
+
+## Τεχνολογίες
+
+React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
+
+## Τοποθεσία
+
+Θεσσαλονίκη, Κεντρική Μακεδονία, Ελλάδα
+Εξυπηρετούμε πελάτες παγκοσμίως
+
+## Επικοινωνία
+
+Ιστοσελίδα: https://devcraft.gr
+Τηλέφωνο: +30 697 415 9157
+Email: contact@devcraft.gr
+LinkedIn: https://www.linkedin.com/company/devcraft-gr
+
+## Σελίδες
+
+Υπηρεσίες: https://devcraft.gr/#services
+Showcase: https://devcraft.gr/#showcase
+Portfolio: https://devcraft.gr/#projects
+Διαδικασία: https://devcraft.gr/#process
+Συχνές Ερωτήσεις: https://devcraft.gr/#faq
+Επικοινωνία: https://devcraft.gr/#contact
+Σχετικά με εμάς: https://devcraft.gr/about
+Τιμοκατάλογος: https://devcraft.gr/prices
+Blog: https://devcraft.gr/blog
+
+## Ιστολόγιο
+
+Δημοσιεύουμε άρθρα σχετικά με web development, ενσωμάτωση AI, σχεδιασμό UI/UX και δημιουργία leads:
+- https://devcraft.gr/blog/custom-web-development-vs-templates-2026
+- https://devcraft.gr/blog/istqb-quality-assurance-why-it-matters
+- https://devcraft.gr/blog/ui-ux-design-trends-that-convert-visitors
+- https://devcraft.gr/blog/ai-transforming-modern-web-development
+- https://devcraft.gr/blog/why-your-website-is-not-generating-leads
+- https://devcraft.gr/blog/why-attractive-landing-page-is-important
+- https://devcraft.gr/blog/why-ai-chatbot-assistant-boosts-your-website
+- https://devcraft.gr/blog/website-tips-tricks-generate-more-leads

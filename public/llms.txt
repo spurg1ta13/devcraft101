@@ -2,6 +2,9 @@
 
 > AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.
 
+> Greek version: https://devcraft.gr/llms-el.txt
+> Full bilingual guide: https://devcraft.gr/llms-full.txt
+
 ## About
 
 DevCraft is a web development agency based in Thessaloniki, Greece. We specialize in custom web development using React, TypeScript, and Tailwind CSS. Our team includes ISTQB-certified QA engineers who guarantee bug-free launches.

@@ -1,0 +1,138 @@
+# DevCraft — Full Content Guide for AI Models
+
+> This is the comprehensive version of our LLM guide containing all page content in English and Greek.
+> For the concise English version, see: https://devcraft.gr/llms.txt
+> For the concise Greek version, see: https://devcraft.gr/llms-el.txt
+
+---
+
+## Company Overview (English)
+
+DevCraft is an AI-driven web development agency based in Thessaloniki, Greece. We build custom websites, bespoke UI/UX interfaces, and provide ISTQB-certified quality assurance — for brands that refuse to blend in.
+
+Our team has 10+ years of experience in the IT industry and works on international projects, guaranteeing the highest quality of service.
+
+### Core Team
+- Result-oriented Full-Stack Web Developer (React, TypeScript, Node.js, cloud-native architecture)
+- Certified UI/UX Designer crafting intuitive, research-driven interfaces
+- ISTQB-accredited QA Engineer ensuring highest standards of stability and security
+
+### Key Facts
+- 10+ years of experience
+- 100% client satisfaction
+- Zero-defect policy
+- Ongoing support after launch: maintenance packages, bug fixes, performance monitoring, security updates, feature enhancements
+- Transparent workflow: weekly progress updates, shared project boards, direct access to dedicated project lead
+- Cross-platform: products work flawlessly on iOS, Android, Windows, macOS
+
+---
+
+## Επισκόπηση Εταιρείας (Ελληνικά)
+
+Η DevCraft είναι μια εταιρεία ανάπτυξης ιστοσελίδων με τεχνητή νοημοσύνη, με έδρα τη Θεσσαλονίκη, Ελλάδα. Κατασκευάζουμε custom ιστοσελίδες, εξατομικευμένες διεπαφές UI/UX και παρέχουμε πιστοποιημένη διασφάλιση ποιότητας ISTQB — για brands που αρνούνται να περάσουν απαρατήρητα.
+
+Η ομάδα μας έχει 10+ χρόνια εμπειρίας στον κλάδο IT και εργάζεται σε διεθνή projects, εγγυώμενη την υψηλότερη ποιότητα υπηρεσιών.
+
+---
+
+## Services / Υπηρεσίες
+
+### 1. Web Development / Ανάπτυξη Ιστοσελίδων
+**EN:** React, TypeScript, Node.js, cloud-native architecture. Code that scales with your ambition. We build everything from minimalist landing pages to bespoke enterprise platforms.
+**EL:** React, TypeScript, Node.js, cloud-native αρχιτεκτονική. Κώδικας που κλιμακώνεται μαζί με τη φιλοδοξία σας. Κατασκευάζουμε τα πάντα, από μινιμαλιστικές landing pages μέχρι εξατομικευμένες εταιρικές πλατφόρμες.
+
+### 2. UI/UX Design / Σχεδιασμός UI/UX
+**EN:** Research-driven design that converts. Not templates — bespoke digital experiences. We move beyond templates and build tailor-made design systems.
+**EL:** Σχεδιασμός βασισμένος σε έρευνα που μετατρέπει. Όχι templates — εξατομικευμένες ψηφιακές εμπειρίες. Προχωράμε πέρα από τα templates και χτίζουμε tailor-made design systems.
+
+### 3. Quality Assurance / Διασφάλιση Ποιότητας
+**EN:** ISTQB-certified engineers test every feature before it touches users. Zero-defect launches. Rigorous testing processes guarantee bug-free products with maximum stability and security.
+**EL:** Πιστοποιημένοι ISTQB μηχανικοί ελέγχουν κάθε λειτουργία πριν φτάσει στους χρήστες. Zero-defect launches. Αυστηρές διαδικασίες δοκιμών εγγυώνται προϊόντα χωρίς σφάλματα με μέγιστη σταθερότητα και ασφάλεια.
+
+---
+
+## Pricing / Τιμοκατάλογος
+
+### MINI: The Clean Start / Το Καθαρό Ξεκίνημα — €600–€700
+**EN:** Single responsive landing page. Semantic HTML, alt-text, social redirects, CTA (email + phone). 1 language (Greek). Delivered in 2–3 working days.
+**EL:** Μία responsive landing page. Semantic HTML, alt-text, social redirects, CTA (email + τηλέφωνο). 1 γλώσσα (Ελληνικά). Παράδοση σε 2–3 εργάσιμες ημέρες.
+
+### MIDI: The Corporate Standard / Το Εταιρικό Πρότυπο — €900–€1,000
+**EN:** Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cookie compliance, Google Maps. 1 language. Delivered in 4–5 working days.
+**EL:** Έως 5 σελίδες με φόρμα lead, portfolio/gallery, sitemap & robots.txt, GDPR/cookies, Google Maps. 1 γλώσσα. Παράδοση σε 4–5 εργάσιμες ημέρες.
+
+### MAXI: The International Presence / Η Διεθνής Παρουσία — €1,300–€1,500 ⭐ Most Popular
+**EN:** Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL optimization, custom 404, GDPR compliance, Google Maps. Delivered in 7–10 working days.
+**EL:** Πολύγλωσση ιστοσελίδα (2–3 γλώσσες) με έως 7 σελίδες, εναλλαγή γλώσσας, localized meta tags, βελτιστοποίηση URL, custom 404, GDPR, Google Maps. Παράδοση σε 7–10 εργάσιμες ημέρες.
+
+### ELITE: The Elite Performance / Η Elite Απόδοση — €1,950–€2,500
+**EN:** Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email, image optimization, SEO-friendly URLs, ISTQB-certified QA. Delivered in 10–12 working days.
+**EL:** Έως 10 σελίδες με απεριόριστες γλώσσες, ενσωμάτωση AI assistant, custom animations, form-to-email, βελτιστοποίηση εικόνων, SEO-friendly URLs, πιστοποιημένες δοκιμές QA (ISTQB). Παράδοση σε 10–12 εργάσιμες ημέρες.
+
+*Prices do not include VAT. / Οι τιμές δεν περιλαμβάνουν ΦΠΑ.
+*Delivery starts after all content is received from the client. / Η παράδοση ξεκινά μετά τη λήψη όλου του περιεχομένου από τον πελάτη.
+
+Custom Annual Maintenance & Quality Assurance plans available upon request.
+Ετήσια πακέτα Συντήρησης & Διασφάλισης Ποιότητας διατίθενται κατόπιν αιτήματος.
+
+Full pricing: https://devcraft.gr/prices
+
+---
+
+## Process / Διαδικασία
+
+1. **Discover / Ανακάλυψη** — Goals, users, constraints. Deep research before going wide. / Στόχοι, χρήστες, περιορισμοί. Βαθιά έρευνα πριν προχωρήσουμε.
+2. **Design / Σχεδιασμός** — Wireframes → prototypes → pixel-perfect UI. Client approves every step. / Wireframes → prototypes → pixel-perfect UI. Ο πελάτης εγκρίνει κάθε βήμα.
+3. **Build / Κατασκευή** — Agile sprints, clean code, weekly demos. Full transparency. / Agile sprints, καθαρός κώδικας, εβδομαδιαία demos. Πλήρης διαφάνεια.
+4. **Ship / Παράδοση** — ISTQB-certified QA, performance tuning, and a flawless launch. / Πιστοποιημένο QA (ISTQB), βελτιστοποίηση απόδοσης και άψογο launch.
+
+---
+
+## Technology Stack
+
+React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
+
+---
+
+## Contact / Επικοινωνία
+
+- Website: https://devcraft.gr
+- Phone / Τηλέφωνο: +30 697 415 9157
+- Email: contact@devcraft.gr
+- LinkedIn: https://www.linkedin.com/company/devcraft-gr
+- Location / Τοποθεσία: Thessaloniki, Central Macedonia, Greece / Θεσσαλονίκη, Κεντρική Μακεδονία, Ελλάδα
+- We respond within 48 hours / Απαντάμε εντός 48 ωρών
+
+---
+
+## All Pages / Όλες οι Σελίδες
+
+- Home / Αρχική: https://devcraft.gr
+- About Us / Σχετικά: https://devcraft.gr/about
+- Prices / Τιμές: https://devcraft.gr/prices
+- Blog / Ιστολόγιο: https://devcraft.gr/blog
+- Privacy Policy / Πολιτική Απορρήτου: https://devcraft.gr/privacy-policy
+- Terms of Service / Όροι Χρήσης: https://devcraft.gr/terms-of-service
+
+### Sections on Home Page
+- Services / Υπηρεσίες: https://devcraft.gr/#services
+- Showcase: https://devcraft.gr/#showcase
+- Portfolio / Έργα: https://devcraft.gr/#projects
+- Process / Διαδικασία: https://devcraft.gr/#process
+- FAQ / Συχνές Ερωτήσεις: https://devcraft.gr/#faq
+- Contact / Επικοινωνία: https://devcraft.gr/#contact
+
+---
+
+## Blog Articles / Άρθρα Ιστολογίου
+
+All articles are available in English and Greek / Όλα τα άρθρα είναι διαθέσιμα στα Αγγλικά και Ελληνικά:
+
+1. Custom Web Development vs Templates (2026): https://devcraft.gr/blog/custom-web-development-vs-templates-2026
+2. ISTQB Quality Assurance — Why It Matters: https://devcraft.gr/blog/istqb-quality-assurance-why-it-matters
+3. UI/UX Design Trends That Convert Visitors: https://devcraft.gr/blog/ui-ux-design-trends-that-convert-visitors
+4. AI Transforming Modern Web Development: https://devcraft.gr/blog/ai-transforming-modern-web-development
+5. Why Your Website Is Not Generating Leads: https://devcraft.gr/blog/why-your-website-is-not-generating-leads
+6. Why an Attractive Landing Page Is Important: https://devcraft.gr/blog/why-attractive-landing-page-is-important
+7. Why an AI Chatbot Assistant Boosts Your Website: https://devcraft.gr/blog/why-ai-chatbot-assistant-boosts-your-website
+8. Website Tips & Tricks to Generate More Leads: https://devcraft.gr/blog/website-tips-tricks-generate-more-leads
