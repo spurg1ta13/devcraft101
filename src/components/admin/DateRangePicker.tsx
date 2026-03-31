@@ -52,12 +52,13 @@ export const DateRangePicker = ({ range, onChange }: Props) => {
         <PopoverContent className="w-auto p-0" align="end">
           <Calendar
             mode="range"
+            defaultMonth={range.from}
             selected={{ from: range.from, to: range.to }}
             onSelect={(sel) => {
-              if (sel?.from && sel?.to) {
+              if (sel?.from) {
                 const from = new Date(sel.from);
                 from.setHours(0, 0, 0, 0);
-                const to = new Date(sel.to);
+                const to = sel.to ? new Date(sel.to) : new Date(sel.from);
                 to.setHours(23, 59, 59, 999);
                 onChange({ from, to });
               }
