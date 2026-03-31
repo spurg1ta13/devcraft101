@@ -63,7 +63,7 @@ LinkedIn: https://www.linkedin.com/company/devcraft-gr
 
 ## Blog
 
-We publish articles on web development, AI integration, UI/UX design, and lead generation:
+We publish articles on web development, AI integration, UI/UX design, security, and lead generation:
 - https://devcraft.gr/blog/custom-web-development-vs-templates-2026
 - https://devcraft.gr/blog/istqb-quality-assurance-why-it-matters
 - https://devcraft.gr/blog/ui-ux-design-trends-that-convert-visitors
@@ -72,3 +72,7 @@ We publish articles on web development, AI integration, UI/UX design, and lead g
 - https://devcraft.gr/blog/why-attractive-landing-page-is-important
 - https://devcraft.gr/blog/why-ai-chatbot-assistant-boosts-your-website
 - https://devcraft.gr/blog/website-tips-tricks-generate-more-leads
+- https://devcraft.gr/blog/how-to-choose-web-development-agency-greece
+- https://devcraft.gr/blog/website-security-best-practices-small-business
+- https://devcraft.gr/blog/complete-guide-website-maintenance-support
+- https://devcraft.gr/blog/why-website-speed-matters-seo-conversions
