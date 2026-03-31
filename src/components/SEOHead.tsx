@@ -22,12 +22,12 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "DevCraft | AI-Powered Web Development Agency in Greece",
-  el: "DevCraft | Κατασκευή Ιστοσελίδων Θεσσαλονίκη — Web Development & QA",
+  en: "DevCraft | Web Design, Development & ISTQB Quality Testing in Greece",
+  el: "DevCraft | Κατασκευή Ιστοσελίδων Θεσσαλονίκη — Design, Development & QA",
 };
 const DEFAULT_DESC = {
-  en: "Custom web development agency in Thessaloniki, Greece. AI-driven websites, bespoke UI/UX design, and ISTQB-certified QA testing. Plans from €600. React, TypeScript, Tailwind CSS.",
-  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Επαγγελματική δημιουργία ιστοσελίδων, σχεδιασμός UI/UX και πιστοποιημένος έλεγχος ποιότητας ISTQB. Πακέτα από €600.",
+  en: "Award-quality web design & development agency in Thessaloniki, Greece. Every project includes ISTQB-certified testing, bespoke UI/UX design, and AI-driven development. Plans from €600.",
+  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Κάθε project περιλαμβάνει ISTQB testing, σχεδιασμός UI/UX design και πιστοποιημένη διασφάλιση ποιότητας. Πακέτα από €600.",
 };
 const DEFAULT_KEYWORDS = {
   en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",

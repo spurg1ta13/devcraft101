@@ -34,8 +34,8 @@ export const translations = {
   // Services
   services: {
     label: { en: "What we do", el: "Τι κάνουμε" },
-    heading1: { en: "Three things.", el: "Τρία πράγματα." },
-    heading2: { en: "Done right.", el: "Σωστά." },
+    heading1: { en: "Design, Development", el: "Σχεδιασμός, Ανάπτυξη" },
+    heading2: { en: "& Quality Testing.", el: "& Ποιοτικός Έλεγχος." },
     items: [
       {
         title: { en: "Development", el: "Ανάπτυξη" },
@@ -67,8 +67,8 @@ export const translations = {
   // Showcase
   showcase: {
     label: { en: "Selected work", el: "Επιλεγμένα έργα" },
-    heading1: { en: "Built to", el: "Σχεδιασμένα για να" },
-    heading2: { en: "stand out.", el: "ξεχωρίζουν." },
+    heading1: { en: "Project quality", el: "Ποιότητα project" },
+    heading2: { en: "speaks louder.", el: "που μιλάει μόνη της." },
     projects: [
       {
         title: { en: "Seamless Experience", el: "Απρόσκοπτη Εμπειρία" },
