@@ -34,8 +34,8 @@ export const translations = {
   // Services
   services: {
     label: { en: "What we do", el: "Τι κάνουμε" },
-    heading1: { en: "Three things.", el: "Τρία πράγματα." },
-    heading2: { en: "Done right.", el: "Σωστά." },
+    heading1: { en: "Design, Development", el: "Σχεδιασμός, Ανάπτυξη" },
+    heading2: { en: "& Quality Testing.", el: "& Ποιοτικός Έλεγχος." },
     items: [
       {
         title: { en: "Development", el: "Ανάπτυξη" },
