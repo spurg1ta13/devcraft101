@@ -1,6 +1,6 @@
-# DevCraft — AI-Driven Web Development Agency
+# DevCraft — Custom Web Development Agency in Thessaloniki, Greece
 
-> AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in.
+> AI-driven custom web development, bespoke UI/UX interfaces, and ISTQB-certified quality assurance — crafted for brands that refuse to blend in. Based in Thessaloniki, serving clients worldwide.
 
 > Greek version: https://devcraft.gr/llms-el.txt
 > Full bilingual guide: https://devcraft.gr/llms-full.txt
