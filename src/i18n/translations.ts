@@ -67,8 +67,8 @@ export const translations = {
   // Showcase
   showcase: {
     label: { en: "Selected work", el: "Επιλεγμένα έργα" },
-    heading1: { en: "Built to", el: "Σχεδιασμένα για να" },
-    heading2: { en: "stand out.", el: "ξεχωρίζουν." },
+    heading1: { en: "Project quality", el: "Ποιότητα project" },
+    heading2: { en: "speaks louder.", el: "που μιλάει μόνη της." },
     projects: [
       {
         title: { en: "Seamless Experience", el: "Απρόσκοπτη Εμπειρία" },
