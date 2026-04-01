@@ -114,7 +114,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MIDI: The Corporate Standard",
                 description:
-                  "Up to 5 pages (Home, Services, About, etc.) with lead form, gallery/portfolio, sitemap & robots.txt, GDPR/cookie compliance, Google Maps integration, and technical SEO. 1 language. Delivered in 4–5 working days.",
+                  "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, and SSL certificate. 1 language. Delivered in 4–5 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",

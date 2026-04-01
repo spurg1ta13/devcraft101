@@ -53,21 +53,21 @@ Our team has 10+ years of experience in the IT industry and works on internation
 
 ## Pricing / Τιμοκατάλογος
 
-### MINI: The Clean Start / Το Καθαρό Ξεκίνημα — €600–€700
-**EN:** Single responsive landing page. Semantic HTML, alt-text, social redirects, CTA (email + phone). 1 language (Greek). Delivered in 2–3 working days.
-**EL:** Μία responsive landing page. Semantic HTML, alt-text, social redirects, CTA (email + τηλέφωνο). 1 γλώσσα (Ελληνικά). Παράδοση σε 2–3 εργάσιμες ημέρες.
+### MINI: The Clean Start / Καθαρή Αρχή — €600–€700
+**EN:** Complete single-page website with all essential sections (Home, About, Services, Contact). SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language (Greek). Delivered in 2 working days.
+**EL:** Ολοκληρωμένη μονοσέλιδη ιστοσελίδα με όλες τις βασικές ενότητες (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία). Ορατότητα SEO, σύνδεση social media, εργαλεία επικοινωνίας, συμμόρφωση GDPR & cookies, αυτόματη πολιτική απορρήτου & όροι, πιστοποιητικό SSL. 1 γλώσσα (Ελληνικά). Παράδοση σε 2 εργάσιμες ημέρες.
 
-### MIDI: The Corporate Standard / Το Εταιρικό Πρότυπο — €900–€1,000
-**EN:** Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cookie compliance, Google Maps. 1 language. Delivered in 4–5 working days.
-**EL:** Έως 5 σελίδες με φόρμα lead, portfolio/gallery, sitemap & robots.txt, GDPR/cookies, Google Maps. 1 γλώσσα. Παράδοση σε 4–5 εργάσιμες ημέρες.
+### MIDI: The Corporate Standard / Εταιρικό Στάνταρ — €900–€1,000
+**EN:** Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, SSL certificate. 1 language. Delivered in 4–5 working days.
+**EL:** Έως 5 σελίδες με gallery/portfolio, εργαλεία επικοινωνίας, sitemap & robots.txt, αυτόματη πολιτική απορρήτου & όροι, συμμόρφωση GDPR & cookies, Google Maps, πιστοποιητικό SSL. 1 γλώσσα. Παράδοση σε 4–5 εργάσιμες ημέρες.
 
-### MAXI: The International Presence / Η Διεθνής Παρουσία — €1,300–€1,500 ⭐ Most Popular
-**EN:** Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL optimization, custom 404, GDPR compliance, Google Maps. Delivered in 7–10 working days.
-**EL:** Πολύγλωσση ιστοσελίδα (2–3 γλώσσες) με έως 7 σελίδες, εναλλαγή γλώσσας, localized meta tags, βελτιστοποίηση URL, custom 404, GDPR, Google Maps. Παράδοση σε 7–10 εργάσιμες ημέρες.
+### MAXI: The International Presence / Διεθνής Παρουσία — €1,300–€1,500 ⭐ Most Popular
+**EN:** Up to 7 pages with 2–3 languages and switcher. Lead capture form with spam protection, gallery/portfolio, localized SEO, custom error & loading pages, admin dashboard for messages, privacy policy & terms auto-generated, GDPR compliance, Google Maps, SSL certificate. Delivered in 6–8 working days.
+**EL:** Έως 7 σελίδες με 2–3 γλώσσες και εναλλαγή. Φόρμα επικοινωνίας με προστασία spam, gallery/portfolio, τοπικοποιημένο SEO, custom σελίδες σφάλματος & φόρτωσης, πίνακας διαχείρισης μηνυμάτων, αυτόματη πολιτική απορρήτου & όροι, GDPR, Google Maps, πιστοποιητικό SSL. Παράδοση σε 6–8 εργάσιμες ημέρες.
 
-### ELITE: The Elite Performance / Η Elite Απόδοση — €1,950–€2,500
-**EN:** Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email, image optimization, SEO-friendly URLs, ISTQB-certified QA. Delivered in 10–12 working days.
-**EL:** Έως 10 σελίδες με απεριόριστες γλώσσες, ενσωμάτωση AI assistant, custom animations, form-to-email, βελτιστοποίηση εικόνων, SEO-friendly URLs, πιστοποιημένες δοκιμές QA (ISTQB). Παράδοση σε 10–12 εργάσιμες ημέρες.
+### ELITE: The Elite Performance / Ελίτ Απόδοση — €1,950–€2,500
+**EN:** Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, custom error & loading pages, admin dashboard, privacy policy & terms auto-generated, GDPR compliance, Google Maps, ISTQB-certified QA, SSL certificate. Delivered in 10–11 working days.
+**EL:** Έως 10 σελίδες + διαδραστικά εργαλεία με απεριόριστες γλώσσες. AI βοηθός, φόρμα επικοινωνίας & κρατήσεων με προστασία spam, custom animations, αυτόματη βελτιστοποίηση εικόνων, SEO-βελτιστοποιημένη δομή URL, custom σελίδες σφάλματος & φόρτωσης, πίνακας διαχείρισης, αυτόματη πολιτική απορρήτου & όροι, GDPR, Google Maps, πιστοποιημένο QA (ISTQB), πιστοποιητικό SSL. Παράδοση σε 10–11 εργάσιμες ημέρες.
 
 *Prices do not include VAT. / Οι τιμές δεν περιλαμβάνουν ΦΠΑ.
 *Delivery starts after all content is received from the client. / Η παράδοση ξεκινά μετά τη λήψη όλου του περιεχομένου από τον πελάτη.
