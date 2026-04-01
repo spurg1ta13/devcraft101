@@ -89,7 +89,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MINI: The Clean Start",
                 description:
-                  "Single landing page with mobile & desktop responsive design, social redirects, semantic HTML, alt-text for all images, and CTA integration. 1 language (Greek). Delivered in 2–3 working days.",
+                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language (Greek). Delivered in 2 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
