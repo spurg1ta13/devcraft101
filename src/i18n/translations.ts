@@ -536,7 +536,7 @@ export const translations = {
             "SSL Security Certificate",
           ],
           el: [
-            "1 Responsive Landing Page",
+            "Ολοκληρωμένη Μονοσέλιδη Ιστοσελίδα (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία)",
             "1 Γλώσσα (Ελληνικά)",
             "Ορατότητα στις Μηχανές Αναζήτησης (SEO)",
             "Σύνδεση Social Media",
