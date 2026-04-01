@@ -17,7 +17,6 @@ const Footer = lazy(() => import("@/components/landing/Footer"));
 
 const Index = () => {
   useScrollSpy();
-  useScrollSpy();
 
   return (
     <div className="min-h-screen bg-background">
