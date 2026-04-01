@@ -15,17 +15,17 @@ We serve clients in Greece and worldwide, with full bilingual support (English &
 
 We offer four service plans. The MAXI plan is our most popular choice:
 
-### MINI: The Clean Start (€600–€700)
-Single responsive landing page. Includes semantic HTML, alt-text, social redirects, and CTA integration. 1 language (Greek). Delivered in 2–3 working days.
+### MINI: The Clean Start (€500–€600)
+Single responsive landing page. 1 language (Greek). Includes SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, auto-generated privacy policy & terms, and SSL certificate. Delivered in 2 working days.
 
-### MIDI: The Corporate Standard (€900–€1,000)
-Up to 5 pages with lead form, portfolio/gallery, sitemap & robots.txt, GDPR/cookie compliance, and Google Maps. 1 language. Delivered in 4–5 working days.
+### MIDI: The Corporate Standard (€750–€900)
+Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Delivered in 4–5 working days.
 
 ### MAXI: The International Presence (€1,300–€1,500) ⭐ Most Popular
-Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL optimization, custom 404 pages, GDPR compliance, and Google Maps. Delivered in 7–10 working days.
+Up to 7 pages with 2–3 languages and language switcher. Includes lead capture form with spam protection, localized SEO, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Delivered in 6–8 working days.
 
 ### ELITE: The Elite Performance (€1,950–€2,500)
-Up to 10 pages with unlimited languages, AI assistant integration, custom animations, form-to-email logic, automatic image optimization, SEO-friendly URLs, and ISTQB-certified QA. Delivered in 10–12 working days.
+Up to 10 pages + interactive tools with unlimited languages. Includes AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.
 
 *Prices do not include VAT.
 *Delivery starts after all content is received from the client.
