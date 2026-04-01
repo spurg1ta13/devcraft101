@@ -507,64 +507,80 @@ export const translations = {
     heading1: { en: "ISTQB Certified Web Development", el: "Πιστοποιημένη Ανάπτυξη Ιστοσελίδων ISTQB" },
     heading2: { en: "in Thessaloniki", el: "στη Θεσσαλονίκη" },
     subtitle: {
-      en: "From single landing pages to multilingual enterprise platforms — every plan includes responsive design, semantic HTML, and technical SEO.",
-      el: "Από μονοσέλιδα landing pages έως πολύγλωσσες εταιρικές πλατφόρμες — κάθε πακέτο περιλαμβάνει responsive design, σημασιολογική HTML και τεχνικό SEO.",
+      en: "From a single landing page to a multilingual platform — every plan includes responsive design, search engine visibility, and ongoing support so you never feel left on your own.",
+      el: "Από μονοσέλιδο landing page έως πολύγλωσση πλατφόρμα — κάθε πακέτο περιλαμβάνει responsive design, ορατότητα στις μηχανές αναζήτησης και συνεχή υποστήριξη ώστε να μην μείνετε ποτέ μόνοι.",
     },
     plans: [
       {
         name: { en: "MINI", el: "MINI" },
         tagline: { en: "The Clean Start", el: "Καθαρή Αρχή" },
+        bestFor: {
+          en: "Perfect for new businesses or personal brands making their first impression.",
+          el: "Ιδανικό για νέες επιχειρήσεις ή προσωπικά brands που κάνουν την πρώτη τους εντύπωση.",
+        },
         price: { en: "€600 – €700", el: "€600 – €700" },
         delivery: { en: "2–3 working days", el: "2–3 εργάσιμες ημέρες" },
         description: {
-          en: "Single responsive landing page with social redirects, semantic HTML, alt-text, and CTA integration. Perfect for businesses launching their first online presence.",
-          el: "Μονοσέλιδο responsive landing page με social redirects, σημασιολογική HTML, alt-text και ενσωμάτωση CTA. Ιδανικό για επιχειρήσεις που ξεκινούν την online παρουσία τους.",
+          en: "A beautifully crafted landing page that puts your business on the map. Built for speed, mobile-ready, and designed to turn visitors into customers from day one.",
+          el: "Ένα προσεγμένο landing page που φέρνει την επιχείρησή σας online. Γρήγορο, mobile-ready και σχεδιασμένο να μετατρέπει επισκέπτες σε πελάτες από την πρώτη μέρα.",
         },
         features: {
-          en: ["1 Landing Page", "1 Language (Greek)", "Mobile + Desktop Responsive", "Semantic HTML & Alt-text", "Social Redirects", "CTA (Email + Phone)"],
-          el: ["1 Landing Page", "1 Γλώσσα (Ελληνικά)", "Mobile + Desktop Responsive", "Σημασιολογική HTML & Alt-text", "Social Redirects", "CTA (Email + Τηλέφωνο)"],
+          en: ["1 Landing Page", "1 Language (Greek)", "Mobile & Desktop Ready", "Search Engine Visibility (SEO)", "Social Media Integration", "Direct Contact & Lead Conversion Tools", "Post-delivery guidance included"],
+          el: ["1 Landing Page", "1 Γλώσσα (Ελληνικά)", "Mobile & Desktop Ready", "Ορατότητα στις Μηχανές Αναζήτησης (SEO)", "Σύνδεση Social Media", "Εργαλεία Επικοινωνίας & Μετατροπής Leads", "Καθοδήγηση μετά την παράδοση"],
         },
       },
       {
         name: { en: "MIDI", el: "MIDI" },
         tagline: { en: "The Corporate Standard", el: "Εταιρικό Στάνταρ" },
+        bestFor: {
+          en: "For established businesses looking to automate leads and build trust.",
+          el: "Για καθιερωμένες επιχειρήσεις που θέλουν να αυτοματοποιήσουν leads και να χτίσουν εμπιστοσύνη.",
+        },
         price: { en: "€900 – €1,000", el: "€900 – €1.000" },
         delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
         description: {
-          en: "Multi-page website with lead form, portfolio, sitemap, GDPR compliance, and Google Maps. Built for established businesses that need a professional online hub.",
-          el: "Πολυσέλιδη ιστοσελίδα με φόρμα leads, portfolio, sitemap, συμμόρφωση GDPR και Google Maps. Σχεδιασμένο για καθιερωμένες επιχειρήσεις που χρειάζονται επαγγελματική online παρουσία.",
+          en: "A professional multi-page website that works for you around the clock — capturing leads, showcasing your work, and giving customers confidence in your brand.",
+          el: "Μια επαγγελματική πολυσέλιδη ιστοσελίδα που δουλεύει για εσάς όλο το εικοσιτετράωρο — συλλέγει leads, προβάλλει τη δουλειά σας και εμπνέει εμπιστοσύνη στην επωνυμία σας.",
         },
         features: {
-          en: ["Up to 5 Pages", "1 Language", "Lead Form & Portfolio", "Sitemap & Robots.txt", "GDPR / Cookie Compliance", "Google Maps Integration"],
-          el: ["Έως 5 Σελίδες", "1 Γλώσσα", "Φόρμα Leads & Portfolio", "Sitemap & Robots.txt", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
+          en: ["Up to 5 Pages", "1 Language", "Conversion-Optimized Contact Forms", "Professional Work Showcase", "Sitemap & Robots.txt", "Full Legal & Data Protection Setup (GDPR)", "Google Maps Integration", "Post-delivery guidance included"],
+          el: ["Έως 5 Σελίδες", "1 Γλώσσα", "Φόρμες Επικοινωνίας Βελτιστοποιημένες για Μετατροπές", "Επαγγελματική Προβολή Έργων", "Sitemap & Robots.txt", "Πλήρης Νομική & Προστασία Δεδομένων (GDPR)", "Ενσωμάτωση Google Maps", "Καθοδήγηση μετά την παράδοση"],
         },
       },
       {
         name: { en: "MAXI", el: "MAXI" },
         tagline: { en: "The International Presence", el: "Διεθνής Παρουσία" },
+        bestFor: {
+          en: "For companies expanding to global markets with multi-language needs.",
+          el: "Για εταιρείες που επεκτείνονται σε διεθνείς αγορές με πολύγλωσσες ανάγκες.",
+        },
         price: { en: "€1,300 – €1,500", el: "€1.300 – €1.500" },
         delivery: { en: "7–10 working days", el: "7–10 εργάσιμες ημέρες" },
         description: {
-          en: "Multilingual website with language switcher, localized meta tags, URL optimization, and custom 404 pages. Ideal for companies expanding into international markets.",
-          el: "Πολύγλωσση ιστοσελίδα με εναλλαγή γλωσσών, τοπικά meta tags, βελτιστοποίηση URL και custom σελίδες 404. Ιδανικό για εταιρείες που επεκτείνονται σε διεθνείς αγορές.",
+          en: "Reach customers in their own language with a fully localized website. Includes hands-on training so you can manage your site with confidence — we're your partner, not just your developer.",
+          el: "Προσεγγίστε πελάτες στη γλώσσα τους με μια πλήρως τοπικοποιημένη ιστοσελίδα. Περιλαμβάνει εκπαίδευση 1:1 ώστε να διαχειρίζεστε τον ιστότοπό σας με αυτοπεποίθηση — είμαστε συνεργάτες σας, όχι απλά developers.",
         },
         features: {
-          en: ["Up to 7 Pages", "2–3 Languages", "Language Switcher", "Localized Meta Tags", "URL Structure Optimization", "Custom 404 & Loading States", "GDPR / Cookie Compliance", "Google Maps Integration"],
-          el: ["Έως 7 Σελίδες", "2–3 Γλώσσες", "Εναλλαγή Γλωσσών", "Τοπικά Meta Tags", "Βελτιστοποίηση URL", "Custom 404 & Loading States", "Συμμόρφωση GDPR / Cookies", "Ενσωμάτωση Google Maps"],
+          en: ["Up to 7 Pages", "2–3 Languages with Switcher", "Localized Content & SEO per Language", "Global SEO & Performance Tuning", "Custom Error & Loading Pages", "Full Legal & Data Protection Setup (GDPR)", "Google Maps Integration", "1:1 Site Management Training"],
+          el: ["Έως 7 Σελίδες", "2–3 Γλώσσες με Εναλλαγή", "Τοπικοποιημένο Περιεχόμενο & SEO ανά Γλώσσα", "Διεθνές SEO & Βελτιστοποίηση Απόδοσης", "Custom Σελίδες Σφάλματος & Φόρτωσης", "Πλήρης Νομική & Προστασία Δεδομένων (GDPR)", "Ενσωμάτωση Google Maps", "Εκπαίδευση Διαχείρισης Ιστοσελίδας 1:1"],
         },
       },
       {
         name: { en: "ELITE", el: "ELITE" },
         tagline: { en: "The Elite Performance", el: "Ελίτ Απόδοση" },
+        bestFor: {
+          en: "High-scale platforms for industry leaders who need custom logic and AI.",
+          el: "Πλατφόρμες μεγάλης κλίμακας για ηγέτες του κλάδου που χρειάζονται εξειδικευμένη λογική και AI.",
+        },
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
         delivery: { en: "10–12 working days", el: "10–12 εργάσιμες ημέρες" },
         description: {
-          en: "Full-scale platform with unlimited languages, AI assistant, custom animations, form-to-email logic, automatic image optimization, and ISTQB-certified QA.",
-          el: "Πλήρης πλατφόρμα με απεριόριστες γλώσσες, AI βοηθό, custom animations, form-to-email, αυτόματη βελτιστοποίηση εικόνων και πιστοποιημένο QA ISTQB.",
+          en: "Enterprise-grade platform with intelligent automation, AI-powered features, and priority quality assurance. Built for businesses that demand the best — certified to ISTQB standards.",
+          el: "Εταιρική πλατφόρμα με ευφυή αυτοματισμό, λειτουργίες AI και διασφάλιση ποιότητας προτεραιότητας. Χτισμένη για επιχειρήσεις που απαιτούν το καλύτερο — πιστοποιημένη κατά ISTQB.",
         },
         features: {
-          en: ["Up to 10 Pages + Calculator", "Unlimited Languages", "AI Assistant Integration", "Custom Animations", "Form-to-Email Logic", "Automatic Image Optimization", "SEO-friendly URLs", "ISTQB-Certified QA Testing"],
-          el: ["Έως 10 Σελίδες + Calculator", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Custom Animations", "Form-to-Email", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-friendly URLs", "Πιστοποιημένο QA ISTQB"],
+          en: ["Up to 10 Pages + Interactive Tools", "Unlimited Languages", "AI Assistant Integration", "Advanced Automation & Custom Logic", "Automatic Image Optimization", "SEO-Optimized URL Structure", "Priority Quality Assurance (ISTQB Certified)", "Dedicated Support & Training"],
+          el: ["Έως 10 Σελίδες + Διαδραστικά Εργαλεία", "Απεριόριστες Γλώσσες", "Ενσωμάτωση AI Βοηθού", "Προηγμένη Αυτοματοποίηση & Custom Λογική", "Αυτόματη Βελτιστοποίηση Εικόνων", "SEO-Βελτιστοποιημένη Δομή URL", "Διασφάλιση Ποιότητας Προτεραιότητας (Πιστοποίηση ISTQB)", "Αποκλειστική Υποστήριξη & Εκπαίδευση"],
         },
       },
     ],
