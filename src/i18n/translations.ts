@@ -518,7 +518,7 @@ export const translations = {
           en: "Perfect for new businesses or personal brands making their first impression online.",
           el: "Ιδανικό για νέες επιχειρήσεις ή προσωπικά brands που κάνουν την πρώτη τους εντύπωση online.",
         },
-        price: { en: "€500 – €600", el: "€500 – €600" },
+        price: { en: "€600 – €700", el: "€600 – €700" },
         delivery: { en: "2 working days", el: "2 εργάσιμες ημέρες" },
         description: {
           en: "A beautifully crafted landing page that puts your business on the map. Mobile-ready, secure, and designed to turn visitors into customers from day one.",
