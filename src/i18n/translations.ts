@@ -518,7 +518,7 @@ export const translations = {
           en: "Perfect for new businesses or personal brands making their first impression online.",
           el: "Ιδανικό για νέες επιχειρήσεις ή προσωπικά brands που κάνουν την πρώτη τους εντύπωση online.",
         },
-        price: { en: "€500 – €600", el: "€500 – €600" },
+        price: { en: "€600 – €700", el: "€600 – €700" },
         delivery: { en: "2 working days", el: "2 εργάσιμες ημέρες" },
         description: {
           en: "A beautifully crafted landing page that puts your business on the map. Mobile-ready, secure, and designed to turn visitors into customers from day one.",
@@ -554,7 +554,7 @@ export const translations = {
           en: "For established businesses looking to build trust and showcase their work professionally.",
           el: "Για καθιερωμένες επιχειρήσεις που θέλουν να χτίσουν εμπιστοσύνη και να προβάλουν τη δουλειά τους επαγγελματικά.",
         },
-        price: { en: "€750 – €900", el: "€750 – €900" },
+        price: { en: "€900 – €1,000", el: "€900 – €1.000" },
         delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
         description: {
           en: "A professional multi-page website that works for you around the clock — showcasing your services, displaying your work, and giving customers confidence in your brand.",
