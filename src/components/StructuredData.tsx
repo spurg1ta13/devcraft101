@@ -89,7 +89,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MINI: The Clean Start",
                 description:
-                  "Single landing page with mobile & desktop responsive design, social redirects, semantic HTML, alt-text for all images, and CTA integration. 1 language (Greek). Delivered in 2–3 working days.",
+                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language (Greek). Delivered in 2 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -114,7 +114,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MIDI: The Corporate Standard",
                 description:
-                  "Up to 5 pages (Home, Services, About, etc.) with lead form, gallery/portfolio, sitemap & robots.txt, GDPR/cookie compliance, Google Maps integration, and technical SEO. 1 language. Delivered in 4–5 working days.",
+                  "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, and SSL certificate. 1 language. Delivered in 4–5 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -139,7 +139,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MAXI: The International Presence",
                 description:
-                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized meta tags, URL structure optimization, custom 404 & loading states, GDPR compliance, lead form, and Google Maps. Delivered in 7–10 working days.",
+                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized SEO, lead capture form with spam protection, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Delivered in 6–8 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -164,7 +164,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "ELITE: The Elite Performance",
                 description:
-                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing. Delivered in 10–12 working days.",
+                  "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -227,7 +227,7 @@ const WebSiteSchema = () => {
     name: "DevCraft",
     url: "https://devcraft.gr",
     description:
-      "AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance services in Thessaloniki, Greece. Service plans from €500 to €2,500.",
+      "AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance services in Thessaloniki, Greece. Service plans from €600 to €2,500.",
     publisher: { "@id": "https://devcraft.gr/#organization" },
     inLanguage: ["en", "el"],
   };
