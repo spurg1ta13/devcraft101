@@ -46,7 +46,7 @@ const PricingSection = () => {
                 role="listitem"
                 itemScope
                 itemType="https://schema.org/Offer"
-                className={`group relative rounded-2xl border p-6 md:p-8 transition-all duration-700 ${
+                className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-700 ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 } ${
                   isElite
@@ -78,12 +78,12 @@ const PricingSection = () => {
                   </div>
                 </div>
 
-                <p className="text-[11px] text-primary/80 italic leading-relaxed mb-3">
+                <p className="text-[11px] text-primary/80 italic leading-relaxed mb-3 lg:min-h-[2rem]">
                   {t(plan.bestFor, lang)}
                 </p>
 
                 <p
-                  className="text-sm text-foreground/70 leading-relaxed mb-5"
+                  className="text-sm text-foreground/70 leading-relaxed mb-5 lg:min-h-[5rem]"
                   itemProp="description"
                 >
                   {t(plan.description, lang)}
@@ -109,7 +109,7 @@ const PricingSection = () => {
                   </p>
                 </div>
 
-                <ul className="space-y-2" aria-label={`${t(plan.name, lang)} features`}>
+                <ul className="space-y-2 flex-1" aria-label={`${t(plan.name, lang)} features`}>
                   {plan.features[lang].map((feature, fi) => (
                     <li key={fi} className="flex items-start gap-2 text-sm text-foreground/80">
                       <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isElite ? "text-primary" : "text-muted-foreground/60"}`} />
