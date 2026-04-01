@@ -164,7 +164,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "ELITE: The Elite Performance",
                 description:
-                  "Up to 10 pages with unlimited languages, custom animations, AI assistant integration, form-to-email logic, automatic image optimization, calculator functionality, SEO-friendly URLs, and ISTQB-certified QA testing. Delivered in 10–12 working days.",
+                  "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
