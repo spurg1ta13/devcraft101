@@ -554,7 +554,7 @@ export const translations = {
           en: "For established businesses looking to build trust and showcase their work professionally.",
           el: "Για καθιερωμένες επιχειρήσεις που θέλουν να χτίσουν εμπιστοσύνη και να προβάλουν τη δουλειά τους επαγγελματικά.",
         },
-        price: { en: "€750 – €900", el: "€750 – €900" },
+        price: { en: "€900 – €1,000", el: "€900 – €1.000" },
         delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
         description: {
           en: "A professional multi-page website that works for you around the clock — showcasing your services, displaying your work, and giving customers confidence in your brand.",
