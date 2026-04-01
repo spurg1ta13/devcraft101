@@ -78,18 +78,18 @@ const PricingSection = () => {
                   </div>
                 </div>
 
-                <p className="text-[11px] text-primary/80 italic leading-relaxed mb-3 lg:min-h-[2rem]">
+                <p className="text-[11px] text-primary/80 italic leading-relaxed mb-3 lg:min-h-[2.5rem]">
                   {t(plan.bestFor, lang)}
                 </p>
 
                 <p
-                  className="text-sm text-foreground/70 leading-relaxed mb-5 lg:min-h-[5rem]"
+                  className="text-sm text-foreground/70 leading-relaxed mb-5 lg:min-h-[7rem]"
                   itemProp="description"
                 >
                   {t(plan.description, lang)}
                 </p>
 
-                <div className="mb-5">
+                <div className="mb-5 mt-auto">
                   <span
                     className="text-2xl md:text-3xl font-black tracking-tight text-foreground"
                     itemProp="price"
@@ -109,7 +109,7 @@ const PricingSection = () => {
                   </p>
                 </div>
 
-                <ul className="space-y-2 flex-1" aria-label={`${t(plan.name, lang)} features`}>
+                <ul className="space-y-2" aria-label={`${t(plan.name, lang)} features`}>
                   {plan.features[lang].map((feature, fi) => (
                     <li key={fi} className="flex items-start gap-2 text-sm text-foreground/80">
                       <Check className={`h-4 w-4 mt-0.5 shrink-0 ${isElite ? "text-primary" : "text-muted-foreground/60"}`} />
