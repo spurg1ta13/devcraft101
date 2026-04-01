@@ -141,6 +141,11 @@ const Prices = () => {
                       </span>
                     </div>
 
+                    {/* Best for subtitle */}
+                    <p className="text-[11px] text-primary/80 italic leading-relaxed mb-4">
+                      {t(plan.bestFor, lang)}
+                    </p>
+
                     {/* Description — fixed height on lg so prices align */}
                     <p className="text-sm text-foreground/60 leading-relaxed mb-6 lg:min-h-[5.5rem]" itemProp="description">
                       {t(plan.description, lang)}

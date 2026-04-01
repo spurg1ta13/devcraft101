@@ -78,6 +78,10 @@ const PricingSection = () => {
                   </div>
                 </div>
 
+                <p className="text-[11px] text-primary/80 italic leading-relaxed mb-3">
+                  {t(plan.bestFor, lang)}
+                </p>
+
                 <p
                   className="text-sm text-foreground/70 leading-relaxed mb-5"
                   itemProp="description"
