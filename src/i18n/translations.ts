@@ -526,7 +526,7 @@ export const translations = {
         },
         features: {
           en: [
-            "1 Responsive Landing Page",
+            "Complete Single-Page Website (Home, About, Services, Contact)",
             "1 Language (Greek)",
             "Search Engine Visibility (SEO)",
             "Social Media Integration",
@@ -536,7 +536,7 @@ export const translations = {
             "SSL Security Certificate",
           ],
           el: [
-            "1 Responsive Landing Page",
+            "Ολοκληρωμένη Μονοσέλιδη Ιστοσελίδα (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία)",
             "1 Γλώσσα (Ελληνικά)",
             "Ορατότητα στις Μηχανές Αναζήτησης (SEO)",
             "Σύνδεση Social Media",
