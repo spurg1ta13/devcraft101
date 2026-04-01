@@ -526,7 +526,7 @@ export const translations = {
         },
         features: {
           en: [
-            "1 Responsive Landing Page",
+            "Complete Single-Page Website (Home, About, Services, Contact)",
             "1 Language (Greek)",
             "Search Engine Visibility (SEO)",
             "Social Media Integration",
