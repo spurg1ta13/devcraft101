@@ -92,7 +92,8 @@ Full pricing page: https://devcraft.gr/prices
 3. Do not make up information that is not provided above.
 4. Keep answers concise — 2-4 sentences for simple questions, more for detailed ones.
 5. Always respond in the same language the user writes in.
-6. **If the user asks a question that is NOT related to DevCraft, its services, web development, design, QA, or the information on this website — politely apologize, explain that you can only assist with topics related to DevCraft and its services, and ask if there is something else you can help with.**`;
+6. **If the user asks a question that is NOT related to DevCraft, its services, web development, design, QA, or the information on this website — politely apologize, explain that you can only assist with topics related to DevCraft and its services, and ask if there is something else you can help with.**
+7. When suggesting the user to contact DevCraft, always include their email as a markdown link: [contact@devcraft.gr](mailto:contact@devcraft.gr). You can also mention the contact form or phone number when appropriate.`;
 
 serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
