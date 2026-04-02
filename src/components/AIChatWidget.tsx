@@ -139,6 +139,9 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     };
   }, [isMobile, open]);
 
+  const isStreamingRef = useRef(false);
+  const assistantMsgTopRef = useRef<number | null>(null);
+
   const scrollToBottom = useCallback(() => {
     requestAnimationFrame(() => {
       const container = scrollRef.current;
@@ -147,7 +150,36 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     });
   }, []);
 
-  useEffect(() => { scrollToBottom(); }, [messages, scrollToBottom]);
+  const scrollToAssistantStart = useCallback(() => {
+    requestAnimationFrame(() => {
+      const container = scrollRef.current;
+      if (!container) return;
+      // Find the last assistant message element
+      const msgs = container.querySelectorAll("[data-role]");
+      const lastAssistant = Array.from(msgs).reverse().find(el => el.getAttribute("data-role") === "assistant");
+      if (lastAssistant) {
+        const containerRect = container.getBoundingClientRect();
+        const msgRect = lastAssistant.getBoundingClientRect();
+        const offset = msgRect.top - containerRect.top + container.scrollTop - 8;
+        container.scrollTop = offset;
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    if (messages.length === 0) return;
+    const last = messages[messages.length - 1];
+    if (last.role === "user") {
+      // User just sent a message — scroll to bottom so they see loading indicator
+      scrollToBottom();
+    } else if (last.role === "assistant" && isStreamingRef.current) {
+      // During streaming — keep assistant message start visible (only on first chunk)
+      if (assistantMsgTopRef.current === null) {
+        assistantMsgTopRef.current = 1;
+        scrollToAssistantStart();
+      }
+    }
+  }, [messages, scrollToBottom, scrollToAssistantStart]);
   useEffect(() => {
     if (!open) return;
 
