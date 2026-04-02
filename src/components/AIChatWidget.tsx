@@ -222,8 +222,8 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           return [...prev, { role: "assistant", content: assistantSoFar }];
         });
       },
-      () => setLoading(false),
-      (errMsg) => { setError(errMsg); setLoading(false); },
+      () => { isStreamingRef.current = false; setLoading(false); },
+      (errMsg) => { isStreamingRef.current = false; setError(errMsg); setLoading(false); },
     );
   };
 
