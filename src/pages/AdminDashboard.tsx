@@ -141,6 +141,9 @@ const AdminDashboard = () => {
         {/* Analytics */}
         <AnalyticsCards />
 
+        {/* Chat Logs */}
+        <ChatLogsSection />
+
         {/* Table */}
         <Card className="border-border/50">
           <CardContent className="p-0">
