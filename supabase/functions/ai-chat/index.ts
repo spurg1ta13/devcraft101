@@ -1,4 +1,5 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.1";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -97,7 +98,7 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages } = await req.json();
+    const { messages, session_id } = await req.json();
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
 
@@ -111,7 +112,7 @@ serve(async (req) => {
         model: "google/gemini-2.5-flash-lite",
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
-          ...messages.slice(-20), // Keep last 20 messages for context
+          ...messages.slice(-20),
         ],
         stream: true,
       }),
@@ -138,7 +139,85 @@ serve(async (req) => {
       });
     }
 
-    return new Response(response.body, {
+    // Clone the stream: one for the client, one for logging
+    const [clientStream, logStream] = response.body!.tee();
+
+    // Log chat asynchronously (don't block the response)
+    if (session_id) {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+      const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+
+      (async () => {
+        try {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          const reader = logStream.getReader();
+          const decoder = new TextDecoder();
+          let buf = "";
+          let assistantContent = "";
+
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buf += decoder.decode(value, { stream: true });
+
+            let idx: number;
+            while ((idx = buf.indexOf("\n")) !== -1) {
+              let line = buf.slice(0, idx);
+              buf = buf.slice(idx + 1);
+              if (line.endsWith("\r")) line = line.slice(0, -1);
+              if (!line.startsWith("data: ")) continue;
+              const json = line.slice(6).trim();
+              if (json === "[DONE]") break;
+              try {
+                const parsed = JSON.parse(json);
+                const content = parsed.choices?.[0]?.delta?.content;
+                if (content) assistantContent += content;
+              } catch { /* ignore */ }
+            }
+          }
+
+          // Detect language from the last user message
+          const lastUserMsg = [...messages].reverse().find((m: { role: string }) => m.role === "user");
+          const lang = lastUserMsg?.content?.match?.(/[α-ωά-ώ]/i) ? "el" : "en";
+
+          const allMessages = [
+            ...messages,
+            ...(assistantContent ? [{ role: "assistant", content: assistantContent }] : []),
+          ];
+
+          // Upsert: update existing session or create new
+          const { data: existing } = await supabase
+            .from("chat_logs")
+            .select("id")
+            .eq("session_id", session_id)
+            .maybeSingle();
+
+          if (existing) {
+            await supabase
+              .from("chat_logs")
+              .update({
+                messages: allMessages,
+                message_count: allMessages.length,
+                language: lang,
+              })
+              .eq("id", existing.id);
+          } else {
+            await supabase
+              .from("chat_logs")
+              .insert({
+                session_id,
+                messages: allMessages,
+                message_count: allMessages.length,
+                language: lang,
+              });
+          }
+        } catch (e) {
+          console.error("Chat logging error:", e);
+        }
+      })();
+    }
+
+    return new Response(clientStream, {
       headers: { ...corsHeaders, "Content-Type": "text/event-stream" },
     });
   } catch (e) {
