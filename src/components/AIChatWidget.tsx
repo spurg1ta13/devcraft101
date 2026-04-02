@@ -9,6 +9,16 @@ type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat`;
 
+const getSessionId = () => {
+  const key = "devcraft_chat_session";
+  let id = sessionStorage.getItem(key);
+  if (!id) {
+    id = crypto.randomUUID();
+    sessionStorage.setItem(key, id);
+  }
+  return id;
+};
+
 const WELCOME: Record<string, { title: string; subtitle: string; placeholder: string }> = {
   en: {
     title: "Hi there! 👋",
@@ -35,7 +45,7 @@ async function streamChat(
         "Content-Type": "application/json",
         Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
       },
-      body: JSON.stringify({ messages }),
+      body: JSON.stringify({ messages, session_id: getSessionId() }),
     });
 
     if (!resp.ok) {

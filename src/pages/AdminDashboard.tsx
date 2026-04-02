@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { LogOut, Trash2, Mail, Phone, RefreshCw, Inbox } from "lucide-react";
 import { AnalyticsCards } from "@/components/admin/AnalyticsCards";
+import ChatLogsSection from "@/components/admin/ChatLogsSection";
 
 type ContactMessage = {
   id: string;
@@ -139,6 +140,9 @@ const AdminDashboard = () => {
 
         {/* Analytics */}
         <AnalyticsCards />
+
+        {/* Chat Logs */}
+        <ChatLogsSection />
 
         {/* Table */}
         <Card className="border-border/50">
