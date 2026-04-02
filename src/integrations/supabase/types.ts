@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      chat_logs: {
+        Row: {
+          created_at: string
+          id: string
+          language: string | null
+          message_count: number
+          messages: Json
+          session_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          language?: string | null
+          message_count?: number
+          messages?: Json
+          session_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          language?: string | null
+          message_count?: number
+          messages?: Json
+          session_id?: string
+        }
+        Relationships: []
+      }
       contact_messages: {
         Row: {
           created_at: string
