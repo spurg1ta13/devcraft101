@@ -32,30 +32,61 @@ Certified engineers test every feature before it touches users. Zero-defect laun
 DevCraft offers four service plans:
 
 ### MINI: The Clean Start — €600–€700
-- 1 Landing Page, 1 Language (Greek)
-- Mobile + Desktop responsive, Social redirects
-- Semantic HTML, Alt-text, CTA (email + phone)
-- Delivery: 2–3 working days
+Best for: New businesses or personal brands making their first impression online.
+- Complete Single-Page Website (Home, About, Services, Contact)
+- 1 Language (Greek)
+- Search Engine Visibility (SEO)
+- Social Media Integration
+- Direct Contact Tools (Email & Phone)
+- Privacy Policy & Terms Auto-Generated
+- GDPR & Cookie Compliance
+- SSL Security Certificate
+- Delivery: 2 working days
 
 ### MIDI: The Corporate Standard — €900–€1,000
+Best for: Established businesses looking to build trust and showcase their work professionally.
 - Up to 5 Pages, 1 Language
-- Lead Form, Portfolio/Gallery
-- Sitemap & Robots.txt, GDPR/Cookies, Google Maps
+- Gallery & Portfolio Showcase
+- Direct Contact Tools (Email & Phone)
+- Sitemap & Robots.txt
+- Privacy Policy & Terms Auto-Generated
+- GDPR & Cookie Compliance
+- Google Maps Integration
+- SSL Security Certificate
 - Delivery: 4–5 working days
 
 ### MAXI: The International Presence — €1,300–€1,500 ⭐ Most Popular
-- Up to 7 Pages, 2–3 Languages
-- Language Switcher, Localized Meta Tags
-- URL optimization, Custom 404, GDPR/Cookies, Google Maps
-- Delivery: 7–10 working days
+Best for: Companies expanding to international markets with multi-language needs.
+- Up to 7 Pages
+- 2–3 Languages with Switcher
+- Lead Capture Form with Spam Protection
+- Gallery & Portfolio Showcase
+- Localized SEO per Language
+- Custom Error & Loading Pages
+- Admin Dashboard for Messages
+- Privacy Policy & Terms Auto-Generated
+- GDPR & Cookie Compliance
+- Google Maps Integration
+- SSL Security Certificate
+- Delivery: 6–8 working days
 
 ### ELITE: The Elite Performance — €1,950–€2,500
-- Up to 10 Pages + Calculator
-- Unlimited Languages, AI Assistant Integration
-- Custom Animations, Form-to-Email, Image Optimization
-- SEO-friendly URLs
-- ISTQB-Certified QA Testing
-- Delivery: 10–12 working days
+Best for: Industry leaders who need custom features, AI tools, and certified quality assurance.
+- Up to 10 Pages + Interactive Tools
+- Unlimited Languages
+- AI Assistant Integration
+- Lead & Booking Form with Spam Protection
+- Custom Animations & Effects
+- Automatic Image Optimization
+- SEO-Optimized URL Structure
+- Custom Error & Loading Pages
+- Admin Dashboard for Messages & Bookings
+- Privacy Policy & Terms Auto-Generated
+- GDPR & Cookie Compliance
+- Google Maps Integration
+- Quality Assurance (ISTQB Certified)
+- SSL Security Certificate
+- Delivery: 10–11 working days
 
 *Prices do not include VAT.
 *Delivery starts after all content is received from the client.
