@@ -347,16 +347,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile floating contact button — hidden when AI chat is open */}
-      <button
-        onClick={openContactChoice}
-        className={`fixed bottom-6 right-6 z-50 lg:hidden bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_0_20px_4px_rgba(37,211,102,0.4)] active:scale-95 transition-all duration-300 whatsapp-float ${
-          scrolled ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-80 pointer-events-none"
-        }`}
-        aria-label="Contact us"
-      >
-        <WhatsAppIcon className="h-7 w-7" />
-      </button>
+      {/* Mobile floating WhatsApp button — currently disabled in favor of AI chat launcher */}
 
       <ContactChoiceDialog isOpen={contactDialog} onClose={() => setContactDialog(false)} lang={lang} />
     </>
