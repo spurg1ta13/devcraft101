@@ -140,3 +140,4 @@ All articles are available in English and Greek / Όλα τα άρθρα είν�
 10. Website Security Best Practices for Small Businesses: https://devcraft.gr/blog/website-security-best-practices-small-business
 11. Complete Guide to Website Maintenance & Support: https://devcraft.gr/blog/complete-guide-website-maintenance-support
 12. Why Website Speed Matters for SEO & Conversions: https://devcraft.gr/blog/why-website-speed-matters-seo-conversions
+13. Website Speed, User Trust & UX in Greece: https://devcraft.gr/blog/website-speed-user-trust-ux-greece
