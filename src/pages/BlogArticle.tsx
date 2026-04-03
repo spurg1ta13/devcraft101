@@ -13,6 +13,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
 const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
+const BlogContactForm = lazy(() => import("@/components/blog/BlogContactForm"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
   const wordCount = article.content[lang as "en" | "el"]
@@ -205,7 +206,11 @@ const BlogArticle = () => {
               {renderContent(article.content[lang])}
             </article>
 
-            <div className="mt-16 pt-8 border-t border-border/30">
+            <Suspense fallback={null}>
+              <BlogContactForm />
+            </Suspense>
+
+            <div className="mt-12 pt-8 border-t border-border/30">
               <Link
                 to="/blog"
                 className="inline-flex items-center gap-2 text-primary hover:brightness-110 transition-all font-mono text-sm min-h-[44px]"
