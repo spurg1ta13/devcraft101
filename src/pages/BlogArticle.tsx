@@ -206,7 +206,11 @@ const BlogArticle = () => {
               {renderContent(article.content[lang])}
             </article>
 
-            <div className="mt-16 pt-8 border-t border-border/30">
+            <Suspense fallback={null}>
+              <BlogContactForm />
+            </Suspense>
+
+            <div className="mt-12 pt-8 border-t border-border/30">
               <Link
                 to="/blog"
                 className="inline-flex items-center gap-2 text-primary hover:brightness-110 transition-all font-mono text-sm min-h-[44px]"
