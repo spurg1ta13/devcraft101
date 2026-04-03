@@ -372,7 +372,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           </div>
 
           {/* Input — always pinned to bottom */}
-          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-card">
+          <div className="border-t border-primary/20 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-[hsl(220_20%_8%)]">
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
               className="flex gap-2"
