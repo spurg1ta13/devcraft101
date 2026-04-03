@@ -265,9 +265,9 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       {/* Chat panel */}
       <div
         style={mobileStyle}
-        className={`fixed z-[100] overflow-hidden bg-background transition-opacity duration-300 sm:transition-[opacity,transform] ${
+        className={`fixed z-[100] overflow-hidden bg-card border border-border/60 shadow-[0_8px_40px_-8px_hsl(var(--primary)/0.15)] transition-opacity duration-300 sm:transition-[opacity,transform] ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:border sm:border-border/60 sm:shadow-2xl sm:origin-bottom-right ${
+        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:shadow-[0_16px_60px_-12px_hsl(var(--primary)/0.25)] sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
@@ -372,7 +372,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           </div>
 
           {/* Input — always pinned to bottom */}
-          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-background">
+          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-card">
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
               className="flex gap-2"
