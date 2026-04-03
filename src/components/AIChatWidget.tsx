@@ -265,15 +265,15 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       {/* Chat panel */}
       <div
         style={mobileStyle}
-        className={`fixed z-[100] overflow-hidden bg-card border border-border/60 shadow-[0_8px_40px_-8px_hsl(var(--primary)/0.15)] transition-opacity duration-300 sm:transition-[opacity,transform] ${
+        className={`fixed z-[100] overflow-hidden bg-[hsl(220_20%_8%)] border border-primary/30 shadow-[0_8px_40px_-8px_hsl(var(--primary)/0.25)] transition-opacity duration-300 sm:transition-[opacity,transform] ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:shadow-[0_16px_60px_-12px_hsl(var(--primary)/0.25)] sm:origin-bottom-right ${
+        } inset-0 sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[360px] sm:max-w-[calc(100vw-2rem)] sm:h-auto sm:rounded-2xl sm:shadow-[0_16px_60px_-12px_hsl(var(--primary)/0.3),0_0_0_1px_hsl(var(--primary)/0.15)] sm:origin-bottom-right ${
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
         <div className="flex h-full min-h-0 flex-col sm:h-[500px]">
           {/* Header */}
-          <div className="bg-secondary px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-border/30 shrink-0">
+          <div className="bg-[hsl(220_20%_11%)] px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-primary/20 shrink-0">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
                 <MessageCircle className="h-4 w-4 text-primary" />
@@ -372,7 +372,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           </div>
 
           {/* Input — always pinned to bottom */}
-          <div className="border-t border-border/30 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-card">
+          <div className="border-t border-primary/20 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shrink-0 bg-[hsl(220_20%_8%)]">
             <form
               onSubmit={(e) => { e.preventDefault(); send(); }}
               className="flex gap-2"
