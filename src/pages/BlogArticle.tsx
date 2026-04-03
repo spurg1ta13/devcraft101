@@ -13,6 +13,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 const LandingPageAnimation = lazy(() => import("@/components/blog/LandingPageAnimation"));
 const AIChatbotAnimation = lazy(() => import("@/components/blog/AIChatbotAnimation"));
 const Footer = lazy(() => import("@/components/landing/Footer"));
+const BlogContactForm = lazy(() => import("@/components/blog/BlogContactForm"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
   const wordCount = article.content[lang as "en" | "el"]
