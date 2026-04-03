@@ -15,7 +15,7 @@ const HeroSection = () => {
           <source media="(max-width: 768px)" srcSet="/hero-banner-mobile.webp" type="image/webp" />
           <img
             src="/hero-banner.webp"
-            alt=""
+            alt="DevCraft web development studio hero banner"
             width={1920}
             height={1080}
             fetchPriority="high"
