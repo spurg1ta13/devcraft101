@@ -190,12 +190,22 @@ const Prices = () => {
               })}
             </div>
 
+            {/* Hosting note */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.45 }}
+              className="mt-8 text-xs md:text-sm text-primary font-medium"
+            >
+              {t(p.hostingNote, lang)}
+            </motion.p>
+
             {/* Bottom notes */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-12 md:mt-16 space-y-4 max-w-3xl"
+              className="mt-8 md:mt-12 space-y-4 max-w-3xl"
             >
               <div className="glow-line w-full mb-6" />
               <p className="text-sm text-muted-foreground leading-relaxed">
