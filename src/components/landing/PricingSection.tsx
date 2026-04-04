@@ -138,6 +138,16 @@ const PricingSection = () => {
         >
           {t(p.hostingDetail, lang)}
         </p>
+        <p
+          className={`mt-4 text-sm text-muted-foreground leading-relaxed transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: inView ? "500ms" : "0ms" }}
+        >
+          {lang === "el"
+            ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
+            : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
+        </p>
       </div>
     </section>
   );
