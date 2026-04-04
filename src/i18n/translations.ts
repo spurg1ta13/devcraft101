@@ -679,6 +679,7 @@ export const translations = {
     vatNote: { en: "*Prices do not include VAT", el: "*Οι τιμές δεν περιλαμβάνουν ΦΠΑ" },
     deliveryNote: { en: "*Delivery starts after all content is received", el: "*Η παράδοση ξεκινά μετά τη λήψη όλου του περιεχομένου" },
     hostingNote: { en: "*All plans require an annual hosting & security subscription of €180", el: "*Όλα τα πακέτα απαιτούν ετήσια συνδρομή φιλοξενίας & ασφάλειας €180" },
+    hostingDetail: { en: "** Covers high-speed server placement, SSL security, and technical monitoring", el: "** Περιλαμβάνει τοποθέτηση σε server υψηλής ταχύτητας, SSL ασφάλεια και τεχνική παρακολούθηση" },
   },
 
   // Language selector
