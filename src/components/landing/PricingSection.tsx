@@ -121,6 +121,15 @@ const PricingSection = () => {
             );
           })}
         </div>
+
+        <p
+          className={`mt-8 text-xs md:text-sm text-primary font-medium transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+          style={{ transitionDelay: inView ? "400ms" : "0ms" }}
+        >
+          {t(p.hostingNote, lang)}
+        </p>
       </div>
     </section>
   );
