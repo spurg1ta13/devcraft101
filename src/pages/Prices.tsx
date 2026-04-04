@@ -199,6 +199,14 @@ const Prices = () => {
             >
               {t(p.hostingNote, lang)}
             </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-1 text-xs md:text-sm text-primary font-medium"
+            >
+              {t(p.hostingDetail, lang)}
+            </motion.p>
 
             {/* Bottom notes */}
             <motion.div
