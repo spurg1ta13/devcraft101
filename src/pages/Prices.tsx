@@ -218,11 +218,6 @@ const Prices = () => {
               <div className="glow-line w-full mb-6" />
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {lang === "el"
-                  ? "Διαθέσιμα εξατομικευμένα προγράμματα Ετήσιας Συντήρησης & Διασφάλισης Ποιότητας (QA)."
-                  : "Custom Annual Maintenance & Quality Assurance plans are available upon request."}
-              </p>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {lang === "el"
                   ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
                   : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
               </p>
