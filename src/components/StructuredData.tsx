@@ -227,7 +227,7 @@ const WebSiteSchema = () => {
     name: "DevCraft",
     url: "https://devcraft.gr",
     description:
-      "AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance services in Thessaloniki, Greece. Service plans from €600 to €2,500.",
+      "Custom software solutions in Thessaloniki, Greece — websites, web apps & AI tools with ISTQB-certified quality assurance. Plans from €600.",
     publisher: { "@id": "https://devcraft.gr/#organization" },
     inLanguage: ["en", "el"],
   };
