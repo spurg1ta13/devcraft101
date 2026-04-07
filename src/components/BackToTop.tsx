@@ -6,10 +6,7 @@ const BackToTop = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      const scrolled = window.scrollY;
-      const nearBottom =
-        scrolled + window.innerHeight >= document.documentElement.scrollHeight - 300;
-      setVisible(nearBottom);
+      setVisible(window.scrollY > 400);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
