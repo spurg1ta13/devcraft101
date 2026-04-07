@@ -16,9 +16,10 @@ export const translations = {
   hero: {
     line1: { en: "We don't do", el: "Δεν κάνουμε" },
     line2: { en: "ordinary", el: "το συνηθισμένο" },
+    line3: { en: "We build them 4x faster.", el: "Τα χτίζουμε 4x πιο γρήγορα." },
     description: {
-      en: "AI-driven web development, bespoke interfaces, and quality assurance — crafted for brands that refuse to blend in.",
-      el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB — σχεδιασμένα για brands που αρνούνται να περάσουν απαρατήρητα.",
+      en: "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.\nYour 1-month web project, delivered in just 1 week.",
+      el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις 1 εβδομάδα.",
     },
     explore: { en: "Explore ↓", el: "Εξερεύνηση ↓" },
   },
