@@ -49,7 +49,7 @@ const HeroSection = () => {
 
         <div>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 sm:gap-8 pt-6 md:pt-8 border-t border-border/30">
-            <p className="text-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-medium">
+            <p className="text-foreground text-sm sm:text-base md:text-lg max-w-md leading-relaxed font-medium whitespace-pre-line">
               {t(hero.description, lang)}
             </p>
             <a
