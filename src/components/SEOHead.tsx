@@ -22,8 +22,8 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "DevCraft | Web Design, Development & ISTQB Quality Testing in Greece",
-  el: "DevCraft | Κατασκευή Ιστοσελίδων Θεσσαλονίκη — Design, Development & QA",
+  en: "Custom Software Solutions in Greece | Devcraft.gr",
+  el: "Προσαρμοσμένες Λύσεις Λογισμικού στην Ελλάδα | Devcraft.gr",
 };
 const DEFAULT_DESC = {
   en: "Award-quality web design & development agency in Thessaloniki, Greece. Every project includes ISTQB-certified testing, bespoke UI/UX design, and AI-driven development. Plans from €600.",
