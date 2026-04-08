@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Monitor, Smartphone } from "lucide-react";
+import { Monitor, Smartphone, Play } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -10,6 +10,13 @@ const projectUrls = [
   "https://luxe-ellada-page.lovable.app/",
   "https://dental-care-greek.lovable.app/gallery",
   "https://premium-realestate-suite.lovable.app/",
+];
+
+const projectScreenshots = [
+  "/portfolio/cleanup-skg.png",
+  "/portfolio/luxe-ellada.png",
+  "/portfolio/dental-care.png",
+  "/portfolio/premium-realestate.png",
 ];
 
 const PortfolioSection = () => {
@@ -101,10 +108,26 @@ const PortfolioSection = () => {
               ) : (
                 <button
                   onClick={() => setIframeLoaded(true)}
-                  className="w-full h-full flex flex-col items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                  className="relative w-full h-full group cursor-pointer"
                 >
-                  <Monitor className="h-8 w-8" />
-                  <span className="text-sm font-mono uppercase tracking-wider">{lang === "el" ? "Πατήστε για προεπισκόπηση" : "Tap to preview"}</span>
+                  {/* Static screenshot */}
+                  <img
+                    src={projectScreenshots[activeProject]}
+                    alt={t(s.projects[activeProject].title, lang)}
+                    className="w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                  {/* Dark overlay on hover */}
+                  <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Play / activate hint */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
+                    <div className="bg-primary/90 backdrop-blur-sm text-primary-foreground rounded-full p-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <Play className="h-6 w-6 fill-current" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-mono uppercase tracking-wider bg-background/80 backdrop-blur-sm text-foreground px-4 py-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {lang === "el" ? "Ζωντανή Προεπισκόπηση" : "Live Preview"}
+                    </span>
+                  </div>
                 </button>
               )}
               <div className="absolute bottom-0 right-0 w-24 h-24 z-10" style={{ pointerEvents: 'auto' }} />
