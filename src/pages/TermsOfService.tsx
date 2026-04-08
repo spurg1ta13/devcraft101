@@ -23,7 +23,7 @@ const TermsOfService = () => {
         title={{ en: "Terms of Service | DevCraft", el: "Όροι Χρήσης | DevCraft" }}
         description={{ en: "DevCraft Terms of Service — rules and guidelines for using our website and services.", el: "Όροι Χρήσης DevCraft — κανόνες και οδηγίες για τη χρήση του ιστότοπου και των υπηρεσιών μας." }}
         canonical="/terms-of-service"
-        noindex
+        noindex={false}
       />
       <Navbar />
       <main>
