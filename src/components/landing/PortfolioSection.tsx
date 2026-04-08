@@ -13,10 +13,10 @@ const projectUrls = [
 ];
 
 const projectScreenshots = [
-  "/portfolio/cleanup-skg.png",
-  "/portfolio/luxe-ellada.png",
-  "/portfolio/dental-care.png",
-  "/portfolio/premium-realestate.png",
+  "/portfolio/cleanup-skg.webp",
+  "/portfolio/luxe-ellada.webp",
+  "/portfolio/dental-care.webp",
+  "/portfolio/premium-realestate.webp",
 ];
 
 const PortfolioSection = () => {
