@@ -165,6 +165,13 @@ export const translations = {
           el: "Χρησιμοποιούμε μια διαφανή ροή εργασίας με εβδομαδιαίες ενημερώσεις προόδου, κοινόχρηστους πίνακες έργου και άμεση πρόσβαση στον αφοσιωμένο υπεύθυνο έργου σας. Θα γνωρίζετε πάντα τι συμβαίνει και τι ακολουθεί.",
         },
       },
+      {
+        question: { en: "Do you use AI in your development process?", el: "Χρησιμοποιείτε τεχνητή νοημοσύνη στη διαδικασία ανάπτυξης;" },
+        answer: {
+          en: "Yes — AI is deeply integrated into our workflow. We use it to accelerate development, generate optimized code, and automate repetitive tasks. This allows us to deliver projects up to 4× faster without compromising quality, while keeping costs lower for our clients.",
+          el: "Ναι — η τεχνητή νοημοσύνη είναι βαθιά ενσωματωμένη στη ροή εργασίας μας. Τη χρησιμοποιούμε για να επιταχύνουμε την ανάπτυξη, να δημιουργούμε βελτιστοποιημένο κώδικα και να αυτοματοποιούμε επαναλαμβανόμενες εργασίες. Αυτό μας επιτρέπει να παραδίδουμε έργα έως και 4 φορές πιο γρήγορα χωρίς συμβιβασμούς στην ποιότητα, διατηρώντας χαμηλότερο κόστος για τους πελάτες μας.",
+        },
+      },
     ],
   },
 
