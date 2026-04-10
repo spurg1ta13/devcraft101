@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
@@ -8,14 +8,34 @@ import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
 import { lazy, Suspense } from "react";
+import { Button } from "@/components/ui/button";
 
 const Footer = lazy(() => import("@/components/landing/Footer"));
+
+const ARTICLES_PER_PAGE = 10;
 
 const Blog = () => {
   const { lang } = useLang();
   const b = blogTranslations;
+  const [visibleCount, setVisibleCount] = useState(ARTICLES_PER_PAGE);
 
   useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  const sortedArticles = useMemo(
+    () => [...blogArticles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
+    []
+  );
+
+  const visibleArticles = useMemo(
+    () => sortedArticles.slice(0, visibleCount),
+    [sortedArticles, visibleCount]
+  );
+
+  const hasMore = visibleCount < sortedArticles.length;
+
+  const handleLoadMore = useCallback(() => {
+    setVisibleCount((prev) => prev + ARTICLES_PER_PAGE);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -48,12 +68,12 @@ const Blog = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {[...blogArticles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((article, i) => (
+            {visibleArticles.map((article, i) => (
               <motion.article
                 key={article.slug}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: Math.min(i, 9) * 0.1 }}
               >
                 <Link
                   to={`/blog/${article.slug}`}
@@ -87,6 +107,19 @@ const Blog = () => {
               </motion.article>
             ))}
           </div>
+
+          {hasMore && (
+            <div className="flex justify-center mt-12">
+              <Button
+                onClick={handleLoadMore}
+                variant="outline"
+                size="lg"
+                className="font-mono text-sm"
+              >
+                {lang === "el" ? "Φόρτωση περισσότερων" : "Load more"}
+              </Button>
+            </div>
+          )}
         </div>
       </main>
       <Suspense fallback={null}>
