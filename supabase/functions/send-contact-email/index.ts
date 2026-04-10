@@ -89,9 +89,18 @@ serve(async (req) => {
       throw new Error("Invalid phone format");
     }
 
+    // HTML-escape user inputs to prevent injection
+    const escapeHtml = (str: string) =>
+      str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+
+    const safeName = escapeHtml(name.trim());
+    const safeEmail = hasEmail ? escapeHtml(email.trim()) : "";
+    const safePhone = hasPhone ? escapeHtml(phone.trim()) : "";
+    const safeMessage = escapeHtml(message.trim());
+
     const contactInfo = [
-      hasEmail ? `Email: ${email.trim()}` : "",
-      hasPhone ? `Phone: ${phone.trim()}` : "",
+      hasEmail ? `Email: ${safeEmail}` : "",
+      hasPhone ? `Phone: ${safePhone}` : "",
     ]
       .filter(Boolean)
       .join(" | ");
@@ -100,13 +109,13 @@ serve(async (req) => {
       <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 24px;">
         <h2 style="color: #D4940C; margin-bottom: 24px;">New Contact Form Submission</h2>
         <table style="width: 100%; border-collapse: collapse;">
-          <tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Name</td><td style="padding: 8px 0;">${name.trim()}</td></tr>
-          ${hasEmail ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email.trim()}">${email.trim()}</a></td></tr>` : ""}
-          ${hasPhone ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${phone.trim()}">${phone.trim()}</a></td></tr>` : ""}
+          <tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Name</td><td style="padding: 8px 0;">${safeName}</td></tr>
+          ${hasEmail ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Email</td><td style="padding: 8px 0;"><a href="mailto:${safeEmail}">${safeEmail}</a></td></tr>` : ""}
+          ${hasPhone ? `<tr><td style="padding: 8px 0; font-weight: bold; color: #666;">Phone</td><td style="padding: 8px 0;"><a href="tel:${safePhone}">${safePhone}</a></td></tr>` : ""}
         </table>
         <div style="margin-top: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px;">
           <p style="font-weight: bold; color: #666; margin: 0 0 8px;">Message</p>
-          <p style="margin: 0; white-space: pre-wrap;">${message.trim()}</p>
+          <p style="margin: 0; white-space: pre-wrap;">${safeMessage}</p>
         </div>
         <p style="margin-top: 24px; font-size: 12px; color: #999;">Sent from DevCraft website contact form</p>
       </div>
