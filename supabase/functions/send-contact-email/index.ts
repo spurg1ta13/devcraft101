@@ -131,7 +131,7 @@ serve(async (req) => {
         from: "DevCraft <onboarding@resend.dev>",
         to: [TO_EMAIL],
         reply_to: hasEmail ? email.trim() : undefined,
-        subject: `[DevCraft] New inquiry from ${name.trim()}`,
+        subject: `[DevCraft] New inquiry from ${safeName}`,
         html: htmlBody,
       }),
     });
