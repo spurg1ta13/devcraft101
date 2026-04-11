@@ -57,7 +57,7 @@ const Footer = () => {
               {[
                 { label: t(nav.services, lang), href: "/#services" },
                 { label: t(f.ourWork, lang), href: "/#projects" },
-                { label: t(nav.process, lang), href: "/#process" },
+                { label: t(nav.pricing, lang), href: "/#pricing" },
                 { label: t(nav.contact, lang), href: "/#contact" },
               ].map((item) => (
                 <Link
