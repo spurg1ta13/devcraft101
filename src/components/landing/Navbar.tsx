@@ -100,9 +100,10 @@ const scrollToHash = (hash: string) => {
     }
   });
   observer.observe(document.body, { childList: true, subtree: true });
-  // Force scroll down to trigger lazy load
-  window.scrollBy({ top: 300, behavior: "smooth" });
-  setTimeout(() => observer.disconnect(), 3000);
+  // Force scroll far enough to trigger all lazy Suspense boundaries
+  const docHeight = document.documentElement.scrollHeight;
+  window.scrollTo({ top: docHeight, behavior: "smooth" });
+  setTimeout(() => observer.disconnect(), 5000);
 };
 
 const Navbar = () => {
