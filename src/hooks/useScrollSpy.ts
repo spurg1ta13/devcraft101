@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const SECTION_IDS = ["services", "showcase", "projects", "process", "faq", "contact"];
+const SECTION_IDS = ["services", "showcase", "projects", "process", "pricing", "faq", "contact"];
 
 export function useScrollSpy() {
   const activeRef = useRef("");

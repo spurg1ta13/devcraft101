@@ -30,7 +30,6 @@ const Index = () => {
         <MarqueeSection />
         <Suspense fallback={null}>
           <ServicesSection />
-          <PricingSection />
           <ShowcaseSection />
         </Suspense>
         <Suspense fallback={null}>
@@ -38,6 +37,7 @@ const Index = () => {
           <ProcessSection />
         </Suspense>
         <Suspense fallback={null}>
+          <PricingSection />
           <FAQSection />
           <CTASection />
         </Suspense>
