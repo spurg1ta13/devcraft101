@@ -89,7 +89,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MINI: The Clean Start",
                 description:
-                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language (Greek). Delivered in 2 working days.",
+                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, fast loading on mobile & desktop, SSL certificate. 1 language (Greek). Delivered in 2 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -114,7 +114,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MIDI: The Corporate Standard",
                 description:
-                  "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, and SSL certificate. 1 language. Delivered in 4–5 working days.",
+                  "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, fast loading on mobile & desktop, and SSL certificate. 1 language. Delivered in 4–5 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -139,7 +139,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MAXI: The International Presence",
                 description:
-                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized SEO, lead capture form with spam protection, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Delivered in 6–8 working days.",
+                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized SEO, lead capture form with spam protection, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, and SSL certificate. Delivered in 6–8 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
@@ -164,7 +164,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "ELITE: The Elite Performance",
                 description:
-                  "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
+                  "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
