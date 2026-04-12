@@ -28,21 +28,25 @@ const OfferCatalogSchema = () => {
     url: "https://devcraft.gr/prices",
     provider: { "@id": "https://devcraft.gr/#organization" },
     numberOfItems: plans.length,
-    itemListElement: plans.map((plan, i) => ({
-      "@type": "Offer",
-      name: `${t(plan.name, "en")}: ${t(plan.tagline, "en")}`,
-      description: t(plan.description, "en"),
-      price: t(plan.price, "en"),
-      priceCurrency: "EUR",
-      url: "https://devcraft.gr/prices",
-      availability: "https://schema.org/InStock",
-      itemOffered: {
-        "@type": "Service",
-        name: t(plan.name, "en"),
-        description: t(plan.description, "en"),
-        provider: { "@id": "https://devcraft.gr/#organization" },
-      },
-    })),
+    itemListElement: plans.map((plan, i) => {
+      const features = plan.features.en.join(", ");
+      const fullDescription = `${t(plan.description, "en")} Includes: ${features}. Delivery: ${t(plan.delivery, "en")}.`;
+      return {
+        "@type": "Offer",
+        name: `${t(plan.name, "en")}: ${t(plan.tagline, "en")}`,
+        description: fullDescription,
+        price: t(plan.price, "en"),
+        priceCurrency: "EUR",
+        url: "https://devcraft.gr/prices",
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: t(plan.name, "en"),
+          description: fullDescription,
+          provider: { "@id": "https://devcraft.gr/#organization" },
+        },
+      };
+    }),
   };
 
   return (
