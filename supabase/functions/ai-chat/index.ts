@@ -35,7 +35,7 @@ DevCraft offers four service plans:
 Best for: New businesses or personal brands making their first impression online.
 - Complete Single-Page Website (Home, About, Services, Contact)
 - 1 Language (Greek)
-- Search Engine Visibility (SEO)
+- Technical SEO Setup (Sitemap, Meta Tags, Indexing)
 - Social Media Integration
 - Direct Contact Tools (Email & Phone)
 - Privacy Policy & Terms Auto-Generated
