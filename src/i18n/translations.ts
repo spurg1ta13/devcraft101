@@ -536,7 +536,7 @@ export const translations = {
           en: [
             "Complete Single-Page Website (Home, About, Services, Contact)",
             "1 Language (Greek)",
-            "Search Engine Visibility (SEO)",
+            "Technical SEO Setup (Sitemap, Meta Tags, Indexing)",
             "Social Media Integration",
             "Direct Contact Tools (Email & Phone)",
             "Privacy Policy & Terms Auto-Generated",
@@ -547,7 +547,7 @@ export const translations = {
           el: [
             "Ολοκληρωμένη Μονοσέλιδη Ιστοσελίδα (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία)",
             "1 Γλώσσα (Ελληνικά)",
-            "Ορατότητα στις Μηχανές Αναζήτησης (SEO)",
+            "Τεχνικό SEO (Sitemap, Meta Tags, Indexing)",
             "Σύνδεση Social Media",
             "Εργαλεία Επικοινωνίας (Email & Τηλέφωνο)",
             "Αυτόματη Δημιουργία Πολιτικής Απορρήτου & Όρων",
