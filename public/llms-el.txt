@@ -107,7 +107,7 @@ React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
 ## Επικοινωνία
 
 Ιστοσελίδα: https://devcraft.gr
-Τηλέφωνο: +30 697 415 9157
+Τηλέφωνο: +30 697 583 5277
 Email: contact@devcraft.gr
 LinkedIn: https://www.linkedin.com/company/devcraft-gr
 

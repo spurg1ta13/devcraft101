@@ -201,10 +201,10 @@ const OrganizationSchema = () => {
       },
     ],
     email: "contact@devcraft.gr",
-    telephone: "+306974159157",
+    telephone: "+306975835277",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+306974159157",
+      telephone: "+306975835277",
       email: "contact@devcraft.gr",
       contactType: "customer service",
       availableLanguage: ["English", "Greek"],
