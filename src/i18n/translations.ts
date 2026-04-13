@@ -276,8 +276,8 @@ export const translations = {
       {
         title: { en: "1. Data Controller", el: "1. Υπεύθυνος Επεξεργασίας Δεδομένων" },
         content: {
-          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nThessaloniki, Greece\nPhone: +30 697 415 9157\n\nFor any data protection inquiries, you may contact us using the details above.`,
-          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΘεσσαλονίκη, Ελλάδα\nΤηλέφωνο: +30 697 415 9157\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
+          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nThessaloniki, Greece\nPhone: +30 697 583 5277\n\nFor any data protection inquiries, you may contact us using the details above.`,
+          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΘεσσαλονίκη, Ελλάδα\nΤηλέφωνο: +30 697 583 5277\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
         },
       },
       {
@@ -339,8 +339,8 @@ export const translations = {
       {
         title: { en: "10. Your Rights Under GDPR", el: "10. Τα Δικαιώματά σας βάσει GDPR" },
         content: {
-          en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 415 9157. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
-          el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 415 9157. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
+          en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 583 5277. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
+          el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 583 5277. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
         },
       },
       {
@@ -447,8 +447,8 @@ export const translations = {
       {
         title: { en: "10. Contact", el: "10. Επικοινωνία" },
         content: {
-          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 415 9157`,
-          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 415 9157`,
+          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 583 5277`,
+          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 583 5277`,
         },
       },
     ],

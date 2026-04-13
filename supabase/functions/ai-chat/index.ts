@@ -114,7 +114,7 @@ Full pricing page: https://devcraft.gr/prices
 
 ## Contact
 - Located in Thessaloniki, Greece
-- Phone: +30 697 415 9157
+- Phone: +30 697 583 5277
 - They respond within 48 hours
 
 ## STRICT RULES
