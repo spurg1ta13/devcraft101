@@ -89,9 +89,9 @@ Best for: Industry leaders who need custom features, AI tools, and certified qua
 - Delivery: 10–11 working days
 
 *Prices do not include VAT.
+*All plans require an annual hosting & security subscription of €200.
 *Delivery starts after all content is received from the client.
 
-Custom Annual Maintenance & Quality Assurance plans are available upon request.
 Additional functionalities and custom add-ons can be tailored to specific needs.
 
 Full pricing page: https://devcraft.gr/prices
