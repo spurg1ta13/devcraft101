@@ -53,7 +53,7 @@ Best for: Established businesses looking to build trust and showcase their work 
 - GDPR & Cookie Compliance
 - Google Maps Integration
 - SSL Security Certificate
-- Delivery: 4–5 working days
+- Delivery: 6–7 working days
 
 ### MAXI: The International Presence — €1,300–€1,500 ⭐ Most Popular
 Best for: Companies expanding to international markets with multi-language needs.
@@ -68,7 +68,7 @@ Best for: Companies expanding to international markets with multi-language needs
 - GDPR & Cookie Compliance
 - Google Maps Integration
 - SSL Security Certificate
-- Delivery: 6–8 working days
+- Delivery: 9–12 working days
 
 ### ELITE: The Elite Performance — €1,950–€2,500
 Best for: Industry leaders who need custom features, AI tools, and certified quality assurance.
@@ -86,7 +86,7 @@ Best for: Industry leaders who need custom features, AI tools, and certified qua
 - Google Maps Integration
 - Quality Assurance (ISTQB Certified)
 - SSL Security Certificate
-- Delivery: 10–11 working days
+- Delivery: 14–16 working days
 
 *Prices do not include VAT.
 *All plans require an annual hosting & security subscription of €200.

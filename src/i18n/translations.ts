@@ -565,7 +565,7 @@ export const translations = {
           el: "Για καθιερωμένες επιχειρήσεις που θέλουν να χτίσουν εμπιστοσύνη και να προβάλουν τη δουλειά τους επαγγελματικά.",
         },
         price: { en: "€900 – €1,000", el: "€900 – €1.000" },
-        delivery: { en: "4–5 working days", el: "4–5 εργάσιμες ημέρες" },
+        delivery: { en: "6–7 working days", el: "6–7 εργάσιμες ημέρες" },
         description: {
           en: "A professional multi-page website that works for you around the clock — showcasing your services, displaying your work, and giving customers confidence in your brand.",
           el: "Μια επαγγελματική πολυσέλιδη ιστοσελίδα που δουλεύει για εσάς όλο το εικοσιτετράωρο — προβάλλει τις υπηρεσίες σας, δείχνει τη δουλειά σας και εμπνέει εμπιστοσύνη.",
@@ -611,7 +611,7 @@ export const translations = {
           el: "Για εταιρείες που επεκτείνονται σε διεθνείς αγορές με πολύγλωσσες ανάγκες.",
         },
         price: { en: "€1,300 – €1,500", el: "€1.300 – €1.500" },
-        delivery: { en: "6–8 working days", el: "6–8 εργάσιμες ημέρες" },
+        delivery: { en: "9–12 working days", el: "9–12 εργάσιμες ημέρες" },
         description: {
           en: "Reach customers in their own language with a fully localized website. Includes a lead capture form, admin dashboard, and everything you need to manage your international presence with confidence.",
           el: "Προσεγγίστε πελάτες στη γλώσσα τους με μια πλήρως τοπικοποιημένη ιστοσελίδα. Περιλαμβάνει φόρμα επικοινωνίας, πίνακα διαχείρισης και όλα όσα χρειάζεστε για τη διεθνή σας παρουσία.",
@@ -667,7 +667,7 @@ export const translations = {
           el: "Για ηγέτες του κλάδου που χρειάζονται custom λειτουργίες, εργαλεία AI και πιστοποιημένη διασφάλιση ποιότητας.",
         },
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500" },
-        delivery: { en: "10–11 working days", el: "10–11 εργάσιμες ημέρες" },
+        delivery: { en: "14–16 working days", el: "14–16 εργάσιμες ημέρες" },
         description: {
           en: "A premium platform with intelligent automation, AI-powered assistant, custom animations, and ISTQB-certified quality assurance. Built for businesses that demand the best.",
           el: "Μια premium πλατφόρμα με ευφυή αυτοματισμό, AI βοηθό, custom animations και πιστοποιημένη ποιότητα ISTQB. Για επιχειρήσεις που απαιτούν το καλύτερο.",
