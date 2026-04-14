@@ -19,13 +19,13 @@ We offer four service plans. The MAXI plan is our most popular choice:
 Complete single-page website with all essential sections (Home, About, Services, Contact). 1 language (Greek). Includes technical SEO setup (sitemap, meta tags, indexing), social media integration, direct contact tools, GDPR & cookie compliance, auto-generated privacy policy & terms, and SSL certificate. Delivered in 2 working days.
 
 ### MIDI: The Corporate Standard (€900–€1,000)
-Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Delivered in 4–5 working days.
+Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Delivered in 6–7 working days.
 
 ### MAXI: The International Presence (€1,300–€1,500) ⭐ Most Popular
-Up to 7 pages with 2–3 languages and language switcher. Includes lead capture form with spam protection, localized SEO, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Delivered in 6–8 working days.
+Up to 7 pages with 2–3 languages and language switcher. Includes lead capture form with spam protection, localized SEO, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Up to 7 pages with 2–3 languages and language switcher. Includes lead capture form with spam protection, localized SEO, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, and SSL certificate. Delivered in 9–12 working days.
 
 ### ELITE: The Elite Performance (€1,950–€2,500)
-Up to 10 pages + interactive tools with unlimited languages. Includes AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.
+Up to 10 pages + interactive tools with unlimited languages. Includes AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Up to 10 pages + interactive tools with unlimited languages. Includes AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, ISTQB-certified QA, and SSL certificate. Delivered in 14–16 working days.
 
 *Prices do not include VAT.
 *All plans require an annual hosting & security subscription of €200.
