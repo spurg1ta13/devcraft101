@@ -19,17 +19,16 @@
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full guide (EN+EL)" />
 
     <!-- Resource hints for AI chat backend (loaded on interaction, connection warmed early) -->
+    <!-- Preconnect for AI chat backend -->
     <link rel="dns-prefetch" href="https://rgacmyobploucwvwytpl.supabase.co" />
-    <link rel="preconnect" href="https://rgacmyobploucwvwytpl.supabase.co" crossorigin />
 
     <!-- Preload hero LCP image -->
     <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" />
     <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" />
 
-    <!-- Fonts: loaded via JS after interaction to avoid render-blocking -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'" /></noscript>
+    <!-- Preload critical fonts (self-hosted, no external chain) -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/spacemono-400-latin.woff2" crossorigin />
 
     <!-- Analytics deferred 3s after first interaction or 5s absolute -->
     <script>
