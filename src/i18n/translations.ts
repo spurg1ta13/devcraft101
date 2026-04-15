@@ -564,7 +564,7 @@ export const translations = {
           en: "For established businesses looking to build trust and showcase their work professionally.",
           el: "Για καθιερωμένες επιχειρήσεις που θέλουν να χτίσουν εμπιστοσύνη και να προβάλουν τη δουλειά τους επαγγελματικά.",
         },
-        price: { en: "€900 – €1,000", el: "€900 – €1.000" },
+        price: { en: "€1,000 – €1,200", el: "€1.000 – €1.200" },
         delivery: { en: "6–7 working days", el: "6–7 εργάσιμες ημέρες" },
         description: {
           en: "A professional multi-page website that works for you around the clock — showcasing your services, displaying your work, and giving customers confidence in your brand.",
@@ -610,7 +610,7 @@ export const translations = {
           en: "For companies expanding to international markets with multi-language needs.",
           el: "Για εταιρείες που επεκτείνονται σε διεθνείς αγορές με πολύγλωσσες ανάγκες.",
         },
-        price: { en: "€1,300 – €1,500", el: "€1.300 – €1.500" },
+        price: { en: "€1,450 – €1,700", el: "€1.450 – €1.700" },
         delivery: { en: "9–12 working days", el: "9–12 εργάσιμες ημέρες" },
         description: {
           en: "Reach customers in their own language with a fully localized website. Includes a lead capture form, admin dashboard, and everything you need to manage your international presence with confidence.",
