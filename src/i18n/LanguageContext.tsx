@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { getCountryCode } from "@/lib/geo";
 import type { Lang } from "./translations";
 
 interface LanguageContextType {
@@ -28,10 +29,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     if (manuallySet || alreadySaved) return;
 
     const detect = () => {
-      fetch("https://ipapi.co/country_code/", { signal: AbortSignal.timeout(3000) })
-        .then((res) => res.text())
-        .then((code) => {
-          const country = code.trim();
+      getCountryCode()
+        .then((country) => {
           if (country === "GR") {
             setLangState("el");
             localStorage.setItem("lang", "el");
