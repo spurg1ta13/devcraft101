@@ -135,8 +135,6 @@
   .glow-line {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(38 100% 55% / 0.3), transparent);
-    background-size: 200% 100%;
-    animation: glow-drift 8s ease-in-out infinite alternate;
   }
 
   .shadow-glow {
@@ -157,11 +155,7 @@
   }
 }
 
-/* Glow drift */
-@keyframes glow-drift {
-  0% { background-position: 20% 50%; }
-  100% { background-position: 80% 50%; }
-}
+/* Glow drift — removed (was non-composited background-position animation) */
 
 @keyframes amber-drift {
   0% { transform: translate(-6px, -4px); }
