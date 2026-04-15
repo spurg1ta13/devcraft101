@@ -29,17 +29,31 @@ const Index = () => {
         <HeroSection />
         <MarqueeSection />
         <Suspense fallback={null}>
-          <ServicesSection />
-          <ShowcaseSection />
+          <div className="cv-auto">
+            <ServicesSection />
+          </div>
+          <div className="cv-auto">
+            <ShowcaseSection />
+          </div>
         </Suspense>
         <Suspense fallback={null}>
-          <PortfolioSection />
-          <ProcessSection />
+          <div className="cv-auto">
+            <PortfolioSection />
+          </div>
+          <div className="cv-auto">
+            <ProcessSection />
+          </div>
         </Suspense>
         <Suspense fallback={null}>
-          <PricingSection />
-          <FAQSection />
-          <CTASection />
+          <div className="cv-auto">
+            <PricingSection />
+          </div>
+          <div className="cv-auto">
+            <FAQSection />
+          </div>
+          <div className="cv-auto">
+            <CTASection />
+          </div>
         </Suspense>
       </main>
       <Suspense fallback={null}>
