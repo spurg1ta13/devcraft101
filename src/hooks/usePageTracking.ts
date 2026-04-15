@@ -27,14 +27,10 @@ export function usePageTracking() {
     };
 
     const track = async () => {
-      // Try to get country from a free geo API
+      // Get country from shared geo cache (single request per session)
       let country: string | null = null;
       try {
-        const res = await fetch("https://ipapi.co/json/", { signal: AbortSignal.timeout(3000) });
-        if (res.ok) {
-          const geo = await res.json();
-          country = geo.country_code || null;
-        }
+        country = await getCountryCode();
       } catch {
         // Silently fail — country will be null
       }

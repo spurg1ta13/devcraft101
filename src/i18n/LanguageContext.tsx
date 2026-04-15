@@ -28,10 +28,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     if (manuallySet || alreadySaved) return;
 
     const detect = () => {
-      fetch("https://ipapi.co/country_code/", { signal: AbortSignal.timeout(3000) })
-        .then((res) => res.text())
-        .then((code) => {
-          const country = code.trim();
+      getCountryCode()
+        .then((country) => {
           if (country === "GR") {
             setLangState("el");
             localStorage.setItem("lang", "el");
