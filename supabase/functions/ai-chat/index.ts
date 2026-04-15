@@ -43,7 +43,7 @@ Best for: New businesses or personal brands making their first impression online
 - SSL Security Certificate
 - Delivery: 2 working days
 
-### MIDI: The Corporate Standard — €900–€1,000
+### MIDI: The Corporate Standard — €1,000–€1,200
 Best for: Established businesses looking to build trust and showcase their work professionally.
 - Up to 5 Pages, 1 Language
 - Gallery & Portfolio Showcase
@@ -55,7 +55,7 @@ Best for: Established businesses looking to build trust and showcase their work 
 - SSL Security Certificate
 - Delivery: 6–7 working days
 
-### MAXI: The International Presence — €1,300–€1,500 ⭐ Most Popular
+### MAXI: The International Presence — €1,450–€1,700 ⭐ Most Popular
 Best for: Companies expanding to international markets with multi-language needs.
 - Up to 7 Pages
 - 2–3 Languages with Switcher
