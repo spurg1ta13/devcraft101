@@ -26,12 +26,18 @@
     <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" />
     <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" />
 
-    <!-- Preload critical fonts (self-hosted, no external chain) -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
+    <!-- Preload critical font (self-hosted, no external chain) -->
     <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
 
-    <!-- Inline critical CSS for instant FCP/LCP — static shell paints before JS/CSS bundle loads -->
+    <!-- Inline critical CSS for instant FCP/LCP — static shell + base theme paints before JS/CSS bundle loads -->
     <style>
+      /* Font face — critical for FCP text rendering */
+      @font-face{font-family:'Outfit';font-style:normal;font-weight:900;font-display:swap;src:url('/fonts/outfit-latin.woff2') format('woff2')}
+      @font-face{font-family:'Outfit';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/outfit-latin.woff2') format('woff2')}
+      /* Theme variables — prevents flash when CSS bundle loads */
+      :root{--background:0 0% 2%;--foreground:0 0% 96%;--primary:38 100% 55%;--primary-foreground:0 0% 2%;--border:0 0% 10%;--muted-foreground:0 0% 50%}
+      body{margin:0;background:hsl(0 0% 2%);color:hsl(0 0% 96%);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+      /* Static shell */
       .static-shell{min-height:100vh;background:#050505;color:#f5f5f5;font-family:Outfit,sans-serif;display:flex;flex-direction:column;position:relative;overflow:hidden}
       .static-shell__bg{position:absolute;inset:0}
       .static-shell__img{width:100%;height:100%;object-fit:cover;opacity:.2}
@@ -42,6 +48,8 @@
       .static-shell__content{position:relative;z-index:10;flex:1;display:flex;align-items:center;padding:7rem 1.5rem 2rem}
       .static-shell__title{font-size:clamp(2.25rem,8vw,9rem);font-weight:900;line-height:.85;letter-spacing:-.05em}
       .static-shell__title--accent{font-style:italic;background:linear-gradient(135deg,hsl(38,100%,55%),hsl(45,100%,60%));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+      /* Below-fold content visibility — skip rendering until scrolled */
+      .cv-auto{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
 
     <!-- Analytics deferred 3s after first interaction or 5s absolute -->
