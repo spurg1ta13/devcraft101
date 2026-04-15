@@ -129,7 +129,7 @@ const Navbar = () => {
   const menuItems = [
     { label: t(nav.services, lang), href: "services", type: "section" as const },
     { label: t(nav.work, lang), href: "projects", type: "section" as const },
-    { label: t(nav.pricing, lang), href: "/prices", type: "page" as const },
+    { label: t(nav.pricing, lang), href: "pricing", type: "section" as const },
     { label: t(nav.blog, lang), href: "/blog", type: "page" as const },
     { label: t(nav.contact, lang), href: "contact", type: "section" as const },
   ];
