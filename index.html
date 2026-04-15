@@ -33,13 +33,15 @@
 
     <!-- Analytics deferred 3s after first interaction or 5s absolute -->
     <script>
-      // Load Google Fonts asynchronously via JS (avoids render-blocking)
+      // Load Google Fonts non-blocking via media swap
       function loadFonts() {
         if (window.__fontsLoaded) return;
         window.__fontsLoaded = true;
         var l = document.createElement('link');
         l.rel = 'stylesheet';
         l.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap';
+        l.media = 'print';
+        l.onload = function() { this.media = 'all'; };
         document.head.appendChild(l);
       }
       // Load fonts early — on requestIdleCallback or 200ms fallback
