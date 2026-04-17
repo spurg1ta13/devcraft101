@@ -1,4 +1,4 @@
-import { ArrowUpRight, Code2, Palette, ShieldCheck } from "lucide-react";
+import { Code2, Palette, ShieldCheck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -57,7 +57,6 @@ const ShowcaseSection = () => {
                         {t(project.tag, lang)}
                       </span>
                     </div>
-                    <ArrowUpRight className="h-5 w-5 text-muted-foreground/50 group-hover:text-foreground group-hover:rotate-[-10deg] transition-all duration-500" />
                   </div>
 
                   <div className="mb-4 md:mb-6">
