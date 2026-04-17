@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -51,7 +50,7 @@ const ServicesSection = () => {
                 <p className="hidden lg:block text-sm text-foreground/70 max-w-xs leading-relaxed">
                   {t(service.description, lang)}
                 </p>
-                <ArrowUpRight className="service-arrow h-5 w-5 text-muted-foreground/50 transition-all duration-500 shrink-0" />
+                
               </div>
             </div>
           ))}
