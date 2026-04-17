@@ -125,6 +125,23 @@
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     overscroll-behavior-y: none;
+    cursor: default;
+  }
+
+  /* Force default arrow cursor on text — never show I-beam on non-editable copy */
+  p, h1, h2, h3, h4, h5, h6, span, li, label, figcaption, blockquote, dt, dd {
+    cursor: default;
+  }
+
+  /* Restore proper cursors for interactive/editable elements */
+  a, button, [role="button"], summary, label[for], select {
+    cursor: pointer;
+  }
+  input, textarea, [contenteditable="true"] {
+    cursor: text;
+  }
+  :disabled {
+    cursor: not-allowed;
   }
 
   html,
