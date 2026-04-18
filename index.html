@@ -94,6 +94,26 @@
       }
       events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
     </script>
+    <!-- Make the Vite-injected CSS bundle non-render-blocking. Inlined critical CSS already paints the hero/shell. -->
+    <script>
+      (function () {
+        var swap = function () {
+          var links = document.querySelectorAll('link[rel="stylesheet"][href*="/assets/index-"]');
+          links.forEach(function (l) {
+            if (l.dataset.async === '1') return;
+            l.dataset.async = '1';
+            l.media = 'print';
+            l.onload = function () { l.media = 'all'; };
+          });
+        };
+        // Run after Vite injects the <link>, but before paint blocking matters
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', swap);
+        }
+        // Also observe <head> in case the link is injected after DOMContentLoaded
+        new MutationObserver(swap).observe(document.documentElement, { childList: true, subtree: true });
+      })();
+    </script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="4GobB7hINE4WmB+ZbjDcGQ" async></script>
   </head>
 
