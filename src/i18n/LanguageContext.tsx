@@ -43,12 +43,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         });
     };
 
-    // Defer geo-detection until after main rendering
-    if ("requestIdleCallback" in window) {
-      (window as any).requestIdleCallback(detect, { timeout: 3000 });
-    } else {
-      setTimeout(detect, 1500);
-    }
+    // Defer geo-detection until first user interaction OR 8s fallback —
+    // keeps ipapi.co fully out of Lighthouse's critical request chain.
+    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    let timer: number | undefined;
+    const run = () => {
+      if (timer) clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, run));
+      detect();
+    };
+    timer = window.setTimeout(run, 8000);
+    events.forEach((e) => window.addEventListener(e, run, { once: true, passive: true }));
+
+    return () => {
+      if (timer) clearTimeout(timer);
+      events.forEach((e) => window.removeEventListener(e, run));
+    };
   }, []);
 
   useEffect(() => {
