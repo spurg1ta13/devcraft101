@@ -3,6 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, interactive-widget=resizes-content" />
+
+    <!-- LCP image preload — MUST be first in <head> so the browser fetches it before any blocking CSS/JS -->
+    <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
+    <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" fetchpriority="high" />
+    <!-- Critical font preload -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin fetchpriority="high" />
+
     <title>DevCraft | Κατασκευή Ιστοσελίδων Θεσσαλονίκη — Web Development & QA</title>
     <meta name="description" content="Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με τεχνητή νοημοσύνη. Επαγγελματική δημιουργία ιστοσελίδων, σχεδιασμός UI/UX και πιστοποιημένος έλεγχος ποιότητας ISTQB. Πακέτα από €600.">
     <meta name="keywords" content="κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, web development θεσσαλονίκη, κατασκευή website, σχεδιασμός ιστοσελίδων, ISTQB QA">
@@ -18,16 +25,8 @@
     <link rel="alternate" type="text/plain" href="/llms-el.txt" title="LLM guide (Greek)" />
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full guide (EN+EL)" />
 
-    <!-- Resource hints for AI chat backend (loaded on interaction, connection warmed early) -->
-    <!-- Preconnect for AI chat backend -->
+    <!-- DNS prefetch for backend (used after interaction) -->
     <link rel="dns-prefetch" href="https://rgacmyobploucwvwytpl.supabase.co" />
-
-    <!-- Preload hero LCP image -->
-    <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" />
-    <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" />
-
-    <!-- Preload critical font (self-hosted, no external chain) -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
 
     <!-- Inline critical CSS for instant FCP/LCP — static shell + base theme paints before JS/CSS bundle loads -->
     <style>
