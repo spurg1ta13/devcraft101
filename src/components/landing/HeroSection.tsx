@@ -20,7 +20,7 @@ const HeroSection = () => {
             height={1080}
             fetchPriority="high"
             loading="eager"
-            decoding="sync"
+            decoding="async"
             className="w-full h-full object-cover opacity-20"
           />
         </picture>
