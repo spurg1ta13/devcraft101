@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { getCountryCode } from "@/lib/geo";
 import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -28,12 +27,16 @@ export function usePageTracking() {
     };
 
     const track = async () => {
-      // Get country from shared geo cache (single request per session)
+      // Read country from sessionStorage WITHOUT triggering ipapi.co fetch.
+      // LanguageContext warms this cache on user interaction; if not yet
+      // available, we log the page view with country=null rather than
+      // blocking on a 9s third-party request.
       let country: string | null = null;
       try {
-        country = await getCountryCode();
+        const cached = sessionStorage.getItem("geo_country");
+        if (cached && cached !== "UNKNOWN") country = cached;
       } catch {
-        // Silently fail — country will be null
+        // ignore storage errors
       }
 
       const { error } = await supabase
@@ -49,11 +52,20 @@ export function usePageTracking() {
       if (error) console.error("Page view tracking error:", error);
     };
 
-    // Defer tracking out of the critical path
-    if ("requestIdleCallback" in window) {
-      (window as any).requestIdleCallback(track, { timeout: 5000 });
+    // Defer tracking well out of the critical path — wait for full load
+    // + idle, so it never competes with LCP/hydration on mobile.
+    const schedule = () => {
+      if ("requestIdleCallback" in window) {
+        (window as any).requestIdleCallback(track, { timeout: 10000 });
+      } else {
+        setTimeout(track, 4000);
+      }
+    };
+
+    if (document.readyState === "complete") {
+      setTimeout(schedule, 2500);
     } else {
-      setTimeout(track, 2000);
+      window.addEventListener("load", () => setTimeout(schedule, 2500), { once: true });
     }
   }, [location.pathname, location.hash]);
 }

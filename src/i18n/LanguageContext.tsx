@@ -43,16 +43,17 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
         });
     };
 
-    // Defer geo-detection until first user interaction OR 8s fallback —
-    // keeps ipapi.co fully out of Lighthouse's critical request chain.
-    const events = ["pointerdown", "keydown", "scroll", "touchstart"] as const;
+    // Defer geo-detection until first explicit user interaction (click/touch/key)
+    // OR a 15s fallback. Excluding 'scroll' is critical on mobile where the
+    // address bar collapse fires a scroll event almost immediately.
+    const events = ["pointerdown", "keydown", "touchstart"] as const;
     let timer: number | undefined;
     const run = () => {
       if (timer) clearTimeout(timer);
       events.forEach((e) => window.removeEventListener(e, run));
       detect();
     };
-    timer = window.setTimeout(run, 8000);
+    timer = window.setTimeout(run, 15000);
     events.forEach((e) => window.addEventListener(e, run, { once: true, passive: true }));
 
     return () => {
