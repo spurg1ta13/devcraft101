@@ -184,12 +184,6 @@ const Navbar = () => {
           {/* Desktop */}
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-8 ml-auto pl-8 xl:pl-12 2xl:pl-16">
             <div className="flex items-center gap-4 xl:gap-6 2xl:gap-7">
-              <Link
-                to="/about"
-                className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
-              >
-                {t(nav.aboutUs, lang)}
-              </Link>
               {menuItems.map((item) =>
                 item.type === "page" ? (
                   <Link
