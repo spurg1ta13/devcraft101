@@ -31,6 +31,9 @@ const Index = () => {
         <MarqueeSection />
         <Suspense fallback={null}>
           <div className="cv-auto">
+            <AboutSection />
+          </div>
+          <div className="cv-auto">
             <ServicesSection />
           </div>
           <div className="cv-auto">
