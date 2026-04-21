@@ -11,7 +11,7 @@ const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 const RECAPTCHA_SECRET_KEY = Deno.env.get("RECAPTCHA_SECRET_KEY");
 const TO_EMAIL = "grespurga@gmail.com";
 
-async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number }> {
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number; "error-codes"?: string[] }> {
   if (!RECAPTCHA_SECRET_KEY) throw new Error("RECAPTCHA_SECRET_KEY is not configured");
   const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
     method: "POST",
@@ -34,7 +34,11 @@ serve(async (req) => {
 
     if (!recaptchaToken) throw new Error("reCAPTCHA verification required");
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-    if (!recaptchaResult.success) throw new Error("reCAPTCHA verification failed");
+    console.log("reCAPTCHA result:", JSON.stringify(recaptchaResult));
+    if (!recaptchaResult.success) {
+      console.error("reCAPTCHA failed - error-codes:", JSON.stringify(recaptchaResult["error-codes"]));
+      throw new Error(`reCAPTCHA verification failed: ${JSON.stringify(recaptchaResult["error-codes"] || [])}`);
+    }
     if (recaptchaResult.score !== undefined && recaptchaResult.score < 0.3) throw new Error("reCAPTCHA score too low");
 
     // Validate
