@@ -100,7 +100,7 @@ const AboutSection = () => {
 
           {/* Team roles */}
           <div
-            className={`grid sm:grid-cols-3 gap-4 md:gap-6 mt-10 md:mt-14 transition-all duration-700 delay-300 ${
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-10 md:mt-14 transition-all duration-700 delay-300 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
