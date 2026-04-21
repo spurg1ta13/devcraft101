@@ -13,9 +13,12 @@ DevCraft combines Human Strategy with AI Efficiency to deliver bespoke, ISTQB-ce
 Our team has 10+ years of experience in the IT industry and works on international projects, guaranteeing the highest quality of service.
 
 ### Core Team
+Our core team consists of field experts: **a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation.** We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.
+
 - Result-oriented Full-Stack Web Developer (React, TypeScript, Node.js, cloud-native architecture)
 - Certified UI/UX Designer crafting intuitive, research-driven interfaces
 - ISTQB-accredited QA Engineer ensuring highest standards of stability and security
+- Digital Marketer focused on brand awareness and lead generation
 
 ### Key Facts
 - 10+ years of experience
