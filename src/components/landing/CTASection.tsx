@@ -7,7 +7,16 @@ import { useInView } from "@/hooks/useInView";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
 import { cn } from "@/lib/utils";
 
-const BookingForm = lazy(() => import("./BookingForm"));
+const bookingFormImport = () => import("./BookingForm");
+const BookingForm = lazy(bookingFormImport);
+let bookingPrefetched = false;
+const prefetchBooking = () => {
+  if (bookingPrefetched) return;
+  bookingPrefetched = true;
+  bookingFormImport();
+  // warm supabase client too
+  import("@/integrations/supabase/client");
+};
 
 type Mode = "message" | "booking";
 
@@ -140,6 +149,9 @@ const CTASection = () => {
               role="tab"
               aria-selected={mode === "booking"}
               onClick={() => setMode("booking")}
+              onMouseEnter={prefetchBooking}
+              onFocus={prefetchBooking}
+              onTouchStart={prefetchBooking}
               className={cn(
                 "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-mono uppercase tracking-wider transition-all min-h-[44px]",
                 mode === "booking"
