@@ -1,12 +1,18 @@
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowRight, CheckCircle2, Loader2, MessageSquare, Calendar as CalendarLucide } from "lucide-react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { cn } from "@/lib/utils";
+
+const BookingForm = lazy(() => import("./BookingForm"));
+
+type Mode = "message" | "booking";
 
 const CTASection = () => {
+  const [mode, setMode] = useState<Mode>("message");
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -14,6 +20,7 @@ const CTASection = () => {
   const [sending, setSending] = useState(false);
   const { lang } = useLang();
   const c = translations.cta;
+  const b = c.booking;
   const { ref, inView } = useInView();
   const { getToken } = useRecaptcha();
 
