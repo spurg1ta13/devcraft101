@@ -392,4 +392,4 @@ const BreadcrumbSchema = () => {
   );
 };
 
-export { OrganizationSchema, WebSiteSchema, FAQPageSchema, BreadcrumbSchema };
+export { OrganizationSchema, WebSiteSchema, FAQPageSchema, BreadcrumbSchema, ServicesSchema };

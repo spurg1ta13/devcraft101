@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
-import { OrganizationSchema, WebSiteSchema, FAQPageSchema } from "@/components/StructuredData";
+import { OrganizationSchema, WebSiteSchema, FAQPageSchema, ServicesSchema } from "@/components/StructuredData";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 const AboutSection = lazy(() => import("@/components/landing/AboutSection"));
@@ -24,6 +24,7 @@ const Index = () => {
       <SEOHead canonical="/" />
       <OrganizationSchema />
       <WebSiteSchema />
+      <ServicesSchema />
       <FAQPageSchema />
       <Navbar />
       <main id="main-content">
