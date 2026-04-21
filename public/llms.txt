@@ -80,3 +80,6 @@ We publish articles on web development, AI integration, UI/UX design, security, 
 - https://devcraft.gr/blog/website-speed-user-trust-ux-greece
 - https://devcraft.gr/blog/operational-web-design-website-best-employee
 - https://devcraft.gr/blog/web-development-trends-greece-2026
+- https://devcraft.gr/blog/mobile-first-website-greece-connectivity
+- https://devcraft.gr/blog/digital-marketing-greece-2026-why-businesses-need-it
+- https://devcraft.gr/blog/seo-google-ads-greek-small-business-2026

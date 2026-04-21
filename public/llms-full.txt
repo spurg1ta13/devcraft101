@@ -143,3 +143,6 @@ All articles are available in English and Greek / Όλα τα άρθρα είν�
 13. Website Speed, User Trust & UX in Greece: https://devcraft.gr/blog/website-speed-user-trust-ux-greece
 14. Operational Web Design — Website as Your Best Employee: https://devcraft.gr/blog/operational-web-design-website-best-employee
 15. Web Development Trends in Greece 2026: https://devcraft.gr/blog/web-development-trends-greece-2026
+16. Mobile-First Website Design for Greece (Connectivity Reality): https://devcraft.gr/blog/mobile-first-website-greece-connectivity
+17. Digital Marketing in Greece 2026 — Why Every Business Needs a Strategy Now: https://devcraft.gr/blog/digital-marketing-greece-2026-why-businesses-need-it
+18. SEO vs Google Ads for Greek Small Businesses in 2026: https://devcraft.gr/blog/seo-google-ads-greek-small-business-2026
