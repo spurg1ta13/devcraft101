@@ -142,6 +142,9 @@ const AdminDashboard = () => {
         {/* Analytics */}
         <AnalyticsCards />
 
+        {/* Bookings */}
+        <BookingsSection />
+
         {/* Chat Logs */}
         <ChatLogsSection />
 
