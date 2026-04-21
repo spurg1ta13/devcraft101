@@ -231,7 +231,7 @@ const BookingForm = () => {
                 <Calendar
                   mode="single"
                   selected={date}
-                  onSelect={(d) => { setDate(d); setHour(null); setErrors({ ...errors, date: "", hour: "" }); }}
+                  onSelect={(d) => { setDate(d); setHour(null); setErrors({ ...errors, date: "", hour: "" }); refetchTakenSlots(); }}
                   disabled={(d) => d < minDate || d > maxDate}
                   defaultMonth={minDate}
                   initialFocus
