@@ -72,10 +72,20 @@ export default {
           from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
           to: { height: "0", opacity: "0" },
         },
+        "cta-pulse": {
+          "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 hsl(var(--primary) / 0.6)" },
+          "50%": { transform: "scale(1.04)", boxShadow: "0 0 0 12px hsl(var(--primary) / 0)" },
+        },
+        "cta-ring": {
+          "0%": { transform: "scale(1)", opacity: "0.6" },
+          "100%": { transform: "scale(1.35)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cta-pulse": "cta-pulse 2s ease-in-out infinite",
+        "cta-ring": "cta-ring 2s ease-out infinite",
       },
     },
   },
