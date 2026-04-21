@@ -45,8 +45,13 @@ const SEOHead = ({
   noindex = false,
   articleMeta,
 }: SEOHeadProps) => {
-  const fullUrl = `${BASE_URL}${canonical}`;
   const { lang } = useLang();
+  // Strip any ?lang param the user might have on the canonical so it stays clean.
+  const cleanPath = canonical.split("?")[0];
+  const fullUrl = `${BASE_URL}${cleanPath}`;
+  const enUrl = `${fullUrl}?lang=en`;
+  const elUrl = `${fullUrl}?lang=el`;
+  const currentUrl = lang === "el" ? elUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
 
@@ -75,7 +80,7 @@ const SEOHead = ({
       <meta name="theme-color" content="#050505" />
       <meta name="format-detection" content="telephone=no" />
       <meta property="og:type" content={type} />
-      <meta property="og:url" content={fullUrl} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={resolvedDesc} />
       <meta property="og:site_name" content={SITE_NAME} />
@@ -98,8 +103,11 @@ const SEOHead = ({
       {articleMeta?.tags?.map((tag, i) => (
         <meta key={i} property="article:tag" content={tag} />
       ))}
-      <link rel="alternate" hrefLang="en" href={fullUrl} />
-      <link rel="alternate" hrefLang="el" href={fullUrl} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="en-US" href={enUrl} />
+      <link rel="alternate" hrefLang="en-GB" href={enUrl} />
+      <link rel="alternate" hrefLang="el" href={elUrl} />
+      <link rel="alternate" hrefLang="el-GR" href={elUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
     </>
