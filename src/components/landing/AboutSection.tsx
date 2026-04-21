@@ -1,4 +1,4 @@
-import { Code2, Palette, ShieldCheck } from "lucide-react";
+import { Code2, Palette, ShieldCheck, Megaphone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -14,10 +14,12 @@ const AboutSection = () => {
     { value: lang === "el" ? "Μηδέν" : "Zero", label: t(a.stats.defect, lang) },
   ];
 
+  // Team roles intentionally English-only (brand decision)
   const team = [
-    { Icon: Code2, role: t(a.roles.webDev, lang) },
-    { Icon: Palette, role: t(a.roles.designer, lang) },
-    { Icon: ShieldCheck, role: t(a.roles.qa, lang) },
+    { Icon: Code2, role: "Web Developer" },
+    { Icon: Palette, role: "UI/UX Designer" },
+    { Icon: ShieldCheck, role: "QA Engineer" },
+    { Icon: Megaphone, role: "Digital Marketer" },
   ];
 
   return (
@@ -98,7 +100,7 @@ const AboutSection = () => {
 
           {/* Team roles */}
           <div
-            className={`grid sm:grid-cols-3 gap-4 md:gap-6 mt-10 md:mt-14 transition-all duration-700 delay-300 ${
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-10 md:mt-14 transition-all duration-700 delay-300 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
