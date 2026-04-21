@@ -243,8 +243,8 @@ export const translations = {
       successTitle1: { en: "Meeting", el: "Ραντεβού" },
       successTitle2: { en: "booked!", el: "κλείστηκε!" },
       successDesc: {
-        en: "We've received your booking and will send a calendar invite shortly.",
-        el: "Λάβαμε την κράτησή σας και θα σας στείλουμε σύντομα πρόσκληση ημερολογίου.",
+        en: "We've received your booking and will reach out to you shortly.",
+        el: "Λάβαμε την κράτησή σας και θα επικοινωνήσουμε σύντομα μαζί σας.",
       },
       errors: {
         dateRequired: { en: "Please select a date", el: "Επιλέξτε ημερομηνία" },
