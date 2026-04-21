@@ -201,8 +201,6 @@ const BookingForm = () => {
           </div>
         </div>
 
-        <p className="text-sm text-muted-foreground">{t(b.subtitle, lang)}</p>
-
         <div className="grid md:grid-cols-2 gap-4 md:gap-5">
           {/* Date picker */}
           <div>
@@ -212,8 +210,8 @@ const BookingForm = () => {
                   type="button"
                   variant="outline"
                   className={cn(
-                    "w-full justify-start text-left font-normal bg-secondary border-border rounded-2xl px-5 py-4 md:px-6 md:py-5 min-h-[48px] text-base hover:bg-secondary/80",
-                    !date && "text-muted-foreground",
+                    "w-full justify-start text-left font-normal bg-secondary border-border rounded-2xl px-5 py-4 md:px-6 md:py-5 min-h-[48px] text-base text-foreground hover:bg-secondary hover:text-foreground focus-visible:text-foreground",
+                    !date && "text-muted-foreground hover:text-muted-foreground focus-visible:text-muted-foreground",
                     errors.date && "border-destructive"
                   )}
                 >
