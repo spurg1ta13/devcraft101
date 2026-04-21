@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Code2, Palette, ShieldCheck } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
@@ -9,8 +8,7 @@ const AboutSection = () => {
   const { lang } = useLang();
   const a = translations.about;
   const nav = translations.nav;
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { threshold: 0.15, once: true });
+  const { ref, inView } = useInView({ threshold: 0.15 });
 
   const stats = [
     { value: "10+", label: t(a.stats.years, lang) },
