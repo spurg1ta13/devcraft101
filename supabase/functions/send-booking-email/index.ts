@@ -34,7 +34,11 @@ serve(async (req) => {
 
     if (!recaptchaToken) throw new Error("reCAPTCHA verification required");
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
-    if (!recaptchaResult.success) throw new Error("reCAPTCHA verification failed");
+    console.log("reCAPTCHA result:", JSON.stringify(recaptchaResult));
+    if (!recaptchaResult.success) {
+      console.error("reCAPTCHA failed - error-codes:", JSON.stringify(recaptchaResult["error-codes"]));
+      throw new Error(`reCAPTCHA verification failed: ${JSON.stringify(recaptchaResult["error-codes"] || [])}`);
+    }
     if (recaptchaResult.score !== undefined && recaptchaResult.score < 0.3) throw new Error("reCAPTCHA score too low");
 
     // Validate
