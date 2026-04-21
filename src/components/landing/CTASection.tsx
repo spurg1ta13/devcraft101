@@ -7,7 +7,16 @@ import { useInView } from "@/hooks/useInView";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
 import { cn } from "@/lib/utils";
 
-const BookingForm = lazy(() => import("./BookingForm"));
+const bookingFormImport = () => import("./BookingForm");
+const BookingForm = lazy(bookingFormImport);
+let bookingPrefetched = false;
+const prefetchBooking = () => {
+  if (bookingPrefetched) return;
+  bookingPrefetched = true;
+  bookingFormImport();
+  // warm supabase client too
+  import("@/integrations/supabase/client");
+};
 
 type Mode = "message" | "booking";
 
