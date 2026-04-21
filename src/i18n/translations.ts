@@ -21,7 +21,7 @@ export const translations = {
       en: "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.\nYour 1-month web project, delivered in just 1 week.",
       el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις 1 εβδομάδα.",
     },
-    explore: { en: "Explore ↓", el: "Εξερεύνηση ↓" },
+    explore: { en: "Let's talk", el: "Ας μιλήσουμε" },
   },
 
   // Marquee
