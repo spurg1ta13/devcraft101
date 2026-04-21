@@ -35,9 +35,14 @@ serve(async (req) => {
     if (!recaptchaToken) throw new Error("reCAPTCHA verification required");
     const recaptchaResult = await verifyRecaptcha(recaptchaToken);
     console.log("reCAPTCHA result:", JSON.stringify(recaptchaResult));
-    if (!recaptchaResult.success) {
-      console.error("reCAPTCHA failed - error-codes:", JSON.stringify(recaptchaResult["error-codes"]));
-      throw new Error(`reCAPTCHA verification failed: ${JSON.stringify(recaptchaResult["error-codes"] || [])}`);
+    const recaptchaErrors = recaptchaResult["error-codes"] || [];
+    const browserOnlyError = recaptchaErrors.length === 1 && recaptchaErrors[0] === "browser-error";
+    if (!recaptchaResult.success && !browserOnlyError) {
+      console.error("reCAPTCHA failed - error-codes:", JSON.stringify(recaptchaErrors));
+      throw new Error(`reCAPTCHA verification failed: ${JSON.stringify(recaptchaErrors)}`);
+    }
+    if (browserOnlyError) {
+      console.warn("reCAPTCHA browser-error ignored for booking submission");
     }
     if (recaptchaResult.score !== undefined && recaptchaResult.score < 0.3) throw new Error("reCAPTCHA score too low");
 
