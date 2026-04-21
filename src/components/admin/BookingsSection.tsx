@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
@@ -10,7 +11,7 @@ import {
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { CalendarDays, Trash2, RefreshCw, Inbox, Mail, Phone } from "lucide-react";
+import { CalendarDays, Trash2, RefreshCw, Inbox, Mail, Phone, Check, Loader2 } from "lucide-react";
 
 type Booking = {
   id: string;
@@ -22,11 +23,15 @@ type Booking = {
   booking_hour: number;
   language: string | null;
   created_at: string;
+  admin_notes: string | null;
 };
 
 const BookingsSection = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const [savingId, setSavingId] = useState<string | null>(null);
+  const [savedId, setSavedId] = useState<string | null>(null);
 
   const fetchBookings = async () => {
     setLoading(true);
@@ -35,7 +40,13 @@ const BookingsSection = () => {
       .select("*")
       .order("booking_date", { ascending: true })
       .order("booking_hour", { ascending: true });
-    if (!error) setBookings((data as Booking[]) || []);
+    if (!error) {
+      const list = (data as Booking[]) || [];
+      setBookings(list);
+      const initial: Record<string, string> = {};
+      list.forEach((b) => { initial[b.id] = b.admin_notes || ""; });
+      setDrafts(initial);
+    }
     setLoading(false);
   };
 
@@ -44,6 +55,20 @@ const BookingsSection = () => {
   const handleDelete = async (id: string) => {
     const { error } = await supabase.from("bookings").delete().eq("id", id);
     if (!error) setBookings((prev) => prev.filter((b) => b.id !== id));
+  };
+
+  const handleSaveNote = async (id: string) => {
+    setSavingId(id);
+    const { error } = await supabase
+      .from("bookings")
+      .update({ admin_notes: drafts[id] || null })
+      .eq("id", id);
+    setSavingId(null);
+    if (!error) {
+      setBookings((prev) => prev.map((b) => b.id === id ? { ...b, admin_notes: drafts[id] || null } : b));
+      setSavedId(id);
+      setTimeout(() => setSavedId((curr) => curr === id ? null : curr), 1500);
+    }
   };
 
   const formatSlot = (date: string, hour: number) => {
