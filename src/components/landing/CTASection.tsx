@@ -111,6 +111,59 @@ const CTASection = () => {
             </p>
           </div>
 
+          {/* Mode toggle: Send a message / Book a meeting */}
+          <div
+            className={cn(
+              "inline-flex p-1 rounded-full bg-secondary border border-border mb-6 md:mb-8 transition-all duration-700 delay-100",
+              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+            )}
+            role="tablist"
+            aria-label="Contact mode"
+          >
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mode === "message"}
+              onClick={() => setMode("message")}
+              className={cn(
+                "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-mono uppercase tracking-wider transition-all min-h-[44px]",
+                mode === "message"
+                  ? "bg-primary text-primary-foreground shadow-glow"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <MessageSquare className="h-4 w-4" />
+              {t(b.toggleMessage, lang)}
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={mode === "booking"}
+              onClick={() => setMode("booking")}
+              className={cn(
+                "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-mono uppercase tracking-wider transition-all min-h-[44px]",
+                mode === "booking"
+                  ? "bg-primary text-primary-foreground shadow-glow"
+                  : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <CalendarLucide className="h-4 w-4" />
+              {t(b.toggleBooking, lang)}
+            </button>
+          </div>
+
+          {mode === "booking" ? (
+            <div
+              className={cn(
+                "transition-all duration-700 delay-200",
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              )}
+            >
+              <Suspense fallback={<div className="py-12 text-center text-muted-foreground"><Loader2 className="h-6 w-6 animate-spin inline" /></div>}>
+                <BookingForm />
+              </Suspense>
+            </div>
+          ) : (
           <form
             onSubmit={handleSubmit}
             className={`space-y-4 md:space-y-5 transition-all duration-700 delay-200 ${
