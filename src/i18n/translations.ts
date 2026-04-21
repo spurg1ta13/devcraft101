@@ -237,6 +237,10 @@ export const translations = {
       pickTime: { en: "Available times (10:00 – 19:00, Europe/Athens)", el: "Διαθέσιμες ώρες (10:00 – 19:00, Europe/Athens)" },
       noSlots: { en: "Please select a date first", el: "Επιλέξτε πρώτα ημερομηνία" },
       slotTaken: { en: "Booked", el: "Κλεισμένο" },
+      formatNotice: {
+        en: "Meetings are held via video call. In-person meetings are available only in the Thessaloniki area.",
+        el: "Τα ραντεβού πραγματοποιούνται μέσω βιντεοκλήσης. Δια ζώσης συναντήσεις είναι διαθέσιμες μόνο στην περιοχή της Θεσσαλονίκης.",
+      },
       messageOptional: { en: "Notes for the meeting (optional)", el: "Σημειώσεις για το ραντεβού (προαιρετικό)" },
       confirm: { en: "Confirm booking", el: "Επιβεβαίωση ραντεβού" },
       booking: { en: "Booking...", el: "Κράτηση..." },
