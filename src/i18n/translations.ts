@@ -180,10 +180,22 @@ export const translations = {
           el: "Ναι — η τεχνητή νοημοσύνη είναι βαθιά ενσωματωμένη στη ροή εργασίας μας. Τη χρησιμοποιούμε για να επιταχύνουμε την ανάπτυξη, να δημιουργούμε βελτιστοποιημένο κώδικα και να αυτοματοποιούμε επαναλαμβανόμενες εργασίες. Αυτό μας επιτρέπει να παραδίδουμε έργα έως και 4 φορές πιο γρήγορα χωρίς συμβιβασμούς στην ποιότητα, διατηρώντας χαμηλότερο κόστος για τους πελάτες μας.",
         },
       },
+      {
+        question: { en: "What digital marketing services do you provide?", el: "Ποιες υπηρεσίες digital marketing προσφέρετε;" },
+        answer: {
+          en: "We offer SEO, SEM (Google Ads), social media marketing, and content marketing. Our strategies are data-driven and tailored to your industry — focused on increasing organic visibility, qualified traffic, and measurable conversions, not vanity metrics.",
+          el: "Προσφέρουμε SEO, SEM (Google Ads), social media marketing και content marketing. Οι στρατηγικές μας βασίζονται σε δεδομένα και προσαρμόζονται στον κλάδο σας — με στόχο την αύξηση της οργανικής προβολής, της στοχευμένης επισκεψιμότητας και των μετρήσιμων μετατροπών, όχι των επιφανειακών δεικτών.",
+        },
+      },
+      {
+        question: { en: "How long does it take to see results from SEO and digital marketing?", el: "Πόσο χρόνο χρειάζεται για να φανούν αποτελέσματα από SEO και digital marketing;" },
+        answer: {
+          en: "Paid campaigns (SEM, social ads) can deliver leads within the first weeks. SEO and content marketing are long-term investments — most clients see meaningful organic growth within 3–6 months, with compounding results over time. We provide transparent monthly reports so you can track every metric.",
+          el: "Οι πληρωμένες καμπάνιες (SEM, social ads) μπορούν να αποφέρουν leads μέσα στις πρώτες εβδομάδες. Το SEO και το content marketing είναι μακροπρόθεσμες επενδύσεις — οι περισσότεροι πελάτες βλέπουν ουσιαστική οργανική ανάπτυξη εντός 3–6 μηνών, με αυξανόμενα αποτελέσματα με τον χρόνο. Παρέχουμε διαφανείς μηνιαίες αναφορές ώστε να παρακολουθείτε κάθε μετρική.",
+        },
+      },
     ],
   },
-
-  // CTA / Contact
   cta: {
     label: { en: "Next step", el: "Επόμενο βήμα" },
     heading1: { en: "Got a project?", el: "Έχετε ένα έργο;" },
