@@ -58,7 +58,8 @@ const HeroSection = () => {
                 e.preventDefault();
                 const el = document.getElementById("contact");
                 if (!el) return;
-                const top = el.getBoundingClientRect().bottom + window.scrollY - window.innerHeight;
+                const offset = window.innerWidth < 1024 ? 80 : 60;
+                const top = el.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({ top, behavior: "smooth" });
               }}
               className="relative self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
