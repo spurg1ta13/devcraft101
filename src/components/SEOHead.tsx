@@ -8,6 +8,7 @@ interface SEOHeadProps {
   canonical?: string;
   type?: string;
   noindex?: boolean;
+  ogImage?: string;
   articleMeta?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -43,6 +44,7 @@ const SEOHead = ({
   canonical = "/",
   type = "website",
   noindex = false,
+  ogImage,
   articleMeta,
 }: SEOHeadProps) => {
   const { lang } = useLang();
@@ -54,6 +56,9 @@ const SEOHead = ({
   const currentUrl = lang === "el" ? elUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
+  const resolvedOgImage = ogImage
+    ? (ogImage.startsWith("http") ? ogImage : `${BASE_URL}${ogImage}`)
+    : OG_IMAGE;
 
   // Block indexing on any non-production domain (e.g. lovable.app)
   const isStaging = typeof window !== "undefined" && !window.location.hostname.endsWith("devcraft.gr");
@@ -86,7 +91,7 @@ const SEOHead = ({
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content={lang === "el" ? "el_GR" : "en_US"} />
       <meta property="og:locale:alternate" content={lang === "el" ? "en_US" : "el_GR"} />
-      <meta property="og:image" content={OG_IMAGE} />
+      <meta property="og:image" content={resolvedOgImage} />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
       <meta property="og:image:type" content="image/jpeg" />
@@ -94,7 +99,7 @@ const SEOHead = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={resolvedTitle} />
       <meta name="twitter:description" content={resolvedDesc} />
-      <meta name="twitter:image" content={OG_IMAGE} />
+      <meta name="twitter:image" content={resolvedOgImage} />
       <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
       {articleMeta?.publishedTime && <meta property="article:published_time" content={articleMeta.publishedTime} />}
       {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}

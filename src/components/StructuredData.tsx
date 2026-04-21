@@ -210,6 +210,78 @@ const OrganizationSchema = () => {
       availableLanguage: ["English", "Greek"],
     },
     sameAs: ["https://www.linkedin.com/company/devcraft-gr"],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5.0",
+      bestRating: "5",
+      worstRating: "1",
+      ratingCount: "12",
+      reviewCount: "12",
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+};
+
+const ServicesSchema = () => {
+  const services = [
+    {
+      name: "Custom Web Development",
+      alternateName: "Κατασκευή Ιστοσελίδων",
+      description:
+        "Bespoke websites and web applications built with React, TypeScript, and modern cloud-native architecture. Performance-first, SEO-ready, and fully responsive.",
+      serviceType: "Web Development",
+    },
+    {
+      name: "AI Integration & Solutions",
+      alternateName: "Λύσεις Τεχνητής Νοημοσύνης",
+      description:
+        "AI chatbots, automation, and intelligent assistants integrated into your website. Multilingual, GDPR-compliant, and trained on your business context.",
+      serviceType: "AI Solutions",
+    },
+    {
+      name: "ISTQB-Certified Quality Assurance",
+      alternateName: "Πιστοποιημένος Έλεγχος Ποιότητας ISTQB",
+      description:
+        "Certified QA engineers test every feature on desktop and mobile across Windows, macOS, iOS, and Android. Zero-defect launch policy.",
+      serviceType: "Software Testing",
+    },
+    {
+      name: "UI/UX Design",
+      alternateName: "Σχεδιασμός UI/UX",
+      description:
+        "Research-driven, conversion-focused interfaces. Custom design systems — never templates — that align with your brand and convert visitors into customers.",
+      serviceType: "UI/UX Design",
+    },
+    {
+      name: "Digital Marketing",
+      alternateName: "Ψηφιακό Marketing",
+      description:
+        "SEO, SEM, social media, and content marketing. Data-driven strategies that amplify brand reach and convert leads into loyal customers.",
+      serviceType: "Digital Marketing",
+    },
+  ];
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": services.map((s) => ({
+      "@type": "Service",
+      name: s.name,
+      alternateName: s.alternateName,
+      description: s.description,
+      serviceType: s.serviceType,
+      provider: { "@id": "https://devcraft.gr/#organization" },
+      areaServed: [
+        { "@type": "Country", name: "Greece" },
+        { "@type": "Place", name: "Worldwide" },
+      ],
+      availableLanguage: ["en", "el"],
+    })),
   };
 
   return (
@@ -320,4 +392,4 @@ const BreadcrumbSchema = () => {
   );
 };
 
-export { OrganizationSchema, WebSiteSchema, FAQPageSchema, BreadcrumbSchema };
+export { OrganizationSchema, WebSiteSchema, FAQPageSchema, BreadcrumbSchema, ServicesSchema };
