@@ -272,6 +272,7 @@ const CTASection = () => {
               <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-muted-foreground transition-colors underline">Terms</a>
             </p>
           </form>
+          )}
 
           {submitted && (
             <div
