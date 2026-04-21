@@ -27,8 +27,8 @@ export const translations = {
   // Marquee
   marquee: {
     words: {
-      en: ["Web Development", "UI/UX Design", "ISTQB Testing", "React", "TypeScript", "Performance", "Design Systems", "Quality Assurance", "API Architecture", "Cloud Deploy", "Accessibility", "Security Audits"],
-      el: ["Ανάπτυξη Ιστοσελίδων", "Σχεδιασμός UI/UX", "Δοκιμές ISTQB", "React", "TypeScript", "Απόδοση", "Συστήματα Σχεδιασμού", "Διασφάλιση Ποιότητας", "Αρχιτεκτονική API", "Cloud Deploy", "Προσβασιμότητα", "Ελέγχοι Ασφαλείας"],
+      en: ["Web Development", "UI/UX Design", "ISTQB Testing", "React", "TypeScript", "Performance", "Design Systems", "Quality Assurance", "API Architecture", "Cloud Deploy", "Accessibility", "Security Audits", "Digital Marketing"],
+      el: ["Ανάπτυξη Ιστοσελίδων", "Σχεδιασμός UI/UX", "Δοκιμές ISTQB", "React", "TypeScript", "Απόδοση", "Συστήματα Σχεδιασμού", "Διασφάλιση Ποιότητας", "Αρχιτεκτονική API", "Cloud Deploy", "Προσβασιμότητα", "Ελέγχοι Ασφαλείας", "Ψηφιακό Marketing"],
     },
   },
 
