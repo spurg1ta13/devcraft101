@@ -51,24 +51,32 @@ const BookingForm = () => {
   }, [minDate]);
 
   // Fetch taken slots for the next ~90 days
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      const { supabase } = await import("@/integrations/supabase/client");
-      const { data, error } = await supabase.rpc("get_taken_slots", {
-        _from: formatDateLocal(minDate),
-        _to: formatDateLocal(maxDate),
-      });
-      if (cancelled || error || !data) return;
-      const map: Record<string, number[]> = {};
-      for (const row of data as { booking_date: string; booking_hour: number }[]) {
-        if (!map[row.booking_date]) map[row.booking_date] = [];
-        map[row.booking_date].push(row.booking_hour);
-      }
-      setTakenSlots(map);
-    })();
-    return () => { cancelled = true; };
+  const refetchTakenSlots = useCallback(async () => {
+    const { supabase } = await import("@/integrations/supabase/client");
+    const { data, error } = await supabase.rpc("get_taken_slots", {
+      _from: formatDateLocal(minDate),
+      _to: formatDateLocal(maxDate),
+    });
+    if (error || !data) return;
+    const map: Record<string, number[]> = {};
+    for (const row of data as { booking_date: string; booking_hour: number }[]) {
+      if (!map[row.booking_date]) map[row.booking_date] = [];
+      map[row.booking_date].push(row.booking_hour);
+    }
+    setTakenSlots(map);
   }, [minDate, maxDate]);
+
+  useEffect(() => {
+    refetchTakenSlots();
+    const onFocus = () => refetchTakenSlots();
+    const onVisibility = () => { if (document.visibilityState === "visible") refetchTakenSlots(); };
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
+  }, [refetchTakenSlots]);
 
   const dateKey = date ? formatDateLocal(date) : null;
   const takenForDate = dateKey ? takenSlots[dateKey] || [] : [];
