@@ -117,20 +117,6 @@ const AboutSection = () => {
             ))}
           </div>
 
-          {/* CTA to full page */}
-          <div
-            className={`mt-10 md:mt-14 transition-all duration-700 delay-500 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.15em] text-primary-foreground bg-primary px-6 py-3.5 min-h-[48px] rounded-full hover:brightness-110 active:scale-[0.98] transition-all font-bold"
-            >
-              {lang === "el" ? "Μάθετε περισσότερα" : "Learn more about us"}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
         </div>
       </div>
     </section>
