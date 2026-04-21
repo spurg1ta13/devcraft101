@@ -55,15 +55,23 @@ const AboutSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] blur-[120px] amber-drift rounded-full" />
 
       <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
-        <div className="max-w-5xl">
+        <div
+          className={`transition-all duration-700 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6 md:mb-8">
+            {t(a.teamLabel, lang)}
+          </span>
+        </div>
+
+        {/* Heading + intro / Stats — modern asymmetric two-column */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-14 lg:gap-16 items-start">
           <div
-            className={`transition-all duration-700 ${
+            className={`lg:col-span-8 transition-all duration-700 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6 md:mb-8">
-              {t(a.teamLabel, lang)}
-            </span>
             <h2
               id="about-heading"
               className="text-3xl sm:text-5xl md:text-7xl font-black tracking-[-0.05em] leading-[0.85] mb-6 md:mb-10"
@@ -82,45 +90,49 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Stats */}
+          {/* Stats — sidebar card column on desktop, side-by-side on mobile */}
           <div
-            className={`grid grid-cols-2 gap-6 md:gap-12 mt-12 md:mt-16 pt-10 md:pt-14 border-t border-border/30 transition-all duration-700 delay-150 ${
+            className={`lg:col-span-4 w-full transition-all duration-700 delay-150 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <span className="text-4xl md:text-6xl font-black tracking-[-0.04em] text-gradient block">
-                  {stat.value}
-                </span>
-                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 mt-3">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Team roles */}
-          <div
-            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-10 md:mt-14 transition-all duration-700 delay-300 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
-          >
-            {team.map(({ Icon, role }) => (
-              <div
-                key={role}
-                className="flex items-center gap-4 bg-secondary/60 border border-border/40 rounded-2xl p-4 md:p-5 hover:border-primary/40 transition-colors duration-500"
-              >
-                <div className="w-11 h-11 rounded-xl bg-card border border-border/50 flex items-center justify-center shrink-0">
-                  <Icon className="h-5 w-5 text-primary" />
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-3 md:gap-4">
+              {stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="relative overflow-hidden rounded-2xl border border-border/40 bg-secondary/40 backdrop-blur-sm p-5 md:p-6 hover:border-primary/40 transition-colors duration-500"
+                >
+                  <span className="text-4xl md:text-5xl lg:text-6xl font-black tracking-[-0.04em] text-gradient block leading-none">
+                    {stat.value}
+                  </span>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/60 mt-3">
+                    {stat.label}
+                  </p>
                 </div>
-                <span className="font-mono text-xs md:text-sm uppercase tracking-[0.12em] text-foreground/90">
-                  {role}
-                </span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+        </div>
 
+        {/* Team roles */}
+        <div
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-12 md:mt-16 pt-10 md:pt-14 border-t border-border/30 transition-all duration-700 delay-300 ${
+            inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
+          {team.map(({ Icon, role }) => (
+            <div
+              key={role}
+              className="flex items-center gap-4 bg-secondary/60 border border-border/40 rounded-2xl p-4 md:p-5 hover:border-primary/40 transition-colors duration-500"
+            >
+              <div className="w-11 h-11 rounded-xl bg-card border border-border/50 flex items-center justify-center shrink-0">
+                <Icon className="h-5 w-5 text-primary" />
+              </div>
+              <span className="font-mono text-xs md:text-sm uppercase tracking-[0.12em] text-foreground/90">
+                {role}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
