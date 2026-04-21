@@ -55,7 +55,7 @@ const AboutSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/[0.04] blur-[120px] amber-drift rounded-full" />
 
       <div className="container relative z-10 px-4 sm:px-6" ref={ref}>
-        <div>
+        <div className="max-w-5xl mx-auto">
           <div
             className={`transition-all duration-700 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
