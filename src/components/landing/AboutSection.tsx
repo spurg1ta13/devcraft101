@@ -70,7 +70,7 @@ const AboutSection = () => {
             >
               {t(a.heading1, lang)} <span className="text-gradient">{t(a.heading2, lang)}</span>
             </h2>
-            <div className="max-w-3xl space-y-5 md:space-y-6">
+            <div className="max-w-3xl mx-auto space-y-5 md:space-y-6 text-center">
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                 {t(a.intro1, lang)}
               </p>
