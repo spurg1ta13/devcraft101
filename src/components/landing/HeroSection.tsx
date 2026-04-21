@@ -61,7 +61,7 @@ const HeroSection = () => {
                 const top = el.getBoundingClientRect().bottom + window.scrollY - window.innerHeight;
                 window.scrollTo({ top, behavior: "smooth" });
               }}
-              className="relative bg-primary text-primary-foreground font-bold text-sm px-8 py-4 min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
+              className="relative self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
             >
               <span className="absolute inset-0 rounded-full bg-primary/60 animate-cta-ring -z-10" aria-hidden="true" />
               {t(hero.explore, lang)}
