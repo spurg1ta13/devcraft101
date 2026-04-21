@@ -95,7 +95,7 @@ const AdminDashboard = () => {
       <div className="max-w-6xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-foreground">Contact Messages</h1>
+          <h1 className="text-2xl font-bold text-foreground">Admin Dashboard</h1>
           <div className="flex gap-2">
             <Button variant="outline" size="sm" onClick={fetchMessages} disabled={loading}>
               <RefreshCw className={`w-4 h-4 mr-1 ${loading ? "animate-spin" : ""}`} />
@@ -106,6 +106,9 @@ const AdminDashboard = () => {
             </Button>
           </div>
         </div>
+
+        {/* Bookings — top priority */}
+        <BookingsSection />
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -142,13 +145,11 @@ const AdminDashboard = () => {
         {/* Analytics */}
         <AnalyticsCards />
 
-        {/* Bookings */}
-        <BookingsSection />
-
         {/* Chat Logs */}
         <ChatLogsSection />
 
-        {/* Table */}
+        {/* Contact messages */}
+        <h2 className="text-xl font-bold text-foreground pt-2">Contact Messages</h2>
         <Card className="border-border/50">
           <CardContent className="p-0">
             {loading ? (
