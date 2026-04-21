@@ -11,7 +11,7 @@ const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 const RECAPTCHA_SECRET_KEY = Deno.env.get("RECAPTCHA_SECRET_KEY");
 const TO_EMAIL = "grespurga@gmail.com";
 
-async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number }> {
+async function verifyRecaptcha(token: string): Promise<{ success: boolean; score?: number; "error-codes"?: string[] }> {
   if (!RECAPTCHA_SECRET_KEY) throw new Error("RECAPTCHA_SECRET_KEY is not configured");
   const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
     method: "POST",
