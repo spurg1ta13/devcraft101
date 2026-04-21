@@ -56,7 +56,10 @@ const HeroSection = () => {
               href="#contact"
               onClick={(e) => {
                 e.preventDefault();
-                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                const el = document.getElementById("contact");
+                if (!el) return;
+                const top = el.getBoundingClientRect().bottom + window.scrollY - window.innerHeight;
+                window.scrollTo({ top, behavior: "smooth" });
               }}
               className="relative bg-primary text-primary-foreground font-bold text-sm px-8 py-4 min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
             >
