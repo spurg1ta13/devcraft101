@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
@@ -10,7 +11,7 @@ import {
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { CalendarDays, Trash2, RefreshCw, Inbox, Mail, Phone } from "lucide-react";
+import { CalendarDays, Trash2, RefreshCw, Inbox, Mail, Phone, Check, Loader2 } from "lucide-react";
 
 type Booking = {
   id: string;
@@ -22,11 +23,15 @@ type Booking = {
   booking_hour: number;
   language: string | null;
   created_at: string;
+  admin_notes: string | null;
 };
 
 const BookingsSection = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [loading, setLoading] = useState(true);
+  const [drafts, setDrafts] = useState<Record<string, string>>({});
+  const [savingId, setSavingId] = useState<string | null>(null);
+  const [savedId, setSavedId] = useState<string | null>(null);
 
   const fetchBookings = async () => {
     setLoading(true);
@@ -35,7 +40,13 @@ const BookingsSection = () => {
       .select("*")
       .order("booking_date", { ascending: true })
       .order("booking_hour", { ascending: true });
-    if (!error) setBookings((data as Booking[]) || []);
+    if (!error) {
+      const list = (data as Booking[]) || [];
+      setBookings(list);
+      const initial: Record<string, string> = {};
+      list.forEach((b) => { initial[b.id] = b.admin_notes || ""; });
+      setDrafts(initial);
+    }
     setLoading(false);
   };
 
@@ -44,6 +55,20 @@ const BookingsSection = () => {
   const handleDelete = async (id: string) => {
     const { error } = await supabase.from("bookings").delete().eq("id", id);
     if (!error) setBookings((prev) => prev.filter((b) => b.id !== id));
+  };
+
+  const handleSaveNote = async (id: string) => {
+    setSavingId(id);
+    const { error } = await supabase
+      .from("bookings")
+      .update({ admin_notes: drafts[id] || null })
+      .eq("id", id);
+    setSavingId(null);
+    if (!error) {
+      setBookings((prev) => prev.map((b) => b.id === id ? { ...b, admin_notes: drafts[id] || null } : b));
+      setSavedId(id);
+      setTimeout(() => setSavedId((curr) => curr === id ? null : curr), 1500);
+    }
   };
 
   const formatSlot = (date: string, hour: number) => {
@@ -88,6 +113,7 @@ const BookingsSection = () => {
                 <TableHead>Name</TableHead>
                 <TableHead>Contact</TableHead>
                 <TableHead className="max-w-[280px]">Notes</TableHead>
+                <TableHead className="min-w-[260px]">Admin comment</TableHead>
                 <TableHead className="w-[60px]">Lang</TableHead>
                 <TableHead className="w-[60px]"></TableHead>
               </TableRow>
@@ -95,6 +121,8 @@ const BookingsSection = () => {
             <TableBody>
               {bookings.map((b) => {
                 const isPast = new Date(b.booking_date + "T00:00:00") < today;
+                const draft = drafts[b.id] ?? "";
+                const dirty = (b.admin_notes || "") !== draft;
                 return (
                   <TableRow key={b.id} className={`border-border/50 ${isPast ? "opacity-50" : ""}`}>
                     <TableCell className="font-mono text-sm whitespace-nowrap text-foreground">
@@ -115,6 +143,34 @@ const BookingsSection = () => {
                     </TableCell>
                     <TableCell className="max-w-[280px]">
                       {b.message && <p className="text-sm text-foreground/80 line-clamp-2">{b.message}</p>}
+                    </TableCell>
+                    <TableCell className="min-w-[260px] align-top">
+                      <div className="space-y-2">
+                        <Textarea
+                          value={draft}
+                          onChange={(e) => setDrafts((p) => ({ ...p, [b.id]: e.target.value }))}
+                          placeholder="Add a comment…"
+                          rows={2}
+                          className="text-sm resize-y min-h-[60px]"
+                        />
+                        <div className="flex items-center gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={!dirty || savingId === b.id}
+                            onClick={() => handleSaveNote(b.id)}
+                          >
+                            {savingId === b.id ? (
+                              <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Saving</>
+                            ) : savedId === b.id ? (
+                              <><Check className="w-3 h-3 mr-1 text-primary" /> Saved</>
+                            ) : (
+                              "Save"
+                            )}
+                          </Button>
+                          {dirty && <span className="text-[10px] text-muted-foreground">unsaved</span>}
+                        </div>
+                      </div>
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground uppercase">{b.language || "—"}</TableCell>
                     <TableCell>
