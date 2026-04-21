@@ -62,6 +62,14 @@ export const translations = {
           el: "Πιστοποιημένοι μηχανικοί ελέγχουν κάθε λειτουργία πριν φτάσει στους χρήστες σας. Κυκλοφορίες χωρίς σφάλματα.",
         },
       },
+      {
+        title: { en: "Marketing", el: "Marketing" },
+        scope: { en: "Strategic Digital Growth", el: "Strategic Digital Growth" },
+        description: {
+          en: "SEO, SEM, Social Media & Content Marketing. Data-driven strategies that amplify your brand's reach. We don't just find leads — we convert them into loyal customers.",
+          el: "SEO, SEM, Social Media & Content Marketing. Στρατηγικές βασισμένες σε δεδομένα που ενισχύουν την απήχηση της επωνυμίας σας. Δεν βρίσκουμε απλώς leads — τα μετατρέπουμε σε πιστούς πελάτες.",
+        },
+      },
     ],
   },
 
