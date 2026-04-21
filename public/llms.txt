@@ -11,6 +11,10 @@ DevCraft is a web development agency based in Thessaloniki, Greece. We specializ
 
 We serve clients in Greece and worldwide, with full bilingual support (English & Greek).
 
+## Core Team
+
+Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.
+
 ## Pricing & Service Plans
 
 We offer four service plans. The MAXI plan is our most popular choice:
