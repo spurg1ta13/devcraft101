@@ -116,7 +116,11 @@ const AboutUs = () => {
             </h1>
             <div className="max-w-3xl">
               <p className="text-muted-foreground text-lg md:text-xl leading-relaxed mb-6">{t(a.intro1, lang)}</p>
-              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">{t(a.intro2, lang)}</p>
+              <p className="text-muted-foreground text-lg md:text-xl leading-relaxed">
+                {t(a.intro2Prefix, lang)}
+                <strong className="font-semibold text-foreground">{t(a.intro2Bold, lang)}</strong>
+                {t(a.intro2Suffix, lang)}
+              </p>
             </div>
           </motion.div>
         </div>

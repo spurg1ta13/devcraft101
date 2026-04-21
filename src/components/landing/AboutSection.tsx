@@ -75,7 +75,9 @@ const AboutSection = () => {
                 {t(a.intro1, lang)}
               </p>
               <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                {t(a.intro2, lang)}
+                {t(a.intro2Prefix, lang)}
+                <strong className="font-semibold text-foreground">{t(a.intro2Bold, lang)}</strong>
+                {t(a.intro2Suffix, lang)}
               </p>
             </div>
           </div>
