@@ -231,8 +231,8 @@ export const translations = {
       el: "Είμαστε μια ενθουσιώδης ομάδα επαγγελματιών με 10 χρόνια επιτυχημένης εμπειρίας στον κλάδο της πληροφορικής. Μια δεκαετία εργασίας σε διεθνή έργα μας επιτρέπει να εγγυηθούμε την υψηλότερη ποιότητα υπηρεσιών.",
     },
     intro2: {
-      en: "Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer and an ISTQB-accredited tester. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
-      el: "Η βασική μας ομάδα αποτελείται από ειδικούς: έναν προσανατολισμένο σε αποτελέσματα Web developer, έναν πιστοποιημένο σχεδιαστή UI/UX και έναν διαπιστευμένο ελεγκτή ISTQB. Προσπαθούμε να παραδώσουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
+      en: "Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
+      el: "Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών. Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
     },
     stats: {
       years: { en: "Years Experience", el: "Χρόνια Εμπειρίας" },
