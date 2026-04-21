@@ -113,6 +113,7 @@ const BookingsSection = () => {
                 <TableHead>Name</TableHead>
                 <TableHead>Contact</TableHead>
                 <TableHead className="max-w-[280px]">Notes</TableHead>
+                <TableHead className="min-w-[260px]">Admin comment</TableHead>
                 <TableHead className="w-[60px]">Lang</TableHead>
                 <TableHead className="w-[60px]"></TableHead>
               </TableRow>
@@ -120,6 +121,8 @@ const BookingsSection = () => {
             <TableBody>
               {bookings.map((b) => {
                 const isPast = new Date(b.booking_date + "T00:00:00") < today;
+                const draft = drafts[b.id] ?? "";
+                const dirty = (b.admin_notes || "") !== draft;
                 return (
                   <TableRow key={b.id} className={`border-border/50 ${isPast ? "opacity-50" : ""}`}>
                     <TableCell className="font-mono text-sm whitespace-nowrap text-foreground">
@@ -140,6 +143,34 @@ const BookingsSection = () => {
                     </TableCell>
                     <TableCell className="max-w-[280px]">
                       {b.message && <p className="text-sm text-foreground/80 line-clamp-2">{b.message}</p>}
+                    </TableCell>
+                    <TableCell className="min-w-[260px] align-top">
+                      <div className="space-y-2">
+                        <Textarea
+                          value={draft}
+                          onChange={(e) => setDrafts((p) => ({ ...p, [b.id]: e.target.value }))}
+                          placeholder="Add a comment…"
+                          rows={2}
+                          className="text-sm resize-y min-h-[60px]"
+                        />
+                        <div className="flex items-center gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={!dirty || savingId === b.id}
+                            onClick={() => handleSaveNote(b.id)}
+                          >
+                            {savingId === b.id ? (
+                              <><Loader2 className="w-3 h-3 mr-1 animate-spin" /> Saving</>
+                            ) : savedId === b.id ? (
+                              <><Check className="w-3 h-3 mr-1 text-primary" /> Saved</>
+                            ) : (
+                              "Save"
+                            )}
+                          </Button>
+                          {dirty && <span className="text-[10px] text-muted-foreground">unsaved</span>}
+                        </div>
+                      </div>
                     </TableCell>
                     <TableCell className="text-xs text-muted-foreground uppercase">{b.language || "—"}</TableCell>
                     <TableCell>
