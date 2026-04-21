@@ -62,7 +62,7 @@ const AboutSection = () => {
             }`}
           >
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-6 md:mb-8">
-              {t(nav.aboutUs, lang)}
+              {t(a.teamLabel, lang)}
             </span>
             <h2
               id="about-heading"
