@@ -225,6 +225,33 @@ export const translations = {
       messageMax: { en: "Max 1000 characters", el: "Μέγιστο 1000 χαρακτήρες" },
       privacyRequired: { en: "You must agree to the Privacy Policy", el: "Πρέπει να συμφωνήσετε με την Πολιτική Απορρήτου" },
     },
+    booking: {
+      toggleMessage: { en: "Send a message", el: "Στείλτε μήνυμα" },
+      toggleBooking: { en: "Book a meeting", el: "Κλείστε ραντεβού" },
+      title: { en: "Book a meeting", el: "Κλείστε ένα ραντεβού" },
+      subtitle: {
+        en: "Pick a date and time that works for you. Meetings last 1 hour. Earliest available: 2 days from today.",
+        el: "Επιλέξτε ημερομηνία και ώρα που σας βολεύει. Τα ραντεβού διαρκούν 1 ώρα. Νωρίτερα διαθέσιμο: 2 ημέρες από σήμερα.",
+      },
+      pickDate: { en: "Pick a date", el: "Επιλέξτε ημερομηνία" },
+      pickTime: { en: "Available times (10:00 – 19:00, Europe/Athens)", el: "Διαθέσιμες ώρες (10:00 – 19:00, Europe/Athens)" },
+      noSlots: { en: "Please select a date first", el: "Επιλέξτε πρώτα ημερομηνία" },
+      slotTaken: { en: "Booked", el: "Κλεισμένο" },
+      messageOptional: { en: "Notes for the meeting (optional)", el: "Σημειώσεις για το ραντεβού (προαιρετικό)" },
+      confirm: { en: "Confirm booking", el: "Επιβεβαίωση ραντεβού" },
+      booking: { en: "Booking...", el: "Κράτηση..." },
+      successTitle1: { en: "Meeting", el: "Ραντεβού" },
+      successTitle2: { en: "booked!", el: "κλείστηκε!" },
+      successDesc: {
+        en: "We've received your booking and will send a calendar invite shortly.",
+        el: "Λάβαμε την κράτησή σας και θα σας στείλουμε σύντομα πρόσκληση ημερολογίου.",
+      },
+      errors: {
+        dateRequired: { en: "Please select a date", el: "Επιλέξτε ημερομηνία" },
+        hourRequired: { en: "Please select a time slot", el: "Επιλέξτε ώρα" },
+        slotTaken: { en: "This time slot was just booked. Please pick another.", el: "Αυτή η ώρα μόλις κλείστηκε. Επιλέξτε άλλη." },
+      },
+    },
   },
 
   // Footer
