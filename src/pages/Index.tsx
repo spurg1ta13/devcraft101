@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema, FAQPageSchema } from "@/components/StructuredData";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
+const AboutSection = lazy(() => import("@/components/landing/AboutSection"));
 const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
 const PricingSection = lazy(() => import("@/components/landing/PricingSection"));
 const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
