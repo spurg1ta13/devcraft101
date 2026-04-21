@@ -14,6 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
+      bookings: {
+        Row: {
+          booking_date: string
+          booking_hour: number
+          created_at: string
+          email: string
+          id: string
+          language: string | null
+          message: string | null
+          name: string
+          phone: string | null
+        }
+        Insert: {
+          booking_date: string
+          booking_hour: number
+          created_at?: string
+          email: string
+          id?: string
+          language?: string | null
+          message?: string | null
+          name: string
+          phone?: string | null
+        }
+        Update: {
+          booking_date?: string
+          booking_hour?: number
+          created_at?: string
+          email?: string
+          id?: string
+          language?: string | null
+          message?: string | null
+          name?: string
+          phone?: string | null
+        }
+        Relationships: []
+      }
       chat_logs: {
         Row: {
           created_at: string
@@ -121,6 +157,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_taken_slots: {
+        Args: { _from: string; _to: string }
+        Returns: {
+          booking_date: string
+          booking_hour: number
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
