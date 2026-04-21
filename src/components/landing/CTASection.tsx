@@ -149,6 +149,9 @@ const CTASection = () => {
               role="tab"
               aria-selected={mode === "booking"}
               onClick={() => setMode("booking")}
+              onMouseEnter={prefetchBooking}
+              onFocus={prefetchBooking}
+              onTouchStart={prefetchBooking}
               className={cn(
                 "flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-mono uppercase tracking-wider transition-all min-h-[44px]",
                 mode === "booking"
