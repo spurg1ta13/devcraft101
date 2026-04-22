@@ -130,7 +130,7 @@ export const translations = {
       en: "If your idea doesn't fit into a category, it's probably exactly what we love to build. Reach out for a custom consultation.",
       el: "Αν η ιδέα σας δεν ταιριάζει σε κατηγορία, είναι μάλλον ακριβώς αυτό που αγαπάμε να φτιάχνουμε. Επικοινωνήστε για μια εξατομικευμένη συμβουλευτική.",
     },
-    customCtaButton: { en: "Start a Conversation", el: "Ξεκινήστε μια Συζήτηση" },
+    customCtaButton: { en: "Let's talk!", el: "Ας μιλήσουμε!" },
   },
 
   // Showcase
