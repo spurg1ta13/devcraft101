@@ -58,27 +58,38 @@ const HeroSection = () => {
               onClick={(e) => {
                 e.preventDefault();
                 const offset = window.innerWidth < 1024 ? 80 : 60;
-                const scrollToContact = (attempt = 0) => {
+                const scrollTo = () => {
                   const el = document.getElementById("contact");
-                  if (el) {
-                    const top = el.getBoundingClientRect().top + window.scrollY - offset;
-                    window.scrollTo({ top, behavior: "smooth" });
-                    // Re-correct after lazy sections above expand and shift layout
-                    window.setTimeout(() => {
-                      const el2 = document.getElementById("contact");
-                      if (!el2) return;
-                      const top2 = el2.getBoundingClientRect().top + window.scrollY - offset;
-                      if (Math.abs(top2 - window.scrollY) > 4) {
-                        window.scrollTo({ top: top2, behavior: "smooth" });
-                      }
-                    }, 600);
-                    return;
-                  }
-                  if (attempt < 20) {
-                    window.setTimeout(() => scrollToContact(attempt + 1), 100);
-                  }
+                  if (!el) return false;
+                  const top = el.getBoundingClientRect().top + window.scrollY - offset;
+                  window.scrollTo({ top, behavior: "smooth" });
+                  return true;
                 };
-                scrollToContact();
+
+                // Preload all lazy chunks above + including #contact, then scroll precisely.
+                const preload = preloadUpTo("contact");
+
+                // Try immediately for snappy UX if already mounted.
+                if (scrollTo()) {
+                  preload.finally(() => {
+                    requestAnimationFrame(() => setTimeout(scrollTo, 80));
+                  });
+                  return;
+                }
+
+                preload.finally(() => {
+                  let attempts = 0;
+                  const tryScroll = () => {
+                    if (scrollTo()) {
+                      setTimeout(scrollTo, 200);
+                      return;
+                    }
+                    if (attempts++ < 30) {
+                      requestAnimationFrame(() => setTimeout(tryScroll, 50));
+                    }
+                  };
+                  tryScroll();
+                });
               }}
               className="relative self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
             >
