@@ -206,6 +206,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     setMessages(prev => [...prev, userMsg]);
     isStreamingRef.current = true;
     assistantMsgTopRef.current = null;
+    setLoading(true);
 
     let assistantSoFar = "";
     const allMsgs = [...messages, userMsg];
