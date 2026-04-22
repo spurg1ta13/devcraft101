@@ -19,6 +19,16 @@ Our core team consists of field experts: a result-oriented Web developer, a cert
 
 Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών. Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.
 
+## What We Can Build (Solution Types)
+
+DevCraft delivers a wide range of custom web solutions:
+
+- **SaaS Platforms** — Subscription-based apps with user dashboards and recurring payments.
+- **Booking & Scheduling Systems** — Custom workflows for appointments, rentals, or event registrations.
+- **High-Conversion Landing Pages** — Fast, SEO-optimized pages designed specifically for lead generation.
+- **Corporate / Representative Pages** — Professional sites for established firms.
+- **Custom CRM & Internal Tools** — Tailored dashboards for businesses to manage data and teams.
+
 ## Pricing & Service Plans
 
 We offer four service plans. The MAXI plan is our most popular choice:
