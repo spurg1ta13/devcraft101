@@ -110,6 +110,20 @@ export const translations = {
           el: "Εξατομικευμένα dashboards για επιχειρήσεις, για διαχείριση δεδομένων και ομάδων.",
         },
       },
+      {
+        title: { en: "Digital Guest Portals", el: "Ψηφιακά Portals Επισκεπτών" },
+        description: {
+          en: "Elevate hospitality with interactive villa guides, instant service requests, and curated local experiences.",
+          el: "Αναβαθμίστε τη φιλοξενία με διαδραστικούς οδηγούς βίλας, άμεσα αιτήματα υπηρεσιών και επιμελημένες τοπικές εμπειρίες.",
+        },
+      },
+      {
+        title: { en: "Specialized Booking Engines", el: "Εξειδικευμένες Μηχανές Κρατήσεων" },
+        description: {
+          en: "Simplified reservation flows for high-end rentals, from yacht charters to luxury equipment.",
+          el: "Απλοποιημένες ροές κρατήσεων για premium ενοικιάσεις, από ναυλώσεις σκαφών έως πολυτελή εξοπλισμό.",
+        },
+      },
     ],
   },
 
