@@ -1,4 +1,4 @@
-import { Check, Zap, Shield, Globe, Sparkles } from "lucide-react";
+import { Check, Zap, Shield, Globe, Sparkles, Gift } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
