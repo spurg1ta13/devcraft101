@@ -25,8 +25,13 @@ const loadHistory = (): Msg[] => {
   try {
     const raw = sessionStorage.getItem(HISTORY_KEY);
     if (!raw) return [];
-    const parsed = JSON.parse(raw) as { expiresAt: number; messages: Msg[] };
+    const parsed = JSON.parse(raw) as { expiresAt: number; sessionId?: string; messages: Msg[] };
     if (!parsed.expiresAt || Date.now() > parsed.expiresAt) {
+      sessionStorage.removeItem(HISTORY_KEY);
+      return [];
+    }
+    // Only restore if it belongs to the current session
+    if (parsed.sessionId && parsed.sessionId !== getSessionId()) {
       sessionStorage.removeItem(HISTORY_KEY);
       return [];
     }
@@ -40,7 +45,11 @@ const saveHistory = (messages: Msg[]) => {
   try {
     sessionStorage.setItem(
       HISTORY_KEY,
-      JSON.stringify({ expiresAt: Date.now() + HISTORY_TTL_MS, messages }),
+      JSON.stringify({
+        expiresAt: Date.now() + HISTORY_TTL_MS,
+        sessionId: getSessionId(),
+        messages,
+      }),
     );
   } catch { /* ignore */ }
 };
