@@ -103,73 +103,73 @@ const ServicesSection = () => {
                 </article>
               );
             })}
-          </div>
 
-          {/* Custom solution CTA card */}
-          <div
-            className={`mt-6 md:mt-8 transition-all duration-700 ${
-              inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: inView ? `${s.builds.length * 80}ms` : "0ms" }}
-          >
-            <div className="relative overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/40 to-card/40 backdrop-blur-sm p-8 md:p-12">
-              <div
-                className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl"
-                aria-hidden="true"
-              />
-              <div className="relative flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div className="flex-1 min-w-0">
-                  <div className="inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">
-                    <Sparkles className="h-3.5 w-3.5" strokeWidth={2} />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
-                      {t(s.buildLabel, lang)}
-                    </span>
+            {/* Custom solution CTA — spans 2 columns to fill the row right after the last build */}
+            <div
+              className={`sm:col-span-2 transition-all duration-700 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+              }`}
+              style={{ transitionDelay: inView ? `${s.builds.length * 80}ms` : "0ms" }}
+            >
+              <div className="relative h-full overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 via-card/40 to-card/40 backdrop-blur-sm p-6 md:p-8">
+                <div
+                  className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl"
+                  aria-hidden="true"
+                />
+                <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 h-full">
+                  <div className="flex-1 min-w-0">
+                    <div className="inline-flex items-center gap-2 mb-3 px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary">
+                      <Sparkles className="h-3.5 w-3.5" strokeWidth={2} />
+                      <span className="font-mono text-[10px] uppercase tracking-[0.2em]">
+                        {t(s.buildLabel, lang)}
+                      </span>
+                    </div>
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-black tracking-[-0.03em] mb-2 leading-tight">
+                      {t(s.customCtaTitle, lang)}
+                    </h4>
+                    <p className="text-sm text-foreground/70 leading-relaxed">
+                      {t(s.customCtaText, lang)}
+                    </p>
                   </div>
-                  <h4 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-[-0.03em] mb-3 leading-tight">
-                    {t(s.customCtaTitle, lang)}
-                  </h4>
-                  <p className="text-sm md:text-base text-foreground/70 leading-relaxed max-w-2xl">
-                    {t(s.customCtaText, lang)}
-                  </p>
-                </div>
-                <a
-                  href="#contact"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const offset = window.innerWidth < 1024 ? 80 : 60;
-                    const scrollTo = () => {
-                      const el = document.getElementById("contact");
-                      if (!el) return false;
-                      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-                      window.scrollTo({ top, behavior: "smooth" });
-                      return true;
-                    };
-                    const preload = preloadUpTo("contact");
-                    if (scrollTo()) {
-                      preload.finally(() => {
-                        requestAnimationFrame(() => setTimeout(scrollTo, 80));
-                      });
-                      return;
-                    }
-                    preload.finally(() => {
-                      let attempts = 0;
-                      const tryScroll = () => {
-                        if (scrollTo()) {
-                          setTimeout(scrollTo, 200);
-                          return;
-                        }
-                        if (attempts++ < 30) {
-                          requestAnimationFrame(() => setTimeout(tryScroll, 50));
-                        }
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const offset = window.innerWidth < 1024 ? 80 : 60;
+                      const scrollTo = () => {
+                        const el = document.getElementById("contact");
+                        if (!el) return false;
+                        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+                        window.scrollTo({ top, behavior: "smooth" });
+                        return true;
                       };
-                      tryScroll();
-                    });
-                  }}
-                  className="group/btn relative shrink-0 inline-flex items-center justify-center gap-2 self-start lg:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 active:scale-[0.98] transition-all"
-                >
-                  {t(s.customCtaButton, lang)}
-                  <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" strokeWidth={2.5} />
-                </a>
+                      const preload = preloadUpTo("contact");
+                      if (scrollTo()) {
+                        preload.finally(() => {
+                          requestAnimationFrame(() => setTimeout(scrollTo, 80));
+                        });
+                        return;
+                      }
+                      preload.finally(() => {
+                        let attempts = 0;
+                        const tryScroll = () => {
+                          if (scrollTo()) {
+                            setTimeout(scrollTo, 200);
+                            return;
+                          }
+                          if (attempts++ < 30) {
+                            requestAnimationFrame(() => setTimeout(tryScroll, 50));
+                          }
+                        };
+                        tryScroll();
+                      });
+                    }}
+                    className="group/btn relative shrink-0 inline-flex items-center justify-center gap-2 self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 active:scale-[0.98] transition-all"
+                  >
+                    {t(s.customCtaButton, lang)}
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" strokeWidth={2.5} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
