@@ -54,6 +54,32 @@ Our core team consists of field experts: **a result-oriented Web developer, a ce
 
 ---
 
+## What We Can Build / Τι Μπορούμε να Φτιάξουμε
+
+DevCraft delivers a wide range of custom web solutions / Η DevCraft υλοποιεί ένα ευρύ φάσμα εξατομικευμένων web λύσεων:
+
+### SaaS Platforms / Πλατφόρμες SaaS
+**EN:** Subscription-based apps with user dashboards and recurring payments.
+**EL:** Εφαρμογές συνδρομής με dashboards χρηστών και επαναλαμβανόμενες πληρωμές.
+
+### Booking & Scheduling Systems / Συστήματα Κρατήσεων & Προγραμματισμού
+**EN:** Custom workflows for appointments, rentals, or event registrations.
+**EL:** Εξατομικευμένες ροές για ραντεβού, ενοικιάσεις ή εγγραφές σε εκδηλώσεις.
+
+### High-Conversion Landing Pages / Landing Pages Υψηλής Μετατροπής
+**EN:** Fast, SEO-optimized pages designed specifically for lead generation.
+**EL:** Γρήγορες, SEO-βελτιστοποιημένες σελίδες σχεδιασμένες ειδικά για συλλογή leads.
+
+### Corporate / Representative Pages / Εταιρικές / Αντιπροσωπευτικές Σελίδες
+**EN:** Professional sites for established firms.
+**EL:** Επαγγελματικές ιστοσελίδες για καταξιωμένες εταιρείες.
+
+### Custom CRM & Internal Tools / Custom CRM & Εσωτερικά Εργαλεία
+**EN:** Tailored dashboards for businesses to manage data and teams.
+**EL:** Εξατομικευμένα dashboards για επιχειρήσεις, για διαχείριση δεδομένων και ομάδων.
+
+---
+
 ## Pricing / Τιμοκατάλογος
 
 ### MINI: The Clean Start / Καθαρή Αρχή — €600–€700
