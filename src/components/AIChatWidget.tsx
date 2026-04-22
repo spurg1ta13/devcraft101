@@ -173,10 +173,13 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       // User just sent a message — scroll to bottom so they see loading indicator
       scrollToBottom();
     } else if (last.role === "assistant" && isStreamingRef.current) {
-      // During streaming — keep assistant message start visible (only on first chunk)
+      // On first assistant chunk — align start of message to top
       if (assistantMsgTopRef.current === null) {
         assistantMsgTopRef.current = 1;
         scrollToAssistantStart();
+      } else {
+        // Subsequent chunks — keep scrolling to bottom so latest text stays visible
+        scrollToBottom();
       }
     }
   }, [messages, scrollToBottom, scrollToAssistantStart]);
