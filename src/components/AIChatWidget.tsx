@@ -325,15 +325,52 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
                       <ReactMarkdown
                         components={{
                           a: ({ href, children, ...props }) => {
-                            if (href === "#contact") {
+                            let internalPath: string | null = null;
+                            let internalHash: string | null = null;
+                            if (href) {
+                              try {
+                                const url = new URL(href, window.location.origin);
+                                const isInternal =
+                                  url.origin === window.location.origin ||
+                                  /(^|\.)devcraft\.gr$/i.test(url.hostname);
+                                if (isInternal) {
+                                  internalPath = url.pathname || "/";
+                                  internalHash = url.hash ? url.hash.slice(1) : null;
+                                }
+                              } catch { /* ignore */ }
+                            }
+
+                            if (internalPath !== null) {
+                              const path = internalPath;
+                              const hash = internalHash;
                               return (
                                 <a
-                                  href="#contact"
+                                  href={href}
                                   onClick={(e) => {
                                     e.preventDefault();
                                     setOpen(false);
-                                    const el = document.getElementById("contact");
-                                    el?.scrollIntoView({ behavior: "smooth" });
+                                    const scrollToHash = () => {
+                                      if (!hash) {
+                                        window.scrollTo({ top: 0, behavior: "smooth" });
+                                        return;
+                                      }
+                                      const tryScroll = (attempt = 0) => {
+                                        const el = document.getElementById(hash);
+                                        if (el) {
+                                          el.scrollIntoView({ behavior: "smooth", block: "start" });
+                                        } else if (attempt < 20) {
+                                          setTimeout(() => tryScroll(attempt + 1), 100);
+                                        }
+                                      };
+                                      tryScroll();
+                                    };
+                                    if (path === window.location.pathname) {
+                                      scrollToHash();
+                                    } else {
+                                      window.history.pushState({}, "", path + (hash ? `#${hash}` : ""));
+                                      window.dispatchEvent(new PopStateEvent("popstate"));
+                                      setTimeout(scrollToHash, 250);
+                                    }
                                   }}
                                   className="text-primary font-semibold hover:underline cursor-pointer"
                                   {...props}
