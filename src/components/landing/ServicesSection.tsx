@@ -1,6 +1,9 @@
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
+import { Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard } from "lucide-react";
+
+const buildIcons = [Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard];
 
 const ServicesSection = () => {
   const { lang } = useLang();
