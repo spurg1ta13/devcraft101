@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
-const teamIcons = [Code2, Palette, ShieldCheck];
+const teamIcons = [Code2, Palette, ShieldCheck, Megaphone];
 
 const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
   const isNumber = /^\d+/.test(value);
