@@ -67,13 +67,11 @@ const PricingSection = () => {
                   </div>
                 )}
 
-                <div
-                  className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary"
-                  aria-label={t(p.giftNote, lang)}
-                  title={t(p.giftNote, lang)}
-                >
-                  <Gift className="h-4 w-4" strokeWidth={2} />
-                </div>
+                {isElite && (
+                  <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-0.5 text-[10px] font-mono uppercase tracking-widest text-primary-foreground">
+                    {lang === "el" ? "Δημοφιλές" : "Most Popular"}
+                  </div>
+                )}
 
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isElite ? "bg-primary/20 text-primary" : "bg-secondary text-foreground/70"}`}>
