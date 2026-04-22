@@ -5,16 +5,17 @@ import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
 import { OrganizationSchema, WebSiteSchema, FAQPageSchema, ServicesSchema } from "@/components/StructuredData";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
+import { loadAbout, loadServices, loadPricing, loadShowcase, loadPortfolio, loadProcess, loadFAQ, loadCTA, loadFooter } from "@/lib/lazyLanding";
 
-const AboutSection = lazy(() => import("@/components/landing/AboutSection"));
-const ServicesSection = lazy(() => import("@/components/landing/ServicesSection"));
-const PricingSection = lazy(() => import("@/components/landing/PricingSection"));
-const ShowcaseSection = lazy(() => import("@/components/landing/ShowcaseSection"));
-const PortfolioSection = lazy(() => import("@/components/landing/PortfolioSection"));
-const ProcessSection = lazy(() => import("@/components/landing/ProcessSection"));
-const FAQSection = lazy(() => import("@/components/landing/FAQSection"));
-const CTASection = lazy(() => import("@/components/landing/CTASection"));
-const Footer = lazy(() => import("@/components/landing/Footer"));
+const AboutSection = lazy(loadAbout);
+const ServicesSection = lazy(loadServices);
+const PricingSection = lazy(loadPricing);
+const ShowcaseSection = lazy(loadShowcase);
+const PortfolioSection = lazy(loadPortfolio);
+const ProcessSection = lazy(loadProcess);
+const FAQSection = lazy(loadFAQ);
+const CTASection = lazy(loadCTA);
+const Footer = lazy(loadFooter);
 
 const Index = () => {
   useScrollSpy();

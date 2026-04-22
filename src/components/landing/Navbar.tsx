@@ -85,25 +85,49 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
   );
 };
 
+import { preloadUpTo } from "@/lib/lazyLanding";
+
+const NAV_OFFSET = 80;
+
+const smoothScrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  const top = el.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+  window.scrollTo({ top, behavior: "smooth" });
+  return true;
+};
+
 const scrollToHash = (hash: string) => {
-  const el = document.getElementById(hash);
-  if (el) {
-    el.scrollIntoView({ behavior: "smooth" });
+  // 1. Kick off preloading of all chunks up to (and including) the target.
+  //    This is non-blocking for the rest of the page and only triggered
+  //    on user intent — initial load performance is unaffected.
+  const preload = preloadUpTo(hash);
+
+  // 2. If already mounted, scroll immediately for snappy UX.
+  if (smoothScrollTo(hash)) {
+    // After lazy chunks finish + layout settles, re-correct position once.
+    preload.finally(() => {
+      requestAnimationFrame(() => {
+        setTimeout(() => smoothScrollTo(hash), 80);
+      });
+    });
     return;
   }
-  // Element may be lazy-loaded — retry after a short delay
-  const observer = new MutationObserver(() => {
-    const target = document.getElementById(hash);
-    if (target) {
-      observer.disconnect();
-      target.scrollIntoView({ behavior: "smooth" });
-    }
+
+  // 3. Not mounted yet — wait for chunks, then scroll once it appears.
+  preload.finally(() => {
+    const tryScroll = (attempts = 0) => {
+      if (smoothScrollTo(hash)) {
+        // Re-correct after any post-mount layout shift.
+        setTimeout(() => smoothScrollTo(hash), 200);
+        return;
+      }
+      if (attempts < 30) {
+        requestAnimationFrame(() => setTimeout(() => tryScroll(attempts + 1), 50));
+      }
+    };
+    tryScroll();
   });
-  observer.observe(document.body, { childList: true, subtree: true });
-  // Force scroll far enough to trigger all lazy Suspense boundaries
-  const docHeight = document.documentElement.scrollHeight;
-  window.scrollTo({ top: docHeight, behavior: "smooth" });
-  setTimeout(() => observer.disconnect(), 5000);
 };
 
 const Navbar = () => {
