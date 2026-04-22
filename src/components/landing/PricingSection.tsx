@@ -67,13 +67,7 @@ const PricingSection = () => {
                   </div>
                 )}
 
-                <div
-                  className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary"
-                  aria-label={t(p.giftNote, lang)}
-                  title={t(p.giftNote, lang)}
-                >
-                  <Gift className="h-4 w-4" strokeWidth={2} />
-                </div>
+                {/* duplicate removed */}
 
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isElite ? "bg-primary/20 text-primary" : "bg-secondary text-foreground/70"}`}>
