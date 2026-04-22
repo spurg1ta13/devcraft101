@@ -8,6 +8,8 @@ import { useVisualViewport } from "@/hooks/useVisualViewport";
 type Msg = { role: "user" | "assistant"; content: string };
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat`;
+const HISTORY_KEY = "devcraft_chat_history";
+const HISTORY_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 const getSessionId = () => {
   const key = "devcraft_chat_session";
@@ -17,6 +19,34 @@ const getSessionId = () => {
     sessionStorage.setItem(key, id);
   }
   return id;
+};
+
+const loadHistory = (): Msg[] => {
+  try {
+    const raw = sessionStorage.getItem(HISTORY_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as { expiresAt: number; messages: Msg[] };
+    if (!parsed.expiresAt || Date.now() > parsed.expiresAt) {
+      sessionStorage.removeItem(HISTORY_KEY);
+      return [];
+    }
+    return Array.isArray(parsed.messages) ? parsed.messages : [];
+  } catch {
+    return [];
+  }
+};
+
+const saveHistory = (messages: Msg[]) => {
+  try {
+    sessionStorage.setItem(
+      HISTORY_KEY,
+      JSON.stringify({ expiresAt: Date.now() + HISTORY_TTL_MS, messages }),
+    );
+  } catch { /* ignore */ }
+};
+
+const clearHistory = () => {
+  try { sessionStorage.removeItem(HISTORY_KEY); } catch { /* ignore */ }
 };
 
 const WELCOME: Record<string, { title: string; subtitle: string; placeholder: string }> = {
@@ -98,7 +128,42 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     setOpenState(next);
     onOpenChange?.(next);
   };
-  const [messages, setMessages] = useState<Msg[]>([]);
+  const [messages, setMessages] = useState<Msg[]>(() => loadHistory());
+  const expiryTimerRef = useRef<number | null>(null);
+
+  // Persist messages with rolling 5-minute TTL
+  useEffect(() => {
+    if (messages.length === 0) {
+      clearHistory();
+    } else {
+      saveHistory(messages);
+    }
+  }, [messages]);
+
+  // When chat closes, schedule cleanup after 5 minutes (cancel if reopened)
+  useEffect(() => {
+    if (open) {
+      if (expiryTimerRef.current) {
+        window.clearTimeout(expiryTimerRef.current);
+        expiryTimerRef.current = null;
+      }
+      // Refresh TTL on open if there's history
+      if (messages.length > 0) saveHistory(messages);
+      return;
+    }
+    if (messages.length === 0) return;
+    expiryTimerRef.current = window.setTimeout(() => {
+      clearHistory();
+      setMessages([]);
+    }, HISTORY_TTL_MS);
+    return () => {
+      if (expiryTimerRef.current) {
+        window.clearTimeout(expiryTimerRef.current);
+        expiryTimerRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
