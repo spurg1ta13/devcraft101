@@ -80,21 +80,12 @@ const PricingSection = () => {
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <h3
-                        className="text-lg md:text-xl font-black tracking-tight"
-                        itemProp="name"
-                      >
-                        {t(plan.name, lang)}
-                      </h3>
-                      <span
-                        className="inline-flex items-center justify-center text-primary"
-                        aria-label={t(p.giftNote, lang)}
-                        title={t(p.giftNote, lang)}
-                      >
-                        <Gift className="h-4 w-4" strokeWidth={2} />
-                      </span>
-                    </div>
+                    <h3
+                      className="text-lg md:text-xl font-black tracking-tight"
+                      itemProp="name"
+                    >
+                      {t(plan.name, lang)}
+                    </h3>
                     <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">
                       {t(plan.tagline, lang)}
                     </p>
