@@ -72,6 +72,7 @@ const AboutUs = () => {
     { roleKey: "webDev" as const, descKey: "webDevDesc" as const },
     { roleKey: "designer" as const, descKey: "designerDesc" as const },
     { roleKey: "qa" as const, descKey: "qaDesc" as const },
+    { roleKey: "marketer" as const, descKey: "marketerDesc" as const },
   ];
 
   const stats = [
