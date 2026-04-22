@@ -1,4 +1,4 @@
-import { Check, Zap, Shield, Globe, Sparkles } from "lucide-react";
+import { Check, Zap, Shield, Globe, Sparkles, Gift } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -33,6 +33,12 @@ const PricingSection = () => {
           <p className="mt-6 max-w-2xl text-sm md:text-base text-muted-foreground leading-relaxed">
             {t(p.subtitle, lang)}
           </p>
+          <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 text-primary">
+            <Gift className="h-4 w-4" strokeWidth={2} />
+            <span className="text-xs md:text-sm font-medium">
+              {t(p.giftNote, lang)}
+            </span>
+          </div>
         </header>
 
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4" role="list">
@@ -65,13 +71,22 @@ const PricingSection = () => {
                   <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isElite ? "bg-primary/20 text-primary" : "bg-secondary text-foreground/70"}`}>
                     <Icon className="h-5 w-5" />
                   </div>
-                  <div>
-                    <h3
-                      className="text-lg md:text-xl font-black tracking-tight"
-                      itemProp="name"
-                    >
-                      {t(plan.name, lang)}
-                    </h3>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <h3
+                        className="text-lg md:text-xl font-black tracking-tight"
+                        itemProp="name"
+                      >
+                        {t(plan.name, lang)}
+                      </h3>
+                      <span
+                        className="inline-flex items-center justify-center text-primary"
+                        aria-label={t(p.giftNote, lang)}
+                        title={t(p.giftNote, lang)}
+                      >
+                        <Gift className="h-4 w-4" strokeWidth={2} />
+                      </span>
+                    </div>
                     <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">
                       {t(plan.tagline, lang)}
                     </p>
