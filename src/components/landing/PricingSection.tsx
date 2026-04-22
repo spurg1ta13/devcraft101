@@ -67,26 +67,25 @@ const PricingSection = () => {
                   </div>
                 )}
 
+                <div
+                  className="absolute top-4 right-4 flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-primary"
+                  aria-label={t(p.giftNote, lang)}
+                  title={t(p.giftNote, lang)}
+                >
+                  <Gift className="h-4 w-4" strokeWidth={2} />
+                </div>
+
                 <div className="flex items-center gap-3 mb-4">
                   <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${isElite ? "bg-primary/20 text-primary" : "bg-secondary text-foreground/70"}`}>
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
-                      <h3
-                        className="text-lg md:text-xl font-black tracking-tight"
-                        itemProp="name"
-                      >
-                        {t(plan.name, lang)}
-                      </h3>
-                      <span
-                        className="inline-flex items-center justify-center text-primary"
-                        aria-label={t(p.giftNote, lang)}
-                        title={t(p.giftNote, lang)}
-                      >
-                        <Gift className="h-4 w-4" strokeWidth={2} />
-                      </span>
-                    </div>
+                    <h3
+                      className="text-lg md:text-xl font-black tracking-tight"
+                      itemProp="name"
+                    >
+                      {t(plan.name, lang)}
+                    </h3>
                     <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">
                       {t(plan.tagline, lang)}
                     </p>
