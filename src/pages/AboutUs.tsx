@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Users, Code2, Palette, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Users, Code2, Palette, ShieldCheck, Megaphone, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
