@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { Users, Code2, Palette, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Users, Code2, Palette, ShieldCheck, Megaphone, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
-const teamIcons = [Code2, Palette, ShieldCheck];
+const teamIcons = [Code2, Palette, ShieldCheck, Megaphone];
 
 const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
   const isNumber = /^\d+/.test(value);
@@ -72,6 +72,7 @@ const AboutUs = () => {
     { roleKey: "webDev" as const, descKey: "webDevDesc" as const },
     { roleKey: "designer" as const, descKey: "designerDesc" as const },
     { roleKey: "qa" as const, descKey: "qaDesc" as const },
+    { roleKey: "marketer" as const, descKey: "marketerDesc" as const },
   ];
 
   const stats = [
@@ -147,7 +148,7 @@ const AboutUs = () => {
             </h2>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamData.map((member, i) => {
               const Icon = teamIcons[i];
               return (

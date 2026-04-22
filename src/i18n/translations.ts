@@ -321,6 +321,11 @@ export const translations = {
         en: "ISTQB-accredited tester ensuring every product meets the highest standards of stability and security.",
         el: "Διαπιστευμένος ελεγκτής ISTQB που διασφαλίζει ότι κάθε προϊόν πληροί τα υψηλότερα πρότυπα σταθερότητας και ασφάλειας.",
       },
+      marketer: { en: "Digital Marketer", el: "Digital Marketer" },
+      marketerDesc: {
+        en: "Growth-focused marketer driving brand awareness and lead generation so the right audience finds and chooses you.",
+        el: "Marketer με εστίαση στην ανάπτυξη που ενισχύει την αναγνωρισιμότητα της μάρκας και τη δημιουργία υποψήφιων πελατών, ώστε το κατάλληλο κοινό να σας βρίσκει και να σας επιλέγει.",
+      },
     },
     valuesHeading1: { en: "We believe the final result is our best", el: "Πιστεύουμε ότι το τελικό αποτέλεσμα είναι η καλύτερη" },
     valuesHeading2: { en: "calling card.", el: "επαγγελματική μας κάρτα." },
