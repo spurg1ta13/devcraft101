@@ -128,7 +128,42 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     setOpenState(next);
     onOpenChange?.(next);
   };
-  const [messages, setMessages] = useState<Msg[]>([]);
+  const [messages, setMessages] = useState<Msg[]>(() => loadHistory());
+  const expiryTimerRef = useRef<number | null>(null);
+
+  // Persist messages with rolling 5-minute TTL
+  useEffect(() => {
+    if (messages.length === 0) {
+      clearHistory();
+    } else {
+      saveHistory(messages);
+    }
+  }, [messages]);
+
+  // When chat closes, schedule cleanup after 5 minutes (cancel if reopened)
+  useEffect(() => {
+    if (open) {
+      if (expiryTimerRef.current) {
+        window.clearTimeout(expiryTimerRef.current);
+        expiryTimerRef.current = null;
+      }
+      // Refresh TTL on open if there's history
+      if (messages.length > 0) saveHistory(messages);
+      return;
+    }
+    if (messages.length === 0) return;
+    expiryTimerRef.current = window.setTimeout(() => {
+      clearHistory();
+      setMessages([]);
+    }, HISTORY_TTL_MS);
+    return () => {
+      if (expiryTimerRef.current) {
+        window.clearTimeout(expiryTimerRef.current);
+        expiryTimerRef.current = null;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
