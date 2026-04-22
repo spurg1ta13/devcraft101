@@ -35,6 +35,7 @@ const BookingForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [takenSlots, setTakenSlots] = useState<Record<string, number[]>>({});
+  const [datePickerOpen, setDatePickerOpen] = useState(false);
 
   // Min date = today + 2 days
   const minDate = useMemo(() => {
@@ -221,7 +222,7 @@ const BookingForm = () => {
         <div className="grid md:grid-cols-2 gap-4 md:gap-5">
           {/* Date picker */}
           <div>
-            <Popover>
+            <Popover open={datePickerOpen} onOpenChange={setDatePickerOpen}>
               <PopoverTrigger asChild>
                 <Button
                   type="button"
@@ -240,7 +241,7 @@ const BookingForm = () => {
                 <Calendar
                   mode="single"
                   selected={date}
-                  onSelect={(d) => { setDate(d); setHour(null); setErrors({ ...errors, date: "", hour: "" }); refetchTakenSlots(); }}
+                  onSelect={(d) => { setDate(d); setHour(null); setErrors({ ...errors, date: "", hour: "" }); refetchTakenSlots(); if (d) setDatePickerOpen(false); }}
                   disabled={(d) => d < minDate || d > maxDate}
                   defaultMonth={minDate}
                   initialFocus
