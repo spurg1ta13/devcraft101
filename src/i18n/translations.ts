@@ -71,6 +71,46 @@ export const translations = {
         },
       },
     ],
+    buildLabel: { en: "What we can build", el: "Τι μπορούμε να φτιάξουμε" },
+    buildHeading1: { en: "Solutions", el: "Λύσεις" },
+    buildHeading2: { en: "tailored to your goals.", el: "προσαρμοσμένες στους στόχους σας." },
+    builds: [
+      {
+        title: { en: "SaaS Platforms", el: "Πλατφόρμες SaaS" },
+        description: {
+          en: "Subscription-based apps with user dashboards and recurring payments.",
+          el: "Εφαρμογές συνδρομής με dashboards χρηστών και επαναλαμβανόμενες πληρωμές.",
+        },
+      },
+      {
+        title: { en: "Booking & Scheduling Systems", el: "Συστήματα Κρατήσεων & Προγραμματισμού" },
+        description: {
+          en: "Custom workflows for appointments, rentals, or event registrations.",
+          el: "Εξατομικευμένες ροές για ραντεβού, ενοικιάσεις ή εγγραφές σε εκδηλώσεις.",
+        },
+      },
+      {
+        title: { en: "High-Conversion Landing Pages", el: "Landing Pages Υψηλής Μετατροπής" },
+        description: {
+          en: "Fast, SEO-optimized pages designed specifically for lead generation.",
+          el: "Γρήγορες, SEO-βελτιστοποιημένες σελίδες σχεδιασμένες ειδικά για συλλογή leads.",
+        },
+      },
+      {
+        title: { en: "Corporate / Representative Pages", el: "Εταιρικές / Αντιπροσωπευτικές Σελίδες" },
+        description: {
+          en: "Professional sites for established firms.",
+          el: "Επαγγελματικές ιστοσελίδες για καταξιωμένες εταιρείες.",
+        },
+      },
+      {
+        title: { en: "Custom CRM & Internal Tools", el: "Custom CRM & Εσωτερικά Εργαλεία" },
+        description: {
+          en: "Tailored dashboards for businesses to manage data and teams.",
+          el: "Εξατομικευμένα dashboards για επιχειρήσεις, για διαχείριση δεδομένων και ομάδων.",
+        },
+      },
+    ],
   },
 
   // Showcase
