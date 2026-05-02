@@ -6,6 +6,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import { trackPhoneClick } from "@/lib/trackPhoneClick";
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
