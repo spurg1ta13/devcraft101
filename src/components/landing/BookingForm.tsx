@@ -156,16 +156,17 @@ const BookingForm = ({ initialMessage = "", onSuccess }: BookingFormProps = {}) 
 
   useEffect(() => {
     if (submitted) {
+      onSuccess?.();
       const timer = setTimeout(() => {
         setSubmitted(false);
-        setForm({ name: "", email: "", phone: "", message: "" });
+        setForm({ name: "", email: "", phone: "", message: initialMessage });
         setDate(undefined);
         setHour(null);
         setAgreed(false);
       }, 3500);
       return () => clearTimeout(timer);
     }
-  }, [submitted]);
+  }, [submitted, initialMessage, onSuccess]);
 
   const dateLocale = lang === "el" ? elLocale : enUS;
 
