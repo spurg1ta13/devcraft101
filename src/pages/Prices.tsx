@@ -250,6 +250,12 @@ const Prices = () => {
         </section>
       </main>
       <Footer />
+      <PlanBookingDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        planName={selectedPlan?.name}
+        planTagline={selectedPlan?.tagline}
+      />
     </div>
   );
 };
