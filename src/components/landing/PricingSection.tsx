@@ -98,17 +98,13 @@ const PricingSection = () => {
                 </p>
 
                 <div className="mb-5">
-                  <span
-                    className="text-2xl md:text-3xl font-black tracking-tight text-foreground"
-                    itemProp="price"
+                  <a
+                    href="#contact"
+                    className="text-base md:text-lg font-black tracking-tight text-gradient hover:opacity-80 transition-opacity"
                   >
-                    {t(plan.price, lang)}
-                  </span>
-                  <p className="text-[10px] font-mono text-muted-foreground/60 mt-0.5">
-                    {t(p.vatNote, lang)}
-                  </p>
-                  <meta itemProp="priceCurrency" content="EUR" />
-                  <p className="text-[11px] font-mono text-muted-foreground mt-1">
+                    {lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}
+                  </a>
+                  <p className="text-[11px] font-mono text-muted-foreground mt-2">
                     {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
                     {t(plan.delivery, lang)}
                   </p>
