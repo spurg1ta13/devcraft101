@@ -169,6 +169,13 @@ const PricingSection = () => {
             : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
         </p>
       </div>
+
+      <PlanBookingDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        planName={selectedPlan?.name}
+        planTagline={selectedPlan?.tagline}
+      />
     </section>
   );
 };
