@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check, Zap, Shield, Globe, Sparkles, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -61,10 +61,25 @@ const Prices = () => {
   const { lang } = useLang();
   const p = translations.pricing;
   const a = translations.about;
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const goToContact = () => {
+    navigate("/#contact");
+    // Allow Index page to mount, then smooth-scroll
+    const tryScroll = (attempt = 0) => {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (attempt < 20) {
+        setTimeout(() => tryScroll(attempt + 1), 100);
+      }
+    };
+    setTimeout(() => tryScroll(), 50);
+  };
 
   const mostPopularIndex = 2; // MAXI
 
@@ -112,10 +127,19 @@ const Prices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
+                    tabIndex={0}
+                    onClick={goToContact}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        goToContact();
+                      }
+                    }}
+                    aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
+                    className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-1 ${
                       isPopular
-                        ? `${tier.intensity} shadow-[0_0_60px_-10px_hsl(var(--primary)/0.3)] lg:-mt-4 lg:mb-4 ring-1 ring-primary/30`
-                        : `${tier.intensity} hover:border-border/60 hover:bg-card/80`
+                        ? `${tier.intensity} shadow-[0_0_60px_-10px_hsl(var(--primary)/0.3)] lg:-mt-4 lg:mb-4 ring-1 ring-primary/30 hover:shadow-[0_0_80px_-10px_hsl(var(--primary)/0.45)]`
+                        : `${tier.intensity} hover:border-primary/40 hover:bg-card/80`
                     }`}
                   >
                     {isPopular && (
@@ -161,12 +185,9 @@ const Prices = () => {
                         ? "bg-primary/[0.08] border-primary/30"
                         : "bg-secondary/50 border-border/20"
                     }`}>
-                      <Link
-                        to="/#contact"
-                        className="text-base md:text-lg font-black tracking-tight text-gradient hover:opacity-80 transition-opacity"
-                      >
-                        {lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}
-                      </Link>
+                      <span className="text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
+                        {lang === "el" ? "Επικοινωνήστε για τιμή →" : "Contact for pricing →"}
+                      </span>
                       <p className="text-[11px] font-mono text-muted-foreground mt-2">
                         {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
                         {t(plan.delivery, lang)}
