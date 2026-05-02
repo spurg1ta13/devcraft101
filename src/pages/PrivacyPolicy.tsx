@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
               </div>
               {"contactInfo" in section && section.contactInfo && (
                 <div className="mt-4 flex flex-col gap-2 text-sm md:text-base text-muted-foreground">
-                  <p>• <strong className="text-foreground/80 font-semibold">{lang === "el" ? "Τηλέφωνο" : "Phone"}</strong>: <a href="tel:+306975835277" className="text-primary hover:underline transition-colors">+30 697 583 5277</a></p>
+                  <p>• <strong className="text-foreground/80 font-semibold">{lang === "el" ? "Τηλέφωνο" : "Phone"}</strong>: <a href="tel:+306974776057" className="text-primary hover:underline transition-colors">+30 697 477 6057</a></p>
                   <p>• <strong className="text-foreground/80 font-semibold">Email</strong>: <ObfuscatedEmail user="contact" domain="devcraft.gr" className="text-primary hover:underline transition-colors" /></p>
                 </div>
               )}
