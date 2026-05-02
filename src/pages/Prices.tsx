@@ -62,24 +62,17 @@ const Prices = () => {
   const { lang } = useLang();
   const p = translations.pricing;
   const a = translations.about;
-  const navigate = useNavigate();
+
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; tagline: string } | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const goToContact = () => {
-    navigate("/#contact");
-    // Allow Index page to mount, then smooth-scroll
-    const tryScroll = (attempt = 0) => {
-      const el = document.getElementById("contact");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else if (attempt < 20) {
-        setTimeout(() => tryScroll(attempt + 1), 100);
-      }
-    };
-    setTimeout(() => tryScroll(), 50);
+  const openBookingFor = (plan: typeof p.plans[number]) => {
+    setSelectedPlan({ name: t(plan.name, lang), tagline: t(plan.tagline, lang) });
+    setBookingOpen(true);
   };
 
   const mostPopularIndex = 2; // MAXI
