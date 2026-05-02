@@ -122,11 +122,11 @@ const Prices = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     tabIndex={0}
-                    onClick={goToContact}
+                    onClick={() => openBookingFor(plan)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        goToContact();
+                        openBookingFor(plan);
                       }
                     }}
                     aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
