@@ -140,6 +140,12 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
   const [messages, setMessages] = useState<Msg[]>(() => loadHistory());
   const expiryTimerRef = useRef<number | null>(null);
 
+  // Allow parent to programmatically open the chat (e.g. from hero CTA)
+  useEffect(() => {
+    if (defaultOpen) setOpenState(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultOpen]);
+
   // Persist messages with rolling 5-minute TTL
   useEffect(() => {
     if (messages.length === 0) {
