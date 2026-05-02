@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { Check, Zap, Shield, Globe, Sparkles, Gift } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
+import PlanBookingDialog from "./PlanBookingDialog";
 
 const planIcons = [Zap, Shield, Globe, Sparkles];
 
@@ -10,13 +12,12 @@ const PricingSection = () => {
   const p = translations.pricing;
   const { ref, inView } = useInView();
 
-  const goToContact = () => {
-    const el = document.getElementById("contact");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.location.hash = "#contact";
-    }
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; tagline: string } | null>(null);
+
+  const openBookingFor = (plan: typeof p.plans[number]) => {
+    setSelectedPlan({ name: t(plan.name, lang), tagline: t(plan.tagline, lang) });
+    setBookingOpen(true);
   };
 
   return (
@@ -62,11 +63,11 @@ const PricingSection = () => {
                 itemScope
                 itemType="https://schema.org/Offer"
                 tabIndex={0}
-                onClick={goToContact}
+                onClick={() => openBookingFor(plan)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    goToContact();
+                    openBookingFor(plan);
                   }
                 }}
                 aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
@@ -168,6 +169,13 @@ const PricingSection = () => {
             : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
         </p>
       </div>
+
+      <PlanBookingDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        planName={selectedPlan?.name}
+        planTagline={selectedPlan?.tagline}
+      />
     </section>
   );
 };

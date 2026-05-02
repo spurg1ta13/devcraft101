@@ -1,10 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Check, Zap, Shield, Globe, Sparkles, Star } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
+import PlanBookingDialog from "@/components/landing/PlanBookingDialog";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
@@ -61,24 +62,17 @@ const Prices = () => {
   const { lang } = useLang();
   const p = translations.pricing;
   const a = translations.about;
-  const navigate = useNavigate();
+
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; tagline: string } | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const goToContact = () => {
-    navigate("/#contact");
-    // Allow Index page to mount, then smooth-scroll
-    const tryScroll = (attempt = 0) => {
-      const el = document.getElementById("contact");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else if (attempt < 20) {
-        setTimeout(() => tryScroll(attempt + 1), 100);
-      }
-    };
-    setTimeout(() => tryScroll(), 50);
+  const openBookingFor = (plan: typeof p.plans[number]) => {
+    setSelectedPlan({ name: t(plan.name, lang), tagline: t(plan.tagline, lang) });
+    setBookingOpen(true);
   };
 
   const mostPopularIndex = 2; // MAXI
@@ -128,11 +122,11 @@ const Prices = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
                     tabIndex={0}
-                    onClick={goToContact}
+                    onClick={() => openBookingFor(plan)}
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") {
                         e.preventDefault();
-                        goToContact();
+                        openBookingFor(plan);
                       }
                     }}
                     aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
@@ -256,6 +250,12 @@ const Prices = () => {
         </section>
       </main>
       <Footer />
+      <PlanBookingDialog
+        open={bookingOpen}
+        onOpenChange={setBookingOpen}
+        planName={selectedPlan?.name}
+        planTagline={selectedPlan?.tagline}
+      />
     </div>
   );
 };

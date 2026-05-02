@@ -21,13 +21,18 @@ const formatDateLocal = (date: Date) => {
   return `${y}-${m}-${d}`;
 };
 
-const BookingForm = () => {
+interface BookingFormProps {
+  initialMessage?: string;
+  onSuccess?: () => void;
+}
+
+const BookingForm = ({ initialMessage = "", onSuccess }: BookingFormProps = {}) => {
   const { lang } = useLang();
   const c = translations.cta;
   const b = c.booking;
   const { getToken } = useRecaptcha();
 
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: initialMessage });
   const [date, setDate] = useState<Date | undefined>();
   const [hour, setHour] = useState<number | null>(null);
   const [agreed, setAgreed] = useState(false);
@@ -151,16 +156,17 @@ const BookingForm = () => {
 
   useEffect(() => {
     if (submitted) {
+      onSuccess?.();
       const timer = setTimeout(() => {
         setSubmitted(false);
-        setForm({ name: "", email: "", phone: "", message: "" });
+        setForm({ name: "", email: "", phone: "", message: initialMessage });
         setDate(undefined);
         setHour(null);
         setAgreed(false);
       }, 3500);
       return () => clearTimeout(timer);
     }
-  }, [submitted]);
+  }, [submitted, initialMessage, onSuccess]);
 
   const dateLocale = lang === "el" ? elLocale : enUS;
 
