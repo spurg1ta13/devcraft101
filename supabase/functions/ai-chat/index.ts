@@ -116,7 +116,7 @@ Best for: Industry leaders who need custom features, AI tools, and certified qua
 - Delivery: 14–16 working days
 
 *Prices do not include VAT.
-*All plans require an annual hosting & security subscription of €250.
+*All plans require an annual hosting & security subscription of €300.
 *Delivery starts after all content is received from the client.
 
 Additional functionalities and custom add-ons can be tailored to specific needs.
