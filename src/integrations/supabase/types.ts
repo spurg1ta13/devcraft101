@@ -137,6 +137,33 @@ export type Database = {
         }
         Relationships: []
       }
+      phone_clicks: {
+        Row: {
+          created_at: string
+          id: string
+          page_path: string | null
+          source: string | null
+          user_agent: string | null
+          visitor_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          page_path?: string | null
+          source?: string | null
+          user_agent?: string | null
+          visitor_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          page_path?: string | null
+          source?: string | null
+          user_agent?: string | null
+          visitor_id?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           id: string
@@ -160,6 +187,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      get_phone_click_count: { Args: never; Returns: number }
       get_taken_slots: {
         Args: { _from: string; _to: string }
         Returns: {
