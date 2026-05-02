@@ -10,6 +10,15 @@ const PricingSection = () => {
   const p = translations.pricing;
   const { ref, inView } = useInView();
 
+  const goToContact = () => {
+    const el = document.getElementById("contact");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.location.hash = "#contact";
+    }
+  };
+
   return (
     <section
       id="pricing"
