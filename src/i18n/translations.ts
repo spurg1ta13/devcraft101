@@ -22,6 +22,7 @@ export const translations = {
       el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις 1 εβδομάδα.",
     },
     explore: { en: "Let's talk", el: "Ας μιλήσουμε" },
+    chatWithAI: { en: "Chat with AI assistant", el: "Συνομιλία με AI βοηθό" },
   },
 
   // Marquee

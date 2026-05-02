@@ -1,4 +1,4 @@
-import { useState, useCallback, lazy, Suspense } from "react";
+import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { MessageCircle } from "lucide-react";
 
 // Heavy chat panel loaded ONLY when user clicks the button
@@ -8,6 +8,9 @@ const AIChatWidget = lazy(() => import("./AIChatWidget"));
  * Lightweight launcher — renders only a small floating button on initial load.
  * The full chat widget (react-markdown, streaming logic, viewport hooks, etc.)
  * is dynamically imported on first interaction, keeping the main bundle minimal.
+ *
+ * Other components can open the chat by dispatching:
+ *   window.dispatchEvent(new CustomEvent("devcraft:open-chat"))
  */
 const AIChatLauncher = () => {
   const [activated, setActivated] = useState(false);
@@ -19,6 +22,16 @@ const AIChatLauncher = () => {
     }
     setOpen((prev) => !prev);
   }, [activated]);
+
+  useEffect(() => {
+    const openChat = () => {
+      setActivated(true);
+      setOpen(true);
+    };
+    window.addEventListener("devcraft:open-chat", openChat);
+    return () => window.removeEventListener("devcraft:open-chat", openChat);
+  }, []);
+
 
   // Before activation: render only the tiny floating button
   if (!activated) {
