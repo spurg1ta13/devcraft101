@@ -45,7 +45,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
         <div className="px-4 pb-3 space-y-2">
           <a
             href="https://wa.me/306974776057"
-            onClick={onClose}
+            onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
