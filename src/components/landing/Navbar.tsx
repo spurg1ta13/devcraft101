@@ -6,6 +6,7 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
+import { trackPhoneClick } from "@/lib/trackPhoneClick";
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -43,8 +44,8 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
 
         <div className="px-4 pb-3 space-y-2">
           <a
-            href="https://wa.me/306975835277"
-            onClick={onClose}
+            href="https://wa.me/306974776057"
+            onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
@@ -52,8 +53,8 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
           </a>
 
           <a
-            href="tel:+306975835277"
-            onClick={onClose}
+            href="tel:+306974776057"
+            onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <Phone className="h-5 w-5 text-primary" />
@@ -163,12 +164,12 @@ const Navbar = () => {
       {/* Mobile top contact bar — fixed height to prevent CLS */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground h-11">
         <div className="container flex items-center justify-between h-11 text-xs font-mono font-bold px-4">
-          <button onClick={openContactChoice} className="flex items-center gap-2.5 min-h-[44px]" aria-label="Call +30 697 583 5277">
+          <button onClick={openContactChoice} className="flex items-center gap-2.5 min-h-[44px]" aria-label="Call +30 697 477 6057">
             <span className="flex items-center gap-1.5">
               <Phone className="h-4 w-4" />
               <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
             </span>
-            <span className="text-xs">+30 697 583 5277</span>
+            <span className="text-xs">+30 697 477 6057</span>
           </button>
           {isHome ? (
             <a href="#contact" onClick={(e) => { e.preventDefault(); setOpen(false); scrollToHash("contact"); }} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
@@ -238,11 +239,11 @@ const Navbar = () => {
               )}
             </div>
             <div className="flex items-center gap-3 border-l border-border/30 pl-4 xl:pl-6">
-              <a href="tel:+306975835277" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label="Call +30 697 583 5277">
+              <a href="tel:+306974776057" onClick={() => trackPhoneClick("navbar-desktop")} className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label="Call +30 697 477 6057">
                 <span className="relative flex h-5 w-5 items-center justify-center shrink-0">
                   <Phone className="relative h-3.5 w-3.5 xl:h-4 xl:w-4 text-primary" />
                 </span>
-                <span className="font-bold hidden xl:inline">+30 697 583 5277</span>
+                <span className="font-bold hidden xl:inline">+30 697 477 6057</span>
               </a>
               <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 min-h-[44px] whitespace-nowrap" ariaLabel="Email {email}">
                 {(email) => (
@@ -340,7 +341,7 @@ const Navbar = () => {
             <span className="relative flex h-5 w-5 items-center justify-center">
               <WhatsAppIcon className="relative h-4 w-4 text-primary" />
             </span>
-            <span className="font-bold">+30 697 583 5277</span>
+            <span className="font-bold">+30 697 477 6057</span>
           </button>
           <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" ariaLabel="Email {email}">
             {(email) => (
