@@ -61,12 +61,21 @@ const PricingSection = () => {
                 role="listitem"
                 itemScope
                 itemType="https://schema.org/Offer"
-                className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-700 ${
+                tabIndex={0}
+                onClick={goToContact}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    goToContact();
+                  }
+                }}
+                aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
+                className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-700 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-1 ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 } ${
                   isElite
-                    ? "border-primary/40 bg-primary/[0.03] shadow-[0_0_40px_-12px_hsl(var(--primary)/0.2)]"
-                    : "border-border/30 bg-card/50 hover:border-border/60"
+                    ? "border-primary/40 bg-primary/[0.03] shadow-[0_0_40px_-12px_hsl(var(--primary)/0.2)] hover:shadow-[0_0_60px_-12px_hsl(var(--primary)/0.35)]"
+                    : "border-border/30 bg-card/50 hover:border-primary/40"
                 }`}
                 style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
               >
