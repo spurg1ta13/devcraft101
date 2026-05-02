@@ -63,11 +63,11 @@ const PricingSection = () => {
                 itemScope
                 itemType="https://schema.org/Offer"
                 tabIndex={0}
-                onClick={goToContact}
+                onClick={() => openBookingFor(plan)}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
-                    goToContact();
+                    openBookingFor(plan);
                   }
                 }}
                 aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
