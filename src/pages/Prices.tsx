@@ -61,10 +61,25 @@ const Prices = () => {
   const { lang } = useLang();
   const p = translations.pricing;
   const a = translations.about;
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const goToContact = () => {
+    navigate("/#contact");
+    // Allow Index page to mount, then smooth-scroll
+    const tryScroll = (attempt = 0) => {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else if (attempt < 20) {
+        setTimeout(() => tryScroll(attempt + 1), 100);
+      }
+    };
+    setTimeout(() => tryScroll(), 50);
+  };
 
   const mostPopularIndex = 2; // MAXI
 
