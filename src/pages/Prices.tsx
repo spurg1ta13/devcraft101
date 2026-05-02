@@ -127,10 +127,19 @@ const Prices = () => {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: i * 0.1 }}
-                    className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300 ${
+                    tabIndex={0}
+                    onClick={goToContact}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        goToContact();
+                      }
+                    }}
+                    aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
+                    className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-300 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-1 ${
                       isPopular
-                        ? `${tier.intensity} shadow-[0_0_60px_-10px_hsl(var(--primary)/0.3)] lg:-mt-4 lg:mb-4 ring-1 ring-primary/30`
-                        : `${tier.intensity} hover:border-border/60 hover:bg-card/80`
+                        ? `${tier.intensity} shadow-[0_0_60px_-10px_hsl(var(--primary)/0.3)] lg:-mt-4 lg:mb-4 ring-1 ring-primary/30 hover:shadow-[0_0_80px_-10px_hsl(var(--primary)/0.45)]`
+                        : `${tier.intensity} hover:border-primary/40 hover:bg-card/80`
                     }`}
                   >
                     {isPopular && (
