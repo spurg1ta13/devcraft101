@@ -185,12 +185,9 @@ const Prices = () => {
                         ? "bg-primary/[0.08] border-primary/30"
                         : "bg-secondary/50 border-border/20"
                     }`}>
-                      <Link
-                        to="/#contact"
-                        className="text-base md:text-lg font-black tracking-tight text-gradient hover:opacity-80 transition-opacity"
-                      >
-                        {lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}
-                      </Link>
+                      <span className="text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
+                        {lang === "el" ? "Επικοινωνήστε για τιμή →" : "Contact for pricing →"}
+                      </span>
                       <p className="text-[11px] font-mono text-muted-foreground mt-2">
                         {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
                         {t(plan.delivery, lang)}
