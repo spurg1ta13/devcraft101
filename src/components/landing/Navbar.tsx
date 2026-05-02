@@ -54,7 +54,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
 
           <a
             href="tel:+306974776057"
-            onClick={onClose}
+            onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <Phone className="h-5 w-5 text-primary" />
