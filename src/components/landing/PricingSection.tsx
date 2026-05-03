@@ -118,10 +118,10 @@ const PricingSection = () => {
 
                 <div className="mb-5">
                   <span className="text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
-                    {lang === "el" ? "Επικοινωνήστε για τιμή →" : "Contact for pricing →"}
+                    {lang === "el" ? "Επικοινωνήστε για τιμή →" : lang === "de" ? "Preis auf Anfrage →" : "Contact for pricing →"}
                   </span>
                   <p className="text-[11px] font-mono text-muted-foreground mt-2">
-                    {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
+                    {lang === "el" ? "Παράδοση:" : lang === "de" ? "Lieferung:" : "Delivery:"}{" "}
                     {t(plan.delivery, lang)}
                   </p>
                   <p className="text-[10px] font-mono text-muted-foreground/60 mt-0.5">
