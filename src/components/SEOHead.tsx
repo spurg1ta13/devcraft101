@@ -116,9 +116,18 @@ const SEOHead = ({
       ))}
       <link rel="alternate" hrefLang="en" href={enUrl} />
       <link rel="alternate" hrefLang="en-US" href={enUrl} />
+      <link rel="alternate" hrefLang="en" href={enUrl} />
+      <link rel="alternate" hrefLang="en-US" href={enUrl} />
       <link rel="alternate" hrefLang="en-GB" href={enUrl} />
       <link rel="alternate" hrefLang="el" href={elUrl} />
       <link rel="alternate" hrefLang="el-GR" href={elUrl} />
+      <link rel="alternate" hrefLang="de" href={deUrl} />
+      <link rel="alternate" hrefLang="de-DE" href={deUrl} />
+      <link rel="alternate" hrefLang="de-AT" href={deUrl} />
+      <link rel="alternate" hrefLang="de-CH" href={deUrl} />
+      <link rel="alternate" hrefLang="de-LI" href={deUrl} />
+      <link rel="alternate" hrefLang="de-LU" href={deUrl} />
+      <link rel="alternate" hrefLang="de-BE" href={deUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
     </>
