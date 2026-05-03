@@ -60,7 +60,7 @@ const ShowcaseSection = () => {
                   </div>
 
                   <div className="mb-4 md:mb-6">
-                    <span className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-[-0.04em] text-gradient leading-none">
+                    <span className="text-3xl sm:text-4xl lg:text-6xl font-black tracking-[-0.04em] text-gradient leading-none break-words hyphens-auto inline-block max-w-full" lang={lang}>
                       {t(project.stat, lang)}
                     </span>
                     <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.15em] text-muted-foreground ml-2 sm:ml-3">
