@@ -1,14 +1,16 @@
-import { useRef, useState } from "react";
+import { useRef, useState, lazy, Suspense } from "react";
 import { Sparkles } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import PlanBookingDialog from "./PlanBookingDialog";
+
+const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
 const HeroSection = () => {
   const ref = useRef(null);
   const { lang } = useLang();
   const hero = translations.hero;
   const [bookingOpen, setBookingOpen] = useState(false);
+  const [dialogLoaded, setDialogLoaded] = useState(false);
 
   return (
     <section ref={ref} className="relative min-h-[85dvh] md:h-[100dvh] md:min-h-[600px] flex flex-col overflow-hidden noise pt-28 md:pt-0" aria-label="Hero">
@@ -69,7 +71,7 @@ const HeroSection = () => {
               </button>
               <button
                 type="button"
-                onClick={() => setBookingOpen(true)}
+                onClick={() => { setDialogLoaded(true); setBookingOpen(true); }}
                 className="relative bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
               >
                 <span className="absolute inset-0 rounded-full bg-primary/60 animate-cta-ring -z-10" aria-hidden="true" />
@@ -79,7 +81,11 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+      {dialogLoaded && (
+        <Suspense fallback={null}>
+          <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+        </Suspense>
+      )}
     </section>
   );
 };
