@@ -1,4 +1,4 @@
-export type Lang = "en" | "el";
+export type Lang = "en" | "el" | "de";
 
 export const translations = {
   // Navbar
