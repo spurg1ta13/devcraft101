@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
@@ -7,6 +7,8 @@ import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
+
+const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -135,6 +137,8 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [contactDialog, setContactDialog] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingLoaded, setBookingLoaded] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { lang } = useLang();
@@ -143,6 +147,13 @@ const Navbar = () => {
   const openContactChoice = useCallback((e: React.MouseEvent) => {
     e.preventDefault();
     setContactDialog(true);
+  }, []);
+
+  const openLetsTalk = useCallback((e: React.MouseEvent) => {
+    e.preventDefault();
+    setOpen(false);
+    setBookingLoaded(true);
+    setBookingOpen(true);
   }, []);
 
   useEffect(() => {
@@ -172,11 +183,11 @@ const Navbar = () => {
             <span className="text-xs">+30 697 477 6057</span>
           </button>
           {isHome ? (
-            <a href="#contact" onClick={(e) => { e.preventDefault(); setOpen(false); scrollToHash("contact"); }} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+            <a href="#contact" onClick={openLetsTalk} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
             </a>
           ) : (
-            <a href="/#contact" className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
+            <a href="/#contact" onClick={openLetsTalk} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
               {t(nav.letsTalk, lang)}
             </a>
           )}
@@ -261,7 +272,7 @@ const Navbar = () => {
             {isHome ? (
               <a
                 href="#contact"
-                onClick={(e) => { e.preventDefault(); scrollToHash("contact"); }}
+                onClick={openLetsTalk}
                 className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
@@ -269,6 +280,7 @@ const Navbar = () => {
             ) : (
               <a
                 href="/#contact"
+                onClick={openLetsTalk}
                 className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
               >
                 {t(nav.letsTalk, lang)}
@@ -360,6 +372,11 @@ const Navbar = () => {
       {/* Mobile floating WhatsApp button — currently disabled in favor of AI chat launcher */}
 
       <ContactChoiceDialog isOpen={contactDialog} onClose={() => setContactDialog(false)} lang={lang} />
+      {bookingLoaded && (
+        <Suspense fallback={null}>
+          <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+        </Suspense>
+      )}
     </>
   );
 };
