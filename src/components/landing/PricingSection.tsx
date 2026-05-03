@@ -70,7 +70,7 @@ const PricingSection = () => {
                     openBookingFor(plan);
                   }
                 }}
-                aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
+                aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : lang === "de" ? "Preis auf Anfrage" : "Contact for pricing"}`}
                 className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-700 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-1 ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 } ${
