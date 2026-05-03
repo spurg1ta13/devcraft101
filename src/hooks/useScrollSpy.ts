@@ -37,11 +37,18 @@ export function useScrollSpy() {
     }
 
     // Handle scroll to very top → clear hash
+    // Throttle scroll-top check via rAF — prevents per-frame work on long scrolls
+    let ticking = false;
     const handleScrollTop = () => {
-      if (window.scrollY < 300 && activeRef.current !== "") {
-        activeRef.current = "";
-        window.history.replaceState(null, "", "/");
-      }
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (window.scrollY < 300 && activeRef.current !== "") {
+          activeRef.current = "";
+          window.history.replaceState(null, "", "/");
+        }
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScrollTop, { passive: true });
