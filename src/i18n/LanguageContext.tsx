@@ -43,6 +43,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
           if (country === "GR") {
             setLangState("el");
             localStorage.setItem("lang", "el");
+          } else if (country === "DE" || country === "AT" || country === "CH") {
+            setLangState("de");
+            localStorage.setItem("lang", "de");
           } else {
             localStorage.setItem("lang", "en");
           }
