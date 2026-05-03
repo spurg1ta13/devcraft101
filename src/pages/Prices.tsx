@@ -234,17 +234,20 @@ const Prices = () => {
               className="mt-8 md:mt-12 space-y-4 max-w-3xl"
             >
               <div className="glow-line w-full mb-6" />
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {lang === "el"
-                  ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
-                  : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
-              </p>
-              <Link
-                to="/#contact"
-                className="inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-6 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold mt-4"
-              >
-                {t(translations.nav.letsTalk, lang)}
-              </Link>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
+                  {lang === "el"
+                    ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
+                    : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => { setSelectedPlan(null); setBookingOpen(true); }}
+                  className="shrink-0 self-start sm:self-auto inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-6 py-3 min-h-[44px] rounded-full hover:brightness-110 hover:shadow-[0_0_20px_4px_hsl(38_100%_55%/0.3)] transition-all font-bold"
+                >
+                  {t(translations.nav.letsTalk, lang)}
+                </button>
+              </div>
             </motion.div>
           </div>
         </section>
