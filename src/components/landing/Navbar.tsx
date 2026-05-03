@@ -26,7 +26,7 @@ const contactLabels = {
   cancel: { en: "Cancel", el: "Ακύρωση" },
 };
 
-const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClose: () => void; lang: Lang }) => {
+const ContactChoiceDialog = ({ isOpen, onClose, lang, phone }: { isOpen: boolean; onClose: () => void; lang: Lang; phone: PhoneInfo }) => {
   if (!isOpen) return null;
 
   return (
