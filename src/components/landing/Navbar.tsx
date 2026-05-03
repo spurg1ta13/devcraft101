@@ -254,11 +254,11 @@ const Navbar = () => {
               )}
             </div>
             <div className="flex items-center gap-3 border-l border-border/30 pl-4 xl:pl-6">
-              <a href="tel:+306974776057" onClick={() => trackPhoneClick("navbar-desktop")} className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label="Call +30 697 477 6057">
+              <a href={`tel:${phone.tel}`} onClick={() => trackPhoneClick("navbar-desktop")} className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label={`Call ${phone.display}`}>
                 <span className="relative flex h-5 w-5 items-center justify-center shrink-0">
                   <Phone className="relative h-3.5 w-3.5 xl:h-4 xl:w-4 text-primary" />
                 </span>
-                <span className="font-bold hidden xl:inline">+30 697 477 6057</span>
+                <span className="font-bold hidden xl:inline">{phone.display}</span>
               </a>
               <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 min-h-[44px] whitespace-nowrap" ariaLabel="Email {email}">
                 {(email) => (
