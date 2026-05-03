@@ -145,6 +145,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { lang } = useLang();
+  const phone = usePhoneNumber();
   const nav = translations.nav;
 
   const openContactChoice = useCallback((e: React.MouseEvent) => {
