@@ -865,6 +865,11 @@ export const translations = {
   },
 } as const;
 
-export function t(obj: Record<Lang, string>, lang: Lang): string {
-  return obj[lang] || obj.en;
+// Translation entry: en + el required, de optional (falls back to en when missing)
+export type TranslationEntry = { en: string; el: string; de?: string };
+export type TranslationEntryArr = { en: readonly string[]; el: readonly string[]; de?: readonly string[] };
+
+export function t(obj: { en: string; el: string; de?: string } | Record<string, string>, lang: Lang): string {
+  const v = (obj as Record<string, string>)[lang];
+  return v || (obj as Record<string, string>).en;
 }
