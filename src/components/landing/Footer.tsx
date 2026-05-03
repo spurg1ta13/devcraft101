@@ -5,9 +5,11 @@ import { translations, t } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
+import { usePhoneNumber } from "@/lib/phone";
 
 const Footer = () => {
   const { lang } = useLang();
+  const phone = usePhoneNumber();
   const f = translations.footer;
   const nav = translations.nav;
 
