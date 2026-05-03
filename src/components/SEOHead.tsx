@@ -93,8 +93,10 @@ const SEOHead = ({
       <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={resolvedDesc} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content={lang === "el" ? "el_GR" : "en_US"} />
-      <meta property="og:locale:alternate" content={lang === "el" ? "en_US" : "el_GR"} />
+      <meta property="og:locale" content={lang === "el" ? "el_GR" : lang === "de" ? "de_DE" : "en_US"} />
+      {lang !== "en" && <meta property="og:locale:alternate" content="en_US" />}
+      {lang !== "el" && <meta property="og:locale:alternate" content="el_GR" />}
+      {lang !== "de" && <meta property="og:locale:alternate" content="de_DE" />}
       <meta property="og:image" content={resolvedOgImage} />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
