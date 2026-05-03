@@ -49,7 +49,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang, phone }: { isOpen: boolean
 
         <div className="px-4 pb-3 space-y-2">
           <a
-            href="https://wa.me/306974776057"
+            href={`https://wa.me/${phone.wa}`}
             onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
@@ -58,7 +58,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang, phone }: { isOpen: boolean
           </a>
 
           <a
-            href="tel:+306974776057"
+            href={`tel:${phone.tel}`}
             onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
