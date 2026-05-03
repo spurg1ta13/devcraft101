@@ -11,17 +11,17 @@ const LanguageContext = createContext<LanguageContextType>({ lang: "en", setLang
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Lang>(() => {
-    // 1. URL ?lang=en|el wins (used by hreflang for crawlers & shareable links)
+    // 1. URL ?lang=en|el|de wins (used by hreflang for crawlers & shareable links)
     if (typeof window !== "undefined") {
       const urlLang = new URLSearchParams(window.location.search).get("lang");
-      if (urlLang === "en" || urlLang === "el") {
+      if (urlLang === "en" || urlLang === "el" || urlLang === "de") {
         localStorage.setItem("lang", urlLang);
         localStorage.setItem("lang-manual", "true");
         return urlLang;
       }
     }
     const saved = localStorage.getItem("lang");
-    if (saved === "el" || saved === "en") return saved;
+    if (saved === "el" || saved === "en" || saved === "de") return saved as Lang;
     return "en"; // default until geo-detected
   });
 
