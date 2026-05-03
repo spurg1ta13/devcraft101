@@ -40,10 +40,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const detect = () => {
       getCountryCode()
         .then((country) => {
+          const deCountries = ["DE", "AT", "CH", "LI", "LU", "BE"];
           if (country === "GR") {
             setLangState("el");
             localStorage.setItem("lang", "el");
-          } else if (country === "DE" || country === "AT" || country === "CH") {
+          } else if (country && deCountries.includes(country)) {
             setLangState("de");
             localStorage.setItem("lang", "de");
           } else {
