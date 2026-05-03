@@ -3,7 +3,7 @@ import { Menu, X, Phone, Mail } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import LanguageSelector from "@/components/LanguageSelector";
 import { useLang } from "@/i18n/LanguageContext";
-import { translations, t } from "@/i18n/translations";
+import { translations, t, type Lang } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
