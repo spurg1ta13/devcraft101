@@ -21,6 +21,7 @@ export const blogTranslations = {
   subheading: {
     en: "Insights on web development, design, and quality assurance",
     el: "Πληροφορίες για ανάπτυξη ιστοσελίδων, σχεδιασμό και διασφάλιση ποιότητας",
+    de: "Einblicke in Webentwicklung, Design und Qualitätssicherung",
   },
   readMore: { en: "Read article", el: "Διαβάστε το άρθρο", de: "Artikel lesen" },
   backToBlog: { en: "Back to Blog", el: "Πίσω στο Ιστολόγιο", de: "Zurück zum Blog" },
@@ -34,14 +35,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Custom Web Development vs Templates: Why Bespoke Wins in 2026",
       el: "Προσαρμοσμένη Ανάπτυξη Ιστοσελίδων vs Templates: Γιατί το Bespoke Κερδίζει το 2026",
+      de: "Benutzerdefinierte Webentwicklung vs. Templates: Warum maßgeschneiderte Lösungen im Jahr 2026 gewinnen",
     },
     excerpt: {
       en: "Discover why custom-built websites outperform template-based solutions in performance, SEO, and conversion rates.",
       el: "Ανακαλύψτε γιατί οι ιστοσελίδες κατά παραγγελία υπερτερούν των λύσεων template σε απόδοση, SEO και ποσοστά μετατροπής.",
+      de: "Entdecken Sie, warum maßgeschneiderte Websites Template-basierte Lösungen in puncto Performance, SEO und Konversionsraten übertreffen.",
     },
     metaDescription: {
       en: "Custom web development vs templates in 2026: why bespoke React & TypeScript sites deliver better SEO, performance, and conversions for your business.",
       el: "Προσαρμοσμένη ανάπτυξη ιστοσελίδων vs templates το 2026: γιατί οι bespoke ιστοσελίδες React & TypeScript προσφέρουν καλύτερο SEO, απόδοση και μετατροπές.",
+      de: "Benutzerdefinierte Webentwicklung vs. Templates im Jahr 2026: Warum maßgeschneiderte React & TypeScript-Websites bessere SEO, Performance und Konversionen für Ihr Unternehmen liefern.",
     },
     date: "2026-03-05",
     readTime: { en: "8", el: "8", de: "8" },
@@ -99,14 +103,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "ISTQB-Certified QA Testing: Why Quality Assurance Matters for Your Business",
       el: "Πιστοποιημένες Δοκιμές QA ISTQB: Γιατί η Διασφάλιση Ποιότητας Είναι Σημαντική για την Επιχείρησή σας",
+      de: "ISTQB-zertifizierte QA-Tests: Warum Qualitätssicherung für Ihr Unternehmen wichtig ist",
     },
     excerpt: {
       en: "Learn how ISTQB-certified quality assurance prevents costly bugs, protects your brand reputation, and ensures flawless user experiences.",
       el: "Μάθετε πώς η πιστοποιημένη διασφάλιση ποιότητας ISTQB αποτρέπει δαπανηρά σφάλματα, προστατεύει τη φήμη σας και εξασφαλίζει άψογες εμπειρίες χρήστη.",
+      de: "Erfahren Sie, wie ISTQB-zertifizierte Qualitätssicherung kostspielige Bugs verhindert, Ihren Markenruf schützt und fehlerfreie Nutzererlebnisse gewährleistet.",
     },
     metaDescription: {
       en: "ISTQB-certified QA testing services: how professional quality assurance prevents bugs, improves user experience, and protects your brand reputation.",
       el: "Πιστοποιημένες υπηρεσίες δοκιμών QA ISTQB: πώς η επαγγελματική διασφάλιση ποιότητας αποτρέπει σφάλματα και βελτιώνει την εμπειρία χρήστη.",
+      de: "ISTQB-zertifizierte QA-Testing Services: Wie professionelle Qualitätssicherung Bugs verhindert, die User Experience verbessert und den Ruf Ihrer Marke schützt.",
     },
     date: "2026-02-20",
     readTime: { en: "7", el: "7", de: "7" },
@@ -164,14 +171,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "UI/UX Design Trends in 2026 That Convert Visitors into Customers",
       el: "Τάσεις Σχεδιασμού UI/UX το 2026 που Μετατρέπουν Επισκέπτες σε Πελάτες",
+      de: "UI/UX Design Trends 2026, die Besucher zu Kunden machen",
     },
     excerpt: {
       en: "Explore the latest UI/UX design trends that drive engagement, improve usability, and boost conversion rates for modern websites.",
       el: "Εξερευνήστε τις τελευταίες τάσεις σχεδιασμού UI/UX που αυξάνουν τη δέσμευση, βελτιώνουν τη χρηστικότητα και ενισχύουν τα ποσοστά μετατροπής.",
+      de: "Entdecken Sie die neuesten UI/UX Design Trends, die Engagement fördern, die Benutzerfreundlichkeit verbessern und die Konversionsraten für moderne Websites steigern.",
     },
     metaDescription: {
       en: "Top UI/UX design trends 2026: micro-interactions, dark mode, accessibility-first design, and conversion-focused interfaces for modern websites.",
       el: "Κορυφαίες τάσεις σχεδιασμού UI/UX 2026: micro-interactions, dark mode, σχεδιασμός με επίκεντρο την προσβασιμότητα και μετατροπές.",
+      de: "Top UI/UX Design Trends 2026: Mikro-Interaktionen, Dark Mode, Accessibility-First Design und konversionsfokussierte Interfaces für moderne Websites.",
     },
     date: "2026-02-10",
     readTime: { en: "6", el: "6", de: "6" },
@@ -229,14 +239,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "How AI is Transforming Modern Web Development in 2026",
       el: "Πώς η Τεχνητή Νοημοσύνη Μεταμορφώνει τη Σύγχρονη Ανάπτυξη Ιστοσελίδων το 2026",
+      de: "Wie AI die moderne Webentwicklung im Jahr 2026 transformiert",
     },
     excerpt: {
       en: "From AI-assisted coding to intelligent testing, discover how artificial intelligence is revolutionizing every stage of web development.",
       el: "Από τον κώδικα με βοήθεια AI μέχρι τις ευφυείς δοκιμές, ανακαλύψτε πώς η τεχνητή νοημοσύνη επαναστατεί κάθε στάδιο ανάπτυξης.",
+      de: "Von AI-gestütztem Coding bis hin zu intelligentem Testing: Entdecken Sie, wie künstliche Intelligenz jede Phase der Webentwicklung revolutioniert.",
     },
     metaDescription: {
       en: "How AI transforms web development 2026: AI-assisted coding, intelligent testing, automated design, and smarter workflows for faster, better websites.",
       el: "Πώς η AI μεταμορφώνει την ανάπτυξη ιστοσελίδων 2026: κωδικοποίηση με AI, ευφυείς δοκιμές, αυτοματοποιημένος σχεδιασμός.",
+      de: "Wie AI die Webentwicklung 2026 transformiert: AI-gestütztes Coding, intelligentes Testing, automatisiertes Design und intelligentere Workflows für schnellere, bessere Websites.",
     },
     date: "2026-01-28",
     readTime: { en: "9", el: "9", de: "9" },
@@ -300,14 +313,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Why Your Website Isn't Generating Leads (And How to Fix It)",
       el: "Γιατί η Ιστοσελίδα σας δεν Φέρνει Πελάτες (Και Πώς να το Διορθώσετε)",
+      de: "Warum Ihre Website keine Leads generiert (und wie Sie es beheben können)",
     },
     excerpt: {
       en: "Your website looks great but doesn't bring customers? Discover the 7 most common reasons businesses lose leads online — and proven fixes that work.",
       el: "Η ιστοσελίδα σας φαίνεται όμορφη αλλά δεν φέρνει πελάτες; Ανακαλύψτε τους 7 πιο συχνούς λόγους που οι επιχειρήσεις χάνουν leads online — και δοκιμασμένες λύσεις.",
+      de: "Ihre Website sieht großartig aus, bringt aber keine Kunden? Entdecken Sie die 7 häufigsten Gründe, warum Unternehmen online Leads verlieren – und bewährte Lösungen, die funktionieren.",
     },
     metaDescription: {
       en: "Is your website not generating leads? Learn the 7 most common website problems that cost businesses customers — and actionable fixes to start converting visitors today.",
       el: "Η ιστοσελίδα σας δεν φέρνει πελάτες; Μάθετε τα 7 πιο συχνά προβλήματα που κοστίζουν πελάτες στις επιχειρήσεις — και πρακτικές λύσεις για να ξεκινήσετε να μετατρέπετε επισκέπτες σήμερα.",
+      de: "Generiert Ihre Website keine Leads? Erfahren Sie die 7 häufigsten Website-Probleme, die Unternehmen Kunden kosten – und umsetzbare Lösungen, um noch heute Besucher zu konvertieren.",
     },
     date: "2026-03-10",
     readTime: { en: "10", el: "10", de: "10" },
@@ -429,14 +445,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Why an Attractive & Fully Functioning Landing Page Is Essential for Your Business",
       el: "Γιατί μια Ελκυστική & Πλήρως Λειτουργική Landing Page Είναι Απαραίτητη για την Επιχείρησή σας",
+      de: "Warum eine ansprechende & voll funktionsfähige Landing Page für Ihr Unternehmen unerlässlich ist",
     },
     excerpt: {
       en: "Your landing page is your digital storefront. Learn why design, speed, and functionality determine whether visitors become customers — or bounce forever.",
       el: "Η landing page σας είναι η ψηφιακή σας βιτρίνα. Μάθετε γιατί ο σχεδιασμός, η ταχύτητα και η λειτουργικότητα καθορίζουν αν οι επισκέπτες θα γίνουν πελάτες — ή θα φύγουν για πάντα.",
+      de: "Ihre Landing Page ist Ihr digitales Schaufenster. Erfahren Sie, warum Design, Geschwindigkeit und Funktionalität darüber entscheiden, ob Besucher zu Kunden werden – oder für immer abspringen.",
     },
     metaDescription: {
       en: "Why your business needs an attractive, fully functioning landing page: boost conversions, build trust, and dominate search rankings with professional web design.",
       el: "Γιατί η επιχείρησή σας χρειάζεται μια ελκυστική, πλήρως λειτουργική landing page: αυξήστε τις μετατροπές, χτίστε εμπιστοσύνη και κυριαρχήστε στις αναζητήσεις.",
+      de: "Warum Ihr Unternehmen eine attraktive, voll funktionsfähige Landing Page benötigt: Steigern Sie Konversionen, bauen Sie Vertrauen auf und dominieren Sie die Suchmaschinen-Rankings mit professionellem Webdesign.",
     },
     date: "2026-03-16",
     readTime: { en: "9", el: "9", de: "9" },
@@ -541,14 +560,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Why an AI Assistant on Your Website Is a Game-Changer in 2026",
       el: "Γιατί ένας AI Βοηθός στην Ιστοσελίδα σας Αλλάζει τα Δεδομένα το 2026",
+      de: "Warum ein AI Assistant auf Ihrer Website im Jahr 2026 ein Game-Changer ist",
     },
     excerpt: {
       en: "Discover how an AI chatbot assistant improves customer experience, captures leads 24/7, and works seamlessly on both mobile and desktop.",
       el: "Ανακαλύψτε πώς ένας AI chatbot βοηθός βελτιώνει την εμπειρία πελατών, συλλαμβάνει leads 24/7 και λειτουργεί άψογα σε κινητά και desktop.",
+      de: "Entdecken Sie, wie ein AI chatbot assistant das Kundenerlebnis verbessert, rund um die Uhr Leads generiert und nahtlos auf sowohl mobile als auch desktop Geräten funktioniert.",
     },
     metaDescription: {
       en: "AI chatbot assistant for websites: how 24/7 AI support boosts conversions, reduces response time, and improves customer experience on mobile & desktop.",
       el: "AI chatbot βοηθός για ιστοσελίδες: πώς η 24/7 AI υποστήριξη αυξάνει τις μετατροπές, μειώνει τον χρόνο απόκρισης και βελτιώνει την εμπειρία χρήστη.",
+      de: "AI chatbot assistant für websites: Wie 24/7 AI-Support Konversionen fördert, die Reaktionszeit reduziert und das Kundenerlebnis auf mobile & desktop Geräten verbessert.",
     },
     date: "2026-03-20",
     readTime: { en: "7", el: "7", de: "7" },
@@ -669,14 +691,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "10 Website Tips & Tricks to Generate More Leads in 2026",
       el: "10 Συμβουλές & Κόλπα για να Φέρει η Ιστοσελίδα σας Περισσότερους Πελάτες το 2026",
+      de: "10 Website Tips & Tricks zur Generierung von mehr Leads im Jahr 2026",
     },
     excerpt: {
       en: "Actionable tips on how a well-designed, fast, and strategically built website turns visitors into paying customers — proven tactics you can apply today.",
       el: "Πρακτικές συμβουλές για το πώς μια καλοσχεδιασμένη, γρήγορη και στρατηγικά χτισμένη ιστοσελίδα μετατρέπει επισκέπτες σε πελάτες — δοκιμασμένες τακτικές που μπορείτε να εφαρμόσετε σήμερα.",
+      de: "Praktische Tipps, wie eine gut gestaltete, schnelle und strategisch aufgebaute website Besucher in zahlende Kunden verwandelt — bewährte Taktiken, die Sie noch heute anwenden können.",
     },
     metaDescription: {
       en: "10 proven website tips and tricks to generate more leads: speed optimization, CTA placement, trust signals, mobile UX, and conversion-focused design strategies.",
       el: "10 δοκιμασμένες συμβουλές ιστοσελίδας για περισσότερα leads: βελτιστοποίηση ταχύτητας, τοποθέτηση CTA, σήματα εμπιστοσύνης, mobile UX και στρατηγικές σχεδιασμού μετατροπών.",
+      de: "10 bewährte website Tips und Tricks zur Generierung von mehr Leads: Geschwindigkeitsoptimierung, CTA Platzierung, Vertrauenssignale, mobile UX und auf Konversionen ausgerichtete Designstrategien.",
     },
     date: "2026-03-21",
     readTime: { en: "8", el: "8", de: "8" },
@@ -806,14 +831,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "How to Choose the Right Web Development Agency in Greece (2026 Guide)",
       el: "Πώς να Επιλέξετε τη Σωστή Εταιρεία Κατασκευής Ιστοσελίδων στην Ελλάδα (Οδηγός 2026)",
+      de: "So wählen Sie die richtige Web Development Agency in Griechenland (Leitfaden 2026)",
     },
     excerpt: {
       en: "Choosing a web development partner is critical. Learn the key factors — from portfolio quality to tech stack — that separate great agencies from mediocre ones.",
       el: "Η επιλογή συνεργάτη ανάπτυξης ιστοσελίδων είναι κρίσιμη. Μάθετε τους βασικούς παράγοντες — από την ποιότητα portfolio μέχρι το tech stack — που ξεχωρίζουν τις εξαιρετικές εταιρείες.",
+      de: "Die Wahl des richtigen Web Development Partners ist entscheidend. Lernen Sie die Schlüsselfaktoren – von Portfolio-Qualität bis tech stack – die großartige Agenturen von mittelmäßigen unterscheiden.",
     },
     metaDescription: {
       en: "How to choose a web development agency in Greece: portfolio evaluation, tech stack, pricing transparency, QA processes, and red flags to avoid in 2026.",
       el: "Πώς να επιλέξετε εταιρεία κατασκευής ιστοσελίδων στην Ελλάδα: αξιολόγηση portfolio, tech stack, διαφάνεια τιμών, διαδικασίες QA και τι να αποφύγετε.",
+      de: "So wählen Sie eine Web Development Agency in Griechenland: Portfolio-Bewertung, tech stack, Preistransparenz, QA Prozesse und Warnsignale, die es im Jahr 2026 zu vermeiden gilt.",
     },
     date: "2026-03-25",
     readTime: { en: "9", el: "9", de: "9" },
@@ -889,14 +917,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Website Security Best Practices for Small Businesses in 2026",
       el: "Βέλτιστες Πρακτικές Ασφάλειας Ιστοσελίδων για Μικρές Επιχειρήσεις το 2026",
+      de: "Best Practices für Website Security für kleine Unternehmen im Jahr 2026",
     },
     excerpt: {
       en: "Small businesses are prime targets for cyberattacks. Learn the essential security practices that protect your website, customer data, and business reputation.",
       el: "Οι μικρές επιχειρήσεις είναι πρωταρχικοί στόχοι κυβερνοεπιθέσεων. Μάθετε τις απαραίτητες πρακτικές ασφαλείας που προστατεύουν την ιστοσελίδα, τα δεδομένα πελατών και τη φήμη σας.",
+      de: "Kleine Unternehmen sind Hauptziele für Cyberangriffe. Lernen Sie die wesentlichen Sicherheitspraktiken, die Ihre website, Kundendaten und den Ruf Ihres Unternehmens schützen.",
     },
     metaDescription: {
       en: "Website security for small businesses 2026: SSL, GDPR compliance, secure hosting, vulnerability scanning, and protection against common cyber threats.",
       el: "Ασφάλεια ιστοσελίδων για μικρές επιχειρήσεις 2026: SSL, συμμόρφωση GDPR, ασφαλές hosting, σάρωση ευπαθειών και προστασία από κυβερνοαπειλές.",
+      de: "Website security für kleine Unternehmen 2026: SSL, GDPR Konformität, sicheres Hosting, Vulnerability Scanning und Schutz vor gängigen Cyber-Bedrohungen.",
     },
     date: "2026-03-27",
     readTime: { en: "8", el: "8", de: "8" },
@@ -972,14 +1003,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "The Complete Guide to Website Maintenance & Support in 2026",
       el: "Ο Πλήρης Οδηγός Συντήρησης & Υποστήριξης Ιστοσελίδων το 2026",
+      de: "Der komplette Leitfaden für Website Maintenance & Support im Jahr 2026",
     },
     excerpt: {
       en: "Your website needs ongoing care to stay fast, secure, and effective. Learn what website maintenance includes, why it matters, and how often you need it.",
       el: "Η ιστοσελίδα σας χρειάζεται συνεχή φροντίδα για να παραμένει γρήγορη, ασφαλής και αποτελεσματική. Μάθετε τι περιλαμβάνει η συντήρηση και πόσο συχνά τη χρειάζεστε.",
+      de: "Ihre website benötigt kontinuierliche Pflege, um schnell, sicher und effektiv zu bleiben. Erfahren Sie, was website maintenance beinhaltet, warum sie wichtig ist und wie oft Sie sie benötigen.",
     },
     metaDescription: {
       en: "Complete website maintenance guide 2026: security updates, performance monitoring, content updates, backup strategies, and choosing the right support plan.",
       el: "Πλήρης οδηγός συντήρησης ιστοσελίδων 2026: ενημερώσεις ασφαλείας, παρακολούθηση απόδοσης, ενημερώσεις περιεχομένου, στρατηγικές backup και επιλογή σωστού πακέτου.",
+      de: "Kompletter website maintenance Guide 2026: Sicherheitsupdates, Performance Monitoring, Content Updates, Backup Strategien und die Auswahl des richtigen Support Plans.",
     },
     date: "2026-03-29",
     readTime: { en: "7", el: "7", de: "7" },
@@ -1055,14 +1089,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Why Website Speed Matters More Than Ever for SEO & Conversions in 2026",
       el: "Γιατί η Ταχύτητα Ιστοσελίδας Μετράει Περισσότερο από Ποτέ για SEO & Μετατροπές το 2026",
+      de: "Warum Website Speed für SEO & Konversionen im Jahr 2026 wichtiger denn je ist",
     },
     excerpt: {
       en: "Page speed directly impacts search rankings, bounce rates, and revenue. Learn how to measure, optimize, and maintain blazing-fast website performance.",
       el: "Η ταχύτητα σελίδας επηρεάζει άμεσα τις κατατάξεις αναζήτησης, τα bounce rates και τα έσοδα. Μάθετε πώς να μετράτε, βελτιστοποιείτε και διατηρείτε εξαιρετική απόδοση.",
+      de: "Page Speed wirkt sich direkt auf Suchrankings, Absprungraten und Umsatzerlöse aus. Erfahren Sie, wie Sie eine rasend schnelle website performance messen, optimieren und aufrechterhalten können.",
     },
     metaDescription: {
       en: "Website speed optimization 2026: Core Web Vitals, image optimization, code splitting, lazy loading, and performance strategies that boost SEO and conversions.",
       el: "Βελτιστοποίηση ταχύτητας ιστοσελίδας 2026: Core Web Vitals, βελτιστοποίηση εικόνων, code splitting, lazy loading και στρατηγικές απόδοσης για SEO και μετατροπές.",
+      de: "Website speed optimization 2026: Core Web Vitals, Image Optimization, Code Splitting, Lazy Loading und Performance Strategien, die SEO und Konversionen steigern.",
     },
     date: "2026-03-31",
     readTime: { en: "8", el: "8", de: "8" },
@@ -1138,14 +1175,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "The 3-Second Rule: How a Slow Website Drives Away Customers in Greece",
       el: "Ο Κανόνας των 3 Δευτερολέπτων: Πώς μια Αργή Ιστοσελίδα Διώχνει Πελάτες στην Ελλάδα",
+      de: "Die 3-Sekunden-Regel: Wie eine langsame Website Kunden in Griechenland vergrault",
     },
     excerpt: {
       en: "Why website speed is a trust signal — especially in the Greek market where mobile connectivity varies. Learn how fast-loading pages keep customers and boost sales.",
       el: "Γιατί η ταχύτητα ιστοσελίδας είναι σήμα εμπιστοσύνης — ειδικά στην ελληνική αγορά όπου η σύνδεση κινητού ποικίλλει. Μάθετε πώς οι γρήγορες σελίδες κρατούν πελάτες και αυξάνουν πωλήσεις.",
+      de: "Warum website Speed ein Vertrauenssignal ist – insbesondere auf dem griechischen Markt, wo die mobile Konnektivität variiert. Erfahren Sie, wie schnell ladende Seiten Kunden binden und den Umsatz steigern.",
     },
     metaDescription: {
       en: "How slow websites lose customers in Greece: the 3-second rule, UX trust, and why custom development ensures lightning-fast pages even on weak connections.",
       el: "Πώς οι αργές ιστοσελίδες χάνουν πελάτες στην Ελλάδα: ο κανόνας των 3 δευτερολέπτων, εμπιστοσύνη UX και γιατί η custom ανάπτυξη εξασφαλίζει αστραπιαία φόρτωση.",
+      de: "Wie langsame websites in Griechenland Kunden verlieren: die 3-Sekunden-Regel, UX Vertrauen und warum custom development blitzschnelle Seiten selbst bei schwachen Verbindungen gewährleistet.",
     },
     date: "2026-04-03",
     readTime: { en: "9", el: "9", de: "9" },
@@ -1242,14 +1282,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Operational Web Design: Why Your 2026 Website Should Be Your Best Employee, Not Just a Brochure",
       el: "Λειτουργικός Σχεδιασμός Ιστοσελίδων: Γιατί η Ιστοσελίδα σας το 2026 Πρέπει να Είναι ο Καλύτερος Υπάλληλός σας, Όχι Απλώς ένα Φυλλάδιο",
+      de: "Operational Web Design: Warum Ihre Website 2026 Ihr bester Mitarbeiter sein sollte, nicht nur eine Broschüre",
     },
     excerpt: {
       en: "Stop treating your website like a digital brochure. Learn how operational web design turns your site into a 24/7 employee that captures leads, qualifies prospects, and drives revenue.",
       el: "Σταματήστε να αντιμετωπίζετε την ιστοσελίδα σας σαν ψηφιακό φυλλάδιο. Μάθετε πώς ο λειτουργικός σχεδιασμός τη μετατρέπει σε υπάλληλο 24/7 που συλλέγει leads και αυξάνει τα έσοδα.",
+      de: "Hören Sie auf, Ihre Website wie eine digitale Broschüre zu behandeln. Erfahren Sie, wie Operational Web Design Ihre Website in einen 24/7-Mitarbeiter verwandelt, der Leads erfasst, Interessenten qualifiziert und den Umsatz steigert.",
     },
     metaDescription: {
       en: "Operational web design in 2026: transform your website from a static brochure into a revenue-generating employee. Lead capture, AI chat, automation & conversion strategies for businesses in Greece.",
       el: "Λειτουργικός σχεδιασμός ιστοσελίδων 2026: μετατρέψτε την ιστοσελίδα σας από στατικό φυλλάδιο σε εργαλείο που παράγει έσοδα. Στρατηγικές lead capture, AI chat και αυτοματισμού.",
+      de: "Operational Web Design 2026: Verwandeln Sie Ihre Website von einer statischen Broschüre in einen umsatzgenerierenden Mitarbeiter. Lead-Erfassung, AI-Chat, Automatisierung & Conversion-Strategien für Unternehmen in Griechenland.",
     },
     date: "2026-04-05",
     readTime: { en: "9", el: "9", de: "9" },
@@ -1343,14 +1386,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Web Development Trends in Greece 2026: What Local Businesses Need to Know",
       el: "Τάσεις Ανάπτυξης Ιστοσελίδων στην Ελλάδα 2026: Τι Πρέπει να Γνωρίζουν οι Τοπικές Επιχειρήσεις",
+      de: "Web Development Trends in Griechenland 2026: Was lokale Unternehmen wissen müssen",
     },
     excerpt: {
       en: "From AI-powered experiences to mobile-first mandates, discover the web development trends shaping the Greek market in 2026 — and how to stay ahead.",
       el: "Από εμπειρίες με AI μέχρι mobile-first στρατηγικές, ανακαλύψτε τις τάσεις ανάπτυξης ιστοσελίδων που διαμορφώνουν την ελληνική αγορά το 2026.",
+      de: "Von AI-gestützten Erfahrungen bis hin zu mobile-first Vorgaben – entdecken Sie die Web Development Trends, die den griechischen Markt 2026 prägen, und wie Sie die Nase vorn behalten.",
     },
     metaDescription: {
       en: "Web development trends in Greece 2026: AI chatbots, mobile-first design, Core Web Vitals, bilingual SEO and modern tech stacks for local businesses.",
       el: "Τάσεις ανάπτυξης ιστοσελίδων στην Ελλάδα 2026: AI chatbots, mobile-first σχεδιασμός, Core Web Vitals, δίγλωσσο SEO και σύγχρονες τεχνολογίες για τοπικές επιχειρήσεις.",
+      de: "Web Development Trends in Griechenland 2026: AI Chatbots, Mobile-First Design, Core Web Vitals, zweisprachiges SEO und moderne Tech Stacks für lokale Unternehmen.",
     },
     date: "2026-04-10",
     readTime: { en: "9", el: "9", de: "9" },
@@ -1455,14 +1501,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Why Your Website Needs to Be Mobile-First in Greece (Connectivity Insights)",
       el: "Γιατί η Ιστοσελίδα σας Πρέπει να Είναι Mobile-First στην Ελλάδα (Πληροφορίες Συνδεσιμότητας)",
+      de: "Warum Ihre Website in Griechenland Mobile-First sein muss (Connectivity Insights)",
     },
     excerpt: {
       en: "Over 70% of Greek users browse on mobile, often on variable 4G/5G networks. Discover why mobile-first design is no longer optional for Greek businesses in 2026.",
       el: "Πάνω από το 70% των Ελλήνων χρηστών περιηγείται από κινητό, συχνά σε ασταθή δίκτυα 4G/5G. Ανακαλύψτε γιατί ο mobile-first σχεδιασμός δεν είναι πλέον προαιρετικός για τις ελληνικές επιχειρήσεις το 2026.",
+      de: "Über 70 % der griechischen Nutzer surfen mobil, oft über variable 4G/5G-Netzwerke. Entdecken Sie, warum Mobile-First Design für griechische Unternehmen im Jahr 2026 nicht mehr optional ist.",
     },
     metaDescription: {
       en: "Mobile-first website design in Greece: why 70%+ mobile traffic, variable 4G/5G coverage, and tourism demand make mobile-first essential for Greek businesses in 2026.",
       el: "Mobile-first σχεδιασμός ιστοσελίδων στην Ελλάδα: γιατί το 70%+ mobile traffic, η ασταθής κάλυψη 4G/5G και η τουριστική ζήτηση καθιστούν τον mobile-first απαραίτητο το 2026.",
+      de: "Mobile-First Website Design in Griechenland: Warum über 70 % mobiler Traffic, variable 4G/5G-Abdeckung und Tourismusnachfrage Mobile-First für griechische Unternehmen im Jahr 2026 unerlässlich machen.",
     },
     date: "2026-04-17",
     readTime: { en: "9", el: "9", de: "9" },
@@ -1556,14 +1605,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "Digital Marketing in Greece 2026: Why Every Business Needs a Strategy Now",
       el: "Digital Marketing στην Ελλάδα 2026: Γιατί Κάθε Επιχείρηση Χρειάζεται Στρατηγική Τώρα",
+      de: "Digital Marketing in Griechenland 2026: Warum jedes Unternehmen jetzt eine Strategie braucht",
     },
     excerpt: {
       en: "Greek consumers spend more time online than ever. Discover why SEO, SEM, social media and content marketing are no longer optional for businesses in Greece in 2026.",
       el: "Οι Έλληνες καταναλωτές περνούν περισσότερο χρόνο online από ποτέ. Ανακαλύψτε γιατί SEO, SEM, social media και content marketing δεν είναι πια προαιρετικά για τις επιχειρήσεις στην Ελλάδα το 2026.",
+      de: "Griechische Verbraucher verbringen mehr Zeit online als je zuvor. Entdecken Sie, warum SEO, SEM, Social Media und Content Marketing für Unternehmen in Griechenland im Jahr 2026 nicht mehr optional sind.",
     },
     metaDescription: {
       en: "Digital marketing in Greece 2026: why SEO, Google Ads, social media and content are now essential. Strategy, costs, ROI and how Greek businesses can compete and convert.",
       el: "Digital marketing στην Ελλάδα 2026: γιατί SEO, Google Ads, social media και content είναι πλέον απαραίτητα. Στρατηγική, κόστη, ROI και πώς οι ελληνικές επιχειρήσεις ανταγωνίζονται και μετατρέπουν.",
+      de: "Digital Marketing in Griechenland 2026: Warum SEO, Google Ads, Social Media und Content jetzt unerlässlich sind. Strategie, Kosten, ROI und wie griechische Unternehmen konkurrieren und konvertieren können.",
     },
     date: "2026-04-19",
     readTime: { en: "10", el: "10", de: "10" },
@@ -1656,14 +1708,17 @@ export const blogArticles: BlogArticle[] = [
     title: {
       en: "SEO vs Google Ads for Greek Small Businesses in 2026: Which Wins?",
       el: "SEO ή Google Ads για Ελληνικές Μικρές Επιχειρήσεις το 2026: Τι Κερδίζει;",
+      de: "SEO vs. Google Ads für griechische Kleinunternehmen 2026: Wer gewinnt?",
     },
     excerpt: {
       en: "Should a Greek small business invest in SEO or Google Ads in 2026? A practical breakdown of cost, speed, ROI and the smart way to combine both.",
       el: "Πρέπει μια ελληνική μικρή επιχείρηση να επενδύσει σε SEO ή Google Ads το 2026; Πρακτική ανάλυση κόστους, ταχύτητας, ROI και ο έξυπνος τρόπος να συνδυαστούν.",
+      de: "Sollte ein griechisches Kleinunternehmen 2026 in SEO oder Google Ads investieren? Eine praktische Aufschlüsselung von Kosten, Geschwindigkeit, ROI und dem klugen Weg, beides zu kombinieren.",
     },
     metaDescription: {
       en: "SEO vs Google Ads in Greece 2026: real costs, timelines, ROI and the proven combined strategy that helps Greek small businesses generate consistent leads.",
       el: "SEO vs Google Ads στην Ελλάδα 2026: πραγματικά κόστη, χρονοδιαγράμματα, ROI και η αποδεδειγμένη συνδυαστική στρατηγική που βοηθά τις ελληνικές μικρές επιχειρήσεις.",
+      de: "SEO vs. Google Ads in Griechenland 2026: reale Kosten, Zeitpläne, ROI und die bewährte kombinierte Strategie, die griechischen Kleinunternehmen hilft, konstant Leads zu generieren.",
     },
     date: "2026-04-21",
     readTime: { en: "9", el: "9", de: "9" },
