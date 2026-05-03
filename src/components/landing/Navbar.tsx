@@ -23,7 +23,7 @@ const contactLabels = {
   cancel: { en: "Cancel", el: "Ακύρωση" },
 };
 
-const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClose: () => void; lang: "en" | "el" }) => {
+const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClose: () => void; lang: Lang }) => {
   if (!isOpen) return null;
 
   return (
