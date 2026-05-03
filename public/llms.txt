@@ -3,6 +3,7 @@
 > Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences. Your 1-month web project, delivered in just 1 week. Based in Thessaloniki, serving clients worldwide.
 
 > Greek version: https://devcraft.gr/llms-el.txt
+> German version: https://devcraft.gr/llms-de.txt
 > Full bilingual guide: https://devcraft.gr/llms-full.txt
 
 ## About
