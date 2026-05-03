@@ -7,7 +7,9 @@ import { translations, t, type Lang } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
-import { usePhoneNumber, type PHONE_GR } from "@/lib/phone";
+import { usePhoneNumber } from "@/lib/phone";
+
+type PhoneInfo = { display: string; tel: string; wa: string };
 
 const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
