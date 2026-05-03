@@ -3,8 +3,8 @@ import { useLang } from "@/i18n/LanguageContext";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 
 interface SEOHeadProps {
-  title?: { en: string; el: string } | string;
-  description?: { en: string; el: string } | string;
+  title?: { en: string; el: string; de?: string } | string;
+  description?: { en: string; el: string; de?: string } | string;
   canonical?: string;
   type?: string;
   noindex?: boolean;
@@ -25,17 +25,20 @@ const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_TITLE = {
   en: "Custom Software Solutions in Greece | Devcraft.gr",
   el: "Προσαρμοσμένες Λύσεις Λογισμικού στην Ελλάδα | Devcraft.gr",
+  de: "Maßgeschneiderte Software-Lösungen aus Griechenland | Devcraft.gr",
 };
 const DEFAULT_DESC = {
   en: "Custom software solutions in Greece — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Plans from €600.",
   el: "Προσαρμοσμένες λύσεις λογισμικού στην Ελλάδα — ιστοσελίδες, web εφαρμογές και εργαλεία AI με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Πακέτα από €600.",
+  de: "Maßgeschneiderte Software-Lösungen aus Griechenland — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Pakete ab 600 €.",
 };
 const DEFAULT_KEYWORDS = {
   en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
   el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα",
+  de: "webentwicklung griechenland, individuelle webentwicklung, webagentur thessaloniki, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler",
 };
 
-const resolve = (val: { en: string; el: string } | string, lang: string): string =>
+const resolve = (val: { en: string; el: string; de?: string } | string, lang: string): string =>
   typeof val === "string" ? val : (val as Record<string, string>)[lang] || (val as Record<string, string>).en;
 
 const SEOHead = ({
@@ -53,7 +56,8 @@ const SEOHead = ({
   const fullUrl = `${BASE_URL}${cleanPath}`;
   const enUrl = `${fullUrl}?lang=en`;
   const elUrl = `${fullUrl}?lang=el`;
-  const currentUrl = lang === "el" ? elUrl : enUrl;
+  const deUrl = `${fullUrl}?lang=de`;
+  const currentUrl = lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
   const resolvedOgImage = ogImage
@@ -89,8 +93,10 @@ const SEOHead = ({
       <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={resolvedDesc} />
       <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:locale" content={lang === "el" ? "el_GR" : "en_US"} />
-      <meta property="og:locale:alternate" content={lang === "el" ? "en_US" : "el_GR"} />
+      <meta property="og:locale" content={lang === "el" ? "el_GR" : lang === "de" ? "de_DE" : "en_US"} />
+      {lang !== "en" && <meta property="og:locale:alternate" content="en_US" />}
+      {lang !== "el" && <meta property="og:locale:alternate" content="el_GR" />}
+      {lang !== "de" && <meta property="og:locale:alternate" content="de_DE" />}
       <meta property="og:image" content={resolvedOgImage} />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
@@ -113,6 +119,13 @@ const SEOHead = ({
       <link rel="alternate" hrefLang="en-GB" href={enUrl} />
       <link rel="alternate" hrefLang="el" href={elUrl} />
       <link rel="alternate" hrefLang="el-GR" href={elUrl} />
+      <link rel="alternate" hrefLang="de" href={deUrl} />
+      <link rel="alternate" hrefLang="de-DE" href={deUrl} />
+      <link rel="alternate" hrefLang="de-AT" href={deUrl} />
+      <link rel="alternate" hrefLang="de-CH" href={deUrl} />
+      <link rel="alternate" hrefLang="de-LI" href={deUrl} />
+      <link rel="alternate" hrefLang="de-LU" href={deUrl} />
+      <link rel="alternate" hrefLang="de-BE" href={deUrl} />
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
     </>

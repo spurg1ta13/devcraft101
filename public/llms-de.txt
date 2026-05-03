@@ -1,0 +1,102 @@
+# DevCraft — Maßgeschneiderte Software-Lösungen aus Griechenland | Webentwicklungsagentur
+
+> Wir verbinden menschliche Strategie mit KI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern. Ihr 1-Monats-Webprojekt – in nur 1 Woche umgesetzt. Mit Sitz in Thessaloniki, weltweit tätig.
+
+> Englische Version: https://devcraft.gr/llms.txt
+> Griechische Version: https://devcraft.gr/llms-el.txt
+> Vollständiger zweisprachiger Leitfaden: https://devcraft.gr/llms-full.txt
+
+## Über uns
+
+DevCraft ist eine Webentwicklungsagentur mit Sitz in Thessaloniki, Griechenland. Wir sind spezialisiert auf individuelle Webentwicklung mit React, TypeScript und Tailwind CSS. Unser Team umfasst ISTQB-zertifizierte QA-Ingenieure, die fehlerfreie Launches garantieren.
+
+Wir betreuen Kunden in Griechenland und weltweit – mit vollständiger mehrsprachiger Unterstützung (Englisch, Griechisch, Deutsch).
+
+## Kernteam
+
+Unser Kernteam besteht aus Fachexperten: einem ergebnisorientierten Web-Entwickler, einem zertifizierten UI/UX-Designer, einem ISTQB-akkreditierten Tester und einem Digital Marketer mit Fokus auf Markenbekanntheit und Lead-Generierung. Wir streben danach, moderne, schnelle und sichere Produkte zu liefern – überzeugt davon, dass das Endergebnis unsere beste Visitenkarte ist.
+
+## Was wir bauen können (Lösungstypen)
+
+DevCraft liefert ein breites Spektrum an maßgeschneiderten Web-Lösungen:
+
+- **SaaS-Plattformen** — Abonnement-basierte Apps mit Benutzer-Dashboards und wiederkehrenden Zahlungen.
+- **Buchungs- & Planungssysteme** — Individuelle Workflows für Termine, Vermietungen oder Veranstaltungsanmeldungen.
+- **Conversion-starke Landingpages** — Schnelle, SEO-optimierte Seiten, gezielt für Lead-Generierung entwickelt.
+- **Unternehmens- & Repräsentationsseiten** — Professionelle Websites für etablierte Firmen.
+- **Individuelle CRM- & interne Tools** — Maßgeschneiderte Dashboards zur Verwaltung von Daten und Teams.
+- **Digitale Gäste-Portale** — Hospitality auf neuem Niveau mit interaktiven Villen-Guides, Sofort-Service-Anfragen und kuratierten lokalen Erlebnissen.
+- **Spezialisierte Buchungssysteme** — Vereinfachte Reservierungsabläufe für hochwertige Vermietungen, von Yachtcharter bis Luxusausrüstung.
+
+## Preise & Service-Pakete
+
+Wir bieten vier Service-Pakete an. Das MAXI-Paket ist unsere beliebteste Wahl:
+
+### MINI: The Clean Start (€600–€700)
+Komplette Single-Page-Website mit allen wesentlichen Bereichen (Home, Über uns, Leistungen, Kontakt). 1 Sprache. Inklusive technischem SEO-Setup (Sitemap, Meta-Tags, Indexierung), Social-Media-Integration, direkten Kontakt-Tools, GDPR- & Cookie-Konformität, automatisch generierten Datenschutz- & Nutzungsbedingungen sowie SSL-Zertifikat. Lieferung in 2 Werktagen.
+
+### MIDI: The Corporate Standard (€1.000–€1.200)
+Bis zu 5 Seiten mit Galerie/Portfolio, direkten Kontakt-Tools, Sitemap & robots.txt, GDPR-Konformität, automatisch generierten Datenschutz- & Nutzungsbedingungen, Google Maps und SSL-Zertifikat. 1 Sprache. Lieferung in 6–7 Werktagen.
+
+### MAXI: The International Presence (€1.450–€1.700) ⭐ Beliebteste Wahl
+Bis zu 7 Seiten mit 2–3 Sprachen und Sprachumschalter. Inklusive Lead-Erfassungsformular mit Spam-Schutz, lokalisiertem SEO, individuellen Fehler- & Lade-Seiten, Admin-Dashboard für Nachrichten, GDPR-Konformität, Google Maps und SSL-Zertifikat. Lieferung in 9–12 Werktagen.
+
+### ELITE: The Elite Performance (€1.950–€2.500)
+Bis zu 10 Seiten + interaktive Tools mit unbegrenzten Sprachen. Inklusive KI-Assistent, Lead- & Buchungsformular mit Spam-Schutz, individuellen Animationen, automatischer Bildoptimierung, SEO-optimierten URLs, Admin-Dashboard, GDPR-Konformität, Google Maps, ISTQB-zertifizierter QA und SSL-Zertifikat. Lieferung in 14–16 Werktagen.
+
+*Preise verstehen sich zzgl. MwSt.
+*Alle Pakete erfordern ein jährliches Hosting- & Sicherheitsabonnement von €300.
+*Die Lieferzeit beginnt nach Erhalt aller Inhalte vom Kunden.
+
+Individuelle jährliche Wartungs- & Qualitätssicherungs-Pakete sind auf Anfrage verfügbar.
+Zusätzliche Funktionen und individuelle Add-ons können auf Ihre spezifischen Bedürfnisse zugeschnitten werden.
+
+Vollständige Preisdetails: https://devcraft.gr/prices
+
+## Qualitätsgarantie
+
+- ISTQB-zertifizierte QA-Ingenieure testen jede Funktion vor dem Launch
+- Zero-Defect-Launch-Politik
+- Tests auf Desktop und Mobile unter Windows, macOS, iOS und Android
+
+## Technologie-Stack
+
+React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
+
+## Standort
+
+Thessaloniki, Zentralmakedonien, Griechenland
+Wir betreuen Kunden weltweit – inklusive Deutschland, Österreich, Schweiz, Liechtenstein, Luxemburg und Belgien.
+
+## Kontakt
+
+Website: https://devcraft.gr/?lang=de
+Leistungen: https://devcraft.gr/?lang=de#services
+Showcase: https://devcraft.gr/?lang=de#showcase
+Portfolio: https://devcraft.gr/?lang=de#projects
+Prozess: https://devcraft.gr/?lang=de#process
+FAQ: https://devcraft.gr/?lang=de#faq
+Kontakt: https://devcraft.gr/?lang=de#contact
+LinkedIn: https://www.linkedin.com/company/devcraft-gr
+
+## Blog
+
+Wir veröffentlichen Artikel über Webentwicklung, KI-Integration, UI/UX-Design, Sicherheit und Lead-Generierung:
+- https://devcraft.gr/blog/custom-web-development-vs-templates-2026
+- https://devcraft.gr/blog/istqb-quality-assurance-why-it-matters
+- https://devcraft.gr/blog/ui-ux-design-trends-that-convert-visitors
+- https://devcraft.gr/blog/ai-transforming-modern-web-development
+- https://devcraft.gr/blog/why-your-website-is-not-generating-leads
+- https://devcraft.gr/blog/why-attractive-landing-page-is-important
+- https://devcraft.gr/blog/why-ai-chatbot-assistant-boosts-your-website
+- https://devcraft.gr/blog/website-tips-tricks-generate-more-leads
+- https://devcraft.gr/blog/how-to-choose-web-development-agency-greece
+- https://devcraft.gr/blog/website-security-best-practices-small-business
+- https://devcraft.gr/blog/complete-guide-website-maintenance-support
+- https://devcraft.gr/blog/why-website-speed-matters-seo-conversions
+- https://devcraft.gr/blog/website-speed-user-trust-ux-greece
+- https://devcraft.gr/blog/operational-web-design-website-best-employee
+- https://devcraft.gr/blog/web-development-trends-greece-2026
+- https://devcraft.gr/blog/mobile-first-website-greece-connectivity
+- https://devcraft.gr/blog/digital-marketing-greece-2026-why-businesses-need-it
+- https://devcraft.gr/blog/seo-google-ads-greek-small-business-2026
