@@ -116,7 +116,7 @@ const Blog = () => {
                 size="lg"
                 className="font-mono text-sm"
               >
-                {lang === "el" ? "Φόρτωση περισσότερων" : "Load more"}
+                {lang === "el" ? "Φόρτωση περισσότερων" : lang === "de" ? "Mehr laden" : "Load more"}
               </Button>
             </div>
           )}
