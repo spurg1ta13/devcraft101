@@ -69,6 +69,11 @@ const WELCOME: Record<string, { title: string; subtitle: string; placeholder: st
     subtitle: "Ρωτήστε μας οτιδήποτε για τις υπηρεσίες μας.",
     placeholder: "Γράψτε την ερώτησή σας…",
   },
+  de: {
+    title: "Hallo! 👋",
+    subtitle: "Fragen Sie mich alles über unsere Leistungen.",
+    placeholder: "Geben Sie Ihre Frage ein…",
+  },
 };
 
 async function streamChat(
