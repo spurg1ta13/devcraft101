@@ -158,16 +158,25 @@ const PricingSection = () => {
         >
           {t(p.hostingDetail, lang)}
         </p>
-        <p
-          className={`mt-4 text-sm text-muted-foreground leading-relaxed transition-all duration-700 ${
+        <div
+          className={`mt-6 flex flex-col sm:flex-row sm:items-center gap-4 transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: inView ? "500ms" : "0ms" }}
         >
-          {lang === "el"
-            ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
-            : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
-        </p>
+          <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
+            {lang === "el"
+              ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
+              : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
+          </p>
+          <button
+            type="button"
+            onClick={() => { setSelectedPlan(null); setBookingOpen(true); }}
+            className="shrink-0 self-start sm:self-auto inline-flex items-center justify-center font-mono text-[11px] uppercase tracking-[0.15em] text-primary-foreground bg-primary px-6 py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold"
+          >
+            {t(translations.nav.letsTalk, lang)}
+          </button>
+        </div>
       </div>
 
       <PlanBookingDialog
