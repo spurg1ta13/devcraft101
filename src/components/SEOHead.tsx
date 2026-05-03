@@ -116,8 +116,6 @@ const SEOHead = ({
       ))}
       <link rel="alternate" hrefLang="en" href={enUrl} />
       <link rel="alternate" hrefLang="en-US" href={enUrl} />
-      <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="en-US" href={enUrl} />
       <link rel="alternate" hrefLang="en-GB" href={enUrl} />
       <link rel="alternate" hrefLang="el" href={elUrl} />
       <link rel="alternate" hrefLang="el-GR" href={elUrl} />
