@@ -70,7 +70,7 @@ const PricingSection = () => {
                     openBookingFor(plan);
                   }
                 }}
-                aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : "Contact for pricing"}`}
+                aria-label={`${t(plan.name, lang)} — ${lang === "el" ? "Επικοινωνήστε για τιμή" : lang === "de" ? "Preis auf Anfrage" : "Contact for pricing"}`}
                 className={`group relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-700 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background hover:-translate-y-1 ${
                   inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 } ${
@@ -82,7 +82,7 @@ const PricingSection = () => {
               >
                 {isElite && (
                   <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-0.5 text-[10px] font-mono uppercase tracking-widest text-primary-foreground">
-                    {lang === "el" ? "Δημοφιλές" : "Most Popular"}
+                    {lang === "el" ? "Δημοφιλές" : lang === "de" ? "Am beliebtesten" : "Most Popular"}
                   </div>
                 )}
 
@@ -118,10 +118,10 @@ const PricingSection = () => {
 
                 <div className="mb-5">
                   <span className="text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
-                    {lang === "el" ? "Επικοινωνήστε για τιμή →" : "Contact for pricing →"}
+                    {lang === "el" ? "Επικοινωνήστε για τιμή →" : lang === "de" ? "Preis auf Anfrage →" : "Contact for pricing →"}
                   </span>
                   <p className="text-[11px] font-mono text-muted-foreground mt-2">
-                    {lang === "el" ? "Παράδοση:" : "Delivery:"}{" "}
+                    {lang === "el" ? "Παράδοση:" : lang === "de" ? "Lieferung:" : "Delivery:"}{" "}
                     {t(plan.delivery, lang)}
                   </p>
                   <p className="text-[10px] font-mono text-muted-foreground/60 mt-0.5">
@@ -167,6 +167,8 @@ const PricingSection = () => {
           <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
             {lang === "el"
               ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
+              : lang === "de"
+              ? "Zusätzliche Funktionen und maßgeschneiderte Add-ons können an Ihre spezifischen Bedürfnisse angepasst werden."
               : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
           </p>
           <button

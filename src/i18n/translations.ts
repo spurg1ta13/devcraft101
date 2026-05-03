@@ -20,6 +20,7 @@ export const translations = {
     description: {
       en: "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.\nYour 1-month web project, delivered in just 1 week.",
       el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις 1 εβδομάδα.",
+      de: "Kombinieren Sie menschliche Strategie mit AI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern.\nIhr 1-monatiges Webprojekt, geliefert in nur 1 Woche.",
     },
     explore: { en: "Let's talk", el: "Ας μιλήσουμε", de: "Sprechen wir!" },
     chatWithAI: { en: "Chat with AI assistant", el: "Συνομιλία με AI βοηθό", de: "Mit KI-Assistenten chatten" },
@@ -45,6 +46,7 @@ export const translations = {
         description: {
           en: "React, TypeScript, Node.js, cloud-native architecture. Code that scales with your ambition.",
           el: "React, TypeScript, Node.js, cloud-native αρχιτεκτονική. Κώδικας που κλιμακώνεται μαζί με τη φιλοδοξία σας.",
+          de: "React, TypeScript, Node.js, cloud-native architecture. Code, der mit Ihren Ambitionen skaliert.",
         },
       },
       {
@@ -53,6 +55,7 @@ export const translations = {
         description: {
           en: "Research-driven design that converts. Not templates — bespoke digital experiences.",
           el: "Σχεδιασμός βασισμένος σε έρευνα που μετατρέπει. Όχι πρότυπα — εξατομικευμένες ψηφιακές εμπειρίες.",
+          de: "Research-driven design, das konvertiert. Keine Templates — maßgeschneiderte digitale Erlebnisse.",
         },
       },
       {
@@ -61,6 +64,7 @@ export const translations = {
         description: {
           en: "Certified engineers test every feature before it touches your users. Zero-defect launches.",
           el: "Πιστοποιημένοι μηχανικοί ελέγχουν κάθε λειτουργία πριν φτάσει στους χρήστες σας. Κυκλοφορίες χωρίς σφάλματα.",
+          de: "Zertifizierte Engineers testen jede Funktion, bevor sie Ihre User erreicht. Zero-defect launches.",
         },
       },
       {
@@ -69,6 +73,7 @@ export const translations = {
         description: {
           en: "SEO, SEM, Social Media & Content Marketing. Data-driven strategies that amplify your brand's reach. We don't just find leads — we convert them into loyal customers.",
           el: "SEO, SEM, Social Media & Content Marketing. Στρατηγικές βασισμένες σε δεδομένα που ενισχύουν την απήχηση της επωνυμίας σας. Δεν βρίσκουμε απλώς leads — τα μετατρέπουμε σε πιστούς πελάτες.",
+          de: "SEO, SEM, Social Media & Content Marketing. Datengetriebene Strategien, die die Reichweite Ihrer Brand verstärken. Wir finden nicht nur Leads — wir wandeln sie in loyale Kunden um.",
         },
       },
     ],
@@ -81,6 +86,7 @@ export const translations = {
         description: {
           en: "Subscription-based apps with user dashboards and recurring payments.",
           el: "Εφαρμογές συνδρομής με dashboards χρηστών και επαναλαμβανόμενες πληρωμές.",
+          de: "Subscription-based apps mit User-dashboards und wiederkehrenden Zahlungen.",
         },
       },
       {
@@ -88,6 +94,7 @@ export const translations = {
         description: {
           en: "Custom workflows for appointments, rentals, or event registrations.",
           el: "Εξατομικευμένες ροές για ραντεβού, ενοικιάσεις ή εγγραφές σε εκδηλώσεις.",
+          de: "Custom workflows für Termine, Vermietungen oder Event-Registrierungen.",
         },
       },
       {
@@ -95,6 +102,7 @@ export const translations = {
         description: {
           en: "Fast, SEO-optimized pages designed specifically for lead generation.",
           el: "Γρήγορες, SEO-βελτιστοποιημένες σελίδες σχεδιασμένες ειδικά για συλλογή leads.",
+          de: "Schnelle, SEO-optimized pages, speziell für lead generation konzipiert.",
         },
       },
       {
@@ -102,6 +110,7 @@ export const translations = {
         description: {
           en: "Professional sites for established firms.",
           el: "Επαγγελματικές ιστοσελίδες για καταξιωμένες εταιρείες.",
+          de: "Professionelle Websites für etablierte Firmen.",
         },
       },
       {
@@ -109,6 +118,7 @@ export const translations = {
         description: {
           en: "Tailored dashboards for businesses to manage data and teams.",
           el: "Εξατομικευμένα dashboards για επιχειρήσεις, για διαχείριση δεδομένων και ομάδων.",
+          de: "Maßgeschneiderte dashboards für Unternehmen zur Verwaltung von Daten und Teams.",
         },
       },
       {
@@ -116,6 +126,7 @@ export const translations = {
         description: {
           en: "Elevate hospitality with interactive villa guides, instant service requests, and curated local experiences.",
           el: "Αναβαθμίστε τη φιλοξενία με διαδραστικούς οδηγούς βίλας, άμεσα αιτήματα υπηρεσιών και επιμελημένες τοπικές εμπειρίες.",
+          de: "Veredeln Sie die Hospitality mit interaktiven Villa Guides, sofortigen Service Requests und kuratierten lokalen Erlebnissen.",
         },
       },
       {
@@ -123,6 +134,7 @@ export const translations = {
         description: {
           en: "Simplified reservation flows for high-end rentals, from yacht charters to luxury equipment.",
           el: "Απλοποιημένες ροές κρατήσεων για premium ενοικιάσεις, από ναυλώσεις σκαφών έως πολυτελή εξοπλισμό.",
+          de: "Vereinfachte Reservierungsabläufe für High-End-Rentals, von Yachtchartern bis zu Luxusausrüstung.",
         },
       },
     ],
@@ -130,6 +142,7 @@ export const translations = {
     customCtaText: {
       en: "If your idea doesn't fit into a category, it's probably exactly what we love to build. Reach out for a custom consultation.",
       el: "Αν η ιδέα σας δεν ταιριάζει σε κατηγορία, είναι μάλλον ακριβώς αυτό που αγαπάμε να φτιάχνουμε. Επικοινωνήστε για μια εξατομικευμένη συμβουλευτική.",
+      de: "Wenn Ihre Idee in keine Kategorie passt, dann ist es wahrscheinlich genau das, was wir am liebsten entwickeln. Kontaktieren Sie uns für eine individuelle Beratung.",
     },
     customCtaButton: { en: "Let's talk!", el: "Ας μιλήσουμε!", de: "Lassen Sie uns reden!" },
   },
@@ -146,6 +159,7 @@ export const translations = {
         description: {
           en: "We deliver products that perform flawlessly across every operating system and device. From iOS and Android to Windows and macOS, we ensure a unified user experience without compromise.",
           el: "Παραδίδουμε προϊόντα που λειτουργούν άψογα σε κάθε λειτουργικό σύστημα και συσκευή. Από iOS και Android έως Windows και macOS, εξασφαλίζουμε ενιαία εμπειρία χρήστη χωρίς συμβιβασμούς.",
+          de: "Wir liefern Produkte, die auf jedem Operating System und Gerät einwandfrei funktionieren. Von iOS und Android bis Windows und macOS gewährleisten wir ein einheitliches User-Erlebnis ohne Kompromisse.",
         },
         stat: { en: "100%", el: "100%", de: "100 %" },
         statLabel: { en: "Multi-Platform", el: "Πολυπλατφορμικό", de: "Multi-Plattform" },
@@ -156,6 +170,7 @@ export const translations = {
         description: {
           en: "Our rigorous testing processes guarantee a bug-free product. By implementing strict quality control and ISTQB-certified standards, we achieve maximum stability and security before your first launch.",
           el: "Οι αυστηρές διαδικασίες ελέγχου μας εγγυώνται ένα προϊόν χωρίς σφάλματα. Εφαρμόζοντας αυστηρό ποιοτικό έλεγχο και πιστοποιημένα πρότυπα ISTQB, επιτυγχάνουμε μέγιστη σταθερότητα και ασφάλεια πριν από την πρώτη σας κυκλοφορία.",
+          de: "Unsere rigorosen Testing-Prozesse garantieren ein bug-free Produkt. Durch die Implementierung strenger Qualitätskontrollen und ISTQB-zertifizierter Standards erreichen wir maximale Stabilität und Security vor Ihrem ersten Launch.",
         },
         stat: { en: "Zero", el: "Μηδέν", de: "Null" },
         statLabel: { en: "Defects", el: "Σφάλματα", de: "Mängel" },
@@ -166,6 +181,7 @@ export const translations = {
         description: {
           en: "We move beyond templates. When uniqueness is key, we build tailor-made design systems that not only represent your brand but turn users into loyal customers through intuitive interfaces.",
           el: "Προχωράμε πέρα από τα πρότυπα. Όταν η μοναδικότητα είναι κλειδί, δημιουργούμε εξατομικευμένα συστήματα σχεδιασμού που δεν αντιπροσωπεύουν απλά το brand σας, αλλά μετατρέπουν τους χρήστες σε πιστούς πελάτες μέσω διαισθητικών διεπαφών.",
+          de: "Wir gehen über Templates hinaus. Wenn Einzigartigkeit der Schlüssel ist, bauen wir maßgeschneiderte Design Systems, die nicht nur Ihre Brand repräsentieren, sondern User durch intuitive Interfaces zu loyalen Kunden machen.",
         },
         stat: { en: "Bespoke", el: "Εξατομικευμένο", de: "Maßgeschneidert" },
         statLabel: { en: "Design", el: "Σχεδιασμός", de: "Design" },
@@ -197,6 +213,7 @@ export const translations = {
         answer: {
           en: "We specialize in modern technologies including React, TypeScript, Next.js, Node.js, and cloud-native architectures. Our stack is chosen to ensure scalability, performance, and maintainability for every project.",
           el: "Ειδικευόμαστε σε σύγχρονες τεχνολογίες όπως React, TypeScript, Next.js, Node.js και cloud-native αρχιτεκτονικές. Η τεχνολογική μας στοίβα επιλέγεται για να εξασφαλίζει κλιμακωσιμότητα, απόδοση και συντηρησιμότητα σε κάθε έργο.",
+          de: "Wir sind spezialisiert auf moderne Technologies wie React, TypeScript, Next.js, Node.js und cloud-native architectures. Unser Stack wird so gewählt, dass Skalierbarkeit, Performance und Maintainability für jedes Projekt gewährleistet sind.",
         },
       },
       {
@@ -204,6 +221,7 @@ export const translations = {
         answer: {
           en: "Timelines vary based on scope. A landing page can be delivered in 1–2 weeks, while a full web application typically takes 4–12 weeks. We provide a detailed timeline estimate after the initial consultation.",
           el: "Τα χρονοδιαγράμματα ποικίλλουν ανάλογα με το εύρος. Μια landing page μπορεί να παραδοθεί σε 1–2 εβδομάδες, ενώ μια πλήρης εφαρμογή ιστού χρειάζεται συνήθως 4–12 εβδομάδες. Παρέχουμε λεπτομερή εκτίμηση χρονοδιαγράμματος μετά την αρχική συνεδρία.",
+          de: "Timelines variieren je nach Umfang. Eine landing page kann in 1–2 Wochen geliefert werden, während eine full web application typischerweise 4–12 Wochen benötigt. Wir erstellen eine detaillierte Timeline-Schätzung nach der ersten Konsultation.",
         },
       },
       {
@@ -211,6 +229,7 @@ export const translations = {
         answer: {
           en: "Absolutely. We offer maintenance packages that include bug fixes, performance monitoring, security updates, and feature enhancements. We treat every project as a long-term partnership.",
           el: "Απολύτως. Προσφέρουμε πακέτα συντήρησης που περιλαμβάνουν διόρθωση σφαλμάτων, παρακολούθηση απόδοσης, ενημερώσεις ασφαλείας και βελτιώσεις λειτουργιών. Αντιμετωπίζουμε κάθε έργο ως μακροχρόνια συνεργασία.",
+          de: "Absolut. Wir bieten Maintenance-Pakete an, die Bugfixes, Performance Monitoring, Security Updates und Feature-Erweiterungen umfassen. Wir sehen jedes Projekt als langfristige Partnerschaft.",
         },
       },
       {
@@ -218,6 +237,7 @@ export const translations = {
         answer: {
           en: "ISTQB (International Software Testing Qualifications Board) certification means our QA engineers follow globally recognized testing standards. This ensures systematic test coverage, fewer defects, and a more reliable product at launch.",
           el: "Η πιστοποίηση ISTQB (International Software Testing Qualifications Board) σημαίνει ότι οι μηχανικοί QA μας ακολουθούν παγκοσμίως αναγνωρισμένα πρότυπα δοκιμών. Αυτό εξασφαλίζει συστηματική κάλυψη δοκιμών, λιγότερα σφάλματα και ένα πιο αξιόπιστο προϊόν κατά την κυκλοφορία.",
+          de: "Die ISTQB (International Software Testing Qualifications Board) Zertifizierung bedeutet, dass unsere QA Engineers global anerkannte Testing-Standards befolgen. Dies gewährleistet eine systematische Test Coverage, weniger Defects und ein zuverlässigeres Produkt beim Launch.",
         },
       },
       {
@@ -225,6 +245,7 @@ export const translations = {
         answer: {
           en: "Yes. We regularly work on redesigns, performance optimizations, and UX improvements for existing websites. We start with an audit of your current site and propose targeted improvements.",
           el: "Ναι. Εργαζόμαστε τακτικά σε ανασχεδιασμούς, βελτιστοποιήσεις απόδοσης και βελτιώσεις UX για υπάρχουσες ιστοσελίδες. Ξεκινάμε με έλεγχο της τρέχουσας ιστοσελίδας σας και προτείνουμε στοχευμένες βελτιώσεις.",
+          de: "Ja. Wir arbeiten regelmäßig an Redesigns, Performance-Optimierungen und UX-Verbesserungen für bestehende Websites. Wir beginnen mit einem Audit Ihrer aktuellen Website und schlagen gezielte Verbesserungen vor.",
         },
       },
       {
@@ -232,6 +253,7 @@ export const translations = {
         answer: {
           en: "We use a transparent workflow with weekly progress updates, shared project boards, and direct access to your dedicated project lead. You'll always know what's happening and what's next.",
           el: "Χρησιμοποιούμε μια διαφανή ροή εργασίας με εβδομαδιαίες ενημερώσεις προόδου, κοινόχρηστους πίνακες έργου και άμεση πρόσβαση στον αφοσιωμένο υπεύθυνο έργου σας. Θα γνωρίζετε πάντα τι συμβαίνει και τι ακολουθεί.",
+          de: "Wir verwenden einen transparenten Workflow mit wöchentlichen Fortschritts-Updates, geteilten Projekt-Boards und direktem Zugang zu Ihrem dedizierten Projekt-Lead. Sie wissen immer, was passiert und was als Nächstes ansteht.",
         },
       },
       {
@@ -239,6 +261,7 @@ export const translations = {
         answer: {
           en: "Yes — AI is deeply integrated into our workflow. We use it to accelerate development, generate optimized code, and automate repetitive tasks. This allows us to deliver projects up to 4× faster without compromising quality, while keeping costs lower for our clients.",
           el: "Ναι — η τεχνητή νοημοσύνη είναι βαθιά ενσωματωμένη στη ροή εργασίας μας. Τη χρησιμοποιούμε για να επιταχύνουμε την ανάπτυξη, να δημιουργούμε βελτιστοποιημένο κώδικα και να αυτοματοποιούμε επαναλαμβανόμενες εργασίες. Αυτό μας επιτρέπει να παραδίδουμε έργα έως και 4 φορές πιο γρήγορα χωρίς συμβιβασμούς στην ποιότητα, διατηρώντας χαμηλότερο κόστος για τους πελάτες μας.",
+          de: "Ja – AI ist tief in unseren Workflow integriert. Wir nutzen sie, um die Entwicklung zu beschleunigen, optimierten Code zu generieren und repetitive Aufgaben zu automatisieren. Dadurch können wir Projekte bis zu 4-mal schneller liefern, ohne Kompromisse bei der Qualität einzugehen, während die Kosten für unsere Kunden niedriger bleiben.",
         },
       },
       {
@@ -246,6 +269,7 @@ export const translations = {
         answer: {
           en: "We offer SEO, SEM (Google Ads), social media marketing, and content marketing. Our strategies are data-driven and tailored to your industry — focused on increasing organic visibility, qualified traffic, and measurable conversions, not vanity metrics.",
           el: "Προσφέρουμε SEO, SEM (Google Ads), social media marketing και content marketing. Οι στρατηγικές μας βασίζονται σε δεδομένα και προσαρμόζονται στον κλάδο σας — με στόχο την αύξηση της οργανικής προβολής, της στοχευμένης επισκεψιμότητας και των μετρήσιμων μετατροπών, όχι των επιφανειακών δεικτών.",
+          de: "Wir bieten SEO, SEM (Google Ads), Social Media Marketing und Content Marketing an. Unsere Strategien sind datengestützt und auf Ihre Branche zugeschnitten – mit Fokus auf die Steigerung der organischen Sichtbarkeit, qualifizierten Traffic und messbaren Conversions, nicht auf Vanity Metrics.",
         },
       },
       {
@@ -253,6 +277,7 @@ export const translations = {
         answer: {
           en: "Paid campaigns (SEM, social ads) can deliver leads within the first weeks. SEO and content marketing are long-term investments — most clients see meaningful organic growth within 3–6 months, with compounding results over time. We provide transparent monthly reports so you can track every metric.",
           el: "Οι πληρωμένες καμπάνιες (SEM, social ads) μπορούν να αποφέρουν leads μέσα στις πρώτες εβδομάδες. Το SEO και το content marketing είναι μακροπρόθεσμες επενδύσεις — οι περισσότεροι πελάτες βλέπουν ουσιαστική οργανική ανάπτυξη εντός 3–6 μηνών, με αυξανόμενα αποτελέσματα με τον χρόνο. Παρέχουμε διαφανείς μηνιαίες αναφορές ώστε να παρακολουθείτε κάθε μετρική.",
+          de: "Bezahlte Kampagnen (SEM, Social Ads) können innerhalb der ersten Wochen Leads liefern. SEO und Content Marketing sind langfristige Investitionen – die meisten Kunden sehen innerhalb von 3–6 Monaten ein signifikantes organisches Wachstum mit sich verstärkenden Ergebnissen im Laufe der Zeit. Wir bieten transparente monatliche Berichte, damit Sie jede Metrik verfolgen können.",
         },
       },
     ],
@@ -264,6 +289,7 @@ export const translations = {
     description: {
       en: "Scalable solutions for any need: from minimalist landing pages to bespoke enterprise platforms. Reach out with your idea, and watch us bring it to life!",
       el: "Κλιμακούμενες λύσεις για κάθε ανάγκη: από μινιμαλιστικές landing pages έως εξατομικευμένες εταιρικές πλατφόρμες. Επικοινωνήστε με την ιδέα σας και δείτε μας να τη ζωντανεύουμε!",
+      de: "Skalierbare Lösungen für jeden Bedarf: von minimalistischen Landing Pages bis hin zu maßgeschneiderten Enterprise Platforms. Teilen Sie uns Ihre Idee mit, und sehen Sie zu, wie wir sie zum Leben erwecken!",
     },
     name: { en: "Your name", el: "Το όνομά σας", de: "Ihr Name" },
     email: { en: "Email", el: "Email", de: "E-Mail" },
@@ -293,6 +319,7 @@ export const translations = {
       subtitle: {
         en: "Pick a date and time that works for you. Meetings last 1 hour. Earliest available: 2 days from today.",
         el: "Επιλέξτε ημερομηνία και ώρα που σας βολεύει. Τα ραντεβού διαρκούν 1 ώρα. Νωρίτερα διαθέσιμο: 2 ημέρες από σήμερα.",
+        de: "Wählen Sie ein Datum und eine Uhrzeit, die Ihnen passt. Meetings dauern 1 Stunde. Frühester Termin: 2 Tage ab heute.",
       },
       pickDate: { en: "Pick a date", el: "Επιλέξτε ημερομηνία", de: "Datum auswählen" },
       pickTime: { en: "Available times (10:00 – 19:00, Europe/Athens)", el: "Διαθέσιμες ώρες (10:00 – 19:00, Europe/Athens)", de: "Verfügbare Zeiten (10:00 – 19:00, Europe/Athens)" },
@@ -301,6 +328,7 @@ export const translations = {
       formatNotice: {
         en: "Meetings are held via video call.",
         el: "Τα ραντεβού πραγματοποιούνται μέσω βιντεοκλήσης.",
+        de: "Meetings finden per Videoanruf statt.",
       },
       messageOptional: { en: "Notes for the meeting (optional)", el: "Σημειώσεις για το ραντεβού (προαιρετικό)", de: "Notizen für das Meeting (optional)" },
       confirm: { en: "Confirm booking", el: "Επιβεβαίωση ραντεβού", de: "Buchung bestätigen" },
@@ -310,6 +338,7 @@ export const translations = {
       successDesc: {
         en: "We've received your booking and will reach out to you shortly.",
         el: "Λάβαμε την κράτησή σας και θα επικοινωνήσουμε σύντομα μαζί σας.",
+        de: "Wir haben Ihre Buchung erhalten und werden uns in Kürze bei Ihnen melden.",
       },
       errors: {
         dateRequired: { en: "Please select a date", el: "Επιλέξτε ημερομηνία", de: "Bitte wählen Sie ein Datum aus" },
@@ -324,6 +353,7 @@ export const translations = {
     brand: {
       en: "AI-driven web development, bespoke interfaces, and ISTQB-certified quality assurance.",
       el: "Ανάπτυξη ιστοσελίδων με τεχνητή νοημοσύνη, εξατομικευμένες διεπαφές και πιστοποιημένη διασφάλιση ποιότητας ISTQB.",
+      de: "AI-gesteuerte Webentwicklung, maßgeschneiderte Schnittstellen und ISTQB-zertifizierte Qualitätssicherung.",
     },
     navigation: { en: "Navigation", el: "Πλοήγηση", de: "Navigation" },
     ourWork: { en: "Our Projects", el: "Τα Έργα μας", de: "Unsere Projekte" },
@@ -341,22 +371,27 @@ export const translations = {
     intro1: {
       en: "We are an enthusiastic team of professionals with 10 years of successful experience in the IT industry. A decade of working on international projects allows us to guarantee the highest quality of service.",
       el: "Είμαστε μια ενθουσιώδης ομάδα επαγγελματιών με 10 χρόνια επιτυχημένης εμπειρίας στον κλάδο της πληροφορικής. Μια δεκαετία εργασίας σε διεθνή έργα μας επιτρέπει να εγγυηθούμε την υψηλότερη ποιότητα υπηρεσιών.",
+      de: "Wir sind ein engagiertes Team von Fachleuten mit 10 Jahren erfolgreicher Erfahrung in der IT-Branche. Ein Jahrzehnt der Arbeit an internationalen Projekten ermöglicht es uns, höchste Servicequalität zu garantieren.",
     },
     intro2: {
       en: "Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
       el: "Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών. Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
+      de: "Unser Kernteam besteht aus Experten auf ihrem Gebiet: einem ergebnisorientierten Web Developer, einem zertifizierten UI/UX Designer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert. Wir streben danach, moderne, schnelle und sichere Produkte zu liefern, da wir glauben, dass das Endergebnis unsere beste Visitenkarte ist.",
     },
     intro2Prefix: {
       en: "Our core team consists of field experts: ",
       el: "Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: ",
+      de: "Unser Kernteam besteht aus Experten auf ihrem Gebiet:",
     },
     intro2Bold: {
       en: "a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation.",
       el: "έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών.",
+      de: "einem ergebnisorientierten Web Developer, einem zertifizierten UI/UX Designer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert.",
     },
     intro2Suffix: {
       en: " We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
       el: " Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
+      de: "Wir streben danach, moderne, schnelle und sichere Produkte zu liefern, da wir glauben, dass das Endergebnis unsere beste Visitenkarte ist.",
     },
     stats: {
       years: { en: "Years Experience", el: "Χρόνια Εμπειρίας", de: "Jahre Erfahrung" },
@@ -371,21 +406,25 @@ export const translations = {
       webDevDesc: {
         en: "Result-oriented full-stack developer with deep expertise in modern frameworks and cloud-native architecture.",
         el: "Προσανατολισμένος σε αποτελέσματα full-stack developer με βαθιά εξειδίκευση σε σύγχρονα frameworks και cloud-native αρχιτεκτονική.",
+        de: "Ergebnisorientierter Full-Stack Developer mit tiefgreifendem Fachwissen in modernen Frameworks und Cloud-Native Architektur.",
       },
       designer: { en: "UI/UX Designer", el: "Σχεδιαστής UI/UX", de: "UI/UX Designer" },
       designerDesc: {
         en: "Certified designer crafting intuitive interfaces that turn complex workflows into seamless user experiences.",
         el: "Πιστοποιημένος σχεδιαστής που δημιουργεί διαισθητικές διεπαφές μετατρέποντας σύνθετες ροές εργασίας σε απρόσκοπτες εμπειρίες χρήστη.",
+        de: "Zertifizierter Designer, der intuitive Schnittstellen entwirft, die komplexe Workflows in nahtlose User Experiences verwandeln.",
       },
       qa: { en: "QA Engineer", el: "Μηχανικός QA", de: "QA-Ingenieur" },
       qaDesc: {
         en: "ISTQB-accredited tester ensuring every product meets the highest standards of stability and security.",
         el: "Διαπιστευμένος ελεγκτής ISTQB που διασφαλίζει ότι κάθε προϊόν πληροί τα υψηλότερα πρότυπα σταθερότητας και ασφάλειας.",
+        de: "ISTQB-akkreditierter Tester, der sicherstellt, dass jedes Produkt die höchsten Standards an Stabilität und Sicherheit erfüllt.",
       },
       marketer: { en: "Digital Marketer", el: "Digital Marketer", de: "Digitalmarketer" },
       marketerDesc: {
         en: "Growth-focused marketer driving brand awareness and lead generation so the right audience finds and chooses you.",
         el: "Marketer με εστίαση στην ανάπτυξη που ενισχύει την αναγνωρισιμότητα της μάρκας και τη δημιουργία υποψήφιων πελατών, ώστε το κατάλληλο κοινό να σας βρίσκει και να σας επιλέγει.",
+        de: "Wachstumsorientierter Marketer, der Brand Awareness und Lead Generation vorantreibt, damit die richtige Zielgruppe Sie findet und auswählt.",
       },
     },
     valuesHeading1: { en: "We believe the final result is our best", el: "Πιστεύουμε ότι το τελικό αποτέλεσμα είναι η καλύτερη", de: "Wir glauben, das Endergebnis ist unser Bestes" },
@@ -393,6 +432,7 @@ export const translations = {
     valuesDesc: {
       en: "Every project we take on is a commitment to excellence. We combine technical expertise with creative vision to deliver solutions that exceed expectations.",
       el: "Κάθε έργο που αναλαμβάνουμε είναι μια δέσμευση στην αριστεία. Συνδυάζουμε τεχνική εξειδίκευση με δημιουργικό όραμα για να παραδώσουμε λύσεις που ξεπερνούν τις προσδοκίες.",
+      de: "Jedes Projekt, das wir annehmen, ist ein Bekenntnis zu Exzellenz. Wir kombinieren technisches Know-how mit kreativer Vision, um Lösungen zu liefern, die Erwartungen übertreffen.",
     },
   },
 
@@ -407,6 +447,7 @@ export const translations = {
         content: {
           en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nThessaloniki, Greece\nPhone: +30 697 477 6057\n\nFor any data protection inquiries, you may contact us using the details above.`,
           el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΘεσσαλονίκη, Ελλάδα\nΤηλέφωνο: +30 697 477 6057\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
+          de: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\n**DevCraft**\nThessaloniki, Griechenland\nTelefon: +30 697 477 6057\n\nFür alle Anfragen zum Datenschutz können Sie uns unter den oben genannten Kontaktdaten erreichen.`,
         },
       },
       {
@@ -414,6 +455,7 @@ export const translations = {
         content: {
           en: `We may collect the following types of information when you visit our website or use our services:\n\n• **Personal Information**: Name, email address, phone number, and other contact details you voluntarily provide through our contact form.\n• **Usage Data**: Browser type, IP address, pages visited, time spent on the site, and referring URLs.\n• **Cookies & Tracking**: Small data files stored on your device to improve functionality and analyze traffic patterns.`,
           el: `Ενδέχεται να συλλέξουμε τους ακόλουθους τύπους πληροφοριών όταν επισκέπτεστε τον ιστότοπό μας ή χρησιμοποιείτε τις υπηρεσίες μας:\n\n• **Προσωπικές Πληροφορίες**: Όνομα, διεύθυνση email, αριθμός τηλεφώνου και άλλα στοιχεία επικοινωνίας που παρέχετε εθελοντικά μέσω της φόρμας επικοινωνίας μας.\n• **Δεδομένα Χρήσης**: Τύπος προγράμματος περιήγησης, διεύθυνση IP, σελίδες που επισκεφτήκατε, χρόνος παραμονής στον ιστότοπο και URLs παραπομπής.\n• **Cookies & Παρακολούθηση**: Μικρά αρχεία δεδομένων που αποθηκεύονται στη συσκευή σας για τη βελτίωση της λειτουργικότητας και την ανάλυση προτύπων κίνησης.`,
+          de: `Wir können die folgenden Arten von Informationen sammeln, wenn Sie unsere website besuchen oder unsere services nutzen:\n\n• **Personal Information**: Name, E-Mail-Adresse, Telefonnummer und andere Kontaktdaten, die Sie freiwillig über unser Kontaktformular angeben.\n• **Usage Data**: Browser-Typ, IP-Adresse, besuchte Seiten, Verweildauer auf der site und verweisende URLs.\n• **Cookies & Tracking**: Kleine Datenpakete, die auf Ihrem Gerät gespeichert werden, um die Funktionalität zu verbessern und Traffic patterns zu analysieren.`,
         },
       },
       {
@@ -421,6 +463,7 @@ export const translations = {
         content: {
           en: `We process your personal data based on the following legal grounds under GDPR (Article 6):\n\n• **Consent (Art. 6(1)(a))**: When you submit a contact form or accept non-essential cookies, you provide explicit consent.\n• **Legitimate Interest (Art. 6(1)(f))**: We may process usage data to improve our website and services, provided this does not override your fundamental rights.\n• **Legal Obligation (Art. 6(1)(c))**: We may process data when required by applicable law.`,
           el: `Επεξεργαζόμαστε τα προσωπικά σας δεδομένα με βάση τις ακόλουθες νομικές βάσεις σύμφωνα με τον GDPR (Άρθρο 6):\n\n• **Συγκατάθεση (Άρθ. 6(1)(α))**: Όταν υποβάλλετε φόρμα επικοινωνίας ή αποδέχεστε μη απαραίτητα cookies, παρέχετε ρητή συγκατάθεση.\n• **Έννομο Συμφέρον (Άρθ. 6(1)(στ))**: Ενδέχεται να επεξεργαστούμε δεδομένα χρήσης για τη βελτίωση του ιστότοπου και των υπηρεσιών μας, υπό την προϋπόθεση ότι αυτό δεν υπερισχύει των θεμελιωδών σας δικαιωμάτων.\n• **Νομική Υποχρέωση (Άρθ. 6(1)(γ))**: Ενδέχεται να επεξεργαστούμε δεδομένα όταν απαιτείται από την ισχύουσα νομοθεσία.`,
+          de: `Wir verarbeiten Ihre personenbezogenen Daten auf der Grundlage der folgenden Rechtsgrundlagen gemäß GDPR (Artikel 6):\n\n• **Consent (Art. 6(1)(a))**: Wenn Sie ein Kontaktformular absenden oder nicht-essentielle cookies akzeptieren, geben Sie eine ausdrückliche Einwilligung.\n• **Legitimate Interest (Art. 6(1)(f))**: Wir können Usage Data verarbeiten, um unsere website und services zu verbessern, vorausgesetzt, dies überwiegt nicht Ihre Grundrechte.\n• **Legal Obligation (Art. 6(1)(c))**: Wir können Daten verarbeiten, wenn dies gesetzlich vorgeschrieben ist.`,
         },
       },
       {
@@ -428,6 +471,7 @@ export const translations = {
         content: {
           en: `If you interact with our AI-powered assistant, we may collect and process the information you provide during the chat to deliver accurate responses.\n\n**Chat Storage**: AI assistant conversations may be stored for quality assurance purposes. These stored conversations help us monitor, evaluate, and improve the accuracy and reliability of the AI assistant's responses.\n\n**Data Minimization**: We encourage users not to share sensitive personal information (e.g., passwords, health data, or financial details) within the chat.\n\n**Purpose**: Chat logs are used solely to improve the quality of the AI responses and to assist with your inquiries in real-time.\n\n**Service Providers**: We use industry-leading AI models (such as OpenAI or Anthropic). Your data is processed securely and is not used by these providers to train their global models unless explicitly stated otherwise.\n\n**Retention**: Chat history is stored for a maximum of 6 months for quality assurance purposes, after which it is automatically deleted or anonymized.`,
           el: `Εάν αλληλεπιδράσετε με τον AI βοηθό μας, ενδέχεται να συλλέξουμε και να επεξεργαστούμε τις πληροφορίες που παρέχετε κατά τη διάρκεια της συνομιλίας για να παρέχουμε ακριβείς απαντήσεις.\n\n**Αποθήκευση Συνομιλιών**: Οι συνομιλίες με τον AI βοηθό ενδέχεται να αποθηκεύονται για σκοπούς διασφάλισης ποιότητας. Αυτές οι αποθηκευμένες συνομιλίες μας βοηθούν να παρακολουθούμε, να αξιολογούμε και να βελτιώνουμε την ακρίβεια και την αξιοπιστία των απαντήσεων του AI βοηθού.\n\n**Ελαχιστοποίηση Δεδομένων**: Ενθαρρύνουμε τους χρήστες να μην μοιράζονται ευαίσθητες προσωπικές πληροφορίες (π.χ. κωδικούς πρόσβασης, δεδομένα υγείας ή οικονομικά στοιχεία) μέσα στη συνομιλία.\n\n**Σκοπός**: Τα αρχεία καταγραφής συνομιλίας χρησιμοποιούνται αποκλειστικά για τη βελτίωση της ποιότητας των απαντήσεων του AI και για να σας βοηθήσουν με τα ερωτήματά σας σε πραγματικό χρόνο.\n\n**Πάροχοι Υπηρεσιών**: Χρησιμοποιούμε κορυφαία μοντέλα AI (όπως OpenAI ή Anthropic). Τα δεδομένα σας επεξεργάζονται με ασφάλεια και δεν χρησιμοποιούνται από αυτούς τους παρόχους για την εκπαίδευση των παγκόσμιων μοντέλων τους, εκτός εάν δηλωθεί ρητά διαφορετικά.\n\n**Διατήρηση**: Το ιστορικό συνομιλίας αποθηκεύεται για μέγιστο 6 μήνες για σκοπούς διασφάλισης ποιότητας, μετά από τους οποίους διαγράφεται αυτόματα ή ανωνυμοποιείται.`,
+          de: `Wenn Sie mit unserem AI-powered assistant interagieren, können wir die Informationen, die Sie während des Chats bereitstellen, sammeln und verarbeiten, um präzise Antworten zu liefern.\n\n**Chat Storage**: AI assistant conversations können zu Qualitätssicherungszwecken gespeichert werden. Diese gespeicherten Gespräche helfen uns, die Genauigkeit und Zuverlässigkeit der Antworten des AI assistant zu überwachen, zu bewerten und zu verbessern.\n\n**Data Minimization**: Wir ermutigen Benutzer, keine sensiblen Personal Information (z.B. Passwörter, Gesundheitsdaten oder Finanzdetails) im Chat zu teilen.\n\n**Purpose**: Chat logs werden ausschließlich verwendet, um die Qualität der AI-Antworten zu verbessern und Sie bei Ihren Anfragen in Echtzeit zu unterstützen.\n\n**Service Providers**: Wir verwenden branchenführende AI models (wie OpenAI oder Anthropic). Ihre Daten werden sicher verarbeitet und nicht von diesen providers zum Trainieren ihrer globalen Models verwendet, es sei denn, dies ist ausdrücklich anders angegeben.\n\n**Retention**: Der Chatverlauf wird für maximal 6 Monate zu Qualitätssicherungszwecken gespeichert und danach automatisch gelöscht oder anonymisiert.`,
         },
       },
       {
@@ -435,6 +479,7 @@ export const translations = {
         content: {
           en: `We use the collected information for the following purposes:\n\n• To provide, maintain, and improve our services\n• To respond to inquiries and communicate with you\n• To analyze website usage and optimize user experience\n• To comply with legal obligations\n• To send occasional updates about our services (only with your explicit consent)`,
           el: `Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους ακόλουθους σκοπούς:\n\n• Για την παροχή, τη συντήρηση και τη βελτίωση των υπηρεσιών μας\n• Για την απάντηση σε ερωτήματα και την επικοινωνία μαζί σας\n• Για την ανάλυση της χρήσης του ιστότοπου και τη βελτιστοποίηση της εμπειρίας χρήστη\n• Για τη συμμόρφωση με νομικές υποχρεώσεις\n• Για την αποστολή περιστασιακών ενημερώσεων σχετικά με τις υπηρεσίες μας (μόνο με τη ρητή συγκατάθεσή σας)`,
+          de: `Wir verwenden die gesammelten Informationen für die folgenden Zwecke:\n\n• Zur Bereitstellung, Wartung und Verbesserung unserer services\n• Zur Beantwortung von Anfragen und zur Kommunikation mit Ihnen\n• Zur Analyse der website-Nutzung und Optimierung der user experience\n• Zur Einhaltung gesetzlicher Verpflichtungen\n• Um gelegentliche Updates über unsere services zu senden (nur mit Ihrer ausdrücklichen Einwilligung)`,
         },
       },
       {
@@ -442,6 +487,7 @@ export const translations = {
         content: {
           en: `We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy:\n\n• **Contact form submissions**: Up to 12 months after your last interaction, unless an ongoing business relationship requires longer retention.\n• **Usage/analytics data**: Up to 26 months (anonymized where possible).\n• **Cookie consent preferences**: Stored locally on your device until you clear your browser data.\n\nAfter the retention period, your data is securely deleted or anonymized.`,
           el: `Διατηρούμε τα προσωπικά σας δεδομένα μόνο για όσο χρόνο είναι απαραίτητο για την εκπλήρωση των σκοπών που περιγράφονται σε αυτήν την πολιτική:\n\n• **Υποβολές φόρμας επικοινωνίας**: Έως 12 μήνες μετά την τελευταία σας αλληλεπίδραση, εκτός εάν μια συνεχής επιχειρηματική σχέση απαιτεί μεγαλύτερη διατήρηση.\n• **Δεδομένα χρήσης/ανάλυσης**: Έως 26 μήνες (ανωνυμοποιημένα όπου είναι δυνατόν).\n• **Προτιμήσεις συγκατάθεσης cookies**: Αποθηκεύονται τοπικά στη συσκευή σας μέχρι να διαγράψετε τα δεδομένα του προγράμματος περιήγησής σας.\n\nΜετά την περίοδο διατήρησης, τα δεδομένα σας διαγράφονται με ασφάλεια ή ανωνυμοποιούνται.`,
+          de: `Wir speichern Ihre personenbezogenen Daten nur so lange, wie es zur Erfüllung der in dieser Richtlinie genannten Zwecke erforderlich ist:\n\n• **Contact form submissions**: Bis zu 12 Monate nach Ihrer letzten Interaktion, es sei denn, eine laufende Geschäftsbeziehung erfordert eine längere Speicherung.\n• **Usage/analytics data**: Bis zu 26 Monate (soweit möglich anonymisiert).\n• **Cookie consent preferences**: Lokal auf Ihrem Gerät gespeichert, bis Sie Ihre Browserdaten löschen.\n\nNach Ablauf der Aufbewahrungsfrist werden Ihre Daten sicher gelöscht oder anonymisiert.`,
         },
       },
       {
@@ -449,6 +495,7 @@ export const translations = {
         content: {
           en: `Our website uses cookies to:\n\n• **Strictly necessary cookies**: Required for the website to function (e.g., cookie consent preference). These cannot be disabled.\n• **Analytics cookies**: Help us understand how visitors interact with our site (only with your consent).\n\nYou can manage your cookie preferences through the cookie banner or your browser settings. You may withdraw consent at any time by clearing your browser cookies.`,
           el: `Ο ιστότοπός μας χρησιμοποιεί cookies για:\n\n• **Αυστηρά απαραίτητα cookies**: Απαιτούνται για τη λειτουργία του ιστότοπου (π.χ. προτίμηση συγκατάθεσης cookies). Δεν μπορούν να απενεργοποιηθούν.\n• **Cookies ανάλυσης**: Μας βοηθούν να κατανοήσουμε πώς οι επισκέπτες αλληλεπιδρούν με τον ιστότοπό μας (μόνο με τη συγκατάθεσή σας).\n\nΜπορείτε να διαχειριστείτε τις προτιμήσεις σας για cookies μέσω του banner cookies ή των ρυθμίσεων του προγράμματος περιήγησής σας. Μπορείτε να αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή καθαρίζοντας τα cookies του προγράμματος περιήγησής σας.`,
+          de: `Unsere website verwendet cookies, um:\n\n• **Strictly necessary cookies**: Für die Funktion der website erforderlich (z.B. cookie consent preference). Diese können nicht deaktiviert werden.\n• **Analytics cookies**: Helfen uns zu verstehen, wie Besucher mit unserer site interagieren (nur mit Ihrer Einwilligung).\n\nSie können Ihre cookie preferences über den cookie banner oder Ihre Browser-Einstellungen verwalten. Sie können Ihre Einwilligung jederzeit widerrufen, indem Sie Ihre Browser-cookies löschen.`,
         },
       },
       {
@@ -456,6 +503,7 @@ export const translations = {
         content: {
           en: `We do not sell, trade, or rent your personal information to third parties. We may share data with:\n\n• **Service providers** who assist in operating our website and services (under data processing agreements)\n• **Legal authorities** when required by law or to protect our rights\n• **Analytics partners** in anonymized form\n\nAll third-party processors are required to comply with GDPR and protect your data.`,
           el: `Δεν πουλάμε, ανταλλάσσουμε ή ενοικιάζουμε τις προσωπικές σας πληροφορίες σε τρίτους. Ενδέχεται να μοιραστούμε δεδομένα με:\n\n• **Παρόχους υπηρεσιών** που βοηθούν στη λειτουργία του ιστότοπου και των υπηρεσιών μας (βάσει συμφωνιών επεξεργασίας δεδομένων)\n• **Νομικές αρχές** όταν απαιτείται από τον νόμο ή για την προστασία των δικαιωμάτων μας\n• **Συνεργάτες ανάλυσης** σε ανωνυμοποιημένη μορφή\n\nΌλοι οι τρίτοι επεξεργαστές υποχρεούνται να συμμορφώνονται με τον GDPR και να προστατεύουν τα δεδομένα σας.`,
+          de: `Wir verkaufen, handeln oder vermieten Ihre Personal Information nicht an Dritte. Wir können Daten teilen mit:\n\n• **Service providers**, die uns beim Betrieb unserer website und services unterstützen (im Rahmen von data processing agreements)\n• **Legal authorities**, wenn gesetzlich vorgeschrieben oder zum Schutz unserer Rechte\n• **Analytics partners** in anonymisierter Form\n\nAlle third-party processors sind verpflichtet, GDPR einzuhalten und Ihre Daten zu schützen.`,
         },
       },
       {
@@ -463,6 +511,7 @@ export const translations = {
         content: {
           en: `We implement industry-standard security measures to protect your personal information, including encrypted data transmission (HTTPS/TLS) and secure hosting infrastructure. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.`,
           el: `Εφαρμόζουμε μέτρα ασφαλείας βιομηχανικού επιπέδου για την προστασία των προσωπικών σας πληροφοριών, συμπεριλαμβανομένης κρυπτογραφημένης μετάδοσης δεδομένων (HTTPS/TLS) και ασφαλούς υποδομής φιλοξενίας. Ωστόσο, καμία μέθοδος ηλεκτρονικής μετάδοσης ή αποθήκευσης δεν είναι 100% ασφαλής και δεν μπορούμε να εγγυηθούμε απόλυτη ασφάλεια.`,
+          de: `Wir implementieren branchenübliche Sicherheitsmaßnahmen, um Ihre Personal Information zu schützen, einschließlich verschlüsselter Datenübertragung (HTTPS/TLS) und sicherer Hosting-Infrastruktur. Keine Methode der elektronischen Übertragung oder Speicherung ist jedoch 100% sicher, und wir können keine absolute Sicherheit garantieren.`,
         },
       },
       {
@@ -470,6 +519,7 @@ export const translations = {
         content: {
           en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 477 6057. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
           el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 477 6057. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
+          de: `Gemäß der Datenschutz-Grundverordnung (GDPR) haben Sie die folgenden Rechte:\n\n• **Right of Access** (Art. 15): Eine Kopie Ihrer personenbezogenen Daten erhalten\n• **Right to Rectification** (Art. 16): Ungenaue Daten korrigieren\n• **Right to Erasure** (Art. 17): Die Löschung Ihrer Daten beantragen („right to be forgotten“)\n• **Right to Restrict Processing** (Art. 18): Einschränken, wie wir Ihre Daten verwenden\n• **Right to Data Portability** (Art. 20): Ihre Daten in einem strukturierten, maschinenlesbaren Format erhalten\n• **Right to Object** (Art. 21): Widerspruch gegen die Verarbeitung auf der Grundlage eines legitimate interest einlegen\n• **Right to Withdraw Consent**: Die Einwilligung jederzeit widerrufen, ohne die vorherige Verarbeitung zu beeinträchtigen\n\nUm eines dieser Rechte auszuüben, kontaktieren Sie uns unter +30 697 477 6057. Wir werden innerhalb von 30 Tagen antworten.\n\n**Right to Lodge a Complaint**: Wenn Sie der Meinung sind, dass Ihre Datenschutzrechte verletzt wurden, haben Sie das Recht, eine Beschwerde bei der **Hellenic Data Protection Authority (HDPA)** einzureichen:\nWebsite: www.dpa.gr\nTelefon: +30 210 647 5600`,
         },
       },
       {
@@ -477,6 +527,7 @@ export const translations = {
         content: {
           en: `Your data is primarily processed within the European Economic Area (EEA). If any data is transferred outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission.`,
           el: `Τα δεδομένα σας επεξεργάζονται κυρίως εντός του Ευρωπαϊκού Οικονομικού Χώρου (ΕΟΧ). Εάν μεταφερθούν δεδομένα εκτός ΕΟΧ, διασφαλίζουμε ότι υπάρχουν κατάλληλες εγγυήσεις, όπως Τυπικές Συμβατικές Ρήτρες (SCCs) εγκεκριμένες από την Ευρωπαϊκή Επιτροπή.`,
+          de: `Ihre Daten werden hauptsächlich innerhalb des Europäischen Wirtschaftsraums (EWR) verarbeitet. Sollten Daten außerhalb des EWR übertragen werden, stellen wir sicher, dass angemessene safeguards vorhanden sind, wie z.B. Standard Contractual Clauses (SCCs), die von der Europäischen Kommission genehmigt wurden.`,
         },
       },
       {
@@ -484,6 +535,7 @@ export const translations = {
         content: {
           en: `Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external websites. We encourage you to read their privacy policies.`,
           el: `Ο ιστότοπός μας ενδέχεται να περιέχει συνδέσμους προς ιστότοπους τρίτων. Δεν φέρουμε ευθύνη για τις πρακτικές απορρήτου ή το περιεχόμενο αυτών των εξωτερικών ιστότοπων. Σας ενθαρρύνουμε να διαβάσετε τις πολιτικές απορρήτου τους.`,
+          de: `Unsere website kann Links zu third-party sites enthalten. Wir sind nicht verantwortlich für die privacy practices oder den content dieser externen websites. Wir empfehlen Ihnen, deren privacy policies zu lesen.`,
         },
       },
       {
@@ -491,6 +543,7 @@ export const translations = {
         content: {
           en: `We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date. For significant changes, we will make reasonable efforts to notify you.`,
           el: `Διατηρούμε το δικαίωμα να ενημερώσουμε αυτήν την Πολιτική Απορρήτου ανά πάσα στιγμή. Οι αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία ισχύος. Για σημαντικές αλλαγές, θα καταβάλλουμε εύλογες προσπάθειες να σας ειδοποιήσουμε.`,
+          de: `Wir behalten uns das Recht vor, diese Privacy Policy jederzeit zu aktualisieren. Änderungen werden auf dieser Seite mit einem aktualisierten effective date veröffentlicht. Bei wesentlichen Änderungen werden wir angemessene Anstrengungen unternehmen, Sie zu benachrichtigen.`,
         },
       },
       {
@@ -498,6 +551,7 @@ export const translations = {
         content: {
           en: `If you have questions about this Privacy Policy or wish to exercise your data protection rights, please contact us:`,
           el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου ή επιθυμείτε να ασκήσετε τα δικαιώματα προστασίας δεδομένων σας, επικοινωνήστε μαζί μας:`,
+          de: `Wenn Sie Fragen zu dieser Privacy Policy haben oder Ihre Datenschutzrechte ausüben möchten, kontaktieren Sie uns bitte:`,
         },
         contactInfo: true,
       },
@@ -515,6 +569,7 @@ export const translations = {
         content: {
           en: `By accessing and using the DevCraft website (devcraft.gr) and our services, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must not use our website or services.`,
           el: `Με την πρόσβαση και χρήση του ιστότοπου DevCraft (devcraft.gr) και των υπηρεσιών μας, συμφωνείτε ότι δεσμεύεστε από αυτούς τους Όρους Χρήσης. Εάν δεν συμφωνείτε με οποιοδήποτε μέρος αυτών των όρων, δεν πρέπει να χρησιμοποιείτε τον ιστότοπο ή τις υπηρεσίες μας.`,
+          de: `Durch den Zugriff auf und die Nutzung der DevCraft website (devcraft.gr) und unserer services erklären Sie sich mit diesen Terms of Service einverstanden. Wenn Sie mit keinem Teil dieser Bedingungen einverstanden sind, dürfen Sie unsere website oder services nicht nutzen.`,
         },
       },
       {
@@ -522,6 +577,7 @@ export const translations = {
         content: {
           en: `DevCraft provides web development, UI/UX design, and quality assurance services. The specific scope, deliverables, timelines, and fees for each project are defined in individual project agreements between DevCraft and the client.`,
           el: `Η DevCraft παρέχει υπηρεσίες ανάπτυξης ιστοσελίδων, σχεδιασμού UI/UX και διασφάλισης ποιότητας. Το συγκεκριμένο πεδίο εφαρμογής, τα παραδοτέα, τα χρονοδιαγράμματα και οι αμοιβές για κάθε έργο καθορίζονται σε ξεχωριστές συμφωνίες έργου μεταξύ της DevCraft και του πελάτη.`,
+          de: `DevCraft bietet web development, UI/UX design und quality assurance services an. Der spezifische Umfang, deliverables, Timelines und Gebühren für jedes Projekt werden in individuellen Projektvereinbarungen zwischen DevCraft und dem Kunden festgelegt.`,
         },
       },
       {
@@ -529,6 +585,7 @@ export const translations = {
         content: {
           en: `All content on this website — including text, graphics, logos, icons, images, and software — is the property of DevCraft or its content suppliers and is protected by international copyright laws.\n\nFor client projects, intellectual property rights transfer is governed by individual project agreements. Unless otherwise agreed in writing, upon full payment, clients receive ownership of the custom code and designs created specifically for their project.`,
           el: `Όλο το περιεχόμενο αυτού του ιστότοπου — συμπεριλαμβανομένων κειμένων, γραφικών, λογοτύπων, εικονιδίων, εικόνων και λογισμικού — αποτελεί ιδιοκτησία της DevCraft ή των παρόχων περιεχομένου της και προστατεύεται από τους διεθνείς νόμους πνευματικών δικαιωμάτων.\n\nΓια τα έργα πελατών, η μεταβίβαση δικαιωμάτων πνευματικής ιδιοκτησίας διέπεται από ξεχωριστές συμφωνίες έργου. Εκτός αν συμφωνηθεί διαφορετικά εγγράφως, μετά την πλήρη πληρωμή, οι πελάτες λαμβάνουν κυριότητα του προσαρμοσμένου κώδικα και των σχεδίων που δημιουργήθηκαν ειδικά για το έργο τους.`,
+          de: `Alle content auf dieser website — einschließlich text, graphics, logos, icons, images und software — ist Eigentum von DevCraft oder dessen content suppliers und ist durch internationale Urheberrechtsgesetze geschützt.\n\nFür Kundenprojekte wird die Übertragung von intellectual property rights durch individuelle Projektvereinbarungen geregelt. Sofern nicht schriftlich anders vereinbart, erhalten Kunden nach vollständiger Zahlung das Eigentum an dem custom code und den designs, die speziell für ihr Projekt erstellt wurden.`,
         },
       },
       {
@@ -536,6 +593,7 @@ export const translations = {
         content: {
           en: `When using our website, you agree not to:\n\n• Use the website for any unlawful purpose or in violation of any applicable laws\n• Attempt to gain unauthorized access to any part of the website or its systems\n• Interfere with or disrupt the website's functionality or servers\n• Copy, reproduce, or distribute any content without prior written consent\n• Transmit any viruses, malware, or other harmful code\n• Use automated tools to scrape, crawl, or extract data from the website`,
           el: `Κατά τη χρήση του ιστότοπού μας, συμφωνείτε να μην:\n\n• Χρησιμοποιείτε τον ιστότοπο για οποιονδήποτε παράνομο σκοπό ή κατά παράβαση οποιουδήποτε ισχύοντος νόμου\n• Επιχειρείτε μη εξουσιοδοτημένη πρόσβαση σε οποιοδήποτε μέρος του ιστότοπου ή των συστημάτων του\n• Παρεμβαίνετε ή διαταράσσετε τη λειτουργικότητα του ιστότοπου ή των διακομιστών\n• Αντιγράφετε, αναπαράγετε ή διανέμετε οποιοδήποτε περιεχόμενο χωρίς προηγούμενη γραπτή συγκατάθεση\n• Μεταδίδετε ιούς, κακόβουλο λογισμικό ή άλλον επιβλαβή κώδικα\n• Χρησιμοποιείτε αυτοματοποιημένα εργαλεία για εξαγωγή δεδομένων από τον ιστότοπο`,
+          de: `Bei der Nutzung unserer website erklären Sie sich damit einverstanden, Folgendes zu unterlassen:\n\n• Die website für illegale Zwecke oder unter Verstoß gegen geltende Gesetze zu nutzen\n• Zu versuchen, sich unbefugten Zugang zu Teilen der website oder ihren Systemen zu verschaffen\n• Die functionality oder servers der website zu stören oder zu unterbrechen\n• content ohne vorherige schriftliche Zustimmung zu kopieren, zu reproduzieren oder zu verbreiten\n• Viren, malware oder anderen harmful code zu übertragen\n• Automatisierte tools zum scraping, crawling oder zur Extraktion von Daten von der website zu verwenden`,
         },
       },
       {
@@ -543,6 +601,7 @@ export const translations = {
         content: {
           en: `Individual project engagements are governed by separate agreements that outline:\n\n• **Scope of work** and deliverables\n• **Timeline** and milestones\n• **Payment terms** and schedule\n• **Revision policy** and change requests\n• **Intellectual property** transfer terms\n\nThese project-specific agreements supplement these general Terms of Service. In case of conflict, the project agreement prevails.`,
           el: `Οι μεμονωμένες αναθέσεις έργων διέπονται από ξεχωριστές συμφωνίες που περιγράφουν:\n\n• **Πεδίο εφαρμογής** και παραδοτέα\n• **Χρονοδιάγραμμα** και ορόσημα\n• **Όρους πληρωμής** και πρόγραμμα\n• **Πολιτική αναθεωρήσεων** και αιτήματα αλλαγών\n• **Όρους μεταβίβασης** πνευματικής ιδιοκτησίας\n\nΑυτές οι ειδικές συμφωνίες έργου συμπληρώνουν αυτούς τους γενικούς Όρους Χρήσης. Σε περίπτωση σύγκρουσης, υπερισχύει η συμφωνία έργου.`,
+          de: `Einzelne Projekte werden durch separate agreements geregelt, die Folgendes festlegen:\n\n• **Scope of work** und deliverables\n• **Timeline** und milestones\n• **Payment terms** und schedule\n• **Revision policy** und change requests\n• **Intellectual property** transfer terms\n\nDiese projektspezifischen agreements ergänzen diese allgemeinen Terms of Service. Im Falle eines Konflikts hat die Projektvereinbarung Vorrang.`,
         },
       },
       {
@@ -550,6 +609,7 @@ export const translations = {
         content: {
           en: `To the maximum extent permitted by applicable law, DevCraft shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our website or services.\n\nOur total liability for any claim arising from our services shall not exceed the amount paid by you for the specific service giving rise to the claim. This limitation applies regardless of the legal theory on which the claim is based.`,
           el: `Στο μέγιστο βαθμό που επιτρέπεται από την ισχύουσα νομοθεσία, η DevCraft δεν ευθύνεται για τυχόν έμμεσες, τυχαίες, ειδικές, επακόλουθες ή τιμωρητικές ζημίες που προκύπτουν από τη χρήση του ιστότοπου ή των υπηρεσιών μας.\n\nΗ συνολική μας ευθύνη για οποιαδήποτε αξίωση που προκύπτει από τις υπηρεσίες μας δεν υπερβαίνει το ποσό που καταβλήθηκε από εσάς για τη συγκεκριμένη υπηρεσία. Αυτός ο περιορισμός ισχύει ανεξάρτητα από τη νομική θεωρία στην οποία βασίζεται η αξίωση.`,
+          de: `Im größtmöglichen gesetzlich zulässigen Umfang ist DevCraft nicht haftbar für indirekte, zufällige, besondere, Folgeschäden oder strafbare damages, die aus Ihrer Nutzung unserer website oder services entstehen.\n\nUnsere Gesamthaftung für jegliche Ansprüche, die sich aus unseren services ergeben, übersteigt nicht den von Ihnen für den spezifischen service gezahlten Betrag, der den Anspruch begründet. Diese Begrenzung gilt unabhängig von der Rechtstheorie, auf der der Anspruch basiert.`,
         },
       },
       {
@@ -557,6 +617,7 @@ export const translations = {
         content: {
           en: `Our website is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the website will be uninterrupted, error-free, or free of viruses or other harmful components.\n\nFor contracted services, specific warranties and guarantees are outlined in individual project agreements.`,
           el: `Ο ιστότοπός μας παρέχεται "ως έχει" και "ως διαθέσιμος" χωρίς εγγυήσεις οποιουδήποτε είδους, ρητές ή σιωπηρές. Δεν εγγυόμαστε ότι ο ιστότοπος θα λειτουργεί αδιάλειπτα, χωρίς σφάλματα ή ελεύθερος από ιούς ή άλλα επιβλαβή στοιχεία.\n\nΓια τις συμβατικές υπηρεσίες, οι ειδικές εγγυήσεις περιγράφονται στις ξεχωριστές συμφωνίες έργου.`,
+          de: `Unsere website wird „wie besehen“ und „wie verfügbar“ ohne ausdrückliche oder stillschweigende Garantien jeglicher Art bereitgestellt. Wir übernehmen keine Gewähr dafür, dass die website ununterbrochen, fehlerfrei oder frei von Viren oder anderen schädlichen Komponenten ist.\n\nFür beauftragte Dienstleistungen werden spezifische Gewährleistungen und Garantien in den einzelnen Projektvereinbarungen festgelegt.`,
         },
       },
       {
@@ -564,6 +625,7 @@ export const translations = {
         content: {
           en: `These Terms of Service are governed by and construed in accordance with the laws of the Hellenic Republic (Greece). Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Thessaloniki, Greece.\n\nFor EU consumers, this does not affect your rights under mandatory consumer protection laws of your country of residence.`,
           el: `Αυτοί οι Όροι Χρήσης διέπονται και ερμηνεύονται σύμφωνα με τους νόμους της Ελληνικής Δημοκρατίας. Οποιαδήποτε διαφορά που προκύπτει από αυτούς τους όρους υπάγεται στην αποκλειστική δικαιοδοσία των δικαστηρίων της Θεσσαλονίκης, Ελλάδα.\n\nΓια καταναλωτές της ΕΕ, αυτό δεν επηρεάζει τα δικαιώματά σας βάσει υποχρεωτικών νόμων προστασίας καταναλωτών της χώρας διαμονής σας.`,
+          de: `Diese Terms of Service unterliegen den Gesetzen der Hellenischen Republik (Griechenland) und sind entsprechend auszulegen. Alle Streitigkeiten, die sich aus diesen Bedingungen ergeben, unterliegen der ausschließlichen Zuständigkeit der Gerichte von Thessaloniki, Griechenland.\n\nFür EU-Verbraucher bleiben Ihre Rechte nach den zwingenden Verbraucherschutzgesetzen Ihres Wohnsitzlandes hiervon unberührt.`,
         },
       },
       {
@@ -571,6 +633,7 @@ export const translations = {
         content: {
           en: `We reserve the right to modify these Terms of Service at any time. Changes will be effective immediately upon posting on this page with an updated date. Your continued use of the website after changes constitutes acceptance of the modified terms.\n\nWe encourage you to review this page periodically for updates.`,
           el: `Διατηρούμε το δικαίωμα να τροποποιήσουμε αυτούς τους Όρους Χρήσης ανά πάσα στιγμή. Οι αλλαγές θα ισχύουν αμέσως μετά τη δημοσίευσή τους σε αυτή τη σελίδα με ενημερωμένη ημερομηνία. Η συνέχιση χρήσης του ιστότοπου μετά τις αλλαγές αποτελεί αποδοχή των τροποποιημένων όρων.\n\nΣας ενθαρρύνουμε να ελέγχετε αυτή τη σελίδα περιοδικά για ενημερώσεις.`,
+          de: `Wir behalten uns das Recht vor, diese Terms of Service jederzeit zu ändern. Änderungen treten sofort nach Veröffentlichung auf dieser Seite mit aktualisiertem Datum in Kraft. Ihre fortgesetzte Nutzung der website nach Änderungen stellt die Annahme der geänderten Bedingungen dar.\n\nWir empfehlen Ihnen, diese Seite regelmäßig auf Aktualisierungen zu überprüfen.`,
         },
       },
       {
@@ -578,6 +641,7 @@ export const translations = {
         content: {
           en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 477 6057`,
           el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 477 6057`,
+          de: `Wenn Sie Fragen zu diesen Terms of Service haben, kontaktieren Sie uns bitte:\n\n• **Phone**: +30 697 477 6057`,
         },
       },
     ],
@@ -588,6 +652,7 @@ export const translations = {
     message: {
       en: "We use cookies to enhance your browsing experience and analyze site traffic. You can accept or decline non-essential cookies. Learn more in our",
       el: "Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας περιήγησής σας και την ανάλυση της επισκεψιμότητας. Μπορείτε να αποδεχτείτε ή να απορρίψετε τα μη απαραίτητα cookies. Μάθετε περισσότερα στην",
+      de: "Wir verwenden cookies, um Ihr browsing experience zu verbessern und den website-Traffic zu analysieren. Sie können nicht-essentielle cookies akzeptieren oder ablehnen. Erfahren Sie mehr in unserer",
     },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου", de: "Datenschutzerklärung" },
     accept: { en: "Accept", el: "Αποδοχή", de: "Akzeptieren" },
@@ -601,6 +666,7 @@ export const translations = {
     subtitle: {
       en: "A selection of websites we've built for our clients. Real projects, real results.",
       el: "Μια επιλογή ιστοσελίδων που δημιουργήσαμε για τους πελάτες μας. Πραγματικά έργα, πραγματικά αποτελέσματα.",
+      de: "Eine Auswahl von websites, die wir für unsere Kunden erstellt haben. Real projects, real results.",
     },
     projects: [
       {
@@ -609,6 +675,7 @@ export const translations = {
         description: {
           en: "Custom-built business website with online booking integration and responsive service showcase.",
           el: "Ιστοσελίδα κατά παραγγελία με ενσωμάτωση online κρατήσεων και responsive παρουσίαση υπηρεσιών.",
+          de: "Individuell erstellte business website mit online booking integration und responsive service showcase.",
         },
       },
       {
@@ -617,6 +684,7 @@ export const translations = {
         description: {
           en: "High-end web platform with immersive visuals, smooth animations, and editorial content layout.",
           el: "Πλατφόρμα υψηλής αισθητικής με immersive visuals, ομαλά animations και editorial διάταξη περιεχομένου.",
+          de: "High-end web platform mit immersive visuals, smooth animations und editorial content layout.",
         },
       },
       {
@@ -625,6 +693,7 @@ export const translations = {
         description: {
           en: "Modern professional website featuring interactive gallery and streamlined appointment system.",
           el: "Σύγχρονη επαγγελματική ιστοσελίδα με διαδραστική γκαλερί και βελτιστοποιημένο σύστημα ραντεβού.",
+          de: "Moderne professional website mit interactive gallery und streamlined appointment system.",
         },
       },
       {
@@ -633,6 +702,7 @@ export const translations = {
         description: {
           en: "Feature-rich web application with advanced filtering, property listings, and virtual tour integration.",
           el: "Web εφαρμογή με προηγμένο φιλτράρισμα, καταχωρήσεις ακινήτων και ενσωμάτωση εικονικών περιηγήσεων.",
+          de: "Feature-rich web application mit advanced filtering, property listings und virtual tour integration.",
         },
       },
     ],
@@ -646,6 +716,7 @@ export const translations = {
     subtitle: {
       en: "From a single landing page to a multilingual platform — every plan includes responsive design, search engine visibility, and ongoing support so you never feel left on your own.",
       el: "Από μονοσέλιδο landing page έως πολύγλωσση πλατφόρμα — κάθε πακέτο περιλαμβάνει responsive design, ορατότητα στις μηχανές αναζήτησης και συνεχή υποστήριξη ώστε να μην μείνετε ποτέ μόνοι.",
+      de: "Von einer einzelnen landing page bis zu einer mehrsprachigen Plattform – jeder Plan umfasst responsive design, search engine visibility und ongoing support, damit Sie sich nie allein fühlen.",
     },
     plans: [
       {
@@ -654,12 +725,14 @@ export const translations = {
         bestFor: {
           en: "Perfect for new businesses or personal brands making their first impression online.",
           el: "Ιδανικό για νέες επιχειρήσεις ή προσωπικά brands που κάνουν την πρώτη τους εντύπωση online.",
+          de: "Perfekt für neue businesses oder personal brands, die ihren ersten Eindruck online machen.",
         },
         price: { en: "€600 – €700", el: "€600 – €700", de: "€600 – €700" },
         delivery: { en: "2 working days", el: "2 εργάσιμες ημέρες", de: "2 Werktage" },
         description: {
           en: "A beautifully crafted landing page that puts your business on the map. Mobile-ready, secure, and designed to turn visitors into customers from day one.",
           el: "Ένα προσεγμένο landing page που φέρνει την επιχείρησή σας online. Mobile-ready, ασφαλές και σχεδιασμένο να μετατρέπει επισκέπτες σε πελάτες από την πρώτη μέρα.",
+          de: "Eine wunderschön gestaltete landing page, die Ihr business auf die Landkarte setzt. Mobile-ready, sicher und darauf ausgelegt, Besucher vom ersten Tag an in Kunden zu verwandeln.",
         },
         features: {
           en: [
@@ -702,12 +775,14 @@ export const translations = {
         bestFor: {
           en: "For established businesses looking to build trust and showcase their work professionally.",
           el: "Για καθιερωμένες επιχειρήσεις που θέλουν να χτίσουν εμπιστοσύνη και να προβάλουν τη δουλειά τους επαγγελματικά.",
+          de: "Für etablierte businesses, die Vertrauen aufbauen und ihre Arbeit professionell präsentieren möchten.",
         },
         price: { en: "€1,000 – €1,200", el: "€1.000 – €1.200", de: "€1.000 – €1.200" },
         delivery: { en: "6–7 working days", el: "6–7 εργάσιμες ημέρες", de: "6–7 Werktage" },
         description: {
           en: "A professional multi-page website that works for you around the clock — showcasing your services, displaying your work, and giving customers confidence in your brand.",
           el: "Μια επαγγελματική πολυσέλιδη ιστοσελίδα που δουλεύει για εσάς όλο το εικοσιτετράωρο — προβάλλει τις υπηρεσίες σας, δείχνει τη δουλειά σας και εμπνέει εμπιστοσύνη.",
+          de: "Eine professional multi-page website, die rund um die Uhr für Sie arbeitet – präsentiert Ihre services, zeigt Ihre Arbeit und stärkt das Vertrauen der Kunden in Ihre brand.",
         },
         features: {
           en: [
@@ -762,12 +837,14 @@ export const translations = {
         bestFor: {
           en: "For companies expanding to international markets with multi-language needs.",
           el: "Για εταιρείες που επεκτείνονται σε διεθνείς αγορές με πολύγλωσσες ανάγκες.",
+          de: "Für Unternehmen, die in internationale markets expandieren und multi-language needs haben.",
         },
         price: { en: "€1,450 – €1,700", el: "€1.450 – €1.700", de: "€1.450 – €1.700" },
         delivery: { en: "9–12 working days", el: "9–12 εργάσιμες ημέρες", de: "9–12 Werktage" },
         description: {
           en: "Reach customers in their own language with a fully localized website. Includes a lead capture form, admin dashboard, and everything you need to manage your international presence with confidence.",
           el: "Προσεγγίστε πελάτες στη γλώσσα τους με μια πλήρως τοπικοποιημένη ιστοσελίδα. Περιλαμβάνει φόρμα επικοινωνίας, πίνακα διαχείρισης και όλα όσα χρειάζεστε για τη διεθνή σας παρουσία.",
+          de: "Erreichen Sie Kunden in ihrer eigenen Sprache mit einer fully localized website. Enthält ein lead capture form, admin dashboard und alles, was Sie benötigen, um Ihre internationale Präsenz souverän zu verwalten.",
         },
         features: {
           en: [
@@ -837,12 +914,14 @@ export const translations = {
         bestFor: {
           en: "For industry leaders who need custom features, AI tools, and certified quality assurance.",
           el: "Για ηγέτες του κλάδου που χρειάζονται custom λειτουργίες, εργαλεία AI και πιστοποιημένη διασφάλιση ποιότητας.",
+          de: "Für industry leaders, die custom features, AI tools und certified quality assurance benötigen.",
         },
         price: { en: "€1,950 – €2,500", el: "€1.950 – €2.500", de: "€1.950 – €2.500" },
         delivery: { en: "14–16 working days", el: "14–16 εργάσιμες ημέρες", de: "14–16 Werktage" },
         description: {
           en: "A premium platform with intelligent automation, AI-powered assistant, custom animations, and ISTQB-certified quality assurance. Built for businesses that demand the best.",
           el: "Μια premium πλατφόρμα με ευφυή αυτοματισμό, AI βοηθό, custom animations και πιστοποιημένη ποιότητα ISTQB. Για επιχειρήσεις που απαιτούν το καλύτερο.",
+          de: "Eine premium platform mit intelligent automation, AI-powered assistant, custom animations und ISTQB-certified quality assurance. Gebaut für businesses, die das Beste verlangen.",
         },
         features: {
           en: [
