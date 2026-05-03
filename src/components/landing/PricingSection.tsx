@@ -167,6 +167,8 @@ const PricingSection = () => {
           <p className="text-sm md:text-base text-foreground/90 leading-relaxed font-medium">
             {lang === "el"
               ? "Δυνατότητα προσθήκης επιπλέον λειτουργιών (add-ons) προσαρμοσμένων στις ανάγκες σας."
+              : lang === "de"
+              ? "Zusätzliche Funktionen und maßgeschneiderte Add-ons können an Ihre spezifischen Bedürfnisse angepasst werden."
               : "Additional functionalities and custom add-ons can be tailored to your specific needs."}
           </p>
           <button
