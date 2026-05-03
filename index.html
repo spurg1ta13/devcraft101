@@ -94,7 +94,7 @@
       var interactionTimer = isMobile ? null : setTimeout(loadAnalytics, 8000);
       function onInteraction() {
         if (interactionTimer) clearTimeout(interactionTimer);
-        ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(loadAnalytics, { timeout: 2000 });
+        if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics, { timeout: 2000 }); } else { setTimeout(loadAnalytics, 1500); }
         events.forEach(function(e) { document.removeEventListener(e, onInteraction); });
       }
       events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
