@@ -64,9 +64,8 @@
       .cv-auto{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
 
-    <!-- Analytics deferred 3s after first interaction or 5s absolute -->
+    <!-- Analytics: load only after first interaction (mobile) or 8s on desktop -->
     <script>
-
       function loadAnalytics() {
         if (window.__analyticsLoaded) return;
         window.__analyticsLoaded = true;
@@ -79,19 +78,23 @@
         document.head.appendChild(g);
         g.onload = function() {
           gtag('js', new Date());
-          gtag('config', 'G-P5ZGGYZVV5');
+          gtag('config', 'G-P5ZGGYZVV5', { transport_type: 'beacon' });
         };
         setTimeout(function() {
           var c = document.createElement('script');
           c.src = 'https://t.contentsquare.net/uxa/48d94652d2367.js';
+          c.async = true;
           document.head.appendChild(c);
-        }, 2000);
+        }, 3000);
       }
-      var events = ['click','scroll','touchstart','keydown'];
-      var interactionTimer = setTimeout(loadAnalytics, 5000);
+      var events = ['pointerdown','touchstart','keydown','scroll'];
+      var isMobile = matchMedia('(max-width: 768px)').matches;
+      // Mobile: interaction-only (no fallback timer — saves main thread on idle loads)
+      // Desktop: 8s absolute fallback
+      var interactionTimer = isMobile ? null : setTimeout(loadAnalytics, 8000);
       function onInteraction() {
-        clearTimeout(interactionTimer);
-        setTimeout(loadAnalytics, 3000);
+        if (interactionTimer) clearTimeout(interactionTimer);
+        ('requestIdleCallback' in window ? requestIdleCallback : setTimeout)(loadAnalytics, { timeout: 2000 });
         events.forEach(function(e) { document.removeEventListener(e, onInteraction); });
       }
       events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
@@ -99,21 +102,30 @@
     <!-- Make the Vite-injected CSS bundle non-render-blocking. Inlined critical CSS already paints the hero/shell. -->
     <script>
       (function () {
+        var done = false;
+        var observer;
         var swap = function () {
           var links = document.querySelectorAll('link[rel="stylesheet"][href*="/assets/index-"]');
-          links.forEach(function (l) {
-            if (l.dataset.async === '1') return;
+          var found = false;
+          for (var i = 0; i < links.length; i++) {
+            var l = links[i];
+            found = true;
+            if (l.dataset.async === '1') continue;
             l.dataset.async = '1';
             l.media = 'print';
-            l.onload = function () { l.media = 'all'; };
-          });
+            l.onload = function () { this.media = 'all'; };
+          }
+          // Disconnect once we have swapped — avoids running querySelectorAll on every React mutation
+          if (found && observer) { observer.disconnect(); done = true; }
         };
-        // Run after Vite injects the <link>, but before paint blocking matters
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', swap);
+        swap();
+        if (!done) {
+          // Only observe <head> (where Vite injects the link), not the whole document.
+          observer = new MutationObserver(swap);
+          observer.observe(document.head, { childList: true });
+          // Safety: stop observing after load
+          window.addEventListener('load', function () { if (observer) observer.disconnect(); }, { once: true });
         }
-        // Also observe <head> in case the link is injected after DOMContentLoaded
-        new MutationObserver(swap).observe(document.documentElement, { childList: true, subtree: true });
       })();
     </script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="4GobB7hINE4WmB+ZbjDcGQ" async></script>
