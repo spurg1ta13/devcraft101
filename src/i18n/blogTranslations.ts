@@ -1,15 +1,19 @@
 import type { Lang } from "./translations";
 
+// All language fields are required for en/el; de is optional and falls back to en.
+type LStr = { en: string; el: string; de?: string };
+type LStrArr = { en: string[]; el: string[]; de?: string[] };
+
 export interface BlogArticle {
   slug: string;
-  title: Record<Lang, string>;
-  excerpt: Record<Lang, string>;
-  metaDescription: Record<Lang, string>;
+  title: LStr;
+  excerpt: LStr;
+  metaDescription: LStr;
   date: string;
-  readTime: Record<Lang, string>;
-  category: Record<Lang, string>;
+  readTime: LStr;
+  category: LStr;
   keywords: string[];
-  content: Record<Lang, string[]>;
+  content: LStrArr;
 }
 
 export const blogTranslations = {
