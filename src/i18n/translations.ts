@@ -183,7 +183,7 @@ export const translations = {
           el: "Προχωράμε πέρα από τα πρότυπα. Όταν η μοναδικότητα είναι κλειδί, δημιουργούμε εξατομικευμένα συστήματα σχεδιασμού που δεν αντιπροσωπεύουν απλά το brand σας, αλλά μετατρέπουν τους χρήστες σε πιστούς πελάτες μέσω διαισθητικών διεπαφών.",
           de: "Wir gehen über Templates hinaus. Wenn Einzigartigkeit der Schlüssel ist, bauen wir maßgeschneiderte Design Systems, die nicht nur Ihre Brand repräsentieren, sondern User durch intuitive Interfaces zu loyalen Kunden machen.",
         },
-        stat: { en: "Bespoke", el: "Εξατομικευμένο", de: "Maßgeschneidert" },
+        stat: { en: "Bespoke", el: "Εξατομικευμένο", de: "Unikat" },
         statLabel: { en: "Design", el: "Σχεδιασμός", de: "Design" },
       },
     ],
