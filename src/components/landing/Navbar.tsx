@@ -357,7 +357,7 @@ const Navbar = () => {
             <span className="relative flex h-5 w-5 items-center justify-center">
               <WhatsAppIcon className="relative h-4 w-4 text-primary" />
             </span>
-            <span className="font-bold">+30 697 477 6057</span>
+            <span className="font-bold">{phone.display}</span>
           </button>
           <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" ariaLabel="Email {email}">
             {(email) => (
