@@ -56,7 +56,8 @@ const SEOHead = ({
   const fullUrl = `${BASE_URL}${cleanPath}`;
   const enUrl = `${fullUrl}?lang=en`;
   const elUrl = `${fullUrl}?lang=el`;
-  const currentUrl = lang === "el" ? elUrl : enUrl;
+  const deUrl = `${fullUrl}?lang=de`;
+  const currentUrl = lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
   const resolvedOgImage = ogImage
