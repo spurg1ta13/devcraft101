@@ -927,6 +927,7 @@ export const translations = {
   langSelector: {
     en: "EN",
     el: "ΕΛ",
+    de: "DE",
   },
 } as const;
 
