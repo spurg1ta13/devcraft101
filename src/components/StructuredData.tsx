@@ -202,13 +202,24 @@ const OrganizationSchema = () => {
     ],
     email: "contact@devcraft.gr",
     telephone: "+306974776057",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+306974776057",
-      email: "contact@devcraft.gr",
-      contactType: "customer service",
-      availableLanguage: ["English", "Greek"],
-    },
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: "+306974776057",
+        email: "contact@devcraft.gr",
+        contactType: "customer service",
+        availableLanguage: ["English", "Greek"],
+        areaServed: ["GR", "GB", "US", "EU"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+4915252343208",
+        email: "contact@devcraft.gr",
+        contactType: "customer service",
+        availableLanguage: ["German", "English"],
+        areaServed: ["DE", "AT", "CH", "LI", "LU", "BE"],
+      },
+    ],
     sameAs: ["https://www.linkedin.com/company/devcraft-gr"],
     aggregateRating: {
       "@type": "AggregateRating",

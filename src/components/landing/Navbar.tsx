@@ -7,6 +7,9 @@ import { translations, t, type Lang } from "@/i18n/translations";
 import SocialLinks from "@/components/SocialLinks";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
+import { usePhoneNumber } from "@/lib/phone";
+
+type PhoneInfo = { display: string; tel: string; wa: string };
 
 const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
@@ -23,7 +26,7 @@ const contactLabels = {
   cancel: { en: "Cancel", el: "Ακύρωση" },
 };
 
-const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClose: () => void; lang: Lang }) => {
+const ContactChoiceDialog = ({ isOpen, onClose, lang, phone }: { isOpen: boolean; onClose: () => void; lang: Lang; phone: PhoneInfo }) => {
   if (!isOpen) return null;
 
   return (
@@ -46,7 +49,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
 
         <div className="px-4 pb-3 space-y-2">
           <a
-            href="https://wa.me/306974776057"
+            href={`https://wa.me/${phone.wa}`}
             onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
@@ -55,7 +58,7 @@ const ContactChoiceDialog = ({ isOpen, onClose, lang }: { isOpen: boolean; onClo
           </a>
 
           <a
-            href="tel:+306974776057"
+            href={`tel:${phone.tel}`}
             onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
@@ -142,6 +145,7 @@ const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { lang } = useLang();
+  const phone = usePhoneNumber();
   const nav = translations.nav;
 
   const openContactChoice = useCallback((e: React.MouseEvent) => {
@@ -175,12 +179,12 @@ const Navbar = () => {
       {/* Mobile top contact bar — fixed height to prevent CLS */}
       <div className="fixed top-0 left-0 right-0 z-50 lg:hidden bg-primary text-primary-foreground h-11">
         <div className="container flex items-center justify-between h-11 text-xs font-mono font-bold px-4">
-          <button onClick={openContactChoice} className="flex items-center gap-2.5 min-h-[44px]" aria-label="Call +30 697 477 6057">
+          <button onClick={openContactChoice} className="flex items-center gap-2.5 min-h-[44px]" aria-label={`Call ${phone.display}`}>
             <span className="flex items-center gap-1.5">
               <Phone className="h-4 w-4" />
               <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
             </span>
-            <span className="text-xs">+30 697 477 6057</span>
+            <span className="text-xs">{phone.display}</span>
           </button>
           {isHome ? (
             <a href="#contact" onClick={openLetsTalk} className="flex items-center gap-2 min-h-[44px] uppercase tracking-[0.1em]">
@@ -250,11 +254,11 @@ const Navbar = () => {
               )}
             </div>
             <div className="flex items-center gap-3 border-l border-border/30 pl-4 xl:pl-6">
-              <a href="tel:+306974776057" onClick={() => trackPhoneClick("navbar-desktop")} className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label="Call +30 697 477 6057">
+              <a href={`tel:${phone.tel}`} onClick={() => trackPhoneClick("navbar-desktop")} className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 group/phone min-h-[44px] whitespace-nowrap" aria-label={`Call ${phone.display}`}>
                 <span className="relative flex h-5 w-5 items-center justify-center shrink-0">
                   <Phone className="relative h-3.5 w-3.5 xl:h-4 xl:w-4 text-primary" />
                 </span>
-                <span className="font-bold hidden xl:inline">+30 697 477 6057</span>
+                <span className="font-bold hidden xl:inline">{phone.display}</span>
               </a>
               <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-1.5 font-mono text-[11px] xl:text-xs 2xl:text-sm text-foreground hover:text-primary transition-colors duration-300 min-h-[44px] whitespace-nowrap" ariaLabel="Email {email}">
                 {(email) => (
@@ -353,7 +357,7 @@ const Navbar = () => {
             <span className="relative flex h-5 w-5 items-center justify-center">
               <WhatsAppIcon className="relative h-4 w-4 text-primary" />
             </span>
-            <span className="font-bold">+30 697 477 6057</span>
+            <span className="font-bold">{phone.display}</span>
           </button>
           <ObfuscatedEmail user="contact" domain="devcraft.gr" className="flex items-center gap-2 font-mono text-sm text-foreground hover:text-primary transition-colors min-h-[48px]" ariaLabel="Email {email}">
             {(email) => (
@@ -371,7 +375,7 @@ const Navbar = () => {
 
       {/* Mobile floating WhatsApp button — currently disabled in favor of AI chat launcher */}
 
-      <ContactChoiceDialog isOpen={contactDialog} onClose={() => setContactDialog(false)} lang={lang} />
+      <ContactChoiceDialog isOpen={contactDialog} onClose={() => setContactDialog(false)} lang={lang} phone={phone} />
       {bookingLoaded && (
         <Suspense fallback={null}>
           <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
