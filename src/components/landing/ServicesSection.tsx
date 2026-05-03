@@ -84,9 +84,12 @@ const ServicesSection = () => {
             {s.builds.map((item, i) => {
               const Icon = buildIcons[i] ?? Rocket;
               return (
-                <article
+                <button
                   key={i}
-                  className={`group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-6 md:p-8 transition-all duration-500 hover:border-primary/40 hover:bg-card/60 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_hsl(38_100%_55%/0.35)] ${
+                  type="button"
+                  onClick={() => { setBookingLoaded(true); setBookingOpen(true); }}
+                  aria-label={t(item.title, lang)}
+                  className={`group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-6 md:p-8 text-left cursor-pointer transition-all duration-500 hover:border-primary/40 hover:bg-card/60 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_hsl(38_100%_55%/0.35)] focus:outline-none focus:ring-2 focus:ring-primary/50 ${
                     inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: inView ? `${i * 80}ms` : "0ms" }}
@@ -104,7 +107,7 @@ const ServicesSection = () => {
                       </p>
                     </div>
                   </div>
-                </article>
+                </button>
               );
             })}
 
