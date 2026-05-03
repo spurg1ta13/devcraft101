@@ -3,8 +3,8 @@ import { useLang } from "@/i18n/LanguageContext";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 
 interface SEOHeadProps {
-  title?: { en: string; el: string } | string;
-  description?: { en: string; el: string } | string;
+  title?: { en: string; el: string; de?: string } | string;
+  description?: { en: string; el: string; de?: string } | string;
   canonical?: string;
   type?: string;
   noindex?: boolean;
@@ -25,17 +25,20 @@ const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 const DEFAULT_TITLE = {
   en: "Custom Software Solutions in Greece | Devcraft.gr",
   el: "Προσαρμοσμένες Λύσεις Λογισμικού στην Ελλάδα | Devcraft.gr",
+  de: "Maßgeschneiderte Software-Lösungen aus Griechenland | Devcraft.gr",
 };
 const DEFAULT_DESC = {
   en: "Custom software solutions in Greece — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Plans from €600.",
   el: "Προσαρμοσμένες λύσεις λογισμικού στην Ελλάδα — ιστοσελίδες, web εφαρμογές και εργαλεία AI με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Πακέτα από €600.",
+  de: "Maßgeschneiderte Software-Lösungen aus Griechenland — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Pakete ab 600 €.",
 };
 const DEFAULT_KEYWORDS = {
   en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
   el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα",
+  de: "webentwicklung griechenland, individuelle webentwicklung, webagentur thessaloniki, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler",
 };
 
-const resolve = (val: { en: string; el: string } | string, lang: string): string =>
+const resolve = (val: { en: string; el: string; de?: string } | string, lang: string): string =>
   typeof val === "string" ? val : (val as Record<string, string>)[lang] || (val as Record<string, string>).en;
 
 const SEOHead = ({
