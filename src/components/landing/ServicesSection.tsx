@@ -1,8 +1,10 @@
+import { lazy, Suspense, useState } from "react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
-import { preloadUpTo } from "@/lib/lazyLanding";
-import { Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard, Hotel, Anchor, ArrowRight, Sparkles } from "lucide-react";
+import { Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard, Hotel, Anchor, Sparkles } from "lucide-react";
+
+const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
 const buildIcons = [Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard, Hotel, Anchor];
 
@@ -10,6 +12,8 @@ const ServicesSection = () => {
   const { lang } = useLang();
   const s = translations.services;
   const { ref, inView } = useInView();
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [bookingLoaded, setBookingLoaded] = useState(false);
 
   return (
     <section id="services" className="relative section-rhythm scroll-mt-28 lg:scroll-mt-20" aria-label={t(s.label, lang)}>
@@ -131,50 +135,24 @@ const ServicesSection = () => {
                       {t(s.customCtaText, lang)}
                     </p>
                   </div>
-                  <a
-                    href="#contact"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      const offset = window.innerWidth < 1024 ? 80 : 60;
-                      const scrollTo = () => {
-                        const el = document.getElementById("contact");
-                        if (!el) return false;
-                        const top = el.getBoundingClientRect().top + window.scrollY - offset;
-                        window.scrollTo({ top, behavior: "smooth" });
-                        return true;
-                      };
-                      const preload = preloadUpTo("contact");
-                      if (scrollTo()) {
-                        preload.finally(() => {
-                          requestAnimationFrame(() => setTimeout(scrollTo, 80));
-                        });
-                        return;
-                      }
-                      preload.finally(() => {
-                        let attempts = 0;
-                        const tryScroll = () => {
-                          if (scrollTo()) {
-                            setTimeout(scrollTo, 200);
-                            return;
-                          }
-                          if (attempts++ < 30) {
-                            requestAnimationFrame(() => setTimeout(tryScroll, 50));
-                          }
-                        };
-                        tryScroll();
-                      });
-                    }}
-                    className="group/btn relative shrink-0 inline-flex items-center justify-center gap-2 self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 active:scale-[0.98] transition-all"
+                  <button
+                    type="button"
+                    onClick={() => { setBookingLoaded(true); setBookingOpen(true); }}
+                    className="relative shrink-0 inline-flex items-center justify-center self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 active:scale-[0.98] transition-all"
                   >
                     {t(s.customCtaButton, lang)}
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" strokeWidth={2.5} />
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {bookingLoaded && (
+        <Suspense fallback={null}>
+          <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
+        </Suspense>
+      )}
     </section>
   );
 };
