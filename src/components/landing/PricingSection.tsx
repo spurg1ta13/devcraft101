@@ -82,7 +82,7 @@ const PricingSection = () => {
               >
                 {isElite && (
                   <div className="absolute -top-3 left-6 rounded-full bg-primary px-3 py-0.5 text-[10px] font-mono uppercase tracking-widest text-primary-foreground">
-                    {lang === "el" ? "Δημοφιλές" : "Most Popular"}
+                    {lang === "el" ? "Δημοφιλές" : lang === "de" ? "Am beliebtesten" : "Most Popular"}
                   </div>
                 )}
 
