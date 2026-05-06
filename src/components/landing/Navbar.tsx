@@ -325,7 +325,19 @@ const Navbar = () => {
         aria-label="Mobile navigation menu"
       >
         {menuItems.map((item, i) =>
-          item.type === "page" ? (
+          item.href === "contact" ? (
+            <a
+              key={item.href}
+              href="#contact"
+              onClick={(e) => { openLetsTalk(e); }}
+              className={`text-2xl sm:text-3xl font-bold tracking-[-0.03em] text-foreground hover:text-primary transition-all duration-300 min-h-[48px] flex items-center ${
+                open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: open ? `${(i + 1) * 100 + 50}ms` : "0ms" }}
+            >
+              {item.label}
+            </a>
+          ) : item.type === "page" ? (
             <Link
               key={item.href}
               to={item.href}
