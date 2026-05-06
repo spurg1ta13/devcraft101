@@ -39,21 +39,29 @@ const PlanBookingDialog = ({ open, onOpenChange, planName, planTagline }: PlanBo
   const initialMessage = planLabel
     ? lang === "el"
       ? `Ενδιαφέρομαι για το πακέτο: ${planLabel}.\n\n`
+      : lang === "de"
+      ? `Ich interessiere mich für das Paket: ${planLabel}.\n\n`
       : `I'm interested in the plan: ${planLabel}.\n\n`
     : "";
 
   const title = planLabel
-    ? lang === "el"
-      ? `${planLabel}`
-      : `${planLabel}`
-    : lang === "el" ? "Ας μιλήσουμε" : "Let's talk";
+    ? planLabel
+    : lang === "el"
+    ? "Ας μιλήσουμε"
+    : lang === "de"
+    ? "Sprechen wir"
+    : "Let's talk";
 
   const description = mode === "booking"
     ? (lang === "el"
         ? "Επιλέξτε ημερομηνία και ώρα. Θα επιβεβαιώσουμε σύντομα μέσω email."
+        : lang === "de"
+        ? "Wählen Sie Datum und Uhrzeit. Wir bestätigen in Kürze per E-Mail."
         : "Pick a date and time. We'll confirm shortly via email.")
     : (lang === "el"
         ? "Στείλτε μας μήνυμα και θα απαντήσουμε σύντομα."
+        : lang === "de"
+        ? "Senden Sie uns eine Nachricht und wir melden uns bald."
         : "Send us a message and we'll get back to you shortly.");
 
   return (
