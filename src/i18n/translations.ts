@@ -475,7 +475,30 @@ export const translations = {
         },
       },
       {
-        title: { en: "5. How We Use Your Information", el: "5. Πώς Χρησιμοποιούμε τις Πληροφορίες σας", de: "5. Wie wir Ihre Informationen nutzen" },
+        title: { en: "5. Geolocation by IP Address", el: "5. Γεωεντοπισμός βάσει Διεύθυνσης IP", de: "5. Standortbestimmung anhand der IP-Adresse" },
+        content: {
+          en: `We detect your approximate country based on your IP address in order to display relevant content, such as the appropriate language and local contact phone number. This processing is based on our legitimate interest (Art. 6(1)(f) GDPR) in providing a localized experience.
+
+• **What we use**: Only the country code derived from your IP address.
+• **What we do NOT do**: We do not store your IP address for this purpose, do not track precise location, and do not share it with third parties for marketing.
+• **Provider**: Country lookup is performed via a third-party geolocation service (ipapi.co); the request is made from your browser.
+• **Override**: You can manually change the language at any time using the language selector in the header.`,
+          el: `Εντοπίζουμε την κατά προσέγγιση χώρα σας με βάση τη διεύθυνση IP σας, ώστε να εμφανίζουμε σχετικό περιεχόμενο, όπως την κατάλληλη γλώσσα και τον τοπικό αριθμό τηλεφώνου επικοινωνίας. Η επεξεργασία αυτή βασίζεται στο έννομο συμφέρον μας (Άρθ. 6(1)(στ) GDPR) να παρέχουμε εξατομικευμένη εμπειρία.
+
+• **Τι χρησιμοποιούμε**: Μόνο τον κωδικό χώρας που προκύπτει από τη διεύθυνση IP σας.
+• **Τι ΔΕΝ κάνουμε**: Δεν αποθηκεύουμε τη διεύθυνση IP σας για αυτόν τον σκοπό, δεν παρακολουθούμε ακριβή τοποθεσία και δεν την κοινοποιούμε σε τρίτους για σκοπούς marketing.
+• **Πάροχος**: Η αναζήτηση χώρας πραγματοποιείται μέσω υπηρεσίας γεωεντοπισμού τρίτου μέρους (ipapi.co)· το αίτημα γίνεται από τον browser σας.
+• **Παράκαμψη**: Μπορείτε ανά πάσα στιγμή να αλλάξετε χειροκίνητα τη γλώσσα από τον επιλογέα γλώσσας στην κεφαλίδα.`,
+          de: `Wir ermitteln Ihr ungefähres Land anhand Ihrer IP-Adresse, um relevante Inhalte anzuzeigen, wie die passende Sprache und die lokale Kontakttelefonnummer. Diese Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses (Art. 6(1)(f) DSGVO) an einer lokalisierten Nutzererfahrung.
+
+• **Was wir verwenden**: Ausschließlich den aus Ihrer IP-Adresse abgeleiteten Ländercode.
+• **Was wir NICHT tun**: Wir speichern Ihre IP-Adresse zu diesem Zweck nicht, verfolgen keinen genauen Standort und geben sie nicht zu Marketingzwecken an Dritte weiter.
+• **Anbieter**: Die Länderabfrage erfolgt über einen Drittanbieter-Geolocation-Dienst (ipapi.co); die Anfrage wird von Ihrem Browser ausgeführt.
+• **Widerspruch**: Sie können die Sprache jederzeit manuell über die Sprachauswahl im Header ändern.`,
+        },
+      },
+      {
+        title: { en: "6. How We Use Your Information", el: "6. Πώς Χρησιμοποιούμε τις Πληροφορίες σας", de: "6. Wie wir Ihre Informationen nutzen" },
         content: {
           en: `We use the collected information for the following purposes:\n\n• To provide, maintain, and improve our services\n• To respond to inquiries and communicate with you\n• To analyze website usage and optimize user experience\n• To comply with legal obligations\n• To send occasional updates about our services (only with your explicit consent)`,
           el: `Χρησιμοποιούμε τις συλλεγόμενες πληροφορίες για τους ακόλουθους σκοπούς:\n\n• Για την παροχή, τη συντήρηση και τη βελτίωση των υπηρεσιών μας\n• Για την απάντηση σε ερωτήματα και την επικοινωνία μαζί σας\n• Για την ανάλυση της χρήσης του ιστότοπου και τη βελτιστοποίηση της εμπειρίας χρήστη\n• Για τη συμμόρφωση με νομικές υποχρεώσεις\n• Για την αποστολή περιστασιακών ενημερώσεων σχετικά με τις υπηρεσίες μας (μόνο με τη ρητή συγκατάθεσή σας)`,
@@ -483,7 +506,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "6. Data Retention", el: "6. Διατήρηση Δεδομένων", de: "6. Datenspeicherung" },
+        title: { en: "7. Data Retention", el: "7. Διατήρηση Δεδομένων", de: "7. Datenspeicherung" },
         content: {
           en: `We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy:\n\n• **Contact form submissions**: Up to 12 months after your last interaction, unless an ongoing business relationship requires longer retention.\n• **Usage/analytics data**: Up to 26 months (anonymized where possible).\n• **Cookie consent preferences**: Stored locally on your device until you clear your browser data.\n\nAfter the retention period, your data is securely deleted or anonymized.`,
           el: `Διατηρούμε τα προσωπικά σας δεδομένα μόνο για όσο χρόνο είναι απαραίτητο για την εκπλήρωση των σκοπών που περιγράφονται σε αυτήν την πολιτική:\n\n• **Υποβολές φόρμας επικοινωνίας**: Έως 12 μήνες μετά την τελευταία σας αλληλεπίδραση, εκτός εάν μια συνεχής επιχειρηματική σχέση απαιτεί μεγαλύτερη διατήρηση.\n• **Δεδομένα χρήσης/ανάλυσης**: Έως 26 μήνες (ανωνυμοποιημένα όπου είναι δυνατόν).\n• **Προτιμήσεις συγκατάθεσης cookies**: Αποθηκεύονται τοπικά στη συσκευή σας μέχρι να διαγράψετε τα δεδομένα του προγράμματος περιήγησής σας.\n\nΜετά την περίοδο διατήρησης, τα δεδομένα σας διαγράφονται με ασφάλεια ή ανωνυμοποιούνται.`,
@@ -491,7 +514,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "7. Cookies", el: "7. Cookies", de: "7. Cookies" },
+        title: { en: "8. Cookies", el: "8. Cookies", de: "8. Cookies" },
         content: {
           en: `Our website uses cookies to:\n\n• **Strictly necessary cookies**: Required for the website to function (e.g., cookie consent preference). These cannot be disabled.\n• **Analytics cookies**: Help us understand how visitors interact with our site (only with your consent).\n\nYou can manage your cookie preferences through the cookie banner or your browser settings. You may withdraw consent at any time by clearing your browser cookies.`,
           el: `Ο ιστότοπός μας χρησιμοποιεί cookies για:\n\n• **Αυστηρά απαραίτητα cookies**: Απαιτούνται για τη λειτουργία του ιστότοπου (π.χ. προτίμηση συγκατάθεσης cookies). Δεν μπορούν να απενεργοποιηθούν.\n• **Cookies ανάλυσης**: Μας βοηθούν να κατανοήσουμε πώς οι επισκέπτες αλληλεπιδρούν με τον ιστότοπό μας (μόνο με τη συγκατάθεσή σας).\n\nΜπορείτε να διαχειριστείτε τις προτιμήσεις σας για cookies μέσω του banner cookies ή των ρυθμίσεων του προγράμματος περιήγησής σας. Μπορείτε να αποσύρετε τη συγκατάθεσή σας ανά πάσα στιγμή καθαρίζοντας τα cookies του προγράμματος περιήγησής σας.`,
@@ -499,7 +522,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "8. Data Sharing", el: "8. Κοινοποίηση Δεδομένων", de: "8. Datenfreigabe" },
+        title: { en: "9. Data Sharing", el: "9. Κοινοποίηση Δεδομένων", de: "9. Datenfreigabe" },
         content: {
           en: `We do not sell, trade, or rent your personal information to third parties. We may share data with:\n\n• **Service providers** who assist in operating our website and services (under data processing agreements)\n• **Legal authorities** when required by law or to protect our rights\n• **Analytics partners** in anonymized form\n\nAll third-party processors are required to comply with GDPR and protect your data.`,
           el: `Δεν πουλάμε, ανταλλάσσουμε ή ενοικιάζουμε τις προσωπικές σας πληροφορίες σε τρίτους. Ενδέχεται να μοιραστούμε δεδομένα με:\n\n• **Παρόχους υπηρεσιών** που βοηθούν στη λειτουργία του ιστότοπου και των υπηρεσιών μας (βάσει συμφωνιών επεξεργασίας δεδομένων)\n• **Νομικές αρχές** όταν απαιτείται από τον νόμο ή για την προστασία των δικαιωμάτων μας\n• **Συνεργάτες ανάλυσης** σε ανωνυμοποιημένη μορφή\n\nΌλοι οι τρίτοι επεξεργαστές υποχρεούνται να συμμορφώνονται με τον GDPR και να προστατεύουν τα δεδομένα σας.`,
@@ -507,7 +530,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "9. Data Security", el: "9. Ασφάλεια Δεδομένων", de: "9. Datensicherheit" },
+        title: { en: "10. Data Security", el: "10. Ασφάλεια Δεδομένων", de: "10. Datensicherheit" },
         content: {
           en: `We implement industry-standard security measures to protect your personal information, including encrypted data transmission (HTTPS/TLS) and secure hosting infrastructure. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.`,
           el: `Εφαρμόζουμε μέτρα ασφαλείας βιομηχανικού επιπέδου για την προστασία των προσωπικών σας πληροφοριών, συμπεριλαμβανομένης κρυπτογραφημένης μετάδοσης δεδομένων (HTTPS/TLS) και ασφαλούς υποδομής φιλοξενίας. Ωστόσο, καμία μέθοδος ηλεκτρονικής μετάδοσης ή αποθήκευσης δεν είναι 100% ασφαλής και δεν μπορούμε να εγγυηθούμε απόλυτη ασφάλεια.`,
@@ -515,7 +538,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "10. Your Rights Under GDPR", el: "10. Τα Δικαιώματά σας βάσει GDPR", de: "10. Ihre Rechte gemäß DSGVO" },
+        title: { en: "11. Your Rights Under GDPR", el: "11. Τα Δικαιώματά σας βάσει GDPR", de: "11. Ihre Rechte gemäß DSGVO" },
         content: {
           en: `Under the General Data Protection Regulation (GDPR), you have the following rights:\n\n• **Right of Access** (Art. 15): Obtain a copy of your personal data\n• **Right to Rectification** (Art. 16): Correct inaccurate data\n• **Right to Erasure** (Art. 17): Request deletion of your data ("right to be forgotten")\n• **Right to Restrict Processing** (Art. 18): Limit how we use your data\n• **Right to Data Portability** (Art. 20): Receive your data in a structured, machine-readable format\n• **Right to Object** (Art. 21): Object to processing based on legitimate interest\n• **Right to Withdraw Consent**: Withdraw consent at any time without affecting prior processing\n\nTo exercise any of these rights, contact us at +30 697 477 6057. We will respond within 30 days.\n\n**Right to Lodge a Complaint**: If you believe your data protection rights have been violated, you have the right to file a complaint with the **Hellenic Data Protection Authority (HDPA)**:\nWebsite: www.dpa.gr\nPhone: +30 210 647 5600`,
           el: `Σύμφωνα με τον Γενικό Κανονισμό Προστασίας Δεδομένων (GDPR), έχετε τα ακόλουθα δικαιώματα:\n\n• **Δικαίωμα Πρόσβασης** (Άρθ. 15): Λήψη αντιγράφου των προσωπικών σας δεδομένων\n• **Δικαίωμα Διόρθωσης** (Άρθ. 16): Διόρθωση ανακριβών δεδομένων\n• **Δικαίωμα Διαγραφής** (Άρθ. 17): Αίτημα διαγραφής των δεδομένων σας ("δικαίωμα στη λήθη")\n• **Δικαίωμα Περιορισμού Επεξεργασίας** (Άρθ. 18): Περιορισμός του τρόπου χρήσης των δεδομένων σας\n• **Δικαίωμα Φορητότητας Δεδομένων** (Άρθ. 20): Λήψη των δεδομένων σας σε δομημένη, αναγνώσιμη από μηχανή μορφή\n• **Δικαίωμα Εναντίωσης** (Άρθ. 21): Εναντίωση στην επεξεργασία βάσει έννομου συμφέροντος\n• **Δικαίωμα Ανάκλησης Συγκατάθεσης**: Ανάκληση συγκατάθεσης ανά πάσα στιγμή χωρίς επίπτωση στην προηγούμενη επεξεργασία\n\nΓια να ασκήσετε οποιοδήποτε από αυτά τα δικαιώματα, επικοινωνήστε μαζί μας στο +30 697 477 6057. Θα απαντήσουμε εντός 30 ημερών.\n\n**Δικαίωμα Υποβολής Καταγγελίας**: Εάν πιστεύετε ότι τα δικαιώματα προστασίας δεδομένων σας έχουν παραβιαστεί, έχετε το δικαίωμα να υποβάλετε καταγγελία στην **Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα (ΑΠΔΠΧ)**:\nΙστοσελίδα: www.dpa.gr\nΤηλέφωνο: +30 210 647 5600`,
@@ -523,7 +546,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "11. International Data Transfers", el: "11. Διεθνείς Μεταφορές Δεδομένων", de: "11. Internationale Datenübertragungen" },
+        title: { en: "12. International Data Transfers", el: "12. Διεθνείς Μεταφορές Δεδομένων", de: "12. Internationale Datenübertragungen" },
         content: {
           en: `Your data is primarily processed within the European Economic Area (EEA). If any data is transferred outside the EEA, we ensure appropriate safeguards are in place, such as Standard Contractual Clauses (SCCs) approved by the European Commission.`,
           el: `Τα δεδομένα σας επεξεργάζονται κυρίως εντός του Ευρωπαϊκού Οικονομικού Χώρου (ΕΟΧ). Εάν μεταφερθούν δεδομένα εκτός ΕΟΧ, διασφαλίζουμε ότι υπάρχουν κατάλληλες εγγυήσεις, όπως Τυπικές Συμβατικές Ρήτρες (SCCs) εγκεκριμένες από την Ευρωπαϊκή Επιτροπή.`,
@@ -531,7 +554,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "12. Third-Party Links", el: "12. Σύνδεσμοι Τρίτων", de: "12. Links zu Drittanbietern" },
+        title: { en: "13. Third-Party Links", el: "13. Σύνδεσμοι Τρίτων", de: "13. Links zu Drittanbietern" },
         content: {
           en: `Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of these external websites. We encourage you to read their privacy policies.`,
           el: `Ο ιστότοπός μας ενδέχεται να περιέχει συνδέσμους προς ιστότοπους τρίτων. Δεν φέρουμε ευθύνη για τις πρακτικές απορρήτου ή το περιεχόμενο αυτών των εξωτερικών ιστότοπων. Σας ενθαρρύνουμε να διαβάσετε τις πολιτικές απορρήτου τους.`,
@@ -539,7 +562,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "13. Changes to This Policy", el: "13. Αλλαγές σε αυτήν την Πολιτική", de: "13. Änderungen an dieser Richtlinie" },
+        title: { en: "14. Changes to This Policy", el: "14. Αλλαγές σε αυτήν την Πολιτική", de: "14. Änderungen an dieser Richtlinie" },
         content: {
           en: `We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date. For significant changes, we will make reasonable efforts to notify you.`,
           el: `Διατηρούμε το δικαίωμα να ενημερώσουμε αυτήν την Πολιτική Απορρήτου ανά πάσα στιγμή. Οι αλλαγές θα δημοσιεύονται σε αυτή τη σελίδα με ενημερωμένη ημερομηνία ισχύος. Για σημαντικές αλλαγές, θα καταβάλλουμε εύλογες προσπάθειες να σας ειδοποιήσουμε.`,
@@ -547,7 +570,7 @@ export const translations = {
         },
       },
       {
-        title: { en: "14. Contact Us", el: "14. Επικοινωνήστε μαζί μας", de: "14. Kontaktieren Sie uns" },
+        title: { en: "15. Contact Us", el: "15. Επικοινωνήστε μαζί μας", de: "15. Kontaktieren Sie uns" },
         content: {
           en: `If you have questions about this Privacy Policy or wish to exercise your data protection rights, please contact us:`,
           el: `Αν έχετε ερωτήσεις σχετικά με αυτήν την Πολιτική Απορρήτου ή επιθυμείτε να ασκήσετε τα δικαιώματα προστασίας δεδομένων σας, επικοινωνήστε μαζί μας:`,
