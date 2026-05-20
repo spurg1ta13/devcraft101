@@ -102,11 +102,6 @@ const SEOHead = ({
       <meta property="og:image:height" content="1080" />
       <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={resolvedTitle} />
-      <meta name="twitter:description" content={resolvedDesc} />
-      <meta name="twitter:image" content={resolvedOgImage} />
-      <meta name="twitter:image:alt" content="DevCraft - Web Development, UI/UX Design, QA Testing" />
       {articleMeta?.publishedTime && <meta property="article:published_time" content={articleMeta.publishedTime} />}
       {articleMeta?.modifiedTime && <meta property="article:modified_time" content={articleMeta.modifiedTime} />}
       {articleMeta?.author && <meta property="article:author" content={articleMeta.author} />}
