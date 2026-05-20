@@ -443,7 +443,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "why-attractive-landing-page-is-important",
     title: {
-      en: "Why an Attractive & Fully Functioning Landing Page Is Essential for Your Business",
+      en: "Why an Attractive Landing Page Is Essential for Your Business",
       el: "Γιατί μια Ελκυστική & Πλήρως Λειτουργική Landing Page Είναι Απαραίτητη για την Επιχείρησή σας",
       de: "Warum eine ansprechende & voll funktionsfähige Landing Page für Ihr Unternehmen unerlässlich ist",
     },
@@ -1280,7 +1280,7 @@ export const blogArticles: BlogArticle[] = [
   {
     slug: "operational-web-design-website-best-employee",
     title: {
-      en: "Operational Web Design: Why Your 2026 Website Should Be Your Best Employee, Not Just a Brochure",
+      en: "Operational Web Design: Your 2026 Website as Best Employee",
       el: "Λειτουργικός Σχεδιασμός Ιστοσελίδων: Γιατί η Ιστοσελίδα σας το 2026 Πρέπει να Είναι ο Καλύτερος Υπάλληλός σας, Όχι Απλώς ένα Φυλλάδιο",
       de: "Operational Web Design: Warum Ihre Website 2026 Ihr bester Mitarbeiter sein sollte, nicht nur eine Broschüre",
     },
