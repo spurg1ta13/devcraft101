@@ -322,7 +322,7 @@ export const translations = {
         de: "Wählen Sie ein Datum und eine Uhrzeit, die Ihnen passt. Meetings dauern 1 Stunde. Frühester Termin: 2 Tage ab heute.",
       },
       pickDate: { en: "Pick a date", el: "Επιλέξτε ημερομηνία", de: "Datum auswählen" },
-      pickTime: { en: "Available times (10:00 – 19:00, Europe/Athens)", el: "Διαθέσιμες ώρες (10:00 – 19:00, Europe/Athens)", de: "Verfügbare Zeiten (10:00 – 19:00, Europe/Athens)" },
+      pickTime: { en: "Available times (10:00 – 19:00, UTC+2)", el: "Διαθέσιμες ώρες (10:00 – 19:00, UTC+2)", de: "Verfügbare Zeiten (10:00 – 19:00, UTC+2)" },
       noSlots: { en: "Please select a date first", el: "Επιλέξτε πρώτα ημερομηνία", de: "Bitte wählen Sie zuerst ein Datum aus" },
       slotTaken: { en: "Booked", el: "Κλεισμένο", de: "Gebucht" },
       formatNotice: {
