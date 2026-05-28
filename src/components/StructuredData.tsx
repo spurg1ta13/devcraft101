@@ -20,17 +20,23 @@ const OrganizationSchema = () => {
       "Custom software solutions — websites, web apps & AI tools with bespoke UI/UX design and ISTQB-certified Quality Assurance. Your 1-month project, delivered in 1 week. Serving clients worldwide. Plans from €600.",
     slogan:
       "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.",
-    alternateName: ["DevCraft"],
+    alternateName: ["DevCraft", "DevCraft Thessaloniki", "DevCraft Θεσσαλονίκη", "Κατασκευή Ιστοσελίδων Θεσσαλονίκη"],
     foundingLocation: {
       "@type": "Place",
-      name: "Worldwide",
+      name: "Thessaloniki, Greece",
     },
     address: {
       "@type": "PostalAddress",
+      addressLocality: "Thessaloniki",
+      addressRegion: "Central Macedonia",
       addressCountry: "GR",
     },
     areaServed: [
       { "@type": "Place", name: "Worldwide" },
+      { "@type": "City", name: "Thessaloniki" },
+      { "@type": "City", name: "Θεσσαλονίκη" },
+      { "@type": "AdministrativeArea", name: "Central Macedonia" },
+      { "@type": "Country", name: "Greece" },
     ],
     serviceType: [
       "Custom Web Development",
@@ -196,7 +202,15 @@ const OrganizationSchema = () => {
         email: "contact@devcraft.gr",
         contactType: "customer service",
         availableLanguage: ["English", "Greek", "German"],
-        areaServed: ["Worldwide"],
+        areaServed: ["Worldwide", "GR"],
+      },
+      {
+        "@type": "ContactPoint",
+        telephone: "+306974776057",
+        email: "contact@devcraft.gr",
+        contactType: "sales",
+        availableLanguage: ["Greek", "English"],
+        areaServed: ["GR", "Thessaloniki"],
       },
       {
         "@type": "ContactPoint",

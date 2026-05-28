@@ -28,14 +28,14 @@ const DEFAULT_TITLE = {
   de: "Maßgeschneiderte Software-Lösungen weltweit | Devcraft.gr",
 };
 const DEFAULT_DESC = {
-  en: "Custom software solutions — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Serving clients worldwide. Plans from €600.",
-  el: "Προσαρμοσμένες λύσεις λογισμικού — ιστοσελίδες, web εφαρμογές και εργαλεία AI με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Παγκοσμίως. Πακέτα από €600.",
-  de: "Maßgeschneiderte Software-Lösungen — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Weltweit tätig. Pakete ab 600 €.",
+  en: "Custom software solutions — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Based in Thessaloniki, Greece — serving clients worldwide. Plans from €600.",
+  el: "Κατασκευή ιστοσελίδων στη Θεσσαλονίκη με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Custom websites, web εφαρμογές και εργαλεία AI για πελάτες σε όλη την Ελλάδα και παγκοσμίως. Πακέτα από €600.",
+  de: "Maßgeschneiderte Software-Lösungen — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Sitz in Thessaloniki, Griechenland — weltweit tätig. Pakete ab 600 €.",
 };
 const DEFAULT_KEYWORDS = {
-  en: "custom software development, web development, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, bespoke web design",
-  el: "κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων, custom λογισμικό, ποιοτικός έλεγχος ISTQB",
-  de: "individuelle webentwicklung, maßgeschneiderte software, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler, TypeScript entwickler, webentwicklung weltweit",
+  en: "custom software development, web development Thessaloniki, web development Greece, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, bespoke web design",
+  el: "κατασκευή ιστοσελίδων Θεσσαλονίκη, κατασκευή ιστοσελίδων Ελλάδα, δημιουργία ιστοσελίδων Θεσσαλονίκη, σχεδιασμός ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, ανάπτυξη ιστοσελίδων, custom λογισμικό, ποιοτικός έλεγχος ISTQB, UI/UX design Θεσσαλονίκη",
+  de: "individuelle webentwicklung, maßgeschneiderte software, webentwicklung Thessaloniki Griechenland, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler, TypeScript entwickler, webentwicklung weltweit",
 };
 
 const resolve = (val: { en: string; el: string; de?: string } | string, lang: string): string =>
