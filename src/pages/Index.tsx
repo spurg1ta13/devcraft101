@@ -38,10 +38,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead canonical="/" />
-      <OrganizationSchema />
-      <WebSiteSchema />
-      <ServicesSchema />
-      <FAQPageSchema />
+      <Suspense fallback={null}>
+        <StructuredDataBundle />
+      </Suspense>
+
       <Navbar />
       <main id="main-content">
         <HeroSection />
