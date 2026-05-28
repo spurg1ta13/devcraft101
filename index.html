@@ -115,35 +115,11 @@
       }
       events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
     </script>
-    <!-- Make the Vite-injected CSS bundle non-render-blocking. Inlined critical CSS already paints the hero/shell. -->
-    <script>
-      (function () {
-        var done = false;
-        var observer;
-        var swap = function () {
-          var links = document.querySelectorAll('link[rel="stylesheet"][href*="/assets/index-"]');
-          var found = false;
-          for (var i = 0; i < links.length; i++) {
-            var l = links[i];
-            found = true;
-            if (l.dataset.async === '1') continue;
-            l.dataset.async = '1';
-            l.media = 'print';
-            l.onload = function () { this.media = 'all'; };
-          }
-          // Disconnect once we have swapped — avoids running querySelectorAll on every React mutation
-          if (found && observer) { observer.disconnect(); done = true; }
-        };
-        swap();
-        if (!done) {
-          // Only observe <head> (where Vite injects the link), not the whole document.
-          observer = new MutationObserver(swap);
-          observer.observe(document.head, { childList: true });
-          // Safety: stop observing after load
-          window.addEventListener('load', function () { if (observer) observer.disconnect(); }, { once: true });
-        }
-      })();
-    </script>
+    <!-- Note: CSS bundle is made non-render-blocking at build time via the
+         nonBlockingAssets() Vite plugin (rewrites the <link rel="stylesheet">
+         into rel="preload" + onload swap). Inlined critical CSS above paints
+         the hero/shell instantly. -->
+
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="4GobB7hINE4WmB+ZbjDcGQ" async></script>
   </head>
 
