@@ -735,7 +735,7 @@ export const translations = {
   pricing: {
     label: { en: "Service Plans", el: "Πακέτα Υπηρεσιών", de: "Servicepläne" },
     heading1: { en: "ISTQB Certified Web Development", el: "Πιστοποιημένη Ανάπτυξη Ιστοσελίδων ISTQB", de: "ISTQB-zertifizierte Webentwicklung" },
-    heading2: { en: "in Thessaloniki", el: "στη Θεσσαλονίκη", de: "in Thessaloniki" },
+    heading2: { en: "Worldwide", el: "Παγκοσμίως", de: "Weltweit" },
     subtitle: {
       en: "From a single landing page to a multilingual platform — every plan includes responsive design, search engine visibility, and ongoing support so you never feel left on your own.",
       el: "Από μονοσέλιδο landing page έως πολύγλωσση πλατφόρμα — κάθε πακέτο περιλαμβάνει responsive design, ορατότητα στις μηχανές αναζήτησης και συνεχή υποστήριξη ώστε να μην μείνετε ποτέ μόνοι.",
