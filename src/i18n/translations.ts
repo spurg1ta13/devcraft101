@@ -760,7 +760,7 @@ export const translations = {
         features: {
           en: [
             "Complete Single-Page Website (Home, About, Services, Contact)",
-            "1 Language (Greek)",
+            "1 Language",
             "Technical SEO Setup (Sitemap, Meta Tags, Indexing)",
             "Social Media Integration",
             "Direct Contact Tools (Email & Phone)",
@@ -771,7 +771,7 @@ export const translations = {
           ],
           el: [
             "Ολοκληρωμένη Μονοσέλιδη Ιστοσελίδα (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία)",
-            "1 Γλώσσα (Ελληνικά)",
+            "1 Γλώσσα",
             "Τεχνικό SEO (Sitemap, Meta Tags, Indexing)",
             "Σύνδεση Social Media",
             "Εργαλεία Επικοινωνίας (Email & Τηλέφωνο)",
@@ -781,7 +781,7 @@ export const translations = {
             "Πιστοποιητικό Ασφαλείας SSL",
           ], de: [
             "Komplette Single-Page-Website (Startseite, Über uns, Services, Kontakt)",
-            "1 Sprache (Griechisch)",
+            "1 Sprache",
             "Technisches SEO-Setup (Sitemap, Meta-Tags, Indexierung)",
             "Social-Media-Integration",
             "Direkte Kontaktmöglichkeiten (E-Mail & Telefon)",

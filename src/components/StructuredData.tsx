@@ -82,7 +82,7 @@ const OrganizationSchema = () => {
                 "@type": "Service",
                 name: "MINI: The Clean Start",
                 description:
-                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, fast loading on mobile & desktop, SSL certificate. 1 language (Greek). Delivered in 2 working days.",
+                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, fast loading on mobile & desktop, SSL certificate. 1 language. Delivered in 2 working days.",
                 termsOfService: "https://devcraft.gr/terms",
               },
               priceCurrency: "EUR",
