@@ -37,7 +37,7 @@ DevCraft delivers a wide range of custom web solutions:
 We offer four service plans. The MAXI plan is our most popular choice:
 
 ### MINI: The Clean Start (€600–€700)
-Complete single-page website with all essential sections (Home, About, Services, Contact). 1 language (Greek). Includes technical SEO setup (sitemap, meta tags, indexing), social media integration, direct contact tools, GDPR & cookie compliance, auto-generated privacy policy & terms, and SSL certificate. Delivered in 2 working days.
+Complete single-page website with all essential sections (Home, About, Services, Contact). 1 language. Includes technical SEO setup (sitemap, meta tags, indexing), social media integration, direct contact tools, GDPR & cookie compliance, auto-generated privacy policy & terms, and SSL certificate. Delivered in 2 working days.
 
 ### MIDI: The Corporate Standard (€1,000–€1,200)
 Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, GDPR compliance, auto-generated privacy policy & terms, Google Maps, and SSL certificate. 1 language. Delivered in 6–7 working days.

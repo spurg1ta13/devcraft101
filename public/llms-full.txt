@@ -91,8 +91,8 @@ DevCraft delivers a wide range of custom web solutions / Η DevCraft υλοπο�
 ## Pricing / Τιμοκατάλογος
 
 ### MINI: The Clean Start / Καθαρή Αρχή — €600–€700
-**EN:** Complete single-page website with all essential sections (Home, About, Services, Contact). Technical SEO setup (sitemap, meta tags, indexing), social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language (Greek). Delivered in 2 working days.
-**EL:** Ολοκληρωμένη μονοσέλιδη ιστοσελίδα με όλες τις βασικές ενότητες (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία). Τεχνικό SEO (Sitemap, Meta Tags, Indexing), σύνδεση social media, εργαλεία επικοινωνίας, συμμόρφωση GDPR & cookies, αυτόματη πολιτική απορρήτου & όροι, πιστοποιητικό SSL. 1 γλώσσα (Ελληνικά). Παράδοση σε 2 εργάσιμες ημέρες.
+**EN:** Complete single-page website with all essential sections (Home, About, Services, Contact). Technical SEO setup (sitemap, meta tags, indexing), social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, SSL certificate. 1 language. Delivered in 2 working days.
+**EL:** Ολοκληρωμένη μονοσέλιδη ιστοσελίδα με όλες τις βασικές ενότητες (Αρχική, Σχετικά, Υπηρεσίες, Επικοινωνία). Τεχνικό SEO (Sitemap, Meta Tags, Indexing), σύνδεση social media, εργαλεία επικοινωνίας, συμμόρφωση GDPR & cookies, αυτόματη πολιτική απορρήτου & όροι, πιστοποιητικό SSL. 1 γλώσσα. Παράδοση σε 2 εργάσιμες ημέρες.
 
 ### MIDI: The Corporate Standard / Εταιρικό Στάνταρ — €1,000–€1,200
 **EN:** Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, SSL certificate. 1 language. Delivered in 6–7 working days.
