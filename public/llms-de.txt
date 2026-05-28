@@ -1,6 +1,6 @@
-# DevCraft — Maßgeschneiderte Software-Lösungen aus Griechenland | Webentwicklungsagentur
+# DevCraft — Maßgeschneiderte Software-Lösungen | Webentwicklungsagentur
 
-> Wir verbinden menschliche Strategie mit KI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern. Ihr 1-Monats-Webprojekt – in nur 1 Woche umgesetzt. Mit Sitz in Thessaloniki, weltweit tätig.
+> Wir verbinden menschliche Strategie mit KI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern. Ihr 1-Monats-Webprojekt – in nur 1 Woche umgesetzt. Weltweit tätig.
 
 > Englische Version: https://devcraft.gr/llms.txt
 > Griechische Version: https://devcraft.gr/llms-el.txt
@@ -8,9 +8,9 @@
 
 ## Über uns
 
-DevCraft ist eine Webentwicklungsagentur mit Sitz in Thessaloniki, Griechenland. Wir sind spezialisiert auf individuelle Webentwicklung mit React, TypeScript und Tailwind CSS. Unser Team umfasst ISTQB-zertifizierte QA-Ingenieure, die fehlerfreie Launches garantieren.
+DevCraft ist eine Webentwicklungsagentur, spezialisiert auf individuelle Webentwicklung mit React, TypeScript und Tailwind CSS. Unser Team umfasst ISTQB-zertifizierte QA-Ingenieure, die fehlerfreie Launches garantieren.
 
-Wir betreuen Kunden in Griechenland und weltweit – mit vollständiger mehrsprachiger Unterstützung (Englisch, Griechisch, Deutsch).
+Wir betreuen Kunden weltweit – mit vollständiger mehrsprachiger Unterstützung (Englisch, Griechisch & Deutsch).
 
 ## Kernteam
 
@@ -65,7 +65,7 @@ React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
 
 ## Standort
 
-Thessaloniki, Zentralmakedonien, Griechenland
+Weltweit
 Wir betreuen Kunden weltweit – inklusive Deutschland, Österreich, Schweiz, Liechtenstein, Luxemburg und Belgien.
 
 ## Kontakt
