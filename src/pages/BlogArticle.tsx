@@ -148,19 +148,6 @@ const BlogArticle = () => {
         }}
       />
       <BlogArticleSchema article={article} lang={lang} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org", "@type": "BreadcrumbList",
-            itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://devcraft.gr/" },
-              { "@type": "ListItem", position: 2, name: "Blog", item: "https://devcraft.gr/blog" },
-              { "@type": "ListItem", position: 3, name: t(article.title, lang as "en" | "el"), item: `https://devcraft.gr/blog/${article.slug}` },
-            ],
-          }),
-        }}
-      />
       <Navbar />
       <main id="main-content" className="pt-32 lg:pt-28 pb-20">
         <div className="container px-4 sm:px-6 max-w-3xl mx-auto">
