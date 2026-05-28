@@ -8,7 +8,7 @@
 
 ## Company Overview (English)
 
-DevCraft combines Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences — websites, web apps & AI tools. Based in Thessaloniki, Greece. Your 1-month web project, delivered in just 1 week.
+DevCraft combines Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences — websites, web apps & AI tools. Serving clients worldwide. Your 1-month web project, delivered in just 1 week.
 
 Our team has 10+ years of experience in the IT industry and works on international projects, guaranteeing the highest quality of service.
 
@@ -32,7 +32,7 @@ Our core team consists of field experts: **a result-oriented Web developer, a ce
 
 ## Επισκόπηση Εταιρείας (Ελληνικά)
 
-Η DevCraft είναι μια εταιρεία ανάπτυξης ιστοσελίδων με τεχνητή νοημοσύνη, με έδρα τη Θεσσαλονίκη, Ελλάδα. Κατασκευάζουμε custom ιστοσελίδες, εξατομικευμένες διεπαφές UI/UX και παρέχουμε πιστοποιημένη διασφάλιση ποιότητας ISTQB — για brands που αρνούνται να περάσουν απαρατήρητα.
+Η DevCraft είναι μια εταιρεία ανάπτυξης ιστοσελίδων με τεχνητή νοημοσύνη. Κατασκευάζουμε custom ιστοσελίδες, εξατομικευμένες διεπαφές UI/UX και παρέχουμε πιστοποιημένη διασφάλιση ποιότητας ISTQB — για brands που αρνούνται να περάσουν απαρατήρητα.
 
 Η ομάδα μας έχει 10+ χρόνια εμπειρίας στον κλάδο IT και εργάζεται σε διεθνή projects, εγγυώμενη την υψηλότερη ποιότητα υπηρεσιών.
 
@@ -137,7 +137,7 @@ React, TypeScript, Tailwind CSS, Node.js, Supabase, Vite, Framer Motion
 - Phone / Τηλέφωνο: +30 697 477 6057
 - Email: contact@devcraft.gr
 - LinkedIn: https://www.linkedin.com/company/devcraft-gr
-- Location / Τοποθεσία: Thessaloniki, Central Macedonia, Greece / Θεσσαλονίκη, Κεντρική Μακεδονία, Ελλάδα
+- Location / Τοποθεσία: Worldwide / Παγκοσμίως
 - We respond within 48 hours / Απαντάμε εντός 48 ωρών
 
 ---

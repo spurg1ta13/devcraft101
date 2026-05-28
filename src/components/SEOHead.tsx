@@ -23,19 +23,19 @@ const BASE_URL = "https://devcraft.gr";
 const OG_IMAGE = `${BASE_URL}/og-image.jpg`;
 
 const DEFAULT_TITLE = {
-  en: "Custom Software Solutions in Greece | Devcraft.gr",
-  el: "Προσαρμοσμένες Λύσεις Λογισμικού στην Ελλάδα | Devcraft.gr",
-  de: "Maßgeschneiderte Software-Lösungen aus Griechenland | Devcraft.gr",
+  en: "Custom Software Solutions Worldwide | Devcraft.gr",
+  el: "Προσαρμοσμένες Λύσεις Λογισμικού Παγκοσμίως | Devcraft.gr",
+  de: "Maßgeschneiderte Software-Lösungen weltweit | Devcraft.gr",
 };
 const DEFAULT_DESC = {
-  en: "Custom software solutions in Greece — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Plans from €600.",
-  el: "Προσαρμοσμένες λύσεις λογισμικού στην Ελλάδα — ιστοσελίδες, web εφαρμογές και εργαλεία AI με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Πακέτα από €600.",
-  de: "Maßgeschneiderte Software-Lösungen aus Griechenland — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Pakete ab 600 €.",
+  en: "Custom software solutions — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Serving clients worldwide. Plans from €600.",
+  el: "Προσαρμοσμένες λύσεις λογισμικού — ιστοσελίδες, web εφαρμογές και εργαλεία AI με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Παγκοσμίως. Πακέτα από €600.",
+  de: "Maßgeschneiderte Software-Lösungen — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Weltweit tätig. Pakete ab 600 €.",
 };
 const DEFAULT_KEYWORDS = {
-  en: "web development greece, web development thessaloniki, custom website development, AI web development, ISTQB QA testing, UI/UX design greece, React developer greece",
-  el: "κατασκευή ιστοσελίδων θεσσαλονίκη, κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development θεσσαλονίκη, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων ελλάδα",
-  de: "webentwicklung griechenland, individuelle webentwicklung, webagentur thessaloniki, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler",
+  en: "custom software development, web development, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, bespoke web design",
+  el: "κατασκευή ιστοσελίδων, δημιουργία ιστοσελίδων, κατασκευή website, web development, σχεδιασμός ιστοσελίδων, ανάπτυξη ιστοσελίδων, custom λογισμικό, ποιοτικός έλεγχος ISTQB",
+  de: "individuelle webentwicklung, maßgeschneiderte software, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler, TypeScript entwickler, webentwicklung weltweit",
 };
 
 const resolve = (val: { en: string; el: string; de?: string } | string, lang: string): string =>

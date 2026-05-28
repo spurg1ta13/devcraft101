@@ -322,7 +322,7 @@ export const translations = {
         de: "Wählen Sie ein Datum und eine Uhrzeit, die Ihnen passt. Meetings dauern 1 Stunde. Frühester Termin: 2 Tage ab heute.",
       },
       pickDate: { en: "Pick a date", el: "Επιλέξτε ημερομηνία", de: "Datum auswählen" },
-      pickTime: { en: "Available times (10:00 – 19:00, Europe/Athens)", el: "Διαθέσιμες ώρες (10:00 – 19:00, Europe/Athens)", de: "Verfügbare Zeiten (10:00 – 19:00, Europe/Athens)" },
+      pickTime: { en: "Available times (10:00 – 19:00, UTC+2)", el: "Διαθέσιμες ώρες (10:00 – 19:00, UTC+2)", de: "Verfügbare Zeiten (10:00 – 19:00, UTC+2)" },
       noSlots: { en: "Please select a date first", el: "Επιλέξτε πρώτα ημερομηνία", de: "Bitte wählen Sie zuerst ein Datum aus" },
       slotTaken: { en: "Booked", el: "Κλεισμένο", de: "Gebucht" },
       formatNotice: {
@@ -445,9 +445,9 @@ export const translations = {
       {
         title: { en: "1. Data Controller", el: "1. Υπεύθυνος Επεξεργασίας Δεδομένων", de: "1. Datenverantwortlicher" },
         content: {
-          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nThessaloniki, Greece\nPhone: +30 697 477 6057\n\nFor any data protection inquiries, you may contact us using the details above.`,
-          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΘεσσαλονίκη, Ελλάδα\nΤηλέφωνο: +30 697 477 6057\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
-          de: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\n**DevCraft**\nThessaloniki, Griechenland\nTelefon: +30 697 477 6057\n\nFür alle Anfragen zum Datenschutz können Sie uns unter den oben genannten Kontaktdaten erreichen.`,
+          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nGreece\nPhone: +30 697 477 6057\n\nFor any data protection inquiries, you may contact us using the details above.`,
+          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΕλλάδα\nΤηλέφωνο: +30 697 477 6057\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
+          de: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\n**DevCraft**\nGriechenland\nTelefon: +30 697 477 6057\n\nFür alle Anfragen zum Datenschutz können Sie uns unter den oben genannten Kontaktdaten erreichen.`,
         },
       },
       {
@@ -646,9 +646,9 @@ export const translations = {
       {
         title: { en: "8. Governing Law", el: "8. Εφαρμοστέο Δίκαιο", de: "8. Geltendes Recht" },
         content: {
-          en: `These Terms of Service are governed by and construed in accordance with the laws of the Hellenic Republic (Greece). Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Thessaloniki, Greece.\n\nFor EU consumers, this does not affect your rights under mandatory consumer protection laws of your country of residence.`,
-          el: `Αυτοί οι Όροι Χρήσης διέπονται και ερμηνεύονται σύμφωνα με τους νόμους της Ελληνικής Δημοκρατίας. Οποιαδήποτε διαφορά που προκύπτει από αυτούς τους όρους υπάγεται στην αποκλειστική δικαιοδοσία των δικαστηρίων της Θεσσαλονίκης, Ελλάδα.\n\nΓια καταναλωτές της ΕΕ, αυτό δεν επηρεάζει τα δικαιώματά σας βάσει υποχρεωτικών νόμων προστασίας καταναλωτών της χώρας διαμονής σας.`,
-          de: `Diese Terms of Service unterliegen den Gesetzen der Hellenischen Republik (Griechenland) und sind entsprechend auszulegen. Alle Streitigkeiten, die sich aus diesen Bedingungen ergeben, unterliegen der ausschließlichen Zuständigkeit der Gerichte von Thessaloniki, Griechenland.\n\nFür EU-Verbraucher bleiben Ihre Rechte nach den zwingenden Verbraucherschutzgesetzen Ihres Wohnsitzlandes hiervon unberührt.`,
+          en: `These Terms of Service are governed by and construed in accordance with the laws of the Hellenic Republic (Greece). Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the competent courts in Greece.\n\nFor EU consumers, this does not affect your rights under mandatory consumer protection laws of your country of residence.`,
+          el: `Αυτοί οι Όροι Χρήσης διέπονται και ερμηνεύονται σύμφωνα με τους νόμους της Ελληνικής Δημοκρατίας. Οποιαδήποια διαφορά που προκύπτει από αυτούς τους όρους υπάγεται στην αποκλειστική δικαιοδοσία των αρμόδιων δικαστηρίων στην Ελλάδα.\n\nΓια καταναλωτές της ΕΕ, αυτό δεν επηρεάζει τα δικαιώματά σας βάσει υποχρεωτικών νόμων προστασίας καταναλωτών της χώρας διαμονής σας.`,
+          de: `Diese Terms of Service unterliegen den Gesetzen der Hellenischen Republik (Griechenland) und sind entsprechend auszulegen. Alle Streitigkeiten, die sich aus diesen Bedingungen ergeben, unterliegen der ausschließlichen Zuständigkeit der zuständigen Gerichte in Griechenland.\n\nFür EU-Verbraucher bleiben Ihre Rechte nach den zwingenden Verbraucherschutzgesetzen Ihres Wohnsitzlandes hiervon unberührt.`,
         },
       },
       {
