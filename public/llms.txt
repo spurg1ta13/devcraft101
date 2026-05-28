@@ -104,3 +104,13 @@ We publish articles on web development, AI integration, UI/UX design, security, 
 - https://devcraft.gr/blog/mobile-first-website-greece-connectivity
 - https://devcraft.gr/blog/digital-marketing-greece-2026-why-businesses-need-it
 - https://devcraft.gr/blog/seo-google-ads-greek-small-business-2026
+- https://devcraft.gr/blog/green-code-eu-csrd-sustainable-web-development
+
+## Pages
+
+- [Home](https://devcraft.gr/): Custom web development agency overview — services, showcase, process, FAQ.
+- [About](https://devcraft.gr/about): DevCraft team, 10+ years experience, ISTQB-certified zero-defect launches.
+- [Prices](https://devcraft.gr/prices): MINI, MIDI, MAXI, ELITE plans (€600–€2,500) with €300 annual subscription.
+- [Blog](https://devcraft.gr/blog): Articles on web development, AI, UI/UX, SEO, security, and lead generation.
+- [Privacy Policy](https://devcraft.gr/privacy-policy): GDPR-compliant privacy practices and AI chat data retention.
+- [Terms of Service](https://devcraft.gr/terms-of-service): Service terms, payments, and engagement conditions.
