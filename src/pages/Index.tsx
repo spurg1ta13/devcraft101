@@ -3,9 +3,23 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
-import { OrganizationSchema, WebSiteSchema, FAQPageSchema, ServicesSchema } from "@/components/StructuredData";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { loadAbout, loadServices, loadPricing, loadShowcase, loadPortfolio, loadProcess, loadFAQ, loadCTA, loadFooter } from "@/lib/lazyLanding";
+
+// Defer schema JSON-LD (~400 lines) out of the critical bundle. Googlebot
+// waits for client-rendered scripts, so paint LCP first then attach schemas.
+const StructuredDataBundle = lazy(() =>
+  import("@/components/StructuredData").then((m) => ({
+    default: () => (
+      <>
+        <m.OrganizationSchema />
+        <m.WebSiteSchema />
+        <m.ServicesSchema />
+        <m.FAQPageSchema />
+      </>
+    ),
+  }))
+);
 
 const AboutSection = lazy(loadAbout);
 const ServicesSection = lazy(loadServices);
@@ -16,6 +30,7 @@ const ProcessSection = lazy(loadProcess);
 const FAQSection = lazy(loadFAQ);
 const CTASection = lazy(loadCTA);
 const Footer = lazy(loadFooter);
+
 
 const Index = () => {
   useScrollSpy();
