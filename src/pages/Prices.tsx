@@ -80,7 +80,7 @@ const Prices = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={{ en: "Prices & Plans | DevCraft — Web Development Thessaloniki", el: "Τιμές & Πακέτα | DevCraft — Κατασκευή Ιστοσελίδων Θεσσαλονίκη" }}
+        title={{ en: "Prices & Plans | DevCraft — Global Web Development", el: "Τιμές & Πακέτα | DevCraft — Παγκόσμια Ανάπτυξη Ιστοσελίδων", de: "Preise & Pakete | DevCraft — Globale Webentwicklung" }}
         description={{ en: "DevCraft web development pricing: MINI, MIDI, MAXI & ELITE plans from €600. ISTQB-certified QA, responsive design, multilingual support.", el: "Τιμοκατάλογος DevCraft: πακέτα MINI, MIDI, MAXI & ELITE από €600. Πιστοποιημένο QA ISTQB, responsive design, πολύγλωσση υποστήριξη." }}
         canonical="/prices"
       />
