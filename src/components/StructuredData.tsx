@@ -73,104 +73,44 @@ const OrganizationSchema = () => {
       name: "Web Development Service Plans",
       itemListElement: [
         {
-          "@type": "OfferCatalog",
-          name: "MINI – The Clean Start",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "MINI: The Clean Start",
-                description:
-                  "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, fast loading on mobile & desktop, SSL certificate. 1 language. Delivered in 2 working days.",
-                termsOfService: "https://devcraft.gr/terms",
-              },
-              priceCurrency: "EUR",
-              price: "600",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "EUR",
-                minPrice: "600",
-                maxPrice: "700",
-                unitText: "project",
-              },
-            },
-          ],
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "MINI: The Clean Start",
+            description:
+              "Complete single-page website with all essential sections (Home, About, Services, Contact). Mobile-ready, SEO visibility, social media integration, direct contact tools, GDPR & cookie compliance, privacy policy & terms auto-generated, fast loading on mobile & desktop, SSL certificate. 1 language. Delivered in 2 working days.",
+            termsOfService: "https://devcraft.gr/terms",
+          },
         },
         {
-          "@type": "OfferCatalog",
-          name: "MIDI – The Corporate Standard",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "MIDI: The Corporate Standard",
-                description:
-                  "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, fast loading on mobile & desktop, and SSL certificate. 1 language. Delivered in 4–5 working days.",
-                termsOfService: "https://devcraft.gr/terms",
-              },
-              priceCurrency: "EUR",
-              price: "1000",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "EUR",
-                minPrice: "1000",
-                maxPrice: "1200",
-                unitText: "project",
-              },
-            },
-          ],
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "MIDI: The Corporate Standard",
+            description:
+              "Up to 5 pages with gallery/portfolio, direct contact tools, sitemap & robots.txt, privacy policy & terms auto-generated, GDPR & cookie compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, fast loading on mobile & desktop, and SSL certificate. 1 language. Delivered in 4–5 working days.",
+            termsOfService: "https://devcraft.gr/terms",
+          },
         },
         {
-          "@type": "OfferCatalog",
-          name: "MAXI – The International Presence",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "MAXI: The International Presence",
-                description:
-                  "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized SEO, lead capture form with spam protection, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, and SSL certificate. Delivered in 6–8 working days.",
-                termsOfService: "https://devcraft.gr/terms",
-              },
-              priceCurrency: "EUR",
-              price: "1450",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "EUR",
-                minPrice: "1450",
-                maxPrice: "1700",
-                unitText: "project",
-              },
-            },
-          ],
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "MAXI: The International Presence",
+            description:
+              "Multilingual website (2–3 languages) with up to 7 pages, language switcher, localized SEO, lead capture form with spam protection, custom error & loading pages, admin dashboard for messages, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, and SSL certificate. Delivered in 6–8 working days.",
+            termsOfService: "https://devcraft.gr/terms",
+          },
         },
         {
-          "@type": "OfferCatalog",
-          name: "ELITE – The Elite Performance",
-          itemListElement: [
-            {
-              "@type": "Offer",
-              itemOffered: {
-                "@type": "Service",
-                name: "ELITE: The Elite Performance",
-                description:
-                  "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
-                termsOfService: "https://devcraft.gr/terms",
-              },
-              priceCurrency: "EUR",
-              price: "1950",
-              priceSpecification: {
-                "@type": "PriceSpecification",
-                priceCurrency: "EUR",
-                minPrice: "1950",
-                maxPrice: "2500",
-                unitText: "project",
-              },
-            },
-          ],
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "ELITE: The Elite Performance",
+            description:
+              "Up to 10 pages + interactive tools with unlimited languages. AI assistant, lead & booking form with spam protection, custom animations, automatic image optimization, SEO-optimized URLs, admin dashboard, GDPR compliance, Google Maps, Viber/WhatsApp floating button on mobile, schema markup for local business, accessibility (WCAG) compliance, fast loading on mobile & desktop, ISTQB-certified QA, and SSL certificate. Delivered in 10–11 working days.",
+            termsOfService: "https://devcraft.gr/terms",
+          },
         },
       ],
     },
