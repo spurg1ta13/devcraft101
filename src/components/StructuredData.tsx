@@ -310,7 +310,7 @@ const WebSiteSchema = () => {
     name: "DevCraft",
     url: "https://devcraft.gr",
     description:
-      "Custom software solutions — websites, web apps & AI tools with ISTQB-certified quality assurance. Serving clients worldwide. Plans from €600.",
+      "Custom software solutions — websites, web apps & AI tools with ISTQB-certified quality assurance. Serving clients worldwide.",
     publisher: { "@id": "https://devcraft.gr/#organization" },
     inLanguage: ["en", "el", "de"],
   };
