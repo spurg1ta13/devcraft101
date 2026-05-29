@@ -17,7 +17,7 @@ const OrganizationSchema = () => {
     },
     image: "https://devcraft.gr/og-image.jpg",
     description:
-      "Custom software solutions — websites, web apps & AI tools with bespoke UI/UX design and ISTQB-certified Quality Assurance. Your 1-month project, delivered in 1 week. Serving clients worldwide. Plans from €600.",
+      "Custom software solutions — websites, web apps & AI tools with bespoke UI/UX design and ISTQB-certified Quality Assurance. Your 1-month project, delivered in 1 week. Serving clients worldwide.",
     slogan:
       "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.",
     alternateName: ["DevCraft", "DevCraft Thessaloniki", "DevCraft Θεσσαλονίκη", "Κατασκευή Ιστοσελίδων Θεσσαλονίκη"],
