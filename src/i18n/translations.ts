@@ -693,6 +693,15 @@ export const translations = {
     },
     projects: [
       {
+        title: { en: "Lotus Bloom", el: "Lotus Bloom", de: "Lotus Bloom" },
+        category: { en: "Beauty Studio Website", el: "Ιστοσελίδα Studio Ομορφιάς", de: "Beauty-Studio-Website" },
+        description: {
+          en: "Elegant bilingual website for a Thessaloniki nail & beauty studio, featuring online booking, gallery, and a refined editorial aesthetic.",
+          el: "Κομψή δίγλωσση ιστοσελίδα για studio νυχιών & ομορφιάς στη Θεσσαλονίκη, με online κρατήσεις, γκαλερί και εκλεπτυσμένη editorial αισθητική.",
+          de: "Elegante zweisprachige Website für ein Nagel- und Beauty-Studio in Thessaloniki mit Online-Buchung, Galerie und raffinierter Editorial-Ästhetik.",
+        },
+      },
+      {
         title: { en: "Cleanup SKG", el: "Cleanup SKG", de: "SKG bereinigt" },
         category: { en: "Business Website", el: "Επιχειρηματική Ιστοσελίδα", de: "Geschäfts-Website" },
         description: {
@@ -726,15 +735,6 @@ export const translations = {
           en: "Feature-rich web application with advanced filtering, property listings, and virtual tour integration.",
           el: "Web εφαρμογή με προηγμένο φιλτράρισμα, καταχωρήσεις ακινήτων και ενσωμάτωση εικονικών περιηγήσεων.",
           de: "Feature-rich web application mit advanced filtering, property listings und virtual tour integration.",
-        },
-      },
-      {
-        title: { en: "Lotus Bloom", el: "Lotus Bloom", de: "Lotus Bloom" },
-        category: { en: "Beauty Studio Website", el: "Ιστοσελίδα Studio Ομορφιάς", de: "Beauty-Studio-Website" },
-        description: {
-          en: "Elegant bilingual website for a Thessaloniki nail & beauty studio, featuring online booking, gallery, and a refined editorial aesthetic.",
-          el: "Κομψή δίγλωσση ιστοσελίδα για studio νυχιών & ομορφιάς στη Θεσσαλονίκη, με online κρατήσεις, γκαλερί και εκλεπτυσμένη editorial αισθητική.",
-          de: "Elegante zweisprachige Website für ein Nagel- und Beauty-Studio in Thessaloniki mit Online-Buchung, Galerie und raffinierter Editorial-Ästhetik.",
         },
       },
     ],

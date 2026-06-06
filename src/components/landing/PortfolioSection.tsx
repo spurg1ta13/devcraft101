@@ -6,19 +6,19 @@ import { useInView } from "@/hooks/useInView";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectUrls = [
+  "https://lotusbloom.gr",
   "https://www.cleanupskg.gr",
   "https://luxe-ellada-page.lovable.app/",
   "https://dental-care-greek.lovable.app/gallery",
   "https://premium-realestate-suite.lovable.app/",
-  "https://lotusbloom.gr",
 ];
 
 const projectScreenshots = [
+  "/portfolio/lotus-bloom.webp",
   "/portfolio/cleanup-skg.webp",
   "/portfolio/luxe-ellada.webp",
   "/portfolio/dental-care.webp",
   "/portfolio/premium-realestate.webp",
-  "/portfolio/lotus-bloom.webp",
 ];
 
 const PortfolioSection = () => {
