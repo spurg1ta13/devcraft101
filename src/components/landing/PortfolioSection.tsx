@@ -10,6 +10,7 @@ const projectUrls = [
   "https://luxe-ellada-page.lovable.app/",
   "https://dental-care-greek.lovable.app/gallery",
   "https://premium-realestate-suite.lovable.app/",
+  "https://lotusbloom.gr",
 ];
 
 const projectScreenshots = [
@@ -17,6 +18,7 @@ const projectScreenshots = [
   "/portfolio/luxe-ellada.webp",
   "/portfolio/dental-care.webp",
   "/portfolio/premium-realestate.webp",
+  "/portfolio/lotus-bloom.webp",
 ];
 
 const PortfolioSection = () => {
