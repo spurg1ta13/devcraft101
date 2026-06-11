@@ -280,7 +280,7 @@ const Navbar = () => {
                 )}
               </ObfuscatedEmail>
             </div>
-            <SocialLinks iconSize={16} className="hidden xl:flex" />
+            <SocialLinks />
             <LanguageSelector />
             {isHome ? (
               <a
@@ -390,7 +390,7 @@ const Navbar = () => {
               </>
             )}
           </ObfuscatedEmail>
-          <SocialLinks className="mt-2" />
+          <SocialLinks />
         </div>
       </div>
 
