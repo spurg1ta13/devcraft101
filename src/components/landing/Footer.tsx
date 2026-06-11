@@ -106,7 +106,7 @@ const Footer = () => {
               >
                 {t(nav.letsTalk, lang)}
               </a>
-              <SocialLinks className="mt-3" />
+              <SocialLinks />
             </div>
           </div>
         </div>
