@@ -7,8 +7,9 @@
     <!-- LCP image preload — MUST be first in <head> so the browser fetches it before any blocking CSS/JS -->
     <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
     <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" fetchpriority="high" />
-    <!-- Critical font preload -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin fetchpriority="high" />
+    <!-- Critical font preload (no fetchpriority high — LCP image owns that slot) -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
+
 
     <title>DevCraft | Custom Software Solutions & QA</title>
     <meta name="description" content="Custom software solutions with AI. UI/UX design and ISTQB-certified quality assurance. Delivered worldwide.">
