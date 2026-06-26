@@ -70,9 +70,9 @@ export default defineConfig(({ mode }) => ({
         manualChunks: {
           "vendor-react": ["react", "react-dom"],
           "vendor-router": ["react-router-dom"],
-          "vendor-markdown": ["react-markdown"],
           "vendor-motion": ["framer-motion"],
         },
+
       },
     },
   },
