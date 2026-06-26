@@ -58,7 +58,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    nonBlockingAssets(),
+    optimizeHtml(),
   ].filter(Boolean),
   resolve: {
     alias: {
