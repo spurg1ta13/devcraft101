@@ -43,8 +43,11 @@
     <link rel="alternate" type="text/plain" href="/llms-de.txt" title="LLM guide (German)" />
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full guide (EN+EL)" />
 
-    <!-- DNS prefetch for backend (used after interaction) -->
+    <!-- DNS prefetch + preconnect for backend (used after interaction) and analytics -->
     <link rel="dns-prefetch" href="https://rgacmyobploucwvwytpl.supabase.co" />
+    <link rel="preconnect" href="https://analytics.ahrefs.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
 
     <!-- Inline critical CSS for instant FCP/LCP — static shell + base theme paints before JS/CSS bundle loads -->
     <style>
