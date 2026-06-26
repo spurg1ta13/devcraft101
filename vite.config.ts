@@ -31,14 +31,15 @@ const nonBlockingAssets = (): Plugin => ({
           );
         }
       );
-      // 2. Append entry JS modulepreload AFTER the LCP image/font preloads
-      const moduleMatch = html.match(
-        /<script type="module"(?:\s+crossorigin)?\s+src="([^"]+\/assets\/index-[^"]+\.js)"><\/script>/
+      // 2. Remove vendor modulepreload hints — they compete with the LCP
+      //    image for bandwidth on mobile (PSI flagged ~1.4s resource load
+      //    delay). The entry <script type="module"> still pulls them in
+      //    via the import graph; we just want the image to win the race.
+      html = html.replace(
+        /\s*<link rel="modulepreload"[^>]*>\s*/g,
+        "\n    "
       );
-      if (moduleMatch) {
-        const preloadTag = `<link rel="modulepreload" href="${moduleMatch[1]}">\n    `;
-        html = html.replace(/(<title>)/, `${preloadTag}$1`);
-      }
+
       return html;
     },
   },
