@@ -164,8 +164,7 @@ serve(async (req) => {
     });
   } catch (error: unknown) {
     console.error("Error sending email:", error);
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
-    return new Response(JSON.stringify({ success: false, error: errorMessage }), {
+    return new Response(JSON.stringify({ success: false, error: "Submission failed. Please try again." }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
