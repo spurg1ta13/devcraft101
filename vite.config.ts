@@ -13,28 +13,37 @@ import { componentTagger } from "lovable-tagger";
 const nonBlockingAssets = (): Plugin => ({
   name: "non-blocking-assets",
   apply: "build",
-  transformIndexHtml(html) {
-    // 1. Make the entry CSS link non-render-blocking
-    html = html.replace(
-      /<link rel="stylesheet"(\s+crossorigin)?\s+href="([^"]+\/assets\/index-[^"]+\.css)">/g,
-      (_m, cors, href) =>
-        `<link rel="preload" as="style"${cors || ""} href="${href}" onload="this.onload=null;this.rel='stylesheet'">` +
-        `<noscript><link rel="stylesheet"${cors || ""} href="${href}"></noscript>`
-    );
-    // 2. Append entry JS modulepreload AFTER the LCP image/font preloads so
-    //    the hero image keeps the highest fetch priority on mobile.
-    const moduleMatch = html.match(
-      /<script type="module"(?:\s+crossorigin)?\s+src="([^"]+\/assets\/index-[^"]+\.js)"><\/script>/
-    );
-    if (moduleMatch) {
-      const preloadTag = `<link rel="modulepreload" href="${moduleMatch[1]}">\n    `;
-      // Insert right before the <title> tag (after all preload hints)
-      html = html.replace(/(<title>)/, `${preloadTag}$1`);
-    }
-
-    return html;
+  enforce: "post",
+  transformIndexHtml: {
+    order: "post",
+    handler(html) {
+      // 1. Make the entry CSS link non-render-blocking (handle any attribute order)
+      html = html.replace(
+        /<link([^>]*?)rel="stylesheet"([^>]*?)>/g,
+        (match, before, after) => {
+          const attrs = (before + after).trim();
+          // Only transform entry CSS in /assets/
+          if (!/href="[^"]*\/assets\/[^"]+\.css"/.test(attrs)) return match;
+          const preloadAttrs = attrs.replace(/\s*rel="stylesheet"\s*/g, " ");
+          return (
+            `<link rel="preload" as="style" ${preloadAttrs} onload="this.onload=null;this.rel='stylesheet'">` +
+            `<noscript><link rel="stylesheet" ${preloadAttrs}></noscript>`
+          );
+        }
+      );
+      // 2. Append entry JS modulepreload AFTER the LCP image/font preloads
+      const moduleMatch = html.match(
+        /<script type="module"(?:\s+crossorigin)?\s+src="([^"]+\/assets\/index-[^"]+\.js)"><\/script>/
+      );
+      if (moduleMatch) {
+        const preloadTag = `<link rel="modulepreload" href="${moduleMatch[1]}">\n    `;
+        html = html.replace(/(<title>)/, `${preloadTag}$1`);
+      }
+      return html;
+    },
   },
 });
+
 
 export default defineConfig(({ mode }) => ({
   server: {
