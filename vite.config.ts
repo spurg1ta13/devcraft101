@@ -21,17 +21,17 @@ const nonBlockingAssets = (): Plugin => ({
         `<link rel="preload" as="style"${cors || ""} href="${href}" onload="this.onload=null;this.rel='stylesheet'">` +
         `<noscript><link rel="stylesheet"${cors || ""} href="${href}"></noscript>`
     );
-    // 2. Promote entry JS modulepreload to the top of <head> (after charset/viewport)
+    // 2. Append entry JS modulepreload AFTER the LCP image/font preloads so
+    //    the hero image keeps the highest fetch priority on mobile.
     const moduleMatch = html.match(
       /<script type="module"(?:\s+crossorigin)?\s+src="([^"]+\/assets\/index-[^"]+\.js)"><\/script>/
     );
     if (moduleMatch) {
-      const preloadTag = `\n    <link rel="modulepreload" href="${moduleMatch[1]}" fetchpriority="high">`;
-      html = html.replace(
-        /(<meta name="viewport"[^>]*>)/,
-        `$1${preloadTag}`
-      );
+      const preloadTag = `<link rel="modulepreload" href="${moduleMatch[1]}">\n    `;
+      // Insert right before the <title> tag (after all preload hints)
+      html = html.replace(/(<title>)/, `${preloadTag}$1`);
     }
+
     return html;
   },
 });

@@ -7,8 +7,9 @@
     <!-- LCP image preload — MUST be first in <head> so the browser fetches it before any blocking CSS/JS -->
     <link rel="preload" as="image" type="image/webp" href="/hero-banner-mobile.webp" media="(max-width: 768px)" fetchpriority="high" />
     <link rel="preload" as="image" type="image/webp" href="/hero-banner.webp" media="(min-width: 769px)" fetchpriority="high" />
-    <!-- Critical font preload -->
-    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin fetchpriority="high" />
+    <!-- Critical font preload (no fetchpriority high — LCP image owns that slot) -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/outfit-latin.woff2" crossorigin />
+
 
     <title>DevCraft | Custom Software Solutions & QA</title>
     <meta name="description" content="Custom software solutions with AI. UI/UX design and ISTQB-certified quality assurance. Delivered worldwide.">
@@ -42,8 +43,11 @@
     <link rel="alternate" type="text/plain" href="/llms-de.txt" title="LLM guide (German)" />
     <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM full guide (EN+EL)" />
 
-    <!-- DNS prefetch for backend (used after interaction) -->
+    <!-- DNS prefetch + preconnect for backend (used after interaction) and analytics -->
     <link rel="dns-prefetch" href="https://rgacmyobploucwvwytpl.supabase.co" />
+    <link rel="preconnect" href="https://analytics.ahrefs.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
 
     <!-- Inline critical CSS for instant FCP/LCP — static shell + base theme paints before JS/CSS bundle loads -->
     <style>
