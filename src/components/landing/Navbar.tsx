@@ -9,9 +9,8 @@ import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
 import { usePhoneNumber } from "@/lib/phone";
 
-type PhoneInfo = { display: string; tel: string; wa: string };
-
 const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
+const ContactChoiceDialog = lazy(() => import("./ContactChoiceDialog"));
 
 const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -19,79 +18,8 @@ const WhatsAppIcon = ({ className = "h-5 w-5" }: { className?: string }) => (
   </svg>
 );
 
-const contactLabels = {
-  title: { en: "How would you like to reach us?", el: "Πώς θέλετε να επικοινωνήσετε;" },
-  whatsapp: { en: "WhatsApp", el: "WhatsApp" },
-  phoneCall: { en: "Phone Call", el: "Τηλεφωνική Κλήση" },
-  cancel: { en: "Cancel", el: "Ακύρωση" },
-};
-
-const ContactChoiceDialog = ({ isOpen, onClose, lang, phone }: { isOpen: boolean; onClose: () => void; lang: Lang; phone: PhoneInfo }) => {
-  if (!isOpen) return null;
-
-  return (
-    <div
-      className="fixed inset-0 z-[200] flex items-end sm:items-center justify-center px-4 pb-6"
-      onClick={onClose}
-    >
-      {/* Backdrop */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" style={{ animation: "contactFadeIn 0.2s ease-out" }} />
-
-      {/* Sheet */}
-      <div
-        className="relative w-full max-w-xs rounded-2xl bg-card border border-border/40 overflow-hidden shadow-[0_16px_60px_-12px_hsl(var(--primary)/0.2)]"
-        onClick={(e) => e.stopPropagation()}
-        style={{ animation: "contactSlideUp 0.3s cubic-bezier(0.16,1,0.3,1)" }}
-      >
-        <p className="text-center text-sm font-semibold text-foreground px-4 pt-5 pb-3">
-          {t(contactLabels.title, lang)}
-        </p>
-
-        <div className="px-4 pb-3 space-y-2">
-          <a
-            href={`https://wa.me/${phone.wa}`}
-            onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
-            className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
-          >
-            <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
-            <span className="font-semibold text-sm">{t(contactLabels.whatsapp, lang)}</span>
-          </a>
-
-          <a
-            href={`tel:${phone.tel}`}
-            onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
-            className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
-          >
-            <Phone className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-sm">{t(contactLabels.phoneCall, lang)}</span>
-          </a>
-        </div>
-
-        <div className="px-4 pb-4">
-          <button
-            onClick={onClose}
-            className="w-full py-3 rounded-xl bg-muted/50 text-muted-foreground text-sm font-medium hover:bg-muted active:scale-[0.97] transition-all min-h-[44px]"
-          >
-            {t(contactLabels.cancel, lang)}
-          </button>
-        </div>
-      </div>
-
-      <style>{`
-        @keyframes contactFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes contactSlideUp {
-          from { opacity: 0; transform: translateY(24px) scale(0.97); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-      `}</style>
-    </div>
-  );
-};
-
 import { preloadUpTo } from "@/lib/lazyLanding";
+
 
 const NAV_OFFSET = 80;
 
