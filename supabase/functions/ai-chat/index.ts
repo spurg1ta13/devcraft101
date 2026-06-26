@@ -169,8 +169,46 @@ serve(async (req) => {
 
   try {
     const { messages, session_id } = await req.json();
+
+    // Validate payload size & structure to prevent cost-abuse
+    const MAX_MSG_LENGTH = 4000;
+    const MAX_MESSAGES = 50;
+    const MAX_SESSION_ID_LEN = 128;
+    if (!Array.isArray(messages) || messages.length === 0 || messages.length > MAX_MESSAGES) {
+      return new Response(JSON.stringify({ error: "Invalid request." }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    for (const m of messages) {
+      if (
+        !m || typeof m !== "object" ||
+        (m.role !== "user" && m.role !== "assistant" && m.role !== "system") ||
+        typeof m.content !== "string" ||
+        m.content.length === 0 ||
+        m.content.length > MAX_MSG_LENGTH
+      ) {
+        return new Response(JSON.stringify({ error: "Invalid request." }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+    }
+    if (session_id !== undefined && session_id !== null && (typeof session_id !== "string" || session_id.length > MAX_SESSION_ID_LEN)) {
+      return new Response(JSON.stringify({ error: "Invalid request." }), {
+        status: 400,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
-    if (!LOVABLE_API_KEY) throw new Error("LOVABLE_API_KEY is not configured");
+    if (!LOVABLE_API_KEY) {
+      console.error("LOVABLE_API_KEY is not configured");
+      return new Response(JSON.stringify({ error: "Service temporarily unavailable." }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
     const response = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
       method: "POST",
