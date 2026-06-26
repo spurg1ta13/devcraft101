@@ -73,13 +73,14 @@ export default {
           to: { height: "0", opacity: "0" },
         },
         "cta-pulse": {
-          "0%, 100%": { transform: "scale(1)", boxShadow: "0 0 0 0 hsl(var(--primary) / 0.6)" },
-          "50%": { transform: "scale(1.04)", boxShadow: "0 0 0 12px hsl(var(--primary) / 0)" },
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.04)" },
         },
         "cta-ring": {
           "0%": { transform: "scale(1)", opacity: "0.6" },
           "100%": { transform: "scale(1.35)", opacity: "0" },
         },
+
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
