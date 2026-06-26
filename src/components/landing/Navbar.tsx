@@ -324,7 +324,11 @@ const Navbar = () => {
 
       {/* Mobile floating WhatsApp button — currently disabled in favor of AI chat launcher */}
 
-      <ContactChoiceDialog isOpen={contactDialog} onClose={() => setContactDialog(false)} lang={lang} phone={phone} />
+      {contactDialog && (
+        <Suspense fallback={null}>
+          <ContactChoiceDialog onClose={() => setContactDialog(false)} lang={lang} phone={phone} />
+        </Suspense>
+      )}
       {bookingLoaded && (
         <Suspense fallback={null}>
           <PlanBookingDialog open={bookingOpen} onOpenChange={setBookingOpen} />
