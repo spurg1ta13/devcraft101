@@ -33,7 +33,7 @@ const ServicesSection = () => {
           </h2>
         </header>
 
-        <div className="border-t border-border/30" role="list">
+        <div className="border-t border-border/30">
           {s.items.map((service, i) => (
             <div
               key={i}
@@ -41,7 +41,6 @@ const ServicesSection = () => {
                 inView ? "opacity-100" : "opacity-0"
               }`}
               style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
-              role="listitem"
             >
               <div className="service-row relative border-b border-border/30 py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
                 <span className="service-number font-mono text-xs text-muted-foreground/60 transition-colors duration-500 w-8 shrink-0">
