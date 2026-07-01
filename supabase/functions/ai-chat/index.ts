@@ -22,7 +22,7 @@ DevCraft's core team consists of field experts who collaborate closely on every 
 The team is small, senior, and hands-on — clients always work directly with the experts building their product, never with account managers or junior staff. Every project has a dedicated project lead as a single point of contact, with weekly progress updates and shared project boards for full transparency.
 
 ## Book a Meeting
-Clients and prospects can book a free discovery meeting directly on the website to discuss their project, get advice, or request a custom quote.
+Clients and prospects can book a discovery meeting directly on the website to discuss their project, get advice, or request a custom quote.
 
 - **How to book:** Visit the [contact section](https://devcraft.gr/#contact) on the homepage and select the "Book a meeting" tab to choose an available date and time slot.
 - **Format:** Meetings are held via video call. In-person meetings can be arranged on request.
