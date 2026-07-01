@@ -117,7 +117,7 @@ All plans require an annual hosting & security subscription. Delivery starts aft
 Additional functionalities and custom add-ons can be tailored to specific needs.
 
 ## 🎁 Bonus Gift for Every Client
-DevCraft gifts every client a **complimentary bonus feature** with their purchase, tailored to the plan or service they choose. This is a free extra functionality on top of what the selected plan already includes — DevCraft's way of going the extra mile and adding real value to every project. The specific bonus is personalized based on the client's plan and project needs, and is discussed and confirmed during the discovery meeting. Always mention this gift when discussing plans, as it's a unique perk that highlights DevCraft's commitment to client success.
+DevCraft gifts every client a bonus feature with their chosen plan or service, included as part of the package. This is an extra functionality on top of what the selected plan already includes — DevCraft's way of going the extra mile and adding real value to every project. The specific bonus is personalized based on the client's plan and project needs, and is discussed and confirmed during the discovery meeting. Always mention this gift when discussing plans, as it's a unique perk that highlights DevCraft's commitment to client success.
 
 Full plan details: https://devcraft.gr/prices
 
