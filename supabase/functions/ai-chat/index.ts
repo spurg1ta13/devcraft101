@@ -196,6 +196,19 @@ serve(async (req) => {
       });
     }
 
+    // Approximate country (ISO-3166-1 alpha-2). Optional. Used only to tailor
+    // language/locale hints — never stored, never precise. Legally permitted
+    // as low-risk processing under GDPR legitimate interest; disclosed in the
+    // site's privacy policy.
+    let countryCode: string | null = null;
+    if (typeof country === "string" && /^[A-Z]{2}$/.test(country.toUpperCase())) {
+      countryCode = country.toUpperCase();
+    } else {
+      // Fallback: infrastructure-provided header (Cloudflare / Deno Deploy)
+      const hdr = req.headers.get("cf-ipcountry") || req.headers.get("x-country") || req.headers.get("x-vercel-ip-country");
+      if (hdr && /^[A-Z]{2}$/i.test(hdr)) countryCode = hdr.toUpperCase();
+    }
+
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
       console.error("LOVABLE_API_KEY is not configured");
