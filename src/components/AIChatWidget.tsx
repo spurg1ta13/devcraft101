@@ -321,6 +321,9 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       content
         // Never mention Lovable or the platform it was built on
         .replace(/\blovable\b/gi, "DevCraft")
+        // Rewrite obsolete /prices path to /plans
+        .replace(/devcraft\.gr\/prices/gi, "devcraft.gr/plans")
+        .replace(/(^|[^a-z])\/prices\b/gi, "$1/plans")
         // Preserve the allowed phrase "free discovery meeting"
         .replace(/\bfree discovery meeting\b/gi, "{{FREE_DISCOVERY_MEETING}}")
         // Remove standalone price-related words (free, cheap, expensive) when used in monetary senses
