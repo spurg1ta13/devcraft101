@@ -20,13 +20,16 @@ const CookieConsent = () => {
 
   const accept = () => {
     localStorage.setItem("cookie-consent", "accepted");
+    window.dispatchEvent(new Event("cookie-consent:accepted"));
     setVisible(false);
   };
 
   const decline = () => {
     localStorage.setItem("cookie-consent", "declined");
+    window.dispatchEvent(new Event("cookie-consent:declined"));
     setVisible(false);
   };
+
 
   if (!visible) return null;
 
