@@ -321,10 +321,15 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       content
         // Never mention Lovable or the platform it was built on
         .replace(/\blovable\b/gi, "DevCraft")
+        // Replace "feel free" with a price-neutral alternative
+        .replace(/\bfeel free\b/gi, "feel welcome")
+        // Remove standalone price-related words (free, cheap, expensive) when used in monetary senses
+        .replace(/\b(?:free|cheap|expensive)\b/gi, "")
         // Remove price ranges and currency amounts (e.g. €600–€700, €1,200, $300)
         .replace(/(?:€|\$|£|USD|EUR|euro|euros?)\s*[\d,.\s]+(?:\s*[–—-]\s*[\d,.\s]+)?(?:\s*(?:€|\$|£|USD|EUR|euro|euros?))?/gi, "")
-        // Remove stray price/pricing mentions near numbers (last-resort)
-        .replace(/\b(?:price|pricing)\s*(?:starts?|from|is|range)?\s*:?\s*(?:€|\$|£|\d)/gi, "")
+        // Remove stray price/pricing/cost/quote mentions near numbers or currency symbols
+        .replace(/\b(?:price|pricing|cost|costs|quote|budget|fee|fees)\s*(?:starts?|from|is|range|amount)?\s*:?\s*(?:€|\$|£|\d)/gi, "")
+        .replace(/\s{2,}/g, " ")
         .trim()
     );
   };
