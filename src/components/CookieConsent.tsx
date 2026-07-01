@@ -45,10 +45,10 @@ const CookieConsent = () => {
         </div>
         <div className="flex-1 md:flex md:items-center md:gap-6">
           <div className="md:flex-1">
-            <h4 className="text-sm md:text-lg font-semibold text-foreground mb-1 md:mb-1">
+            <h4 className="text-base md:text-xl font-bold text-foreground mb-1 md:mb-1">
               {lang === "el" ? "Χρησιμοποιούμε cookies" : "We use cookies"}
             </h4>
-            <p className="text-xs md:text-base text-muted-foreground leading-relaxed mb-4 md:mb-0">
+            <p className="text-sm md:text-lg text-foreground/95 leading-relaxed mb-4 md:mb-0 font-medium">
               {t(c.message, lang)}{" "}
               <Link to="/privacy-policy" className="text-primary hover:underline">
                 {t(c.privacyPolicy, lang)}
