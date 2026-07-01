@@ -482,7 +482,8 @@ export const translations = {
 • **What we use**: Only the country code derived from your IP address.
 • **What we do NOT do**: We do not store your IP address for this purpose, do not track precise location, and do not share it with third parties for marketing.
 • **Provider**: Country lookup is performed via a third-party geolocation service (ipapi.co); the request is made from your browser.
-• **Override**: You can manually change the language at any time using the language selector in the header.`,
+• **Override**: You can manually change the language at any time using the language selector in the header.
+• **AI Chat**: When you interact with our AI assistant, the country code derived from your IP is stored together with the chat log for internal analytics and abuse prevention. It is accessible only to the site administrator, is never shared with third parties, and is retained together with the chat log according to our retention policy. The AI assistant itself does not receive or use this information in its responses.`,
           el: `Εντοπίζουμε την κατά προσέγγιση χώρα σας με βάση τη διεύθυνση IP σας, ώστε να εμφανίζουμε σχετικό περιεχόμενο, όπως την κατάλληλη γλώσσα και τον τοπικό αριθμό τηλεφώνου επικοινωνίας. Η επεξεργασία αυτή βασίζεται στο έννομο συμφέρον μας (Άρθ. 6(1)(στ) GDPR) να παρέχουμε εξατομικευμένη εμπειρία.
 
 • **Τι χρησιμοποιούμε**: Μόνο τον κωδικό χώρας που προκύπτει από τη διεύθυνση IP σας.
