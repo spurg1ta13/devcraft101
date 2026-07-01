@@ -163,7 +163,7 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages, session_id } = await req.json();
+    const { messages, session_id, country } = await req.json();
 
     // Validate payload size & structure to prevent cost-abuse
     const MAX_MSG_LENGTH = 4000;
