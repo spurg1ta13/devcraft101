@@ -675,10 +675,15 @@ export const translations = {
 
   // Cookie consent
   cookie: {
+    title: {
+      en: "We use cookies",
+      el: "Χρησιμοποιούμε cookies",
+      de: "Wir nutzen Cookies",
+    },
     message: {
-      en: "We use cookies to enhance your browsing experience and analyze site traffic. You can accept or decline non-essential cookies. Learn more in our",
-      el: "Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας περιήγησής σας και την ανάλυση της επισκεψιμότητας. Μπορείτε να αποδεχτείτε ή να απορρίψετε τα μη απαραίτητα cookies. Μάθετε περισσότερα στην",
-      de: "Wir verwenden cookies, um Ihr browsing experience zu verbessern und den website-Traffic zu analysieren. Sie können nicht-essentielle cookies akzeptieren oder ablehnen. Erfahren Sie mehr in unserer",
+      en: "We use cookies to enhance your experience and analyze site traffic. You can accept or decline non-essential cookies. Learn more in our",
+      el: "Χρησιμοποιούμε cookies για τη βελτίωση της εμπειρίας σας και την ανάλυση της επισκεψιμότητας. Μπορείτε να αποδεχτείτε ή να απορρίψετε τα μη απαραίτητα cookies. Μάθετε περισσότερα στην",
+      de: "Wir nutzen Cookies, um Ihre Erfahrung zu verbessern und den Website-Verkehr zu analysieren. Sie können nicht-essentielle Cookies akzeptieren oder ablehnen. Mehr dazu in unserer",
     },
     privacyPolicy: { en: "Privacy Policy", el: "Πολιτική Απορρήτου", de: "Datenschutzerklärung" },
     accept: { en: "Accept", el: "Αποδοχή", de: "Akzeptieren" },
