@@ -496,7 +496,8 @@ export const translations = {
 • **Was wir verwenden**: Ausschließlich den aus Ihrer IP-Adresse abgeleiteten Ländercode.
 • **Was wir NICHT tun**: Wir speichern Ihre IP-Adresse zu diesem Zweck nicht, verfolgen keinen genauen Standort und geben sie nicht zu Marketingzwecken an Dritte weiter.
 • **Anbieter**: Die Länderabfrage erfolgt über einen Drittanbieter-Geolocation-Dienst (ipapi.co); die Anfrage wird von Ihrem Browser ausgeführt.
-• **Widerspruch**: Sie können die Sprache jederzeit manuell über die Sprachauswahl im Header ändern.`,
+• **Widerspruch**: Sie können die Sprache jederzeit manuell über die Sprachauswahl im Header ändern.
+• **AI Chat**: Wenn Sie mit unserem KI-Assistenten interagieren, wird der aus Ihrer IP abgeleitete Ländercode zusammen mit dem Chat-Protokoll zu Zwecken der internen Analyse und Missbrauchsprävention gespeichert. Er ist ausschließlich dem Website-Administrator zugänglich, wird niemals an Dritte weitergegeben und gemäß unserer Aufbewahrungsrichtlinie zusammen mit dem Chat-Protokoll aufbewahrt. Der KI-Assistent selbst erhält oder verwendet diese Information in seinen Antworten nicht.`,
         },
       },
       {
