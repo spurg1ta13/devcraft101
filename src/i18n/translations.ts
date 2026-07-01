@@ -482,19 +482,22 @@ export const translations = {
 • **What we use**: Only the country code derived from your IP address.
 • **What we do NOT do**: We do not store your IP address for this purpose, do not track precise location, and do not share it with third parties for marketing.
 • **Provider**: Country lookup is performed via a third-party geolocation service (ipapi.co); the request is made from your browser.
-• **Override**: You can manually change the language at any time using the language selector in the header.`,
+• **Override**: You can manually change the language at any time using the language selector in the header.
+• **AI Chat**: When you interact with our AI assistant, the country code derived from your IP is stored together with the chat log for internal analytics and abuse prevention. It is accessible only to the site administrator, is never shared with third parties, and is retained together with the chat log according to our retention policy. The AI assistant itself does not receive or use this information in its responses.`,
           el: `Εντοπίζουμε την κατά προσέγγιση χώρα σας με βάση τη διεύθυνση IP σας, ώστε να εμφανίζουμε σχετικό περιεχόμενο, όπως την κατάλληλη γλώσσα και τον τοπικό αριθμό τηλεφώνου επικοινωνίας. Η επεξεργασία αυτή βασίζεται στο έννομο συμφέρον μας (Άρθ. 6(1)(στ) GDPR) να παρέχουμε εξατομικευμένη εμπειρία.
 
 • **Τι χρησιμοποιούμε**: Μόνο τον κωδικό χώρας που προκύπτει από τη διεύθυνση IP σας.
 • **Τι ΔΕΝ κάνουμε**: Δεν αποθηκεύουμε τη διεύθυνση IP σας για αυτόν τον σκοπό, δεν παρακολουθούμε ακριβή τοποθεσία και δεν την κοινοποιούμε σε τρίτους για σκοπούς marketing.
 • **Πάροχος**: Η αναζήτηση χώρας πραγματοποιείται μέσω υπηρεσίας γεωεντοπισμού τρίτου μέρους (ipapi.co)· το αίτημα γίνεται από τον browser σας.
-• **Παράκαμψη**: Μπορείτε ανά πάσα στιγμή να αλλάξετε χειροκίνητα τη γλώσσα από τον επιλογέα γλώσσας στην κεφαλίδα.`,
+• **Παράκαμψη**: Μπορείτε ανά πάσα στιγμή να αλλάξετε χειροκίνητα τη γλώσσα από τον επιλογέα γλώσσας στην κεφαλίδα.
+• **AI Chat**: Όταν αλληλεπιδράτε με τον AI βοηθό μας, ο κωδικός χώρας που προκύπτει από την IP σας αποθηκεύεται μαζί με το αρχείο της συνομιλίας για εσωτερική ανάλυση και αποτροπή κατάχρησης. Είναι προσβάσιμος μόνο στον διαχειριστή του ιστότοπου, δεν κοινοποιείται ποτέ σε τρίτους και διατηρείται μαζί με το αρχείο συνομιλίας σύμφωνα με την πολιτική διατήρησης. Ο ίδιος ο AI βοηθός δεν λαμβάνει ούτε χρησιμοποιεί αυτή την πληροφορία στις απαντήσεις του.`,
           de: `Wir ermitteln Ihr ungefähres Land anhand Ihrer IP-Adresse, um relevante Inhalte anzuzeigen, wie die passende Sprache und die lokale Kontakttelefonnummer. Diese Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses (Art. 6(1)(f) DSGVO) an einer lokalisierten Nutzererfahrung.
 
 • **Was wir verwenden**: Ausschließlich den aus Ihrer IP-Adresse abgeleiteten Ländercode.
 • **Was wir NICHT tun**: Wir speichern Ihre IP-Adresse zu diesem Zweck nicht, verfolgen keinen genauen Standort und geben sie nicht zu Marketingzwecken an Dritte weiter.
 • **Anbieter**: Die Länderabfrage erfolgt über einen Drittanbieter-Geolocation-Dienst (ipapi.co); die Anfrage wird von Ihrem Browser ausgeführt.
-• **Widerspruch**: Sie können die Sprache jederzeit manuell über die Sprachauswahl im Header ändern.`,
+• **Widerspruch**: Sie können die Sprache jederzeit manuell über die Sprachauswahl im Header ändern.
+• **AI Chat**: Wenn Sie mit unserem KI-Assistenten interagieren, wird der aus Ihrer IP abgeleitete Ländercode zusammen mit dem Chat-Protokoll zu Zwecken der internen Analyse und Missbrauchsprävention gespeichert. Er ist ausschließlich dem Website-Administrator zugänglich, wird niemals an Dritte weitergegeben und gemäß unserer Aufbewahrungsrichtlinie zusammen mit dem Chat-Protokoll aufbewahrt. Der KI-Assistent selbst erhält oder verwendet diese Information in seinen Antworten nicht.`,
         },
       },
       {
