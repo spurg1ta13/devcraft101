@@ -228,12 +228,6 @@ serve(async (req) => {
         model: "google/gemini-2.5-flash-lite",
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
-          ...(countryCode
-            ? [{
-                role: "system" as const,
-                content: `User context: approximate country (from IP, may be inaccurate): ${countryCode}. Use this only to subtly tailor examples, currency-free references, timezone hints, or language defaults. Never mention that you know the user's location unless the user asks. Never reveal the raw country code unless the user asks. If the user says they are elsewhere, trust the user.`,
-              }]
-            : []),
           ...messages.slice(-20),
         ],
         stream: true,
@@ -321,6 +315,7 @@ serve(async (req) => {
                 messages: allMessages,
                 message_count: allMessages.length,
                 language: lang,
+                ...(countryCode ? { country: countryCode } : {}),
               })
               .eq("id", existing.id);
           } else {
@@ -331,6 +326,7 @@ serve(async (req) => {
                 messages: allMessages,
                 message_count: allMessages.length,
                 language: lang,
+                country: countryCode,
               });
           }
         } catch (e) {
