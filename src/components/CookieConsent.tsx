@@ -35,7 +35,7 @@ const CookieConsent = () => {
 
   return (
     <div
-      className={`fixed bottom-4 left-4 right-4 md:left-6 md:right-6 md:bottom-6 z-50 glass border border-border/40 rounded-2xl p-5 shadow-glow transition-all duration-500 ${
+      className={`fixed bottom-4 left-4 right-4 md:left-6 md:right-6 md:bottom-6 z-50 glass border border-border/40 rounded-2xl p-6 md:p-8 shadow-glow transition-all duration-500 ${
         visible ? "translate-y-0 opacity-100" : "translate-y-24 opacity-0"
       }`}
     >
@@ -56,7 +56,7 @@ const CookieConsent = () => {
               .
             </p>
           </div>
-          <div className="flex gap-2 md:shrink-0">
+          <div className="flex gap-2 md:shrink-0 mr-16 md:mr-20">
             <button
               onClick={accept}
               className="font-mono text-[10px] uppercase tracking-[0.15em] font-bold bg-primary text-primary-foreground px-4 py-2 rounded-full hover:brightness-110 hover:shadow-[0_0_16px_hsl(38_100%_55%/0.3)] transition-all"
