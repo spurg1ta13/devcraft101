@@ -321,6 +321,8 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       content
         // Never mention Lovable or the platform it was built on
         .replace(/\blovable\b/gi, "DevCraft")
+        // Replace "feel free" with a price-neutral alternative
+        .replace(/\bfeel free\b/gi, "feel welcome")
         // Remove standalone price-related words (free, cheap, expensive) when used in monetary senses
         .replace(/\b(?:free|cheap|expensive)\b/gi, "")
         // Remove price ranges and currency amounts (e.g. €600–€700, €1,200, $300)
