@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useLang } from "@/i18n/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useVisualViewport } from "@/hooks/useVisualViewport";
+import { getCountryCode } from "@/lib/geo";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
