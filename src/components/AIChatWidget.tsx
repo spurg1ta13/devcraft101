@@ -316,8 +316,21 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     );
   };
 
+  const sanitizeAssistantContent = (content: string) => {
+    return (
+      content
+        // Never mention Lovable or the platform it was built on
+        .replace(/\blovable\b/gi, "DevCraft")
+        // Remove price ranges and currency amounts (e.g. €600–€700, €1,200, $300)
+        .replace(/(?:€|\$|£|USD|EUR|euro|euros?)\s*[\d,.\s]+(?:\s*[–—-]\s*[\d,.\s]+)?(?:\s*(?:€|\$|£|USD|EUR|euro|euros?))?/gi, "")
+        // Remove stray price/pricing mentions near numbers (last-resort)
+        .replace(/\b(?:price|pricing)\s*(?:starts?|from|is|range)?\s*:?\s*(?:€|\$|£|\d)/gi, "")
+        .trim()
+    );
+  };
+
   const processContent = (content: string) => {
-    return content.replace(
+    return sanitizeAssistantContent(content).replace(
       /\[contact\s*(?:us\s*)?(?:form)?\]/gi,
       "[contact form](#contact)"
     );
