@@ -55,6 +55,7 @@ export type Database = {
       }
       chat_logs: {
         Row: {
+          country: string | null
           created_at: string
           id: string
           language: string | null
@@ -63,6 +64,7 @@ export type Database = {
           session_id: string
         }
         Insert: {
+          country?: string | null
           created_at?: string
           id?: string
           language?: string | null
@@ -71,6 +73,7 @@ export type Database = {
           session_id: string
         }
         Update: {
+          country?: string | null
           created_at?: string
           id?: string
           language?: string | null
