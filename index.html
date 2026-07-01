@@ -84,8 +84,25 @@
       .cv-auto{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
 
-    <!-- Analytics: load only after first interaction (mobile) or 8s on desktop -->
+    <!-- Analytics: load only after first interaction (mobile) or 8s on desktop.
+         Meta Pixel additionally requires explicit cookie consent (Meta Consent Mode). -->
     <script>
+      function hasCookieConsent() {
+        try { return localStorage.getItem('cookie-consent') === 'accepted'; } catch (e) { return false; }
+      }
+      function loadMetaPixel() {
+        if (window.__metaPixelLoaded) return;
+        if (!hasCookieConsent()) return;
+        window.__metaPixelLoaded = true;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        // Meta Consent Mode: explicitly grant now that we have consent.
+        fbq('consent', 'grant');
+        fbq('init', '1357548376330645');
+        fbq('track', 'PageView');
+      }
+      function revokeMetaPixel() {
+        if (window.fbq) { try { fbq('consent', 'revoke'); } catch (e) {} }
+      }
       function loadAnalytics() {
         if (window.__analyticsLoaded) return;
         window.__analyticsLoaded = true;
@@ -106,12 +123,12 @@
           c.async = true;
           document.head.appendChild(c);
         }, 3000);
-        // Meta Pixel — loaded after interaction to keep it off the critical path
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1357548376330645');
-        fbq('track', 'PageView');
-
+        // Meta Pixel — only if user has already accepted cookies.
+        loadMetaPixel();
       }
+      // React-side CookieConsent dispatches these events on accept/decline.
+      window.addEventListener('cookie-consent:accepted', loadMetaPixel);
+      window.addEventListener('cookie-consent:declined', revokeMetaPixel);
       var events = ['pointerdown','touchstart','keydown','scroll'];
       var isMobile = matchMedia('(max-width: 768px)').matches;
       // Mobile: interaction-only (no fallback timer — saves main thread on idle loads)
@@ -124,6 +141,7 @@
       }
       events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
     </script>
+
     <!-- Note: CSS bundle is made non-render-blocking at build time via the
          nonBlockingAssets() Vite plugin (rewrites the <link rel="stylesheet">
          into rel="preload" + onload swap). Inlined critical CSS above paints
