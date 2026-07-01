@@ -163,7 +163,7 @@ serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { headers: corsHeaders });
 
   try {
-    const { messages, session_id } = await req.json();
+    const { messages, session_id, country } = await req.json();
 
     // Validate payload size & structure to prevent cost-abuse
     const MAX_MSG_LENGTH = 4000;
@@ -196,6 +196,19 @@ serve(async (req) => {
       });
     }
 
+    // Approximate country (ISO-3166-1 alpha-2). Optional. Used only to tailor
+    // language/locale hints — never stored, never precise. Legally permitted
+    // as low-risk processing under GDPR legitimate interest; disclosed in the
+    // site's privacy policy.
+    let countryCode: string | null = null;
+    if (typeof country === "string" && /^[A-Z]{2}$/.test(country.toUpperCase())) {
+      countryCode = country.toUpperCase();
+    } else {
+      // Fallback: infrastructure-provided header (Cloudflare / Deno Deploy)
+      const hdr = req.headers.get("cf-ipcountry") || req.headers.get("x-country") || req.headers.get("x-vercel-ip-country");
+      if (hdr && /^[A-Z]{2}$/i.test(hdr)) countryCode = hdr.toUpperCase();
+    }
+
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     if (!LOVABLE_API_KEY) {
       console.error("LOVABLE_API_KEY is not configured");
@@ -215,6 +228,12 @@ serve(async (req) => {
         model: "google/gemini-2.5-flash-lite",
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
+          ...(countryCode
+            ? [{
+                role: "system" as const,
+                content: `User context: approximate country (from IP, may be inaccurate): ${countryCode}. Use this only to subtly tailor examples, currency-free references, timezone hints, or language defaults. Never mention that you know the user's location unless the user asks. Never reveal the raw country code unless the user asks. If the user says they are elsewhere, trust the user.`,
+              }]
+            : []),
           ...messages.slice(-20),
         ],
         stream: true,

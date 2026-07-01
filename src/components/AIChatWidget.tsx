@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { useLang } from "@/i18n/LanguageContext";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useVisualViewport } from "@/hooks/useVisualViewport";
+import { getCountryCode } from "@/lib/geo";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
@@ -83,13 +84,14 @@ async function streamChat(
   onError: (msg: string) => void,
 ) {
   try {
+    const country = await getCountryCode().catch(() => null);
     const resp = await fetch(CHAT_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
       },
-      body: JSON.stringify({ messages, session_id: getSessionId() }),
+      body: JSON.stringify({ messages, session_id: getSessionId(), country }),
     });
 
     if (!resp.ok) {
