@@ -84,18 +84,18 @@
       .cv-auto{content-visibility:auto;contain-intrinsic-size:auto 600px}
     </style>
 
-    <!-- Analytics: load only after first interaction (mobile) or 8s on desktop.
-         Meta Pixel additionally requires explicit cookie consent (Meta Consent Mode). -->
+    <!-- Analytics + Meta Pixel: consent-gated (localStorage `cookie-consent`).
+         Nothing tracking-related loads until the user clicks Accept.
+         Decline => no GA, no Contentsquare, no Meta Pixel for the session. -->
     <script>
-      function hasCookieConsent() {
-        try { return localStorage.getItem('cookie-consent') === 'accepted'; } catch (e) { return false; }
+      function getCookieConsent() {
+        try { return localStorage.getItem('cookie-consent'); } catch (e) { return null; }
       }
       function loadMetaPixel() {
         if (window.__metaPixelLoaded) return;
-        if (!hasCookieConsent()) return;
+        if (getCookieConsent() !== 'accepted') return;
         window.__metaPixelLoaded = true;
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-        // Meta Consent Mode: explicitly grant now that we have consent.
         fbq('consent', 'grant');
         fbq('init', '1357548376330645');
         fbq('track', 'PageView');
@@ -105,6 +105,7 @@
       }
       function loadAnalytics() {
         if (window.__analyticsLoaded) return;
+        if (getCookieConsent() !== 'accepted') return;
         window.__analyticsLoaded = true;
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -123,23 +124,27 @@
           c.async = true;
           document.head.appendChild(c);
         }, 3000);
-        // Meta Pixel — only if user has already accepted cookies.
         loadMetaPixel();
       }
-      // React-side CookieConsent dispatches these events on accept/decline.
-      window.addEventListener('cookie-consent:accepted', loadMetaPixel);
-      window.addEventListener('cookie-consent:declined', revokeMetaPixel);
-      var events = ['pointerdown','touchstart','keydown','scroll'];
-      var isMobile = matchMedia('(max-width: 768px)').matches;
-      // Mobile: interaction-only (no fallback timer — saves main thread on idle loads)
-      // Desktop: 8s absolute fallback
-      var interactionTimer = isMobile ? null : setTimeout(loadAnalytics, 8000);
-      function onInteraction() {
-        if (interactionTimer) clearTimeout(interactionTimer);
+      function scheduleAnalytics() {
+        if (getCookieConsent() !== 'accepted') return;
         if ('requestIdleCallback' in window) { requestIdleCallback(loadAnalytics, { timeout: 2000 }); } else { setTimeout(loadAnalytics, 1500); }
-        events.forEach(function(e) { document.removeEventListener(e, onInteraction); });
       }
-      events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
+      window.addEventListener('cookie-consent:accepted', function () { loadAnalytics(); loadMetaPixel(); });
+      window.addEventListener('cookie-consent:declined', revokeMetaPixel);
+      // Returning visitors who already accepted: arm interaction-based loader.
+      // First-time or declined visitors: nothing scheduled — wait for the accept event.
+      if (getCookieConsent() === 'accepted') {
+        var events = ['pointerdown','touchstart','keydown','scroll'];
+        var isMobile = matchMedia('(max-width: 768px)').matches;
+        var interactionTimer = isMobile ? null : setTimeout(scheduleAnalytics, 8000);
+        var onInteraction = function () {
+          if (interactionTimer) clearTimeout(interactionTimer);
+          scheduleAnalytics();
+          events.forEach(function(e) { document.removeEventListener(e, onInteraction); });
+        };
+        events.forEach(function(e) { document.addEventListener(e, onInteraction, {once: true, passive: true}); });
+      }
     </script>
 
     <!-- Note: CSS bundle is made non-render-blocking at build time via the
