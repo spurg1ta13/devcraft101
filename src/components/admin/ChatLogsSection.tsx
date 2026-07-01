@@ -114,6 +114,7 @@ const ChatLogsSection = () => {
                 <TableRow className="border-border/50">
                   <TableHead>Date</TableHead>
                   <TableHead>Lang</TableHead>
+                  <TableHead>Country</TableHead>
                   <TableHead>Messages</TableHead>
                   <TableHead className="max-w-[300px]">First Question</TableHead>
                   <TableHead className="w-[100px]"></TableHead>
@@ -127,6 +128,11 @@ const ChatLogsSection = () => {
                     </TableCell>
                     <TableCell>
                       <span className="text-xs font-mono uppercase">{log.language || "—"}</span>
+                    </TableCell>
+                    <TableCell>
+                      <span className="text-xs font-mono uppercase" title="Approximate country from IP">
+                        {log.country ? `${countryToFlag(log.country)} ${log.country}` : "—"}
+                      </span>
                     </TableCell>
                     <TableCell>
                       <span className="text-sm font-medium text-foreground">{log.message_count}</span>
