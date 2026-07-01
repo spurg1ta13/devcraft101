@@ -321,6 +321,7 @@ serve(async (req) => {
                 messages: allMessages,
                 message_count: allMessages.length,
                 language: lang,
+                ...(countryCode ? { country: countryCode } : {}),
               })
               .eq("id", existing.id);
           } else {
@@ -331,6 +332,7 @@ serve(async (req) => {
                 messages: allMessages,
                 message_count: allMessages.length,
                 language: lang,
+                country: countryCode,
               });
           }
         } catch (e) {
