@@ -23,7 +23,14 @@ type ChatLog = {
   messages: ChatMessage[];
   message_count: number;
   language: string | null;
+  country: string | null;
   created_at: string;
+};
+
+const countryToFlag = (code: string | null) => {
+  if (!code || code.length !== 2) return "";
+  const base = 0x1f1e6;
+  return String.fromCodePoint(base + code.charCodeAt(0) - 65, base + code.charCodeAt(1) - 65);
 };
 
 const ChatLogsSection = () => {
