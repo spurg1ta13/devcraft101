@@ -184,7 +184,7 @@ const Prices = () => {
                         ? "bg-primary/[0.08] border-primary/30"
                         : "bg-secondary/50 border-border/20"
                     }`}>
-                      <span className="text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
+                      <span className="hidden text-base md:text-lg font-black tracking-tight text-gradient group-hover:opacity-80 transition-opacity">
                         {lang === "el" ? "Επικοινωνήστε για τιμή →" : "Contact for pricing →"}
                       </span>
                       <p className="text-[11px] font-mono text-muted-foreground mt-2">
