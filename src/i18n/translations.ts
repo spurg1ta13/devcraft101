@@ -1040,6 +1040,7 @@ export const translations = {
     hostingNote: { en: "*All plans require an annual hosting & security subscription of €300", el: "*Όλα τα πακέτα απαιτούν ετήσια συνδρομή φιλοξενίας & ασφάλειας €300", de: "*Alle Pläne erfordern ein jährliches Hosting- & Sicherheitsabonnement von €300" },
     hostingDetail: { en: "** Covers high-speed server placement, SSL security, and technical monitoring", el: "** Περιλαμβάνει τοποθέτηση σε server υψηλής ταχύτητας, SSL ασφάλεια και τεχνική παρακολούθηση", de: "** Umfasst Hochgeschwindigkeits-Serverplatzierung, SSL-Sicherheit und technische Überwachung" },
     giftNote: { en: "Every client deserves a little gift from us 🎁", el: "Κάθε πελάτης αξίζει ένα μικρό δώρο από εμάς 🎁", de: "Jeder Kunde hat ein kleines Geschenk von uns verdient 🎁" },
+    salesNote: { en: "Sales are coming soon", el: "Προσφορές σύντομα", de: "Angebote folgen in Kürze" },
   },
 
   // Language selector
