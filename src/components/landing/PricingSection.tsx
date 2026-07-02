@@ -49,6 +49,12 @@ const PricingSection = () => {
               {t(p.giftNote, lang)}
             </span>
           </div>
+          <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
+            <Shield className="h-4 w-4" strokeWidth={2} />
+            <span className="text-xs md:text-sm font-bold uppercase tracking-wide">
+              {t(p.salesNote, lang)}
+            </span>
+          </div>
         </header>
 
         <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-4">

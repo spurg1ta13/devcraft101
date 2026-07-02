@@ -103,6 +103,12 @@ const Prices = () => {
               <p className="mt-6 max-w-2xl text-sm md:text-base text-muted-foreground leading-relaxed">
                 {t(p.subtitle, lang)}
               </p>
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
+                <Shield className="h-4 w-4" strokeWidth={2} />
+                <span className="text-xs md:text-sm font-bold uppercase tracking-wide">
+                  {t(p.salesNote, lang)}
+                </span>
+              </div>
             </motion.div>
 
             {/* Plans grid */}
