@@ -61,6 +61,7 @@ const ContactMessageForm = ({ initialMessage = "", onSuccess }: ContactMessageFo
           email: form.email.trim() || undefined,
           phone: form.phone.trim() || undefined,
           message: form.message.trim(),
+          website: honeypot, // honeypot; server aborts if non-empty
           recaptchaToken,
         },
       });
