@@ -177,6 +177,19 @@ const BookingForm = ({ initialMessage = "", onSuccess }: BookingFormProps = {}) 
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+        {/* Honeypot: hidden from real users, catches bots */}
+        <div style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+          <label htmlFor="booking-website">Website</label>
+          <input
+            id="booking-website"
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </div>
         <div className="flex items-start gap-3 rounded-2xl border border-primary/30 bg-primary/5 px-4 py-3 md:px-5 md:py-4">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-primary shrink-0 mt-0.5" aria-hidden="true">
             <path d="m22 8-6 4 6 4V8Z" />
