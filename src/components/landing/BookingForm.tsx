@@ -129,6 +129,7 @@ const BookingForm = ({ initialMessage = "", onSuccess }: BookingFormProps = {}) 
           bookingDate: formatDateLocal(date!),
           bookingHour: hour!,
           language: lang,
+          website: honeypot, // honeypot; server aborts if non-empty
           recaptchaToken,
         },
       });
