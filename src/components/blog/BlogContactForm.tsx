@@ -7,6 +7,7 @@ import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const BlogContactForm = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
@@ -32,9 +33,12 @@ const BlogContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot: bots fill hidden fields; abort silently without sending.
+    if (honeypot.trim() !== "") return;
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
 
     setSending(true);
     try {
@@ -96,6 +100,19 @@ const BlogContactForm = () => {
       </p>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Honeypot: hidden from real users, catches bots */}
+        <div style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+          <label htmlFor="blog-website">Website</label>
+          <input
+            id="blog-website"
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </div>
         <div className="grid sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="blog-contact-name" className="sr-only">{t(c.name, lang)}</label>
