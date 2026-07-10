@@ -43,6 +43,39 @@ async function verifyRecaptcha(token: string): Promise<{ success: boolean; score
   return await res.json();
 }
 
+// In-memory sliding-window rate limiter (per edge instance).
+// Blocks abusive IPs even when honeypot/recaptcha would otherwise short-circuit.
+const RL_WINDOW_MS = 60_000; // 1 minute
+const RL_MAX = 5;            // max 5 attempts per IP per minute
+const RL_LONG_WINDOW_MS = 60 * 60_000; // 1 hour
+const RL_LONG_MAX = 20;      // max 20 attempts per IP per hour
+const rlHits = new Map<string, number[]>();
+
+function getClientIp(req: Request): string {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  return req.headers.get("cf-connecting-ip") || req.headers.get("x-real-ip") || "unknown";
+}
+
+function rateLimit(ip: string): { ok: boolean; retryAfter?: number } {
+  const now = Date.now();
+  const hits = (rlHits.get(ip) || []).filter((t) => now - t < RL_LONG_WINDOW_MS);
+  hits.push(now);
+  rlHits.set(ip, hits);
+  // Opportunistic cleanup to keep the map bounded.
+  if (rlHits.size > 5000) {
+    for (const [k, v] of rlHits) {
+      const kept = v.filter((t) => now - t < RL_LONG_WINDOW_MS);
+      if (kept.length === 0) rlHits.delete(k);
+      else rlHits.set(k, kept);
+    }
+  }
+  const shortHits = hits.filter((t) => now - t < RL_WINDOW_MS).length;
+  if (shortHits > RL_MAX) return { ok: false, retryAfter: Math.ceil(RL_WINDOW_MS / 1000) };
+  if (hits.length > RL_LONG_MAX) return { ok: false, retryAfter: Math.ceil(RL_LONG_WINDOW_MS / 1000) };
+  return { ok: true };
+}
+
 serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -53,7 +86,27 @@ serve(async (req) => {
       throw new Error("RESEND_API_KEY is not configured");
     }
 
-    const { name, email, phone, message, recaptchaToken } = await req.json();
+    const ip = getClientIp(req);
+    const rl = rateLimit(ip);
+    if (!rl.ok) {
+      console.warn("Rate limit exceeded for IP:", ip);
+      return new Response(
+        JSON.stringify({ success: false, error: "Too many requests. Please try again later." }),
+        { status: 429, headers: { ...corsHeaders, "Content-Type": "application/json", "Retry-After": String(rl.retryAfter ?? 60) } },
+      );
+    }
+
+    const { name, email, phone, message, recaptchaToken, website } = await req.json();
+
+    // Honeypot: bots fill hidden fields. Silently succeed without sending.
+    if (typeof website === "string" && website.trim() !== "") {
+      console.warn("Honeypot triggered for IP:", ip);
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
 
     // Verify reCAPTCHA v3
     if (!recaptchaToken) {
