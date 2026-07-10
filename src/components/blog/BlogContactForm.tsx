@@ -7,6 +7,7 @@ import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 const BlogContactForm = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [honeypot, setHoneypot] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
