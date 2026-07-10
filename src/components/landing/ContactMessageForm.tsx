@@ -38,9 +38,12 @@ const ContactMessageForm = ({ initialMessage = "", onSuccess }: ContactMessageFo
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Honeypot: bots fill hidden fields; abort silently without sending.
+    if (honeypot.trim() !== "") return;
     const errs = validate();
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
+
 
     setSending(true);
     try {
