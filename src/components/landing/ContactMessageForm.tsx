@@ -92,7 +92,21 @@ const ContactMessageForm = ({ initialMessage = "", onSuccess }: ContactMessageFo
   return (
     <>
       <form onSubmit={handleSubmit} className="space-y-4 md:space-y-5">
+        {/* Honeypot: hidden from real users, catches bots */}
+        <div style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+          <label htmlFor="cmf-website">Website</label>
+          <input
+            id="cmf-website"
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            value={honeypot}
+            onChange={(e) => setHoneypot(e.target.value)}
+          />
+        </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+
           <div>
             <label htmlFor="cmf-name" className="sr-only">{t(c.name, lang)}</label>
             <input
