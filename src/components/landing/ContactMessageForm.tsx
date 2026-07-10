@@ -12,6 +12,7 @@ interface ContactMessageFormProps {
 
 const ContactMessageForm = ({ initialMessage = "", onSuccess }: ContactMessageFormProps) => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: initialMessage });
+  const [honeypot, setHoneypot] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
