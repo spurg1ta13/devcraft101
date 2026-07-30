@@ -108,7 +108,6 @@ const App = () => (
                 <AIChatLauncher />
               </Suspense>
             </InteractionGate>
-            <ConsentGatedAnalytics />
           </BrowserRouter>
         </TooltipProvider>
     </LanguageProvider>
