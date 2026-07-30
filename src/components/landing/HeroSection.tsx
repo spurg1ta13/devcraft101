@@ -63,7 +63,7 @@ const HeroSection = () => {
                 onClick={() =>
                   window.dispatchEvent(new CustomEvent("devcraft:open-chat"))
                 }
-                className="group relative inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-foreground font-bold text-xs sm:text-sm px-5 sm:px-7 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] font-mono uppercase tracking-[0.1em] hover:bg-primary/20 hover:border-primary/60 active:scale-[0.98] transition-all"
+                className="group relative inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-foreground font-bold text-xs sm:text-sm px-5 sm:px-7 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] font-mono uppercase tracking-[0.1em] hover:bg-primary/20 hover:border-primary/60 transition-all hover-press"
                 aria-label={t(hero.chatWithAI, lang)}
               >
                 <Sparkles className="h-4 w-4 text-primary" aria-hidden="true" />
@@ -72,7 +72,7 @@ const HeroSection = () => {
               <button
                 type="button"
                 onClick={() => { setDialogLoaded(true); setBookingOpen(true); }}
-                className="relative bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 active:scale-[0.98] transition-all animate-cta-pulse"
+                className="relative bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] text-center inline-flex items-center justify-center hover:brightness-110 transition-all animate-cta-pulse hover-press"
               >
                 <span className="absolute inset-0 rounded-full bg-primary/60 animate-cta-ring -z-10" aria-hidden="true" />
                 {t(hero.explore, lang)}
