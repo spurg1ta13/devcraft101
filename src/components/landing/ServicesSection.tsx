@@ -65,19 +65,33 @@ const ServicesSection = () => {
 
         {/* What we can build — solution cards */}
         <div className="mt-20 md:mt-32">
-          <header
-            className={`mb-10 md:mb-16 transition-all duration-700 ${
+          <div
+            className={`mb-10 md:mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8 md:gap-12 transition-all duration-700 ${
               inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
-              {t(s.buildLabel, lang)}
-            </span>
-            <h3 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[0.95]">
-              {t(s.buildHeading1, lang)}{" "}
-              <span className="text-gradient">{t(s.buildHeading2, lang)}</span>
-            </h3>
-          </header>
+            <header className="flex-1 min-w-0">
+              <span className="font-mono text-xs uppercase tracking-[0.2em] text-gradient block mb-4 md:mb-6">
+                {t(s.buildLabel, lang)}
+              </span>
+              <h3 className="text-3xl sm:text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[0.95]">
+                {t(s.buildHeading1, lang)}{" "}
+                <span className="text-gradient">{t(s.buildHeading2, lang)}</span>
+              </h3>
+            </header>
+
+            {/* Animated vector illustration. Lottie takes over on capable
+                devices; the hand-built SVG orbit is the always-on fallback. */}
+            <div className="w-40 sm:w-52 md:w-64 lg:w-72 shrink-0 self-center md:self-auto">
+              <LazyLottie
+                src="/lottie/craft-orbit.json"
+                ariaLabel={t(s.buildHeading1, lang)}
+                className="w-full"
+                fallback={<OrbitIllustration />}
+              />
+            </div>
+          </div>
+
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {s.builds.map((item, i) => {
