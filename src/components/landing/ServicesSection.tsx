@@ -3,6 +3,8 @@ import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
 import { Cloud, CalendarCheck, Rocket, Building2, LayoutDashboard, Hotel, Anchor, Sparkles } from "lucide-react";
+import LazyLottie from "@/components/motion/LazyLottie";
+import OrbitIllustration from "@/components/motion/OrbitIllustration";
 
 const PlanBookingDialog = lazy(() => import("./PlanBookingDialog"));
 
