@@ -7,7 +7,46 @@ import { LanguageProvider } from "@/i18n/LanguageContext";
 import { lazy, Suspense } from "react";
 import { usePageTracking } from "@/hooks/usePageTracking";
 import { Analytics } from "@vercel/analytics/react";
+import type { AnalyticsProps } from "@vercel/analytics/react";
 import Index from "./pages/Index";
+
+/**
+ * ConsentGatedAnalytics — renders <Analytics /> only after the visitor
+ * accepts cookies (localStorage `cookie-consent`), matching the privacy
+ * policy. Also listens for the live `cookie-consent:accepted`/`:declined`
+ * events so the toggle takes effect without a reload.
+ */
+const ConsentGatedAnalytics = (props: AnalyticsProps) => {
+  const [consented, setConsented] = useState(false);
+
+  useEffect(() => {
+    const read = () => {
+      try {
+        return localStorage.getItem("cookie-consent") === "accepted";
+      } catch {
+        return false;
+      }
+    };
+    setConsented(read());
+    const onAccept = () => setConsented(true);
+    const onDecline = () => setConsented(false);
+    window.addEventListener("cookie-consent:accepted", onAccept);
+    window.addEventListener("cookie-consent:declined", onDecline);
+    // Re-check on storage events from other tabs
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "cookie-consent") setConsented(read());
+    };
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener("cookie-consent:accepted", onAccept);
+      window.removeEventListener("cookie-consent:declined", onDecline);
+      window.removeEventListener("storage", onStorage);
+    };
+  }, []);
+
+  if (!consented) return null;
+  return <Analytics {...props} />;
+};
 
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
 const Sonner = lazy(() => import("@/components/ui/sonner").then(m => ({ default: m.Toaster })));
@@ -109,7 +148,7 @@ const App = () => (
                 <AIChatLauncher />
               </Suspense>
             </InteractionGate>
-            <Analytics />
+            <ConsentGatedAnalytics />
           </BrowserRouter>
         </TooltipProvider>
     </LanguageProvider>
