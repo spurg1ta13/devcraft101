@@ -158,7 +158,7 @@ const Navbar = () => {
                     key={item.href}
                     href="#contact"
                     onClick={openLetsTalk}
-                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap link-sweep"
                   >
                     {item.label}
                   </a>
@@ -166,7 +166,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={item.href}
-                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap link-sweep"
                   >
                     {item.label}
                   </Link>
@@ -175,7 +175,7 @@ const Navbar = () => {
                     key={item.href}
                     href={`#${item.href}`}
                     onClick={(e) => { e.preventDefault(); scrollToHash(item.href); }}
-                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap link-sweep"
                   >
                     {item.label}
                   </a>
@@ -183,7 +183,7 @@ const Navbar = () => {
                   <Link
                     key={item.href}
                     to={`/#${item.href}`}
-                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap"
+                    className="font-mono text-[10px] xl:text-[11px] 2xl:text-xs uppercase tracking-[0.06em] xl:tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px] flex items-center whitespace-nowrap link-sweep"
                   >
                     {item.label}
                   </Link>
@@ -214,7 +214,7 @@ const Navbar = () => {
               <a
                 href="#contact"
                 onClick={openLetsTalk}
-                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
+                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0 hover-press"
               >
                 {t(nav.letsTalk, lang)}
               </a>
@@ -222,7 +222,7 @@ const Navbar = () => {
               <a
                 href="/#contact"
                 onClick={openLetsTalk}
-                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0"
+                className="font-mono text-[10px] xl:text-[11px] uppercase tracking-[0.12em] xl:tracking-[0.15em] text-primary-foreground bg-primary px-3 xl:px-5 py-2.5 xl:py-3 min-h-[44px] rounded-full hover:brightness-110 transition-all font-bold flex items-center whitespace-nowrap shrink-0 hover-press"
               >
                 {t(nav.letsTalk, lang)}
               </a>

@@ -42,7 +42,7 @@ const ServicesSection = () => {
               }`}
               style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="service-row relative border-b border-border/30 py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
+              <div className="service-row link-sweep relative border-b border-border/30 py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
                 <span className="service-number font-mono text-xs text-muted-foreground/60 transition-colors duration-500 w-8 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -88,7 +88,7 @@ const ServicesSection = () => {
                   type="button"
                   onClick={() => { setBookingLoaded(true); setBookingOpen(true); }}
                   aria-label={t(item.title, lang)}
-                  className={`group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-6 md:p-8 text-left cursor-pointer transition-all duration-500 hover:border-primary/40 hover:bg-card/60 hover:-translate-y-1 hover:shadow-[0_20px_60px_-20px_hsl(38_100%_55%/0.35)] focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+                  className={`group relative overflow-hidden rounded-2xl border border-border/40 bg-card/40 backdrop-blur-sm p-6 md:p-8 text-left cursor-pointer transition-all duration-500 hover:border-primary/40 hover:bg-card/60 focus:outline-none hover-lift-glow focus:ring-2 focus:ring-primary/50 ${
                     inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: inView ? `${i * 80}ms` : "0ms" }}
@@ -140,7 +140,7 @@ const ServicesSection = () => {
                   <button
                     type="button"
                     onClick={() => { setBookingLoaded(true); setBookingOpen(true); }}
-                    className="relative shrink-0 inline-flex items-center justify-center self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 active:scale-[0.98] transition-all"
+                    className="relative shrink-0 inline-flex items-center justify-center self-start sm:self-auto bg-primary text-primary-foreground font-bold text-xs sm:text-sm px-6 sm:px-8 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] rounded-full shadow-glow font-mono uppercase tracking-[0.1em] hover:brightness-110 transition-all hover-press"
                   >
                     {t(s.customCtaButton, lang)}
                   </button>
