@@ -6,6 +6,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 import { lazy, Suspense } from "react";
 import { usePageTracking } from "@/hooks/usePageTracking";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 
 const Toaster = lazy(() => import("@/components/ui/toaster").then(m => ({ default: m.Toaster })));
@@ -108,6 +109,7 @@ const App = () => (
                 <AIChatLauncher />
               </Suspense>
             </InteractionGate>
+            <Analytics />
           </BrowserRouter>
         </TooltipProvider>
     </LanguageProvider>
