@@ -24,19 +24,14 @@ const optimizeHtml = (): Plugin => {
     transformIndexHtml: {
       order: "post",
       handler(html) {
-        // 1. Inline the entry CSS bundle
+        // 1. Make the entry CSS bundle non-render-blocking.
+        //    Critical above-the-fold CSS is already inlined in index.html,
+        //    so the full stylesheet can load asynchronously and swap in.
         html = html.replace(
-          /<link[^>]*rel="stylesheet"[^>]*href="([^"]+\/assets\/[^"]+\.css)"[^>]*>/g,
-          (match, href: string) => {
-            try {
-              const filePath = path.join(outDir, href.replace(/^\//, ""));
-              if (!fs.existsSync(filePath)) return match;
-              const css = fs.readFileSync(filePath, "utf-8");
-              return `<style>${css}</style>`;
-            } catch {
-              return match;
-            }
-          }
+          /<link([^>]*)rel="stylesheet"([^>]*)href="([^"]*\/assets\/[^"]+\.css)"([^>]*)>/g,
+          (_m, a: string, b: string, href: string, c: string) =>
+            `<link rel="preload" as="style" href="${href}"${a}${b}${c} onload="this.onload=null;this.rel='stylesheet'">` +
+            `<noscript><link rel="stylesheet" href="${href}"></noscript>`
         );
         // 2. Remove vendor modulepreload hints
         html = html.replace(/\s*<link rel="modulepreload"[^>]*>\s*/g, "\n    ");
@@ -45,6 +40,7 @@ const optimizeHtml = (): Plugin => {
     },
   };
 };
+
 
 
 export default defineConfig(({ mode }) => ({
