@@ -34,5 +34,11 @@ export function canAffordHeavyMotion(): boolean {
   if (typeof nav.deviceMemory === "number" && nav.deviceMemory < 4) return false;
   if (typeof nav.hardwareConcurrency === "number" && nav.hardwareConcurrency < 4) return false;
 
+  // Phones and tablets: JS-driven motion costs main-thread time exactly when
+  // PSI measures LCP/INP. Everything below lg falls back to CSS-only reveals.
+  if (window.matchMedia?.("(max-width: 1023px)").matches) return false;
+  if (window.matchMedia?.("(hover: none)").matches) return false;
+
   return true;
 }
+
