@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+// Backend client is imported lazily inside track() so it stays out of the entry bundle.
 
 const BOT_PATTERN = /bot|crawl|spider|slurp|bingpreview|mediapartners|google|facebookexternalhit|semrush|ahrefs|mj12bot|dotbot|petalbot|yandex|baidu|duckduckbot|ia_archiver|archive\.org|headlesschrome|puppeteer|playwright|lighthouse|pagespeed/i;
 
@@ -39,6 +39,7 @@ export function usePageTracking() {
         // ignore storage errors
       }
 
+      const { supabase } = await import("@/integrations/supabase/client");
       const { error } = await supabase
         .from("page_views")
         .insert({
