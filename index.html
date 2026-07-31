@@ -152,7 +152,27 @@
          into rel="preload" + onload swap). Inlined critical CSS above paints
          the hero/shell instantly. -->
 
-    <script src="https://analytics.ahrefs.com/analytics.js" data-key="4GobB7hINE4WmB+ZbjDcGQ" async></script>
+    <!-- Ahrefs analytics: loaded off the critical path (idle / first interaction) -->
+    <script>
+      (function () {
+        var loaded = false;
+        function loadAhrefs() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://analytics.ahrefs.com/analytics.js';
+          s.setAttribute('data-key', '4GobB7hINE4WmB+ZbjDcGQ');
+          s.async = true;
+          document.head.appendChild(s);
+        }
+        var evts = ['pointerdown', 'touchstart', 'keydown', 'scroll'];
+        evts.forEach(function (e) { document.addEventListener(e, loadAhrefs, { once: true, passive: true }); });
+        window.addEventListener('load', function () {
+          if ('requestIdleCallback' in window) { requestIdleCallback(loadAhrefs, { timeout: 6000 }); }
+          else { setTimeout(loadAhrefs, 5000); }
+        });
+      })();
+    </script>
   </head>
 
   <body>
