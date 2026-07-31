@@ -431,18 +431,46 @@
 
 /* Mobile & reduced-motion: stop every looping animation. Long-running
    loops are the single biggest cause of scroll jank on low-end phones. */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+  /* No looping compositor work on phones/tablets — these run forever and
+     keep the main thread + GPU busy during scroll, hurting INP and LCP. */
   .orbit-ring,
+  .orbit-ring--fast,
   .orbit-breathe,
   .orbit-core-mark,
-  .orbit-caret {
-    animation-duration: 40s;
+  .orbit-caret,
+  .animate-code-rain,
+  .animate-morph,
+  .animate-cta-ring {
+    animation: none !important;
   }
-  .orbit-breathe,
-  .orbit-core-mark {
-    animation: none;
+  .animate-morph {
+    will-change: auto;
+  }
+  /* Shorter, cheaper reveals: less time spent compositing while scrolling. */
+  .reveal {
+    transition:
+      opacity 0.4s ease-out,
+      transform 0.4s ease-out;
+  }
+  /* Hover-only affordances never fire on touch — drop their transitions. */
+  .hover-lift-glow,
+  .hover-press {
+    transition: none;
+  }
+  .link-sweep::after {
+    display: none;
   }
 }
+
+/* Touch devices: no hover state exists, so the transition is dead weight. */
+@media (hover: none) {
+  .hover-lift-glow,
+  .hover-press {
+    transition: none;
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
