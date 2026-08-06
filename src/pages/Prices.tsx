@@ -103,7 +103,7 @@ const Prices = () => {
               <p className="mt-6 max-w-2xl text-sm md:text-base text-muted-foreground leading-relaxed">
                 {t(p.subtitle, lang)}
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
+              <div className="hidden mt-4 items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
                 <Shield className="h-4 w-4" strokeWidth={2} />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-wide">
                   {t(p.salesNote, lang)}
@@ -218,7 +218,7 @@ const Prices = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              className="mt-8 text-xs md:text-sm text-primary font-medium"
+              className="hidden mt-8 text-xs md:text-sm text-primary font-medium"
             >
               {t(p.hostingNote, lang)}
             </motion.p>
@@ -226,7 +226,7 @@ const Prices = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="mt-1 text-xs md:text-sm text-primary font-medium"
+              className="hidden mt-1 text-xs md:text-sm text-primary font-medium"
             >
               {t(p.hostingDetail, lang)}
             </motion.p>
