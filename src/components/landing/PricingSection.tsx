@@ -49,7 +49,7 @@ const PricingSection = () => {
               {t(p.giftNote, lang)}
             </span>
           </div>
-          <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
+          <div className="hidden mt-3 items-center gap-2 rounded-full border border-destructive/30 bg-destructive/10 px-4 py-2 text-destructive/90">
             <Shield className="h-4 w-4" strokeWidth={2} />
             <span className="text-xs md:text-sm font-bold uppercase tracking-wide">
               {t(p.salesNote, lang)}
@@ -148,7 +148,7 @@ const PricingSection = () => {
         </div>
 
         <p
-          className={`mt-8 text-xs md:text-sm text-primary font-medium transition-all duration-700 ${
+          className={`hidden mt-8 text-xs md:text-sm text-primary font-medium transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: inView ? "400ms" : "0ms" }}
@@ -156,7 +156,7 @@ const PricingSection = () => {
           {t(p.hostingNote, lang)}
         </p>
         <p
-          className={`mt-1 text-xs md:text-sm text-primary font-medium transition-all duration-700 ${
+          className={`hidden mt-1 text-xs md:text-sm text-primary font-medium transition-all duration-700 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: inView ? "450ms" : "0ms" }}
