@@ -2,7 +2,12 @@ import { Phone } from "lucide-react";
 import { t, type Lang } from "@/i18n/translations";
 import { trackPhoneClick } from "@/lib/trackPhoneClick";
 
-type PhoneInfo = { display: string; tel: string; wa: string };
+type PhoneInfo = {
+  display: string;
+  tel: string;
+  wa: string;
+  secondary?: { display: string; tel: string; wa: string };
+};
 
 const contactLabels = {
   title: { en: "How would you like to reach us?", el: "Πώς θέλετε να επικοινωνήσετε;" },
