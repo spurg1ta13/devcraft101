@@ -40,20 +40,40 @@ const ContactChoiceDialog = ({ onClose, lang, phone }: { onClose: () => void; la
         <div className="px-4 pb-3 space-y-2">
           <a
             href={`https://wa.me/${phone.wa}`}
-            onClick={() => { trackPhoneClick("contact-modal-whatsapp"); onClose(); }}
+            onClick={() => { trackPhoneClick("contact-modal-whatsapp-primary"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
-            <span className="font-semibold text-sm">{t(contactLabels.whatsapp, lang)}</span>
+            <span className="font-semibold text-sm">{t(contactLabels.whatsapp, lang)} — {phone.display}</span>
           </a>
+          {phone.secondary && (
+            <a
+              href={`https://wa.me/${phone.secondary.wa}`}
+              onClick={() => { trackPhoneClick("contact-modal-whatsapp-secondary"); onClose(); }}
+              className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-[#25D366]/10 border border-[#25D366]/20 text-foreground hover:bg-[#25D366]/20 active:scale-[0.97] transition-all min-h-[48px]"
+            >
+              <WhatsAppIcon className="h-5 w-5 text-[#25D366]" />
+              <span className="font-semibold text-sm">{t(contactLabels.whatsapp, lang)} — {phone.secondary.display}</span>
+            </a>
+          )}
           <a
             href={`tel:${phone.tel}`}
-            onClick={() => { trackPhoneClick("contact-modal-call"); onClose(); }}
+            onClick={() => { trackPhoneClick("contact-modal-call-primary"); onClose(); }}
             className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
           >
             <Phone className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-sm">{t(contactLabels.phoneCall, lang)}</span>
+            <span className="font-semibold text-sm">{t(contactLabels.phoneCall, lang)} — {phone.display}</span>
           </a>
+          {phone.secondary && (
+            <a
+              href={`tel:${phone.secondary.tel}`}
+              onClick={() => { trackPhoneClick("contact-modal-call-secondary"); onClose(); }}
+              className="flex items-center gap-3 w-full px-4 py-3.5 rounded-xl bg-primary/10 border border-primary/20 text-foreground hover:bg-primary/20 active:scale-[0.97] transition-all min-h-[48px]"
+            >
+              <Phone className="h-5 w-5 text-primary" />
+              <span className="font-semibold text-sm">{t(contactLabels.phoneCall, lang)} — {phone.secondary.display}</span>
+            </a>
+          )}
         </div>
         <div className="px-4 pb-4">
           <button
