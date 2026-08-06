@@ -78,12 +78,20 @@ const Footer = () => {
           <div>
             <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-gradient mb-5 md:mb-6">{t(f.getInTouch, lang)}</h2>
             <div className="flex flex-col gap-3">
-              <a href={`tel:${phone.tel}`} onClick={() => trackPhoneClick("footer")} className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label={`Call ${phone.display}`}>
+              <a href={`tel:${phone.tel}`} onClick={() => trackPhoneClick("footer-primary")} className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label={`Call ${phone.display}`}>
                 <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
                   <Phone className="h-4 w-4 text-primary" />
                 </div>
                 {phone.display}
               </a>
+              {phone.secondary && (
+                <a href={`tel:${phone.secondary.tel}`} onClick={() => trackPhoneClick("footer-secondary")} className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" aria-label={`Call ${phone.secondary.display}`}>
+                  <div className="w-10 h-10 rounded-lg bg-secondary border border-border/50 flex items-center justify-center group-hover/contact:border-primary/40 transition-all duration-300 shrink-0">
+                    <Phone className="h-4 w-4 text-primary" />
+                  </div>
+                  {phone.secondary.display}
+                </a>
+              )}
               <ObfuscatedEmail user="contact" domain="devcraft.gr" className="group/contact flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 min-h-[44px]" ariaLabel="Email {email}">
                 {(email) => (
                   <>
