@@ -8,12 +8,22 @@ export const PHONE_GR = {
   display: "+30 697 477 6057",
   tel: "+306974776057",
   wa: "306974776057",
+  secondary: {
+    display: "+30 697 583 5277",
+    tel: "+306975835277",
+    wa: "306975835277",
+  },
 };
 
 export const PHONE_DE = {
   display: "+49 152 52343208",
   tel: "+4915252343208",
   wa: "4915252343208",
+  secondary: {
+    display: "+30 697 583 5277",
+    tel: "+306975835277",
+    wa: "306975835277",
+  },
 };
 
 export function usePhoneNumber() {
