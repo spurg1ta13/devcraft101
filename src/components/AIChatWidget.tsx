@@ -77,6 +77,27 @@ const WELCOME: Record<string, { title: string; subtitle: string; placeholder: st
   },
 };
 
+const SUGGESTIONS: Record<string, { label: string; prompt: string }[]> = {
+  en: [
+    { label: "Build me a website", prompt: "What kind of websites and web applications do you build, and how does the process work?" },
+    { label: "AI solutions", prompt: "What AI solutions can you integrate into my business website?" },
+    { label: "QA & testing", prompt: "How do you handle quality assurance and testing to make sure my site is bug-free?" },
+    { label: "Meet the team", prompt: "Who is behind DevCraft and what expertise does your team have?" },
+  ],
+  el: [
+    { label: "Δημιουργία ιστοσελίδας", prompt: "Τι είδους ιστοσελίδες και web εφαρμογές φτιάχνετε και πώς λειτουργεί η διαδικασία;" },
+    { label: "Λύσεις AI", prompt: "Ποιες λύσεις AI μπορείτε να ενσωματώσετε στην ιστοσελίδα της επιχείρησής μου;" },
+    { label: "QA & δοκιμές", prompt: "Πώς διασφαλίζετε την ποιότητα και τον έλεγχο ώστε η ιστοσελίδα μου να μην έχει σφάλματα;" },
+    { label: "Η ομάδα σας", prompt: "Ποιοι είστε πίσω από το DevCraft και τι εμπειρία έχει η ομάδα σας;" },
+  ],
+  de: [
+    { label: "Website erstellen", prompt: "Welche Websites und Webanwendungen entwickeln Sie und wie läuft der Prozess ab?" },
+    { label: "KI-Lösungen", prompt: "Welche KI-Lösungen können Sie in meine Unternehmenswebsite integrieren?" },
+    { label: "QA & Testing", prompt: "Wie stellen Sie durch Qualitätssicherung und Tests sicher, dass meine Website fehlerfrei ist?" },
+    { label: "Das Team", prompt: "Wer steht hinter DevCraft und welche Expertise hat Ihr Team?" },
+  ],
+};
+
 async function streamChat(
   messages: Msg[],
   onDelta: (text: string) => void,
@@ -286,8 +307,8 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     }
   }, [loading, open]);
 
-  const send = async () => {
-    const text = input.trim();
+  const send = async (override?: string) => {
+    const text = (override ?? input).trim();
     if (!text || loading) return;
     setInput("");
     setError("");
@@ -414,10 +435,25 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
             className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
           >
             {messages.length === 0 && (
-              <div className="text-center py-8">
-                <p className="text-2xl mb-2">{w.title.split(" ").pop()}</p>
-                <p className="text-lg font-bold text-foreground mb-1">{w.title.replace(/\s*👋$/, "")}</p>
-                <p className="text-sm text-muted-foreground">{w.subtitle}</p>
+              <div className="py-6">
+                <div className="text-center">
+                  <p className="text-2xl mb-2">{w.title.split(" ").pop()}</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{w.title.replace(/\s*👋$/, "")}</p>
+                  <p className="text-sm text-muted-foreground">{w.subtitle}</p>
+                </div>
+                <div className="mt-5 grid gap-2">
+                  {(SUGGESTIONS[lang] || SUGGESTIONS.en).map((s) => (
+                    <button
+                      key={s.label}
+                      type="button"
+                      disabled={loading}
+                      onClick={() => send(s.prompt)}
+                      className="w-full text-left rounded-xl border border-primary/25 bg-secondary/70 px-4 py-2.5 text-sm text-foreground hover:border-primary/60 hover:bg-primary/10 active:scale-[0.99] transition-all disabled:opacity-50 min-h-[44px]"
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
