@@ -445,8 +445,8 @@ export const translations = {
       {
         title: { en: "1. Data Controller", el: "1. Υπεύθυνος Επεξεργασίας Δεδομένων", de: "1. Datenverantwortlicher" },
         content: {
-          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nGreece\nPhone: +49 152 52343208\n\nFor any data protection inquiries, you may contact us using the details above.`,
-          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΕλλάδα\nΤηλέφωνο: +49 152 52343208\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
+          en: `The data controller responsible for your personal data is:\n\n**DevCraft**\nGreece\nPhone: +30 697 583 5277\n\nFor any data protection inquiries, you may contact us using the details above.`,
+          el: `Ο υπεύθυνος επεξεργασίας των προσωπικών σας δεδομένων είναι:\n\n**DevCraft**\nΕλλάδα\nΤηλέφωνο: +30 697 583 5277\n\nΓια οποιοδήποτε ερώτημα σχετικά με την προστασία δεδομένων, μπορείτε να επικοινωνήσετε μαζί μας χρησιμοποιώντας τα παραπάνω στοιχεία.`,
           de: `Der für Ihre personenbezogenen Daten Verantwortliche ist:\n\n**DevCraft**\nGriechenland\nTelefon: +49 152 52343208\n\nFür alle Anfragen zum Datenschutz können Sie uns unter den oben genannten Kontaktdaten erreichen.`,
         },
       },
