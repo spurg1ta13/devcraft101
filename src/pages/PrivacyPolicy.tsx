@@ -8,6 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { translations, t } from "@/i18n/translations";
+import { usePhoneNumber } from "@/lib/phone";
 
 const PrivacyPolicy = () => {
   const { lang } = useLang();
