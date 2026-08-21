@@ -665,8 +665,8 @@ export const translations = {
       {
         title: { en: "10. Contact", el: "10. Επικοινωνία", de: "10. Kontakt" },
         content: {
-          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +49 152 52343208`,
-          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +49 152 52343208`,
+          en: `If you have any questions about these Terms of Service, please contact us:\n\n• **Phone**: +30 697 583 5277`,
+          el: `Εάν έχετε ερωτήσεις σχετικά με αυτούς τους Όρους Χρήσης, επικοινωνήστε μαζί μας:\n\n• **Τηλέφωνο**: +30 697 583 5277`,
           de: `Wenn Sie Fragen zu diesen Terms of Service haben, kontaktieren Sie uns bitte:\n\n• **Phone**: +49 152 52343208`,
         },
       },
