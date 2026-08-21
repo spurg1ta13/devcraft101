@@ -1,6 +1,6 @@
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { LanguageProvider } from "@/i18n/LanguageContext";
@@ -78,7 +78,7 @@ const App = () => (
     <LanguageProvider>
         <TooltipProvider>
           <BrowserRouter>
-            <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
+            <a href="#main-content" aria-label="Skip to main content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:font-mono focus:text-sm">
               Skip to main content
             </a>
             <ScrollToHash />
@@ -89,7 +89,7 @@ const App = () => (
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogArticle />} />
                 <Route path="/prices" element={<Prices />} />
-                <Route path="/plans" element={<Prices />} />
+                <Route path="/plans" element={<Navigate to="/prices" replace />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/admin/login" element={<AdminLogin />} />

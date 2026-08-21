@@ -38,7 +38,7 @@ const LanguageSelector = () => {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-label={`Language: ${current.label}`}
+        aria-label="Select language"
         className="flex items-center gap-1.5 font-mono text-sm uppercase tracking-[0.1em] text-muted-foreground hover:text-foreground transition-colors duration-300 bg-secondary border border-border/50 rounded-full px-3.5 py-2 hover:border-primary/40 min-h-[40px]"
       >
         <span className="text-base leading-none">{current.flag}</span>
