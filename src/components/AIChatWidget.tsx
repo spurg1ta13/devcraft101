@@ -552,6 +552,9 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
                 <p className="text-xs text-destructive bg-destructive/10 rounded-lg px-3 py-2 inline-block">{error}</p>
               </div>
             )}
+
+            {/* Spacer so the start of a short answer can still be pinned to the top */}
+            {messages.length > 0 && <div aria-hidden className="h-[70%] shrink-0" />}
           </div>
 
           {/* Input — always pinned to bottom */}
