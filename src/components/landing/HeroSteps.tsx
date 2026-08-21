@@ -47,7 +47,7 @@ const HeroSteps = () => {
                 strokeWidth={last ? 2.5 : 2}
               />
               <span
-                className={`font-mono uppercase tracking-[0.08em] text-xs sm:text-sm whitespace-nowrap ${
+                className={`font-mono uppercase tracking-[0.06em] sm:tracking-[0.08em] text-[11px] sm:text-sm text-center leading-tight break-words sm:whitespace-nowrap ${
                   last ? "text-foreground font-black" : "font-semibold"
                 }`}
               >
