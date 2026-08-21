@@ -226,9 +226,9 @@ export const translations = {
       {
         question: { en: "How long does a typical project take?", el: "Πόσο χρόνο απαιτεί ένα τυπικό έργο;", de: "Wie lange dauert ein typisches Projekt?" },
         answer: {
-          en: "Timelines vary based on scope. A landing page can be delivered in 1–2 weeks, while a full web application typically takes 4–12 weeks. We provide a detailed timeline estimate after the initial consultation.",
-          el: "Τα χρονοδιαγράμματα ποικίλλουν ανάλογα με το εύρος. Μια landing page μπορεί να παραδοθεί σε 1–2 εβδομάδες, ενώ μια πλήρης εφαρμογή ιστού χρειάζεται συνήθως 4–12 εβδομάδες. Παρέχουμε λεπτομερή εκτίμηση χρονοδιαγράμματος μετά την αρχική συνεδρία.",
-          de: "Timelines variieren je nach Umfang. Eine landing page kann in 1–2 Wochen geliefert werden, während eine full web application typischerweise 4–12 Wochen benötigt. Wir erstellen eine detaillierte Timeline-Schätzung nach der ersten Konsultation.",
+          en: "Timelines vary based on scope. A landing page can be delivered in a week, while a full web application typically takes 3–12 weeks. We provide a detailed timeline estimate after the initial consultation.",
+          el: "Τα χρονοδιαγράμματα ποικίλλουν ανάλογα με το εύρος. Μια landing page μπορεί να παραδοθεί σε μία εβδομάδα, ενώ μια πλήρης εφαρμογή ιστού χρειάζεται συνήθως 3–12 εβδομάδες. Παρέχουμε λεπτομερή εκτίμηση χρονοδιαγράμματος μετά την αρχική συνεδρία.",
+          de: "Timelines variieren je nach Umfang. Eine landing page kann in einer Woche geliefert werden, während eine full web application typischerweise 3–12 Wochen benötigt. Wir erstellen eine detaillierte Timeline-Schätzung nach der ersten Konsultation.",
         },
       },
       {
