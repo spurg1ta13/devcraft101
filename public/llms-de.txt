@@ -24,6 +24,7 @@ DevCraft liefert ein breites Spektrum an maßgeschneiderten Web-Lösungen:
 - **Buchungs- & Planungssysteme** — Individuelle Workflows für Termine, Vermietungen oder Veranstaltungsanmeldungen.
 - **Conversion-starke Landingpages** — Schnelle, SEO-optimierte Seiten, gezielt für Lead-Generierung entwickelt.
 - **Unternehmens- & Repräsentationsseiten** — Professionelle Websites für etablierte Firmen.
+- **Persönliche Portfolio- & CV-Websites** — Personal-Brand-Seiten für Freelancer und Fachkräfte, mit Projekt-Showcase, Skills-Bereichen, mehrsprachigen Inhalten und Kontakt-Tools (Beispiel: gretagreta.eu).
 - **Individuelle CRM- & interne Tools** — Maßgeschneiderte Dashboards zur Verwaltung von Daten und Teams.
 - **Digitale Gäste-Portale** — Hospitality auf neuem Niveau mit interaktiven Villen-Guides, Sofort-Service-Anfragen und kuratierten lokalen Erlebnissen.
 - **Spezialisierte Buchungssysteme** — Vereinfachte Reservierungsabläufe für hochwertige Vermietungen, von Yachtcharter bis Luxusausrüstung.
