@@ -78,6 +78,10 @@ DevCraft delivers a wide range of custom web solutions / Η DevCraft υλοπο�
 **EN:** Tailored dashboards for businesses to manage data and teams.
 **EL:** Εξατομικευμένα dashboards για επιχειρήσεις, για διαχείριση δεδομένων και ομάδων.
 
+### Personal Portfolio & CV Websites / Ιστοσελίδες Προσωπικού Portfolio
+**EN:** Personal brand pages for freelancers and professionals — project showcase, skills/CV sections, multilingual content, AI assistant and contact tools. Example: gretagreta.eu
+**EL:** Σελίδες προσωπικού brand για freelancers και επαγγελματίες — παρουσίαση έργων, ενότητες δεξιοτήτων/βιογραφικού, πολύγλωσσο περιεχόμενο, AI βοηθός και εργαλεία επικοινωνίας. Παράδειγμα: gretagreta.eu
+
 ### Digital Guest Portals / Ψηφιακά Portals Επισκεπτών
 **EN:** Elevate hospitality with interactive villa guides, instant service requests, and curated local experiences.
 **EL:** Αναβαθμίστε τη φιλοξενία με διαδραστικούς οδηγούς βίλας, άμεσα αιτήματα υπηρεσιών και επιμελημένες τοπικές εμπειρίες.

@@ -710,6 +710,15 @@ export const translations = {
         },
       },
       {
+        title: { en: "Personal Portfolio", el: "Προσωπικό Portfolio", de: "Persönliches Portfolio" },
+        category: { en: "Personal Portfolio Website", el: "Ιστοσελίδα Προσωπικού Portfolio", de: "Persönliche Portfolio-Website" },
+        description: {
+          en: "Multilingual personal portfolio website with AI assistant, project showcase and CV-style skills sections — a personal brand page built end to end.",
+          el: "Πολύγλωσση ιστοσελίδα προσωπικού portfolio με AI βοηθό, παρουσίαση έργων και ενότητες δεξιοτήτων τύπου βιογραφικού — σελίδα προσωπικού brand από την αρχή ως το τέλος.",
+          de: "Mehrsprachige persönliche Portfolio-Website mit AI-Assistent, Projekt-Showcase und CV-artigen Skills-Bereichen — eine Personal-Brand-Seite von A bis Z.",
+        },
+      },
+      {
         title: { en: "Cleanup SKG", el: "Cleanup SKG", de: "SKG bereinigt" },
         category: { en: "Business Website", el: "Επιχειρηματική Ιστοσελίδα", de: "Geschäfts-Website" },
         description: {
