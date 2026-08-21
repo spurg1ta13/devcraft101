@@ -435,10 +435,25 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
             className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
           >
             {messages.length === 0 && (
-              <div className="text-center py-8">
-                <p className="text-2xl mb-2">{w.title.split(" ").pop()}</p>
-                <p className="text-lg font-bold text-foreground mb-1">{w.title.replace(/\s*👋$/, "")}</p>
-                <p className="text-sm text-muted-foreground">{w.subtitle}</p>
+              <div className="py-6">
+                <div className="text-center">
+                  <p className="text-2xl mb-2">{w.title.split(" ").pop()}</p>
+                  <p className="text-lg font-bold text-foreground mb-1">{w.title.replace(/\s*👋$/, "")}</p>
+                  <p className="text-sm text-muted-foreground">{w.subtitle}</p>
+                </div>
+                <div className="mt-5 grid gap-2">
+                  {(SUGGESTIONS[lang] || SUGGESTIONS.en).map((s) => (
+                    <button
+                      key={s.label}
+                      type="button"
+                      disabled={loading}
+                      onClick={() => send(s.prompt)}
+                      className="w-full text-left rounded-xl border border-primary/25 bg-secondary/70 px-4 py-2.5 text-sm text-foreground hover:border-primary/60 hover:bg-primary/10 active:scale-[0.99] transition-all disabled:opacity-50 min-h-[44px]"
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
 
