@@ -77,6 +77,27 @@ const WELCOME: Record<string, { title: string; subtitle: string; placeholder: st
   },
 };
 
+const SUGGESTIONS: Record<string, { label: string; prompt: string }[]> = {
+  en: [
+    { label: "Build me a website", prompt: "What kind of websites and web applications do you build, and how does the process work?" },
+    { label: "AI solutions", prompt: "What AI solutions can you integrate into my business website?" },
+    { label: "QA & testing", prompt: "How do you handle quality assurance and testing to make sure my site is bug-free?" },
+    { label: "Meet the team", prompt: "Who is behind DevCraft and what expertise does your team have?" },
+  ],
+  el: [
+    { label: "Δημιουργία ιστοσελίδας", prompt: "Τι είδους ιστοσελίδες και web εφαρμογές φτιάχνετε και πώς λειτουργεί η διαδικασία;" },
+    { label: "Λύσεις AI", prompt: "Ποιες λύσεις AI μπορείτε να ενσωματώσετε στην ιστοσελίδα της επιχείρησής μου;" },
+    { label: "QA & δοκιμές", prompt: "Πώς διασφαλίζετε την ποιότητα και τον έλεγχο ώστε η ιστοσελίδα μου να μην έχει σφάλματα;" },
+    { label: "Η ομάδα σας", prompt: "Ποιοι είστε πίσω από το DevCraft και τι εμπειρία έχει η ομάδα σας;" },
+  ],
+  de: [
+    { label: "Website erstellen", prompt: "Welche Websites und Webanwendungen entwickeln Sie und wie läuft der Prozess ab?" },
+    { label: "KI-Lösungen", prompt: "Welche KI-Lösungen können Sie in meine Unternehmenswebsite integrieren?" },
+    { label: "QA & Testing", prompt: "Wie stellen Sie durch Qualitätssicherung und Tests sicher, dass meine Website fehlerfrei ist?" },
+    { label: "Das Team", prompt: "Wer steht hinter DevCraft und welche Expertise hat Ihr Team?" },
+  ],
+};
+
 async function streamChat(
   messages: Msg[],
   onDelta: (text: string) => void,
