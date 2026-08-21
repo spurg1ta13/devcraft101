@@ -381,9 +381,9 @@ export const translations = {
       de: "Wir sind ein engagiertes Team von Fachleuten mit 10 Jahren erfolgreicher Erfahrung in der IT-Branche. Ein Jahrzehnt der Arbeit an internationalen Projekten ermöglicht es uns, höchste Servicequalität zu garantieren.",
     },
     intro2: {
-      en: "Our core team consists of field experts: a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
-      el: "Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών. Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
-      de: "Unser Kernteam besteht aus Experten auf ihrem Gebiet: einem ergebnisorientierten Web Developer, einem zertifizierten UI/UX Designer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert. Wir streben danach, moderne, schnelle und sichere Produkte zu liefern, da wir glauben, dass das Endergebnis unsere beste Visitenkarte ist.",
+      en: "Our core team consists of field experts: a result-oriented Web developer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation. We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
+      el: "Η βασική μας ομάδα αποτελείται από ειδικούς του χώρου: έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών. Στόχος μας είναι να παραδίδουμε σύγχρονα, γρήγορα και ασφαλή προϊόντα, πιστεύοντας ότι το τελικό αποτέλεσμα είναι η καλύτερη επαγγελματική μας κάρτα.",
+      de: "Unser Kernteam besteht aus Experten auf ihrem Gebiet: einem ergebnisorientierten Web Developer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert. Wir streben danach, moderne, schnelle und sichere Produkte zu liefern, da wir glauben, dass das Endergebnis unsere beste Visitenkarte ist.",
     },
     intro2Prefix: {
       en: "Our core team consists of field experts: ",
@@ -391,9 +391,9 @@ export const translations = {
       de: "Unser Kernteam besteht aus Experten auf ihrem Gebiet:",
     },
     intro2Bold: {
-      en: "a result-oriented Web developer, a certified UI/UX designer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation.",
-      el: "έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν πιστοποιημένο σχεδιαστή UI/UX, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών.",
-      de: "einem ergebnisorientierten Web Developer, einem zertifizierten UI/UX Designer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert.",
+      en: "a result-oriented Web developer, an ISTQB-accredited tester, and a digital marketer focused on brand awareness and lead generation.",
+      el: "έναν Web developer με προσανατολισμό στα αποτελέσματα, έναν διαπιστευμένο ελεγκτή ISTQB και έναν digital marketer με έμφαση στην αναγνωρισιμότητα της μάρκας και στη δημιουργία υποψήφιων πελατών.",
+      de: "einem ergebnisorientierten Web Developer, einem ISTQB-akkreditierten Tester und einem Digital Marketer, der sich auf Brand Awareness und Lead Generation konzentriert.",
     },
     intro2Suffix: {
       en: " We strive to deliver modern, fast, and secure products, believing that the final result is our best calling card.",
@@ -414,12 +414,6 @@ export const translations = {
         en: "Result-oriented full-stack developer with deep expertise in modern frameworks and cloud-native architecture.",
         el: "Προσανατολισμένος σε αποτελέσματα full-stack developer με βαθιά εξειδίκευση σε σύγχρονα frameworks και cloud-native αρχιτεκτονική.",
         de: "Ergebnisorientierter Full-Stack Developer mit tiefgreifendem Fachwissen in modernen Frameworks und Cloud-Native Architektur.",
-      },
-      designer: { en: "UI/UX Designer", el: "Σχεδιαστής UI/UX", de: "UI/UX Designer" },
-      designerDesc: {
-        en: "Certified designer crafting intuitive interfaces that turn complex workflows into seamless user experiences.",
-        el: "Πιστοποιημένος σχεδιαστής που δημιουργεί διαισθητικές διεπαφές μετατρέποντας σύνθετες ροές εργασίας σε απρόσκοπτες εμπειρίες χρήστη.",
-        de: "Zertifizierter Designer, der intuitive Schnittstellen entwirft, die komplexe Workflows in nahtlose User Experiences verwandeln.",
       },
       qa: { en: "QA Engineer", el: "Μηχανικός QA", de: "QA-Ingenieur" },
       qaDesc: {

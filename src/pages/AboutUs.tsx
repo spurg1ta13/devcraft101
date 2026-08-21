@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
-const teamIcons = [Code2, Palette, ShieldCheck, Megaphone];
+const teamIcons = [Code2, ShieldCheck, Megaphone];
 
 const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
   const isNumber = /^\d+/.test(value);
@@ -70,7 +70,6 @@ const AboutUs = () => {
 
   const teamData = [
     { roleKey: "webDev" as const, descKey: "webDevDesc" as const },
-    { roleKey: "designer" as const, descKey: "designerDesc" as const },
     { roleKey: "qa" as const, descKey: "qaDesc" as const },
     { roleKey: "marketer" as const, descKey: "marketerDesc" as const },
   ];
@@ -83,8 +82,8 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={{ en: "About Us | DevCraft — Our Team & Expertise", el: "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας" }}
-        description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, UI/UX design, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, σχεδιασμό UI/UX και πιστοποιημένη διασφάλιση ποιότητας ISTQB." }}
+        title={{ en: "About Us | DevCraft — Our Team & Expertise", el: "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας", de: "Über uns | DevCraft — Unser Team & unsere Expertise" }}
+        description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, digital marketing, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, ψηφιακό μάρκετινγκ και πιστοποιημένη διασφάλιση ποιότητας ISTQB.", de: "Lernen Sie das DevCraft-Team kennen — über 10 Jahre Erfahrung in Webentwicklung, digitalem Marketing und ISTQB-zertifizierter Qualitätssicherung." }}
         canonical="/about"
       />
       <script
