@@ -79,7 +79,7 @@ const SEOHead = ({
       <html lang={lang} />
       <title>{resolvedTitle}</title>
       <meta name="description" content={resolvedDesc} />
-      <meta name="keywords" content={resolve(DEFAULT_KEYWORDS, lang)} />
+      <meta name="keywords" content={resolve(keywords, lang)} />
       <link rel="canonical" href={fullUrl} />
       <link rel="icon" type="image/png" sizes="512x512" href="/favicon-v2.png" />
       <link rel="apple-touch-icon" href="/favicon-v2.png" />
