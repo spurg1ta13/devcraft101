@@ -7,6 +7,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const projectUrls = [
   "https://lotusbloom.gr",
+  "https://gretagreta.eu",
   "https://www.cleanupskg.gr",
   "https://luxe-ellada-page.lovable.app/",
   "https://dental-care-greek.lovable.app/gallery",
@@ -15,6 +16,7 @@ const projectUrls = [
 
 const projectScreenshots = [
   "/portfolio/lotus-bloom.webp",
+  "/portfolio/personal-portfolio.webp",
   "/portfolio/cleanup-skg.webp",
   "/portfolio/luxe-ellada.webp",
   "/portfolio/dental-care.webp",
