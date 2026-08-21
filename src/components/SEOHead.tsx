@@ -5,10 +5,12 @@ import { BreadcrumbSchema } from "@/components/StructuredData";
 interface SEOHeadProps {
   title?: { en: string; el: string; de?: string } | string;
   description?: { en: string; el: string; de?: string } | string;
+  keywords?: { en: string; el: string; de?: string } | string;
   canonical?: string;
   type?: string;
   noindex?: boolean;
   ogImage?: string;
+
   articleMeta?: {
     publishedTime?: string;
     modifiedTime?: string;
