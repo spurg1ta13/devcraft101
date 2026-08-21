@@ -7,7 +7,7 @@ const icons = [Code2, ShieldCheck, Palette];
 const techsList = [
   ["WEB", "MOBILE", "CROSS-PLATFORM", "OS AGNOSTIC"],
   ["ISTQB", "QA", "BUG-FREE", "SECURITY"],
-  ["FIGMA", "CUSTOM UI", "UX AUDIT", "DESIGN SYSTEMS"],
+  ["CUSTOM UI", "UX AUDIT", "DESIGN SYSTEMS"],
 ];
 
 const ShowcaseSection = () => {
