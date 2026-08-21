@@ -187,3 +187,5 @@ All articles are available in English and Greek / Όλα τα άρθρα είν�
 16. Mobile-First Website Design for Greece (Connectivity Reality): https://devcraft.gr/blog/mobile-first-website-greece-connectivity
 17. Digital Marketing in Greece 2026 — Why Every Business Needs a Strategy Now: https://devcraft.gr/blog/digital-marketing-greece-2026-why-businesses-need-it
 18. SEO vs Google Ads for Greek Small Businesses in 2026: https://devcraft.gr/blog/seo-google-ads-greek-small-business-2026
+19. Green Code & EU CSRD — Sustainable Web Development in 2026: https://devcraft.gr/blog/green-code-eu-csrd-sustainable-web-development
+20. Why a Cheap WordPress Template Ends Up Costing More Than Custom Web Development (true cost of cheap templates: plugin subscriptions, security exposure, slow Core Web Vitals, lost enquiries, and eventual rebuild vs a custom build's 3-year total cost of ownership): https://devcraft.gr/blog/true-cost-of-cheap-wordpress-templates
