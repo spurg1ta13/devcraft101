@@ -82,10 +82,25 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={{ en: "About Us | DevCraft — Our Team & Expertise", el: "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας", de: "Über uns | DevCraft — Unser Team & unsere Expertise" }}
-        description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, digital marketing, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, ψηφιακό μάρκετινγκ και πιστοποιημένη διασφάλιση ποιότητας ISTQB.", de: "Lernen Sie das DevCraft-Team kennen — über 10 Jahre Erfahrung in Webentwicklung, digitalem Marketing und ISTQB-zertifizierter Qualitätssicherung." }}
+        title={{
+          en: "About Us | DevCraft Team & Expertise",
+          el: "Σχετικά με εμάς | Η Ομάδα DevCraft",
+          de: "Über uns | Das DevCraft-Team",
+        }}
+        description={{
+          en: "Meet DevCraft: 10+ years building web apps, with ISTQB-certified quality assurance, AI engineering and digital marketing under one small senior team.",
+          el: "Γνωρίστε την DevCraft: 10+ χρόνια σε web εφαρμογές, με πιστοποιημένο ISTQB QA, AI engineering και ψηφιακό μάρκετινγκ από μια μικρή έμπειρη ομάδα.",
+          de: "DevCraft kennenlernen: über 10 Jahre Web-Apps, mit ISTQB-zertifizierter QA, KI-Engineering und digitalem Marketing aus einem kleinen Senior-Team.",
+        }}
+        keywords={{
+          en: "about DevCraft, web development team, ISTQB certified tester, AI engineering team, senior React developers, digital marketing team",
+          el: "σχετικά με DevCraft, ομάδα κατασκευής ιστοσελίδων, πιστοποιημένος ISTQB tester, ομάδα AI, React developers",
+          de: "über DevCraft, webentwicklung team, ISTQB zertifizierter tester, KI engineering team, React entwickler",
+        }}
         canonical="/about"
+        type="profile"
       />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

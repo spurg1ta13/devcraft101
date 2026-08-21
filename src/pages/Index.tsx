@@ -37,7 +37,21 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead canonical="/" />
+      <SEOHead
+        canonical="/"
+        type="website"
+        title={{
+          en: "Custom Web Development & AI Solutions | DevCraft",
+          el: "Κατασκευή Ιστοσελίδων & Λύσεις AI | DevCraft",
+          de: "Individuelle Webentwicklung & KI-Lösungen | DevCraft",
+        }}
+        description={{
+          en: "Bespoke websites, web apps and AI tools with ISTQB-certified QA. Human strategy plus AI efficiency — your project delivered fast, worldwide.",
+          el: "Custom ιστοσελίδες, web εφαρμογές και AI εργαλεία με πιστοποιημένο ISTQB QA. Ανθρώπινη στρατηγική και ταχύτητα AI, για πελάτες παγκοσμίως.",
+          de: "Maßgeschneiderte Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA. Menschliche Strategie plus KI-Effizienz — schnell und weltweit.",
+        }}
+      />
+
       <Suspense fallback={null}>
         <StructuredDataBundle />
       </Suspense>

@@ -80,10 +80,24 @@ const Prices = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={{ en: "Prices & Plans | DevCraft — Global Web Development", el: "Τιμές & Πακέτα | DevCraft — Παγκόσμια Ανάπτυξη Ιστοσελίδων", de: "Preise & Pakete | DevCraft — Globale Webentwicklung" }}
-        description={{ en: "DevCraft web development pricing: MINI, MIDI, MAXI & ELITE plans from €600. ISTQB-certified QA, responsive design, multilingual support.", el: "Τιμοκατάλογος DevCraft: πακέτα MINI, MIDI, MAXI & ELITE από €600. Πιστοποιημένο QA ISTQB, responsive design, πολύγλωσση υποστήριξη." }}
+        title={{
+          en: "Plans & Packages | DevCraft Web Development",
+          el: "Πακέτα & Υπηρεσίες | DevCraft Κατασκευή Ιστοσελίδων",
+          de: "Pakete & Leistungen | DevCraft Webentwicklung",
+        }}
+        description={{
+          en: "Compare DevCraft plans for websites, web apps and AI tools — MINI to ELITE, each with ISTQB-certified QA, responsive design and multilingual support.",
+          el: "Συγκρίνετε τα πακέτα DevCraft για ιστοσελίδες, web εφαρμογές και AI εργαλεία — MINI έως ELITE, με ISTQB QA και responsive πολύγλωσσο σχεδιασμό.",
+          de: "DevCraft-Pakete für Websites, Web-Apps und KI-Tools im Vergleich — MINI bis ELITE, mit ISTQB-zertifizierter QA und mehrsprachigem Responsive-Design.",
+        }}
+        keywords={{
+          en: "web development plans, website packages, custom web app development, ISTQB QA testing, multilingual website, web development quote",
+          el: "πακέτα κατασκευής ιστοσελίδων, υπηρεσίες web development, custom web εφαρμογές, ISTQB QA, πολύγλωσση ιστοσελίδα",
+          de: "webentwicklung pakete, website leistungen, individuelle web-app entwicklung, ISTQB QA testing, mehrsprachige website",
+        }}
         canonical="/prices"
       />
+
       <OfferCatalogSchema />
       <Navbar />
       <main>

@@ -5,10 +5,12 @@ import { BreadcrumbSchema } from "@/components/StructuredData";
 interface SEOHeadProps {
   title?: { en: string; el: string; de?: string } | string;
   description?: { en: string; el: string; de?: string } | string;
+  keywords?: { en: string; el: string; de?: string } | string;
   canonical?: string;
   type?: string;
   noindex?: boolean;
   ogImage?: string;
+
   articleMeta?: {
     publishedTime?: string;
     modifiedTime?: string;
@@ -44,12 +46,14 @@ const resolve = (val: { en: string; el: string; de?: string } | string, lang: st
 const SEOHead = ({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESC,
+  keywords = DEFAULT_KEYWORDS,
   canonical = "/",
   type = "website",
   noindex = false,
   ogImage,
   articleMeta,
 }: SEOHeadProps) => {
+
   const { lang } = useLang();
   // Strip any ?lang param the user might have on the canonical so it stays clean.
   const cleanPath = canonical.split("?")[0];
@@ -75,7 +79,7 @@ const SEOHead = ({
       <html lang={lang} />
       <title>{resolvedTitle}</title>
       <meta name="description" content={resolvedDesc} />
-      <meta name="keywords" content={resolve(DEFAULT_KEYWORDS, lang)} />
+      <meta name="keywords" content={resolve(keywords, lang)} />
       <link rel="canonical" href={fullUrl} />
       <link rel="icon" type="image/png" sizes="512x512" href="/favicon-v2.png" />
       <link rel="apple-touch-icon" href="/favicon-v2.png" />
