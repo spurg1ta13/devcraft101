@@ -12,6 +12,7 @@ import { usePhoneNumber } from "@/lib/phone";
 
 const PrivacyPolicy = () => {
   const { lang } = useLang();
+  const phone = usePhoneNumber();
   const p = translations.privacy;
   const a = translations.about;
 
