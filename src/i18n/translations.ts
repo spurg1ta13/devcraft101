@@ -24,6 +24,13 @@ export const translations = {
     },
     explore: { en: "Let's talk", el: "Ας μιλήσουμε", de: "Sprechen wir!" },
     chatWithAI: { en: "Chat with AI assistant", el: "Συνομιλία με AI βοηθό", de: "Mit KI-Assistenten chatten" },
+    steps: {
+      title: { en: "How we work", el: "Πώς δουλεύουμε", de: "So arbeiten wir" },
+      s1: { en: "You Imagine", el: "Εσείς Οραματίζεστε", de: "Sie träumen" },
+      s2: { en: "We Engineer", el: "Εμείς Κατασκευάζουμε", de: "Wir entwickeln" },
+      s3: { en: "We Launch", el: "Εμείς Λανσάρουμε", de: "Wir starten" },
+      s4: { en: "You Scale", el: "Εσείς Μεγαλώνετε", de: "Sie wachsen" },
+    },
   },
 
   // Marquee
