@@ -5,14 +5,9 @@ import { getCountryCode } from "@/lib/geo";
 const DE_COUNTRIES = ["DE", "AT", "CH", "LI", "LU", "BE"];
 
 export const PHONE_GR = {
-  display: "+30 697 477 6057",
-  tel: "+306974776057",
-  wa: "306974776057",
-  secondary: {
-    display: "+30 697 583 5277",
-    tel: "+306975835277",
-    wa: "306975835277",
-  },
+  display: "+30 697 583 5277",
+  tel: "+306975835277",
+  wa: "306975835277",
 };
 
 export const PHONE_DE = {
