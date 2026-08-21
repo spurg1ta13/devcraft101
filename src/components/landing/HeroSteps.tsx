@@ -15,7 +15,7 @@ const HeroSteps = () => {
 
   return (
     <ol
-      className="mb-6 md:mb-8 flex flex-wrap items-center gap-x-2 gap-y-2 sm:gap-x-3"
+      className="mb-6 md:mb-8 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-3"
       aria-label={t(steps.title, lang)}
     >
       {labels.map((label, i) => {
@@ -26,13 +26,13 @@ const HeroSteps = () => {
             {i > 0 && (
               <span
                 aria-hidden="true"
-                className="h-px w-3 sm:w-8 bg-gradient-to-r from-border/40 to-primary/50 opacity-0 animate-step-in"
+                className="hidden sm:inline-block h-px w-3 sm:w-8 bg-gradient-to-r from-border/40 to-primary/50 opacity-0 animate-step-in"
                 style={{ animationDelay: `${i * 0.55 - 0.25}s` }}
               />
             )}
             <div
               className={[
-                "group inline-flex items-center gap-1.5 sm:gap-2 rounded-full border px-2.5 sm:px-4 py-1.5 sm:py-2 backdrop-blur-sm opacity-0 animate-step-in transition-all duration-300 hover:-translate-y-0.5",
+                "group w-full sm:w-auto justify-center sm:justify-start inline-flex items-center gap-1.5 sm:gap-2 rounded-full border px-2.5 sm:px-4 py-1.5 sm:py-2 backdrop-blur-sm opacity-0 animate-step-in transition-all duration-300 hover:-translate-y-0.5",
                 last
                   ? "border-primary/50 bg-gradient-to-r from-primary/20 to-primary/5 shadow-glow hover:border-primary"
                   : "border-border/40 bg-background/40 hover:border-primary/50 hover:bg-primary/10",
