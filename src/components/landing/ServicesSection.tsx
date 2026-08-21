@@ -44,7 +44,7 @@ const ServicesSection = () => {
               }`}
               style={{ transitionDelay: inView ? `${i * 100}ms` : "0ms" }}
             >
-              <div className="service-row link-sweep relative py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
+              <div className="service-row relative py-6 md:py-10 flex items-center gap-4 md:gap-12 cursor-pointer group hover:shadow-[0_0_40px_-8px_hsl(38_100%_55%/0.25)] rounded-2xl min-h-[72px]">
                 <span className="service-number font-mono text-xs text-muted-foreground/60 transition-colors duration-500 w-8 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
