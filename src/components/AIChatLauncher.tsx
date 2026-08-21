@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { MessageCircle } from "lucide-react";
+import { consumeChatOpenRequest } from "@/lib/chat";
 
 // Heavy chat panel loaded ONLY when user clicks the button
 const AIChatWidget = lazy(() => import("./AIChatWidget"));
@@ -29,6 +30,13 @@ const AIChatLauncher = () => {
       setOpen(true);
     };
     window.addEventListener("devcraft:open-chat", openChat);
+
+    // If a "Chat with AI" button was clicked before this launcher mounted
+    // (it's gated behind InteractionGate), consume the pending request now.
+    if (consumeChatOpenRequest()) {
+      openChat();
+    }
+
     return () => window.removeEventListener("devcraft:open-chat", openChat);
   }, []);
 
