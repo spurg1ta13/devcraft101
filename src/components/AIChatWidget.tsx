@@ -280,15 +280,11 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     if (last.role === "user") {
       // User just sent a message — scroll to bottom so they see loading indicator
       scrollToBottom();
-    } else if (last.role === "assistant" && isStreamingRef.current) {
-      // On first assistant chunk — align start of message to top
-      if (assistantMsgTopRef.current === null) {
-        assistantMsgTopRef.current = 1;
-        scrollToAssistantStart();
-      } else {
-        // Subsequent chunks — keep scrolling to bottom so latest text stays visible
-        scrollToBottom();
-      }
+    } else if (last.role === "assistant") {
+      // Always keep the start of the answer pinned to the top so it is
+      // readable from the beginning without scrolling up.
+      assistantMsgTopRef.current = 1;
+      scrollToAssistantStart();
     }
   }, [messages, scrollToBottom, scrollToAssistantStart]);
   useEffect(() => {
