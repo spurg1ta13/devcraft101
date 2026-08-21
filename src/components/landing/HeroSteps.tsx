@@ -22,7 +22,7 @@ const HeroSteps = () => {
         const Icon = ICONS[i];
         const last = i === 3;
         return (
-          <li key={i} className="flex items-center gap-2 sm:gap-3">
+          <li key={i} className="flex w-full sm:w-auto items-center gap-2 sm:gap-3">
             {i > 0 && (
               <span
                 aria-hidden="true"
