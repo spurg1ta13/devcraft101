@@ -4,6 +4,17 @@ import { getCountryCode } from "@/lib/geo";
 
 const DE_COUNTRIES = ["DE", "AT", "CH", "LI", "LU", "BE"];
 
+export type PhoneInfo = {
+  display: string;
+  tel: string;
+  wa: string;
+  secondary?: {
+    display: string;
+    tel: string;
+    wa: string;
+  };
+};
+
 export const PHONE_GR = {
   display: "+30 697 583 5277",
   tel: "+306975835277",
