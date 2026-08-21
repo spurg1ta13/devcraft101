@@ -32,7 +32,7 @@ const HeroSteps = () => {
             )}
             <div
               className={[
-                "group w-full sm:w-auto justify-center sm:justify-start inline-flex items-center gap-2 sm:gap-2.5 rounded-full border px-4 sm:px-5 py-2 sm:py-2.5 backdrop-blur-md opacity-0 animate-step-in transition-all duration-300 hover:-translate-y-1",
+                "group w-full sm:w-auto justify-center sm:justify-start inline-flex items-center gap-2 sm:gap-2.5 rounded-full border px-3.5 sm:px-5 py-2 sm:py-2.5 backdrop-blur-md opacity-0 animate-step-in transition-all duration-300 hover:-translate-y-1",
                 last
                   ? "border-primary/80 bg-gradient-to-r from-primary/35 to-primary/15 shadow-glow ring-1 ring-primary/70 hover:border-primary hover:ring-primary"
                   : "border-border/80 bg-secondary/70 text-foreground/90 hover:border-primary/80 hover:bg-primary/15 hover:text-foreground",
