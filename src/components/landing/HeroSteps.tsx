@@ -15,7 +15,7 @@ const HeroSteps = () => {
 
   return (
     <ol
-      className="mt-16 md:mt-24 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-4"
+      className="mt-16 md:mt-24 flex flex-col gap-2.5 sm:flex sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-4"
       aria-label={t(steps.title, lang)}
     >
       {labels.map((label, i) => {
