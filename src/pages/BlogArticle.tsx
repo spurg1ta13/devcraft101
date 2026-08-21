@@ -16,6 +16,13 @@ const Footer = lazy(() => import("@/components/landing/Footer"));
 const BlogContactForm = lazy(() => import("@/components/blog/BlogContactForm"));
 
 const BlogArticleSchema = ({ article, lang }: { article: typeof blogArticles[0]; lang: string }) => {
+  // The build-time prerendered head already carries a BlogPosting node so that
+  // non-JS crawlers see it. Once React takes over we render the language-aware
+  // version, so drop the static one to avoid duplicate structured data.
+  useEffect(() => {
+    document.querySelectorAll('script[type="application/ld+json"][data-prerendered="true"]').forEach((el) => el.remove());
+  }, []);
+
   const wordCount = article.content[lang as "en" | "el"]
     ?.join(" ")
     .split(/\s+/)
