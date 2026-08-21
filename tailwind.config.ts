@@ -80,13 +80,22 @@ export default {
           "0%": { transform: "scale(1)", opacity: "0.6" },
           "100%": { transform: "scale(1.35)", opacity: "0" },
         },
-
+        "step-in": {
+          "0%": { opacity: "0", transform: "translateY(6px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "step-glow": {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.7", transform: "scale(1.12)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "cta-pulse": "cta-pulse 2s ease-in-out infinite",
         "cta-ring": "cta-ring 2s ease-out infinite",
+        "step-in": "step-in 0.5s ease-out forwards",
+        "step-glow": "step-glow 2.4s ease-in-out 2.4s infinite",
       },
     },
   },
