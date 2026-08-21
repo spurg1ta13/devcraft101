@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
+import { routeMeta } from "@/seo/routeMeta";
 import PlanBookingDialog from "@/components/landing/PlanBookingDialog";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -79,24 +80,7 @@ const Prices = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <SEOHead
-        title={{
-          en: "Plans & Packages | DevCraft Web Development",
-          el: "Πακέτα & Υπηρεσίες | DevCraft Κατασκευή Ιστοσελίδων",
-          de: "Pakete & Leistungen | DevCraft Webentwicklung",
-        }}
-        description={{
-          en: "Compare DevCraft plans for websites, web apps and AI tools — MINI to ELITE, each with ISTQB-certified QA, responsive design and multilingual support.",
-          el: "Συγκρίνετε τα πακέτα DevCraft για ιστοσελίδες, web εφαρμογές και AI εργαλεία — MINI έως ELITE, με ISTQB QA και responsive πολύγλωσσο σχεδιασμό.",
-          de: "DevCraft-Pakete für Websites, Web-Apps und KI-Tools im Vergleich — MINI bis ELITE, mit ISTQB-zertifizierter QA und mehrsprachigem Responsive-Design.",
-        }}
-        keywords={{
-          en: "web development plans, website packages, custom web app development, ISTQB QA testing, multilingual website, web development quote",
-          el: "πακέτα κατασκευής ιστοσελίδων, υπηρεσίες web development, custom web εφαρμογές, ISTQB QA, πολύγλωσση ιστοσελίδα",
-          de: "webentwicklung pakete, website leistungen, individuelle web-app entwicklung, ISTQB QA testing, mehrsprachige website",
-        }}
-        canonical="/prices"
-      />
+      <SEOHead {...routeMeta["/prices"]} canonical="/prices" />
 
       <OfferCatalogSchema />
       <Navbar />

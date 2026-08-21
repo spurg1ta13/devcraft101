@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import Navbar from "@/components/landing/Navbar";
 import SEOHead from "@/components/SEOHead";
+import { routeMeta } from "@/seo/routeMeta";
 import { useLang } from "@/i18n/LanguageContext";
 import { t } from "@/i18n/translations";
 import { blogTranslations, blogArticles } from "@/i18n/blogTranslations";
@@ -39,25 +40,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title={{
-          en: "Blog | Web Development, AI & QA Insights",
-          el: "Ιστολόγιο | Ανάπτυξη Ιστοσελίδων, AI & QA",
-          de: "Blog | Webentwicklung, KI & QA Einblicke",
-        }}
-        description={{
-          en: "Practical articles on custom web development, AI-driven builds, ISTQB quality assurance, performance and green code from the DevCraft team.",
-          el: "Πρακτικά άρθρα για custom ανάπτυξη ιστοσελίδων, AI, διασφάλιση ποιότητας ISTQB, ταχύτητα και green code από την ομάδα DevCraft.",
-          de: "Praxisnahe Artikel zu individueller Webentwicklung, KI-gestützter Umsetzung, ISTQB-Qualitätssicherung, Performance und Green Code von DevCraft.",
-        }}
-        keywords={{
-          en: "web development blog, AI development articles, ISTQB QA testing blog, website performance, green code, CSRD, SEO for websites",
-          el: "blog κατασκευής ιστοσελίδων, άρθρα AI, ISTQB QA, ταχύτητα ιστοσελίδας, green code, SEO",
-          de: "webentwicklung blog, KI artikel, ISTQB QA testing, website performance, green code, CSRD, SEO",
-        }}
-        canonical="/blog"
-        type="website"
-      />
+      <SEOHead {...routeMeta["/blog"]} canonical="/blog" />
 
       <Navbar />
       <main id="main-content" className="pt-32 lg:pt-28 pb-20">

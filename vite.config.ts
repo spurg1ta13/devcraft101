@@ -3,6 +3,7 @@ import fs from "fs";
 import react from "@vitejs/plugin-react-swc";
 import { defineConfig, type Plugin } from "vite";
 import { componentTagger } from "lovable-tagger";
+import { writePrerenderedPages } from "./scripts/prerender-heads";
 
 /**
  * Production HTML optimizations:
@@ -42,6 +43,28 @@ const optimizeHtml = (): Plugin => {
 };
 
 
+/**
+ * Emit a static HTML file per route with that route's head tags baked in, so
+ * non-JS social crawlers get accurate per-page Open Graph previews. See
+ * scripts/prerender-heads.ts.
+ */
+const prerenderHeads = (): Plugin => {
+  let outDir = "dist";
+  return {
+    name: "prerender-heads",
+    apply: "build",
+    enforce: "post",
+    configResolved(c) {
+      outDir = path.resolve(c.root, c.build.outDir || "dist");
+    },
+    closeBundle() {
+      const { written, skipped } = writePrerenderedPages(outDir);
+      for (const note of skipped) this.warn(note);
+      this.info?.(`prerender-heads: wrote ${written} static route document(s)`);
+    },
+  };
+};
+
 
 export default defineConfig(({ mode }) => ({
   server: {
@@ -55,6 +78,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     optimizeHtml(),
+    prerenderHeads(),
   ].filter(Boolean),
   resolve: {
     alias: {

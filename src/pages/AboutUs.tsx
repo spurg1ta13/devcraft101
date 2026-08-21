@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import SEOHead from "@/components/SEOHead";
+import { routeMeta } from "@/seo/routeMeta";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
@@ -81,25 +82,7 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <SEOHead
-        title={{
-          en: "About Us | DevCraft Team & Expertise",
-          el: "Σχετικά με εμάς | Η Ομάδα DevCraft",
-          de: "Über uns | Das DevCraft-Team",
-        }}
-        description={{
-          en: "Meet DevCraft: 10+ years building web apps, with ISTQB-certified quality assurance, AI engineering and digital marketing under one small senior team.",
-          el: "Γνωρίστε την DevCraft: 10+ χρόνια σε web εφαρμογές, με πιστοποιημένο ISTQB QA, AI engineering και ψηφιακό μάρκετινγκ από μια μικρή έμπειρη ομάδα.",
-          de: "DevCraft kennenlernen: über 10 Jahre Web-Apps, mit ISTQB-zertifizierter QA, KI-Engineering und digitalem Marketing aus einem kleinen Senior-Team.",
-        }}
-        keywords={{
-          en: "about DevCraft, web development team, ISTQB certified tester, AI engineering team, senior React developers, digital marketing team",
-          el: "σχετικά με DevCraft, ομάδα κατασκευής ιστοσελίδων, πιστοποιημένος ISTQB tester, ομάδα AI, React developers",
-          de: "über DevCraft, webentwicklung team, ISTQB zertifizierter tester, KI engineering team, React entwickler",
-        }}
-        canonical="/about"
-        type="profile"
-      />
+      <SEOHead {...routeMeta["/about"]} canonical="/about" />
 
       <script
         type="application/ld+json"

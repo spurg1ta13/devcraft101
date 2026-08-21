@@ -3,6 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import MarqueeSection from "@/components/landing/MarqueeSection";
 import SEOHead from "@/components/SEOHead";
+import { routeMeta } from "@/seo/routeMeta";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 import { loadAbout, loadServices, loadPricing, loadShowcase, loadPortfolio, loadProcess, loadFAQ, loadCTA, loadFooter } from "@/lib/lazyLanding";
 
@@ -37,20 +38,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        canonical="/"
-        type="website"
-        title={{
-          en: "Custom Web Development & AI Solutions | DevCraft",
-          el: "Κατασκευή Ιστοσελίδων & Λύσεις AI | DevCraft",
-          de: "Individuelle Webentwicklung & KI-Lösungen | DevCraft",
-        }}
-        description={{
-          en: "Bespoke websites, web apps and AI tools with ISTQB-certified QA. Human strategy plus AI efficiency — your project delivered fast, worldwide.",
-          el: "Custom ιστοσελίδες, web εφαρμογές και AI εργαλεία με πιστοποιημένο ISTQB QA. Ανθρώπινη στρατηγική και ταχύτητα AI, για πελάτες παγκοσμίως.",
-          de: "Maßgeschneiderte Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA. Menschliche Strategie plus KI-Effizienz — schnell und weltweit.",
-        }}
-      />
+      <SEOHead {...routeMeta["/"]} canonical="/" />
 
       <Suspense fallback={null}>
         <StructuredDataBundle />
