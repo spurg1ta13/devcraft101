@@ -82,8 +82,8 @@ const AboutUs = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title={{ en: "About Us | DevCraft — Our Team & Expertise", el: "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας" }}
-        description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, digital marketing, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, ψηφιακό μάρκετινγκ και πιστοποιημένη διασφάλιση ποιότητας ISTQB." }}
+        title={{ en: "About Us | DevCraft — Our Team & Expertise", el: "Σχετικά με εμάς | DevCraft — Η Ομάδα & Εξειδίκευσή μας", de: "Über uns | DevCraft — Unser Team & unsere Expertise" }}
+        description={{ en: "Meet the DevCraft team — 10+ years of experience in web development, digital marketing, and ISTQB-certified quality assurance.", el: "Γνωρίστε την ομάδα DevCraft — 10+ χρόνια εμπειρίας στην ανάπτυξη ιστοσελίδων, ψηφιακό μάρκετινγκ και πιστοποιημένη διασφάλιση ποιότητας ISTQB.", de: "Lernen Sie das DevCraft-Team kennen — über 10 Jahre Erfahrung in Webentwicklung, digitalem Marketing und ISTQB-zertifizierter Qualitätssicherung." }}
         canonical="/about"
       />
       <script
