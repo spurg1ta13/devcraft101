@@ -1931,8 +1931,8 @@ export const blogArticles: BlogArticle[] = [
     },
     metaDescription: {
       en: "The true cost of cheap templates: plugin fees, security fixes, slow speed and lost leads often exceed the price of custom web development within three years.",
-      el: "Το πραγματικό κόστος των φθηνών templates: plugins, διορθώσεις ασφαλείας, χαμηλή ταχύτητα και χαμένοι πελάτες ξεπερνούν συχνά το κόστος custom ανάπτυξης σε τρία χρόνια.",
-      de: "Die wahren Kosten billiger Templates: Plugin-Gebühren, Sicherheitsfixes, langsame Ladezeiten und verlorene Leads übersteigen oft die Kosten individueller Webentwicklung.",
+      el: "Το πραγματικό κόστος των φθηνών templates: plugins, ασφάλεια, αργή ταχύτητα και χαμένοι πελάτες ξεπερνούν το κόστος custom κατασκευής σε 3 χρόνια.",
+      de: "Die wahren Kosten billiger Templates: Plugin-Abos, Sicherheitsfixes, langsame Ladezeit und verlorene Leads übersteigen individuelle Entwicklung.",
     },
     date: "2026-08-21",
     readTime: { en: "10", el: "10", de: "10" },
