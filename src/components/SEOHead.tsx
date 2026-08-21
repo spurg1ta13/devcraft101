@@ -46,12 +46,14 @@ const resolve = (val: { en: string; el: string; de?: string } | string, lang: st
 const SEOHead = ({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESC,
+  keywords = DEFAULT_KEYWORDS,
   canonical = "/",
   type = "website",
   noindex = false,
   ogImage,
   articleMeta,
 }: SEOHeadProps) => {
+
   const { lang } = useLang();
   // Strip any ?lang param the user might have on the canonical so it stays clean.
   const cleanPath = canonical.split("?")[0];
