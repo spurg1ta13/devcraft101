@@ -30,7 +30,7 @@ const DEFAULT_TITLE = {
 const DEFAULT_DESC = {
   en: "Custom software solutions — websites, web apps & AI tools built with ISTQB-certified QA and bespoke UI/UX design. Based in Thessaloniki, Greece — serving clients worldwide.",
   el: "Κατασκευή ιστοσελίδων με πιστοποιημένο ISTQB QA και σχεδιασμό UI/UX. Custom sites, web εφαρμογές και AI εργαλεία από τη Θεσσαλονίκη για όλο τον κόσμο.",
-  de: "Maßgeschneiderte Software-Lösungen — Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und individuellem UI/UX-Design. Sitz in Thessaloniki, Griechenland — weltweit tätig.",
+  de: "Individuelle Software: Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und UI/UX-Design. Aus Thessaloniki, weltweit für Kunden tätig.",
 };
 const DEFAULT_KEYWORDS = {
   en: "custom software development, web development Thessaloniki, web development Greece, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, bespoke web design",
