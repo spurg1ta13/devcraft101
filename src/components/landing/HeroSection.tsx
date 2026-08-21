@@ -40,8 +40,10 @@ const HeroSection = () => {
         <div className="mb-3 md:mb-4">
           <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
             {t(hero.line1, lang)}
-            <span className="block text-gradient italic">{t(hero.line2, lang)}</span>
-            <span className="text-gradient">.</span>
+            <span className="block text-gradient italic">
+              {t(hero.line2, lang)}<span className="not-italic">.</span>
+            </span>
+
           </h1>
         </div>
         <div className="mb-6 md:mb-8">
