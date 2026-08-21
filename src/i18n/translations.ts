@@ -415,12 +415,6 @@ export const translations = {
         el: "Προσανατολισμένος σε αποτελέσματα full-stack developer με βαθιά εξειδίκευση σε σύγχρονα frameworks και cloud-native αρχιτεκτονική.",
         de: "Ergebnisorientierter Full-Stack Developer mit tiefgreifendem Fachwissen in modernen Frameworks und Cloud-Native Architektur.",
       },
-      designer: { en: "UI/UX Designer", el: "Σχεδιαστής UI/UX", de: "UI/UX Designer" },
-      designerDesc: {
-        en: "Certified designer crafting intuitive interfaces that turn complex workflows into seamless user experiences.",
-        el: "Πιστοποιημένος σχεδιαστής που δημιουργεί διαισθητικές διεπαφές μετατρέποντας σύνθετες ροές εργασίας σε απρόσκοπτες εμπειρίες χρήστη.",
-        de: "Zertifizierter Designer, der intuitive Schnittstellen entwirft, die komplexe Workflows in nahtlose User Experiences verwandeln.",
-      },
       qa: { en: "QA Engineer", el: "Μηχανικός QA", de: "QA-Ingenieur" },
       qaDesc: {
         en: "ISTQB-accredited tester ensuring every product meets the highest standards of stability and security.",

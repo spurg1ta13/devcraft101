@@ -1,4 +1,4 @@
-import { Code2, Palette, ShieldCheck, Megaphone } from "lucide-react";
+import { Code2, ShieldCheck, Megaphone } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { useInView } from "@/hooks/useInView";
@@ -17,7 +17,6 @@ const AboutSection = () => {
   // Team roles intentionally English-only (brand decision)
   const team = [
     { Icon: Code2, role: "Web Developer" },
-    { Icon: Palette, role: "UI/UX Designer" },
     { Icon: ShieldCheck, role: "QA Engineer" },
     { Icon: Megaphone, role: "Digital Marketer" },
   ];
@@ -38,8 +37,8 @@ const AboutSection = () => {
             name: lang === "el" ? "Σχετικά με την DevCraft" : "About DevCraft",
             description:
               lang === "el"
-                ? "Ομάδα επαγγελματιών με 10+ χρόνια εμπειρίας σε ανάπτυξη ιστοσελίδων, σχεδιασμό UI/UX και πιστοποιημένες δοκιμές ISTQB."
-                : "A team of professionals with 10+ years of experience in web development, UI/UX design, and ISTQB-certified testing.",
+                ? "Ομάδα επαγγελματιών με 10+ χρόνια εμπειρίας σε ανάπτυξη ιστοσελίδων, ψηφιακό μάρκετινγκ και πιστοποιημένες δοκιμές ISTQB."
+                : "A team of professionals with 10+ years of experience in web development, digital marketing, and ISTQB-certified testing.",
             url: "https://devcraft.gr/#about",
             mainEntity: {
               "@type": "Organization",
@@ -116,7 +115,7 @@ const AboutSection = () => {
 
         {/* Team roles */}
         <div
-          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mt-12 md:mt-16 pt-10 md:pt-14 border-t border-border/30 transition-all duration-700 delay-300 ${
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 mt-12 md:mt-16 pt-10 md:pt-14 border-t border-border/30 transition-all duration-700 delay-300 ${
             inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
