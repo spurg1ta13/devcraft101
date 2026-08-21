@@ -33,9 +33,9 @@ const DEFAULT_DESC = {
   de: "Individuelle Software: Websites, Web-Apps und KI-Tools mit ISTQB-zertifizierter QA und UI/UX-Design. Aus Thessaloniki, weltweit für Kunden tätig.",
 };
 const DEFAULT_KEYWORDS = {
-  en: "custom software development, web development Thessaloniki, web development Greece, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, bespoke web design",
-  el: "κατασκευή ιστοσελίδων Θεσσαλονίκη, κατασκευή ιστοσελίδων Ελλάδα, δημιουργία ιστοσελίδων Θεσσαλονίκη, σχεδιασμός ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, ανάπτυξη ιστοσελίδων, custom λογισμικό, ποιοτικός έλεγχος ISTQB, UI/UX design Θεσσαλονίκη",
-  de: "individuelle webentwicklung, maßgeschneiderte software, webentwicklung Thessaloniki Griechenland, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler, TypeScript entwickler, webentwicklung weltweit",
+  en: "custom software development, web development Thessaloniki, web development Greece, custom website development, AI web development, ISTQB QA testing, UI/UX design, React developer, TypeScript developer, personal portfolio website, CV website design, bespoke web design",
+  el: "κατασκευή ιστοσελίδων Θεσσαλονίκη, κατασκευή ιστοσελίδων Ελλάδα, δημιουργία ιστοσελίδων Θεσσαλονίκη, σχεδιασμός ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, ανάπτυξη ιστοσελίδων, custom λογισμικό, ποιοτικός έλεγχος ISTQB, UI/UX design Θεσσαλονίκη, ιστοσελίδα προσωπικού portfolio, προσωπική ιστοσελίδα βιογραφικού",
+  de: "individuelle webentwicklung, maßgeschneiderte software, webentwicklung Thessaloniki Griechenland, KI webentwicklung, ISTQB QA testing, UI/UX design, React entwickler, TypeScript entwickler, persönliche portfolio website, CV website, webentwicklung weltweit",
 };
 
 const resolve = (val: { en: string; el: string; de?: string } | string, lang: string): string =>
