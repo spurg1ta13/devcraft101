@@ -35,14 +35,10 @@ const HeroSection = () => {
 
       <div className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6">
         {/* Static text — zero animations on initial load */}
-        <div className="mb-2 md:mb-3">
-          <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-            {t(hero.line1, lang)}
-          </h1>
-        </div>
         <div className="mb-3 md:mb-4">
           <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
-            <span className="text-gradient italic">{t(hero.line2, lang)}</span>
+            {t(hero.line1, lang)}
+            <span className="block text-gradient italic">{t(hero.line2, lang)}</span>
             <span className="text-gradient">.</span>
           </h1>
         </div>
