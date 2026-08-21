@@ -35,7 +35,6 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent" />
 
       <div className="container relative z-10 flex-1 flex flex-col justify-center px-5 sm:px-6">
-        <HeroSteps />
         {/* Static text — zero animations on initial load */}
         <div className="mb-3 md:mb-4">
           <h1 className="text-[clamp(2.25rem,8vw,9rem)] font-black leading-[0.85] tracking-[-0.05em]">
@@ -78,6 +77,8 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
+
+        <HeroSteps />
       </div>
       {dialogLoaded && (
         <Suspense fallback={null}>
