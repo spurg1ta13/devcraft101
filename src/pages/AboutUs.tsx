@@ -8,7 +8,7 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 
-const teamIcons = [Code2, Palette, ShieldCheck, Megaphone];
+const teamIcons = [Code2, ShieldCheck, Megaphone];
 
 const CounterStat = ({ value, label, delay }: { value: string; label: string; delay: number }) => {
   const isNumber = /^\d+/.test(value);
@@ -70,7 +70,6 @@ const AboutUs = () => {
 
   const teamData = [
     { roleKey: "webDev" as const, descKey: "webDevDesc" as const },
-    { roleKey: "designer" as const, descKey: "designerDesc" as const },
     { roleKey: "qa" as const, descKey: "qaDesc" as const },
     { roleKey: "marketer" as const, descKey: "marketerDesc" as const },
   ];
