@@ -553,8 +553,6 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
               </div>
             )}
 
-            {/* Spacer so the start of a short answer can still be pinned to the top */}
-            {messages.length > 0 && <div aria-hidden className="h-[70%] shrink-0" />}
           </div>
 
           {/* Input — always pinned to bottom */}
