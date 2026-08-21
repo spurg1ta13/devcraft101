@@ -134,11 +134,11 @@ const OrganizationSchema = () => {
       },
     ],
     email: "contact@devcraft.gr",
-    telephone: "+306974776057",
+    telephone: "+306975835277",
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+306974776057",
+        telephone: "+306975835277",
         email: "contact@devcraft.gr",
         contactType: "customer service",
         availableLanguage: ["English", "Greek", "German"],
@@ -146,7 +146,7 @@ const OrganizationSchema = () => {
       },
       {
         "@type": "ContactPoint",
-        telephone: "+306974776057",
+        telephone: "+306975835277",
         email: "contact@devcraft.gr",
         contactType: "sales",
         availableLanguage: ["Greek", "English"],

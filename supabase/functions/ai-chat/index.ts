@@ -138,7 +138,7 @@ Full plan details: https://devcraft.gr/plans
 - Cross-platform: products work flawlessly on iOS, Android, Windows, macOS
 
 ## Contact
-- Phone: +30 697 477 6057
+- Phone: +30 697 583 5277 (Greek/English), +49 152 52343208 (German)
 - They respond within 48 hours
 
 ## STRICT RULES

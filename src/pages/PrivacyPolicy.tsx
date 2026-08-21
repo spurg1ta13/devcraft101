@@ -8,9 +8,11 @@ import SEOHead from "@/components/SEOHead";
 import { useLang } from "@/i18n/LanguageContext";
 import ObfuscatedEmail from "@/components/ObfuscatedEmail";
 import { translations, t } from "@/i18n/translations";
+import { usePhoneNumber } from "@/lib/phone";
 
 const PrivacyPolicy = () => {
   const { lang } = useLang();
+  const phone = usePhoneNumber();
   const p = translations.privacy;
   const a = translations.about;
 
@@ -73,7 +75,7 @@ const PrivacyPolicy = () => {
               </div>
               {"contactInfo" in section && section.contactInfo && (
                 <div className="mt-4 flex flex-col gap-2 text-sm md:text-base text-muted-foreground">
-                  <p>• <strong className="text-foreground/80 font-semibold">{lang === "el" ? "Τηλέφωνο" : "Phone"}</strong>: <a href="tel:+306974776057" className="text-primary hover:underline transition-colors">+30 697 477 6057</a></p>
+                  <p>• <strong className="text-foreground/80 font-semibold">{lang === "el" ? "Τηλέφωνο" : "Phone"}</strong>: <a href={`tel:${phone.tel}`} className="text-primary hover:underline transition-colors">{phone.display}</a></p>
                   <p>• <strong className="text-foreground/80 font-semibold">Email</strong>: <ObfuscatedEmail user="contact" domain="devcraft.gr" className="text-primary hover:underline transition-colors" /></p>
                 </div>
               )}
