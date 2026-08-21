@@ -402,7 +402,7 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
           open ? "sm:scale-100" : "sm:scale-90"
         }`}
       >
-        <div className="flex h-full min-h-0 flex-col sm:h-[500px]">
+        <div className="flex h-full min-h-0 flex-col sm:h-auto sm:max-h-[500px]">
           {/* Header */}
           <div className="bg-[hsl(220_20%_11%)] px-5 pt-[max(1rem,env(safe-area-inset-top))] pb-4 border-b border-primary/20 shrink-0">
             <div className="flex items-center gap-3">
@@ -425,10 +425,10 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
             </div>
           </div>
 
-          {/* Messages — flex-1 fills remaining space between header and input */}
+          {/* Messages — fills mobile viewport; shrinks to content on desktop with a max height */}
           <div
             ref={scrollRef}
-            className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:h-[min(360px,calc(100vh-280px))]"
+            className="flex-1 min-h-0 overflow-y-auto overscroll-contain px-4 py-4 space-y-3 sm:flex-initial sm:max-h-[360px]"
           >
             {messages.length === 0 && (
               <div className="py-6">
