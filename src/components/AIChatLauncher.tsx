@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, lazy, Suspense } from "react";
 import { MessageCircle } from "lucide-react";
+import { consumeChatOpenRequest } from "@/lib/chat";
 
 // Heavy chat panel loaded ONLY when user clicks the button
 const AIChatWidget = lazy(() => import("./AIChatWidget"));
