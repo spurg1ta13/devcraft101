@@ -58,9 +58,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 self-start sm:self-auto">
               <button
                 type="button"
-                onClick={() =>
-                  window.dispatchEvent(new CustomEvent("devcraft:open-chat"))
-                }
+                onClick={() => requestChatOpen()}
                 className="group relative inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 bg-primary/10 backdrop-blur-sm text-foreground font-bold text-xs sm:text-sm px-5 sm:px-7 py-3 sm:py-4 min-h-[44px] sm:min-h-[48px] font-mono uppercase tracking-[0.1em] hover:bg-primary/20 hover:border-primary/60 transition-all hover-press"
                 aria-label={t(hero.chatWithAI, lang)}
               >
