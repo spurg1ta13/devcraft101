@@ -30,6 +30,13 @@ const AIChatLauncher = () => {
       setOpen(true);
     };
     window.addEventListener("devcraft:open-chat", openChat);
+
+    // If a "Chat with AI" button was clicked before this launcher mounted
+    // (it's gated behind InteractionGate), consume the pending request now.
+    if (consumeChatOpenRequest()) {
+      openChat();
+    }
+
     return () => window.removeEventListener("devcraft:open-chat", openChat);
   }, []);
 
