@@ -16,6 +16,7 @@ const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const Prices = lazy(() => import("./pages/Prices"));
+const ThessalonikiWebDevelopment = lazy(() => import("./pages/ThessalonikiWebDevelopment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
@@ -90,6 +91,7 @@ const App = () => (
                 <Route path="/blog/:slug" element={<BlogArticle />} />
                 <Route path="/prices" element={<Prices />} />
                 <Route path="/plans" element={<Navigate to="/prices" replace />} />
+                <Route path="/kataskevi-istoselidon-thessaloniki" element={<ThessalonikiWebDevelopment />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/admin/login" element={<AdminLogin />} />

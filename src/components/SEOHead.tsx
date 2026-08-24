@@ -10,6 +10,12 @@ interface SEOHeadProps {
   type?: string;
   noindex?: boolean;
   ogImage?: string;
+  /**
+   * For single-language pages (e.g. the Greek local landing page): emit only
+   * that locale's hreflang instead of advertising en/el/de variants that do
+   * not exist.
+   */
+  localeOnly?: "en" | "el" | "de";
 
   articleMeta?: {
     publishedTime?: string;
@@ -51,17 +57,19 @@ const SEOHead = ({
   type = "website",
   noindex = false,
   ogImage,
+  localeOnly,
   articleMeta,
 }: SEOHeadProps) => {
 
-  const { lang } = useLang();
+  const { lang: selectedLang } = useLang();
+  const lang = localeOnly ?? selectedLang;
   // Strip any ?lang param the user might have on the canonical so it stays clean.
   const cleanPath = canonical.split("?")[0];
   const fullUrl = `${BASE_URL}${cleanPath}`;
   const enUrl = `${fullUrl}?lang=en`;
   const elUrl = `${fullUrl}?lang=el`;
   const deUrl = `${fullUrl}?lang=de`;
-  const currentUrl = lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
+  const currentUrl = localeOnly ? fullUrl : lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
   const resolvedOgImage = ogImage
@@ -98,9 +106,9 @@ const SEOHead = ({
       <meta property="og:description" content={resolvedDesc} />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:locale" content={lang === "el" ? "el_GR" : lang === "de" ? "de_DE" : "en_US"} />
-      {lang !== "en" && <meta property="og:locale:alternate" content="en_US" />}
-      {lang !== "el" && <meta property="og:locale:alternate" content="el_GR" />}
-      {lang !== "de" && <meta property="og:locale:alternate" content="de_DE" />}
+      {!localeOnly && lang !== "en" && <meta property="og:locale:alternate" content="en_US" />}
+      {!localeOnly && lang !== "el" && <meta property="og:locale:alternate" content="el_GR" />}
+      {!localeOnly && lang !== "de" && <meta property="og:locale:alternate" content="de_DE" />}
       <meta property="og:image" content={resolvedOgImage} />
       <meta property="og:image:width" content="1920" />
       <meta property="og:image:height" content="1080" />
@@ -113,18 +121,19 @@ const SEOHead = ({
       {articleMeta?.tags?.map((tag, i) => (
         <meta key={i} property="article:tag" content={tag} />
       ))}
-      <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="en-US" href={enUrl} />
-      <link rel="alternate" hrefLang="en-GB" href={enUrl} />
-      <link rel="alternate" hrefLang="el" href={elUrl} />
-      <link rel="alternate" hrefLang="el-GR" href={elUrl} />
-      <link rel="alternate" hrefLang="de" href={deUrl} />
-      <link rel="alternate" hrefLang="de-DE" href={deUrl} />
-      <link rel="alternate" hrefLang="de-AT" href={deUrl} />
-      <link rel="alternate" hrefLang="de-CH" href={deUrl} />
-      <link rel="alternate" hrefLang="de-LI" href={deUrl} />
-      <link rel="alternate" hrefLang="de-LU" href={deUrl} />
-      <link rel="alternate" hrefLang="de-BE" href={deUrl} />
+      {!localeOnly && <link rel="alternate" hrefLang="en" href={enUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="en-US" href={enUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="en-GB" href={enUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="el" href={elUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="el-GR" href={elUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-DE" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-AT" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-CH" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-LI" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-LU" href={deUrl} />}
+      {!localeOnly && <link rel="alternate" hrefLang="de-BE" href={deUrl} />}
+      {localeOnly === "el" && <link rel="alternate" hrefLang="el-GR" href={fullUrl} />}
       <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
     </>

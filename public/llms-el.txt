@@ -137,6 +137,7 @@ Portfolio: https://devcraft.gr/#projects
 Επικοινωνία: https://devcraft.gr/#contact
 Σχετικά με εμάς: https://devcraft.gr/about
 Τιμοκατάλογος: https://devcraft.gr/prices
+Κατασκευή Ιστοσελίδων Θεσσαλονίκη (ελληνική σελίδα τοπικών υπηρεσιών): https://devcraft.gr/kataskevi-istoselidon-thessaloniki
 Blog: https://devcraft.gr/blog
 
 ## Ιστολόγιο

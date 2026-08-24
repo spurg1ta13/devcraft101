@@ -39,6 +39,7 @@ const Footer = () => {
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
                 { label: t(nav.blog, lang), href: "/blog" },
+                { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: "/kataskevi-istoselidon-thessaloniki" },
               ].map((item) => (
                 <Link
                   key={item.label}
