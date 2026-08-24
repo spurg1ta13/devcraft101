@@ -16,6 +16,7 @@ const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const Prices = lazy(() => import("./pages/Prices"));
+const ThessalonikiWebDevelopment = lazy(() => import("./pages/ThessalonikiWebDevelopment"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const AdminLogin = lazy(() => import("./pages/AdminLogin"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
