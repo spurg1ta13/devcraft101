@@ -102,4 +102,28 @@ export const routeMeta: Record<string, RouteMeta> = {
       de: "webentwicklung blog, KI artikel, ISTQB QA testing, website performance, green code, CSRD, SEO",
     },
   },
+  /**
+   * Greek-language local landing page. Single-language on purpose, so the
+   * localized fields intentionally carry the same Greek copy — the build bakes
+   * the `en` value into the static head and this page is Greek for everyone.
+   */
+  "/kataskevi-istoselidon-thessaloniki": {
+    path: "/kataskevi-istoselidon-thessaloniki",
+    type: "website",
+    title: {
+      en: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevCraft",
+      el: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevCraft",
+      de: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη | DevCraft",
+    },
+    description: {
+      en: "Custom κατασκευή ιστοσελίδων στη Θεσσαλονίκη με React, πιστοποιημένο ISTQB QA και πολύγλωσσο SEO. Χωρίς templates. Ζητήστε δωρεάν συνάντηση γνωριμίας.",
+      el: "Custom κατασκευή ιστοσελίδων στη Θεσσαλονίκη με React, πιστοποιημένο ISTQB QA και πολύγλωσσο SEO. Χωρίς templates. Ζητήστε δωρεάν συνάντηση γνωριμίας.",
+      de: "Custom κατασκευή ιστοσελίδων στη Θεσσαλονίκη με React, πιστοποιημένο ISTQB QA και πολύγλωσσο SEO. Χωρίς templates. Ζητήστε δωρεάν συνάντηση γνωριμίας.",
+    },
+    keywords: {
+      en: "κατασκευή ιστοσελίδων Θεσσαλονίκη, δημιουργία ιστοσελίδων Θεσσαλονίκη, σχεδιασμός ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, κατασκευή ιστοσελίδας, εταιρική ιστοσελίδα Θεσσαλονίκη, ISTQB QA",
+      el: "κατασκευή ιστοσελίδων Θεσσαλονίκη, δημιουργία ιστοσελίδων Θεσσαλονίκη, σχεδιασμός ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, κατασκευή ιστοσελίδας, εταιρική ιστοσελίδα Θεσσαλονίκη, ISTQB QA",
+      de: "κατασκευή ιστοσελίδων Θεσσαλονίκη, δημιουργία ιστοσελίδων Θεσσαλονίκη, web development Θεσσαλονίκη, εταιρική ιστοσελίδα Θεσσαλονίκη, ISTQB QA",
+    },
+  },
 };
