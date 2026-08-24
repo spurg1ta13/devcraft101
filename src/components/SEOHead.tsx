@@ -10,6 +10,12 @@ interface SEOHeadProps {
   type?: string;
   noindex?: boolean;
   ogImage?: string;
+  /**
+   * For single-language pages (e.g. the Greek local landing page): emit only
+   * that locale's hreflang instead of advertising en/el/de variants that do
+   * not exist.
+   */
+  localeOnly?: "en" | "el" | "de";
 
   articleMeta?: {
     publishedTime?: string;
