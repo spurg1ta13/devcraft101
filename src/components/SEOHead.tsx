@@ -57,17 +57,19 @@ const SEOHead = ({
   type = "website",
   noindex = false,
   ogImage,
+  localeOnly,
   articleMeta,
 }: SEOHeadProps) => {
 
-  const { lang } = useLang();
+  const { lang: selectedLang } = useLang();
+  const lang = localeOnly ?? selectedLang;
   // Strip any ?lang param the user might have on the canonical so it stays clean.
   const cleanPath = canonical.split("?")[0];
   const fullUrl = `${BASE_URL}${cleanPath}`;
   const enUrl = `${fullUrl}?lang=en`;
   const elUrl = `${fullUrl}?lang=el`;
   const deUrl = `${fullUrl}?lang=de`;
-  const currentUrl = lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
+  const currentUrl = localeOnly ? fullUrl : lang === "el" ? elUrl : lang === "de" ? deUrl : enUrl;
   const resolvedTitle = resolve(title, lang);
   const resolvedDesc = resolve(description, lang);
   const resolvedOgImage = ogImage
