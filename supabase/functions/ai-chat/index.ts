@@ -26,7 +26,7 @@ DevCraft's core team consists of field experts who collaborate closely on every 
 - **Full-Stack Web Developer** — Result-oriented engineer specializing in React, TypeScript, Node.js, and cloud-native architecture. Writes clean, scalable code and builds everything from minimalist landing pages to bespoke enterprise platforms.
 - **ISTQB-Accredited QA Engineer** — Certified tester ensuring the highest standards of stability and security. Tests every feature across desktop and mobile (Windows, macOS, iOS, Android) before launch, enforcing a zero-defect policy.
 - **Digital Marketer** — Focused on brand awareness and lead generation, helping clients reach their target audience and convert visitors into customers.
-- **Digital Marketer** — Focused on brand awareness and lead generation, helping clients reach their target audience and convert visitors into customers.
+- **AI Solutions Specialist** — Designs and integrates AI automations, LLM-powered workflows, and data-driven tools that reduce manual work and unlock new capabilities.
 
 The team is small, senior, and hands-on — clients always work directly with the experts building their product, never with account managers or junior staff. Every project has a dedicated project lead as a single point of contact, with weekly progress updates and shared project boards for full transparency.
 
