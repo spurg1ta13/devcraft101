@@ -39,7 +39,6 @@ const Footer = () => {
               {[
                 { label: t(nav.aboutUs, lang), href: "/about" },
                 { label: t(nav.blog, lang), href: "/blog" },
-                { label: "Κατασκευή Ιστοσελίδων Θεσσαλονίκη", href: "/kataskevi-istoselidon-thessaloniki" },
               ].map((item) => (
                 <Link
                   key={item.label}
@@ -50,6 +49,10 @@ const Footer = () => {
                   <ArrowUpRight className="h-3 w-3 opacity-0 group-hover/link:opacity-100 transition-opacity duration-300 text-primary" />
                 </Link>
               ))}
+              {/* Kept for SEO crawlability, hidden from visual UI */}
+              <Link to="/kataskevi-istoselidon-thessaloniki" className="sr-only">
+                Κατασκευή Ιστοσελίδων Θεσσαλονίκη
+              </Link>
             </nav>
           </div>
 
