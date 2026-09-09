@@ -1,6 +1,6 @@
 # DevCraft — Custom Software Solutions | Web Development Agency
 
-> Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences. Your 1-month web project, delivered in just 1 week. Serving clients worldwide.
+> Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences. Your 1-month web project, delivered in just several days. Serving clients worldwide.
 
 > Greek version: https://devcraft.gr/llms-el.txt
 > German version: https://devcraft.gr/llms-de.txt
