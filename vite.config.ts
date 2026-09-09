@@ -150,7 +150,8 @@ export default defineConfig(({ mode }) => ({
     mode === "development" && componentTagger(),
     optimizeHtml(),
     prerenderHeads(),
-  ].filter(Boolean),
+    fingerprintPublicAssets(),
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
