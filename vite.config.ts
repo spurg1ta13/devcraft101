@@ -65,6 +65,77 @@ const prerenderHeads = (): Plugin => {
   };
 };
 
+/**
+ * Fingerprint long-lived public files (fonts, hero + portfolio images) into
+ * /assets/<name>.<hash>.<ext> and rewrite every reference in the built HTML,
+ * CSS and JS. Hosting only serves immutable Cache-Control for hashed /assets/
+ * files, so PSI flagged the /public copies with "no cache lifetime".
+ * Originals stay in place as a fallback for any external/hard-coded link.
+ */
+const fingerprintPublicAssets = (): Plugin => {
+  let outDir = "dist";
+  const targets = [
+    "fonts/outfit-latin.woff2",
+    "fonts/outfit-latin-ext.woff2",
+    "fonts/spacemono-400-latin.woff2",
+    "fonts/spacemono-700-latin.woff2",
+    "hero-banner.webp",
+    "hero-banner-mobile.webp",
+  ];
+  return {
+    name: "fingerprint-public-assets",
+    apply: "build",
+    enforce: "post",
+    configResolved(c) {
+      outDir = path.resolve(c.root, c.build.outDir || "dist");
+    },
+    async closeBundle() {
+      const { createHash } = await import("crypto");
+      const portfolioDir = path.join(outDir, "portfolio");
+      if (fs.existsSync(portfolioDir)) {
+        for (const f of fs.readdirSync(portfolioDir)) targets.push(`portfolio/${f}`);
+      }
+
+      const map = new Map<string, string>();
+      const assetsDir = path.join(outDir, "assets");
+      fs.mkdirSync(assetsDir, { recursive: true });
+
+      for (const rel of targets) {
+        const src = path.join(outDir, rel);
+        if (!fs.existsSync(src)) continue;
+        const buf = fs.readFileSync(src);
+        const hash = createHash("sha256").update(buf).digest("hex").slice(0, 8);
+        const ext = path.extname(rel);
+        const base = path.basename(rel, ext);
+        const hashed = `${base}.${hash}${ext}`;
+        fs.writeFileSync(path.join(assetsDir, hashed), buf);
+        map.set(`/${rel}`, `/assets/${hashed}`);
+      }
+      if (!map.size) return;
+
+      const walk = (dir: string): string[] =>
+        fs.readdirSync(dir, { withFileTypes: true }).flatMap((e) => {
+          const p = path.join(dir, e.name);
+          return e.isDirectory() ? walk(p) : [p];
+        });
+
+      for (const file of walk(outDir)) {
+        if (!/\.(html|css|js)$/.test(file)) continue;
+        let text = fs.readFileSync(file, "utf8");
+        let changed = false;
+        for (const [from, to] of map) {
+          if (text.includes(from)) {
+            text = text.split(from).join(to);
+            changed = true;
+          }
+        }
+        if (changed) fs.writeFileSync(file, text);
+      }
+      this.info?.(`fingerprint-public-assets: hashed ${map.size} file(s)`);
+    },
+  };
+};
+
 
 export default defineConfig(({ mode }) => ({
   server: {
