@@ -1,6 +1,6 @@
 # DevCraft — Maßgeschneiderte Software-Lösungen | Webentwicklungsagentur
 
-> Wir verbinden menschliche Strategie mit KI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern. Ihr 1-Monats-Webprojekt – in nur 1 Woche umgesetzt. Weltweit tätig.
+> Wir verbinden menschliche Strategie mit KI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern. Ihr 1-Monats-Webprojekt – in nur wenigen Tagen umgesetzt. Weltweit tätig.
 
 > Englische Version: https://devcraft.gr/llms.txt
 > Griechische Version: https://devcraft.gr/llms-el.txt

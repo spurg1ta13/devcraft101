@@ -18,9 +18,9 @@ export const translations = {
     line2: { en: "ordinary", el: "το συνηθισμένο", de: "gewöhnlich" },
     line3: { en: "We build them 4x faster.", el: "Τα χτίζουμε 4x πιο γρήγορα.", de: "Wir erstellen sie 4x schneller." },
     description: {
-      en: "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.\nYour 1-month web project, delivered in just 1 week.",
-      el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις 1 εβδομάδα.",
-      de: "Kombinieren Sie menschliche Strategie mit AI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern.\nIhr 1-monatiges Webprojekt, geliefert in nur 1 Woche.",
+      en: "Combine Human Strategy with AI Efficiency to deliver bespoke, ISTQB-certified digital experiences.\nYour 1-month web project, delivered in just several days.",
+      el: "Συνδυάζουμε Ανθρώπινη Στρατηγική με AI Αποδοτικότητα για εξατομικευμένες, ISTQB-πιστοποιημένες ψηφιακές εμπειρίες.\nΤο web project 1 μήνα, παραδίδεται σε μόλις λίγες μέρες.",
+      de: "Kombinieren Sie menschliche Strategie mit AI-Effizienz, um maßgeschneiderte, ISTQB-zertifizierte digitale Erlebnisse zu liefern.\nIhr 1-monatiges Webprojekt, geliefert in nur wenigen Tagen.",
     },
     explore: { en: "Let's talk", el: "Ας μιλήσουμε", de: "Sprechen wir!" },
     chatWithAI: { en: "Chat with AI assistant", el: "Συνομιλία με AI βοηθό", de: "Mit KI-Assistenten chatten" },
