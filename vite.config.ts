@@ -151,6 +151,8 @@ export default defineConfig(({ mode }) => ({
     optimizeHtml(),
     prerenderHeads(),
     fingerprintPublicAssets(),
+  ].filter(Boolean),
+
 
   resolve: {
     alias: {
