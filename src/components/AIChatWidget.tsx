@@ -615,6 +615,29 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
               </div>
             ))}
 
+            {/* GDPR consent YES / NO buttons */}
+            {(messages[messages.length - 1]?.kind === "consent-prompt" ||
+              messages[messages.length - 1]?.kind === "consent-denied") && (
+              <div className="flex justify-start gap-2">
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleConsent(true)}
+                  className="rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold uppercase tracking-[0.15em] px-5 py-2.5 hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 min-h-[44px]"
+                >
+                  {consentTexts.yes}
+                </button>
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleConsent(false)}
+                  className="rounded-full bg-secondary text-secondary-foreground border border-border/50 font-mono text-xs font-bold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-secondary/80 active:scale-95 transition-all disabled:opacity-50 min-h-[44px]"
+                >
+                  {consentTexts.no}
+                </button>
+              </div>
+            )}
+
             {loading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex justify-start">
                 <div className="bg-secondary rounded-2xl rounded-bl-md px-4 py-3 border border-border/30">
