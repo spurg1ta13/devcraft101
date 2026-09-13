@@ -6,7 +6,43 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useVisualViewport } from "@/hooks/useVisualViewport";
 import { getCountryCode } from "@/lib/geo";
 
-type Msg = { role: "user" | "assistant"; content: string };
+type Msg = {
+  role: "user" | "assistant";
+  content: string;
+  /** UI-only consent-flow messages: never sent to the AI backend */
+  kind?: "consent-prompt" | "consent-denied";
+};
+
+const GDPR_CONSENT_KEY = "gdpr_consent_accepted";
+
+const getGdprConsent = (): boolean => {
+  try {
+    return localStorage.getItem(GDPR_CONSENT_KEY) === "true";
+  } catch {
+    return false;
+  }
+};
+
+const CONSENT_TEXTS: Record<string, { prompt: string; denied: string; yes: string; no: string }> = {
+  en: {
+    prompt: "Before we continue our conversation, please accept our GDPR Cookie Consent and Privacy Policy terms.",
+    denied: "I cannot process your requests without your consent to our GDPR and Privacy Policy terms. To use the AI assistant, please accept the terms.",
+    yes: "YES",
+    no: "NO",
+  },
+  el: {
+    prompt: "Πριν συνεχίσουμε τη συνομιλία μας, παρακαλούμε αποδεχτείτε τη Συγκατάθεση Cookies GDPR και τους Όρους της Πολιτικής Απορρήτου μας.",
+    denied: "Δεν μπορώ να επεξεργαστώ τα αιτήματά σας χωρίς τη συγκατάθεσή σας στους όρους GDPR και Πολιτικής Απορρήτου. Για να χρησιμοποιήσετε τον βοηθό AI, παρακαλούμε αποδεχτείτε τους όρους.",
+    yes: "ΝΑΙ",
+    no: "ΌΧΙ",
+  },
+  de: {
+    prompt: "Bevor wir unser Gespräch fortsetzen, akzeptieren Sie bitte unsere DSGVO-Cookie-Einwilligung und Datenschutzrichtlinie.",
+    denied: "Ich kann Ihre Anfragen ohne Ihre Zustimmung zu unseren DSGVO- und Datenschutzbestimmungen nicht bearbeiten. Um den KI-Assistenten zu nutzen, akzeptieren Sie bitte die Bedingungen.",
+    yes: "JA",
+    no: "NEIN",
+  },
+};
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat`;
 const HISTORY_KEY = "devcraft_chat_history";
@@ -36,7 +72,8 @@ const loadHistory = (): Msg[] => {
       sessionStorage.removeItem(HISTORY_KEY);
       return [];
     }
-    return Array.isArray(parsed.messages) ? parsed.messages : [];
+    // Drop stale consent-flow messages from restored history
+    return Array.isArray(parsed.messages) ? parsed.messages.filter((m) => !m.kind) : [];
   } catch {
     return [];
   }
@@ -303,23 +340,17 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     }
   }, [loading, open]);
 
-  const send = async (override?: string) => {
-    const text = (override ?? input).trim();
-    if (!text || loading) return;
-    setInput("");
-    setError("");
-
-    const userMsg: Msg = { role: "user", content: text };
-    setMessages(prev => [...prev, userMsg]);
+  const streamToAI = async (allMsgs: Msg[]) => {
     isStreamingRef.current = true;
     assistantMsgTopRef.current = null;
     setLoading(true);
 
     let assistantSoFar = "";
-    const allMsgs = [...messages, userMsg];
+    // Consent-flow messages are UI-only — never sent to the backend
+    const serverMsgs = allMsgs.filter((m) => !m.kind);
 
     await streamChat(
-      allMsgs,
+      serverMsgs,
       (chunk) => {
         assistantSoFar += chunk;
         setMessages(prev => {
@@ -333,6 +364,55 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
       () => { isStreamingRef.current = false; setLoading(false); },
       (errMsg) => { isStreamingRef.current = false; setError(errMsg); setLoading(false); },
     );
+  };
+
+  // GDPR consent gate — persisted across sessions
+  const [consented, setConsented] = useState<boolean>(() => getGdprConsent());
+  const consentTexts = CONSENT_TEXTS[lang] || CONSENT_TEXTS.en;
+
+  const send = async (override?: string) => {
+    const text = (override ?? input).trim();
+    if (!text || loading) return;
+    setInput("");
+    setError("");
+
+    const userMsg: Msg = { role: "user", content: text };
+
+    // Block normal AI responses until GDPR consent is given
+    if (!consented) {
+      setMessages((prev) => [
+        ...prev.filter((m) => m.kind !== "consent-prompt"),
+        userMsg,
+        { role: "assistant", content: consentTexts.prompt, kind: "consent-prompt" },
+      ]);
+      return;
+    }
+
+    setMessages(prev => [...prev, userMsg]);
+    await streamToAI([...messages, userMsg]);
+  };
+
+  const handleConsent = async (accepted: boolean) => {
+    if (loading) return;
+    if (!accepted) {
+      // Keep prompting on subsequent messages until YES is selected
+      setMessages((prev) => [
+        ...prev.filter((m) => !m.kind),
+        { role: "assistant", content: consentTexts.denied, kind: "consent-denied" },
+      ]);
+      return;
+    }
+    try {
+      localStorage.setItem(GDPR_CONSENT_KEY, "true");
+    } catch { /* ignore */ }
+    setConsented(true);
+    // Proceed with the normal conversation: strip consent-flow messages and
+    // send the pending user question to the AI
+    const cleaned = messages.filter((m) => !m.kind);
+    setMessages(cleaned);
+    if (cleaned.length > 0 && cleaned[cleaned.length - 1].role === "user") {
+      await streamToAI(cleaned);
+    }
   };
 
   const sanitizeAssistantContent = (content: string) => {
@@ -534,6 +614,29 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
                 </div>
               </div>
             ))}
+
+            {/* GDPR consent YES / NO buttons */}
+            {(messages[messages.length - 1]?.kind === "consent-prompt" ||
+              messages[messages.length - 1]?.kind === "consent-denied") && (
+              <div className="flex justify-start gap-2">
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleConsent(true)}
+                  className="rounded-full bg-primary text-primary-foreground font-mono text-xs font-bold uppercase tracking-[0.15em] px-5 py-2.5 hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 min-h-[44px]"
+                >
+                  {consentTexts.yes}
+                </button>
+                <button
+                  type="button"
+                  disabled={loading}
+                  onClick={() => handleConsent(false)}
+                  className="rounded-full bg-secondary text-secondary-foreground border border-border/50 font-mono text-xs font-bold uppercase tracking-[0.15em] px-5 py-2.5 hover:bg-secondary/80 active:scale-95 transition-all disabled:opacity-50 min-h-[44px]"
+                >
+                  {consentTexts.no}
+                </button>
+              </div>
+            )}
 
             {loading && messages[messages.length - 1]?.role === "user" && (
               <div className="flex justify-start">
