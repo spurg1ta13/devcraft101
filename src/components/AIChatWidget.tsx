@@ -366,6 +366,55 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     );
   };
 
+  // GDPR consent gate — persisted across sessions
+  const [consented, setConsented] = useState<boolean>(() => getGdprConsent());
+  const consentTexts = CONSENT_TEXTS[lang] || CONSENT_TEXTS.en;
+
+  const send = async (override?: string) => {
+    const text = (override ?? input).trim();
+    if (!text || loading) return;
+    setInput("");
+    setError("");
+
+    const userMsg: Msg = { role: "user", content: text };
+
+    // Block normal AI responses until GDPR consent is given
+    if (!consented) {
+      setMessages((prev) => [
+        ...prev.filter((m) => m.kind !== "consent-prompt"),
+        userMsg,
+        { role: "assistant", content: consentTexts.prompt, kind: "consent-prompt" },
+      ]);
+      return;
+    }
+
+    setMessages(prev => [...prev, userMsg]);
+    await streamToAI([...messages, userMsg]);
+  };
+
+  const handleConsent = async (accepted: boolean) => {
+    if (loading) return;
+    if (!accepted) {
+      // Keep prompting on subsequent messages until YES is selected
+      setMessages((prev) => [
+        ...prev.filter((m) => !m.kind),
+        { role: "assistant", content: consentTexts.denied, kind: "consent-denied" },
+      ]);
+      return;
+    }
+    try {
+      localStorage.setItem(GDPR_CONSENT_KEY, "true");
+    } catch { /* ignore */ }
+    setConsented(true);
+    // Proceed with the normal conversation: strip consent-flow messages and
+    // send the pending user question to the AI
+    const cleaned = messages.filter((m) => !m.kind);
+    setMessages(cleaned);
+    if (cleaned.length > 0 && cleaned[cleaned.length - 1].role === "user") {
+      await streamToAI(cleaned);
+    }
+  };
+
   const sanitizeAssistantContent = (content: string) => {
     return (
       content
