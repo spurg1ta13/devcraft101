@@ -6,7 +6,43 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useVisualViewport } from "@/hooks/useVisualViewport";
 import { getCountryCode } from "@/lib/geo";
 
-type Msg = { role: "user" | "assistant"; content: string };
+type Msg = {
+  role: "user" | "assistant";
+  content: string;
+  /** UI-only consent-flow messages: never sent to the AI backend */
+  kind?: "consent-prompt" | "consent-denied";
+};
+
+const GDPR_CONSENT_KEY = "gdpr_consent_accepted";
+
+const getGdprConsent = (): boolean => {
+  try {
+    return localStorage.getItem(GDPR_CONSENT_KEY) === "true";
+  } catch {
+    return false;
+  }
+};
+
+const CONSENT_TEXTS: Record<string, { prompt: string; denied: string; yes: string; no: string }> = {
+  en: {
+    prompt: "Before we continue our conversation, please accept our GDPR Cookie Consent and Privacy Policy terms.",
+    denied: "I cannot process your requests without your consent to our GDPR and Privacy Policy terms. To use the AI assistant, please accept the terms.",
+    yes: "YES",
+    no: "NO",
+  },
+  el: {
+    prompt: "Πριν συνεχίσουμε τη συνομιλία μας, παρακαλούμε αποδεχτείτε τη Συγκατάθεση Cookies GDPR και τους Όρους της Πολιτικής Απορρήτου μας.",
+    denied: "Δεν μπορώ να επεξεργαστώ τα αιτήματά σας χωρίς τη συγκατάθεσή σας στους όρους GDPR και Πολιτικής Απορρήτου. Για να χρησιμοποιήσετε τον βοηθό AI, παρακαλούμε αποδεχτείτε τους όρους.",
+    yes: "ΝΑΙ",
+    no: "ΌΧΙ",
+  },
+  de: {
+    prompt: "Bevor wir unser Gespräch fortsetzen, akzeptieren Sie bitte unsere DSGVO-Cookie-Einwilligung und Datenschutzrichtlinie.",
+    denied: "Ich kann Ihre Anfragen ohne Ihre Zustimmung zu unseren DSGVO- und Datenschutzbestimmungen nicht bearbeiten. Um den KI-Assistenten zu nutzen, akzeptieren Sie bitte die Bedingungen.",
+    yes: "JA",
+    no: "NEIN",
+  },
+};
 
 const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/ai-chat`;
 const HISTORY_KEY = "devcraft_chat_history";
@@ -36,7 +72,8 @@ const loadHistory = (): Msg[] => {
       sessionStorage.removeItem(HISTORY_KEY);
       return [];
     }
-    return Array.isArray(parsed.messages) ? parsed.messages : [];
+    // Drop stale consent-flow messages from restored history
+    return Array.isArray(parsed.messages) ? parsed.messages.filter((m) => !m.kind) : [];
   } catch {
     return [];
   }
