@@ -340,23 +340,17 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     }
   }, [loading, open]);
 
-  const send = async (override?: string) => {
-    const text = (override ?? input).trim();
-    if (!text || loading) return;
-    setInput("");
-    setError("");
-
-    const userMsg: Msg = { role: "user", content: text };
-    setMessages(prev => [...prev, userMsg]);
+  const streamToAI = async (allMsgs: Msg[]) => {
     isStreamingRef.current = true;
     assistantMsgTopRef.current = null;
     setLoading(true);
 
     let assistantSoFar = "";
-    const allMsgs = [...messages, userMsg];
+    // Consent-flow messages are UI-only — never sent to the backend
+    const serverMsgs = allMsgs.filter((m) => !m.kind);
 
     await streamChat(
-      allMsgs,
+      serverMsgs,
       (chunk) => {
         assistantSoFar += chunk;
         setMessages(prev => {
