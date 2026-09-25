@@ -80,6 +80,15 @@ const HeroSection = () => {
         </div>
 
         <HeroSteps />
+
+        <a
+          href="https://gretagreta.eu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 md:mt-8 inline-flex items-center font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300 min-h-[44px]"
+        >
+          Powered by <span className="text-foreground/80">gretagreta.eu</span>
+        </a>
       </div>
       {dialogLoaded && (
         <Suspense fallback={null}>
