@@ -141,6 +141,14 @@ const Footer = () => {
             >
               {t(f.termsOfService, lang)}
             </Link>
+            <a
+              href="https://gretagreta.eu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] text-muted-foreground tracking-[0.1em] uppercase hover:text-primary transition-colors min-h-[44px] flex items-center"
+            >
+              Powered by <span className="text-foreground/80 ml-1">gretagreta.eu</span>
+            </a>
           </div>
         </div>
       </div>
