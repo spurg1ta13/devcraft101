@@ -85,9 +85,9 @@ const HeroSection = () => {
           href="https://gretagreta.eu"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 md:mt-8 inline-flex items-center gap-1.5 font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300 min-h-[44px] items-center"
+          className="mt-6 md:mt-8 inline-flex items-center font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.2em] text-muted-foreground hover:text-primary transition-colors duration-300 min-h-[44px]"
         >
-          Powered by <span className="text-foreground/80 group-hover:text-primary">gretagreta.eu</span>
+          Powered by <span className="text-foreground/80">gretagreta.eu</span>
         </a>
       </div>
       {dialogLoaded && (
