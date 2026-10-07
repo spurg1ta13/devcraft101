@@ -18,6 +18,17 @@ const CookieConsent = () => {
     }
   }, []);
 
+  // Hide automatically when consent is given elsewhere (e.g. Privacy Policy agreement in chat)
+  useEffect(() => {
+    const hide = () => setVisible(false);
+    window.addEventListener("cookie-consent:accepted", hide);
+    window.addEventListener("cookie-consent:declined", hide);
+    return () => {
+      window.removeEventListener("cookie-consent:accepted", hide);
+      window.removeEventListener("cookie-consent:declined", hide);
+    };
+  }, []);
+
   const accept = () => {
     localStorage.setItem("cookie-consent", "accepted");
     window.dispatchEvent(new Event("cookie-consent:accepted"));

@@ -404,6 +404,9 @@ const AIChatWidget = ({ defaultOpen = false, onOpenChange }: AIChatWidgetProps) 
     }
     try {
       localStorage.setItem(GDPR_CONSENT_KEY, "true");
+      // Accepting the Privacy Policy also covers cookie consent — hide the banner
+      localStorage.setItem("cookie-consent", "accepted");
+      window.dispatchEvent(new Event("cookie-consent:accepted"));
     } catch { /* ignore */ }
     setConsented(true);
     // Proceed with the normal conversation: strip consent-flow messages and
